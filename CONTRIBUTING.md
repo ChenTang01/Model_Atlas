@@ -7,7 +7,7 @@ Atlas welcomes fixes to the explorer, reproducible research tooling, and careful
 Use Node.js 22 or newer and Git. The application and Node test suite have no npm dependencies to install.
 
 ```sh
-git clone --depth 1 https://github.com/ChenTang01/Model_Atlas.git
+git clone https://github.com/ChenTang01/Model_Atlas.git
 cd Model_Atlas
 npm run check:public
 npm start -- --base-path /Atlas
@@ -39,7 +39,7 @@ Include the problem, resulting behavior, relevant test results, and any unresolv
 
 ## Research workspace and promotion
 
-The full pipeline requires a separately acquired, authorized local paper library matching `research/corpus/manifest.v1.json`, plus local extraction artifacts. These inputs are excluded from the current checkout; do not recover them from the legacy Git history awaiting cleanup. Install the pinned extraction runtime in a local Python environment:
+The full pipeline requires a separately acquired, authorized local paper library matching `research/corpus/manifest.v1.json`, plus local extraction artifacts. These inputs are excluded from the public repository and its published branch history. If your clone predates the 2026-09-13 history cleanup, follow the [fresh-clone guidance](README.md#source-corpus); never push a local backup of the old history. Install the pinned extraction runtime in a local Python environment:
 
 ```sh
 python -m pip install -r requirements-extraction.txt

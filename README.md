@@ -17,7 +17,7 @@ For development or an HTTP preview:
 With Node.js 22 or newer:
 
 ```sh
-git clone --depth 1 https://github.com/ChenTang01/Model_Atlas.git
+git clone https://github.com/ChenTang01/Model_Atlas.git
 cd Model_Atlas
 node scripts/serve.mjs
 ```
@@ -34,7 +34,9 @@ Over HTTP, the browser reads the canonical JSON article index with `fetch`. When
 
 ### Source corpus
 
-The 1,653 source PDFs belong in the ignored local `paper/` directory. They must not be uploaded to the public repository, Git LFS, issue or pull-request attachments, releases, CI artifacts, or the demo. The current checkout excludes them. Earlier commits included PDFs; removal from published history remains part of [the distribution cleanup](https://github.com/ChenTang01/Model_Atlas/issues/1). Until that cleanup is complete, a full Git clone still retrieves historical PDF objects; use `git clone --depth 1` for the current checkout alone. Obtain any papers needed for research through sources you are authorized to use.
+The 1,653 source PDFs belong in the ignored local `paper/` directory. They must not be uploaded to the public repository, Git LFS, issue or pull-request attachments, releases, CI artifacts, or the demo. The current tree and published branch history exclude them. Obtain any papers needed for research through sources you are authorized to use.
+
+Published history was cleaned of source PDFs and historical full-text extraction caches on 2026-09-13. If your clone predates that cleanup, preserve any authorized local research files separately and make a fresh clone before contributing. Do not merge or push the old history or local backup branches; doing so can reintroduce these sources. The separate [rights review for retained abstracts and excerpts](https://github.com/ChenTang01/Model_Atlas/issues/1) remains open.
 
 `research/corpus/manifest.v1.json` records each expected local path, byte length, page count, and SHA-256 so a hydrated research workspace can be verified before source work resumes. Extracted full text and page images also remain local. The project license excludes third-party papers and their protected content; see [license scope and third-party notices](THIRD_PARTY_NOTICES.md).
 

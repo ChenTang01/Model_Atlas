@@ -1,6 +1,6 @@
 # Atlas corpus pipeline
 
-This directory is the restart boundary for rebuilding Atlas from lawfully obtained, local-only PDFs in the ignored `paper/` directory. The current tree stores the catalog, manifest, checkpoints, and structured release data while excluding source PDFs, full-text extraction caches, and page images. Earlier Git history still needs PDF cleanup; see the [source-corpus status](../README.md#source-corpus). The pipeline does not rewrite the source PDFs. The [project license excludes third-party papers and their protected content](../THIRD_PARTY_NOTICES.md).
+This directory is the restart boundary for rebuilding Atlas from lawfully obtained, local-only PDFs in the ignored `paper/` directory. The current tree stores the catalog, manifest, checkpoints, and structured release data while excluding source PDFs, full-text extraction caches, and page images. Source PDFs and historical full-text extraction caches have also been removed from published branch history; see the [source-corpus status and guidance for older clones](../README.md#source-corpus). The pipeline does not rewrite the source PDFs. The [project license excludes third-party papers and their protected content](../THIRD_PARTY_NOTICES.md).
 
 ## Public clone and local research workspace
 

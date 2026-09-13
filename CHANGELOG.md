@@ -17,6 +17,7 @@ Prepared initial maintained baseline. The package already identifies itself as `
 
 - Add an MIT license for original project code and materials, with third-party papers excluded from that grant.
 - Make third-party paper PDFs, full-text extractions, and source-page images local-only research inputs. Public artifacts still require an appropriate redistribution basis.
+- Remove 1,653 PDFs and 30 historical full-text extraction caches from published branch history on 2026-09-13 while preserving the local source library and a local history backup.
 - Document the [public demo](https://chentang01.github.io/Atlas/), contribution workflow, versioning, release checklist, and actionable roadmap.
 - Add issue and pull-request templates, public-clone CI, fixture-based research unit checks, and an explicit local full-research validation command.
 - Add tag/package/changelog validation and a tag-triggered workflow that creates GitHub Release drafts without file attachments; publication remains a separate maintainer action.
