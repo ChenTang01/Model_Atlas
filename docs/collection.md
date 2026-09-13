@@ -1,6 +1,6 @@
 # Model Atlas: Merged Collection and Audit Notes
 
-Model Atlas is a searchable evidence index of 1,653 modeling papers published from 2016 through 2026 in four INFORMS journals. Each paper has a record in the web interface and a hash-pinned source PDF in the restartable research corpus.
+Model Atlas is a searchable evidence index of 1,653 modeling papers published from 2016 through 2026 in four INFORMS journals. Each paper has a record in the web interface and a hash-pinned source PDF in the local-only restartable research corpus. PDFs, full-text extractions, and page images are excluded from the public repository; see [license scope and third-party notices](../THIRD_PARTY_NOTICES.md).
 
 [Launch the full-screen Model Atlas](../index.html)
 

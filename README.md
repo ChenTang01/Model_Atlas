@@ -1,5 +1,9 @@
 # Model Atlas
 
+**[Open the public demo →](https://chentang01.github.io/Atlas/)** ·
+[Contribute](CONTRIBUTING.md) · [Roadmap](ROADMAP.md) ·
+[Change history](CHANGELOG.md) · [MIT license](LICENSE)
+
 Explore modeling research as a three-dimensional galaxy on a deep-space field. Each of the 1,653 papers has a stable node in one shared disc; subject lenses change emphasis, not the underlying coordinates. Search returns field-level evidence and qualitative relevance labels, while Panels lists the identical order with filters and progressive rendering. Every paper opens a structured model note with source-linked setup, methods, components, formulations, conditions, symbols, concepts, and explicit model variants when the paper defines them. Thirty frozen Mini Atlas notes remain the editorial reference fixtures; automated note artifacts retain internal provenance and unresolved-source status for audit and restart.
 
 Model Atlas is a standalone project extracted from [Game Theory for Business Research](https://github.com/ChenTang01/Game_Theory_For_Business_Research). It does not require that repository, Jupyter Book, Sphinx, a backend service, or API credentials.
@@ -13,12 +17,12 @@ For development or an HTTP preview:
 With Node.js 22 or newer:
 
 ```sh
-git clone https://github.com/ChenTang01/Model_Atlas.git
+git clone --depth 1 https://github.com/ChenTang01/Model_Atlas.git
 cd Model_Atlas
 node scripts/serve.mjs
 ```
 
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000). `npm start` is an equivalent shortcut if npm is available. There are no packages to install. The public repository contains the complete Beta website, structured-note release, and source PDF corpus.
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000). `npm start` is an equivalent shortcut if npm is available. There are no packages to install. The public repository contains the Beta website, structured-note release, and research tooling. Source paper PDFs are local only and are not needed to browse the website.
 
 Alternatively, serve the repository with Python 3:
 
@@ -30,7 +34,9 @@ Over HTTP, the browser reads the canonical JSON article index with `fetch`. When
 
 ### Source corpus
 
-The 1,653 source PDFs are tracked directly under `paper/` as ordinary Git files; Git LFS is not required. `research/corpus/manifest.v1.json` pins every expected PDF by path, byte length, page count, and SHA-256 so a checkout can be verified before source work resumes. The underlying articles remain subject to their publishers' and authors' copyright and licensing terms.
+The 1,653 source PDFs belong in the ignored local `paper/` directory. They must not be uploaded to the public repository, Git LFS, issue or pull-request attachments, releases, CI artifacts, or the demo. The current checkout excludes them. Earlier commits included PDFs; removal from published history remains part of [the distribution cleanup](https://github.com/ChenTang01/Model_Atlas/issues/1). Until that cleanup is complete, a full Git clone still retrieves historical PDF objects; use `git clone --depth 1` for the current checkout alone. Obtain any papers needed for research through sources you are authorized to use.
+
+`research/corpus/manifest.v1.json` records each expected local path, byte length, page count, and SHA-256 so a hydrated research workspace can be verified before source work resumes. Extracted full text and page images also remain local. The project license excludes third-party papers and their protected content; see [license scope and third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Collection
 
@@ -71,7 +77,7 @@ All 1,653 papers have structured model notes in the reader. The public release c
 | `data/atlas_articles.json` | Complete merged web-record snapshot, schema 3.1 |
 | `data/atlas_articles.js` | Generated copy for direct-file preview; do not edit manually |
 | `data/model_notes.json` / `.js` | Audited full-corpus structured-note release; the 30 Mini notes remain frozen reference fixtures |
-| `paper/` | Checked-in 1,653-PDF source corpus stored as ordinary Git files |
+| `paper/` | Ignored, local-only source PDFs; absent from a public clone |
 | `research/corpus/manifest.v1.json` | Immutable source identity and corpus-revision manifest |
 | `research/corpus/paper-retirements.v1.json` | Hash-bound compact record of the 21 permanently removed papers and their retirement batches |
 | `research/ledger/` | Independent, restartable stage state for every paper; copyright-sensitive extracted text and page images remain local and rebuildable |
@@ -86,16 +92,18 @@ All 1,653 papers have structured model notes in the reader. The public release c
 | `scripts/build-data.mjs` | Regenerate or check the direct-file snapshot from the JSON source |
 | `tests/` | Corpus, asset-path, search, and HTTP checks |
 
-The active JSON, checked-in PDF library, workbook, and bibliography contain 298 retained original model-map records and 1,355 distinct literature records. That split describes input provenance; every record now has a structured note in the public reader. The legacy long-form markdown is limited to the retained model-map subset. Historical `Atlas/...` provenance paths in those notes describe the original workspace; merged record provenance is documented in `docs/collection.md` and `data/imports/atlas_literature_2016_present/`.
+The active JSON, local PDF library, workbook, and bibliography contain 298 retained original model-map records and 1,355 distinct literature records. That split describes input provenance; every record now has a structured note in the public reader. The legacy long-form markdown is limited to the retained model-map subset. Historical `Atlas/...` provenance paths in those notes describe the original workspace; merged record provenance is documented in `docs/collection.md` and `data/imports/atlas_literature_2016_present/`.
 
 ## Development
 
 ```sh
-node --test tests/*.test.mjs
+npm run check:public
 node scripts/serve.mjs --port 8080
 ```
 
-The full research suite expects the checked-in PDF corpus and locally rebuildable extraction artifacts. `npm run test:public` runs the website and checked-in release tests that are available from a public clone; `npm test` runs the complete suite in a hydrated research workspace. `npm start -- --port 8080` starts the preview server. To preview subdirectory hosting, add `--base-path /Model_Atlas` and visit `/Model_Atlas/`.
+`npm test` runs website and research-pipeline fixture tests in a public clone. `npm run check:public` also checks distributable content, JavaScript syntax, and generated catalog consistency. CI runs these checks on supported Node.js versions. The full research suite, `npm run test:research`, expects locally obtained PDFs and extraction artifacts; `npm run check:research` also runs the existing seven-stage readiness gate. Public CI never downloads the source corpus or promotes model notes.
+
+`npm start -- --port 8080` starts the preview server. To preview the demo's subdirectory hosting, add `--base-path /Atlas` and visit `/Atlas/`. See [CONTRIBUTING.md](CONTRIBUTING.md) for the checks appropriate to a code, metadata, or research change.
 
 After editing `data/atlas_articles.json`, run `node scripts/build-data.mjs` and include the generated `data/atlas_articles.js` in the same change. Model-note releases follow four gates: author paper-granular notes, build the complete candidate under `data/notes/release-candidate/`, audit that exact candidate, then explicitly promote it. `build-model-notes.mjs` never overwrites the public pair directly. `npm run audit:candidate` completes and records the full candidate audit without touching `data/model_notes.{json,js}`; the normal `audit:notes` command is the separate promotion action. The corresponding `--check` commands and the test suite detect stale artifacts. HTTP errors are reported directly; the local snapshot does not hide failed hosted requests.
 
@@ -120,4 +128,8 @@ Writes are validated in a same-directory temporary file and renamed atomically. 
 
 The initial standalone import uses the Atlas collection from source commit `5401195`, together with the galaxy interface developed afterward in that workspace. The original book retains the bibliography entries its chapters cite and links to this repository; it no longer contains the Atlas app or material library.
 
-Third-party articles retain their original copyright and licensing terms. This repository does not grant additional rights to those articles.
+## License and maintenance
+
+Atlas's original code and materials are available under the [MIT license](LICENSE). **Third-party papers and their protected content are excluded**, as is separately licensed bundled software. The inherited data includes abstracts and source excerpts whose distribution basis must be reviewed before a new public release; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+The [roadmap](ROADMAP.md), [issue tracker](https://github.com/ChenTang01/Model_Atlas/issues), and [change history](CHANGELOG.md) track planned work and versioned changes. [CONTRIBUTING.md](CONTRIBUTING.md) describes contribution checks, local research validation, semantic versioning, and the draft-release review process. The public interface remains Beta; a software version does not certify scholarly validation of its notes.

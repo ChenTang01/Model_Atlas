@@ -6,17 +6,18 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-const [mainBytes, overlay, miniBytes, snapshotSource, corpusManifest] = await Promise.all([
+const [mainBytes, overlay, snapshotSource, corpusManifest] = await Promise.all([
   readFile(path.join(root, "data", "atlas_articles.json")),
   readFile(path.join(root, "data", "model_notes.json"), "utf8").then(JSON.parse),
-  readFile(path.join(root, "mini-atlas", "data", "atlas.json")),
   readFile(path.join(root, "data", "model_notes.js"), "utf8"),
   readFile(path.join(root, "research", "corpus", "manifest.v1.json"), "utf8").then(JSON.parse)
 ]);
 const mainPayload = JSON.parse(mainBytes);
 const manifestById = new Map(corpusManifest.records.map((record) => [record.id, record]));
 
-const EXPECTED_SOURCE_SHA256 = "0ac1ebf54648e8fb38343dc395fa0b4c24eb46b9e8970952ded224c6f2520be6";
+// Freeze the distributable 30-note editorial content itself. Provenance is
+// operational state refreshed by the local pipeline, not editorial content.
+const EXPECTED_EDITORIAL_SHA256 = "6ce5f2b78ec88b06ac627766fa905af506a0a28827aac9f17866bd86e374411f";
 const EXPECTED_CROSSWALK = Object.freeze([
   ["P001", "doi-10-1287-msom-2025-0215"],
   ["P002", "doi-10-1287-msom-2024-1575"],
@@ -74,10 +75,12 @@ test("the model-note overlay retains the frozen deterministic 30-paper crosswalk
   assert.equal(overlay.schemaVersion, 2);
   assert.equal(String(overlay.sourceSchemaVersion), "3.1");
   assert.equal(overlay.sourceDataSha256, sha256(mainBytes), "the release is bound to the complete current catalog");
-  assert.equal(sha256(miniBytes), EXPECTED_SOURCE_SHA256, "the frozen Mini source has not drifted");
   const referencePapers = overlay.papers
     .filter((paper) => paper.referenceFixtureId)
     .sort((left, right) => left.referenceFixtureId.localeCompare(right.referenceFixtureId));
+  const editorialContent = referencePapers.map(({ provenance, ...paper }) => paper);
+  assert.equal(sha256(JSON.stringify(editorialContent)), EXPECTED_EDITORIAL_SHA256,
+    "the published frozen editorial content has not drifted");
   assert.deepEqual(
     referencePapers.map((paper) => [paper.referenceFixtureId, paper.sourceId]),
     EXPECTED_CROSSWALK

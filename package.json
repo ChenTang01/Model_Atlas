@@ -2,7 +2,13 @@
   "name": "model-atlas",
   "version": "1.0.0",
   "private": true,
-  "description": "A standalone semantic galaxy of OM, IS, and Marketing modeling research.",
+  "license": "MIT",
+  "homepage": "https://chentang01.github.io/Atlas/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChenTang01/Model_Atlas.git"
+  },
+  "description": "Explore 1,653 papers in a semantic galaxy of OM, IS, and Marketing modeling research.",
   "engines": {
     "node": ">=22"
   },
@@ -25,6 +31,11 @@
     "check:checkpoints": "node scripts/model-note-checkpoints.mjs --check",
     "check:ready": "node scripts/corpus-pipeline.mjs inventory --check --jobs 8 && node scripts/extraction-qa.mjs review --check --jobs 8 && node scripts/author-model-notes.mjs --reconcile-mini --jobs 8 --check && node scripts/model-note-checkpoints.mjs --check && node scripts/build-model-notes.mjs --check && node scripts/audit-model-notes.mjs --jobs 8 --check && node scripts/corpus-pipeline.mjs status --check-ready",
     "check:data": "node scripts/build-data.mjs --check",
+    "check:public-content": "node scripts/check-public-content.mjs",
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "check:public": "npm run check:public-content && npm run check:syntax && npm run check:data && npm test",
+    "check:research": "npm run test:research && npm run check:ready",
+    "check:release": "node scripts/check-release.mjs",
     "check:notes": "node scripts/build-model-notes.mjs --check",
     "corpus:status": "node scripts/corpus-pipeline.mjs status",
     "corpus:summary": "node scripts/corpus-pipeline.mjs status --refresh-summary",
@@ -42,7 +53,10 @@
     "check:extraction": "node scripts/extraction-qa.mjs review --check --jobs 8",
     "start": "node scripts/serve.mjs",
     "serve": "node scripts/serve.mjs",
-    "test": "node --test tests/*.test.mjs",
+    "test": "npm run test:public && npm run test:research:unit && npm run test:maintenance",
+    "test:research": "node --test tests/*.test.mjs",
+    "test:research:unit": "node scripts/test-research-unit.mjs",
+    "test:maintenance": "node --test tests/public-content.test.mjs tests/release-metadata.test.mjs",
     "test:public": "node --test tests/about.test.mjs tests/atlas.test.mjs tests/galaxy.test.mjs tests/loading.test.mjs tests/math-rendering.test.mjs tests/model-notes-overlay.test.mjs tests/rich-search.test.mjs tests/topics.test.mjs"
   }
 }

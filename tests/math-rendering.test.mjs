@@ -10,9 +10,8 @@ const modelNotesUrl = process.env.ATLAS_MODEL_NOTES_PATH
   ? pathToFileURL(path.resolve(process.env.ATLAS_MODEL_NOTES_PATH))
   : new URL("../data/model_notes.json", import.meta.url);
 
-const [mathSource, notationSource, notes, articles] = await Promise.all([
+const [mathSource, notes, articles] = await Promise.all([
   readFile(new URL("../assets/math.js", import.meta.url), "utf8"),
-  readFile(new URL("../mini-atlas/data/math-notations.js", import.meta.url), "utf8"),
   readFile(modelNotesUrl, "utf8").then(JSON.parse),
   readFile(new URL("../data/atlas_articles.json", import.meta.url), "utf8").then(JSON.parse)
 ]);
@@ -30,19 +29,19 @@ function mathRuntime(environment = {}) {
     ...environment.globals
   });
   context.window = context;
-  vm.runInContext(notationSource, context, { filename: "mini-atlas/data/math-notations.js" });
   vm.runInContext(mathSource, context, { filename: "assets/math.js" });
   return context.AtlasMath;
 }
 
-test("main reader reuses the frozen Mini formula presentation map", () => {
+test("the public reader renders the published editorial formula without private Mini assets", () => {
   const note = notes.papers.find((paper) => paper.referenceFixtureId === "P001");
   assert.ok(note, "P001 is imported into the main release");
   const component = note.models.flatMap((model) => model.components)
     .find((candidate) => candidate.id === "arrivals-discharges");
   assert.ok(component);
   const markup = mathRuntime().formula(note, component);
-  assert.match(markup, /data-formula-key="P001\/arrivals-discharges"/);
+  assert.match(markup, /data-original-formal=/);
+  assert.ok(markup.includes(component.formal), "the published formulation is retained unchanged");
   assert.match(markup, /data-tex=/);
   assert.doesNotMatch(markup, /<pre>/);
 });
@@ -447,12 +446,18 @@ test("reviewed Atlas restatement equations are typeset instead of exposing sourc
   );
 });
 
-test("frozen Mini TeX text remains byte-for-byte semantic text in the main reader", () => {
-  const math = mathRuntime();
-  const note = notes.papers.find((paper) => paper.referenceFixtureId === "P002");
-  const component = note.models.flatMap((model) => model.components)
-    .find((candidate) => candidate.id === "unlinked-counts");
+test("optional presentation maps preserve protected TeX prose and stable formula keys", () => {
+  // An original synthetic fixture verifies the optional map contract. The
+  // public site itself runs without the private Mini authoring workspace.
+  const math = mathRuntime({ globals: { MINI_ATLAS_NOTATION: {
+    inline: {},
+    formulas: { "T001/example": "$\\Pr(\\text{arrival in interval } i)=p_i$" }
+  } } });
+  const note = { referenceFixtureId: "T001" };
+  const component = { id: "example", formal: "Pr(arrival in interval i)=p_i", formalKind: "Atlas normalized notation" };
   const markup = math.formula(note, component);
+  assert.match(markup, /data-formula-key="T001\/example"/);
+  assert.match(markup, /data-tex=/);
   assert.match(markup, /\\text\{arrival in interval \}/);
   assert.doesNotMatch(markup, /arrival \\in interval/);
 });

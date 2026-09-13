@@ -1,6 +1,14 @@
 # Atlas corpus pipeline
 
-This directory is the restart boundary for rebuilding Atlas from the PDFs tracked directly at `paper/`. The repository stores the catalog, manifest, checkpoints, release data, and PDF bytes as ordinary Git files. The pipeline does not rewrite the source PDFs.
+This directory is the restart boundary for rebuilding Atlas from lawfully obtained, local-only PDFs in the ignored `paper/` directory. The current tree stores the catalog, manifest, checkpoints, and structured release data while excluding source PDFs, full-text extraction caches, and page images. Earlier Git history still needs PDF cleanup; see the [source-corpus status](../README.md#source-corpus). The pipeline does not rewrite the source PDFs. The [project license excludes third-party papers and their protected content](../THIRD_PARTY_NOTICES.md).
+
+## Public clone and local research workspace
+
+Run `npm run check:public` in a public clone for website checks, fixture-based research tests, and the publication guard. These checks do not need PDFs, Python, API credentials, or extraction caches. Hosted CI runs this public workflow only.
+
+For source-dependent work, obtain the papers through sources you are authorized to use, place them at the exact paths in `corpus/manifest.v1.json`, and install the extraction runtime described below. Run `inventory --check` before rebuilding extraction artifacts. A missing or different PDF must fail verification; do not change a source hash simply to pass a check.
+
+Use `npm run test:research` for the full suite in a hydrated workspace and `npm run check:research` for that suite plus the seven-stage readiness gate. Record the commit, environment, commands, and outcomes in the pull request. Keep PDFs, extracted pages, reading packets, and review screenshots local; share paper IDs, source hashes, and original summaries of findings. CI success alone does not establish research readiness or clear redistribution rights.
 
 ## Source baseline and live progress
 
