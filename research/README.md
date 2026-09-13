@@ -1,10 +1,10 @@
 # Atlas corpus pipeline
 
-This directory is the restart boundary for rebuilding Atlas from the PDFs mounted locally at `paper/`. The public repository stores the catalog, manifest, checkpoints, and release data; the PDF bytes live in the separate private `atlas-corpus` Git LFS repository. The pipeline does not rewrite either source.
+This directory is the restart boundary for rebuilding Atlas from the PDFs tracked directly at `paper/`. The repository stores the catalog, manifest, checkpoints, release data, and PDF bytes as ordinary Git files. The pipeline does not rewrite the source PDFs.
 
 ## Source baseline and live progress
 
-The checked-in source inventory covers all 1,653 records and pins all 1,653 private PDFs by identity. The model-map and literature counts below describe input and authoring provenance; they no longer describe whether a paper has a structured note:
+The checked-in source inventory covers all 1,653 records and pins all 1,653 PDFs by identity. The model-map and literature counts below describe input and authoring provenance; they no longer describe whether a paper has a structured note:
 
 - 1,355 literature records and 298 model-map records
 - 35,246 PDF pages and 3,612,048,792 PDF bytes

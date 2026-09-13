@@ -18,7 +18,7 @@ cd Model_Atlas
 node scripts/serve.mjs
 ```
 
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000). `npm start` is an equivalent shortcut if npm is available. There are no packages to install. The public repository contains the complete Beta website and structured-note release, but not publisher PDF files.
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000). `npm start` is an equivalent shortcut if npm is available. There are no packages to install. The public repository contains the complete Beta website, structured-note release, and source PDF corpus.
 
 Alternatively, serve the repository with Python 3:
 
@@ -28,17 +28,9 @@ python -m http.server 8000 --bind 127.0.0.1
 
 Over HTTP, the browser reads the canonical JSON article index with `fetch`. When opened directly using a `file:` URL, it loads the equivalent generated classic-script snapshot instead, since browsers block local JSON fetches. The static site can also be hosted under a project subdirectory; its app, data, and asset URLs are relative.
 
-### Optional private source corpus
+### Source corpus
 
-The restartable research pipeline expects the 1,653 source PDFs at `paper/`. Authorized collaborators can clone the separate private Git LFS repository beside this repository and expose its `paper/` directory here without copying the files:
-
-```powershell
-git lfs install
-git clone git@github.com:ChenTang01/atlas-corpus.git ..\atlas-corpus
-New-Item -ItemType Junction -Path .\paper -Target ..\atlas-corpus\paper
-```
-
-On macOS or Linux, replace the final command with `ln -s ../atlas-corpus/paper paper`. Existing local workspaces that already contain `paper/` need no change. `research/corpus/manifest.v1.json` pins every expected PDF by path, byte length, page count, and SHA-256 so a corpus checkout can be verified before any source work resumes. Access to the private corpus does not grant additional rights to the articles.
+The 1,653 source PDFs are tracked directly under `paper/` as ordinary Git files; Git LFS is not required. `research/corpus/manifest.v1.json` pins every expected PDF by path, byte length, page count, and SHA-256 so a checkout can be verified before source work resumes. The underlying articles remain subject to their publishers' and authors' copyright and licensing terms.
 
 ## Collection
 
@@ -79,7 +71,7 @@ All 1,653 papers have structured model notes in the reader. The public release c
 | `data/atlas_articles.json` | Complete merged web-record snapshot, schema 3.1 |
 | `data/atlas_articles.js` | Generated copy for direct-file preview; do not edit manually |
 | `data/model_notes.json` / `.js` | Audited full-corpus structured-note release; the 30 Mini notes remain frozen reference fixtures |
-| `paper/` | Optional local junction or directory supplied by the private `atlas-corpus` repository; never committed here |
+| `paper/` | Checked-in 1,653-PDF source corpus stored as ordinary Git files |
 | `research/corpus/manifest.v1.json` | Immutable source identity and corpus-revision manifest |
 | `research/corpus/paper-retirements.v1.json` | Hash-bound compact record of the 21 permanently removed papers and their retirement batches |
 | `research/ledger/` | Independent, restartable stage state for every paper; copyright-sensitive extracted text and page images remain local and rebuildable |
@@ -94,7 +86,7 @@ All 1,653 papers have structured model notes in the reader. The public release c
 | `scripts/build-data.mjs` | Regenerate or check the direct-file snapshot from the JSON source |
 | `tests/` | Corpus, asset-path, search, and HTTP checks |
 
-The active JSON, private PDF library, workbook, and bibliography contain 298 retained original model-map records and 1,355 distinct literature records. That split describes input provenance; every record now has a structured note in the public reader. The legacy long-form markdown is limited to the retained model-map subset. Historical `Atlas/...` provenance paths in those notes describe the original workspace; merged record provenance is documented in `docs/collection.md` and `data/imports/atlas_literature_2016_present/`.
+The active JSON, checked-in PDF library, workbook, and bibliography contain 298 retained original model-map records and 1,355 distinct literature records. That split describes input provenance; every record now has a structured note in the public reader. The legacy long-form markdown is limited to the retained model-map subset. Historical `Atlas/...` provenance paths in those notes describe the original workspace; merged record provenance is documented in `docs/collection.md` and `data/imports/atlas_literature_2016_present/`.
 
 ## Development
 
@@ -103,7 +95,7 @@ node --test tests/*.test.mjs
 node scripts/serve.mjs --port 8080
 ```
 
-The full research suite expects the private PDF corpus and locally rebuildable extraction artifacts. `npm run test:public` runs the website and checked-in release tests that are available from a public clone; `npm test` runs the complete suite in a hydrated research workspace. `npm start -- --port 8080` starts the preview server. To preview subdirectory hosting, add `--base-path /Model_Atlas` and visit `/Model_Atlas/`.
+The full research suite expects the checked-in PDF corpus and locally rebuildable extraction artifacts. `npm run test:public` runs the website and checked-in release tests that are available from a public clone; `npm test` runs the complete suite in a hydrated research workspace. `npm start -- --port 8080` starts the preview server. To preview subdirectory hosting, add `--base-path /Model_Atlas` and visit `/Model_Atlas/`.
 
 After editing `data/atlas_articles.json`, run `node scripts/build-data.mjs` and include the generated `data/atlas_articles.js` in the same change. Model-note releases follow four gates: author paper-granular notes, build the complete candidate under `data/notes/release-candidate/`, audit that exact candidate, then explicitly promote it. `build-model-notes.mjs` never overwrites the public pair directly. `npm run audit:candidate` completes and records the full candidate audit without touching `data/model_notes.{json,js}`; the normal `audit:notes` command is the separate promotion action. The corresponding `--check` commands and the test suite detect stale artifacts. HTTP errors are reported directly; the local snapshot does not hide failed hosted requests.
 
