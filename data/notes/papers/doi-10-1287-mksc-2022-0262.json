@@ -1,0 +1,842 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mksc-2022-0262",
+  "sourcePdfSha256": "77dc772074a01f8409427f413b6286451a112b3c67cb6c6653ae7edbc044f212",
+  "extractionPagesSha256": "ba15304c948a9c3fc654b267c25015a020934a58dd69cf4a1cba83e2e9b79656",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "9b2eac719acd53e9587cee1354a58d486ed7c006ab07f26c6579b280d0f64290",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "0c119d575239eebb02b19231980f1a52a71149d50236af2b53a32e95003c22a8",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2022-0262/0c119d575239eebb02b19231980f1a52a71149d50236af2b53a32e95003c22a8.json",
+  "extractionQaDecisionSha256": "ed69a73d92ff62cebe99fc858ae8d1eecab99f6c512c53a2f42a935aa658f787",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mksc-2022-0262",
+    "question": "When should an e-commerce marketplace place its private label in the sponsored top slot rather than auction that slot to third-party sellers, and how does this choice affect prices, platform revenue, sellers, and consumers?",
+    "overview": "The paper explicitly develops a sequential game among a marketplace, two strategic third-party sellers, and consumers. Platform configuration, seller participation, simultaneous prices and auction bids, ad-slot allocation, and purchases are all endogenous equilibrium objects.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        8,
+        9,
+        11,
+        12,
+        13,
+        17
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Self-Preferencing in E-Commerce Marketplaces model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper explicitly develops a sequential game among a marketplace, two strategic third-party sellers, and consumers. Platform configuration, seller participation, simultaneous prices and auction bids, ad-slot allocation, and purchases are all endogenous equilibrium objects.",
+        "objects": [
+          "An e-commerce platform that may sell a private label",
+          "Two strategic third-party sellers",
+          "Consumers with horizontally differentiated product preferences"
+        ],
+        "inputs": [
+          "The platform publicly commits to marketplace configuration",
+          "Prices and the realized product ranking are observed",
+          "The distribution of consumer locations and consideration sets is common knowledge",
+          "Each seller has an exogenous outside-option profit pi_0 and anticipates equilibrium demand, prices, and bids"
+        ],
+        "decisions": [
+          "The platform chooses commission, private-label entry, sponsored-slot availability, and whether to concede or contest the slot",
+          "Third-party sellers choose whether to participate",
+          "The platform/private label and third-party sellers choose product prices",
+          "Third-party sellers choose ad-auction bids",
+          "Consumers choose among products in their consideration sets or the outside option"
+        ],
+        "assumptions": [
+          "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label",
+          "Products are horizontally differentiated with zero marginal cost; vertical quality differences are absent in the focal model",
+          "Consumers consider at most two varieties in a Spokes demand model, and only the top position is prominent",
+          "Sponsored placement raises consideration probability alpha but does not change product valuation",
+          "The main model uses a pay-per-impression second-price auction, an exogenous commission phi, and moderate product valuation so equilibrium prices are interior and market coverage can change"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "An e-commerce platform that may sell a private label",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "an e-commerce platform that may sell a private label"
+              }
+            },
+            {
+              "value": "Two strategic third-party sellers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "two strategic third-party sellers"
+              }
+            },
+            {
+              "value": "Consumers with horizontally differentiated product preferences",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "consumers with horizontally differentiated product preferences"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The platform publicly commits to marketplace configuration",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The platform publicly commits to marketplace configuration before seller participation and pricing."
+              }
+            },
+            {
+              "value": "Prices and the realized product ranking are observed",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Prices and the realized product ranking are observed before consumers purchase."
+              }
+            },
+            {
+              "value": "The distribution of consumer locations and consideration sets is common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The distribution of consumer locations and consideration sets is common knowledge, while each consumer knows her own tastes and distances."
+              }
+            },
+            {
+              "value": "Each seller has an exogenous outside-option profit pi_0 and anticipates equilibrium demand, prices, and bids",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each seller has an exogenous outside-option profit pi_0 and anticipates equilibrium demand, prices, and bids."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The platform chooses commission, private-label entry, sponsored-slot availability, and whether to concede or contest the slot",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform chooses commission, private-label entry, sponsored-slot availability, and whether to concede or contest the slot"
+              }
+            },
+            {
+              "value": "Third-party sellers choose whether to participate",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "third-party sellers choose whether to participate"
+              }
+            },
+            {
+              "value": "The platform/private label and third-party sellers choose product prices",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform/private label and third-party sellers choose product prices"
+              }
+            },
+            {
+              "value": "Third-party sellers choose ad-auction bids",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "third-party sellers choose ad-auction bids"
+              }
+            },
+            {
+              "value": "Consumers choose among products in their consideration sets or the outside option",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "consumers choose among products in their consideration sets or the outside option"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label."
+              }
+            },
+            {
+              "value": "Products are horizontally differentiated with zero marginal cost; vertical quality differences are absent in the focal model",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Products are horizontally differentiated with zero marginal cost; vertical quality differences are absent in the focal model."
+              }
+            },
+            {
+              "value": "Consumers consider at most two varieties in a Spokes demand model, and only the top position is prominent",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Consumers consider at most two varieties in a Spokes demand model, and only the top position is prominent."
+              }
+            },
+            {
+              "value": "Sponsored placement raises consideration probability alpha but does not change product valuation",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Sponsored placement raises consideration probability alpha but does not change product valuation."
+              }
+            },
+            {
+              "value": "The main model uses a pay-per-impression second-price auction, an exogenous commission phi, and moderate product valuation so equilibrium prices are interior and market coverage can change",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The main model uses a pay-per-impression second-price auction, an exogenous commission phi, and moderate product valuation so equilibrium prices are interior and market coverage can change."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper derives the envy-free equilibrium bids using the equilibrium prices.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "In the Presence of Sponsored Advertising",
+          "page": 12,
+          "sentence": 28
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.4. Timing of the Game",
+            "equation": "",
+            "quote": "It is also useful to note that the platform announces the configuration of the marketplace (i.e., the commission rate, the existence of a private label, and the inclusion of sponsored advertising) before third-party sellers make their strategic decisions (i.e., participation, bid­ ding, and pricing)."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "pricing",
+              "commission"
+            ],
+            "explanation": "The platform publicly commits to marketplace configuration before seller participation and pricing. Prices and the realized product ranking are observed before consumers purchase. The distribution of consumer locations and consideration sets is common knowledge, while each consumer knows her own tastes and distances. Each seller has an exogenous outside-option profit pi_0 and anticipates equilibrium demand, prices, and bids.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The platform publicly commits to marketplace configuration before seller participation and pricing.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_P^{Contest}",
+                "meaning": "platform total revenue when it contests for the sponsored ad slot · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "fraction of third-party sales revenue collected by the platform · 0<phi<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "probability that the prominent product enters a consumer's consideration set as second preference · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_l",
+                "meaning": "private-label price · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "price of third-party seller i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_l, D_i",
+                "meaning": "equilibrium demand for the private label and each third-party product · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "It is also useful to note that the platform announces the configuration of the marketplace (i.e., the commission rate, the existence of a private label, and the inclusion of sponsored advertising) before third-party sellers make their strategic decisions (i.e., participation, bidding, and pricing).",
+              "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label.",
+              "Consumers consider at most two varieties in a Spokes demand model, and only the top position is prominent.",
+              "Sponsored placement raises consideration probability alpha but does not change product valuation."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.4. Timing of the Game",
+                "equation": "",
+                "quote": "It is also useful to note that the platform announces the configuration of the marketplace (i.e., the commission rate, the existence of a private label, and the inclusion of sponsored advertising) before third-party sellers make their strategic decisions (i.e., participation, bid­ ding, and pricing)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Pricing: “strategic decisions (i.e., participation, bidding, and Pricing ).”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  3,
+                  4
+                ]
+              },
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Commission fee as “commission”: “commission”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Backward induction decomposes the game into marketplace-configuration subgames. Spokes demand yields price best responses, locally envy-free bidding selects sponsored-auction outcomes, and equilibrium platform revenues are compared to derive self-preferencing thresholds and welfare implications.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in platforms and marketplaces",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Backward induction decomposes the game into marketplace-configuration subgames.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_P^{Contest}",
+                "meaning": "platform total revenue when it contests for the sponsored ad slot · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "fraction of third-party sales revenue collected by the platform · 0<phi<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_l",
+                "meaning": "private-label price · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_l, D_i",
+                "meaning": "equilibrium demand for the private label and each third-party product · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v",
+                "meaning": "base valuation for a product in the consumer's consideration set · moderate-value interval defined by Equation (1)",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label.",
+              "Consumers consider at most two varieties in a Spokes demand model, and only the top position is prominent.",
+              "The main model uses a pay-per-impression second-price auction, an exogenous commission phi, and moderate product valuation so equilibrium prices are interior and market coverage can change."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4. Analysis",
+                "equation": "",
+                "quote": "We solve the game through backward induction."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We solve the game through backward induction.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "backward-induction-platform-configuration-equilibrium-with-simul",
+            "label": "Backward-induction platform-configuration equilibrium with simultaneous pricing and locally envy-free auction bidding",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Backward-induction platform-configuration equilibrium with simultaneous pricing and locally envy-free auction bidding. The paper solves four marketplace subgames by backward induction. Sellers' prices are mutual best responses, bids satisfy a locally envy-free second-price auction selection, and the authors verify joint price-bid deviations for the global equilibrium. The platform then compares equilibrium revenue across benchmark, advertising, private-label, concede, and contest cases.",
+            "searchPhrases": [
+              "how backward-induction platform-configuration equilibrium with simultaneous pricing and locally envy-free auction bidding is represented",
+              "strategic response in platforms and marketplaces",
+              "backward-induction platform-configuration equilibrium with simultaneous pricing and locally envy-free auction bidding strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Backward-induction platform-configuration equilibrium with simultaneous pricing and locally envy-free auction bidding.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_P^{Contest}",
+                "meaning": "platform total revenue when it contests for the sponsored ad slot · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "fraction of third-party sales revenue collected by the platform · 0<phi<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_l",
+                "meaning": "private-label price · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_l, D_i",
+                "meaning": "equilibrium demand for the private label and each third-party product · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v",
+                "meaning": "base valuation for a product in the consumer's consideration set · moderate-value interval defined by Equation (1)",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label.",
+              "The main model uses a pay-per-impression second-price auction, an exogenous commission phi, and moderate product valuation so equilibrium prices are interior and market coverage can change.",
+              "Third-party sellers simultaneously choose prices and bids and participate only when net profit reaches the outside option."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.2. In the Presence of Sponsored Advertising",
+                "equation": "",
+                "quote": "Specifically, we use the locally envy-free equilibrium selection criterion of Edelman et al. (2007) and obtain the highest possible equilibrium bid for a seller."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Specifically, we use the locally envy-free equilibrium selection criterion of Edelman et al. (2007) and obtain the highest”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "auctions"
+            ],
+            "explanation": "At T=0 the platform sets commission, decides whether to introduce a private label and sponsored slot, and if both exist whether to concede the slot or contest it for the private label. At T=1 each third-party seller chooses participation relative to its outside option. At T=2 participating sellers and the private label simultaneously set prices, and sellers submit ad-auction bids. At T=3 the second-price auction outcome is realized.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in platforms and marketplaces",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_P^{Contest}",
+                "meaning": "platform total revenue when it contests for the sponsored ad slot · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "fraction of third-party sales revenue collected by the platform · 0<phi<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_l",
+                "meaning": "private-label price · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "price of third-party seller i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_l, D_i",
+                "meaning": "equilibrium demand for the private label and each third-party product · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_i",
+                "meaning": "third-party seller i's sponsored-slot bid · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "If product valuation is moderate (vConcede < v < vConcede) and if the platform concedes the ad slot to a third-party seller, seller z, who wins the ad auction, sets the lowest price followed by seller k in the organic slot and then private label l, implying pConcede z < pConcede k < pConcede l .",
+              "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label.",
+              "Sponsored placement raises consideration probability alpha but does not change product valuation.",
+              "The main model uses a pay-per-impression second-price auction, an exogenous commission phi, and moderate product valuation so equilibrium prices are interior and market coverage can change."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.4. In the Presence of Sponsored Advertising",
+                "equation": "",
+                "quote": "If product valuation is moderate (vConcede < v < vConcede) and if the platform concedes the ad slot to a third-party seller, seller z, who wins the ad auction, sets the lowest price fol­ lowed by seller k in the organic slot and then private label l, implying pConcede z < pConcede k < pConcede l ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “If product valuation is moderate (vConcede < v < vConcede) and if the platform concedes the ad slot”.",
+                "conditionRefs": [
+                  0,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Auctions: “If product valuation is moderate (vConcede < v < vConcede) and if the platform concedes the ad slot”.",
+                "conditionRefs": [
+                  0,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "commission"
+            ],
+            "explanation": "In the contest subcase, the platform's total revenue is private-label sales revenue plus commission on the two third-party products; the private-label price is chosen anticipating the third-party sellers' simultaneous equilibrium prices.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in platforms and marketplaces",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\Pi_P^{Contest}=p_l^{Contest}D_l+2\\phi p_i^{Contest}D_i",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\Pi_P^{Contest}",
+                "meaning": "platform total revenue when it contests for the sponsored ad slot · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "fraction of third-party sales revenue collected by the platform · 0<phi<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "probability that the prominent product enters a consumer's consideration set as second preference · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_l",
+                "meaning": "private-label price · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "price of third-party seller i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_l, D_i",
+                "meaning": "equilibrium demand for the private label and each third-party product · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_i",
+                "meaning": "third-party seller i's sponsored-slot bid · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v",
+                "meaning": "base valuation for a product in the consumer's consideration set · moderate-value interval defined by Equation (1)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_0",
+                "meaning": "outside-option profit of a third-party seller · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Broadly, when deciding on whether to concede or to contest, the platform faces a tradeoff among the three revenue streams: sponsored ad revenue, private label sales, and commission from third-party sellers.",
+              "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label.",
+              "Products are horizontally differentiated with zero marginal cost; vertical quality differences are absent in the focal model.",
+              "Consumers consider at most two varieties in a Spokes demand model, and only the top position is prominent."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "Broadly, when deciding on whether to concede or to contest, the platform faces a tradeoff among the three revenue streams: sponsored ad revenue, private label sales, and commission from third-party sellers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Commission fee as “commission”: “ad revenue, private label sales, and commission from third-party sellers.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "commission"
+            ],
+            "explanation": "The platform chooses commission, private-label entry, sponsored-slot availability, and whether to concede or contest the slot third-party sellers choose whether to participate the platform/private label and third-party sellers choose product prices third-party sellers choose ad-auction bids consumers choose among products in their consideration sets or the outside option",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in platforms and marketplaces",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The platform chooses commission, private-label entry, sponsored-slot availability, and whether to concede or contest the slot third-party sellers choose whether to participate the platform/private label and third-party sellers choose product prices third-party sellers choose ad-auction bids consumers choose among products in their consideration sets or the outside option",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_P^{Contest}",
+                "meaning": "platform total revenue when it contests for the sponsored ad slot · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "fraction of third-party sales revenue collected by the platform · 0<phi<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "probability that the prominent product enters a consumer's consideration set as second preference · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_l",
+                "meaning": "private-label price · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "price of third-party seller i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_l, D_i",
+                "meaning": "equilibrium demand for the private label and each third-party product · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When the platform chooses the commission rate, if the platform gives prominence to the private label by placing it in the ad slot (instead of conceding the ad slot to third-party sellers), the platform hurts consumer welfare and total welfare.",
+              "The platform is a monopoly marketplace hosting two symmetric third-party sellers and may add one private label.",
+              "Products are horizontally differentiated with zero marginal cost; vertical quality differences are absent in the focal model.",
+              "Consumers consider at most two varieties in a Spokes demand model, and only the top position is prominent."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "5.2. Endogenous Commission Rate",
+                "equation": "",
+                "quote": "When the platform chooses the commission rate, if the platform gives prominence to the private label by placing it in the ad slot (instead of conceding the ad slot to third-party sellers), the platform hurts consumer welfare and total welfare."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Commission fee as “platform commission”: “When the platform chooses the commission rate, if the platform gives prominence to the private label by placing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "77dc772074a01f8409427f413b6286451a112b3c67cb6c6653ae7edbc044f212",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "0c119d575239eebb02b19231980f1a52a71149d50236af2b53a32e95003c22a8",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2022-0262/0c119d575239eebb02b19231980f1a52a71149d50236af2b53a32e95003c22a8.json",
+      "extractionQaDecisionSha256": "ed69a73d92ff62cebe99fc858ae8d1eecab99f6c512c53a2f42a935aa658f787",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

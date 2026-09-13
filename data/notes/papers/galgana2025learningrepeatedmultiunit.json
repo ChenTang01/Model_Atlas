@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "galgana2025learningrepeatedmultiunit",
+  "sourcePdfSha256": "f0ec803ee7ebdf7136424a4023aa4ffbd30bf55bbf27344bd1693ce0e7bc253e",
+  "extractionPagesSha256": "3d8e37370263e5f9bddf005f7e4ae64f606be69be1d5bf15cc246c324f696d52",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "9676ef4fac7cd935b6121bf6500b774f77aacf80b23bc05659134e114a5c8bad",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "502b06b278de15a78836562f14192bd0485b2488705ecb7c9b9c72a9882466f7",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/galgana2025learningrepeatedmultiunit/502b06b278de15a78836562f14192bd0485b2488705ecb7c9b9c72a9882466f7.json",
+  "extractionQaDecisionSha256": "8ce9224b896c41440cb7bfcb8349e190a0438a18c7dab236aab6b580f7a356a2",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "galgana2025learningrepeatedmultiunit",
+    "question": "What equilibrium and welfare properties arise in multiunit pay-as-bid auctions, and how can a bidder learn near-optimal bids when opponents' repeated bids are unknown or adversarial?",
+    "overview": "The paper contains a full one-shot auction-game equilibrium analysis and a repeated no-regret learning analysis; regret minimization is not mislabeled as an equilibrium concept.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        7,
+        10,
+        13,
+        15
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Repeated pay-as-bid multiunit auctions",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper contains a full one-shot auction-game equilibrium analysis and a repeated no-regret learning analysis; regret minimization is not mislabeled as an equilibrium concept.",
+        "objects": [
+          "N strategic bidders"
+        ],
+        "inputs": [
+          "Baseline valuations are fixed and private to each bidder",
+          "The bid grid and tie-breaking rule are common knowledge",
+          "Repeated-game algorithms allow adversarial rival bid sequences and either full or bandit feedback",
+          "The rewards",
+          "Their utility for the submitted bid vector"
+        ],
+        "decisions": [
+          "Each bidder submits a vector of marginal-unit bids",
+          "A learning bidder updates its bid vector",
+          "The sum of exponentiated partial bid vector estimated utilities recursively",
+          "The bid for one unit",
+          "License auctions use the uniform price auction"
+        ],
+        "assumptions": [
+          "Units are identical and each bidder has decreasing marginal values",
+          "Bids lie on a discrete grid and are nonincreasing across units",
+          "Bidders do not bid above value",
+          "A fixed deterministic tie-breaking rule is used",
+          "Values are fixed across the repeated horizon in the baseline"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "N strategic bidders",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "N strategic bidders"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Baseline valuations are fixed and private to each bidder",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "baseline valuations are fixed and private to each bidder"
+              }
+            },
+            {
+              "value": "The bid grid and tie-breaking rule are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "the bid grid and tie-breaking rule are common knowledge"
+              }
+            },
+            {
+              "value": "Repeated-game algorithms allow adversarial rival bid sequences and either full or bandit feedback",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "repeated-game algorithms allow adversarial rival bid sequences and either full or bandit feedback"
+              }
+            },
+            {
+              "value": "The rewards",
+              "source": {
+                "type": "section",
+                "section": "Online Setting: OMD",
+                "page": 12,
+                "sectionIndex": 15,
+                "sentence": 32,
+                "quote": "the rewards",
+                "matchedText": "the rewards",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Their utility for the submitted bid vector",
+              "source": {
+                "type": "section",
+                "section": "Online Setting: Decoupled",
+                "page": 11,
+                "sectionIndex": 14,
+                "sentence": 44,
+                "quote": "Instead, the agent only observes their utility for the submitted bid vector."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each bidder submits a vector of marginal-unit bids",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each bidder submits a vector of marginal-unit bids"
+              }
+            },
+            {
+              "value": "A learning bidder updates its bid vector",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "a learning bidder updates its bid vector after full or bandit feedback"
+              }
+            },
+            {
+              "value": "The sum of exponentiated partial bid vector estimated utilities recursively",
+              "source": {
+                "type": "section",
+                "section": "Online Setting: Decoupled",
+                "page": 11,
+                "sectionIndex": 14,
+                "sentence": 49,
+                "quote": "Both algorithms maintain node weight estimates, compute the sum of exponentiated partial bid vector esti­ mated utilities recursively",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The bid for one unit",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Scheme for Hindsight",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 10,
+                "quote": "This observation allows us to devise a DP where in each step of the DP, we decide about the bid for one unit",
+                "matchedText": "the bid for one unit",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "License auctions use the uniform price auction",
+              "source": {
+                "type": "section",
+                "section": "Other Related Works",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 58,
+                "quote": "The EU-ETS car­ bon license auctions use the uniform price auction",
+                "matchedText": "license auctions use the uniform price auction",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Units are identical and each bidder has decreasing marginal values",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Units are identical and each bidder has decreasing marginal values."
+              }
+            },
+            {
+              "value": "Bids lie on a discrete grid and are nonincreasing across units",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Bids lie on a discrete grid and are nonincreasing across units."
+              }
+            },
+            {
+              "value": "Bidders do not bid above value",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Bidders do not bid above value."
+              }
+            },
+            {
+              "value": "A fixed deterministic tie-breaking rule is used",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A fixed deterministic tie-breaking rule is used."
+              }
+            },
+            {
+              "value": "Values are fixed across the repeated horizon in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Values are fixed across the repeated horizon in the baseline."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "In this work, we study the problem of optimizing bidding strategies from the perspective of a single bidder.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Learning in Repeated Multiunit Pay-as-Bid Auctions",
+          "page": 1,
+          "sentence": 4
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 10,
+            "section": "4.3. Online Setting: Decoupled",
+            "equation": "",
+            "quote": "Our algorithms instead sequen­ tially sample a singular bid value from each layer of our DP graph such that the probability of sampling a partic­ ular vector of bids bt is precisely equal to the probability of the exponential weights algorithm selecting bt.4 In the following sections, we describe our algorithm for both full information and bandit settings."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "auctions"
+            ],
+            "explanation": "In each round bidders simultaneously submit nonincreasing bid vectors; the auction allocates M units to the highest marginal bids and charges winning bids. Across rounds a focal bidder updates from observed or bandit feedback. simultaneous multiunit auction one-shot equilibrium analysis",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in auctions and market design",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: In each round bidders simultaneously submit nonincreasing bid vectors; the auction allocates M units to the highest marginal bids and charges winning bids.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\mu_n(b_n, b_{-n})",
+                "meaning": "one-round utility of bidder n at the submitted bid profile · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_{n, m}",
+                "meaning": "bid by bidder n for its m-th unit · paper-defined discrete bid set",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_n(b)",
+                "meaning": "number of units allocated to bidder n under bid profile b · nonnegative integer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "n",
+                "meaning": "bidder index · finite bidder set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Units are identical and each bidder has decreasing marginal values.",
+              "Bids lie on a discrete grid and are nonincreasing across units."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.2. Auction Format: PAB",
+                "equation": "",
+                "quote": "The auction operates according to the following rules: In a PAB auction, all bids submitted across the N bid­ ders are arranged in descending order."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Auctions: “The auction operates according to the following rules: In a PAB auction, all bids submitted across the N”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "auctions"
+            ],
+            "explanation": "A bidder's one-shot payoff is total value of units won minus its winning bids; the repeated learner minimizes regret relative to the best fixed feasible bid vector.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in auctions and market design",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\mu_n(b_n,b_{-n})=\\sum_{m=1}^{x_n(b)}(v_{n,m}-b_{n,m})",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\mu_n(b_n, b_{-n})",
+                "meaning": "one-round utility of bidder n at the submitted bid profile · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_{n, m}",
+                "meaning": "bid by bidder n for its m-th unit · paper-defined discrete bid set",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_{n, m}",
+                "meaning": "bidder n's value for its m-th unit · paper-defined unit value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_n(b)",
+                "meaning": "number of units allocated to bidder n under bid profile b · nonnegative integer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "n",
+                "meaning": "bidder index · finite bidder set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Beyond the well-known fact that the class of CCEs (respectively, CEs) comprise the limit cycle of no external (respectively, internal) regret learning dynamics in repeated games (Cesa-Bianchi and Lugosi 2006), CCEs and CEs are of major interest they possess strong welfare guarantees in smooth games, such as PAB auctions (Roughgarden 2012, Syrgkanis and Tardos 2012, de Keijzer et al. 2013a, Feldman et al. 2016, Roughgarden et al. 2017).",
+              "Units are identical and each bidder has decreasing marginal values.",
+              "Bids lie on a discrete grid and are nonincreasing across units."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3. Equilibria of PAB Auctions",
+                "equation": "(1)",
+                "quote": "Beyond the well-known fact that the class of CCEs (respectively, CEs) comprise the limit cycle of no external (respectively, internal) regret learning dynamics in repeated games (Cesa-Bianchi and Lugosi 2006), CCEs and CEs are of major interest they possess strong welfare guarantees in smooth games, such as PAB auctions (Roughgarden 2012, Syrgkanis and Tardos 2012, de Keijzer et al. 2013a, Feldman et al. 2016, Roughgarden et al. 2017)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Auctions: “Auctions”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Each bidder submits a vector of marginal-unit bids a learning bidder updates its bid vector after full or bandit feedback",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in auctions and market design",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each bidder submits a vector of marginal-unit bids a learning bidder updates its bid vector after full or bandit feedback",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\mu_n(b_n, b_{-n})",
+                "meaning": "one-round utility of bidder n at the submitted bid profile · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_{n, m}",
+                "meaning": "bid by bidder n for its m-th unit · paper-defined discrete bid set",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_n(b)",
+                "meaning": "number of units allocated to bidder n under bid profile b · nonnegative integer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "n",
+                "meaning": "bidder index · finite bidder set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Units are identical and each bidder has decreasing marginal values.",
+              "Bids lie on a discrete grid and are nonincreasing across units."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.3. Online Setting: Decoupled",
+                "equation": "",
+                "quote": "Our algorithms instead sequen­ tially sample a singular bid value from each layer of our DP graph such that the probability of sampling a partic­ ular vector of bids bt is precisely equal to the probability of the exponential weights algorithm selecting bt.4 In the following sections, we describe our algorithm for both full information and bandit settings."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "bandit-feedback"
+            ],
+            "explanation": "Baseline valuations are fixed and private to each bidder the bid grid and tie-breaking rule are common knowledge repeated-game algorithms allow adversarial rival bid sequences and either full or bandit feedback",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in auctions and market design",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Baseline valuations are fixed and private to each bidder the bid grid and tie-breaking rule are common knowledge repeated-game algorithms allow adversarial rival bid sequences and either full or bandit feedback",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\mu_n(b_n, b_{-n})",
+                "meaning": "one-round utility of bidder n at the submitted bid profile · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_{n, m}",
+                "meaning": "bid by bidder n for its m-th unit · paper-defined discrete bid set",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_{n, m}",
+                "meaning": "bidder n's value for its m-th unit · paper-defined unit value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_n(b)",
+                "meaning": "number of units allocated to bidder n under bid profile b · nonnegative integer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "n",
+                "meaning": "bidder index · finite bidder set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Units are identical and each bidder has decreasing marginal values.",
+              "Bids lie on a discrete grid and are nonincreasing across units."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6. Experiments",
+                "equation": "",
+                "quote": "In first experiment, we simulate the mar­ ket dynamics induced by our decoupled exponential weights algorithms under full information (Algorithm 2) and bandit feedback (Algorithm 3)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "bandit-feedback",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Bandit feedback: “under full information (Algorithm 2) and Bandit feedback (Algorithm 3).”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "pure-nash-equilibrium",
+            "label": "Pure Nash equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The model's equilibrium concept is Pure Nash equilibrium (PNE), coarse correlated equilibrium (CCE), and correlated equilibrium (CE); no-regret play converges in empirical distribution to CCE. The paper separately states PNE existence/sufficient conditions and welfare bounds for PNE/CCE/CE, then proves regret guarantees.",
+            "searchPhrases": [
+              "how pure nash equilibrium is represented",
+              "strategic response in auctions and market design",
+              "pure nash equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Pure Nash equilibrium (PNE), coarse correlated equilibrium (CCE), and correlated equilibrium (CE); no-regret play converges in empirical distribution to CCE.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "n",
+                "meaning": "bidder index · finite bidder set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The learning guarantees do not assume stochastic rival behavior."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "5. Competitive Ratio Grows in N Despite Regret",
+                "equation": "",
+                "quote": "One justification for this phenome­ non is that individual bidders have a smaller impact on the market clearing price and thus have less of an incen­ tive to strategically shade their bids leading to faster con­ vergence toward equilibrium behavior."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “One justification for this phenomenon is that individual bidders have a smaller impact on the market clearing price”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "f0ec803ee7ebdf7136424a4023aa4ffbd30bf55bbf27344bd1693ce0e7bc253e",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "502b06b278de15a78836562f14192bd0485b2488705ecb7c9b9c72a9882466f7",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/galgana2025learningrepeatedmultiunit/502b06b278de15a78836562f14192bd0485b2488705ecb7c9b9c72a9882466f7.json",
+      "extractionQaDecisionSha256": "8ce9224b896c41440cb7bfcb8349e190a0438a18c7dab236aab6b580f7a356a2",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

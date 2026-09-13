@@ -1,0 +1,1485 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-1221",
+  "sourcePdfSha256": "927ca17695e242d8eed2b7e3ad2b66bccb055b3604ff97710858a848b5950869",
+  "extractionPagesSha256": "185aba585bae1df7f4097c4dd17a682d09af176716b646ab2e20ca705dde7ee6",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "673706e25255cee1fc857ce745fa807a6d516f846dc0108e72a5710d69c7fa3d",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "a893e63b21188b696be300f701a8b0d39d96105ff75b163a3c1f86223f4542c8",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1221/a893e63b21188b696be300f701a8b0d39d96105ff75b163a3c1f86223f4542c8.json",
+  "extractionQaDecisionSha256": "42d57f1e6d4643f764145344e3cd4afa5e99b78ebd772b4fb3c0b826ce9df042",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-1221",
+    "question": "How do platform control capabilities affect performance?",
+    "overview": "Motivated by ride-hailing platforms such as Uber, Lyft and Didi, we study the problem of matching riders with self-interested drivers over a spatial network. We focus on the performance impact of two operational platform controls—demand-side admission control and supply-side repositioning control—considering the interplay with two practically important challenges: (i) spatial demand imbalances prevail for extended periods of time; and (ii) self-interested drivers strategically decide whether to join the network, and, if so, whether to reposition when not serving riders. The paper develops and analyze the steady-state behavior of a novel game-theoretic fluid model of a two-location, four-route loss network.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        15
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "model-and-problem-formulations",
+        "name": "Model and Problem Formulations",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Motivated by ride-hailing platforms such as Uber, Lyft and Didi, we study the problem of matching riders with self-interested drivers over a spatial network. We focus on the performance impact of two operational platform controls—demand-side admission control and supply-side repositioning control—considering the interplay with two practically important challenges: (i) spatial demand imbalances prevail for extended periods of time; and (ii) self-interested drivers strategically decide whether to join the network, and, if so, whether to reposition when not serving riders.",
+        "objects": [
+          "Platforms",
+          "Drivers",
+          "Two locations",
+          "Firm",
+          "Nodes"
+        ],
+        "inputs": [
+          "The potential demand rate vector",
+          "Cost c",
+          "Private information",
+          "The demand arrival rates",
+          "Capacity n"
+        ],
+        "decisions": [
+          "Whether to join the network",
+          "Reject demand at the low-demand location even if drivers are in excess supply",
+          "Serve demand for the platform",
+          "Ride requests that originate at this location",
+          "Reposition to the other location"
+        ],
+        "assumptions": [
+          "For simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis",
+          "Balseiro et al. (2021) and Chen et al. (2020) study state-dependent pricing under stationary and nonstationary demand, respectively",
+          "Ample driver supply is available at a fixed cost, and one-period travel times"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Platforms",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Motivated by ride-hailing platforms such as Uber, Lyft and Didi, we study the problem of matching riders with self-interested drivers over a spatial network.",
+                "matchedText": "platforms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Drivers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Motivated by ride-hailing platforms such as Uber, Lyft and Didi, we study the problem of matching riders with self-interested drivers over a spatial network.",
+                "matchedText": "drivers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Two locations",
+              "source": {
+                "type": "section",
+                "section": "Model Primitives",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 4,
+                "quote": "two locations",
+                "matchedText": "two locations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Firm",
+              "source": {
+                "type": "section",
+                "section": "Model Primitives",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 34,
+                "quote": "The platform is operated by a monopolist firm that matches drivers with riders with the objec­ tive of maximizing its revenue rate.",
+                "matchedText": "firm",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Nodes",
+              "source": {
+                "type": "section",
+                "section": "Operational Controls to Manage Demand Imbal",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 49,
+                "quote": "Most papers model the system as a closed queueing-loss network: nodes correspond to locations, a fixed set of cars circulate among nodes where they queue while waiting for trip matches, and trip requests are lost if not matched upon arrival.",
+                "matchedText": "nodes",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The potential demand rate vector",
+              "source": {
+                "type": "section",
+                "section": "Model Primitives",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "The potential demand rate for route-lk trips is Λlk, and Λ denotes the potential demand rate vector.",
+                "matchedText": "the potential demand rate vector",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cost c",
+              "source": {
+                "type": "section",
+                "section": "Model Primitives",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 38,
+                "quote": "The platform knows the model primitives, including the potential demand rates Λ, the destination of each trip request, the travel times t, the driving cost c, and the opportunity cost rate distribution F.",
+                "matchedText": "cost c",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Private information",
+              "source": {
+                "type": "section",
+                "section": "Model Primitives",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 39,
+                "quote": "The driver opportu­ nity cost rates are private information, not known by the platform.",
+                "matchedText": "private information",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The demand arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Operational Controls to Manage Demand Imbal",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 53,
+                "quote": "Kanoria and Qian (2019) study the joint problem of state-dependent pricing (or admis­ sion control) and matching in the absence of prior knowledge of the demand arrival rates.",
+                "matchedText": "the demand arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Capacity n",
+              "source": {
+                "type": "section",
+                "section": "Two-Step Solution Approach",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 1,
+                "quote": "For regime X ∈{C,M,A} and capacity n, let CX(n) denote the set of capacity allocations (s, r, q) that satisfy all the constraints, except the driver participation constraints (12d)–(12e).",
+                "matchedText": "capacity n",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to join the network",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "We focus on the performance impact of two operational platform controls—demand-side admission control and supply-side repositioning control—considering the interplay with two practically important challenges: (i) spatial demand imbalances prevail for extended periods of time; and (ii) self-interested drivers strategically decide whether to join the network, and, if so, whether to reposition when not serving riders.",
+                "matchedText": "whether to join the network",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Reject demand at the low-demand location even if drivers are in excess supply",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "Second, we provide insights on how and why platform control impacts equilibrium performance, notably with new findings on the role of admission control: the platform may find it optimal to strategically reject demand at the low-demand location even if drivers are in excess supply, to induce repositioning to the high-demand location.",
+                "matchedText": "reject demand at the low-demand location even if drivers are in excess supply",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Serve demand for the platform",
+              "source": {
+                "type": "section",
+                "section": "Model Primitives",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 7,
+                "quote": "The travel times are constant and, in particular, independent of the number of drivers that serve demand for the plat­ form",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Ride requests that originate at this location",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulations",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 51,
+                "quote": "At each location, drivers that become available (i.e., do not reposition upon arrival) join a single queue, to be matched with accepted ride requests that originate at this location",
+                "matchedText": "ride requests that originate at this location",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Reposition to the other location",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulations",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 67,
+                "quote": "A driver’s repositioning strategy is a vec­ tor of probabilities, denoted by ˜η, that specify for each location the fraction of times that the driver will, upon arrival, directly reposition to the other location",
+                "matchedText": "reposition to the other location",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "For simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis",
+              "source": {
+                "type": "section",
+                "section": "Operational Controls to Manage Demand Imbal",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 14,
+                "quote": "Prices are fixed; we assume for simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis.",
+                "matchedText": "for simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Balseiro et al. (2021) and Chen et al. (2020) study state-dependent pricing under stationary and nonstationary demand, respectively",
+              "source": {
+                "type": "section",
+                "section": "Operational Controls to Manage Demand Imbal",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 52,
+                "quote": "Balseiro et al. (2021) and Chen et al. (2020) study state-dependent pricing under stationary and nonstation­ ary demand, respectively.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Ample driver supply is available at a fixed cost, and one-period travel times",
+              "source": {
+                "type": "section",
+                "section": "Operational Controls to Manage Demand Imbal",
+                "page": 4,
+                "sectionIndex": 1,
+                "sentence": 78,
+                "quote": "They ignore driver queueing effects and assume that ample driver supply is available at a fixed cost, and one-period travel times.",
+                "matchedText": "ample driver supply is available at a fixed cost, and one-period travel times.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper formulates these problems in terms of the tuple (λ,ν,w,n).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model and Problem Formulations",
+          "page": 6,
+          "sentence": 74
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "2.1. Model Primitives",
+            "equation": "",
+            "quote": "They decide whether to join the network, and, if so, decide or are directed by the platform whether to reposition (i.e., travel without a rider) from one location to the other."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-and-problem-formulations",
+            "label": "Model and Problem Formulations",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Their arguments could be adapted to our setting; we focus directly on a set of (motivated) steady-state flow equations.",
+            "searchPhrases": [
+              "how model and problem formulations is represented",
+              "system process in platforms and marketplaces",
+              "model and problem formulations system process specification"
+            ],
+            "formal": "Process relation: Their arguments could be adapted to our setting; we focus directly on a set of (motivated) steady-state flow equations.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Prices are fixed; we assume for simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Model and Problem Formulations",
+                "equation": "",
+                "quote": "Their arguments could be adapted to our setting; we focus directly on a set of (motivated) steady-state flow equations."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Their arguments could be adapted to our setting; we focus directly on a set of (motivated) steady-state flow”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "For simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis",
+                  "source": {
+                    "type": "section",
+                    "section": "Operational Controls to Manage Demand Imbal",
+                    "page": 3,
+                    "sectionIndex": 1,
+                    "sentence": 14,
+                    "quote": "Prices are fixed; we assume for simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis.",
+                    "matchedText": "for simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "model-primitives",
+            "label": "Model Primitives",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "They decide whether to join the network, and, if so, decide or are directed by the platform whether to reposition (i.e., travel without a rider) from one location to the other.",
+            "searchPhrases": [
+              "how model primitives is represented",
+              "decision rule in platforms and marketplaces",
+              "model primitives decision rule specification"
+            ],
+            "formal": "Decision rule: They decide whether to join the network, and, if so, decide or are directed by the platform whether to reposition (i.e., travel without a rider) from one location to the other.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The network has two locations (nodes), indexed by l= 1, 2, and four routes (arcs), indexed by lk for l,k ∈{1,2}.",
+              "We impose no restrictions on travel times; specifically, we allow t12 ≠t21, to reflect, for example, different uptown/downtown routes.",
+              "We denote by tlk the travel time on route lk and by t the travel time vector."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.1. Model Primitives",
+                "equation": "",
+                "quote": "They decide whether to join the network, and, if so, decide or are directed by the platform whether to reposition (i.e., travel without a rider) from one location to the other."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “They decide whether to join the network, and, if so, decide or are directed by the platform whether”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "matching-supply-with-demand",
+            "label": "Matching Supply with Demand",
+            "role": "objective",
+            "concepts": [
+              "matching",
+              "queueing"
+            ],
+            "explanation": "The steady-state profit rate of an individual driver, denoted by ̃π( ̃η;λ,w) and derived explicitly in Section 4.1, is a function of his or her repositioning fractions, ̃η, the routing probabilities implied by λ, and the delays in the matching queues, w.",
+            "searchPhrases": [
+              "how matching supply with demand is represented",
+              "modeled objective in platforms and marketplaces",
+              "matching supply with demand modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Up to three flows emanate from location l: drivers that are matched with riders leave at rates λl1 and λl2, and drivers that reposition to location k ≠l leave at rate νlk (without queueing at location l).",
+              "The flow rates (λ,ν) and delays w admit a symmetric driver repositioning equilibrium if, and only if, the resulting unique repositioning fractions η(λ,ν) that satisfy (1) agree with every driver’s best response to (λ,w): η(λ,ν) ∈argmax ̃η ̃π( ̃η;λ,w): (2) Steady-State System Flow Constraints."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.2. Matching Supply with Demand",
+                "equation": "",
+                "quote": "The steady-state profit rate of an individual driver, denoted by ˜π(˜η;λ,w) and derived explicitly in Section 4.1, is a function of his or her repositioning fractions, ˜η, the rout­ ing probabilities implied by λ, and the delays in the matching queues, w."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Matching: “λ, and the delays in the Matching queues, w.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "allocation-problems",
+            "label": "Allocation Problems",
+            "role": "decision",
+            "concepts": [
+              "resource-allocation",
+              "queueing"
+            ],
+            "explanation": "It is intuitive and analytically convenient to reformulate the above problems in terms of the driver capacities allocated to serving riders, repositioning (without riders), and queueing for riders.",
+            "searchPhrases": [
+              "how allocation problems is represented",
+              "decision rule in platforms and marketplaces",
+              "allocation problems decision rule specification"
+            ],
+            "formal": "Decision rule: It is intuitive and analytically convenient to reformulate the above problems in terms of the driver capacities allocated to serving riders, repositioning (without riders), and queueing for riders.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let Slk be the offered load, let slk be the service capacity on route lk, let S and s be the respective vectors, let S = P lkSlk be the total load, and let s = P lkslk be the total service capacity.",
+              "With some abuse of notation, we write the platform revenue function as Π(s) = γps instead of Π(λ), the per-driver profit functions as ̃π( ̃η;s,q) instead of ̃π( ̃η;λ,w) and π(s,r,n) instead of π(λ,ν,n), and the repositioning fractions in (1) as η(s,r) instead of η(λ,ν).",
+              "P lkSlk be the total load, and let s = P lkslk be the total service capacity."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Allocation Problems",
+                "equation": "",
+                "quote": "It is intuitive and analytically convenient to reformulate the above problems in terms of the driver capacities allo­ cated to serving riders, repositioning (without riders), and queueing for riders."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "resource-allocation",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Resource allocation as “capacity allocation”: “It is intuitive and analytically convenient to reformulate the above problems in terms of the driver capacities allocated”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Queueing: “serving riders, repositioning (without riders), and Queueing for riders.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "two-step-solution-approach",
+            "label": "Two-Step Solution Approach",
+            "role": "algorithm",
+            "concepts": [
+              "resource-allocation"
+            ],
+            "explanation": "We solve the platform’s capacity allocation problems (13) in two steps as follows.",
+            "searchPhrases": [
+              "how two-step solution approach is represented",
+              "solution algorithm in platforms and marketplaces",
+              "two-step solution approach solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We solve the platform’s capacity allocation problems (13) in two steps as follows.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Step 2: Solve for the corresponding unique equilibrium participating driver capacity, nX: Show that the per-driver profit πX(n) is nonincreasing, with limn↓0πX(n) = γp c.",
+              "This, together with Assumptions 2 and 3, ensures that the platform-optimal solution from Step 1 yields a unique equilibrium participating capacity, nX ∈(0,N), as the unique solution of (12e).",
+              "For regime X ∈{C,M,A} and capacity n, let CX(n) denote the set of capacity allocations (s, r, q) that satisfy all the constraints, except the driver participation constraints (12d)–(12e)."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.5. Two-Step Solution Approach",
+                "equation": "",
+                "quote": "We solve the platform’s capacity allocation problems (13) in two steps as follows."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "resource-allocation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Resource allocation as “capacity allocation”: “We solve the platform’s capacity allocation problems (13) in two steps as follows.”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "three-control-regimes-problem",
+        "name": "Three Control Regimes: Problem Formulations",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model and Problem Formulations.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-and-problem-formulations"
+          }
+        ],
+        "summary": "The problems for all regimes have in common the platform’s objective function and drivers’ participation decisions that we formalize in this section, as well as the system flow constraints described in Section 2.2. We solve (13) in the two steps specified in Section 2.5. In this case, the platform faces the following trade-off: Increase revenue through strategic demand rejection at the expense of lower driver participation because of reduced per-driver profits; or increase revenue with no (or less) strategic demand rejection, to boost per-driver profits and driver participation.",
+        "objects": [
+          "The platform",
+          "Drivers",
+          "Unserved demand at the low-demand location",
+          "Each driver"
+        ],
+        "inputs": [
+          "The demand"
+        ],
+        "decisions": [
+          "Serve all local requests",
+          "Serve all demand"
+        ],
+        "assumptions": [
+          "Under this policy, the demand served at the low-demand location decreases in the capacity, that is, in zone 3 compared with zone 2.",
+          "(36) is not satisfied"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The platform",
+              "source": {
+                "type": "section",
+                "section": "Three Control Regimes: Problem",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Formulations We study three regimes, Centralized Control, Minimal Con­ trol, and Admission Control, that differ in whether (i) repo­ sitioning decisions are centralized or decentralized, and (ii) the platform exercises admission control or not.",
+                "matchedText": "the platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Drivers",
+              "source": {
+                "type": "section",
+                "section": "Three Control Regimes: Problem",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "The problems for all regimes have in common the platform’s objective function and drivers’ participation decisions that we formalize in this section, as well as the system flow constraints described in Section 2.2.",
+                "matchedText": "drivers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unserved demand at the low-demand location",
+              "source": {
+                "type": "section",
+                "section": "More local demand admitted at the high-demand",
+                "page": 12,
+                "sectionIndex": 2,
+                "sentence": 18,
+                "quote": "strategic demand rejection is optimal if and only if the equilibrium capacity is moderate (see Proposition 4) and there is unserved demand at the low-demand location.",
+                "matchedText": "unserved demand at the low-demand location",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each driver",
+              "source": {
+                "type": "section",
+                "section": "Three Control Regimes: Problem",
+                "sectionIndex": 0,
+                "page": 6,
+                "quote": "Each driver decides whether to participate by comparing his or her opportu­ nity cost to his or her profit rate from joining the system."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The demand",
+              "source": {
+                "type": "section",
+                "section": "More local demand admitted at the high-demand",
+                "page": 11,
+                "sectionIndex": 2,
+                "sentence": 2,
+                "quote": "Under this policy, the demand served at the low-demand location decreases in the capacity, that is, in zone 3 compared with zone 2.",
+                "matchedText": "the demand",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Serve all local requests",
+              "source": {
+                "type": "section",
+                "section": "Centralized Control (C)",
+                "page": 8,
+                "sectionIndex": 1,
+                "sentence": 15,
+                "quote": "The threshold nC 1 is the maximum offered load that can be served without repositioning, that is, all local demand and the balanced cross-location demand; destination-based admission control at the high-demand location allows the platform to serve all local requests",
+                "matchedText": "serve all local requests",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Serve all demand",
+              "source": {
+                "type": "section",
+                "section": "Centralized Control (C)",
+                "page": 8,
+                "sectionIndex": 1,
+                "sentence": 14,
+                "quote": "Importantly, centralized control makes efficient use of capacity: drivers idle in queue only if capacity is ample to serve all demand",
+                "matchedText": "serve all demand",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Under this policy, the demand served at the low-demand location decreases in the capacity, that is, in zone 3 compared with zone 2.",
+              "source": {
+                "type": "section",
+                "section": "More local demand admitted at the high-demand",
+                "page": 11,
+                "quote": "Under this policy, the demand served at the low-demand location decreases in the capacity, that is, in zone 3 compared with zone 2."
+              }
+            },
+            {
+              "value": "(36) is not satisfied",
+              "source": {
+                "type": "section",
+                "section": "Platform revenue gain because of admission control",
+                "sectionIndex": 3,
+                "page": 15,
+                "quote": "(36) is not satisfied.",
+                "matchedText": "(36) is not satisfied.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper formulates these problems in terms of the tuple (λ,ν,w,n).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Three Control Regimes: Problem",
+          "page": 6,
+          "sentence": 3
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 11,
+            "section": "2. More local demand admitted at the high-demand",
+            "equation": "",
+            "quote": "In this case, the platform faces the following trade-off: Increase revenue through strategic demand rejection at the expense of lower driver participation because of reduced per-driver profits; or increase re­ venue with no (or less) strategic demand rejection, to boost per-driver profits and driver participation."
+          }
+        ],
+        "components": [
+          {
+            "id": "three-control-regimes-problem-formulations",
+            "label": "Three Control Regimes: Problem Formulations",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The problems for all regimes have in common the platform’s objective function and drivers’ participation decisions that we formalize in this section, as well as the system flow constraints described in Section 2.2.",
+            "searchPhrases": [
+              "how three control regimes: problem formulations is represented",
+              "modeled objective in platforms and marketplaces",
+              "three control regimes: problem formulations modeled objective specification"
+            ],
+            "formal": "Objective relation: The problems for all regimes have in common the platform’s objective function and drivers’ participation decisions that we formalize in this section, as well as the system flow constraints described in Section 2.2.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let Π(λ) := γpλ · t denote the platform’s steady-state revenue rate, where γp is its commission rate per busy driver and λ · t is the number of busy drivers (and riders in service).",
+              "The approaches (i) and (ii) therefore yield the same profit rate; that is, ̃π(η(λ,ν);λ,w) = π(λ,ν,n) for all (λ,ν,w,n) that satisfy the system flow constraints described in Section 2.2."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.3. Three Control Regimes: Problem Formulations",
+                "equation": "",
+                "quote": "The problems for all regimes have in common the platform’s objective function and drivers’ participation decisions that we formalize in this section, as well as the system flow constraints described in Section 2.2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “regimes have in common the platform’s objective function and drivers’ participation decisions that we formalize in”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "centralized-control-c",
+            "label": "Centralized Control (C)",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We solve (13) in the two steps specified in Section 2.5.",
+            "searchPhrases": [
+              "how centralized control (c) is represented",
+              "solution algorithm in platforms and marketplaces",
+              "centralized control (c) solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We solve (13) in the two steps specified in Section 2.5.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Problem C, given in (3a)–(3f), is equivalent to the capacity allocation problem (13) for regime X= C.",
+              "Importantly, centralized control makes efficient use of capacity: drivers idle in queue only if capacity is ample to serve all demand, that is, n > nC 2 .",
+              "Step 1: For fixed capacity, Proposition 1 characterizes the platformoptimal allocation that solves (14)."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3. Centralized Control (C)",
+                "equation": "",
+                "quote": "We solve (13) in the two steps specified in Section 2.5."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We solve (13) in the two steps specified in Section 2.5.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "more-local-demand-admitted-at-the-high-demand",
+            "label": "More local demand admitted at the high-demand",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "In this case, the platform faces the following trade-off: Increase revenue through strategic demand rejection at the expense of lower driver participation because of reduced per-driver profits; or increase revenue with no (or less) strategic demand rejection, to boost per-driver profits and driver participation.",
+            "searchPhrases": [
+              "how more local demand admitted at the high-demand is represented",
+              "modeled objective in platforms and marketplaces",
+              "more local demand admitted at the high-demand modeled objective specification"
+            ],
+            "formal": "Objective relation: In this case, the platform faces the following trade-off: Increase revenue through strategic demand rejection at the expense of lower driver participation because of reduced per-driver profits; or increase revenue with no (or less) strategic demand rejection, to boost per-driver profits and driver participation.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Under this policy, the demand served at the low-demand location decreases in the capacity, that is, in zone 3 compared with zone 2.",
+              "The corresponding per-driver profit must be driver-optimal and equal the marginal opportunity cost."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "2. More local demand admitted at the high-demand",
+                "equation": "",
+                "quote": "In this case, the platform faces the following trade-off: Increase revenue through strategic demand rejection at the expense of lower driver participation because of reduced per-driver profits; or increase re­ venue with no (or less) strategic demand rejection, to boost per-driver profits and driver participation."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “In this case, the platform faces the following trade-off: Increase revenue through strategic demand rejection at the expense”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "platform-revenue-gain-because-of-admission-control",
+            "label": "Platform revenue gain because of admission control",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Whereas the bounds on the platform gains in Proposition 8 can only be attained when more control yields repositioning, attaining the bound on the per-driver profit gain in (39) requires the absence of repositioning.",
+            "searchPhrases": [
+              "how platform revenue gain because of admission control is represented",
+              "modeled objective in platforms and marketplaces",
+              "platform revenue gain because of admission control modeled objective specification"
+            ],
+            "formal": "Objective relation: Whereas the bounds on the platform gains in Proposition 8 can only be attained when more control yields repositioning, attaining the bound on the per-driver profit gain in (39) requires the absence of repositioning.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The condition N ≥nM 3 = nA 3 requires a sufficiently large driver pool to serve all riders under decentralized repositioning."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "1. Platform revenue gain because of admission control",
+                "equation": "",
+                "quote": "Whereas the bounds on the platform gains in Proposi­ tion 8 can only be attained when more control yields repositioning, attaining the bound on the per-driver profit gain in (39) requires the absence of repositioning."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Whereas the bounds on the platform gains in Proposition 8 can only be attained when more control yields”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "regimes-with-decentralized",
+        "name": "Regimes with Decentralized Repositioning",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model and Problem Formulations.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-and-problem-formulations"
+          }
+        ],
+        "summary": "Under decentralized repositioning, the flow rates (λ,ν) and delays w admit a symmetric driver repositioning equilibrium if, and only if, the corresponding unique repositioning fractions η(λ,ν), in (1), are every driver’s best response to (λ,w), that is, η(λ,ν) ∈argmax ̃η ̃π( ̃η;λ,w) (see (2)). Step 1: for fixed capacity, Proposition 3 characterizes the platform-optimal allocation that solves (14). Step 1: For fixed capacity, Proposition 4 characterizes the platform-optimal allocation that solves (14), where CA(n) = {(s,r,q) : (12a)–(12c),(22)}.",
+        "objects": [
+          "A driver",
+          "The two locations",
+          "The platform",
+          "An excess supply of drivers"
+        ],
+        "inputs": [
+          "Demand"
+        ],
+        "decisions": [
+          "Admit a symmetric driver repositioning equilibrium if",
+          "Reposition from location 1"
+        ],
+        "assumptions": [
+          "For simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis",
+          "Balseiro et al. (2021) and Chen et al. (2020) study state-dependent pricing under stationary and nonstationary demand, respectively",
+          "Ample driver supply is available at a fixed cost, and one-period travel times"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A driver",
+              "source": {
+                "type": "section",
+                "section": "Regimes with Decentralized",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 14,
+                "quote": "Consider a driver who circulates with repositioning fractions ˜η1 ∈[0,1] and ˜η2 = 0 through a network with offered loads s and queue lengths q.",
+                "matchedText": "a driver",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The two locations",
+              "source": {
+                "type": "section",
+                "section": "Regimes with Decentralized",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "the two locations",
+                "matchedText": "the two locations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The platform",
+              "source": {
+                "type": "section",
+                "section": "Regimes with Decentralized",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 62,
+                "quote": "If strategic demand rejection is optimal at some capacity level, then the platform-optimal policy need not be driver-optimal; that is, it may violate condition (16) in Lemma 1.",
+                "matchedText": "the platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An excess supply of drivers",
+              "source": {
+                "type": "section",
+                "section": "Optimal Strategic Demand Rejection to Induce",
+                "sectionIndex": 4,
+                "page": 12,
+                "quote": "Strategic demand rejection under moderate capacity (zone 3) means that the platform rejects some or all rider requests at the low-demand loca­ tion (1), even though there is an excess supply of drivers."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Regimes with Decentralized",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "Under Assumption 1, it is not optimal to reposition from the high-demand location (2) to the low-demand location (1).",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Admit a symmetric driver repositioning equilibrium if",
+              "source": {
+                "type": "section",
+                "section": "Regimes with Decentralized",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "Driver Repositioning Equilibrium Under decentralized repositioning, the flow rates (λ,ν) and delays w admit a symmetric driver repositioning equi­ librium if",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Reposition from location 1",
+              "source": {
+                "type": "section",
+                "section": "Regimes with Decentralized",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 23,
+                "quote": "Inducing drivers not to reposition from location 1",
+                "matchedText": "reposition from location 1",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "For simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis",
+              "source": {
+                "type": "section",
+                "section": "Operational Controls to Manage Demand Imbal",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 14,
+                "quote": "Prices are fixed; we assume for simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis.",
+                "matchedText": "for simplicity that the price per unit travel time is route-independent, though this is not necessary for our analysis.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Balseiro et al. (2021) and Chen et al. (2020) study state-dependent pricing under stationary and nonstationary demand, respectively",
+              "source": {
+                "type": "section",
+                "section": "Operational Controls to Manage Demand Imbal",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 52,
+                "quote": "Balseiro et al. (2021) and Chen et al. (2020) study state-dependent pricing under stationary and nonstation­ ary demand, respectively.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Ample driver supply is available at a fixed cost, and one-period travel times",
+              "source": {
+                "type": "section",
+                "section": "Operational Controls to Manage Demand Imbal",
+                "page": 4,
+                "sectionIndex": 1,
+                "sentence": 78,
+                "quote": "They ignore driver queueing effects and assume that ample driver supply is available at a fixed cost, and one-period travel times.",
+                "matchedText": "ample driver supply is available at a fixed cost, and one-period travel times.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper solves (13) by extending the two-step approach specified in Section 2.5 as follows.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Regimes with Decentralized",
+          "page": 10,
+          "sentence": 60
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 9,
+            "section": "4.1. Driver Repositioning Equilibrium",
+            "equation": "",
+            "quote": "Under decentralized repositioning, the flow rates (λ,ν) and delays w admit a symmetric driver repositioning equi­ librium if, and only if, the corresponding unique reposi­ tioning fractions η(λ,ν), in (1), are every driver’s best response to (λ,w), that is, η(λ,ν) ∈argmax˜η ˜π(˜η;λ,w) (see (2))."
+          }
+        ],
+        "components": [
+          {
+            "id": "driver-repositioning-equilibrium",
+            "label": "Driver Repositioning Equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "Under decentralized repositioning, the flow rates (λ,ν) and delays w admit a symmetric driver repositioning equilibrium if, and only if, the corresponding unique repositioning fractions η(λ,ν), in (1), are every driver’s best response to (λ,w), that is, η(λ,ν) ∈argmax ̃η ̃π( ̃η;λ,w) (see (2)).",
+            "searchPhrases": [
+              "how driver repositioning equilibrium is represented",
+              "strategic response in platforms and marketplaces",
+              "driver repositioning equilibrium strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Under decentralized repositioning, the flow rates (λ,ν) and delays w admit a symmetric driver repositioning equilibrium if, and only if, the corresponding unique repositioning fractions η(λ,ν), in (1), are every driver’s best response to (λ,w), that is, η(λ,ν) ∈argmax ̃η ̃π( ̃η;λ,w) (see (2)).",
+              "Without loss of optimality, we restrict attention to cases with nonzero served cross-traffic demand; in such cases, λ21 > 0 in light of Remark 3 and flow balance, so that s21 > 0.",
+              "Consider a driver who circulates with repositioning fractions ̃η1 ∈[0,1] and ̃η2 = 0 through a network with offered loads s and queue lengths q."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Driver Repositioning Equilibrium",
+                "equation": "",
+                "quote": "Under decentralized repositioning, the flow rates (λ,ν) and delays w admit a symmetric driver repositioning equi­ librium if, and only if, the corresponding unique reposi­ tioning fractions η(λ,ν), in (1), are every driver’s best response to (λ,w), that is, η(λ,ν) ∈argmax˜η ˜π(˜η;λ,w) (see (2))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “best response”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "minimal-control-m",
+            "label": "Minimal Control (M)",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Step 1: for fixed capacity, Proposition 3 characterizes the platform-optimal allocation that solves (14).",
+            "searchPhrases": [
+              "how minimal control (m) is represented",
+              "solution algorithm in platforms and marketplaces",
+              "minimal control (m) solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Step 1: for fixed capacity, Proposition 3 characterizes the platform-optimal allocation that solves (14).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Problem M in (7) is equivalent to the capacity allocation problem (13) for regime X= M.",
+              "Step 1: for fixed capacity, Proposition 3 characterizes the platform-optimal allocation that solves (14)."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.2. Minimal Control (M)",
+                "equation": "",
+                "quote": "Step 1: for fixed capacity, Proposi­ tion 3 characterizes the platform-optimal allocation that solves (14)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Step 1: for fixed capacity, Proposition 3 characterizes the platform-optimal allocation that solves (14).”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "admission-control-a",
+            "label": "Admission Control (A)",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Step 1: For fixed capacity, Proposition 4 characterizes the platform-optimal allocation that solves (14), where CA(n) = {(s,r,q) : (12a)–(12c),(22)}.",
+            "searchPhrases": [
+              "how admission control (a) is represented",
+              "solution algorithm in platforms and marketplaces",
+              "admission control (a) solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Step 1: For fixed capacity, Proposition 4 characterizes the platform-optimal allocation that solves (14), where CA(n) = {(s,r,q) : (12a)–(12c),(22)}.",
+              "In regime A, problem (14) yields the following optimal capacity allocation, where the threshold nA 2 ∈(nA 1 ,nA 3 ) is implicitly defined: (1) Scarce capacity (n ≤nA 1 ).",
+              "In regime M, problem (14) has the following unique feasible allocation of the driver capacity, CM(n): (1) Scarce capacity (n ≤nM 1 )."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.3. Admission Control (A)",
+                "equation": "",
+                "quote": "Step 1: For fixed capacity, Proposition 4 characterizes the platform-optimal allocation that solves (14), where CA(n) = {(s,r,q) : (12a)–(12c),(22)}."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "optimal-strategic-demand-rejection-to-induce",
+            "label": "Optimal Strategic Demand Rejection to Induce",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "Strategic demand rejection under moderate capacity (zone 3) means that the platform rejects some or all rider requests at the low-demand location (1), even though there is an excess supply of drivers.",
+            "searchPhrases": [
+              "how optimal strategic demand rejection to induce is represented",
+              "feasibility condition in platforms and marketplaces",
+              "optimal strategic demand rejection to induce feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: Strategic demand rejection under moderate capacity (zone 3) means that the platform rejects some or all rider requests at the low-demand location (1), even though there is an excess supply of drivers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Next, we identify optimality conditions for strategic demand rejection in two steps, (i) at fixed participating capacity, and (ii) at the equilibrium capacity."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.3.2. Optimal Strategic Demand Rejection to Induce",
+                "equation": "",
+                "quote": "Strategic demand rejection under moderate capacity (zone 3) means that the platform rejects some or all rider requests at the low-demand loca­ tion (1), even though there is an excess supply of drivers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Strategic demand rejection under moderate capacity (zone 3) means that the platform rejects some or all rider requests”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "927ca17695e242d8eed2b7e3ad2b66bccb055b3604ff97710858a848b5950869",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "a893e63b21188b696be300f701a8b0d39d96105ff75b163a3c1f86223f4542c8",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1221/a893e63b21188b696be300f701a8b0d39d96105ff75b163a3c1f86223f4542c8.json",
+      "extractionQaDecisionSha256": "42d57f1e6d4643f764145344e3cd4afa5e99b78ebd772b4fb3c0b826ce9df042",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

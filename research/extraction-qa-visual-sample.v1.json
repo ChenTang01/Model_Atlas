@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "method": "anomaly-stratified visual comparison of rendered PDF pages with selected extraction text",
+  "policyVersion": "extraction-qa-v1",
+  "reviewDate": "2026-09-12",
+  "corpus": {
+    "records": 1653,
+    "fallbackSelected": 1547,
+    "parserWarnings": 2
+  },
+  "entries": [
+    {
+      "paperId": "doi-10-1287-mnsc-2020-03904",
+      "doi": "10.1287/mnsc.2020.03904",
+      "stratum": "maximum selected very-long-lowercase-token count",
+      "sourcePdf": "paper/Advance Selling to Ease Financial Distress.pdf",
+      "sourcePdfSha256": "d9788c0e444c60c31a81575b8191ea5c87bc113f2df47fb5d0030681e4723c31",
+      "pagesSha256": "472625895c3754c846b0bb7136bbf121a6eb32e1aad574d69958fa1386bb03a7",
+      "selectedEngine": "pymupdf",
+      "pageReviewed": 32,
+      "observation": "The rendered two-column appendix page has intact prose, headings, equation labels, and display mathematics. The selected text is readable outside formula glyph sequences; its soft token and control-glyph signals are therefore retained as observations, not used as formula evidence."
+    },
+    {
+      "paperId": "doi-10-1287-msom-2022-0253",
+      "doi": "10.1287/msom.2022.0253",
+      "stratum": "maximum selected letter-spaced-run count",
+      "sourcePdf": "paper/Dealership or Marketplace with Fulfillment Services_ A Dynamic Comparison.pdf",
+      "sourcePdfSha256": "13ca7d3dd832ca185f928b28b8f26a4bb7f529b21a3f620e45f3fbace99f5eaf",
+      "pagesSha256": "c8360617d616e4832a4d0abfb44eb89be23d25f0835d788e8d610c031c09fe48",
+      "selectedEngine": "pymupdf",
+      "pageReviewed": 16,
+      "observation": "The rendered section headings, explanatory prose, equations, and table labels are legible. The letter-spaced signal is concentrated in dense mathematical layout rather than a page-wide loss of prose structure."
+    },
+    {
+      "paperId": "doi-10-1287-msom-2021-1027",
+      "doi": "10.1287/msom.2021.1027",
+      "stratum": "largest fallback-to-primary text-retention loss",
+      "sourcePdf": "paper/Negotiating Government-to-Government Food Importing Contracts_ A Nash Bargaining Framework.pdf",
+      "sourcePdfSha256": "c4917ec14f397eeed57865e1e672c587e3c7797de823450438323e273bf43336",
+      "pagesSha256": "dffe19f6d33d6b7d3e87287b1f14844708ccce9b205f9d4b39ba6055a2cfeced",
+      "selectedEngine": "pymupdf",
+      "pageReviewed": 9,
+      "observation": "The rendered body paragraphs, proposition, figure caption, chart labels, and following section heading are intact. The selected extraction retains 83.8763% of primary text, well above the 20% floor, while removing the primary raw-glyph corruption signal."
+    },
+    {
+      "paperId": "doi-10-1287-mksc-2018-1104",
+      "doi": "10.1287/mksc.2018.1104",
+      "stratum": "highest selected replacement-character count below trigger",
+      "sourcePdf": "paper/Beyond the Last Touch_ Attribution in Online Advertising.pdf",
+      "sourcePdfSha256": "2bb69ed2010f07e5deca0e4a744a906abaddb2dc0c671b00482496999b7c317d",
+      "pagesSha256": "2d732ac8e849d32ac8b4117b8f0559cb52d8056f119d5dbee734f2a606c2f87a",
+      "selectedEngine": "pypdf",
+      "pageReviewed": 26,
+      "observation": "The rendered plots, axes, legend, caption, mathematical parameters, and surrounding prose are legible. The 19 replacement characters in selected text are localized to graphical extraction and remain below the extraction trigger of 20."
+    }
+  ],
+  "conclusion": "The retained anomaly-stratified sample supports the same fail-closed policy: hash-bound visual review may resolve a parser-warning extraction, while unreviewed warnings remain ineligible for public release. Retired papers are outside the current corpus and this sample."
+}

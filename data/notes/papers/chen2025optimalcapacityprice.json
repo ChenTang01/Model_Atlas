@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "chen2025optimalcapacityprice",
+  "sourcePdfSha256": "d963d28bc9a24e98bcdfc5d1e2fcdb47fafe65b4a9f8e979c6a5f7e94fa3ecea",
+  "extractionPagesSha256": "8d5a1033fd6352b1e8df1197105637faff3cc8c1dba2e6b8911295a88ac897e3",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "fc8ac503da8df57e9b1221e45dbe80871d349970feac3be223f786942ea21ede",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "ede29a4cd700a4c56bfd0304a4e9bc0775b94cc6d2e7e5fea93bd0dad3d68081",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/chen2025optimalcapacityprice/ede29a4cd700a4c56bfd0304a4e9bc0775b94cc6d2e7e5fea93bd0dad3d68081.json",
+  "extractionQaDecisionSha256": "cfae363820b6d4bf0f8de31942b1fe7dc61d2a6f0179074843abfe5b6c4494b1",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "chen2025optimalcapacityprice",
+    "question": "How should a principal jointly choose market capacity, price, and revenue sharing when an operating agent can steal capacity ex ante or revenue ex post and key operating outcomes are unobservable?",
+    "overview": "A principal designs price, capacity, and a revenue-transfer contract anticipating an agent who can secretly steal capacity before demand or sales revenue afterward. The paper solves the agent's hidden-action response and the principal's incentive-compatible contract.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        11,
+        15
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Supply chains and contracts",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A principal designs price, capacity, and a revenue-transfer contract anticipating an agent who can secretly steal capacity before demand or sales revenue afterward. The paper solves the agent's hidden-action response and the principal's incentive-compatible contract.",
+        "objects": [
+          "Principal or asset owner",
+          "Operating agent"
+        ],
+        "inputs": [
+          "If the agent has multiple best responses, the paper selects the one most favorable to the principal",
+          "Price, capacity cost, theft efficiencies, and the demand distribution are public primitives; the model has no privately known type",
+          "The demand under price p",
+          "The actual deployed capacity",
+          "The actual demand"
+        ],
+        "decisions": [
+          "The principal chooses price and installed capacity",
+          "The principal chooses a revenue-contingent transfer schedule",
+          "The agent chooses implemented capacity and ex ante theft",
+          "The agent chooses how much realized revenue to report or steal"
+        ],
+        "assumptions": [
+          "Demand is stochastic and responds to the principal's posted price",
+          "The agent can divert installed capacity before demand and revenue after sales",
+          "Ex ante and ex post stealing destroy value according to efficiencies theta and lambda, each strictly below one",
+          "Demand, implemented capacity, and realized revenue are not directly verifiable by the principal",
+          "The agent has limited liability, the principal can commit to the transfer schedule, and ties among agent best responses are broken in the principal's favor"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Principal or asset owner",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "principal or asset owner"
+              }
+            },
+            {
+              "value": "Operating agent",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "operating agent"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "If the agent has multiple best responses, the paper selects the one most favorable to the principal",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "If the agent has multiple best responses, the paper selects the one most favorable to the principal."
+              }
+            },
+            {
+              "value": "Price, capacity cost, theft efficiencies, and the demand distribution are public primitives; the model has no privately known type",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Price, capacity cost, theft efficiencies, and the demand distribution are public primitives; the model has no privately known type."
+              }
+            },
+            {
+              "value": "The demand under price p",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "the demand under price p",
+                "matchedText": "the demand under price p",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The actual deployed capacity",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 5,
+                "quote": "However, the principal cannot observe the actual deployed capacity, which leaves room for the agent’s ex ante stealing.",
+                "matchedText": "the actual deployed capacity",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The actual demand",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 18,
+                "quote": "We also assume that the principal cannot observe the actual demand; thus, the realized sales revenue is also unobservable.",
+                "matchedText": "the actual demand",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The principal chooses price and installed capacity",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the principal chooses price and installed capacity"
+              }
+            },
+            {
+              "value": "The principal chooses a revenue-contingent transfer schedule",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the principal chooses a revenue-contingent transfer schedule"
+              }
+            },
+            {
+              "value": "The agent chooses implemented capacity and ex ante theft",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the agent chooses implemented capacity and ex ante theft"
+              }
+            },
+            {
+              "value": "The agent chooses how much realized revenue to report or steal",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the agent chooses how much realized revenue to report or steal"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Demand is stochastic and responds to the principal's posted price",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand is stochastic and responds to the principal's posted price."
+              }
+            },
+            {
+              "value": "The agent can divert installed capacity before demand and revenue after sales",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The agent can divert installed capacity before demand and revenue after sales."
+              }
+            },
+            {
+              "value": "Ex ante and ex post stealing destroy value according to efficiencies theta and lambda, each strictly below one",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Ex ante and ex post stealing destroy value according to efficiencies theta and lambda, each strictly below one."
+              }
+            },
+            {
+              "value": "Demand, implemented capacity, and realized revenue are not directly verifiable by the principal",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand, implemented capacity, and realized revenue are not directly verifiable by the principal."
+              }
+            },
+            {
+              "value": "The agent has limited liability, the principal can commit to the transfer schedule, and ties among agent best responses are broken in the principal's favor",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The agent has limited liability, the principal can commit to the transfer schedule, and ties among agent best responses are broken in the principal's favor."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper models the internal theft problem in retailing as a principal-agent model, where the principal (firm) contracts an agent (retail manager) for capacity planning and daily sales.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Optimal Capacity and Price Designs Under Ex Ante and Ex Post Theft",
+          "page": 1,
+          "sentence": 6
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 6,
+            "section": "3. Model",
+            "equation": "",
+            "quote": "If the agent has multiple best responses, we consider the one that maximizes the principal’s utility.1 Anticipating the agent’s strategic behavior is a com­ plex task for the principal, especially when facing both ex ante and ex post stealing."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The principal cannot observe realized demand, implemented capacity, or gross revenue directly; the agent observes the operating realization and is protected by limited liability. Price, capacity cost, theft efficiencies, and the demand distribution are public primitives; the model has no privately known type. If the agent has multiple best responses, the paper selects the one most favorable to the principal.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The principal cannot observe realized demand, implemented capacity, or gross revenue directly; the agent observes the operating realization and is protected by limited liability.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "selling price chosen by the principal · p \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "capacity installed by the principal · q \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R(\\cdot)",
+                "meaning": "revenue-sharing/commission contract mapping reported revenue to the principal's retained amount · R \\in \\mathcal R",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q'",
+                "meaning": "capacity actually implemented after possible ex-ante theft by the agent · [0,q]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P_{p, q'}",
+                "meaning": "realized sales revenue under price p and implemented capacity q prime · nonnegative random revenue",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma(\\cdot)",
+                "meaning": "agent's sales-revenue reporting strategy after possible ex-post theft · \\Gamma",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "We also assume that the principal cannot observe the actual demand; thus, the realized sales revenue is also unobservable.",
+              "Demand is stochastic and responds to the principal's posted price.",
+              "The agent can divert installed capacity before demand and revenue after sales.",
+              "Ex ante and ex post stealing destroy value according to efficiencies theta and lambda, each strictly below one."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Model",
+                "equation": "",
+                "quote": "We also assume that the principal cannot observe the actual demand; thus, the realized sales revenue is also unobservable."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We also assume that the principal cannot observe the actual demand; thus, the realized sales revenue is also”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The principal maximizes expected retained revenue net of capacity cost, subject to the agent's capacity and revenue-diversion best response.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in supply chains and contracts",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_{p,q,R(\\cdot)}\\;\\mathbb{E}[R(\\gamma(P_{p,q'}))]-cq\\quad\\text{s.t. }(p,q,R)\\in\\mathbb{R}_+\\times\\mathbb{R}_+\\times\\mathcal R,\\;(q',\\gamma(\\cdot))\\in\\arg\\max_{(\\hat q,\\hat\\gamma(\\cdot))\\in[0,q]\\times\\Gamma}U(\\hat q,\\hat\\gamma(\\cdot)\\mid p,q)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "selling price chosen by the principal · p \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "capacity installed by the principal · q \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R(\\cdot)",
+                "meaning": "revenue-sharing/commission contract mapping reported revenue to the principal's retained amount · R \\in \\mathcal R",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q'",
+                "meaning": "capacity actually implemented after possible ex-ante theft by the agent · [0,q]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P_{p, q'}",
+                "meaning": "realized sales revenue under price p and implemented capacity q prime · nonnegative random revenue",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma(\\cdot)",
+                "meaning": "agent's sales-revenue reporting strategy after possible ex-post theft · \\Gamma",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "unit cost of installed capacity · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U",
+                "meaning": "agent utility whose maximizers define the capacity and reporting best response · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand is stochastic and responds to the principal's posted price.",
+              "The agent can divert installed capacity before demand and revenue after sales.",
+              "Demand, implemented capacity, and realized revenue are not directly verifiable by the principal."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "(5)–(7)",
+                "quote": "The principal maximizes its expected utility by designing its revenue splitting rule R(·), the capacity q, and the retail price p."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "principal-agent",
+              "strategic-interaction"
+            ],
+            "explanation": "The principal commits to price, capacity, and a transfer schedule; the agent can divert capacity before demand, demand and sales realize, and the agent can then conceal/divert revenue before reporting and paying the principal. single-period sequential principal-agent contract ex ante and ex post moral hazard",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in supply chains and contracts",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The principal commits to price, capacity, and a transfer schedule; the agent can divert capacity before demand, demand and sales realize, and the agent can then conceal/divert revenue before reporting and paying the principal. single-period sequential principal-agent contract ex ante and ex post moral hazard",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "selling price chosen by the principal · p \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "capacity installed by the principal · q \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R(\\cdot)",
+                "meaning": "revenue-sharing/commission contract mapping reported revenue to the principal's retained amount · R \\in \\mathcal R",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q'",
+                "meaning": "capacity actually implemented after possible ex-ante theft by the agent · [0,q]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P_{p, q'}",
+                "meaning": "realized sales revenue under price p and implemented capacity q prime · nonnegative random revenue",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma(\\cdot)",
+                "meaning": "agent's sales-revenue reporting strategy after possible ex-post theft · \\Gamma",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand is stochastic and responds to the principal's posted price.",
+              "The agent can divert installed capacity before demand and revenue after sales.",
+              "Ex ante and ex post stealing destroy value according to efficiencies theta and lambda, each strictly below one."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3. Model",
+                "equation": "",
+                "quote": "If the agent has multiple best responses, we consider the one that maximizes the principal’s utility.1 Anticipating the agent’s strategic behavior is a com­ plex task for the principal, especially when facing both ex ante and ex post stealing."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "principal-agent",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Principal-agent model as “principal agent”: “principal agent”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “best response”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "optimal-incentive-compatible-principal-agent-contract-with-seque",
+            "label": "Optimal incentive-compatible principal-agent contract with sequential hidden actions",
+            "role": "interaction",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Optimal incentive-compatible principal-agent contract with sequential hidden actions. The agent's capacity-deployment and revenue-reporting choices are best responses to the committed contract, with ties selected for the principal. Lemma 1 on PDF pp. 5-6 shows that no-stealing incentive compatibility can be imposed without loss. Lemma 2 on PDF p. 7 gives the capped principal-share schedule, Proposition 1 on PDF p. 8 solves the design, and Theorems 1-3 on PDF pp. 9-13 characterize efficiency and theft-efficiency comparative statics, including the nonmonotonic effect of ex post efficiency lambda in Theorem 2.",
+            "searchPhrases": [
+              "how optimal incentive-compatible principal-agent contract with sequential hidden actions is represented",
+              "strategic response in supply chains and contracts",
+              "optimal incentive-compatible principal-agent contract with sequential hidden actions strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Optimal incentive-compatible principal-agent contract with sequential hidden actions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "selling price chosen by the principal · p \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "capacity installed by the principal · q \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R(\\cdot)",
+                "meaning": "revenue-sharing/commission contract mapping reported revenue to the principal's retained amount · R \\in \\mathcal R",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q'",
+                "meaning": "capacity actually implemented after possible ex-ante theft by the agent · [0,q]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma(\\cdot)",
+                "meaning": "agent's sales-revenue reporting strategy after possible ex-post theft · \\Gamma",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "unit cost of installed capacity · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand is stochastic and responds to the principal's posted price.",
+              "The agent can divert installed capacity before demand and revenue after sales.",
+              "Ex ante and ex post stealing destroy value according to efficiencies theta and lambda, each strictly below one."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3. Model",
+                "equation": "",
+                "quote": "Second, by characterizing the desired best response from the agent, Lemma 1 allows us to separate the incentive designs for ex ante and ex post stealing into Constraints (Ex Ante IC) and (Ex Post IC), respectively."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “best response”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "contract-design",
+              "pricing"
+            ],
+            "explanation": "Backward solution of the agent's two theft decisions, reduction to no-stealing incentive constraints, and characterization of an optimal capped revenue-sharing schedule.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in supply chains and contracts",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Backward solution of the agent's two theft decisions, reduction to no-stealing incentive constraints, and characterization of an optimal capped revenue-sharing schedule.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "selling price chosen by the principal · p \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R(\\cdot)",
+                "meaning": "revenue-sharing/commission contract mapping reported revenue to the principal's retained amount · R \\in \\mathcal R",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q'",
+                "meaning": "capacity actually implemented after possible ex-ante theft by the agent · [0,q]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma(\\cdot)",
+                "meaning": "agent's sales-revenue reporting strategy after possible ex-post theft · \\Gamma",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "unit cost of installed capacity · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U",
+                "meaning": "agent utility whose maximizers define the capacity and reporting best response · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The agent can divert installed capacity before demand and revenue after sales.",
+              "The agent has limited liability, the principal can commit to the transfer schedule, and ties among agent best responses are broken in the principal's favor."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.2. Optimal Price and Capacity",
+                "equation": "",
+                "quote": "Our optimal contracting approach solves this issue and provides robust operational deci­ sions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Contract design as “contracting”: “Our optimal contracting approach solves this issue and provides robust operational decisions.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Our optimal contracting approach solves this issue and provides robust operational decisions.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The principal chooses price and installed capacity the principal chooses a revenue-contingent transfer schedule the agent chooses implemented capacity and ex ante theft the agent chooses how much realized revenue to report or steal",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in supply chains and contracts",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The principal chooses price and installed capacity the principal chooses a revenue-contingent transfer schedule the agent chooses implemented capacity and ex ante theft the agent chooses how much realized revenue to report or steal",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "selling price chosen by the principal · p \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "capacity installed by the principal · q \\in \\mathbb R_+",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R(\\cdot)",
+                "meaning": "revenue-sharing/commission contract mapping reported revenue to the principal's retained amount · R \\in \\mathcal R",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q'",
+                "meaning": "capacity actually implemented after possible ex-ante theft by the agent · [0,q]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P_{p, q'}",
+                "meaning": "realized sales revenue under price p and implemented capacity q prime · nonnegative random revenue",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma(\\cdot)",
+                "meaning": "agent's sales-revenue reporting strategy after possible ex-post theft · \\Gamma",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand is stochastic and responds to the principal's posted price.",
+              "The agent can divert installed capacity before demand and revenue after sales.",
+              "Ex ante and ex post stealing destroy value according to efficiencies theta and lambda, each strictly below one."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "5.2. General Distributions of Demand",
+                "equation": "",
+                "quote": "Figures 6–8 show that when ex ante stealing is not too severe (i.e., θ is low), the firm maintains its price and capacity levels but increases the price and decreases the capacity when ex ante stealing becomes efficient (i.e., θ is relatively large) under exponential, gamma, and nor­ mal distributions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Figures 6–8 show that when ex ante stealing is not too severe (i.e., θ is low), the firm”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "d963d28bc9a24e98bcdfc5d1e2fcdb47fafe65b4a9f8e979c6a5f7e94fa3ecea",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "ede29a4cd700a4c56bfd0304a4e9bc0775b94cc6d2e7e5fea93bd0dad3d68081",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/chen2025optimalcapacityprice/ede29a4cd700a4c56bfd0304a4e9bc0775b94cc6d2e7e5fea93bd0dad3d68081.json",
+      "extractionQaDecisionSha256": "cfae363820b6d4bf0f8de31942b1fe7dc61d2a6f0179074843abfe5b6c4494b1",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-03004",
+  "sourcePdfSha256": "fe13570c8c2d6cda03c1bb602961ab4fc5639f1bfd7bb0edcceb6658344707c8",
+  "extractionPagesSha256": "3bf7a2688e2b5c128d3e54a08e0ca78f94c2704f5b4ec52ce496c6250634bc98",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "abc6d861b8cda9fdd2ec1ccf2be45e45ac2ca3df1123e352214fdacea740a46d",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "66d8869ffdca0abb7c82ea2bca3fb668b03616c3b0602c38d8f12b122f11c951",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03004/66d8869ffdca0abb7c82ea2bca3fb668b03616c3b0602c38d8f12b122f11c951.json",
+  "extractionQaDecisionSha256": "363abe6a5eec2fcb136fcfb2f52d3d7befb1395fe422572d59d50a5d757d19b6",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-03004",
+    "question": "How should a retailer commit to disclose an early demand forecast so that its supplier produces more, and when does a tailored partial-disclosure policy outperform full or no disclosure?",
+    "overview": "The retailer is an informed sender that commits ex ante to an information structure, and the supplier is a receiver that updates beliefs and chooses a newsvendor production quantity. The paper solves the sender-optimal Bayesian-persuasion outcome.",
+    "modelTypes": [
+      "Stochastic model",
+      "Optimization",
+      "Game theory"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        7
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Retailer-designed demand disclosure to persuade a supplier's newsvendor production decision",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The retailer is an informed sender that commits ex ante to an information structure, and the supplier is a receiver that updates beliefs and chooses a newsvendor production quantity. The paper solves the sender-optimal Bayesian-persuasion outcome.",
+        "objects": [
+          "A downstream retailer that observes a demand-state signal and designs disclosure",
+          "An upstream supplier that updates beliefs"
+        ],
+        "inputs": [
+          "Retailer and supplier share a common prior p_0 over the binary demand state",
+          "The retailer observes omega",
+          "Both players know the two conditional demand distributions and the retailer's committed disclosure policy",
+          "The retailer learns exact demand only"
+        ],
+        "decisions": [
+          "The retailer chooses a message space and state-contingent message probabilities",
+          "The retailer sends a realized message",
+          "The supplier updates its posterior p",
+          "The retailer places its final order"
+        ],
+        "assumptions": [
+          "The baseline is a single-period, two-tier supply chain with one retailer, one supplier, and one product",
+          "The supplier incurs linear shortage and excess-inventory costs and chooses capacity before final demand is observed",
+          "The retailer observes final demand before ordering, so it bears shortage cost but no excess inventory in the baseline and always prefers a larger supplier quantity",
+          "The retailer can commit ex ante to any Bayes-plausible information policy, and the supplier best responds to each posterior",
+          "The retailer selects its preferred supplier best response; Proposition 1 establishes that the response is unique in the analyzed model"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A downstream retailer that observes a demand-state signal and designs disclosure",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a downstream retailer that observes a demand-state signal and designs disclosure"
+              }
+            },
+            {
+              "value": "An upstream supplier that updates beliefs",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "an upstream supplier that updates beliefs and selects production quantity"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Retailer and supplier share a common prior p_0 over the binary demand state",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Retailer and supplier share a common prior p_0 over the binary demand state."
+              }
+            },
+            {
+              "value": "The retailer observes omega",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The retailer observes omega before communicating, but the supplier sees only the generated message."
+              }
+            },
+            {
+              "value": "Both players know the two conditional demand distributions and the retailer's committed disclosure policy",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Both players know the two conditional demand distributions and the retailer's committed disclosure policy."
+              }
+            },
+            {
+              "value": "The retailer learns exact demand only",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The retailer learns exact demand only after the supplier has committed production."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The retailer chooses a message space and state-contingent message probabilities",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the retailer chooses a message space and state-contingent message probabilities"
+              }
+            },
+            {
+              "value": "The retailer sends a realized message",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the retailer sends a realized message after observing omega"
+              }
+            },
+            {
+              "value": "The supplier updates its posterior p",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the supplier updates its posterior p and chooses production quantity Q"
+              }
+            },
+            {
+              "value": "The retailer places its final order",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the retailer places its final order after demand is realized"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The baseline is a single-period, two-tier supply chain with one retailer, one supplier, and one product",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The baseline is a single-period, two-tier supply chain with one retailer, one supplier, and one product."
+              }
+            },
+            {
+              "value": "The supplier incurs linear shortage and excess-inventory costs and chooses capacity before final demand is observed",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The supplier incurs linear shortage and excess-inventory costs and chooses capacity before final demand is observed."
+              }
+            },
+            {
+              "value": "The retailer observes final demand before ordering, so it bears shortage cost but no excess inventory in the baseline and always prefers a larger supplier quantity",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer observes final demand before ordering, so it bears shortage cost but no excess inventory in the baseline and always prefers a larger supplier quantity."
+              }
+            },
+            {
+              "value": "The retailer can commit ex ante to any Bayes-plausible information policy, and the supplier best responds to each posterior",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer can commit ex ante to any Bayes-plausible information policy, and the supplier best responds to each posterior."
+              }
+            },
+            {
+              "value": "The retailer selects its preferred supplier best response; Proposition 1 establishes that the response is unique in the analyzed model",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer selects its preferred supplier best response; Proposition 1 establishes that the response is unique in the analyzed model."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected assumptions entry: too_long_for_setup_item.",
+            "category": "assumptions",
+            "field": "assumptions",
+            "reason": "too_long_for_setup_item"
+          }
+        ],
+        "method": "The authors derive the supplier's posterior newsvendor quantile in closed form, express the retailer's expected shortage cost as a function of posterior beliefs, and use Bayesian-persuasion convexification to characterize optimal posterior splits.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3. Analysis",
+            "equation": "(3)",
+            "quote": "The optimal policy characterization in Theorem 1 also enables us to shed light on how the critical ratio ξ and the retailer’s prior belief p0 affect the value of infor­ mation, which we define as the absolute value of the difference between the retailer’s expected cost under naive policies such as full and no disclosure and the optimal expected cost of the retailer."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The retailer chooses a message space and state-contingent message probabilities the retailer sends a realized message after observing omega the supplier updates its posterior p and chooses production quantity Q the retailer places its final order after demand is realized",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in supply-chain information design",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The retailer chooses a message space and state-contingent message probabilities the retailer sends a realized message after observing \\omega the supplier updates its posterior p and chooses production quantity Q the retailer places its final order after demand is realized",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega",
+                "meaning": "binary state selecting demand distribution D_0 or D_1 · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_0, p",
+                "meaning": "common prior and supplier posterior probability that omega equals zero · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Gamma=(\\pi, M)",
+                "meaning": "retailer's message space and state-contingent disclosure probabilities · Bayes-plausible information structures",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_p^*",
+                "meaning": "supplier's optimal production quantity at posterior p · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "B(\\Gamma)",
+                "meaning": "set of supplier best-response profiles induced by information policy Gamma · functions from posterior beliefs in [0,1] to nonnegative production quantities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi",
+                "meaning": "supplier critical ratio C_s/(C_s+C_e) · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The baseline is a single-period, two-tier supply chain with one retailer, one supplier, and one product.",
+              "The state omega is binary, and conditional demands D_0 and D_1 are uniform on known intervals; the baseline assumes the support of D_1 is nested inside that of D_0.",
+              "We are interested in products with long lead times and assume that, before receiving the final order from the retailer, the supplier needs to choose a production quantity Q.",
+              "The supplier incurs linear shortage and excess-inventory costs and chooses capacity before final demand is observed."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2.1. Supply Chain Configuration",
+                "equation": "",
+                "quote": "We are interested in products with long lead times and assume that, before receiving the final order from the retailer, the supplier needs to choose a pro­ duction quantity Q."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-disclosure"
+            ],
+            "explanation": "Retailer and supplier share a common prior p_0 over the binary demand state. The retailer observes omega before communicating, but the supplier sees only the generated message. Both players know the two conditional demand distributions and the retailer's committed disclosure policy. The retailer learns exact demand only after the supplier has committed production.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in supply-chain information design",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega",
+                "meaning": "binary state selecting demand distribution D_0 or D_1 · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_0, p",
+                "meaning": "common prior and supplier posterior probability that omega equals zero · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Gamma=(\\pi, M)",
+                "meaning": "retailer's message space and state-contingent disclosure probabilities · Bayes-plausible information structures",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_p^*",
+                "meaning": "supplier's optimal production quantity at posterior p · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "B(\\Gamma)",
+                "meaning": "set of supplier best-response profiles induced by information policy Gamma · functions from posterior beliefs in [0,1] to nonnegative production quantities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi",
+                "meaning": "supplier critical ratio C_s/(C_s+C_e) · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When designing the information disclosure policy, the retailer anticipates how the supplier would update its belief after observing a specific message generated by the retailer’s policy.",
+              "The baseline is a single-period, two-tier supply chain with one retailer, one supplier, and one product.",
+              "The state omega is binary, and conditional demands D_0 and D_1 are uniform on known intervals; the baseline assumes the support of D_1 is nested inside that of D_0.",
+              "The supplier incurs linear shortage and excess-inventory costs and chooses capacity before final demand is observed."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.3. Information Design Problem",
+                "equation": "",
+                "quote": "When designing the information disclosure policy, the retailer anticipates how the supplier would update its belief after observing a specific message generated by the retailer’s policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-disclosure",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Information disclosure as “disclosure policy”: “When designing the information disclosure policy , the retailer anticipates how the supplier would”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The retailer chooses an information policy and the supplier's induced best-response profile to minimize expected shortage, subject to the supplier optimally solving its posterior newsvendor problem.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in supply-chain information design",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\min_{\\Gamma,\\,Q^*\\in B(\\Gamma)}\\;\\mathbb{E}\\left[p(D_0-Q_p^*)^+ +(1-p)(D_1-Q_p^*)^+\\mid\\Gamma\\right]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\omega",
+                "meaning": "binary state selecting demand distribution D_0 or D_1 · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_0, p",
+                "meaning": "common prior and supplier posterior probability that omega equals zero · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Gamma=(\\pi, M)",
+                "meaning": "retailer's message space and state-contingent disclosure probabilities · Bayes-plausible information structures",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_p^*",
+                "meaning": "supplier's optimal production quantity at posterior p · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "B(\\Gamma)",
+                "meaning": "set of supplier best-response profiles induced by information policy Gamma · functions from posterior beliefs in [0,1] to nonnegative production quantities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi",
+                "meaning": "supplier critical ratio C_s/(C_s+C_e) · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "[a_i, b_i]",
+                "meaning": "support of conditional demand D_i · bounded real interval",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The optimal policy characterization in Theorem 1 also enables us to shed light on how the critical ratio ξ and the retailer’s prior belief p0 affect the value of information, which we define as the absolute value of the difference between the retailer’s expected cost under naive policies such as full and no disclosure and the optimal expected cost of the retailer.",
+              "The baseline is a single-period, two-tier supply chain with one retailer, one supplier, and one product.",
+              "The retailer observes final demand before ordering, so it bears shortage cost but no excess inventory in the baseline and always prefers a larger supplier quantity.",
+              "The supplier incurs linear shortage and excess-inventory costs and chooses capacity before final demand is observed."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3. Analysis",
+                "equation": "(3)",
+                "quote": "The optimal policy characterization in Theorem 1 also enables us to shed light on how the critical ratio ξ and the retailer’s prior belief p0 affect the value of infor­ mation, which we define as the absolute value of the difference between the retailer’s expected cost under naive policies such as full and no disclosure and the optimal expected cost of the retailer."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The optimal policy characterization in Theorem 1 also enables us to shed light on how the critical ratio”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "fe13570c8c2d6cda03c1bb602961ab4fc5639f1bfd7bb0edcceb6658344707c8",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "66d8869ffdca0abb7c82ea2bca3fb668b03616c3b0602c38d8f12b122f11c951",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03004/66d8869ffdca0abb7c82ea2bca3fb668b03616c3b0602c38d8f12b122f11c951.json",
+      "extractionQaDecisionSha256": "363abe6a5eec2fcb136fcfb2f52d3d7befb1395fe422572d59d50a5d757d19b6",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

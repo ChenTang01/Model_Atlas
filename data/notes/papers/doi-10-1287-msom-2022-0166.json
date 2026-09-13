@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2022-0166",
+  "sourcePdfSha256": "9c675e585d0316890049af4826cf49e08210fca3939eb9fd77b6038aa68746e9",
+  "extractionPagesSha256": "371cd2f0667d3149217af89cbc1fd3ebf704558063da08cd49e3978a682b73e2",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "4bced618d05a0e9da85c823bda1a959e230bcfa252ae2d145feb786758d172fd",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "e9270b2318afd64c491c7eeb5851b2405bf5307b44e82b9a9847201bd53ac7e2",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-0166/e9270b2318afd64c491c7eeb5851b2405bf5307b44e82b9a9847201bd53ac7e2.json",
+  "extractionQaDecisionSha256": "9f777295bce1ef17f0d283d3859f6778354391a2076bdf675014f545ceb9837d",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2022-0166",
+    "question": "How should emergency medical response time with joint operations of uncrewed aerial vehicles with ambulances be shortened?",
+    "overview": "Uncrewed aerial vehicles (UAVs) are transforming emergency service logistics applications across sectors, offering easy deployment and rapid response. In the context of emergency medical services (EMS), UAVs have the potential to augment ambulances by leveraging bystander assistance, thereby reducing response times for delivering urgent medical interventions and improving EMS outcomes. Notably, the use of UAVs for opioid overdose cases is particularly promising as it addresses the challenges faced by ambulances in delivering timely medication.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Shortening Emergency Medical Response Time with Joint Operations of Uncrewed Aerial Vehicles with Ambulances model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Uncrewed aerial vehicles (UAVs) are transforming emergency service logistics applications across sectors, offering easy deployment and rapid response. In the context of emergency medical services (EMS), UAVs have the potential to augment ambulances by leveraging bystander assistance, thereby reducing response times for delivering urgent medical interventions and improving EMS outcomes. Notably, the use of UAVs for opioid overdose cases is particularly promising as it addresses the challenges faced by ambulances in delivering timely medication.",
+        "objects": [
+          "Hospital",
+          "Node",
+          "The decision maker",
+          "State space",
+          "Customers"
+        ],
+        "inputs": [
+          "Demand",
+          "Arrival rates",
+          "Toward an objective function that gives higher weights to opioid overdose cases",
+          "Bystander helping probability at request j",
+          "The system state immediately"
+        ],
+        "decisions": [
+          "Optimize the integration of UAVs and bystanders into EMS",
+          "Test scenarios",
+          "Design of the basis functions and the modeling flexibility of the neural network",
+          "The dispatching probability following the approximation procedures described in Larson (1975)",
+          "Within the response time threshold for all requests and for opioid overdose requests"
+        ],
+        "assumptions": [
+          "Arrivals of EMS requests of type 1 and type 2 follow Poisson processes with rates λu and λa, respectively",
+          "We assume that arrivals of EMS requests of type 1 and type 2 follow Poisson processes with rates λu and λa, respectively",
+          "All the information obtained from the 911 call, such as request location, request type, and bystander information, is accurate",
+          "In an EMS system, arrivals follow a Poisson distribution, which satisfies the assumptions of Erlang loss systems",
+          "Decisions are made at transition times"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "MDP Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 8,
+                "quote": "We divide 911 requests into two types based on whether UAVs can be of help. (1) Type 1 includes requests for which UAVs can serve as the first response, such as opioid overdose and out-of-hospital cardiac arrest. (2) Type 2 includes requests that only ambulances can help, such as massive hemorrhage.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Node",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 10,
+                "sectionIndex": 22,
+                "sentence": 3,
+                "quote": "This basis function cap­ tures the rate that a request is outsourced or delayed because all the servers are busy with other requests, which is represented as φ4(s) = X N i=1 λiPi(s), (13) where Pi(s) is the probability that all servers that can reach a request at demand node i are busy with other requests.",
+                "matchedText": "node",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "Action Space",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 7,
+                "quote": "the decision maker",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "Optimality Criterion",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 5,
+                "quote": "We refer to Cavazos-Cadena (1991) and Cavazos-Cadena and Sennott (1992) for summaries of results on existence conditions for discrete-time average cost MDPs with countable state space and finite action sets.",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 19,
+                "sentence": 19,
+                "quote": "To address the curse of dimensionality, the authors adopted policy function approximation based on the insight that distant custo­ mers should generally be served by UAVs and that closer customers should be served by conventional vehi­ cles.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 10,
+                "sectionIndex": 22,
+                "sentence": 3,
+                "quote": "This basis function cap­ tures the rate that a request is outsourced or delayed because all the servers are busy with other requests, which is represented as φ4(s) = X N i=1 λiPi(s), (13) where Pi(s) is the probability that all servers that can reach a request at demand node i are busy with other requests.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 11,
+                "sectionIndex": 23,
+                "sentence": 45,
+                "quote": "In panels (a)–(c), the dotted areas represent regions with medium-to-high incident arrival rates (In colored version, purplish and yellowish colors represent medium and high incident arrival rates, respectively).",
+                "matchedText": "arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Toward an objective function that gives higher weights to opioid overdose cases",
+              "source": {
+                "type": "section",
+                "section": "Mechanism Behind Performance Superiority",
+                "page": 14,
+                "sectionIndex": 16,
+                "sentence": 10,
+                "quote": "This is because these policies consider long-term rewards and are able to learn toward an objective function that gives higher weights to opioid overdose cases.",
+                "matchedText": "toward an objective function that gives higher weights to opioid overdose cases",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Bystander helping probability at request j",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 12,
+                "quote": "In addition, ωj represents bystander helping probability at request j.",
+                "matchedText": "bystander helping probability at request j",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The system state immediately",
+              "source": {
+                "type": "section",
+                "section": "Approximate Policy Iteration",
+                "page": 8,
+                "sectionIndex": 9,
+                "sentence": 12,
+                "quote": "Here, M and W represent our model and the uncertainty in the model, respectively; SM,a denotes the system state immediately after decision a, and SM,W denotes the system state after the uncertainty W is realized.",
+                "matchedText": "the system state immediately after decision a, and SM",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Optimize the integration of UAVs and bystanders into EMS",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "This study aims to optimize the integration of UAVs and bystanders into EMS in order to minimize average response times for overdose interventions.",
+                "matchedText": "optimize the integration of UAVs and bystanders into EMS",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Test scenarios",
+              "source": {
+                "type": "section",
+                "section": "Mechanism Behind Performance Superiority",
+                "page": 14,
+                "sectionIndex": 16,
+                "sentence": 11,
+                "quote": "Among the three ADP-based pol­ icies, the NN-API and L-ADP policies can lead to higher rewards in most of the test scenarios",
+                "matchedText": "test scenarios",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design of the basis functions and the modeling flexibility of the neural network",
+              "source": {
+                "type": "section",
+                "section": "Mechanism Behind Performance Superiority",
+                "page": 14,
+                "sectionIndex": 16,
+                "sentence": 13,
+                "quote": "The superior performance of the NN-API policy can be attributed to two factors: the design of the basis functions and the modeling flexibility of the neural network",
+                "matchedText": "design of the basis functions and the modeling flexibility of the neural network",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The dispatching probability following the approximation procedures described in Larson (1975)",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 10,
+                "sectionIndex": 22,
+                "sentence": 24,
+                "quote": "Additionally, we estimate the dispatching probability following the approximation procedures described in Larson (1975)",
+                "matchedText": "the dispatching probability following the approximation procedures described in Larson (1975)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Within the response time threshold for all requests and for opioid overdose requests",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 11,
+                "sectionIndex": 11,
+                "sentence": 28,
+                "quote": "We calculate six metrics: accumulated total rewards, average response time for all requests and for opioid overdose requests, fraction of calls served within the response time threshold for all requests and for opioid overdose requests",
+                "matchedText": "within the response time threshold for all requests and for opioid overdose requests",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Arrivals of EMS requests of type 1 and type 2 follow Poisson processes with rates λu and λa, respectively",
+              "source": {
+                "type": "section",
+                "section": "MDP Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that arrivals of EMS requests of type 1 and type 2 follow Pois­ son processes with rates λu and λa, respectively.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "We assume that arrivals of EMS requests of type 1 and type 2 follow Poisson processes with rates λu and λa, respectively",
+              "source": {
+                "type": "section",
+                "section": "MDP Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that arrivals of EMS requests of type 1 and type 2 follow Pois­ son processes with rates λu and λa, respectively.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "All the information obtained from the 911 call, such as request location, request type, and bystander information, is accurate",
+              "source": {
+                "type": "section",
+                "section": "MDP Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 14,
+                "quote": "In the following model description, we assume that all the information obtained from the 911 call, such as request location, request type, and bystander information, is accurate.",
+                "matchedText": "all the information obtained from the 911 call, such as request location, request type, and bystander information, is accurate.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In an EMS system, arrivals follow a Poisson distribution, which satisfies the assumptions of Erlang loss systems",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 10,
+                "sectionIndex": 22,
+                "sentence": 7,
+                "quote": "In an EMS system, arrivals follow a Poisson distribution, which satisfies the assumptions of Erlang loss systems.",
+                "matchedText": "In an EMS system, arrivals follow a Poisson distribution, which satisfies the assumptions of Erlang loss systems.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Decisions are made at transition times",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 17,
+                "quote": "Without loss of generality, we assume that decisions are made at transition times.",
+                "matchedText": "decisions are made at transition times.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper formulates the joint operation of UAVs with ambulances through a Markov decision process that captures random emergency vehicle travel times and bystander availability.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3. MDP Model",
+            "equation": "",
+            "quote": "We assume that arrivals of EMS requests of type 1 and type 2 follow Pois­ son processes with rates λu and λa, respectively."
+          }
+        ],
+        "components": [
+          {
+            "id": "mdp-model",
+            "label": "MDP Model",
+            "role": "process",
+            "concepts": [
+              "markov-decision-process"
+            ],
+            "explanation": "We assume that arrivals of EMS requests of type 1 and type 2 follow Poisson processes with rates λu and λa, respectively.",
+            "searchPhrases": [
+              "how mdp model is represented",
+              "system process in operations and supply chains",
+              "mdp model system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This section presents an infinite-horizon average-cost MDP formulation.",
+              "We assume that arrivals of EMS requests of type 1 and type 2 follow Poisson processes with rates λu and λa, respectively.",
+              "we assume that all the information obtained from the 911 call, such as request location, request type, and bystander information, is accurate."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. MDP Model",
+                "equation": "",
+                "quote": "We assume that arrivals of EMS requests of type 1 and type 2 follow Pois­ son processes with rates λu and λa, respectively."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "markov-decision-process",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Markov decision process as “MDP”: “We assume that arrivals of EMS requests of type 1 and type 2 follow Poisson processes with rates”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "state-space",
+            "label": "State Space",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Without loss of generality, we assume that decisions are made at transition times.",
+            "searchPhrases": [
+              "how state space is represented",
+              "decision rule in operations and supply chains",
+              "state space decision rule specification"
+            ],
+            "formal": "Decision rule: Without loss of generality, we assume that decisions are made at transition times.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that decisions are made at transition times.",
+              "An event is represented by e,e ∈E, where E is the set of all possible event types.",
+              "Without loss of generality, we assume that decisions are made at transition times."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. State Space",
+                "equation": "",
+                "quote": "Without loss of generality, we assume that decisions are made at transition times."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Without loss of generality, we assume that decisions are made at transition times.”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "action-space",
+            "label": "Action Space",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "If the event e ∈{2,3,4,6,7,8}, we set A(s) = ∅ (i.e., no action will be taken).",
+            "searchPhrases": [
+              "how action space is represented",
+              "decision rule in operations and supply chains",
+              "action space decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If the event e ∈{2,3,4,6,7,8}, we set A(s) = ∅ (i.e., no action will be taken).",
+              "If event e ∈{5,9}, the decision is to determine to which base to redeploy the ambulance/UAV.",
+              "Then, the action space is given by A2(s) := (Za l,b) : X b∈Ma Za l,b = 1 ( ) , which ensures that ambulance l is redeployed to only one base.",
+              "Then, the action space is given by A3(s) := (Zu l,b) : X n∈Mu Zu l,b = 1 ( ) , which ensures that UAV l is redeployed to only one base."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Action Space",
+                "equation": "",
+                "quote": "If the event e ∈{2,3,4,6,7,8}, we set A(s) = ∅ (i.e., no action will be taken)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “If the event e ∈{2,3,4,6,7,8}, we set A(s) = ∅ (i.e., no action will be taken).”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "one-step-reward-function",
+            "label": "One-Step Reward Function",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "The health outcome is modeled as a decreasing function of the response time because the likelihood of survival decreases with the time it takes to receive medical treatment (Blackwell and Kaufman 2002, Wilde 2013), especially in cases of opioid overdose where every minute is critical.",
+            "searchPhrases": [
+              "how one-step reward function is represented",
+              "estimation procedure in operations and supply chains",
+              "one-step reward function estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The health outcome is modeled as a decreasing function of the response time because the likelihood of survival decreases with the time it takes to receive medical treatment (Blackwell and Kaufman 2002, Wilde 2013), especially in cases of opioid overdose where every minute is critical.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The system only incurs a cost or gains a reward at event e ∈{1,3,8}.",
+              "Let oj = 1A and oj = 2 denote the cases where the ambulance serves as the first response; let oj = 1B denote the case where the ambulance serves as the follow-up response.",
+              "The health outcome is modeled as a decreasing function of the response time because the likelihood of survival decreases with the time it takes to receive medical treatment (Blackwell and Kaufman 2002, Wilde 2013), especially in cases of opioid overdose where every minute is critical."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.4. One-Step Reward Function",
+                "equation": "",
+                "quote": "The health outcome is modeled as a decreas­ ing function of the response time because the likelihood of survival decreases with the time it takes to receive medical treatment (Blackwell and Kaufman 2002, Wilde 2013), especially in cases of opioid overdose where every minute is critical."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “The health outcome is modeled as a decreasing function of the response time because the likelihood of survival”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "optimality-criterion",
+            "label": "Optimality Criterion",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "We refer to Cavazos-Cadena (1991) and Cavazos-Cadena and Sennott (1992) for summaries of results on existence conditions for discrete-time average cost MDPs with countable state space and finite action sets.",
+            "searchPhrases": [
+              "how optimality criterion is represented",
+              "modeled objective in operations and supply chains",
+              "optimality criterion modeled objective specification"
+            ],
+            "formal": "Objective relation: We refer to Cavazos-Cadena (1991) and Cavazos-Cadena and Sennott (1992) for summaries of results on existence conditions for discrete-time average cost MDPs with countable state space and finite action sets.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The expected average reward value of a policy π is defined for all s0 ∈S as vg(π,s0) := lim T→∞ 1 T Est,at,st+1 \"X T 1 t=0 h(st,at,st+1)|s0,π # , (4) where h(st,at,st+1) is the one-step cost/reward, which is defined in Section 3.4.",
+              "X s′∈S p(s′|s,a)[h(s,a,s′)+vb(π∗,s′)], ∀s∈S, (5) where vb(·) is the optimal relative value function, h(s,a,s′) is the one-step cost/reward, and p(s′ |s,a) is the transition probability."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.5. Optimality Criterion",
+                "equation": "",
+                "quote": "We refer to Cavazos-Cadena (1991) and Cavazos-Cadena and Sennott (1992) for summaries of results on existence conditions for discrete-time average cost MDPs with countable state space and finite action sets."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "basis-functions",
+            "label": "Basis Functions",
+            "role": "algorithm",
+            "concepts": [
+              "simulation"
+            ],
+            "explanation": "Although simulation-based comparison would need to verify the effectiveness of these basis functions, we ensure that the constructed basis functions have the same monotonicity as the optimal value function at the design phase.",
+            "searchPhrases": [
+              "how basis functions is represented",
+              "solution algorithm in operations and supply chains",
+              "basis functions solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Although simulation-based comparison would need to verify the effectiveness of these basis functions, we ensure that the constructed basis functions have the same monotonicity as the optimal value function at the design phase.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Here, M and W represent our model and the uncertainty in the model, respectively; SM,a denotes the system state immediately after decision a, and SM,W denotes the system state after the uncertainty W is realized."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.2. Basis Functions",
+                "equation": "",
+                "quote": "Although simulation-based comparison would need to verify the effectiveness of these basis functions, we ensure that the constructed basis functions have the same monoto­ nicity as the optimal value function at the design phase."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "simulation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Simulation: “Although Simulation -based comparison would need to verify the effectiveness”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The system state immediately",
+                  "source": {
+                    "type": "section",
+                    "section": "Approximate Policy Iteration",
+                    "page": 8,
+                    "sectionIndex": 9,
+                    "sentence": 12,
+                    "quote": "Here, M and W represent our model and the uncertainty in the model, respectively; SM,a denotes the system state immediately after decision a, and SM,W denotes the system state after the uncertainty W is realized.",
+                    "matchedText": "the system state immediately after decision a, and SM",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "9c675e585d0316890049af4826cf49e08210fca3939eb9fd77b6038aa68746e9",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "e9270b2318afd64c491c7eeb5851b2405bf5307b44e82b9a9847201bd53ac7e2",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-0166/e9270b2318afd64c491c7eeb5851b2405bf5307b44e82b9a9847201bd53ac7e2.json",
+      "extractionQaDecisionSha256": "9f777295bce1ef17f0d283d3859f6778354391a2076bdf675014f545ceb9837d",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

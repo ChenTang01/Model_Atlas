@@ -1,0 +1,636 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2022-1174",
+  "sourcePdfSha256": "708cbacec32c25b679428eb041de6e8a5e92da8d3c7b53ce3a85db5520d3ed6d",
+  "extractionPagesSha256": "e4a75c00f0853128d7e6f085273c51ce8e38088b350673a05148b1fda4757bec",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "5f9766bc859bdffe817dbcdd5eb0026ded1f3523c3e7700ec5e4e27eec7f6347",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "5cd9f32eec6600b02bfbf7eb00f6eda1942c46fc2b93e9e9b2c9a4ddfdb72ee0",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-1174/5cd9f32eec6600b02bfbf7eb00f6eda1942c46fc2b93e9e9b2c9a4ddfdb72ee0.json",
+  "extractionQaDecisionSha256": "8beaf5bbfa6db7d70d9994ccf331864775a7dc2057738ae8fb09940fdc74864b",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2022-1174",
+    "question": "How do flexibility and consistency interact in long-term care rostering?",
+    "overview": "The model considers the rostering decisions—that is, the assignment of workers scheduled for a shift to units—of a long-term care facility. The facility’s objective is to minimize the monthly inconsistency level, a widely promoted quality metric representing the number of different caregivers working in each unit over one month. We introduce simple rostering heuristics that prioritize either part-time or full-time workers and present a stochastic model of the repeated rostering problem to compare the performance of different strategies analytically.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Flexibility and Consistency in Long-Term Care Rostering model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers the rostering decisions—that is, the assignment of workers scheduled for a shift to units—of a long-term care facility. The facility’s objective is to minimize the monthly inconsistency level, a widely promoted quality metric representing the number of different caregivers working in each unit over one month. We introduce simple rostering heuristics that prioritize either part-time or full-time workers and present a stochastic model of the repeated rostering problem to compare the performance of different strategies analytically.",
+        "objects": [
+          "Workers",
+          "Managers",
+          "The customer",
+          "Organizations",
+          "Cell"
+        ],
+        "inputs": [
+          "Higher priority than full-time workers for assignment to their home units"
+        ],
+        "decisions": [
+          "All workers’ schedules",
+          "For strategy P to provide better consistency than strategy F",
+          "For strategy P to provide a lower inconsistency level than strategy F"
+        ],
+        "assumptions": [
+          "The average full-time caregiver works 20 shifts per month; that is, NFT = 20",
+          "This structure going forward"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Workers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We consider the rostering decisions—that is, the assignment of workers scheduled for a shift to units—of a long-term care facility.",
+                "matchedText": "workers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Managers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "Managerial implications: Contrary to popular guidance, our results show that managers should focus on part-time workers and assign them as consistently as possible.",
+                "matchedText": "managers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The customer",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 0,
+                "sentence": 42,
+                "quote": "Although nursing homes and assisted living facili­ ties may present the clearest case for consistent care, other applications exist in which introducing a new service provider to the customer population may be detrimental.",
+                "matchedText": "the customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Organizations",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 0,
+                "sentence": 16,
+                "quote": "I’ve had over 25 different people giving me a bath, and it causes me to be tense.” The Centers for Medicare & Medicaid Services (CMS) featured consistent assignment as the first of four “organizational goals” in its National Nursing Home Quality Improvement Campaign (nhquality­ campaign.org), now called the Quality Improvement Organizations Program (qioprogram.org).",
+                "matchedText": "Organizations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cell",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 0,
+                "sentence": 25,
+                "quote": "Chen et al. (2021) used cell phone location data from early in the coronavirus pan­ demic to estimate that each nursing home was connected to 15 other facilities through a staff network and that eliminating these links would reduce infections by 44%.",
+                "matchedText": "cell",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Higher priority than full-time workers for assignment to their home units",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "Our analysis shows that in order to minimize the inconsistency level, part-time workers should receive higher priority than full-time workers for assignment to their home units.",
+                "matchedText": "higher priority than full-time workers for assignment to their home units",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "All workers’ schedules",
+              "source": {
+                "type": "section",
+                "section": "Mix Decisions",
+                "sectionIndex": 3,
+                "page": 5,
+                "quote": "We describe two simple lower bounds on the inconsis­ tency level with hypothetical workers who would work whenever scheduled; that is, the nursing home has full flexibility in choosing all workers’ schedules as long as the total number of shifts worked in the month does not exceed some value"
+              }
+            },
+            {
+              "value": "For strategy P to provide better consistency than strategy F",
+              "source": {
+                "type": "section",
+                "section": "Equal Numbers of Full-Time and Part-Time Workers",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 57,
+                "quote": "Propositions 1 and 2 are asymptotic results; next, we establish an upper bound on the number of shifts required for strategy P to provide better consistency than strategy F",
+                "matchedText": "for strategy P to provide better consistency than strategy F",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "For strategy P to provide a lower inconsistency level than strategy F",
+              "source": {
+                "type": "section",
+                "section": "Equal Numbers of Full-Time and Part-Time Workers",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 115,
+                "quote": "for strategy P to provide a lower inconsistency level than strategy F",
+                "matchedText": "for strategy P to provide a lower inconsistency level than strategy F",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The average full-time caregiver works 20 shifts per month; that is, NFT = 20",
+              "source": {
+                "type": "section",
+                "section": "Mix Decisions",
+                "sectionIndex": 3,
+                "page": 5,
+                "quote": "the average full-time caregiver works 20 shifts per month; that is, NFT = 20.",
+                "matchedText": "the average full-time caregiver works 20 shifts per month; that is, NFT = 20.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "This structure going forward",
+              "source": {
+                "type": "section",
+                "section": "Equal Numbers of Full-Time and Part-Time Workers",
+                "page": 7,
+                "sectionIndex": 16,
+                "sentence": 17,
+                "quote": "this structure going forward.",
+                "matchedText": "this structure going forward.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          }
+        ],
+        "method": "The analysis then compares the performance of our rostering heuristics via trace-based simulation of the historical schedules.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 7
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "Mix Decisions",
+            "equation": "",
+            "quote": "We describe two simple lower bounds on the inconsis­ tency level with hypothetical workers who would work whenever scheduled; that is, the nursing home has full flexibility in choosing all workers’ schedules as long as the total number of shifts worked in the month does not exceed some value."
+          }
+        ],
+        "components": [
+          {
+            "id": "analysis-of-schedule-data-and-bounds",
+            "label": "Analysis of Schedule Data and Bounds",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "They commented that this constraint became an issue only on very rare occasions; the models in this paper assume full interchangeability of CNAs.",
+            "searchPhrases": [
+              "how analysis of schedule data and bounds is represented",
+              "feasibility condition in policy, sustainability, and public services",
+              "analysis of schedule data and bounds feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: They commented that this constraint became an issue only on very rare occasions; the models in this paper assume full interchangeability of CNAs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Our analysis shows that in order to minimize the inconsistency level, part-time workers should receive higher priority than full-time workers for assignment to their home units."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Analysis of Schedule Data and Bounds",
+                "equation": "",
+                "quote": "They commented that this constraint became an issue only on very rare occa­ sions; the models in this paper assume full inter­ changeability of CNAs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “They commented that this constraint became an issue only on very rare occasions; the models in this paper”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Higher priority than full-time workers for assignment to their home units",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 4,
+                    "quote": "Our analysis shows that in order to minimize the inconsistency level, part-time workers should receive higher priority than full-time workers for assignment to their home units.",
+                    "matchedText": "higher priority than full-time workers for assignment to their home units",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "hindsight-optimization-bound",
+            "label": "Hindsight Optimization Bound",
+            "role": "constraint",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "In Online Appendix H, we provide an additional constraint requiring that full-time workers with a clear home unit continue working in that home unit; in testing, we find the inconsistency score with this constraint to be less than 1.0 above the hindsight optimal bound for most facility/month combinations.",
+            "searchPhrases": [
+              "how hindsight optimization bound is represented",
+              "feasibility condition in policy, sustainability, and public services",
+              "hindsight optimization bound feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: In Online Appendix H, we provide an additional constraint requiring that full-time workers with a clear home unit continue working in that home unit; in testing, we find the inconsistency score with this constraint to be less than 1.0 above the hindsight optimal bound for most facility/month combinations.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Our decision variable is xijk, with xijk = 1 representing that caregiver i works in unit j on shift k for i ∈W, j ∈U, and k ∈S, and 0 otherwise.",
+              "The input to the model is the actual shifts worked from the historical rosters; Aijk = 1 if worker i actually worked in unit j on shift k and 0 otherwise.",
+              "In Online Appendix H, we provide an additional constraint requiring that full-time workers with a clear home unit continue working in that home unit; in testing, we find the inconsistency score with this constraint to be less than 1.0 above the hindsight optimal bound for most facility/month combinations.",
+              "To formalize our approach, we define set U to include all units in the facility, set S to include all shifts over our time horizon, and W to be the set of workers."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Hindsight Optimization Bound",
+                "equation": "",
+                "quote": "In Online Appendix H, we provide an additional constraint requiring that full-time work­ ers with a clear home unit continue working in that home unit; in testing, we find the inconsistency score with this constraint to be less than 1.0 above the hindsight optimal bound for most facility/month combinations."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Optimization: “In Online Appendix H, we provide an additional constraint requiring that full-time workers with a clear home unit”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "mix-decisions",
+            "label": "Mix Decisions",
+            "role": "decision",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "We describe two simple lower bounds on the inconsistency level with hypothetical workers who would work whenever scheduled; that is, the nursing home has full flexibility in choosing all workers’ schedules as long as the total number of shifts worked in the month does not exceed some value.",
+            "searchPhrases": [
+              "how mix decisions is represented",
+              "decision rule in policy, sustainability, and public services",
+              "mix decisions decision rule specification"
+            ],
+            "formal": "Decision rule: We describe two simple lower bounds on the inconsistency level with hypothetical workers who would work whenever scheduled; that is, the nursing home has full flexibility in choosing all workers’ schedules as long as the total number of shifts worked in the month does not exceed some value.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the average full-time caregiver works 20 shifts per month.",
+              "Caregivers supply a mean number of shifts matching that of the actual data, P i∈W P j∈U P k∈SAijk=|W|.",
+              "Each unit requires an average of P i∈W P j∈U P k∈SAijk=|U| shifts supplied by workers over the month."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Mix Decisions",
+                "equation": "",
+                "quote": "We describe two simple lower bounds on the inconsis­ tency level with hypothetical workers who would work whenever scheduled; that is, the nursing home has full flexibility in choosing all workers’ schedules as long as the total number of shifts worked in the month does not exceed some value."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Scheduling: “Scheduling”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model",
+            "label": "Model",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The paper constructs a simplified model of the caregiver rostering decision, which we analyze for insights about the relative performance of policies that prioritize either part-time or full-time workers.",
+            "searchPhrases": [
+              "how model is represented",
+              "decision rule in policy, sustainability, and public services",
+              "model decision rule specification"
+            ],
+            "formal": "Decision rule: The paper constructs a simplified model of the caregiver rostering decision, which we analyze for insights about the relative performance of policies that prioritize either part-time or full-time workers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We construct a simplified model of the caregiver rostering decision, which we analyze for insights about the relative performance of policies that prioritize either part-time or full-time workers.",
+              "we assume that (i) there are U full-time and U part-time workers.",
+              "On every shift, the facility fills the U positions with fixed proportions of full-time and part-time workers; the workers who actually work are randomly and independently drawn from the appropriate population for each of n shifts."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Model",
+                "equation": "",
+                "quote": "We construct a simplified model of the caregiver ros­ tering decision, which we analyze for insights about the relative performance of policies that prioritize either part-time or full-time workers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We construct a simplified model of the caregiver rostering decision, which we analyze for insights about the relative”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "equal-numbers-of-full-time-and-part-time-workers",
+            "label": "Equal Numbers of Full-Time and Part-Time Workers",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Unlike for our selected small problem instances, the heuristic performs poorly when there is randomness in the number of full-time and part-time workers active on any shift.",
+            "searchPhrases": [
+              "how equal numbers of full-time and part-time workers is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "equal numbers of full-time and part-time workers solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Unlike for our selected small problem instances, the heuristic performs poorly when there is randomness in the number of full-time and part-time workers active on any shift.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The remaining p = U f positions are filled by the secondary class, in this case part-time workers.",
+              "For φ = F, we define the graph of the units where each part-time worker may work as a regular D-unit chain (DUC), analogous to regular D-skill chains defined in Hopp et al. (2004).",
+              "We illustrate the model presented in Section 4.1 for a simple example in which U = 3 with f = 2 full-time positions and p = 1 part-time position."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Equal Numbers of Full-Time and Part-Time Workers",
+                "equation": "",
+                "quote": "Unlike for our selected small prob­ lem instances, the heuristic performs poorly when there is randomness in the number of full-time and part-time workers active on any shift."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Unlike for our selected small problem instances, the heuristic performs poorly when there is randomness in the number”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "rostering-heuristics",
+            "label": "Rostering Heuristics",
+            "role": "algorithm",
+            "concepts": [
+              "analytical-model",
+              "simulation"
+            ],
+            "explanation": "In Online Appendix D, we verify that these heuristics generate results consistent with our analytical model in a simulation using the analytical model’s assumptions.",
+            "searchPhrases": [
+              "how rostering heuristics is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "rostering heuristics solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In Online Appendix D, we verify that these heuristics generate results consistent with our analytical model in a simulation using the analytical model’s assumptions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Building on our analytical results and insights from hindsight optimization, we identify simple heuristics for making the caregiver-to-unit assignment decision at the start of each shift."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5. Rostering Heuristics",
+                "equation": "",
+                "quote": "In Online Appendix D, we verify that these heuristics generate results consistent with our analytical model in a simulation using the ana­ lytical model’s assumptions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "analytical-model",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Analytical modeling: “Analytical modeling”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "simulation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Simulation as “simulation model”: “simulation model”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "708cbacec32c25b679428eb041de6e8a5e92da8d3c7b53ce3a85db5520d3ed6d",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "5cd9f32eec6600b02bfbf7eb00f6eda1942c46fc2b93e9e9b2c9a4ddfdb72ee0",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-1174/5cd9f32eec6600b02bfbf7eb00f6eda1942c46fc2b93e9e9b2c9a4ddfdb72ee0.json",
+      "extractionQaDecisionSha256": "8beaf5bbfa6db7d70d9994ccf331864775a7dc2057738ae8fb09940fdc74864b",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,839 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2024-04995",
+  "sourcePdfSha256": "f05ebcf6b21a84914eceeeef716724319e4fb978c59cb2a0b28b62c5763d64a9",
+  "extractionPagesSha256": "02f8e8dcf2f95cdffcdbf2b61eafad91c9480fafb8616b34fe9a9ec85f53d44c",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "7451c392b6e62964b57689ae3cc4e669f0562206df79fb688d59bfc5f62599e0",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "0e71725a5acc1a486a6cf14ba71db0916410c385a35b3a623c9154303cb8cc64",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-04995/0e71725a5acc1a486a6cf14ba71db0916410c385a35b3a623c9154303cb8cc64.json",
+  "extractionQaDecisionSha256": "90cd0f5101ef9243cb004173fcd5b773da69a9819b2792ca277a28eba1d35763",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-04995",
+    "question": "How should an e-commerce seller set scarce inventory when consumers value rarity and strategically sort across simultaneous auctions?",
+    "overview": "Local bidders strategically choose between two simultaneous uniform-price auctions under incomplete information, and the paper estimates a symmetric Bayesian Nash cutoff equilibrium.",
+    "modelTypes": [
+      "Game theory",
+      "Structural model",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        7,
+        8,
+        10,
+        11
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Consumer Demand with Social Influences model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Local bidders strategically choose between two simultaneous uniform-price auctions under incomplete information, and the paper estimates a symmetric Bayesian Nash cutoff equilibrium.",
+        "objects": [
+          "Local bidders",
+          "Global bidders",
+          "The platform seller in inventory counterfactuals"
+        ],
+        "inputs": [
+          "Each bidder privately observes values for red and black variants",
+          "Inventory and reserve prices are public",
+          "Values are independent private values in the main model, with inventory shifting their distribution through rarity",
+          "A payoff",
+          "The private signals of other bidders"
+        ],
+        "decisions": [
+          "Local bidders choose",
+          "Bidders submit at most one bid per auction",
+          "The seller chooses inventory in counterfactuals",
+          "Bids and accounts for truncation at the reserve price",
+          "Via demand reduction or bid shading strategies (Vickrey 1961)"
+        ],
+        "assumptions": [
+          "Two simultaneous multiunit uniform-price auctions sell differentiated color variants",
+          "Global bidders can enter both auctions; local bidders may enter at most one",
+          "Bidders bid values truthfully or approximately truthfully because each submits one unit and markets are sufficiently large",
+          "Private value pairs are independently drawn, and the valuation distribution depends on inventory",
+          "The structural interpretation is one-shot and does not model competing sellers, dynamic inventory, or secondary-market common values"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Local bidders",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "local bidders who may enter only one auction"
+              }
+            },
+            {
+              "value": "Global bidders",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "global bidders who may enter both auctions"
+              }
+            },
+            {
+              "value": "The platform seller in inventory counterfactuals",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "the platform seller in inventory counterfactuals"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each bidder privately observes values for red and black variants",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each bidder privately observes values for red and black variants."
+              }
+            },
+            {
+              "value": "Inventory and reserve prices are public",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Inventory and reserve prices are public."
+              }
+            },
+            {
+              "value": "Values are independent private values in the main model, with inventory shifting their distribution through rarity",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Values are independent private values in the main model, with inventory shifting their distribution through rarity."
+              }
+            },
+            {
+              "value": "A payoff",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 7,
+                "sectionIndex": 3,
+                "sentence": 27,
+                "quote": "Addition­ ally, any pure strategy equilibrium of the entry stage has a payoff-equivalent representation in cutoff strategies.",
+                "matchedText": "a payoff",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The private signals of other bidders",
+              "source": {
+                "type": "section",
+                "section": "Motivating the Model Assumptions",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 6,
+                "quote": "A bidder’s valuation for the product can there­ fore depend on the private signals of other bidders, as such signals are informative about the profits in the sec­ ondary market (Haile 2001, 2003).",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Local bidders choose",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "local bidders choose which auction to enter"
+              }
+            },
+            {
+              "value": "Bidders submit at most one bid per auction",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "bidders submit at most one bid per auction"
+              }
+            },
+            {
+              "value": "The seller chooses inventory in counterfactuals",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the seller chooses inventory in counterfactuals"
+              }
+            },
+            {
+              "value": "Bids and accounts for truncation at the reserve price",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 6,
+                "quote": "MLE gives the maximum likelihood estimator assuming log-normally distributed bids and accounts for truncation at the reserve price",
+                "matchedText": "bids and accounts for truncation at the reserve price",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Via demand reduction or bid shading strategies (Vickrey 1961)",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 7,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "via demand reduction or bid shading strategies (Vick­ rey 1961)",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Two simultaneous multiunit uniform-price auctions sell differentiated color variants",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Two simultaneous multiunit uniform-price auctions sell differentiated color variants."
+              }
+            },
+            {
+              "value": "Global bidders can enter both auctions; local bidders may enter at most one",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Global bidders can enter both auctions; local bidders may enter at most one."
+              }
+            },
+            {
+              "value": "Bidders bid values truthfully or approximately truthfully because each submits one unit and markets are sufficiently large",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Bidders bid values truthfully or approximately truthfully because each submits one unit and markets are sufficiently large."
+              }
+            },
+            {
+              "value": "Private value pairs are independently drawn, and the valuation distribution depends on inventory",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Private value pairs are independently drawn, and the valuation distribution depends on inventory."
+              }
+            },
+            {
+              "value": "The structural interpretation is one-shot and does not model competing sellers, dynamic inventory, or secondary-market common values",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The structural interpretation is one-shot and does not model competing sellers, dynamic inventory, or secondary-market common values."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors derive expected auction payoffs, solve local bidders' cutoff-entry fixed point, estimate preferences by simulated likelihood and best-response iteration, and optimize inventory in counterfactuals.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.1. Motivating the Model Assumptions",
+            "equation": "",
+            "quote": "The theoretical model must account for three patterns in the data: (1) some bidders bid in both auctions (R and B) whereas other bidders only participate in one of the two auctions; (2) there are more entrants into auction B than into auction R (middle panel in Figure 1); and (3) bidders do not dis­ play a strong preference for one color over the other (the coefficient estimate for the red dummy in columns 3, 4, 7, and 8 in Table 1)."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "auctions"
+            ],
+            "explanation": "A local bidder chooses the auction with the higher expected payoff; in a symmetric cutoff equilibrium the marginal bidder is indifferent between red and black.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in social influence and strategic auction entry",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\pi_R(c^*(v_{iB})\\mid c^*)=\\pi_B(v_{iB}\\mid c^*)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "v_{iR}, v_{iB}",
+                "meaning": "bidder i's private values for the red and black variants · paper-estimated joint support",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c^*(v_{iB})",
+                "meaning": "red-value cutoff above which a local bidder with black value v_iB enters the red auction · increasing cutoff function",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_R, \\pi_B",
+                "meaning": "expected payoff from entering the red or black auction · real-valued expected payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P_0",
+                "meaning": "common reserve price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "share of local bidders who may enter at most one auction · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In the case where viR ≥P0 and viB ≥P0, a local bidder enters the auction with the highest expected payoff.",
+              "Global bidders can enter both auctions; local bidders may enter at most one."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Expected-profit objective",
+                "equation": "(2)",
+                "quote": "In the case where viR ≥P0 and viB ≥P0, a local bidder enters the auction with the highest expected payoff."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Auctions: “In the case where viR ≥P0 and viB ≥P0, a local bidder enters the auction with the highest”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2,
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "symmetric-bayesian-nash-cutoff-entry-equilibrium",
+            "label": "Symmetric Bayesian Nash cutoff-entry equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Symmetric Bayesian Nash cutoff-entry equilibrium. Proposition 1, printed p. 3556 (PDF p. 7), proves existence of a symmetric cutoff equilibrium and payoff equivalence of pure-strategy equilibria. Multiple cutoffs are theoretically possible, while the estimation routine numerically finds a unique equilibrium.",
+            "searchPhrases": [
+              "how symmetric bayesian nash cutoff-entry equilibrium is represented",
+              "strategic response in social influence and strategic auction entry",
+              "symmetric bayesian nash cutoff-entry equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Symmetric Bayesian Nash cutoff-entry equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c^*(v_{iB})",
+                "meaning": "red-value cutoff above which a local bidder with black value v_iB enters the red auction · increasing cutoff function",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "share of local bidders who may enter at most one auction · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Additionally, any pure strategy equilibrium of the entry stage has a payoff-equivalent representation in cutoff strategies."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Model",
+                "equation": "",
+                "quote": "Note that, although at least one such equilibrium exists, there may be multiple equilibria in cutoff strat­ egies."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Note that, although at least one such equilibrium exists, there may be multiple equilibria in cutoff strategies.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "A payoff",
+                  "source": {
+                    "type": "section",
+                    "section": "Model",
+                    "page": 7,
+                    "sectionIndex": 3,
+                    "sentence": 27,
+                    "quote": "Addition­ ally, any pure strategy equilibrium of the entry stage has a payoff-equivalent representation in cutoff strategies.",
+                    "matchedText": "a payoff",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "estimation",
+            "concepts": [
+              "auctions"
+            ],
+            "explanation": "The authors derive expected auction payoffs, solve local bidders' cutoff-entry fixed point, estimate preferences by simulated likelihood and best-response iteration, and optimize inventory in counterfactuals.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "estimation procedure in social influence and strategic auction entry",
+              "solution or estimation method estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The authors derive expected auction payoffs, solve local bidders' cutoff-entry fixed point, estimate preferences by simulated likelihood and best-response iteration, and optimize inventory in counterfactuals.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c^*(v_{iB})",
+                "meaning": "red-value cutoff above which a local bidder with black value v_iB enters the red auction · increasing cutoff function",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_R, \\pi_B",
+                "meaning": "expected payoff from entering the red or black auction · real-valued expected payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "share of local bidders who may enter at most one auction · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Private value pairs are independently drawn, and the valuation distribution depends on inventory.",
+              "The theoretical model must account for three patterns in the data: (1) some bidders bid in both auctions (R and B) whereas other bidders only participate in one of the two auctions; (2) there are more entrants into auction B than into auction R (middle panel in Figure 1); and (3) bidders do not display a strong preference for one color over the other (the coefficient estimate for the red dummy in columns 3, 4, 7, and 8 in Table 1).",
+              "Global bidders can enter both auctions; local bidders may enter at most one.",
+              "Bidders bid values truthfully or approximately truthfully because each submits one unit and markets are sufficiently large."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.1. Motivating the Model Assumptions",
+                "equation": "",
+                "quote": "The theoretical model must account for three patterns in the data: (1) some bidders bid in both auctions (R and B) whereas other bidders only participate in one of the two auctions; (2) there are more entrants into auction B than into auction R (middle panel in Figure 1); and (3) bidders do not dis­ play a strong preference for one color over the other (the coefficient estimate for the red dummy in columns 3, 4, 7, and 8 in Table 1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Auctions: “(1) some bidders bid in both Auctions (R and B) whereas other bidders only participate”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "inventory",
+              "estimation"
+            ],
+            "explanation": "The seller commits inventory and reserve prices for simultaneous multiunit uniform-price auctions. Bidders observe these terms and private values; global bidders enter any auction above reserve, while local bidders strategically choose one auction. Bids then determine uniform clearing prices. Global bidders generate cross-auction demand without an exclusivity constraint.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in social influence and strategic auction entry",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The seller commits inventory and reserve prices for simultaneous multiunit uniform-price auctions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "v_{iR}, v_{iB}",
+                "meaning": "bidder i's private values for the red and black variants · paper-estimated joint support",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c^*(v_{iB})",
+                "meaning": "red-value cutoff above which a local bidder with black value v_iB enters the red auction · increasing cutoff function",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P_0",
+                "meaning": "common reserve price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "share of local bidders who may enter at most one auction · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Two simultaneous multiunit uniform-price auctions sell differentiated color variants.",
+              "Global bidders can enter both auctions; local bidders may enter at most one.",
+              "Bidders bid values truthfully or approximately truthfully because each submits one unit and markets are sufficiently large."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4. Estimation",
+                "equation": "",
+                "quote": "Data on individual bids as inventory levels vary pro­ vide a unique opportunity to separate the direct effect of inventory on the equilibrium price (lower inventory levels lead to higher market clearing prices) from the indirect rarity effect (lower inventory levels lead to higher willingness to pay, which further increases mar­ ket clearing prices)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Inventory: “Data on individual bids as Inventory levels vary provide a unique opportunity to separate”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Model estimation as “estimation”: “estimation”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "inventory",
+              "estimation"
+            ],
+            "explanation": "Each bidder privately observes values for red and black variants. Inventory and reserve prices are public. Values are independent private values in the main model, with inventory shifting their distribution through rarity.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in social influence and strategic auction entry",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Each bidder privately observes values for red and black variants.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "v_{iR}, v_{iB}",
+                "meaning": "bidder i's private values for the red and black variants · paper-estimated joint support",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c^*(v_{iB})",
+                "meaning": "red-value cutoff above which a local bidder with black value v_iB enters the red auction · increasing cutoff function",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_R, \\pi_B",
+                "meaning": "expected payoff from entering the red or black auction · real-valued expected payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "share of local bidders who may enter at most one auction · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Private value pairs are independently drawn, and the valuation distribution depends on inventory.",
+              "To allow for the possibility that users do not only observe the inventory of the shoes in their exact size but take into account the inventory of shoes of similar sizes, we can estimate the rarity effect as a function of average inventory for small, medium, and large shoe sizes.",
+              "Two simultaneous multiunit uniform-price auctions sell differentiated color variants.",
+              "Bidders bid values truthfully or approximately truthfully because each submits one unit and markets are sufficiently large."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4. Estimation",
+                "equation": "",
+                "quote": "To allow for the possibility that users do not only observe the inven­ tory of the shoes in their exact size but take into account the inventory of shoes of similar sizes, we can estimate the rarity effect as a function of average inventory for small, medium, and large shoe sizes."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Inventory: “Inventory”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Model estimation as “estimation”: “To allow for the possibility that users do not only observe the inventory of the shoes in their”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "auctions",
+              "pricing",
+              "strategic-interaction"
+            ],
+            "explanation": "Local bidders choose which auction to enter bidders submit at most one bid per auction the seller chooses inventory in counterfactuals",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in social influence and strategic auction entry",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Local bidders choose which auction to enter bidders submit at most one bid per auction the seller chooses inventory in counterfactuals",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c^*(v_{iB})",
+                "meaning": "red-value cutoff above which a local bidder with black value v_iB enters the red auction · increasing cutoff function",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "share of local bidders who may enter at most one auction · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The distribution of single bids comes from a combination of local and global bidders: For example, in auction B, local bidders who chose to enter auction B rather than R because viB > P0 and P0 < viR < c∗(viB), and global and local bidders who could only enter auction B due to the binding reserve price (i.e., viB ≥P0 and viR < P0).",
+              "Private value pairs are independently drawn, and the valuation distribution depends on inventory.",
+              "Global bidders can enter both auctions; local bidders may enter at most one.",
+              "Bidders bid values truthfully or approximately truthfully because each submits one unit and markets are sufficiently large."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "1. Update the entry strategy using the best-response",
+                "equation": "",
+                "quote": "The distribution of single bids comes from a combination of local and global bidders: For example, in auction B, local bidders who chose to enter auction B rather than R because viB > P0 and P0 < viR < c∗(viB), and global and local bidders who could only enter auction B due to the binding reserve price (i.e., viB ≥P0 and viR < P0)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Auctions: “The distribution of single bids comes from a combination of local and global bidders: For example, in auction”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “The distribution of single bids comes from a combination of local and global bidders: For example, in auction”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Strategic interaction as “best response”: “The distribution of single bids comes from a combination of local and global bidders: For example, in auction”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "f05ebcf6b21a84914eceeeef716724319e4fb978c59cb2a0b28b62c5763d64a9",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "0e71725a5acc1a486a6cf14ba71db0916410c385a35b3a623c9154303cb8cc64",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-04995/0e71725a5acc1a486a6cf14ba71db0916410c385a35b3a623c9154303cb8cc64.json",
+      "extractionQaDecisionSha256": "90cd0f5101ef9243cb004173fcd5b773da69a9819b2792ca277a28eba1d35763",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

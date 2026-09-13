@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-00435",
+  "sourcePdfSha256": "e291cc635dc7fc35a21da0cb39f8a1c1537858b3cd0d3cfd6c1cee6c8811e7d9",
+  "extractionPagesSha256": "32e4d317970b1d4537cb248ff5408d64e232a0e3d92fd045117d4ef75dca913b",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "46b3225a42e70f750bc07ac509e5807376c568bfdadda0ef4a7ff96243c71840",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "b1ce53e7a580b88defff80b40b340e257acbf508993c063f60458e31b8d09720",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00435/b1ce53e7a580b88defff80b40b340e257acbf508993c063f60458e31b8d09720.json",
+  "extractionQaDecisionSha256": "3550f31d18072718e140a5c4e91cd0db4d71f52f6b2f7aaca140bd21e6d1d52c",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-00435",
+    "question": "How should a food-delivery platform and restaurants divide food revenue, delivery revenue, and delivery cost so that commission competition does not feature distant restaurants or restrict delivery inefficiently?",
+    "overview": "Multiple restaurants first choose commission bids for delivery discounts and scarce featured slots; the platform then chooses restaurant-specific delivery fees and featured listings, and the paper derives the subgame-perfect equilibrium and a coordinating contract.",
+    "modelTypes": [
+      "Game theory",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        11,
+        12,
+        13,
+        14
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Food Ordering and Delivery model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Multiple restaurants first choose commission bids for delivery discounts and scarce featured slots; the platform then chooses restaurant-specific delivery fees and featured listings, and the paper derives the subgame-perfect equilibrium and a coordinating contract.",
+        "objects": [
+          "One food-ordering and delivery platform",
+          "N restaurants differing in distance from customers",
+          "Three parties that interact: the platform, N restaurants, and customers",
+          "Consumer",
+          "Drivers"
+        ],
+        "inputs": [
+          "Restaurant distances and model parameters are common knowledge",
+          "The platform observes all commission rates",
+          "Restaurants anticipate the platform's zone-based response and competition for K scarce slots",
+          "Customers are represented by deterministic demand multipliers rather than strategic players in the baseline"
+        ],
+        "decisions": [
+          "Each restaurant chooses its commission rate",
+          "The platform chooses restaurant-specific delivery fees and service boundaries",
+          "The platform allocates K featured-display slots",
+          "Under the proposed contract, parties share food and delivery profit"
+        ],
+        "assumptions": [
+          "Restaurants are identical except for distance from a single customer location in the baseline",
+          "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance",
+          "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha",
+          "Featured display multiplies demand by beta and at most K restaurants can receive the same featured boost",
+          "Firms maximize profit and all modeled restaurants are profitable at the base commission"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "One food-ordering and delivery platform",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "one food-ordering and delivery platform"
+              }
+            },
+            {
+              "value": "N restaurants differing in distance from customers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "N restaurants differing in distance from customers"
+              }
+            },
+            {
+              "value": "Three parties that interact: the platform, N restaurants, and customers",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "There are three parties that interact: the platform, N restaurants, and customers."
+              }
+            },
+            {
+              "value": "Consumer",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "The recent COVID-19 pandemic fueled this growth exponentially: lock-downs and social distancing requirements shifted consumer habits toward ordering foods via smart­ phone apps.",
+                "matchedText": "consumer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Drivers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "Food delivery platforms oper­ ate on thin margins from restaurant food commissions and delivery and service fees charged to consumers, the majority of which are spent on operating expenses, such as paying delivery drivers.",
+                "matchedText": "drivers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Restaurant distances and model parameters are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Restaurant distances and model parameters are common knowledge."
+              }
+            },
+            {
+              "value": "The platform observes all commission rates",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The platform observes all commission rates before pricing and featuring."
+              }
+            },
+            {
+              "value": "Restaurants anticipate the platform's zone-based response and competition for K scarce slots",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Restaurants anticipate the platform's zone-based response and competition for K scarce slots."
+              }
+            },
+            {
+              "value": "Customers are represented by deterministic demand multipliers rather than strategic players in the baseline",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Customers are represented by deterministic demand multipliers rather than strategic players in the baseline."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each restaurant chooses its commission rate",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each restaurant chooses its commission rate"
+              }
+            },
+            {
+              "value": "The platform chooses restaurant-specific delivery fees and service boundaries",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform chooses restaurant-specific delivery fees and service boundaries"
+              }
+            },
+            {
+              "value": "The platform allocates K featured-display slots",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform allocates K featured-display slots"
+              }
+            },
+            {
+              "value": "Under the proposed contract, parties share food and delivery profit",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "under the proposed contract, parties share food and delivery profit"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Restaurants are identical except for distance from a single customer location in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Restaurants are identical except for distance from a single customer location in the baseline."
+              }
+            },
+            {
+              "value": "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance."
+              }
+            },
+            {
+              "value": "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha."
+              }
+            },
+            {
+              "value": "Featured display multiplies demand by beta and at most K restaurants can receive the same featured boost",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Featured display multiplies demand by beta and at most K restaurants can receive the same featured boost."
+              }
+            },
+            {
+              "value": "Firms maximize profit and all modeled restaurants are profitable at the base commission",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Firms maximize profit and all modeled restaurants are profitable at the base commission."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The authors derive piecewise platform and restaurant profits by distance, solve the two-stage game backward, compare it with an integrated first best, design a profit-sharing coordination contract, extend the demand and geography structure, and evaluate a representative city numerically.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 14,
+            "section": "8. Illustrative Example",
+            "equation": "",
+            "quote": "We will exam­ ine equilibrium outcomes such as commission rates, featured restaurants, delivery fees, platform and res­ taurant profits, and total profits (social welfare)."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "For a featured restaurant charged the low fee, the platform earns its commission on food plus the delivery fee minus distance-based delivery cost, multiplied by the featured-demand factor.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in commission and delivery-cost sharing on food-delivery platforms",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\pi_i^{d,p}(p_i,\\phi_i,\\delta_i)=\\beta(\\phi_iV_0+V_L-c\\delta_i)\\quad\\text{if featured and }p_i=V_L",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\phi_i",
+                "meaning": "commission share of food revenue chosen by restaurant i · [phi_0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "platform delivery fee for restaurant i · low V_L, high V_H, or no service",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_i",
+                "meaning": "distance from restaurant i to the customer location · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "delivery cost per unit distance · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "fraction of demand retained under the high delivery fee · between zero and one",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "demand multiplier from featured display · greater than one",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "number of available featured-display slots · integer not exceeding N",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Specifically, for each order with restaurant i, after collecting the food revenue V0 from customers, the platform retains a fraction φi and sends the remaining back to the restaurant.",
+              "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance.",
+              "Featured display multiplies demand by beta and at most K restaurants can receive the same featured boost.",
+              "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "Specifically, for each order with restaurant i, after collecting the food revenue V0 from customers, the platform retains a fraction φi and sends the remaining back to the restaurant."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Specifically, for each order with restaurant i, after collecting the food revenue V0 from customers, the platform retains”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "commission"
+            ],
+            "explanation": "In stage 1, restaurants simultaneously choose commission rates at or above the platform's base rate. In stage 2, after observing commissions, the platform chooses a low, high, or no-delivery outcome for each restaurant and chooses at most K restaurants to feature. Demand and profits are realized. Restaurants pay commissions both to induce lower delivery fees and to compete for featured display.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in commission and delivery-cost sharing on food-delivery platforms",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: In stage 1, restaurants simultaneously choose commission rates at or above the platform's base rate.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\phi_i",
+                "meaning": "commission share of food revenue chosen by restaurant i · [phi_0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "platform delivery fee for restaurant i · low V_L, high V_H, or no service",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_i",
+                "meaning": "distance from restaurant i to the customer location · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "delivery cost per unit distance · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "fraction of demand retained under the high delivery fee · between zero and one",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "demand multiplier from featured display · greater than one",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Restaurants are identical except for distance from a single customer location in the baseline.",
+              "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance.",
+              "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.2. Restaurants’ Choice of Commission Rates",
+                "equation": "",
+                "quote": "Our analysis of the commission rates that restau­ rants are willing to pay in the first stage of the game proceeds with the following thought exercise."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Commission fee as “commission”: “Our analysis of the commission rates that restaurants are willing to pay in”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Restaurant distances and model parameters are common knowledge. The platform observes all commission rates before pricing and featuring. Restaurants anticipate the platform's zone-based response and competition for K scarce slots. Customers are represented by deterministic demand multipliers rather than strategic players in the baseline.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in commission and delivery-cost sharing on food-delivery platforms",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Restaurant distances and model parameters are common knowledge.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\phi_i",
+                "meaning": "commission share of food revenue chosen by restaurant i · [phi_0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "platform delivery fee for restaurant i · low V_L, high V_H, or no service",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_i",
+                "meaning": "distance from restaurant i to the customer location · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "delivery cost per unit distance · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "number of available featured-display slots · integer not exceeding N",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In addition, observe that the fixed surcharge of c=2 for every additional unit of distance suggests that the platform passes on 50% of the delivery cost c to customers.",
+              "Restaurants are identical except for distance from a single customer location in the baseline.",
+              "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance.",
+              "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "7.1. Linear Demand for Delivery",
+                "equation": "",
+                "quote": "In addition, observe that the fixed surcharge of c=2 for every additional unit of distance suggests that the platform passes on 50% of the delivery cost c to custo­ mers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "platform-markets"
+            ],
+            "explanation": "The authors derive piecewise platform and restaurant profits by distance, solve the two-stage game backward, compare it with an integrated first best, design a profit-sharing coordination contract, extend the demand and geography structure, and evaluate a representative city numerically.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in commission and delivery-cost sharing on food-delivery platforms",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors derive piecewise platform and restaurant profits by distance, solve the two-stage game backward, compare it with an integrated first best, design a profit-sharing coordination contract, extend the demand and geography structure, and evaluate a representative city numerically.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\phi_i",
+                "meaning": "commission share of food revenue chosen by restaurant i · [phi_0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "platform delivery fee for restaurant i · low V_L, high V_H, or no service",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_i",
+                "meaning": "distance from restaurant i to the customer location · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "delivery cost per unit distance · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "number of available featured-display slots · integer not exceeding N",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Restaurants are identical except for distance from a single customer location in the baseline.",
+              "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance.",
+              "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "7.2. Practical Implementation",
+                "equation": "",
+                "quote": "Ultimately, for each (i, j) pairing, the number of orders received by the platform for restau­ rant i from market j is himj, and the delivery distance for these orders is δij."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "platform-markets",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Platform markets: “Platform markets”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "commission"
+            ],
+            "explanation": "Each restaurant chooses its commission rate the platform chooses restaurant-specific delivery fees and service boundaries the platform allocates K featured-display slots under the proposed contract, parties share food and delivery profit",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in commission and delivery-cost sharing on food-delivery platforms",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each restaurant chooses its commission rate the platform chooses restaurant-specific delivery fees and service boundaries the platform allocates K featured-display slots under the proposed contract, parties share food and delivery profit",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\phi_i",
+                "meaning": "commission share of food revenue chosen by restaurant i · [phi_0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "platform delivery fee for restaurant i · low V_L, high V_H, or no service",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_i",
+                "meaning": "distance from restaurant i to the customer location · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "delivery cost per unit distance · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "fraction of demand retained under the high delivery fee · between zero and one",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "number of available featured-display slots · integer not exceeding N",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance.",
+              "Firms maximize profit and all modeled restaurants are profitable at the base commission.",
+              "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "7.2. Practical Implementation",
+                "equation": "",
+                "quote": "In this environment, each restaurant chooses com­ mission rates and the platform sets delivery fees and allocates display slots."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Commission fee as “commission”: “commission”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "subgame-perfect-commission-delivery-price-and-featured-display-e",
+            "label": "Subgame-perfect commission, delivery-price, and featured-display equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "commission"
+            ],
+            "explanation": "The model's equilibrium concept is Subgame-perfect commission, delivery-price, and featured-display equilibrium. Section 4 solves backward from the platform's optimal second-stage pricing and display decisions to restaurants' first-stage commission choices. Propositions 1 and 2 provide the equilibrium policy and bidding characterization.",
+            "searchPhrases": [
+              "how subgame-perfect commission, delivery-price, and featured-display equilibrium is represented",
+              "strategic response in commission and delivery-cost sharing on food-delivery platforms",
+              "subgame-perfect commission, delivery-price, and featured-display equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Subgame-perfect commission, delivery-price, and featured-display equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\phi_i",
+                "meaning": "commission share of food revenue chosen by restaurant i · [phi_0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "platform delivery fee for restaurant i · low V_L, high V_H, or no service",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "delivery cost per unit distance · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "demand multiplier from featured display · greater than one",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "number of available featured-display slots · integer not exceeding N",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Restaurants are identical except for distance from a single customer location in the baseline.",
+              "Food price and base commission are exogenous, food production cost is normalized to zero, and delivery cost is linear in distance.",
+              "The platform selects a low or high delivery fee; the high fee reduces demand by factor alpha."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "8. Illustrative Example",
+                "equation": "",
+                "quote": "We will exam­ ine equilibrium outcomes such as commission rates, featured restaurants, delivery fees, platform and res­ taurant profits, and total profits (social welfare)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Commission fee as “commission”: “will examine equilibrium outcomes such as commission rates, featured restaurants, delivery fees, platform and restaurant”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e291cc635dc7fc35a21da0cb39f8a1c1537858b3cd0d3cfd6c1cee6c8811e7d9",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "b1ce53e7a580b88defff80b40b340e257acbf508993c063f60458e31b8d09720",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00435/b1ce53e7a580b88defff80b40b340e257acbf508993c063f60458e31b8d09720.json",
+      "extractionQaDecisionSha256": "3550f31d18072718e140a5c4e91cd0db4d71f52f6b2f7aaca140bd21e6d1d52c",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mksc-2022-0356",
+  "sourcePdfSha256": "1a935da0ce405eb030b05c9f70cfe46ef07704ddeec3bde23ea66a9d55ddd326",
+  "extractionPagesSha256": "6fcebd3600bbd7446ca264bb4364b98b8903614b6c3a702bd44ee92af5b9915a",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "3b1963b7cc33a2816d074b04f79af373fcd97a41009cf7f25d4b396e4e4d7bec",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "6b97bb09851525fdcd83df4858eeaa2577845836e27aa70b4f57f8d40aab8170",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2022-0356/6b97bb09851525fdcd83df4858eeaa2577845836e27aa70b4f57f8d40aab8170.json",
+  "extractionQaDecisionSha256": "58b0be4297e07a4b8a2aeebada3421cad941a9c51c47bc39f7446d2d1aa7c120",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mksc-2022-0356",
+    "question": "How should a medium allocate advertising and content over time when media technology constrains its control, consumers choose where to direct attention, and the medium cannot perfectly observe ad processing?",
+    "overview": "The paper explicitly defines a continuous-time game between a medium and a consumer. The medium steers attention through format-constrained allocation actions, the consumer observes those actions and chooses attention, and equilibrium jointly solves their interdependent dynamic policies.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        10,
+        13
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Dynamic media design and consumer attention steering",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper explicitly defines a continuous-time game between a medium and a consumer. The medium steers attention through format-constrained allocation actions, the consumer observes those actions and chooses attention, and equilibrium jointly solves their interdependent dynamic policies.",
+        "objects": [
+          "A medium that allocates advertising and media content",
+          "A consumer",
+          "Nature"
+        ],
+        "inputs": [
+          "The consumer observes the medium's current allocation",
+          "Static and sequential media do not observe the consumer's attention action; an interactive medium partially observes it",
+          "The medium never directly observes whether the product-match signal has arrived",
+          "Signal arrival is stochastic with common-knowledge exponential rate lambda, and all players share discount or termination rate r"
+        ],
+        "decisions": [
+          "The consumer chooses attention to A, M, or outside option B",
+          "The medium chooses ad A, content M, or the option set {A,M}",
+          "What to pay attention to and how",
+          "Between attending to the ad A and consuming the media content M",
+          "Freely whether to pay attention to the ad or to the media content"
+        ],
+        "assumptions": [
+          "There is one medium, one representative consumer, and one advertiser over an infinite horizon",
+          "Media content provides constant flow value m and has sunk production cost normalized to zero",
+          "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad",
+          "The values v_c and v_a are expected match benefits upon signal arrival and incorporate the match probability rho; signal arrival and match realization are independent",
+          "The outside option has constant flow value b<m, and attention costs for ad and content are normalized to zero in the main model"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A medium that allocates advertising and media content",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a medium that allocates advertising and media content"
+              }
+            },
+            {
+              "value": "A consumer",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a consumer who allocates attention"
+              }
+            },
+            {
+              "value": "Nature",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "Nature, which governs signal arrival, match realization, and random termination"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The consumer observes the medium's current allocation",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The consumer observes the medium's current allocation before choosing attention."
+              }
+            },
+            {
+              "value": "Static and sequential media do not observe the consumer's attention action; an interactive medium partially observes it",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Static and sequential media do not observe the consumer's attention action; an interactive medium partially observes it after presenting a choice."
+              }
+            },
+            {
+              "value": "The medium never directly observes whether the product-match signal has arrived",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The medium never directly observes whether the product-match signal has arrived."
+              }
+            },
+            {
+              "value": "Signal arrival is stochastic with common-knowledge exponential rate lambda, and all players share discount or termination rate r",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Signal arrival is stochastic with common-knowledge exponential rate lambda, and all players share discount or termination rate r."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The consumer chooses attention to A, M, or outside option B",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the consumer chooses attention to A, M, or outside option B when available"
+              }
+            },
+            {
+              "value": "The medium chooses ad A, content M, or the option set {A,M}",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the medium chooses ad A, content M, or the option set {A,M}, subject to the format's feasible set"
+              }
+            },
+            {
+              "value": "What to pay attention to and how",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 4,
+                "quote": "Recognizing this, the consumer decides what to pay attention to and how",
+                "matchedText": "what to pay attention to and how",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Between attending to the ad A and consuming the media content M",
+              "source": {
+                "type": "section",
+                "section": "Timing and Information Structure",
+                "page": 6,
+                "sectionIndex": 22,
+                "sentence": 27,
+                "quote": "The consumer’s problem is then to choose between attending to the ad A and consuming the media content M",
+                "matchedText": "between attending to the ad A and consuming the media content M",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Freely whether to pay attention to the ad or to the media content",
+              "source": {
+                "type": "section",
+                "section": "Timing and Information Structure",
+                "page": 6,
+                "sectionIndex": 22,
+                "sentence": 14,
+                "quote": "Static Advertising Under the static format, the consumer can decide freely whether to pay attention to the ad or to the media con­ tent",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There is one medium, one representative consumer, and one advertiser over an infinite horizon",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "There is one medium, one representative consumer, and one advertiser over an infinite horizon."
+              }
+            },
+            {
+              "value": "Media content provides constant flow value m and has sunk production cost normalized to zero",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Media content provides constant flow value m and has sunk production cost normalized to zero."
+              }
+            },
+            {
+              "value": "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad."
+              }
+            },
+            {
+              "value": "The values v_c and v_a are expected match benefits upon signal arrival and incorporate the match probability rho; signal arrival and match realization are independent",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The values v_c and v_a are expected match benefits upon signal arrival and incorporate the match probability rho; signal arrival and match realization are independent."
+              }
+            },
+            {
+              "value": "The outside option has constant flow value b<m, and attention costs for ad and content are normalized to zero in the main model",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The outside option has constant flow value b<m, and attention costs for ad and content are normalized to zero in the main model."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The paper first analyzes the optimal strategy of a consumer under any arbitrary policy, and then solves for the optimal media policy.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Sequential Advertising",
+          "page": 7,
+          "sentence": 4
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "2.2. Consumer",
+            "equation": "",
+            "quote": "Conditional on a match, the one-off benefit to the con­ sumer is ˜vc ≥0 and to the advertiser is ˜va ≥0.11 We assume that if the signal does not arrive and thus the consumer remains uninformed about the value of the advertised product, the consumer will not make a pur­ chase.12 To simplify notation, let vc ≡ρ˜vc and va ≡ρ˜va denote the expected ad values to the consumer and the advertiser conditional on the signal arrival."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "matching",
+              "signaling"
+            ],
+            "explanation": "The consumer observes the medium's current allocation before choosing attention. Static and sequential media do not observe the consumer's attention action; an interactive medium partially observes it after presenting a choice. The medium never directly observes whether the product-match signal has arrived. Signal arrival is stochastic with common-knowledge exponential rate lambda, and all players share discount or termination rate r.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The consumer observes the medium's current allocation before choosing attention.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_{Static}^{*}",
+                "meaning": "the medium's optimal static-format profit when advertising is used · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "calendar time in the continuous-time model · [0,infinity)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F(t)",
+                "meaning": "cumulative distribution function of the product-match signal's arrival time · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d(t)",
+                "meaning": "medium's allocation action at time t · format-specific subset of {A,M,{A,M}}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c(t)",
+                "meaning": "consumer attention action at time t · {B,d(t)}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "exponential arrival rate of the product-match signal · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Conditional on a match, the one-off benefit to the consumer is ̃vc ≥0 and to the advertiser is ̃va ≥0.11 We assume that if the signal does not arrive and thus the consumer remains uninformed about the value of the advertised product, the consumer will not make a purchase.12 To simplify notation, let vc ≡ρ ̃vc and va ≡ρ ̃va denote the expected ad values to the consumer and the advertiser conditional on the signal arrival.",
+              "Media content provides constant flow value m and has sunk production cost normalized to zero.",
+              "There is one medium, one representative consumer, and one advertiser over an infinite horizon.",
+              "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.2. Consumer",
+                "equation": "",
+                "quote": "Conditional on a match, the one-off benefit to the con­ sumer is ˜vc ≥0 and to the advertiser is ˜va ≥0.11 We assume that if the signal does not arrive and thus the consumer remains uninformed about the value of the advertised product, the consumer will not make a pur­ chase.12 To simplify notation, let vc ≡ρ˜vc and va ≡ρ˜va denote the expected ad values to the consumer and the advertiser conditional on the signal arrival."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Matching: “Conditional on a match, the one-off benefit to the consumer is ̃vc ≥0 and to the advertiser is”.",
+                "conditionRefs": [
+                  0,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Signaling: “Conditional on a match, the one-off benefit to the consumer is ̃vc ≥0 and to the advertiser is”.",
+                "conditionRefs": [
+                  0,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2,
+                  5
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "continuous-time-media-policy-and-consumer-attention-equilibrium",
+            "label": "Continuous-time media-policy and consumer-attention equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The model's equilibrium concept is Continuous-time media-policy and consumer-attention equilibrium. Section 2.3 states that equilibrium simultaneously solves the medium's allocation and consumer's attention problem. Lemmas 1-4 characterize consumer control and optimal policy form; Propositions 1, 2, and 4 give the equilibrium media policies for static, sequential, and interactive formats.",
+            "searchPhrases": [
+              "how continuous-time media-policy and consumer-attention equilibrium is represented",
+              "strategic response in platforms and marketplaces",
+              "continuous-time media-policy and consumer-attention equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Continuous-time media-policy and consumer-attention equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_{Static}^{*}",
+                "meaning": "the medium's optimal static-format profit when advertising is used · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "calendar time in the continuous-time model · [0,infinity)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d(t)",
+                "meaning": "medium's allocation action at time t · format-specific subset of {A,M,{A,M}}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c(t)",
+                "meaning": "consumer attention action at time t · {B,d(t)}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_c",
+                "meaning": "consumer's expected match value conditional on signal arrival, equal to rho times the value conditional on a match · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m",
+                "meaning": "consumer flow value from media content · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Media content provides constant flow value m and has sunk production cost normalized to zero.",
+              "There is one medium, one representative consumer, and one advertiser over an infinite horizon.",
+              "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.3. Timing and Information Structure",
+                "equation": "",
+                "quote": "An equilibrium solution requires simultaneously solving both the medium’s allocation problem and the consumer’s attention problem."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Information structure: “An equilibrium solution requires simultaneously solving both the medium’s allocation problem and the consumer’s attention problem.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The medium extracts consumer and advertiser surplus and chooses an allocation policy to maximize discounted total value. Under static advertising and the attention condition lambda v_c>m, its advertising payoff has the following closed form; otherwise the ad-free payoff is m/r.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in platforms and marketplaces",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\Pi_{Static}^{*}=\\int_0^{\\infty}\\left(v_c+v_a+\\frac{m}{r}\\right)e^{-rt}dF(t)=\\frac{\\lambda[r(v_c+v_a)+m]}{r(\\lambda+r)}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\Pi_{Static}^{*}",
+                "meaning": "the medium's optimal static-format profit when advertising is used · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "calendar time in the continuous-time model · [0,infinity)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F(t)",
+                "meaning": "cumulative distribution function of the product-match signal's arrival time · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d(t)",
+                "meaning": "medium's allocation action at time t · format-specific subset of {A,M,{A,M}}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c(t)",
+                "meaning": "consumer attention action at time t · {B,d(t)}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "exponential arrival rate of the product-match signal · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_c",
+                "meaning": "consumer's expected match value conditional on signal arrival, equal to rho times the value conditional on a match · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_a",
+                "meaning": "advertiser's expected match value conditional on signal arrival, equal to rho times the value conditional on a match · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m",
+                "meaning": "consumer flow value from media content · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b",
+                "meaning": "flow value of the consumer's outside option · b<m",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "discount or random-termination rate · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_m^*",
+                "meaning": "optimal minimum exclusive-ad duration before interactive skip control · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "For the consumer to engage with the ad and for the medium to profit from it, the ad must be sufficiently informative and valuable, λvc > m.21 In this case, the incentives of both the consumer and the medium are perfectly aligned.",
+              "Media content provides constant flow value m and has sunk production cost normalized to zero.",
+              "There is one medium, one representative consumer, and one advertiser over an infinite horizon.",
+              "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Expected-profit objective",
+                "equation": "(4)",
+                "quote": "For the consumer to engage with the ad and for the medium to profit from it, the ad must be sufficiently informative and valuable, λvc > m.21 In this case, the incentives of both the consumer and the medium are perfectly aligned."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “For the consumer to engage with the ad and for the medium to profit from it, the ad”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Continuous-time optimal control, Gittins-index reasoning, and optimal stopping are used to solve consumer attention and medium policy under each technological action set, followed by analytical comparisons of profit and consumer externality.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in platforms and marketplaces",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Continuous-time optimal control, Gittins-index reasoning, and optimal stopping are used to solve consumer attention and medium policy under each technological action set, followed by analytical comparisons of profit and consumer externality.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_{Static}^{*}",
+                "meaning": "the medium's optimal static-format profit when advertising is used · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "calendar time in the continuous-time model · [0,infinity)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d(t)",
+                "meaning": "medium's allocation action at time t · format-specific subset of {A,M,{A,M}}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c(t)",
+                "meaning": "consumer attention action at time t · {B,d(t)}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_c",
+                "meaning": "consumer's expected match value conditional on signal arrival, equal to rho times the value conditional on a match · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m",
+                "meaning": "consumer flow value from media content · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The outside option has constant flow value b<m, and attention costs for ad and content are normalized to zero in the main model.",
+              "There is one medium, one representative consumer, and one advertiser over an infinite horizon.",
+              "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2. Sequential Advertising",
+                "equation": "",
+                "quote": "Next, we first analyze the optimal strategy of a consumer under any arbitrary policy, and then solve for the optimal media policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "signaling"
+            ],
+            "explanation": "The medium chooses ad A, content M, or the option set {A,M}, subject to the format's feasible set the consumer chooses attention to A, M, or outside option B when available under interactive advertising the medium chooses a minimum forced-ad duration and when to introduce skip control",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in platforms and marketplaces",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The medium chooses ad A, content M, or the option set {A,M}, subject to the format's feasible set the consumer chooses attention to A, M, or outside option B when available under interactive advertising the medium chooses a minimum forced-ad duration and when to introduce skip control",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_{Static}^{*}",
+                "meaning": "the medium's optimal static-format profit when advertising is used · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "calendar time in the continuous-time model · [0,infinity)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d(t)",
+                "meaning": "medium's allocation action at time t · format-specific subset of {A,M,{A,M}}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c(t)",
+                "meaning": "consumer attention action at time t · {B,d(t)}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_c",
+                "meaning": "consumer's expected match value conditional on signal arrival, equal to rho times the value conditional on a match · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m",
+                "meaning": "consumer flow value from media content · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Media content provides constant flow value m and has sunk production cost normalized to zero.",
+              "There is one medium, one representative consumer, and one advertiser over an infinite horizon.",
+              "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad.",
+              "At the point of Sm when the medium observes that the consumer does not choose A, it can infer that the consumer has already obtained the ad signal, and thus, it is optimal for the medium to let the consumer switch attention to the media content."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3.3. Interactive Advertising",
+                "equation": "",
+                "quote": "At the point of Sm when the medium observes that the consumer does not choose A, it can infer that the consumer has already obtained the ad signal, and thus, it is optimal for the medium to let the consumer switch attention to the media content."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Signaling: “At the point of Sm when the medium observes that the consumer does not choose A, it can”.",
+                "conditionRefs": [
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "At each continuous time t, the medium chooses an allocation d(t) allowed by its format: simultaneous ad and content under static, either ad or content under sequential, or all three choices under interactive advertising. The consumer observes d(t) and chooses whether to attend to the ad, consume content, or take an outside option. A product-match signal may arrive while the ad is processed, after which attention and medium policy continue. The equilibrium solves the medium's allocation and the consumer's attention policy together. format-constrained continuous-time media allocation consumer attention response under stochastic information arrival",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in platforms and marketplaces",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: At each continuous time t, the medium chooses an allocation d(t) allowed by its format: simultaneous ad and content under static, either ad or content under sequential, or all three choices under interactive advertising.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi_{Static}^{*}",
+                "meaning": "the medium's optimal static-format profit when advertising is used · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "calendar time in the continuous-time model · [0,infinity)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F(t)",
+                "meaning": "cumulative distribution function of the product-match signal's arrival time · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d(t)",
+                "meaning": "medium's allocation action at time t · format-specific subset of {A,M,{A,M}}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c(t)",
+                "meaning": "consumer attention action at time t · {B,d(t)}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "exponential arrival rate of the product-match signal · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Media content provides constant flow value m and has sunk production cost normalized to zero.",
+              "Let V∗denote the total value the consumer expects to gain on the medium by following the optimal attention strategy in equilibrium.30 Drawing on the literature on media markets and advertising (Becker and Murphy 1993, Anderson and Gabszewicz 2006, Dukes et al. 2022), we define the externality of advertising, ∆V, as follows.",
+              "There is one medium, one representative consumer, and one advertiser over an infinite horizon.",
+              "The ad match signal arrives exponentially at rate lambda only while the consumer processes the ad."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "4.2. Advertising Externality to Consumers",
+                "equation": "",
+                "quote": "Let V∗denote the total value the consumer expects to gain on the medium by following the optimal attention strategy in equilib­ rium.30 Drawing on the literature on media markets and advertising (Becker and Murphy 1993, Anderson and Gabszewicz 2006, Dukes et al. 2022), we define the externality of advertising, ∆V, as follows."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Let V∗denote the total value the consumer expects to gain on the medium by following the optimal attention”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "1a935da0ce405eb030b05c9f70cfe46ef07704ddeec3bde23ea66a9d55ddd326",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "6b97bb09851525fdcd83df4858eeaa2577845836e27aa70b4f57f8d40aab8170",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2022-0356/6b97bb09851525fdcd83df4858eeaa2577845836e27aa70b4f57f8d40aab8170.json",
+      "extractionQaDecisionSha256": "58b0be4297e07a4b8a2aeebada3421cad941a9c51c47bc39f7446d2d1aa7c120",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

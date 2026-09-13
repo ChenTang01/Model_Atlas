@@ -1,0 +1,746 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2022-02462",
+  "sourcePdfSha256": "977bf35bc5f3ee6ba5aa4302c0238d257c800f9dca22867aa93cce985aca8163",
+  "extractionPagesSha256": "7e5d5028d995992410a48e5bd42add75d2b5569aa6293efbb6aaecbe7a025fa7",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "84c513f56e2e5252fcdbeb7820a6713b6984384e8aa50b665c31d655da2c7511",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "211a2f7e51e8dd879e97f768423e283de951521e847f2d5e6b4f7acd73b63f23",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-02462/211a2f7e51e8dd879e97f768423e283de951521e847f2d5e6b4f7acd73b63f23.json",
+  "extractionQaDecisionSha256": "85c61f6d7e148b8f8821cc1eb1eb49d460a645cc057ea39545c716bd71fba725",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-02462",
+    "question": "When do commercial repricing algorithms intensify price competition, and when can simple undercut-and-reset rules sustain tacitly collusive price cycles?",
+    "overview": "Merchants strategically delegate pricing to fixed-price, undercutting, or undercut-and-reset algorithms. The paper derives Nash equilibria in delegated strategy parameters, a mixed Nash equilibrium in technology choice, and KMR-style evolutionary steady states, then matches the implied price cycles to e-commerce data.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        16,
+        17,
+        20
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Algorithmic Pricing, Price Wars, and Tacit Collusion model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Merchants strategically delegate pricing to fixed-price, undercutting, or undercut-and-reset algorithms. The paper derives Nash equilibria in delegated strategy parameters, a mixed Nash equilibrium in technology choice, and KMR-style evolutionary steady states, then matches the implied price cycles to e-commerce data.",
+        "objects": [
+          "Randomly paired rival merchants whose committed algorithms generate prices",
+          "Merchant population members revising technology under the KMR evolutionary process",
+          "One product",
+          "Consumers",
+          "Brand"
+        ],
+        "inputs": [
+          "Rival posted prices are observable to repricing tools",
+          "The feasible algorithm set and common monopoly-profit function pi(p) are known in the model",
+          "Merchants delegate repeated price moves",
+          "The evolutionary process conditions best responses on observed technology population shares"
+        ],
+        "decisions": [
+          "Choose fixed, undercutting, or resetting technology",
+          "Undercutter chooses a floor price",
+          "Resetter chooses trough and peak prices",
+          "Algorithm undercuts the rival by the minimum price unit",
+          "Resetter periodically jumps price to the cycle peak"
+        ],
+        "assumptions": [
+          "Core analytical competition uses two randomly matched merchants and homogeneous products",
+          "The Buybox environment is approximated by nearly infinite own-price elasticity",
+          "The baseline normalizes marginal cost and uses minimum currency unit k",
+          "Available algorithms are fixed-price, undercutting, and resetting technologies with costs c_U and c_C",
+          "The continuous-cycle approximation imposes a one-unit waiting penalty after a reset"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Randomly paired rival merchants whose committed algorithms generate prices",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "randomly paired rival merchants whose committed algorithms generate prices"
+              }
+            },
+            {
+              "value": "Merchant population members revising technology under the KMR evolutionary process",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "merchant population members revising technology under the KMR evolutionary process"
+              }
+            },
+            {
+              "value": "One product",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 6,
+                "sectionIndex": 17,
+                "sentence": 25,
+                "quote": "For the first panel, the unit of observation is an offer on a given date; the second panel aggregates to the product by date level (one product consists of multiple offers by various merchants). *Starred variables are available only for the merchant registered with the repricing company.",
+                "matchedText": "one product",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Consumers",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 45,
+                "quote": "Furthermore, the median product’s Buybox price—arguably the most relevant price for consumers—updates on average every 11.49 hours.",
+                "matchedText": "consumers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Brand",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 6,
+                "sectionIndex": 2,
+                "sentence": 82,
+                "quote": "price elasticities (because both sellers sell the t-shirt in the same brand, size, and color) and hence, low profit in a static Bertrand-Nash equilibrium.",
+                "matchedText": "brand",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Rival posted prices are observable to repricing tools",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Rival posted prices are observable to repricing tools."
+              }
+            },
+            {
+              "value": "The feasible algorithm set and common monopoly-profit function pi(p) are known in the model",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The feasible algorithm set and common monopoly-profit function pi(p) are known in the model."
+              }
+            },
+            {
+              "value": "Merchants delegate repeated price moves",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Merchants delegate repeated price moves after choosing technology and parameters."
+              }
+            },
+            {
+              "value": "The evolutionary process conditions best responses on observed technology population shares",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The evolutionary process conditions best responses on observed technology population shares."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Choose fixed, undercutting, or resetting technology",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "choose fixed, undercutting, or resetting technology"
+              }
+            },
+            {
+              "value": "Undercutter chooses a floor price",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "undercutter chooses a floor price"
+              }
+            },
+            {
+              "value": "Resetter chooses trough and peak prices",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "resetter chooses trough and peak prices"
+              }
+            },
+            {
+              "value": "Algorithm undercuts the rival by the minimum price unit",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "algorithm undercuts the rival by the minimum price unit"
+              }
+            },
+            {
+              "value": "Resetter periodically jumps price to the cycle peak",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "resetter periodically jumps price to the cycle peak"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Core analytical competition uses two randomly matched merchants and homogeneous products",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Core analytical competition uses two randomly matched merchants and homogeneous products."
+              }
+            },
+            {
+              "value": "The Buybox environment is approximated by nearly infinite own-price elasticity",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The Buybox environment is approximated by nearly infinite own-price elasticity."
+              }
+            },
+            {
+              "value": "The baseline normalizes marginal cost and uses minimum currency unit k",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The baseline normalizes marginal cost and uses minimum currency unit k."
+              }
+            },
+            {
+              "value": "Available algorithms are fixed-price, undercutting, and resetting technologies with costs c_U and c_C",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Available algorithms are fixed-price, undercutting, and resetting technologies with costs c_U and c_C."
+              }
+            },
+            {
+              "value": "The continuous-cycle approximation imposes a one-unit waiting penalty after a reset",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The continuous-cycle approximation imposes a one-unit waiting penalty after a reset."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The paper also estimates the same specification using the Sun and Abraham (2021) approach that is robust to these concerns.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Repricer Activation Event Study",
+          "page": 11,
+          "sentence": 61
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 6,
+            "section": "3.1. Description of Data",
+            "equation": "",
+            "quote": "We observe a product if and only if one of the repri­ cing companies’ client merchants sells it; we refer to these merchants as the “source” merchants."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Rival posted prices are observable to repricing tools. The feasible algorithm set and common monopoly-profit function pi(p) are known in the model. Merchants delegate repeated price moves after choosing technology and parameters. The evolutionary process conditions best responses on observed technology population shares.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in algorithmic repricing, price wars, and tacit collusion",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Rival posted prices are observable to repricing tools.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "ell, u",
+                "meaning": "price-cycle trough and peak",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "k",
+                "meaning": "minimum price decrement or continuous-approximation reset rate parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_r, V_nr",
+                "meaning": "cycle payoffs to resetting and nonresetting merchants",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "equilibrium population probability of undercutting technology",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Core analytical competition uses two randomly matched merchants and homogeneous products.",
+              "The continuous-cycle approximation imposes a one-unit waiting penalty after a reset.",
+              "Evolutionary adoption is myopic and includes inertia and small mutation or error."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Description of Data",
+                "equation": "",
+                "quote": "We observe a product if and only if one of the repri­ cing companies’ client merchants sells it; we refer to these merchants as the “source” merchants."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We observe a product if and only if one of the repricing companies’ client merchants sells it; we”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "equilibrium-analysis"
+            ],
+            "explanation": "Merchants choose an available pricing technology and commit to it, then choose its parameters in Nash fashion. Once paired, the algorithms alternately quote prices as mechanical functions of the rival's previous price. In the evolutionary layer, merchants are randomly matched and one merchant per period may myopically switch technology in response to current population shares, subject to inertia and rare mistakes. Delegation restricts merchants to a small rule set and yields sharper predictions than an unrestricted repeated-pricing folk theorem.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in algorithmic repricing, price wars, and tacit collusion",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: Merchants choose an available pricing technology and commit to it, then choose its parameters in Nash fashion.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "F, U, C",
+                "meaning": "fixed-price, undercutting, and cycle-resetting technologies",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "ell, u",
+                "meaning": "price-cycle trough and peak",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "k",
+                "meaning": "minimum price decrement or continuous-approximation reset rate parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_r, V_nr",
+                "meaning": "cycle payoffs to resetting and nonresetting merchants",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "equilibrium population probability of undercutting technology",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Available algorithms are fixed-price, undercutting, and resetting technologies with costs c_U and c_C.",
+              "Core analytical competition uses two randomly matched merchants and homogeneous products.",
+              "Evolutionary adoption is myopic and includes inertia and small mutation or error."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "4. Equilibrium in Delegated Strategies",
+                "equation": "",
+                "quote": "At this stage, they are committed to their technology but not to its parameters; in particular, they play a Nash Equilibrium in parameter choices."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis as “nash equilibrium”: “parameters; in particular, they play a nash equilibrium in parameter choices.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "equilibrium-or-solution-concept",
+            "label": "Equilibrium or solution concept",
+            "role": "interaction",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The model's equilibrium concept is Nash equilibrium in delegated pricing strategies with a mixed technology-choice equilibrium and KMR steady states. Proposition 1 gives the U-versus-C continuum of parameter equilibria; Proposition 4 shows the cycle average equals monopoly price under symmetry; the technology-choice payoff matrix yields a unique symmetric mixed Nash equilibrium; Propositions 5-6 and Corollary 1 characterize evolutionary steady states and transition prices.",
+            "searchPhrases": [
+              "how equilibrium or solution concept is represented",
+              "strategic response in algorithmic repricing, price wars, and tacit collusion",
+              "equilibrium or solution concept strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Nash equilibrium in delegated pricing strategies with a mixed technology-choice equilibrium and KMR steady states.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "k",
+                "meaning": "minimum price decrement or continuous-approximation reset rate parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi(p)",
+                "meaning": "profit obtained by a monopolist charging price p",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "equilibrium population probability of undercutting technology",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Evolutionary adoption is myopic and includes inertia and small mutation or error."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "4. Equilibrium in Delegated Strategies",
+                "equation": "",
+                "quote": "This figure provides example price paths for cycling under delegated strategies (left panel) and Markov-perfect strategies (i.e., the Maskin- Tirole equilibrium)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Choose fixed, undercutting, or resetting technology undercutter chooses a floor price resetter chooses trough and peak prices algorithm undercuts the rival by the minimum price unit resetter periodically jumps price to the cycle peak merchant may revise technology under KMR dynamics",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in algorithmic repricing, price wars, and tacit collusion",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Choose fixed, undercutting, or resetting technology undercutter chooses a floor price resetter chooses trough and peak prices algorithm undercuts the rival by the minimum price unit resetter periodically jumps price to the cycle peak merchant may revise technology under KMR dynamics",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "F, U, C",
+                "meaning": "fixed-price, undercutting, and cycle-resetting technologies",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "ell, u",
+                "meaning": "price-cycle trough and peak",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "k",
+                "meaning": "minimum price decrement or continuous-approximation reset rate parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_r, V_nr",
+                "meaning": "cycle payoffs to resetting and nonresetting merchants",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "equilibrium population probability of undercutting technology",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Available algorithms are fixed-price, undercutting, and resetting technologies with costs c_U and c_C.",
+              "The baseline normalizes marginal cost and uses minimum currency unit k."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "4.1. Within-Period Equilibria",
+                "equation": "",
+                "quote": "In line with our discussion above, the undercutting merchant determines a mini­ mum price pU, and the (potentially) cycling merchant selects both a minimum pC and a maximum price pC."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “In line with our discussion above, the undercutting merchant determines a minimum price pU, and the (potentially) cycling”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "A resetting merchant chooses cycle trough ell and peak u to maximize average monopoly-profit flow net of reset downtime, while the nonresetter earns an additional peak-price term.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in algorithmic repricing, price wars, and tacit collusion",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "V_r(ell,u)=[1/(2(u-ell+k))] integral_ell^u \\pi(p)dp; V_nr(ell,u)=V_r(ell,u)+[k/(u-ell+k)]\\pi(u)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "F, U, C",
+                "meaning": "fixed-price, undercutting, and cycle-resetting technologies",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "ell, u",
+                "meaning": "price-cycle trough and peak",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "k",
+                "meaning": "minimum price decrement or continuous-approximation reset rate parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi(p)",
+                "meaning": "profit obtained by a monopolist charging price p",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_r, V_nr",
+                "meaning": "cycle payoffs to resetting and nonresetting merchants",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "equilibrium population probability of undercutting technology",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Available algorithms are fixed-price, undercutting, and resetting technologies with costs c_U and c_C.",
+              "The continuous-cycle approximation imposes a one-unit waiting penalty after a reset."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "These FOCs equate the marginal benefit of extending the cycle (LHS) to the marginal cost of extending the cycle (RHS)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The paper combines proprietary Amazon repricer data and event studies with cycle classification, then develops a tractable delegated-strategy game, solves parameter and technology equilibria, and simulates KMR best-response dynamics to interpret long-run adoption and pricing.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in algorithmic repricing, price wars, and tacit collusion",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper combines proprietary Amazon repricer data and event studies with cycle classification, then develops a tractable delegated-strategy game, solves parameter and technology equilibria, and simulates KMR best-response dynamics to interpret long-run adoption and pricing.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "k",
+                "meaning": "minimum price decrement or continuous-approximation reset rate parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "equilibrium population probability of undercutting technology",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Evolutionary adoption is myopic and includes inertia and small mutation or error."
+            ],
+            "sources": [
+              {
+                "page": 20,
+                "section": "Number of Price Wars",
+                "equation": "",
+                "quote": "Furthermore, it is likely not in Ama­ zon’s interest to allow high prices on its platform, and because it controls the Buybox algorithm, it could potentially intervene to prevent prices from rising too much (Johnson et al. 2023)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Furthermore, it is likely not in Amazon’s interest to allow high prices on its platform, and because it”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "977bf35bc5f3ee6ba5aa4302c0238d257c800f9dca22867aa93cce985aca8163",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "211a2f7e51e8dd879e97f768423e283de951521e847f2d5e6b4f7acd73b63f23",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-02462/211a2f7e51e8dd879e97f768423e283de951521e847f2d5e6b4f7acd73b63f23.json",
+      "extractionQaDecisionSha256": "85c61f6d7e148b8f8821cc1eb1eb49d460a645cc057ea39545c716bd71fba725",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1148 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "hou2024allocatinginventoryrisk",
+  "sourcePdfSha256": "a3e0d747d75225e4dfbabef0fb98afd0c92b48b7612be1a2339e6c44f73c499d",
+  "extractionPagesSha256": "fbd60f30d7a1a0fb01dfa6d4cdb5f1e4827072eee14a1732de2b8713e6ba0286",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "013cdba673cc9331ab84b53a6e16f55e4d8c62bf949982fcc671356a8907d16b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "290ec890c0926e67c55b335cf58105600398583701681c94f0d36e0149311c18",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/hou2024allocatinginventoryrisk/290ec890c0926e67c55b335cf58105600398583701681c94f0d36e0149311c18.json",
+  "extractionQaDecisionSha256": "dcb1ae857cba103a02d028a265ce627b5fb486d8ca6a36d8390894fd1f25429e",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "hou2024allocatinginventoryrisk",
+    "question": "How should a manufacturer allocate inventory risk through preorder or consignment when a retailer's degree of risk aversion is private and an uncertain outside opportunity affects participation?",
+    "overview": "This is a principal–agent screening model with IC/IR constraints; the equilibrium language is separating versus pooling contracts rather than a generic BNE label.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        10,
+        12,
+        14,
+        15
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Inventory-risk allocation under private risk preference",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This is a principal–agent screening model with IC/IR constraints; the equilibrium language is separating versus pooling contracts rather than a generic BNE label.",
+        "objects": [
+          "Risk-neutral manufacturer/principal",
+          "Privately risk-averse retailer/agent"
+        ],
+        "inputs": [
+          "Retailer privately knows a binary CVaR risk type",
+          "Outside opportunity is stochastic",
+          "Demand distribution and contract primitives are common knowledge",
+          "The random demand",
+          "The less risk-averse type and the retailer with risk attitude β2"
+        ],
+        "decisions": [
+          "Manufacturer selects contract form, quantities/transfers and shutdown thresholds",
+          "Retailer reports/selects a menu item",
+          "Inventory is held under push/preorder or pull/consignment",
+          "A contract (or menu of contracts) to the retailer",
+          "The retailer a take-it-or-leave-it contract to extract all the surplus"
+        ],
+        "assumptions": [
+          "The retailer has one of two privately observed risk-aversion types",
+          "The manufacturer is risk neutral and the retailer evaluates profit using CVaR",
+          "Retail demand is random with a known distribution",
+          "Retail price, production cost and salvage value are fixed",
+          "The retailer has a stochastic outside opportunity"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Risk-neutral manufacturer/principal",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "risk-neutral manufacturer/principal"
+              }
+            },
+            {
+              "value": "Privately risk-averse retailer/agent",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "privately risk-averse retailer/agent"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Retailer privately knows a binary CVaR risk type",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "retailer privately knows a binary CVaR risk type"
+              }
+            },
+            {
+              "value": "Outside opportunity is stochastic",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "outside opportunity is stochastic"
+              }
+            },
+            {
+              "value": "Demand distribution and contract primitives are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "demand distribution and contract primitives are common knowledge"
+              }
+            },
+            {
+              "value": "The random demand",
+              "source": {
+                "type": "section",
+                "section": "Model Setting",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 11,
+                "quote": "Let D be the random demand supported on [0,∞) with cumulative distribution function (CDF) FD and density fD.",
+                "matchedText": "the random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The less risk-averse type and the retailer with risk attitude β2",
+              "source": {
+                "type": "section",
+                "section": "Risk Aversion Information",
+                "page": 6,
+                "sectionIndex": 9,
+                "sentence": 4,
+                "quote": "We refer to the retailer with risk attitude β1 as the less risk-averse type and the retailer with risk attitude β2 as the more risk-averse type.",
+                "matchedText": "the less risk-averse type and the retailer with risk attitude β2 as the more risk-averse type",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Manufacturer selects contract form, quantities/transfers and shutdown thresholds",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "manufacturer selects contract form, quantities/transfers and shutdown thresholds"
+              }
+            },
+            {
+              "value": "Retailer reports/selects a menu item",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "retailer reports/selects a menu item and accepts or rejects"
+              }
+            },
+            {
+              "value": "Inventory is held under push/preorder or pull/consignment",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "inventory is held under push/preorder or pull/consignment"
+              }
+            },
+            {
+              "value": "A contract (or menu of contracts) to the retailer",
+              "source": {
+                "type": "section",
+                "section": "Model Setting",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "The manufacturer offers a contract (or menu of contracts) to the retailer to maximize its (expected) profit",
+                "matchedText": "a contract (or menu of contracts) to the retailer",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The retailer a take-it-or-leave-it contract to extract all the surplus",
+              "source": {
+                "type": "section",
+                "section": "Decentralized Case with Complete Information",
+                "page": 5,
+                "sectionIndex": 8,
+                "sentence": 2,
+                "quote": "The manufacturer can offer the retailer a take-it-or-leave-it contract to extract all the surplus",
+                "matchedText": "the retailer a take-it-or-leave-it contract to extract all the surplus",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The retailer has one of two privately observed risk-aversion types",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer has one of two privately observed risk-aversion types."
+              }
+            },
+            {
+              "value": "The manufacturer is risk neutral and the retailer evaluates profit using CVaR",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The manufacturer is risk neutral and the retailer evaluates profit using CVaR."
+              }
+            },
+            {
+              "value": "Retail demand is random with a known distribution",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Retail demand is random with a known distribution."
+              }
+            },
+            {
+              "value": "Retail price, production cost and salvage value are fixed",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Retail price, production cost and salvage value are fixed."
+              }
+            },
+            {
+              "value": "The retailer has a stochastic outside opportunity",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer has a stochastic outside opportunity."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "With a game-theoretic model that captures the interaction among risk aversion, information asymmetry, and outside opportunity, we derive the contracting equilibrium under two widely adopted risk allocation schemes—push (i.e., the retailer bears the inventory risk) and pull (i.e., the manufacturer bears the inventory risk) contracts.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Allocating Inventory Risk in Retail Supply Chains: Risk",
+          "page": 1,
+          "sentence": 8
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 12,
+            "section": "4.3. Preorder vs. Consignment Contract",
+            "equation": "",
+            "quote": "This result is due to the man­ ufacturer’s incomplete information about the retailer’s risk attitude and intention to screen the retailer’s risk atti­ tude by distorting the order quantity designed for the less risk-averse retailer upward."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "The manufacturer chooses type-contingent quantities and promised utilities to maximize expected profit subject to both types' participation and truth-telling constraints.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in supply chains and contracts",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_{q_1,q_2,U_1,U_2}\\;\\nu[sS_{\\beta_1}(q_1)-cq_1-U_1]+(1-\\nu)[sS_{\\beta_2}(q_2)-cq_2-U_2]\\quad\\text{s.t. IR and IC}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "order quantities assigned to the two retailer risk-aversion types · q_1,q_2 \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1, U_2",
+                "meaning": "promised CVaR utilities/information rents for the two retailer types · real-valued promised utilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu",
+                "meaning": "prior probability of retailer type beta_1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{\\beta_i}(q_i)",
+                "meaning": "type-beta_i retailer's CVaR sales term at order quantity q_i · paper-defined risk-adjusted value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "retail selling price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "manufacturer's unit production cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer has one of two privately observed risk-aversion types.",
+              "The manufacturer is risk neutral and the retailer evaluates profit using CVaR.",
+              "The manufacturer can commit to a direct contract menu and shutdown rule."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Model Setting",
+                "equation": "(1)",
+                "quote": "The manufacturer offers a contract (or menu of contracts) to the retailer to maximize its (expected) profit."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Contract design as “contracting”: “The manufacturer offers a contract (or menu of contracts) to the retailer to maximize its (expected) profit.”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "optimal-incentive-compatible-screening-contract",
+            "label": "Optimal incentive-compatible screening contract",
+            "role": "interaction",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "The model's equilibrium concept is Optimal incentive-compatible screening contract; separating equilibrium under preorder and pooling equilibrium under consignment. The preorder solution assigns distinct quantities by reported type, whereas the consignment structure cannot screen and pools the two types.",
+            "searchPhrases": [
+              "how optimal incentive-compatible screening contract is represented",
+              "strategic response in supply chains and contracts",
+              "optimal incentive-compatible screening contract strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Optimal incentive-compatible screening contract; separating equilibrium under preorder and pooling equilibrium under consignment.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "order quantities assigned to the two retailer risk-aversion types · q_1,q_2 \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1, U_2",
+                "meaning": "promised CVaR utilities/information rents for the two retailer types · real-valued promised utilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu",
+                "meaning": "prior probability of retailer type beta_1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "retail selling price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "manufacturer's unit production cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In other words, the equilibrium is separable; that is, the manufacturer is able to distinguish the retailer type after executing the preorder contract if trading with both types.",
+              "The retailer has one of two privately observed risk-aversion types.",
+              "The manufacturer can commit to a direct contract menu and shutdown rule."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.1.3. Medium Risk Associated with Outside Opportu",
+                "equation": "",
+                "quote": "In other words, the equilibrium is separable; that is, the manufacturer is able to distinguish the retailer type after executing the preorder contract if trading with both types."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design as “contracting”: “In other words, the equilibrium is separable; that is, the manufacturer is able to distinguish the retailer type”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "Manufacturer selects contract form, quantities/transfers and shutdown thresholds retailer reports/selects a menu item and accepts or rejects inventory is held under push/preorder or pull/consignment",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in supply chains and contracts",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Manufacturer selects contract form, quantities/transfers and shutdown thresholds retailer reports/selects a menu item and accepts or rejects inventory is held under push/preorder or pull/consignment",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "order quantities assigned to the two retailer risk-aversion types · q_1,q_2 \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1, U_2",
+                "meaning": "promised CVaR utilities/information rents for the two retailer types · real-valued promised utilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu",
+                "meaning": "prior probability of retailer type beta_1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{\\beta_i}(q_i)",
+                "meaning": "type-beta_i retailer's CVaR sales term at order quantity q_i · paper-defined risk-adjusted value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "retail selling price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "manufacturer's unit production cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer has one of two privately observed risk-aversion types.",
+              "The manufacturer is risk neutral and the retailer evaluates profit using CVaR.",
+              "The retailer has a stochastic outside opportunity."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.3. Preorder vs. Consignment Contract",
+                "equation": "",
+                "quote": "The value of η(β2) represents the threshold of the less risk-averse retailer’s virtual risk atti­ tude ˆβ1 to ensure the possibility of having the expected order quantity under the preorder contract larger than that under the consignment contract."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Contract design as “contracting”: “The value of η(β2) represents the threshold of the less risk-averse retailer’s virtual risk attitude ˆβ1 to ensure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "contract-design",
+              "screening"
+            ],
+            "explanation": "Retailer privately knows a binary CVaR risk type outside opportunity is stochastic demand distribution and contract primitives are common knowledge",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Retailer privately knows a binary CVaR risk type outside opportunity is stochastic demand distribution and contract primitives are common knowledge",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "order quantities assigned to the two retailer risk-aversion types · q_1,q_2 \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1, U_2",
+                "meaning": "promised CVaR utilities/information rents for the two retailer types · real-valued promised utilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu",
+                "meaning": "prior probability of retailer type beta_1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{\\beta_i}(q_i)",
+                "meaning": "type-beta_i retailer's CVaR sales term at order quantity q_i · paper-defined risk-adjusted value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "retail selling price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "manufacturer's unit production cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer has one of two privately observed risk-aversion types.",
+              "The manufacturer is risk neutral and the retailer evaluates profit using CVaR.",
+              "Retail demand is random with a known distribution."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.3. Preorder vs. Consignment Contract",
+                "equation": "",
+                "quote": "This result is due to the man­ ufacturer’s incomplete information about the retailer’s risk attitude and intention to screen the retailer’s risk atti­ tude by distorting the order quantity designed for the less risk-averse retailer upward."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design as “contracting”: “This result is due to the manufacturer’s incomplete information about the retailer’s risk attitude and intention to screen”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "screening",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contractual screening as “screening”: “This result is due to the manufacturer’s incomplete information about the retailer’s risk attitude and intention to screen”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "The manufacturer offers a type-contingent menu and may shut down trade for some reports; the retailer observes its risk type and outside opportunity, selects/rejects a contract, orders or receives consigned inventory, and random demand realizes. adverse-selection principal–agent model push/preorder contract",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in supply chains and contracts",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The manufacturer offers a type-contingent menu and may shut down trade for some reports; the retailer observes its risk type and outside opportunity, selects/rejects a contract, orders or receives consigned inventory, and random demand realizes. adverse-selection principal–agent model push/preorder contract",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "order quantities assigned to the two retailer risk-aversion types · q_1,q_2 \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1, U_2",
+                "meaning": "promised CVaR utilities/information rents for the two retailer types · real-valued promised utilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu",
+                "meaning": "prior probability of retailer type beta_1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{\\beta_i}(q_i)",
+                "meaning": "type-beta_i retailer's CVaR sales term at order quantity q_i · paper-defined risk-adjusted value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "retail selling price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "manufacturer's unit production cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "If the manufacturer trades with only one retailer type with the preorder contract (i.e., P(1) or P(2)) or uses the consignment contract, the retailer’s utility remains constant when the demand becomes more uncertain.",
+              "The retailer has one of two privately observed risk-aversion types.",
+              "The manufacturer is risk neutral and the retailer evaluates profit using CVaR.",
+              "Retail demand is random with a known distribution."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "4.4. Comparative Statics",
+                "equation": "",
+                "quote": "If the man­ ufacturer trades with only one retailer type with the preorder contract (i.e., P(1) or P(2)) or uses the consignment contract, the retailer’s utility remains constant when the demand be­ comes more uncertain."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design as “contracting”: “contracting”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "extension-to-coherent-risk-measures",
+        "name": "Extension to Coherent Risk Measures",
+        "kind": "extension",
+        "relation": "This extension builds on Inventory-risk allocation under private risk preference.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Unlike these studies, our paper focuses on comparing different inventory risk allocation schemes (i.e., push or pull contracts) under the effect of asymmetric information and outside risks. This condition is also equivalent to whether it could obtain a positive profit from that retailer under the complete information setting. In the decentralized case with asymmetric information, we derive the optimal contract terms with general coherent risk measures, which are presented in Section EC.5 of the Online Appendix and are omitted in the main text.",
+        "objects": [
+          "The manufacturer",
+          "The retailer",
+          "An element"
+        ],
+        "inputs": [
+          "The retailer uses"
+        ],
+        "decisions": [
+          "Quantity under complete information",
+          "Quantity than the pull contract"
+        ],
+        "assumptions": [
+          "The retailer’s risk measure is CVaR"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The manufacturer",
+              "source": {
+                "type": "section",
+                "section": "Medium Risk Associated with Outside Opportu",
+                "page": 9,
+                "sectionIndex": 1,
+                "sentence": 5,
+                "quote": "We find that the manufacturer offers the first-best contract to either type and makes the retailer extract no information rent under all trad­ ing options—P(1,2), P(1), and P(2).",
+                "matchedText": "the manufacturer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The retailer",
+              "source": {
+                "type": "section",
+                "section": "Medium Risk Associated with Outside Opportu",
+                "page": 9,
+                "sectionIndex": 1,
+                "sentence": 5,
+                "quote": "We find that the manufacturer offers the first-best contract to either type and makes the retailer extract no information rent under all trad­ ing options—P(1,2), P(1), and P(2).",
+                "matchedText": "the retailer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An element",
+              "source": {
+                "type": "section",
+                "section": "Extension to Coherent Risk Measures",
+                "page": 15,
+                "sectionIndex": 2,
+                "sentence": 15,
+                "quote": "Consider a random out­ come X viewed as an element of a linear space X of measur­ able functions.",
+                "matchedText": "an element",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The retailer uses",
+              "source": {
+                "type": "section",
+                "section": "Extension to Coherent Risk Measures",
+                "page": 15,
+                "sectionIndex": 2,
+                "sentence": 45,
+                "quote": "When the retailer uses coherent risk measures, Proposi­ tion 13 shows that the push contract can induce a higher expected order quantity than the pull contract when the two possible risk measures are sufficiently distinct, the outside opportunity is sufficiently risky, and the shut­ down policy is not used.",
+                "matchedText": "the retailer uses",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Quantity under complete information",
+              "source": {
+                "type": "section",
+                "section": "Medium Risk Associated with Outside Opportu",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 46,
+                "quote": "As a result, the manufacturer has to distort the order quantity under complete information",
+                "matchedText": "quantity under complete information",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Quantity than the pull contract",
+              "source": {
+                "type": "section",
+                "section": "Extension to Coherent Risk Measures",
+                "page": 15,
+                "sectionIndex": 2,
+                "sentence": 45,
+                "quote": "When the retailer uses coherent risk measures, Proposi­ tion 13 shows that the push contract can induce a higher expected order quantity than the pull contract",
+                "matchedText": "quantity than the pull contract",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The retailer’s risk measure is CVaR",
+              "source": {
+                "type": "section",
+                "section": "Extension to Coherent Risk Measures",
+                "page": 14,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "In the previous analysis, we assume the retailer’s risk measure is CVaR.",
+                "matchedText": "the retailer’s risk measure is CVaR.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          }
+        ],
+        "method": "In the decentralized case with asymmetric information, we derive the optimal contract terms with general coherent risk measures, which are presented in Section EC.5 of the Online Appendix and are omitted in the main text.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Extension to Coherent Risk Measures",
+          "page": 15,
+          "sentence": 31
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 15,
+            "section": "5. Extension to Coherent Risk Measures",
+            "equation": "",
+            "quote": "In the decentralized case with asymmetric informa­ tion, we derive the optimal contract terms with general coherent risk measures, which are presented in Section EC.5 of the Online Appendix and are omitted in the main text."
+          }
+        ],
+        "components": [
+          {
+            "id": "risk-aversion-and-information-asymmetry",
+            "label": "Risk Aversion and Information Asymmetry",
+            "role": "information",
+            "concepts": [
+              "information-asymmetry",
+              "contract-design",
+              "inventory"
+            ],
+            "explanation": "Unlike these studies, our paper focuses on comparing different inventory risk allocation schemes (i.e., push or pull contracts) under the effect of asymmetric information and outside risks.",
+            "searchPhrases": [
+              "how risk aversion and information asymmetry is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "risk aversion and information asymmetry information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Unlike these studies, our paper focuses on comparing different inventory risk allocation schemes (i.e., push or pull contracts) under the effect of asymmetric information and outside risks.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "order quantities assigned to the two retailer risk-aversion types · q_1,q_2 \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1, U_2",
+                "meaning": "promised CVaR utilities/information rents for the two retailer types · real-valued promised utilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "retail selling price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "manufacturer's unit production cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "we assume that the retailer’s risk aversion is modeled by the CVaR risk measure.",
+              "Gan et al. (2005) addressed the issue of unknown risk aversion by showing that their proposed risk-sharing contracts are naturally incentive-compatible among retailers.",
+              "Furthermore, we assume that the retailer’s risk aversion is modeled by the CVaR risk measure."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.2. Risk Aversion and Information Asymmetry",
+                "equation": "",
+                "quote": "Unlike these studies, our paper focuses on compar­ ing different inventory risk allocation schemes (i.e., push or pull contracts) under the effect of asymmetric infor­ mation and outside risks."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-asymmetry",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Information asymmetry as “asymmetric information”: “asymmetric information”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design as “contracting”: “Unlike these studies, our paper focuses on comparing different inventory risk allocation schemes (i.e., push or pull contracts)”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Inventory: “our paper focuses on comparing different Inventory risk allocation schemes (i.e., push or pull contracts)”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "medium-risk-associated-with-outside-opportu",
+            "label": "Medium Risk Associated with Outside Opportu",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "This condition is also equivalent to whether it could obtain a positive profit from that retailer under the complete information setting.",
+            "searchPhrases": [
+              "how medium risk associated with outside opportu is represented",
+              "modeled objective in supply chains and contracts",
+              "medium risk associated with outside opportu modeled objective specification"
+            ],
+            "formal": "Objective relation: This condition is also equivalent to whether it could obtain a positive profit from that retailer under the complete information setting.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "order quantities assigned to the two retailer risk-aversion types · q_1,q_2 \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1, U_2",
+                "meaning": "promised CVaR utilities/information rents for the two retailer types · real-valued promised utilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu",
+                "meaning": "prior probability of retailer type beta_1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{\\beta_i}(q_i)",
+                "meaning": "type-beta_i retailer's CVaR sales term at order quantity q_i · paper-defined risk-adjusted value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "retail selling price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "manufacturer's unit production cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When the risk associated with the outside opportunity is in an intermediate range (i.e., s∆S( ˆq∗ β2) ≤∆ρ(Ψ) ≤ s∆S( ˆq∗ β1)), whether the manufacturer should trade with a certain type of retailer depends on whether it could obtain a positive profit from that retailer in Problem P(1,2).",
+              "In other words, the equilibrium is separable; that is, the manufacturer is able to distinguish the retailer type after executing the preorder contract if trading with both types."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.1.3. Medium Risk Associated with Outside Opportu",
+                "equation": "",
+                "quote": "This condition is also equivalent to whether it could obtain a positive profit from that retailer under the complete information setting."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "extension-to-coherent-risk-measures",
+            "label": "Extension to Coherent Risk Measures",
+            "role": "information",
+            "concepts": [
+              "information-asymmetry",
+              "contract-design"
+            ],
+            "explanation": "In the decentralized case with asymmetric information, we derive the optimal contract terms with general coherent risk measures, which are presented in Section EC.5 of the Online Appendix and are omitted in the main text.",
+            "searchPhrases": [
+              "how extension to coherent risk measures is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "extension to coherent risk measures information available to the decision maker specification"
+            ],
+            "formal": "Information structure: In the decentralized case with asymmetric information, we derive the optimal contract terms with general coherent risk measures, which are presented in Section EC.5 of the Online Appendix and are omitted in the main text.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "U_1, U_2",
+                "meaning": "promised CVaR utilities/information rents for the two retailer types · real-valued promised utilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "retail selling price · nonnegative price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "manufacturer's unit production cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The manufacturer has a prior belief about the retailer’s risk measure that ρ = ρ1 with probability ν ∈(0,1) and ρ = ρ2 with probability 1 ν, where both ρ1 and ρ2 are coherent.",
+              "Let ρ0(·) = E[·] denote the risk measure for a risk-neutral firm.",
+              "We can verify that the optimal order quantity is ˆq∗ i = qNW i under the preorder contract and ̃q∗ i = qNW 0 under the consignment contract, and retailers under both contracts extract no information rent."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "5. Extension to Coherent Risk Measures",
+                "equation": "",
+                "quote": "In the decentralized case with asymmetric informa­ tion, we derive the optimal contract terms with general coherent risk measures, which are presented in Section EC.5 of the Online Appendix and are omitted in the main text."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-asymmetry",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Information asymmetry as “asymmetric information”: “asymmetric information”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design as “contracting”: “contracting”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "a3e0d747d75225e4dfbabef0fb98afd0c92b48b7612be1a2339e6c44f73c499d",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "290ec890c0926e67c55b335cf58105600398583701681c94f0d36e0149311c18",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/hou2024allocatinginventoryrisk/290ec890c0926e67c55b335cf58105600398583701681c94f0d36e0149311c18.json",
+      "extractionQaDecisionSha256": "dcb1ae857cba103a02d028a265ce627b5fb486d8ca6a36d8390894fd1f25429e",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

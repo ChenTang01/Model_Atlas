@@ -1,0 +1,936 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2022-1168",
+  "sourcePdfSha256": "7c732001b63a85a61ba92aaa989657a25475114be350a1ceae375efee93d9f36",
+  "extractionPagesSha256": "48b185fc016040551e12532a85a3118d6b20845727cdf361b783b20f19a2d67b",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "b43c1c98471137ca5fad35a991ea1efd8505a0ca1e0aac6ff9f9bd34818a46f3",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "041d9d1d4c13c2583ea138eec534b2c5ca74ab47e620b6fd6ce98a1ad7e286f9",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-1168/041d9d1d4c13c2583ea138eec534b2c5ca74ab47e620b6fd6ce98a1ad7e286f9.json",
+  "extractionQaDecisionSha256": "eb5ba8f0397d71d0e406c80104ae464fb847f02bde2bac654e4665087dc52b58",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2022-1168",
+    "question": "How can robust inventory management be addressed using a cycle-based approach?",
+    "overview": "This paper studies the robust formulation of an inventory model with positive fixed ordering costs, where the unfulfilled demand is either backlogged or lost, the lead time is allowed to be positive, the demand is potentially intertemporally correlated, and the information about the demand distribution is limited. The paper proposes a robust cycle-based policy that manages inventory by dividing the planning horizon into nonoverlapping inventory cycles, where an order is placed at the beginning of each cycle. The paper's policy selects the lengths and order quantities for all inventory cycles to minimize the worst-case total cost incurred over the planning horizon.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "policy-formulation",
+        "name": "Policy Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This paper studies the robust formulation of an inventory model with positive fixed ordering costs, where the unfulfilled demand is either backlogged or lost, the lead time is allowed to be positive, the demand is potentially intertemporally correlated, and the information about the demand distribution is limited. The paper proposes a robust cycle-based policy that manages inventory by dividing the planning horizon into nonoverlapping inventory cycles, where an order is placed at the beginning of each cycle.",
+        "objects": [
+          "Tables",
+          "The decision maker"
+        ],
+        "inputs": [
+          "The uncertain demand",
+          "The lead time",
+          "The available information",
+          "The initial inventory level",
+          "The unit holding cost"
+        ],
+        "decisions": [
+          "Cost and an inventory holding/shortage cost",
+          "Require access to LP/MIP solvers",
+          "The order quantities for all remaining periods",
+          "Decision for the current period is implemented",
+          "Affine decision rules"
+        ],
+        "assumptions": [
+          "In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives.",
+          "The lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives",
+          "A cycle starts in period r with the inventory level x",
+          "We only have access to the first two moments of the stochastic demand, which can be correlated across periods and have period-dependent moments",
+          "The small cost gap between CBR and CBH suggests that the myopic heuristic adopted by CBH is very effective, particularly when the demand is stationary"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Tables",
+              "source": {
+                "type": "section",
+                "section": "Backlogging Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 74,
+                "quote": "Results for instances with T = 10 are summarized in Tables 1 and 2.",
+                "matchedText": "Tables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 8,
+                "quote": "One com­ mon assumption made in the stochastic inventory management literature is that the decision maker has full knowledge of the demand distribution.",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The uncertain demand",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "When the uncertain demand belongs to a general polyhedral uncertainty set, the decisions in our policy can be computed by solving linear programs (LPs) for the backlogging model with any lead time and the lost-sales model with zero lead time; however, the number of LPs that need to be solved grows exponentially in the length of the planning horizon.",
+                "matchedText": "the uncertain demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The lead time",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We study the robust formulation of an inventory model with positive fixed ordering costs, where the unfulfilled demand is either backlogged or lost, the lead time is allowed to be positive, the demand is potentially intertemporally correlated, and the information about the demand distribution is limited.",
+                "matchedText": "the lead time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The available information",
+              "source": {
+                "type": "section",
+                "section": "Policy Formulation",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 71,
+                "quote": "the available information",
+                "matchedText": "the available information",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The initial inventory level",
+              "source": {
+                "type": "section",
+                "section": "Backlogging Model",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 63,
+                "quote": "the initial inventory level",
+                "matchedText": "the initial inventory level",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unit holding cost",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 9,
+                "quote": "the unit holding cost",
+                "matchedText": "the unit holding cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Cost and an inventory holding/shortage cost",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 18,
+                "quote": "cost and an inventory holding/shortage cost",
+                "matchedText": "cost and an inventory holding/shortage cost",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require access to LP/MIP solvers",
+              "source": {
+                "type": "section",
+                "section": "Policy Formulation",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 64,
+                "quote": "require access to LP/MIP solvers",
+                "matchedText": "require access to LP/MIP solvers",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The order quantities for all remaining periods",
+              "source": {
+                "type": "section",
+                "section": "Backlogging Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 29,
+                "quote": "the order quantities for all remaining peri­ ods",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decision for the current period is implemented",
+              "source": {
+                "type": "section",
+                "section": "Backlogging Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 29,
+                "quote": "decision for the current period is implemented",
+                "matchedText": "decision for the current period is implemented",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Affine decision rules",
+              "source": {
+                "type": "section",
+                "section": "Consistent with our expectation, BT and MNW",
+                "page": 10,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "For AP, the nonrolling implementation deter­ mines both the set of ordering periods and the affine decision rules for the ordering periods at the beginning of the planning horizon.",
+                "matchedText": "affine decision rules",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives.",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "quote": "In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives."
+              }
+            },
+            {
+              "value": "The lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 3,
+                "quote": "In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives.",
+                "matchedText": "the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A cycle starts in period r with the inventory level x",
+              "source": {
+                "type": "section",
+                "section": "One-Cycle Look-Ahead Heuristic",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 6,
+                "quote": "Suppose that a cycle starts in period r with the inventory level x.",
+                "matchedText": "a cycle starts in period r with the inventory level x.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "We only have access to the first two moments of the stochastic demand, which can be correlated across periods and have period-dependent moments",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 34,
+                "quote": "We assume that we only have access to the first two moments of the stochas­ tic demand, which can be correlated across periods and have period-dependent moments.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The small cost gap between CBR and CBH suggests that the myopic heuristic adopted by CBH is very effective, particularly when the demand is stationary",
+              "source": {
+                "type": "section",
+                "section": "Consistent with our expectation, BT and MNW",
+                "page": 10,
+                "sectionIndex": 3,
+                "sentence": 6,
+                "quote": "The small cost gap between CBR and CBH suggests that the myopic heuristic adopted by CBH is very effective, particularly when the demand is stationary.",
+                "matchedText": "The small cost gap between CBR and CBH suggests that the myopic heuristic adopted by CBH is very effective, particularly when the demand is stationary",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "Specifically, at the beginning of the first cycle, we solve a modified version of (CB) to compute (M,w,S), but only implement w1 and S1 (i.e., the decisions for the first cycle).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Policy Formulation",
+          "page": 6,
+          "sentence": 44
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 3,
+            "section": "2.1. Model Description",
+            "equation": "",
+            "quote": "In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-description",
+            "label": "Model Description",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives.",
+            "searchPhrases": [
+              "how model description is represented",
+              "system process in pricing, consumers, and revenue management",
+              "model description system process specification"
+            ],
+            "formal": "Process relation: In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand d_{t} arrives.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "d_{t}",
+                "meaning": "inventory level at the end of period t"
+              }
+            ],
+            "conditions": [
+              "In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives.",
+              "We allow the excess demand to be either backlogged, that is, xt+1 = xt + ut dt, or lost, that is, xt+1 = max{xt + ut dt,0}."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2.1. Model Description",
+                "equation": "",
+                "quote": "In this section, we assume that the lead time is zero, that is, the order ut is delivered instantaneously and before the demand dt arrives."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “In this section, we assume that the lead time is zero, that is, the order ut is delivered”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "inventory-cycles",
+            "label": "Inventory Cycles",
+            "role": "information",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "Let x denote the inventory level and u denote the order placed at the beginning of period r.",
+            "searchPhrases": [
+              "how inventory cycles is represented",
+              "information available to the decision maker in pricing, consumers, and revenue management",
+              "inventory cycles information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Let x denote the inventory level and u denote the order placed at the beginning of period r.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "inventory level and u denote the order placed at the beginning of period r"
+              },
+              {
+                "symbol": "u",
+                "meaning": "inventory level right after the order u is re ized demand in this cycle, and xe t denote the inventory level at the end."
+              }
+            ],
+            "conditions": [
+              "For instance, under the wellestablished (s, S) policy, an order is placed in period t only when xt < st.",
+              "We begin with the observation that when the fixed ordering cost K is significant, any viable policy places orders only in a subset of periods.",
+              "Let x denote the inventory level and u denote the order placed at the beginning of period r."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2.2. Inventory Cycles",
+                "equation": "",
+                "quote": "Let x denote the inventory level and u denote the order placed at the beginning of period r."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Inventory: “Let x denote the Inventory level and u denote the order placed at”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "policy-formulation",
+            "label": "Policy Formulation",
+            "role": "decision",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "The restricted functional form for the order quantities is necessary for exploiting the convex structure in the inventory model.",
+            "searchPhrases": [
+              "how policy formulation is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "policy formulation decision rule specification"
+            ],
+            "formal": "Decision rule: The restricted functional form for the order quantities is necessary for exploiting the convex structure in the inventory model.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the base-stock levels S are chosen such that an order is placed at the beginning of the mth cycle to raise the inventory level to Sm for all m and d1,T ∈Ω.",
+              "In this section, we leverage Proposition 1 to develop a robust cycle-based policy in which the order quantity placed at the beginning of each cycle follows a basestock structure."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.3. Policy Formulation",
+                "equation": "",
+                "quote": "The restricted functional form for the order quanti­ ties is necessary for exploiting the convex structure in the inventory model."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Inventory: “exploiting the convex structure in the Inventory model.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "one-cycle-look-ahead-heuristic",
+            "label": "One-Cycle Look-Ahead Heuristic",
+            "role": "algorithm",
+            "concepts": [
+              "inventory",
+              "optimization"
+            ],
+            "explanation": "Similar to the rolling-cycle implementation introduced in Section 2.3.1, the heuristic solves an optimization problem at the beginning of each cycle to compute the cycle length w and base-stock level S to be implemented over that cycle.",
+            "searchPhrases": [
+              "how one-cycle look-ahead heuristic is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "one-cycle look-ahead heuristic solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Similar to the rolling-cycle implementation introduced in Section 2.3.1, the heuristic solves an optimization problem at the beginning of each cycle to compute the cycle length w and base-stock level S to be implemented over that cycle.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Similar to the rolling-cycle implementation introduced in Section 2.3.1, the heuristic solves an optimization problem at the beginning of each cycle to compute the cycle length w and base-stock level S to be implemented over that cycle.",
+              "An important limitation of our robust cycle–based policy and its rolling-cycle implementation is that they are computationally tractable for large problem instances only when the uncertain demand belongs to a box uncertainty set.",
+              "In this section, we propose a one-cycle lookahead heuristic for the rolling-cycle implementation of our policy that is computationally efficient for large problem instances when the uncertain demand is modeled by a general polyhedral uncertainty set."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.4. One-Cycle Look-Ahead Heuristic",
+                "equation": "",
+                "quote": "Similar to the rolling-cycle implementation introduced in Section 2.3.1, the heuristic solves an optimization prob­ lem at the beginning of each cycle to compute the cycle length w and base-stock level S to be implemented over that cycle."
+              },
+              {
+                "page": 7,
+                "section": "2.4. One-Cycle Look-Ahead Heuristic",
+                "equation": "Proposition 2",
+                "quote": "We retain the specifications of the ordering costs and the inventory holding/shortage costs and the assumptions on the sto­ chastic demand discussed in Section 2.1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory as “stock”: “stock”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “Optimization”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "extension-to-inventory-model-with-a-positive-lead-time",
+        "name": "Extension to Inventory Model with a Positive Lead Time",
+        "kind": "extension",
+        "relation": "This extension builds on Policy Formulation.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "policy-formulation"
+          }
+        ],
+        "summary": "We retain the specifications of the ordering costs and the inventory holding/shortage costs and the assumptions on the stochastic demand discussed in Section 2.1.",
+        "objects": [
+          "Tables",
+          "The decision maker"
+        ],
+        "inputs": [
+          "The stochastic demand",
+          "Lead time",
+          "The horizon"
+        ],
+        "decisions": [
+          "Cost and an inventory holding/shortage cost",
+          "Require access to LP/MIP solvers",
+          "The order quantities for all remaining periods",
+          "Decision for the current period is implemented",
+          "Affine decision rules"
+        ],
+        "assumptions": [
+          "In this section, we assume a constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L.",
+          "A constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Tables",
+              "source": {
+                "type": "section",
+                "section": "Backlogging Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 74,
+                "quote": "Results for instances with T = 10 are summarized in Tables 1 and 2.",
+                "matchedText": "Tables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 8,
+                "quote": "One com­ mon assumption made in the stochastic inventory management literature is that the decision maker has full knowledge of the demand distribution.",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The stochastic demand",
+              "source": {
+                "type": "section",
+                "section": "Extension to Inventory Model with a Positive Lead Time",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "We retain the specifications of the ordering costs and the inventory holding/shortage costs and the assumptions on the sto­ chastic demand discussed in Section 2.1.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Lead time",
+              "source": {
+                "type": "section",
+                "section": "Extension to Inventory Model with a Positive Lead Time",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "lead time",
+                "matchedText": "lead time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The horizon",
+              "source": {
+                "type": "section",
+                "section": "Extension to Inventory Model with a Positive Lead Time",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 29,
+                "quote": "the horizon",
+                "matchedText": "the horizon",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Cost and an inventory holding/shortage cost",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 18,
+                "quote": "cost and an inventory holding/shortage cost",
+                "matchedText": "cost and an inventory holding/shortage cost",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require access to LP/MIP solvers",
+              "source": {
+                "type": "section",
+                "section": "Policy Formulation",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 64,
+                "quote": "require access to LP/MIP solvers",
+                "matchedText": "require access to LP/MIP solvers",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The order quantities for all remaining periods",
+              "source": {
+                "type": "section",
+                "section": "Backlogging Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 29,
+                "quote": "the order quantities for all remaining peri­ ods",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decision for the current period is implemented",
+              "source": {
+                "type": "section",
+                "section": "Backlogging Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 29,
+                "quote": "decision for the current period is implemented",
+                "matchedText": "decision for the current period is implemented",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Affine decision rules",
+              "source": {
+                "type": "section",
+                "section": "Consistent with our expectation, BT and MNW",
+                "page": 10,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "For AP, the nonrolling implementation deter­ mines both the set of ordering periods and the affine decision rules for the ordering periods at the beginning of the planning horizon.",
+                "matchedText": "affine decision rules",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we assume a constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L.",
+              "source": {
+                "type": "section",
+                "section": "Extension to Inventory Model with a Positive Lead Time",
+                "page": 7,
+                "quote": "In this section, we assume a constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L."
+              }
+            },
+            {
+              "value": "A constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L",
+              "source": {
+                "type": "section",
+                "section": "Extension to Inventory Model with a Positive Lead Time",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "In this section, we assume a constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L.",
+                "matchedText": "a constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 3
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "In the special case where the uncertain demand belongs to a box uncertainty set, the decisions in our policy can be computed using a dynamic programming (DP) recursion whose complexity grows polynomially in the length of the planning horizon.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3. Extension to Inventory Model with a Positive Lead Time",
+            "equation": "",
+            "quote": "We retain the specifications of the ordering costs and the inventory holding/shortage costs and the assumptions on the sto­ chastic demand discussed in Section 2.1."
+          }
+        ],
+        "components": [
+          {
+            "id": "extension-to-inventory-model-with-a-positive-lead-time",
+            "label": "Extension to Inventory Model with a Positive Lead Time",
+            "role": "state",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "We retain the specifications of the ordering costs and the inventory holding/shortage costs and the assumptions on the stochastic demand discussed in Section 2.1.",
+            "searchPhrases": [
+              "how extension to inventory model with a positive lead time is represented",
+              "decision-relevant state in pricing, consumers, and revenue management",
+              "extension to inventory model with a positive lead time decision-relevant state specification"
+            ],
+            "formal": "State definition: We retain the specifications of the ordering costs and the inventory holding/shortage costs and the assumptions on the stochastic demand discussed in Section 2.1.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this section, we assume a constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L.",
+              "we assume a constant lead time L > 0, that is, the order ut placed at the beginning of period t is delivered at the beginning of period t + L.",
+              "The orders placed before period 1, which we denote as {ut L}L t=1, are treated as known constants at the beginning of the planning horizon."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3. Extension to Inventory Model with a Positive Lead Time",
+                "equation": "",
+                "quote": "We retain the specifications of the ordering costs and the inventory holding/shortage costs and the assumptions on the sto­ chastic demand discussed in Section 2.1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Inventory: “of the ordering costs and the Inventory holding/shortage costs and the assumptions on the stochastic”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "7c732001b63a85a61ba92aaa989657a25475114be350a1ceae375efee93d9f36",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "041d9d1d4c13c2583ea138eec534b2c5ca74ab47e620b6fd6ce98a1ad7e286f9",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-1168/041d9d1d4c13c2583ea138eec534b2c5ca74ab47e620b6fd6ce98a1ad7e286f9.json",
+      "extractionQaDecisionSha256": "eb5ba8f0397d71d0e406c80104ae464fb847f02bde2bac654e4665087dc52b58",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

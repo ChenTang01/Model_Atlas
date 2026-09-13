@@ -1,0 +1,1465 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-0249",
+  "sourcePdfSha256": "ff09fa60e828ec5d1c2310dd09a7b9f91389729e3717f6a3e120e4a0560421a2",
+  "extractionPagesSha256": "b073500d4ab7c60386031ae92a544842d33a958a8741123e348bc3bdcd1f252d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "ec3eb0a451562cc03baa900eeeb8aef7175dab42299c6def05ebfd27127ee9cd",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "420bbcc72928165fdb87341693f3a01a752ef21dfc841717af74f46e003fdc70",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0249/420bbcc72928165fdb87341693f3a01a752ef21dfc841717af74f46e003fdc70.json",
+  "extractionQaDecisionSha256": "83714952000a518d199ec3dc2a4689830d16e1159089f6b5705bfa7ed31cb17e",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-0249",
+    "question": "How should multitier inventory networks with expediting under normal and disrupted modes be managed?",
+    "overview": "We collaborate with an industrial partner whose supply chain uses multiple tiers, locations, and shipping speeds to efficiently serve customers. In practice, our partner also faces the possibility of upstream disruptions, which limit inventory availability. We model these key features of our partner’s network as a multiechelon distribution system (central warehouse and retailers) with expediting and disruptions.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        9,
+        16,
+        17
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "distribution-network-model",
+        "name": "Distribution Network Model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "We collaborate with an industrial partner whose supply chain uses multiple tiers, locations, and shipping speeds to efficiently serve customers. In practice, our partner also faces the possibility of upstream disruptions, which limit inventory availability. We model these key features of our partner’s network as a multiechelon distribution system (central warehouse and retailers) with expediting and disruptions.",
+        "objects": [
+          "Customers",
+          "Retailers",
+          "The firm",
+          "Random variable",
+          "State space"
+        ],
+        "inputs": [
+          "Shipments from the warehouse and that fulfill exogenous demand from customers",
+          "Time t",
+          "Retailer i’s fulfillment of demand from its local inventory in period t",
+          "Uncertain demand",
+          "Inventory levels"
+        ],
+        "decisions": [
+          "Serve customers",
+          "Base-stock levels for an effective inventory policy",
+          "When to centralize inventory during disruptions and maintain low overall costs",
+          "To bring the system-wide inventory position up to an echelon base-stock level",
+          "A base-stock policy"
+        ],
+        "assumptions": [
+          "In this section, we consider a few different ways to apply this technique to our setting with expediting and disruptions.",
+          "The expediting cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i)",
+          "The system has just entered a new disruption phase of length τ periods (which conditioned on the disruption, is deterministic)",
+          "The costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi",
+          "The initial disruption state was randomly drawn according to the stationary distribution of rt characterized in (1)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We collaborate with an industrial partner whose supply chain uses multiple tiers, locations, and shipping speeds to efficiently serve customers.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Retailers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "We model these key features of our partner’s network as a multiechelon distribution system (central warehouse and retailers) with expediting and disruptions.",
+                "matchedText": "retailers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Supplier Orders and Disruptions",
+                "page": 4,
+                "sectionIndex": 9,
+                "sentence": 1,
+                "quote": "The firm may place replenishment orders with an exog­ enous supplier, and we let xt denote the quantity of this order in period t, which arrives after a deterministic lead time of L periods.",
+                "matchedText": "The firm",
+                "derivation": "literal-actor-control"
+              }
+            },
+            {
+              "value": "Random variable",
+              "source": {
+                "type": "section",
+                "section": "Supplier Orders and Disruptions",
+                "page": 5,
+                "sectionIndex": 9,
+                "sentence": 8,
+                "quote": "random variable",
+                "matchedText": "random variable",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "Stock Policy",
+                "page": 6,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "Minimizing (4) is well known to be a hard optimization problem, even in the case with no expediting or disrup­ tion (Federgruen and Zipkin 1984a, b, c; Zipkin 1984) because of the large state space and challenging alloca­ tion decisions.",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Shipments from the warehouse and that fulfill exogenous demand from customers",
+              "source": {
+                "type": "section",
+                "section": "Two-Tier Distribution Network",
+                "page": 4,
+                "sectionIndex": 7,
+                "sentence": 2,
+                "quote": "The upper tier is a warehouse that places orders for the product with an exogenous supplier, whereas the lower tier consists of n retailers (indexed by i) that receive shipments from the warehouse and that fulfill exogenous demand from customers.",
+                "matchedText": "shipments from the warehouse and that fulfill exogenous demand from customers",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Demand at the Retailers",
+                "page": 4,
+                "sectionIndex": 8,
+                "sentence": 4,
+                "quote": "In general, we assume that the random variables Di,t are independent and identical across time t but not independent nor identical across retailers i, and we let Dt represent the random vector of demand across retai­ lers at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Retailer i’s fulfillment of demand from its local inventory in period t",
+              "source": {
+                "type": "section",
+                "section": "Evolution Equations",
+                "page": 5,
+                "sectionIndex": 10,
+                "sentence": 8,
+                "quote": "Let yi,t denote the warehouse’s expedited shipment to retailer i in period t, which is assumed to arrive in the same period and directly fulfill demand at retailer i Finally, let wi,t denote retailer i’s fulfillment of demand from its local inventory in period t, which occurs with­ out a lead time.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Uncertain demand",
+              "source": {
+                "type": "section",
+                "section": "A Base-Stock Policy",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 20,
+                "quote": "uncertain demand",
+                "matchedText": "uncertain demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Inventory levels",
+              "source": {
+                "type": "section",
+                "section": "Allocation Policies",
+                "page": 9,
+                "sectionIndex": 15,
+                "sentence": 1,
+                "quote": "By default, our stochastic program policies plan inven­ tory levels to account for the disruptions and therefore, maintain consistent allocation and fulfillment policies during disruptions.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Serve customers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We collaborate with an industrial partner whose supply chain uses multiple tiers, locations, and shipping speeds to efficiently serve customers.",
+                "matchedText": "serve customers",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Base-stock levels for an effective inventory policy",
+              "source": {
+                "type": "section",
+                "section": "Stock Policy Design",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "But, more importantly, the stochastic program that we derive provides two important practical benefits. (i) It can be used in an intuitive way to decide on base-stock levels for an effective inventory policy",
+                "matchedText": "base-stock levels for an effective inventory policy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "When to centralize inventory during disruptions and maintain low overall costs",
+              "source": {
+                "type": "section",
+                "section": "Validation via Data-Driven Simulation",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "Further, we find that our simple cost condition provides an effective tool for deciding when to centralize inventory during disrup­ tions and maintain low overall costs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To bring the system-wide inventory position up to an echelon base-stock level",
+              "source": {
+                "type": "section",
+                "section": "Stock Policy",
+                "page": 6,
+                "sectionIndex": 12,
+                "sentence": 4,
+                "quote": "The general policy form that we use is an ech­ elon base-stock policy, which places external orders to bring the system-wide inventory position up to an ech­ elon base-stock level",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A base-stock policy",
+              "source": {
+                "type": "section",
+                "section": "A Base-Stock Policy",
+                "page": 8,
+                "sectionIndex": 14,
+                "sentence": 1,
+                "quote": "In this section, we use the solution of the stochastic pro­ gram to design a base-stock policy",
+                "matchedText": "a base-stock policy",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we consider a few different ways to apply this technique to our setting with expediting and disruptions.",
+              "source": {
+                "type": "section",
+                "section": "Distribution Network Model",
+                "page": 6,
+                "quote": "In this section, we consider a few different ways to apply this technique to our setting with expediting and dis­ ruptions."
+              }
+            },
+            {
+              "value": "The expediting cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i)",
+              "source": {
+                "type": "section",
+                "section": "Cost Parameters",
+                "page": 5,
+                "sectionIndex": 11,
+                "sentence": 4,
+                "quote": "We assume that the expedit­ ing cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The system has just entered a new disruption phase of length τ periods (which conditioned on the disruption, is deterministic)",
+              "source": {
+                "type": "section",
+                "section": "Allocation Policies",
+                "page": 10,
+                "sectionIndex": 15,
+                "sentence": 11,
+                "quote": "First, as our analysis in this section focuses on the period when supply is disrupted, we assume that the system has just entered a new disruption phase of length τ periods (which conditioned on the disrup­ tion, is deterministic).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi",
+              "source": {
+                "type": "section",
+                "section": "Cost Parameters",
+                "page": 5,
+                "sectionIndex": 11,
+                "sentence": 3,
+                "quote": "We assume that the costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi.",
+                "matchedText": "the costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The initial disruption state was randomly drawn according to the stationary distribution of rt characterized in (1)",
+              "source": {
+                "type": "section",
+                "section": "Simulating Policy Performance",
+                "page": 17,
+                "sectionIndex": 26,
+                "sentence": 3,
+                "quote": "The initial disruption state was randomly drawn according to the stationary distribution of rt characterized in (1).",
+                "matchedText": "The initial disruption state was randomly drawn according to the stationary distribution of rt characterized in (1).",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "If this is not feasible, then we solve a simple allocation problem to break ties.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Distribution Network Model",
+          "page": 9,
+          "sentence": 152
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "Stock Policy",
+            "equation": "",
+            "quote": "The general policy form that we use is an ech­ elon base-stock policy, which places external orders to bring the system-wide inventory position up to an ech­ elon base-stock level and then, distributes inventory to the retailers according to their local base-stock levels."
+          }
+        ],
+        "components": [
+          {
+            "id": "two-tier-distribution-network",
+            "label": "Two-Tier Distribution Network",
+            "role": "preference",
+            "concepts": [
+              "preference-modeling"
+            ],
+            "explanation": "The upper tier is a warehouse that places orders for the product with an exogenous supplier, whereas the lower tier consists of n retailers (indexed by i) that receive shipments from the warehouse and that fulfill exogenous demand from customers.",
+            "searchPhrases": [
+              "how two-tier distribution network is represented",
+              "modeled preferences in operations and supply chains",
+              "two-tier distribution network modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: The upper tier is a warehouse that places orders for the product with an exogenous supplier, whereas the lower tier consists of n retailers (indexed by i) that receive shipments from the warehouse and that fulfill exogenous demand from customers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the expediting cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i).",
+              "The upper tier is a warehouse that places orders for the product with an exogenous supplier, whereas the lower tier consists of n retailers (indexed by i) that receive shipments from the warehouse and that fulfill exogenous demand from customers."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.1. Two-Tier Distribution Network",
+                "equation": "",
+                "quote": "The upper tier is a warehouse that places orders for the product with an exogenous supplier, whereas the lower tier consists of n retailers (indexed by i) that receive shipments from the warehouse and that fulfill exogenous demand from customers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "preference-modeling",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Preference modeling through this preference specification: “Preference modeling”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The expediting cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i)",
+                  "source": {
+                    "type": "section",
+                    "section": "Cost Parameters",
+                    "page": 5,
+                    "sectionIndex": 11,
+                    "sentence": 4,
+                    "quote": "We assume that the expedit­ ing cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i).",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              },
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Shipments from the warehouse and that fulfill exogenous demand from customers",
+                  "source": {
+                    "type": "section",
+                    "section": "Two-Tier Distribution Network",
+                    "page": 4,
+                    "sectionIndex": 7,
+                    "sentence": 2,
+                    "quote": "The upper tier is a warehouse that places orders for the product with an exogenous supplier, whereas the lower tier consists of n retailers (indexed by i) that receive shipments from the warehouse and that fulfill exogenous demand from customers.",
+                    "matchedText": "shipments from the warehouse and that fulfill exogenous demand from customers",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "demand-at-the-retailers",
+            "label": "Demand at the Retailers",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "In general, we assume that the random variables Di,t are independent and identical across time t but not independent nor identical across retailers i, and we let Dt represent the random vector of demand across retailers at time t.",
+            "searchPhrases": [
+              "how demand at the retailers is represented",
+              "information available to the decision maker in operations and supply chains",
+              "demand at the retailers information available to the decision maker specification"
+            ],
+            "formal": "Information structure: In general, we assume that the random variables Di,t are independent and identical across time t but not independent nor identical across retailers i, and we let D_{t} represent the random vector of demand across retailers at time t.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "D_{t}",
+                "meaning": "random vector of demand across retailers at time t"
+              }
+            ],
+            "conditions": [
+              "we assume that the random variables Di,t are independent and identical across time t but not independent nor identical across retailers i, and we let Dt represent the random vector of demand across retailers at time t.",
+              "In general, we assume that the random variables Di,t are independent and identical across time t but not independent nor identical across retailers i, and we let Dt represent the random vector of demand across retailers at time t.",
+              "Demand at retailer i in period t is denoted by the random variable Di,t."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.2. Demand at the Retailers",
+                "equation": "",
+                "quote": "In general, we assume that the random variables Di,t are independent and identical across time t but not independent nor identical across retailers i, and we let Dt represent the random vector of demand across retai­ lers at time t."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “In general, we assume that the random variables Di,t are independent and identical across time t but not”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "supplier-orders-and-disruptions",
+            "label": "Supplier Orders and Disruptions",
+            "role": "information",
+            "concepts": [
+              "replenishment"
+            ],
+            "explanation": "The firm may place replenishment orders with an exogenous supplier, and we let xt denote the quantity of this order in period t, which arrives after a deterministic lead time of L periods.",
+            "searchPhrases": [
+              "how supplier orders and disruptions is represented",
+              "information available to the decision maker in operations and supply chains",
+              "supplier orders and disruptions information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The firm may place replenishment orders with an exogenous supplier, and we let x_{t} denote the quantity of this order in period t, which arrives after a deterministic lead time of L periods.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x_{t}",
+                "meaning": "the quantity of this order in period t, which arrives after a deterministic lead time of L periods"
+              }
+            ],
+            "conditions": [
+              "If rt = 0, the supplier is undisrupted and we say that the system is operating in “normal” mode in period t, whereas rt > 0 indicates that the system is in a disrupted mode and that no new orders can be placed (i.e., xt = 0).",
+              "We model this possibility using an exogenous (relative to the other state variables, random demands, and decisions made by the firm) state variable rt ∈Z+.",
+              "The firm may place replenishment orders with an exogenous supplier, and we let xt denote the quantity of this order in period t, which arrives after a deterministic lead time of L periods."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.3. Supplier Orders and Disruptions",
+                "equation": "",
+                "quote": "The firm may place replenishment orders with an exog­ enous supplier, and we let xt denote the quantity of this order in period t, which arrives after a deterministic lead time of L periods."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "replenishment",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Replenishment: “The firm may place Replenishment orders with an exogenous supplier, and we let”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "evolution-equations",
+            "label": "Evolution Equations",
+            "role": "preference",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "Let yi,t denote the warehouse’s expedited shipment to retailer i in period t, which is assumed to arrive in the same period and directly fulfill demand at retailer i Finally, let wi,t denote retailer i’s fulfillment of demand from its local inventory in period t, which occurs without a lead time.",
+            "searchPhrases": [
+              "how evolution equations is represented",
+              "modeled preferences in operations and supply chains",
+              "evolution equations modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: Let yi,t denote the warehouse’s expedited shipment to retailer i in period t, which is assumed to arrive in the same period and directly fulfill demand at retailer i Finally, let wi,t denote retailer i’s fulfillment of demand from its local inventory in period t, which occurs without a lead time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "t",
+                "meaning": "retailer i’s backlog level at the end of period t (backlogs are only accumulated at the retailers)"
+              }
+            ],
+            "conditions": [
+              "Let yi,t denote the warehouse’s expedited shipment to retailer i in period t, which is assumed to arrive in the same period and directly fulfill demand at retailer i Finally, let wi,t denote retailer i’s fulfillment of demand from its local inventory in period t, which occurs without a lead time.",
+              "Let It and Xi,t denote the warehouse’s and retailer i’s inventory on hand at the end of period t, respectively.",
+              "Similarly, let Bi,t denote retailer i’s backlog level at the end of period t (backlogs are only accumulated at the retailers).",
+              "We track these state variables at the end of each period because this is when associated holding and backlogging costs will be charged (described below)."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.4. Evolution Equations",
+                "equation": "",
+                "quote": "Let yi,t denote the warehouse’s expedited shipment to retailer i in period t, which is assumed to arrive in the same period and directly fulfill demand at retailer i Finally, let wi,t denote retailer i’s fulfillment of demand from its local inventory in period t, which occurs with­ out a lead time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Inventory: “fulfillment of demand from its local Inventory in period t, which occurs without a lead”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "cost-parameters",
+            "label": "Cost Parameters",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "We assume that the expediting cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i).",
+            "searchPhrases": [
+              "how cost parameters is represented",
+              "modeled objective in operations and supply chains",
+              "cost parameters modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the expediting cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i).",
+              "We assume that the costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi.",
+              "The firm incurs unit holding costs h0 and hi for inventory held at the warehouse and retailer i, respectively, at the end of each period.",
+              "Likewise, the firm incurs a unit backlog cost of bi for backlogged demand at retailer i at the end of each period."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.5. Cost Parameters",
+                "equation": "",
+                "quote": "We assume that the expedit­ ing cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "stock-policy",
+            "label": "Stock Policy",
+            "role": "algorithm",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "The general policy form that we use is an echelon base-stock policy, which places external orders to bring the system-wide inventory position up to an echelon base-stock level and then, distributes inventory to the retailers according to their local base-stock levels.",
+            "searchPhrases": [
+              "how stock policy is represented",
+              "solution algorithm in operations and supply chains",
+              "stock policy solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The general policy form that we use is an echelon base-stock policy, which places external orders to bring the system-wide inventory position up to an echelon base-stock level and then, distributes inventory to the retailers according to their local base-stock levels.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this section, we consider a few different ways to apply this technique to our setting with expediting and disruptions.",
+              "Designing an Effective Base- Stock Policy Minimizing (4) is well known to be a hard optimization problem, even in the case with no expediting or disruption (Federgruen and Zipkin 1984a, b, c; Zipkin 1984) because of the large state space and challenging allocation decisions."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Stock Policy",
+                "equation": "",
+                "quote": "The general policy form that we use is an ech­ elon base-stock policy, which places external orders to bring the system-wide inventory position up to an ech­ elon base-stock level and then, distributes inventory to the retailers according to their local base-stock levels."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory as “stock”: “stock”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "distribution-network-model",
+            "label": "Distribution Network Model",
+            "role": "process",
+            "concepts": [
+              "dynamic-programming",
+              "inventory"
+            ],
+            "explanation": "These papers demonstrate that the dynamic program for a distribution system simplifies considerably if costless transhipment is allowed to reconfigure inventory positions between the retailers in any period.",
+            "searchPhrases": [
+              "how distribution network model is represented",
+              "system process in operations and supply chains",
+              "distribution network model system process specification"
+            ],
+            "formal": "Process relation: These papers demonstrate that the dynamic program for a distribution system simplifies considerably if costless transhipment is allowed to reconfigure inventory positions between the retailers in any period.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Specifically, with no expediting or disruptions, Federgruen and Zipkin (1984c) relax zi,t ≥0 (noting that zi,t < 0 implies transshipment between retailers, allowing lower echelon local inventory to be treated in the aggregate) to obtain a variant of the classic series system of Clark and Scarf (1960)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2. Distribution Network Model",
+                "equation": "",
+                "quote": "These papers demon­ strate that the dynamic program for a distribution sys­ tem simplifies considerably if costless transhipment is allowed to reconfigure inventory positions between the retailers in any period."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Dynamic programming as “dynamic program”: “These papers demonstrate that the dynamic program for a distribution system simplifies considerably if costless”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Inventory: “costless transhipment is allowed to reconfigure Inventory positions between the retailers in any period.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "a-base-stock-policy",
+            "label": "A Base-Stock Policy",
+            "role": "algorithm",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "Although this stochastic program no longer provides a lower bound on optimal cost, we do find it to be helpful in designing a heuristic base-stock policy.",
+            "searchPhrases": [
+              "how a base-stock policy is represented",
+              "solution algorithm in operations and supply chains",
+              "a base-stock policy solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Although this stochastic program no longer provides a lower bound on optimal cost, we do find it to be helpful in designing a heuristic base-stock policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Specifically, if rt = 0, the warehouse places an order of size xt = S0 It + ITt + X t 1 s=t L+1 xs + X i (Xi,t Bi,t) ! : (8) Next, we specify the fulfillment, expediting, and allocation policy.",
+              "Finally, after fulfillment and expediting, we allocate remaining warehouse inventory to each retailer i to bring its inventory position up to Si if possible."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.2. A Base-Stock Policy",
+                "equation": "",
+                "quote": "Although this sto­ chastic program no longer provides a lower bound on optimal cost, we do find it to be helpful in designing a heuristic base-stock policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory as “stock”: “stock”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "newsvendor-based-policies",
+            "label": "Newsvendor-Based Policies",
+            "role": "algorithm",
+            "concepts": [
+              "newsvendor",
+              "optimization"
+            ],
+            "explanation": "Next, we develop a heuristic based on newsvendor calculations inspired by the recursive optimization approach of Rong et al. (2017) for setting base-stock levels in distribution systems, which we call the NV heuristic for newsvendor.",
+            "searchPhrases": [
+              "how newsvendor-based policies is represented",
+              "solution algorithm in operations and supply chains",
+              "newsvendor-based policies solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Next, we develop a heuristic based on newsvendor calculations inspired by the recursive optimization approach of Rong et al. (2017) for setting base-stock levels in distribution systems, which we call the NV heuristic for newsvendor.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "By default, our stochastic program policies plan inventory levels to account for the disruptions and therefore, maintain consistent allocation and fulfillment policies during disruptions."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.3. Newsvendor-Based Policies",
+                "equation": "",
+                "quote": "Next, we develop a heu­ ristic based on newsvendor calculations inspired by the recursive optimization approach of Rong et al. (2017) for setting base-stock levels in distribution systems, which we call the NV heuristic for newsvendor."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "newsvendor",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Newsvendor: “Newsvendor”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “newsvendor calculations inspired by the recursive Optimization approach of Rong et al. (2017) for setting”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Inventory levels",
+                  "source": {
+                    "type": "section",
+                    "section": "Allocation Policies",
+                    "page": 9,
+                    "sectionIndex": 15,
+                    "sentence": 1,
+                    "quote": "By default, our stochastic program policies plan inven­ tory levels to account for the disruptions and therefore, maintain consistent allocation and fulfillment policies during disruptions.",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "allocation-policies",
+            "label": "Allocation Policies",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "This centralized control allows the automaker to ensure appropriate prioritization of fulfillment decisions, and it can, therefore, reduce the backlog costs during disruptions.",
+            "searchPhrases": [
+              "how allocation policies is represented",
+              "decision rule in operations and supply chains",
+              "allocation policies decision rule specification"
+            ],
+            "formal": "Decision rule: This centralized control allows the automaker to ensure appropriate prioritization of fulfillment decisions, and it can, therefore, reduce the backlog costs during disruptions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "By default, our stochastic program policies plan inventory levels to account for the disruptions and therefore, maintain consistent allocation and fulfillment policies during disruptions."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "Allocation Policies",
+                "equation": "",
+                "quote": "This centralized con­ trol allows the automaker to ensure appropriate prioritization of fulfillment decisions, and it can, there­ fore, reduce the backlog costs during disruptions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “This centralized control allows the automaker to ensure appropriate prioritization of fulfillment decisions, and it can, therefore, reduce”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Inventory levels",
+                  "source": {
+                    "type": "section",
+                    "section": "Allocation Policies",
+                    "page": 9,
+                    "sectionIndex": 15,
+                    "sentence": 1,
+                    "quote": "By default, our stochastic program policies plan inven­ tory levels to account for the disruptions and therefore, maintain consistent allocation and fulfillment policies during disruptions.",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "introducing-our-industrial-partner-s-current-practice",
+            "label": "Introducing Our Industrial Partner’s Current Practice",
+            "role": "algorithm",
+            "concepts": [
+              "backlogging"
+            ],
+            "explanation": "In the event that customer orders exceed an RDC’s inventory, a neighboring partner RDC would help fulfill these orders with its available inventory.7 If the orders exceed the partner’s inventory, then those orders are escalated and backlogged at the central warehouse (to be served via expediting when the next shipment arrives because the warehouse holds no inventory in our partner’s current policy).",
+            "searchPhrases": [
+              "how introducing our industrial partner’s current practice is represented",
+              "solution algorithm in operations and supply chains",
+              "introducing our industrial partner’s current practice solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In the event that customer orders exceed an RDC’s inventory, a neighboring partner RDC would help fulfill these orders with its available inventory.7 If the orders exceed the partner’s inventory, then those orders are escalated and backlogged at the central warehouse (to be served via expediting when the next shipment arrives because the warehouse holds no inventory in our partner’s current policy).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume a one-day lead time for the warehouse’s expedited shipments and a two-day lead time for local partner RDC’s fulfillment.",
+              "Then, the disruption random variable in days is τ = 7θ ˆτ.",
+              "Together with our industrial partner, we choose to test three values of α ∈{0:005,0:01,0:02} and two values for the mean disruption length β + 1 ∈{2,4}."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "6.1. Introducing Our Industrial Partner’s Current Practice",
+                "equation": "",
+                "quote": "In the event that customer orders exceed an RDC’s inventory, a neighboring partner RDC would help fulfill these orders with its available inventory.7 If the orders exceed the partner’s inventory, then those orders are escalated and backlogged at the central warehouse (to be served via expediting when the next shipment arrives because the warehouse holds no inventory in our partner’s cur­ rent policy)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "backlogging",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Backlogging: “In the event that customer orders exceed an RDC’s inventory, a neighboring partner RDC would help fulfill these”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "simulating-policy-performance",
+            "label": "Simulating Policy Performance",
+            "role": "algorithm",
+            "concepts": [
+              "versioning",
+              "inventory"
+            ],
+            "explanation": "To calculate base-stock levels for the SP policy, the stochastic program is solved for each weekly ordering opportunity with a sample average approximation using 8,000 samples from the relevant demand distributions using Gurobi version 10.0.",
+            "searchPhrases": [
+              "how simulating policy performance is represented",
+              "solution algorithm in operations and supply chains",
+              "simulating policy performance solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: To calculate base-stock levels for the SP policy, the stochastic program is solved for each weekly ordering opportunity with a sample average approximation using 8,000 samples from the relevant demand distributions using Gurobi version 10.0.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "As in the simulations of Section 5, in each scenario, all policies were simulated for 364 days after a burn-in period to allow for pipeline orders to be initiated.",
+              "First, as discussed in Section 4, the policy is easy to integrate with existing operations that already identify a switching point at the beginning of a disruption; MDFI simply filters this switching point decision through a simple calculation represented by (10).",
+              "Moreover, we observe that the more advanced SP-N policy offers an even more significant improvement over the status quo, providing a 4.2% improvement over policy I-DFI on average and a statistically significant lower cost than all other policies tested."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "6.3. Simulating Policy Performance",
+                "equation": "",
+                "quote": "To calculate base-stock levels for the SP policy, the stochastic program is solved for each weekly order­ ing opportunity with a sample average approximation using 8,000 samples from the relevant demand distri­ butions using Gurobi version 10.0."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "versioning",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Versioning: “To calculate base-stock levels for the SP policy, the stochastic program is solved for each weekly ordering opportunity”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory as “stock”: “stock”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "a-stochastic-program-lower-bound",
+        "name": "A Stochastic Program Lower Bound",
+        "kind": "alternative",
+        "relation": "This is an alternative to Distribution Network Model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "distribution-network-model"
+          }
+        ],
+        "summary": "The paper's second adjustment to the stochastic program is to aggregate costs over the length of a disruption in order to account for the fact that ordering cannot take place during these periods.",
+        "objects": [
+          "The retailers",
+          "The supplier"
+        ],
+        "inputs": [
+          "Aggregate costs",
+          "Random demand",
+          "The stochastic demand",
+          "The starting inventory position of the warehouse",
+          "The starting inventory position of retailer i"
+        ],
+        "decisions": [
+          "Design effective heuristic policies (as we demonstrate in the next section)",
+          "Require introducing a bit of new notation"
+        ],
+        "assumptions": [
+          "In this section, we consider a few different ways to apply this technique to our setting with expediting and disruptions.",
+          "The expediting cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i)",
+          "The system has just entered a new disruption phase of length τ periods (which conditioned on the disruption, is deterministic)",
+          "The costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi",
+          "The initial disruption state was randomly drawn according to the stationary distribution of rt characterized in (1)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The retailers",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "These papers demon­ strate that the dynamic program for a distribution sys­ tem simplifies considerably if costless transhipment is allowed to reconfigure inventory positions between the retailers in any period.",
+                "matchedText": "the retailers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The supplier",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 13,
+                "quote": "However, when expediting is considered, an additional complication arises; it is now possible for an order to be placed with the sup­ plier in the midst of the second stage and arrive at the warehouse in time for expediting at the end of the third stage.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Aggregate costs",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 21,
+                "quote": "Our second adjustment to the stochastic program is to aggregate costs over the length of a disruption in order to account for the fact that ordering cannot take place during these periods.",
+                "matchedText": "aggregate costs",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random demand",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 29,
+                "quote": "We then define four random demand vec­ tors representing successive stages of demand over the L + ˆl + τ periods that we consider in the stochastic program.",
+                "matchedText": "random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The stochastic demand",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 54,
+                "quote": "the stochastic demand",
+                "matchedText": "the stochastic demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The starting inventory position of the warehouse",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 82,
+                "quote": "the starting inventory position of the ware­ house",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The starting inventory position of retailer i",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 82,
+                "quote": "the starting inventory position of retailer i",
+                "matchedText": "the starting inventory position of retailer i",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design effective heuristic policies (as we demonstrate in the next section)",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 61,
+                "quote": "This leads to a more tractable stochastic programming formulation (as op­ posed to the full dynamic program that suffers from the curse of dimensionality), which suggests inventory posi­ tions for the warehouse and retailers that can be used to design effective heuristic policies (as we demonstrate in the next section)",
+                "matchedText": "design effective heuristic policies (as we demonstrate in the next section)",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Require introducing a bit of new notation",
+              "source": {
+                "type": "section",
+                "section": "A Stochastic Program Lower Bound",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 26,
+                "quote": "We have made an effort to keep these as par­ simonious as possible, but they do require introducing a bit of new notation",
+                "matchedText": "require introducing a bit of new notation",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we consider a few different ways to apply this technique to our setting with expediting and disruptions.",
+              "source": {
+                "type": "section",
+                "section": "Distribution Network Model",
+                "page": 6,
+                "quote": "In this section, we consider a few different ways to apply this technique to our setting with expediting and dis­ ruptions."
+              }
+            },
+            {
+              "value": "The expediting cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i)",
+              "source": {
+                "type": "section",
+                "section": "Cost Parameters",
+                "page": 5,
+                "sectionIndex": 11,
+                "sentence": 4,
+                "quote": "We assume that the expedit­ ing cost to each retailer is larger than the warehouse’s holding cost (i.e., fi ≥h0 for all i).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The system has just entered a new disruption phase of length τ periods (which conditioned on the disruption, is deterministic)",
+              "source": {
+                "type": "section",
+                "section": "Allocation Policies",
+                "page": 10,
+                "sectionIndex": 15,
+                "sentence": 11,
+                "quote": "First, as our analysis in this section focuses on the period when supply is disrupted, we assume that the system has just entered a new disruption phase of length τ periods (which conditioned on the disrup­ tion, is deterministic).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi",
+              "source": {
+                "type": "section",
+                "section": "Cost Parameters",
+                "page": 5,
+                "sectionIndex": 11,
+                "sentence": 3,
+                "quote": "We assume that the costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi.",
+                "matchedText": "the costs of normal shipments, zi,t, and normal fulfillment, wi,t, are normalized to zero, whereas the unit cost of expedited fulfillment is fi.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The initial disruption state was randomly drawn according to the stationary distribution of rt characterized in (1)",
+              "source": {
+                "type": "section",
+                "section": "Simulating Policy Performance",
+                "page": 17,
+                "sectionIndex": 26,
+                "sentence": 3,
+                "quote": "The initial disruption state was randomly drawn according to the stationary distribution of rt characterized in (1).",
+                "matchedText": "The initial disruption state was randomly drawn according to the stationary distribution of rt characterized in (1).",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "With the stochastic program defined, we now introduce one more notation to aid our analysis in subsequent sections.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "A Stochastic Program Lower Bound",
+          "page": 8,
+          "sentence": 53
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.1. A Stochastic Program Lower Bound",
+            "equation": "",
+            "quote": "Our second adjustment to the stochastic program is to aggregate costs over the length of a disruption in order to account for the fact that ordering cannot take place during these periods."
+          }
+        ],
+        "components": [
+          {
+            "id": "a-stochastic-program-lower-bound",
+            "label": "A Stochastic Program Lower Bound",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The paper's second adjustment to the stochastic program is to aggregate costs over the length of a disruption in order to account for the fact that ordering cannot take place during these periods.",
+            "searchPhrases": [
+              "how a stochastic program lower bound is represented",
+              "solution algorithm in operations and supply chains",
+              "a stochastic program lower bound solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper's second adjustment to the stochastic program is to aggregate costs over the length of a disruption in order to account for the fact that ordering cannot take place during these periods.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Our second adjustment to the stochastic program is to aggregate costs over the length of a disruption in order to account for the fact that ordering cannot take place during these periods.",
+              "However, when expediting is considered, an additional complication arises; it is now possible for an order to be placed with the supplier in the midst of the second stage and arrive at the warehouse in time for expediting at the end of the third stage.",
+              "Then, because the third stage must be l periods to allow for allocation shipments to arrive at the retailers, the second stage should encompass L l periods."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. A Stochastic Program Lower Bound",
+                "equation": "",
+                "quote": "Our second adjustment to the stochastic program is to aggregate costs over the length of a disruption in order to account for the fact that ordering cannot take place during these periods."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Our second adjustment to the stochastic program is to aggregate costs over the length of a disruption in”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "ff09fa60e828ec5d1c2310dd09a7b9f91389729e3717f6a3e120e4a0560421a2",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "420bbcc72928165fdb87341693f3a01a752ef21dfc841717af74f46e003fdc70",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0249/420bbcc72928165fdb87341693f3a01a752ef21dfc841717af74f46e003fdc70.json",
+      "extractionQaDecisionSha256": "83714952000a518d199ec3dc2a4689830d16e1159089f6b5705bfa7ed31cb17e",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

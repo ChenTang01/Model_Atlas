@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2020-0941",
+  "sourcePdfSha256": "2418bdbb8bbba8186e019155edd38ab48abf62c15e51223e8c3132012b20296a",
+  "extractionPagesSha256": "d5a23714c7c1b6fcacc482e03b459ab2151ce41b53e64c39555544fd98e919ce",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "85861fe0ae74aef9f4bd23e68520d3fc77c529a6be2263db6d64165bd4f862c9",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "d26cb1893499285f2a1fc0889e34d02a8640483d5360d09ed732c9b496da207f",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0941/d26cb1893499285f2a1fc0889e34d02a8640483d5360d09ed732c9b496da207f.json",
+  "extractionQaDecisionSha256": "906946cd634826f72cdad7d9098f871cbffe964b4460ace40f14b7db3b8b0379",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2020-0941",
+    "question": "How can optimized planting schedules support improved crop productivity?",
+    "overview": "This paper studies the optimal seeding policy under rainfall uncertainty in rain-fed agriculture and explore its advantage over commonly used heuristics in practice. The paper's work is in the area of agriculture operations, and we focus on the improvement of farmer’s expected total profit by optimizing planting schedules. We model a farmer’s planting problem under limited planting capacity in a finite-horizon stochastic dynamic program.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        14
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Improved Crop Productivity Through Optimized Planting Schedules model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This paper studies the optimal seeding policy under rainfall uncertainty in rain-fed agriculture and explore its advantage over commonly used heuristics in practice. The paper's work is in the area of agriculture operations, and we focus on the improvement of farmer’s expected total profit by optimizing planting schedules. We model a farmer’s planting problem under limited planting capacity in a finite-horizon stochastic dynamic program.",
+        "objects": [
+          "Farmer",
+          "Firms"
+        ],
+        "inputs": [
+          "Type",
+          "The forecast",
+          "The benefit from adopting the optimal planting schedule",
+          "The weather"
+        ],
+        "decisions": [
+          "Transfer simulator used in agriculture",
+          "The optimal policy",
+          "Find a planting schedule",
+          "Under rainfall uncertainty by modeling cumulative biomass production",
+          "How many batches of seeds to plant"
+        ],
+        "assumptions": [
+          "The weather is sunny when it does not rain (SOLA 2013)",
+          "Each period represents one day",
+          "Fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions",
+          "The farmer’s income is p per unit weight of crop production and the variable cost of crop cultivation is c per batch of seeds"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Farmer",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Academic/practical relevance: Our work is in the area of agriculture operations, and we focus on the improvement of farmer’s expected total profit by optimizing planting schedules.",
+                "matchedText": "farmer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Firms",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 0,
+                "sentence": 20,
+                "quote": "Many multinational ﬁrms in the agriculture in- dustry are striving to develop innovative solutions to help small- and medium-scale farmers become more effective.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Type",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 32,
+                "quote": "As the change of the soil water content is largely driven by the precipitation for a given type of soil and geographical location, we consider ωt(.) as a function of the soil water content (swt), realized total precipitation (prect), and other parameters (λt) in period t.",
+                "matchedText": "type",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The forecast",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "page": 3,
+                "sectionIndex": 22,
+                "sentence": 8,
+                "quote": "the forecast",
+                "matchedText": "the forecast",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The benefit from adopting the optimal planting schedule",
+              "source": {
+                "type": "section",
+                "section": "Average Profit of Optimal Planting Schedule −",
+                "page": 8,
+                "sectionIndex": 8,
+                "sentence": 1,
+                "quote": "the beneﬁt from adopting the optimal planting schedule",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The weather",
+              "source": {
+                "type": "section",
+                "section": "Rainfall Occurrence in DTMC",
+                "sectionIndex": 19,
+                "page": 14,
+                "quote": "the weather",
+                "matchedText": "the weather",
+                "derivation": "literal-explicit-input"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Transfer simulator used in agriculture",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "In our computational study, we use the well-known Decision Support System for Agrotechnology Transfer simulator used in agriculture to obtain the expected yield when planting in any given period.",
+                "matchedText": "Transfer simulator used in agriculture to obtain the expected yield",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The optimal policy",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 11,
+                "quote": "Utilizing field weather data, in a real-size, large-scale problem, we show significant improvement of the expected total profit if the farmer could adopt the optimal policy.",
+                "matchedText": "the optimal policy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Find a planting schedule",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 44,
+                "quote": "Our objective is to ﬁnd a planting schedule that maximizes the farmer’s expected total proﬁt at the end of the planting horizon.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Under rainfall uncertainty by modeling cumulative biomass production",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "page": 3,
+                "sectionIndex": 22,
+                "sentence": 25,
+                "quote": "Our paper is closely related to Swaminathan and Zhang (2020), who study a farmer’s seeding schedule under rainfall uncertainty by modeling cumulative biomass production",
+                "matchedText": "under rainfall uncertainty by modeling cumulative biomass production",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How many batches of seeds to plant",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "sectionIndex": 2,
+                "page": 4,
+                "quote": "If it is sunny in period t, the farmer needs to decide how many batches of seeds to plant"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The weather is sunny when it does not rain (SOLA 2013)",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 6,
+                "quote": "As African countries receive many hours of sunshine on average and high-intensity solar radiation, we assume that the weather is sunny when it does not rain (SOLA 2013).",
+                "matchedText": "the weather is sunny when it does not rain (SOLA 2013).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each period represents one day",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 10,
+                "quote": "Note that, for simplicity, we assume that each period represents one day.",
+                "matchedText": "each period represents one day.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 13,
+                "quote": "We assume that fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions.",
+                "matchedText": "fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The farmer’s income is p per unit weight of crop production and the variable cost of crop cultivation is c per batch of seeds",
+              "source": {
+                "type": "section",
+                "section": "Crop Planting Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 41,
+                "quote": "Suppose the farmer’s income is p per unit weight of crop production and the variable cost of crop cultivation is c per batch of seeds.",
+                "matchedText": "the farmer’s income is p per unit weight of crop production and the variable cost of crop cultivation is c per batch of seeds.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          }
+        ],
+        "method": "The paper models a farmer’s planting problem under limited planting capacity in a finite-horizon stochastic dynamic program.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 3
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 3,
+            "section": "3. Crop Planting Model",
+            "equation": "",
+            "quote": "We assume that fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions."
+          }
+        ],
+        "components": [
+          {
+            "id": "crop-planting-model",
+            "label": "Crop Planting Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "We assume that fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions.",
+            "searchPhrases": [
+              "how crop planting model is represented",
+              "system process in policy, sustainability, and public services",
+              "crop planting model system process specification"
+            ],
+            "formal": "Process relation: We assume that fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions.",
+              "we assume that the weather is sunny when it does not rain (SOLA 2013).",
+              "We assume that, at the beginning of any period t, the farmer knows whether period t will be rainy or not.",
+              "As African countries receive many hours of sunshine on average and high-intensity solar radiation, we assume that the weather is sunny when it does not rain (SOLA 2013)."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Crop Planting Model",
+                "equation": "",
+                "quote": "We assume that fertilizing, pest control, weeding, and harvesting processes are automatically optimized by the farmer given the planting schedule and do not explicitly model these decisions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "notation-explanation",
+            "label": "Notation Explanation",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Expected profit by planting one batch of seeds in period t Vm t (.)",
+            "searchPhrases": [
+              "how notation explanation is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "notation explanation modeled objective specification"
+            ],
+            "formal": "Objective relation: Expected profit by planting one batch of seeds in period t Vm t (.)",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let Gt(swt) denote the farmer’s expected profit from planting one batch of seeds in period t at soil water content swt."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "Notation Explanation",
+                "equation": "",
+                "quote": "Expected proﬁt by planting one batch of seeds in period t Vm t (.)"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Expected profit by planting one batch of seeds in period t Vm t (.)”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "planting-with-manual-labor",
+            "label": "Planting with Manual Labor",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "As a special case of the crop planting model, the farmer’s decision is whether to plant in each sunny period, and the optimal policy is still a time-dependent, threshold-type policy with the optimal threshold denoted by SDt(swt).",
+            "searchPhrases": [
+              "how planting with manual labor is represented",
+              "decision rule in policy, sustainability, and public services",
+              "planting with manual labor decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the farmer’s planting capacity is one (m 1) with manual labor.",
+              "Without loss of generality, we assume that the farmer’s planting capacity is one (m 1) with manual labor."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Planting with Manual Labor",
+                "equation": "",
+                "quote": "As a special case of the crop planting model, the farmer’s decision is whether to plant in each sunny period, and the optimal policy is still a time-dependent, threshold-type policy with the op- timal threshold denoted by SDt(swt)."
+              },
+              {
+                "page": 5,
+                "section": "Notation",
+                "equation": "Theorem 1",
+                "quote": "Let am t (sdt, swt) denote the optimal planting decision for a sunny period t under capacity m."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “As a special case of the crop planting model, the farmer’s decision is whether to plant in each”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "planting-with-fixed-cost",
+            "label": "Planting with Fixed Cost",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "We discuss the planting schedule in this case where the farmer incurs a fixed cost denoted by K when she decides to plant in period t.",
+            "searchPhrases": [
+              "how planting with fixed cost is represented",
+              "decision rule in policy, sustainability, and public services",
+              "planting with fixed cost decision rule specification"
+            ],
+            "formal": "Decision rule: We discuss the planting schedule in this case where the farmer incurs a fixed cost denoted by K when she decides to plant in period t.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Farmers may incur a fixed cost on external labor or machines for planting in addition to variable costs.",
+              "We discuss the planting schedule in this case where the farmer incurs a fixed cost denoted by K when she decides to plant in period t."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "5.1. Planting with Fixed Cost",
+                "equation": "",
+                "quote": "We discuss the planting schedule in this case where the farmer incurs a ﬁxed cost denoted by K when she decides to plant in period t."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We discuss the planting schedule in this case where the farmer incurs a fixed cost denoted by K”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "2418bdbb8bbba8186e019155edd38ab48abf62c15e51223e8c3132012b20296a",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "d26cb1893499285f2a1fc0889e34d02a8640483d5360d09ed732c9b496da207f",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0941/d26cb1893499285f2a1fc0889e34d02a8640483d5360d09ed732c9b496da207f.json",
+      "extractionQaDecisionSha256": "906946cd634826f72cdad7d9098f871cbffe964b4460ace40f14b7db3b8b0379",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1115 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2021-0437",
+  "sourcePdfSha256": "d0ce6512d1362c8bcdf15d06c6a4f9848dd9dee2f41da1012f9eb708eb6dc60b",
+  "extractionPagesSha256": "f91ce7b89a3cb52341d218d66a50aab7a3f18cbdff26967d95ea0991c6eeebf0",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "10d887fe154d53fc164c05c51d9d28f7827f1e132a5a141f07a25832a364c12c",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "5e04405c1675e1e635772dd11148a227188ccdb2e950a985ac32b97cbcdb0df7",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0437/5e04405c1675e1e635772dd11148a227188ccdb2e950a985ac32b97cbcdb0df7.json",
+  "extractionQaDecisionSha256": "72862a2fcf068695fb39043828cb62ba6efecd464754954f15cdfc38c10c99c8",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2021-0437",
+    "question": "What determines reassigning sites to teams to maximize effectiveness?",
+    "overview": "United Nations Sustainable Development Goal (SDG) 3.8 states that health coverage should be universal by 2030. This is challenging in rural and poor areas. To address this challenge, mobile outreach teams of healthcare workers visit a fixed set of remote sites to provide healthcare services.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        5,
+        7,
+        10,
+        11,
+        12
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "the-centralized-model",
+        "name": "The Centralized Model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "United Nations Sustainable Development Goal (SDG) 3.8 states that health coverage should be universal by 2030. This is challenging in rural and poor areas. To address this challenge, mobile outreach teams of healthcare workers visit a fixed set of remote sites to provide healthcare services.",
+        "objects": [
+          "Workers",
+          "Planner",
+          "Organizations",
+          "Decision makers",
+          "Client"
+        ],
+        "inputs": [
+          "A given capacity",
+          "Remaining capacity",
+          "The specification of the objective function, team participation, and evolving parameters",
+          "Baseline client volumes"
+        ],
+        "decisions": [
+          "Mobile outreach teams to provide a wide variety of health services",
+          "Its capacity",
+          "Binary decision variables",
+          "Whether a takeover should take place",
+          "Perform one or more iterations of team meetings"
+        ],
+        "assumptions": [
+          "Instead, we consider a few simple rules that are easily implemented in practice.",
+          "Parameters remain constant over time, but they may vary in reality"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Workers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "To address this challenge, mobile outreach teams of healthcare workers visit a fixed set of remote sites to provide healthcare services.",
+                "matchedText": "workers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Planner",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Solving this problem through a central planner does not fit the context: outreach teams commonly have a high degree of decision-making autonomy.",
+                "matchedText": "planner",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Organizations",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 14,
+                "quote": "Managerial implications: Humanitarian organizations currently deploy mobile outreach teams to provide a wide variety of health services.",
+                "matchedText": "organizations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Decision makers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 15,
+                "quote": "We present several useful insights for decision makers in humanitarian organizations when making design choices, taking account of context.",
+                "matchedText": "decision makers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Client",
+              "source": {
+                "type": "section",
+                "section": "Problem Description",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 15,
+                "quote": "A later start time can lead to a more crowded sched­ ule, which can cause long wait times and subsequently client dropouts.",
+                "matchedText": "client",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A given capacity",
+              "source": {
+                "type": "section",
+                "section": "The Centralized Model",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "Each team has a given capacity, that is, the maximum number of visits it can undertake in the planning period, denoted by ct.",
+                "matchedText": "a given capacity",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Remaining capacity",
+              "source": {
+                "type": "section",
+                "section": "Decentralized Decision Rules for Site Reassign",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 25,
+                "quote": "The algorithm is as follows: (1) set all visit frequencies to f LB (the lowest feasible frequency in the set F) for each site; (2) greedily pick the site with the highest ˆµst and set the visit frequency to the highest feasible frequency in the set F given the team’s remaining capacity; (3) repeat step 2 until the team’s capacity has been allo­ cated.",
+                "matchedText": "remaining capacity",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The specification of the objective function, team participation, and evolving parameters",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 0,
+                "sentence": 66,
+                "quote": "In addi­ tion, we shed light on how the effectiveness of decentra­ lized decision making is influenced by the specification of the objective function, team participation, and evolv­ ing parameters.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Baseline client volumes",
+              "source": {
+                "type": "section",
+                "section": "The Accuracy of Central Planner Parameter Esti",
+                "page": 10,
+                "sectionIndex": 11,
+                "sentence": 7,
+                "quote": "We focus on two areas: baseline client volumes ( ˆλs) and travel times that determine the start times (STst).",
+                "matchedText": "baseline client volumes",
+                "derivation": "literal-explicit-input"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Mobile outreach teams to provide a wide variety of health services",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 14,
+                "quote": "Managerial implications: Humanitarian organizations currently deploy mobile outreach teams to provide a wide variety of health services.",
+                "matchedText": "mobile outreach teams to provide a wide variety of health services",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Its capacity",
+              "source": {
+                "type": "section",
+                "section": "Problem Description",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 18,
+                "quote": "The num­ ber of assigned sites determines how a team allocates its capacity (i.e., the number of days it operates during the year).",
+                "matchedText": "its capacity",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Binary decision variables",
+              "source": {
+                "type": "section",
+                "section": "The Centralized Model",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 11,
+                "quote": "Binary decision variables",
+                "matchedText": "Binary decision variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Whether a takeover should take place",
+              "source": {
+                "type": "section",
+                "section": "Decentralized Decision Rules for Site Reassign",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 20,
+                "quote": "The TR determines whether a takeover should take place",
+                "matchedText": "whether a takeover should take place",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Perform one or more iterations of team meetings",
+              "source": {
+                "type": "section",
+                "section": "Decentralized Approach",
+                "page": 5,
+                "sectionIndex": 2,
+                "sentence": 20,
+                "quote": "We then perform one or more iterations of team meetings",
+                "matchedText": "perform one or more iterations of team meetings",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Instead, we consider a few simple rules that are easily implemented in practice.",
+              "source": {
+                "type": "section",
+                "section": "Grouping Teams into Team Meetings",
+                "page": 6,
+                "quote": "Instead, we consider a few simple rules that are easily implemented in practice."
+              }
+            },
+            {
+              "value": "Parameters remain constant over time, but they may vary in reality",
+              "source": {
+                "type": "section",
+                "section": "Multiperiod Analysis",
+                "page": 12,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "So far, we have assumed that parameters remain con­ stant over time, but they may vary in reality.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "In Online Supplement A, we evaluate the potential estimation error of STR, identify factors that drive this error, and derive a worst-case bound.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Decentralized Decision Rules for Site Reassign",
+          "page": 6,
+          "sentence": 51
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "5.1.2. Decentralized Decision Rules for Site Reassign",
+            "equation": "",
+            "quote": "First, both decision rules consider only one potential reassign­ ment: a takeover, where a team takes over a site from another team."
+          }
+        ],
+        "components": [
+          {
+            "id": "problem-description",
+            "label": "Problem Description",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "The number of assigned sites determines how a team allocates its capacity (i.e., the number of days it operates during the year).",
+            "searchPhrases": [
+              "how problem description is represented",
+              "feasibility condition in organizations, incentives, and finance",
+              "problem description feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: The number of assigned sites determines how a team allocates its capacity (i.e., the number of days it operates during the year).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Each team has a given capacity, that is, the maximum number of visits it can undertake in the planning period, denoted by ct."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2. Problem Description",
+                "equation": "",
+                "quote": "The num­ ber of assigned sites determines how a team allocates its capacity (i.e., the number of days it operates during the year)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Feasibility constraints”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "A given capacity",
+                  "source": {
+                    "type": "section",
+                    "section": "The Centralized Model",
+                    "page": 4,
+                    "sectionIndex": 5,
+                    "sentence": 9,
+                    "quote": "Each team has a given capacity, that is, the maximum number of visits it can undertake in the planning period, denoted by ct.",
+                    "matchedText": "a given capacity",
+                    "derivation": "literal-explicit-input"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "the-centralized-model",
+            "label": "The Centralized Model",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "We also use this model in Section 6 to quantify the optimality gap for decentralized decision making.",
+            "searchPhrases": [
+              "how the centralized model is represented",
+              "decision rule in organizations, incentives, and finance",
+              "the centralized model decision rule specification"
+            ],
+            "formal": "Decision rule: We also use this model in Section 6 to quantify the optimality gap for decentralized decision making.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Binary decision variables xf st take the value one if team t visits site s with frequency pf for f ∈F.",
+              "Each team has an associated set of sites St ⊆S, which represent the sites team t ∈T could serve, given the limitations on travel time."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "4. The Centralized Model",
+                "equation": "",
+                "quote": "We also use this model in Section 6 to quantify the optimality gap for decentralized decision making."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Decision making: “quantify the optimality gap for decentralized Decision making .”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decentralized-approach",
+            "label": "Decentralized Approach",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The simplest one requires only a spreadsheet where information can easily be prefilled and updated.",
+            "searchPhrases": [
+              "how decentralized approach is represented",
+              "information available to the decision maker in organizations, incentives, and finance",
+              "decentralized approach information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The simplest one requires only a spreadsheet where information can easily be prefilled and updated.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Instead, we consider a few simple rules that are easily implemented in practice."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "5. Decentralized Approach",
+                "equation": "",
+                "quote": "The simplest one requires only a spreadsheet where information can easily be prefilled and updated."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The simplest one requires only a spreadsheet where information can easily be prefilled and updated.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Instead, we consider a few simple rules that are easily implemented in practice.",
+                  "source": {
+                    "type": "section",
+                    "section": "Grouping Teams into Team Meetings",
+                    "page": 6,
+                    "quote": "Instead, we consider a few simple rules that are easily implemented in practice."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "decentralized-decision-rules-for-site-reassign",
+            "label": "Decentralized Decision Rules for Site Reassign",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "First, both decision rules consider only one potential reassignment: a takeover, where a team takes over a site from another team.",
+            "searchPhrases": [
+              "how decentralized decision rules for site reassign is represented",
+              "decision rule in organizations, incentives, and finance",
+              "decentralized decision rules for site reassign decision rule specification"
+            ],
+            "formal": "Decision rule: First, both decision rules consider only one potential reassignment: a takeover, where a team takes over a site from another team.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The algorithm is as follows: (1) set all visit frequencies to f LB (the lowest feasible frequency in the set F) for each site; (2) greedily pick the site with the highest ˆμst and set the visit frequency to the highest feasible frequency in the set F given the team’s remaining capacity; (3) repeat step 2 until the team’s capacity has been allocated."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "5.1.2. Decentralized Decision Rules for Site Reassign",
+                "equation": "",
+                "quote": "First, both decision rules consider only one potential reassign­ ment: a takeover, where a team takes over a site from another team."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Decision making as “decision rule”: “decision rule”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Remaining capacity",
+                  "source": {
+                    "type": "section",
+                    "section": "Decentralized Decision Rules for Site Reassign",
+                    "page": 6,
+                    "sectionIndex": 8,
+                    "sentence": 25,
+                    "quote": "The algorithm is as follows: (1) set all visit frequencies to f LB (the lowest feasible frequency in the set F) for each site; (2) greedily pick the site with the highest ˆµst and set the visit frequency to the highest feasible frequency in the set F given the team’s remaining capacity; (3) repeat step 2 until the team’s capacity has been allo­ cated.",
+                    "matchedText": "remaining capacity",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "grouping-teams-into-team-meetings",
+            "label": "Grouping Teams into Team Meetings",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "The previous rules do not consider that if a team takes over a site from another team, it must allocate capacity to that site.",
+            "searchPhrases": [
+              "how grouping teams into team meetings is represented",
+              "feasibility condition in organizations, incentives, and finance",
+              "grouping teams into team meetings feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: The previous rules do not consider that if a team takes over a site from another team, it must allocate capacity to that site.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The previous rules do not consider that if a team takes over a site from another team, it must allocate capacity to that site."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "5.2. Grouping Teams into Team Meetings",
+                "equation": "",
+                "quote": "The previous rules do not consider that if a team takes over a site from another team, it must allocate capacity to that site."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “The previous rules do not consider that if a team takes over a site from another team, it”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "the-accuracy-of-central-planner-parameter-esti",
+            "label": "The Accuracy of Central Planner Parameter Esti",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "We assume that the central planner cannot assign a team to a site for which the actual travel time is longer than two hours to avoid infeasible site-to-team assignments.",
+            "searchPhrases": [
+              "how the accuracy of central planner parameter esti is represented",
+              "decision rule in organizations, incentives, and finance",
+              "the accuracy of central planner parameter esti decision rule specification"
+            ],
+            "formal": "Decision rule: We assume that the central planner cannot assign a team to a site for which the actual travel time is longer than two hours to avoid infeasible site-to-team assignments.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the central planner cannot assign a team to a site for which the actual travel time is longer than two hours to avoid infeasible site-to-team assignments.",
+              "Decentralized decision making outperforms centralized decision making when θ ≥25% and Figure 5."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "6.2.6. The Accuracy of Central Planner Parameter Esti",
+                "equation": "",
+                "quote": "We assume that the central planner cannot assign a team to a site for which the actual travel time is longer than two hours to avoid infeasible site-to-team assignments."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We assume that the central planner cannot assign a team to a site for which the actual travel”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "multiperiod-analysis",
+            "label": "Multiperiod Analysis",
+            "role": "preference",
+            "concepts": [
+              "preference-modeling"
+            ],
+            "explanation": "First, we vary the baseline client volume at the site ( ˆλs) to reflect evolving demand for health services over time.",
+            "searchPhrases": [
+              "how multiperiod analysis is represented",
+              "modeled preferences in organizations, incentives, and finance",
+              "multiperiod analysis modeled preferences specification"
+            ],
+            "formal": "Evaluation rule: compare choices using the payoff or utility specified in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We consider four periods and one iteration per period, where starting from period 2, ˆλs changes and teams participate in team meetings with probability ρ ∈{1,0:8,0:6}."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "7.2. Multiperiod Analysis",
+                "equation": "",
+                "quote": "First, we vary the baseline client volume at the site ( ˆλs) to reflect evolving demand for health services over time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "preference-modeling",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Preference modeling through this preference specification: “First, we vary the baseline client volume at the site ( ˆλs) to reflect evolving demand for health”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-effect-of-visit-frequency-on-visit-effectiveness",
+            "label": "The Effect of Visit Frequency on Visit Effectiveness",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The optimality gap of STR when maximizing client volume (CL) is also shown.",
+            "searchPhrases": [
+              "how the effect of visit frequency on visit effectiveness is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "the effect of visit frequency on visit effectiveness modeled objective specification"
+            ],
+            "formal": "Objective relation: The optimality gap of STR when maximizing client volume (CL) is also shown.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Variations in this parameter may especially influence the effectiveness of the simple decentralized decision rules, because they assume that visit frequencies do not affect outcomes (i.e., that β = 0).",
+              "For higher values of β, we observe that the initial solution yields a lower optimality gap, indicating less potential gain from site reassignments."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "7.3. The Effect of Visit Frequency on Visit Effectiveness",
+                "equation": "",
+                "quote": "The optimality gap of STR when maximizing client volume (CL) is also shown."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The optimality gap of STR when maximizing client volume (CL) is also shown.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "alternative-objective-functions",
+        "name": "Alternative Objective Functions",
+        "kind": "alternative",
+        "relation": "This is an alternative to The Centralized Model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "the-centralized-model"
+          }
+        ],
+        "summary": "Simple decentralized decision rules that maximize client volume remain close to optimal even when the “true” objective is to maximize weighted client volume or CYPs.",
+        "objects": [
+          "Clients"
+        ],
+        "inputs": [
+          "A given capacity",
+          "Remaining capacity",
+          "The specification of the objective function, team participation, and evolving parameters",
+          "Baseline client volumes"
+        ],
+        "decisions": [
+          "Mobile outreach teams to provide a wide variety of health services",
+          "Its capacity",
+          "Binary decision variables",
+          "Whether a takeover should take place",
+          "Perform one or more iterations of team meetings"
+        ],
+        "assumptions": [
+          "Instead, we consider a few simple rules that are easily implemented in practice.",
+          "Parameters remain constant over time, but they may vary in reality"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Clients",
+              "source": {
+                "type": "section",
+                "section": "Alternative Objective Functions",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "The former allocates a higher weight ω > 0:5 to specific types of clients",
+                "matchedText": "clients",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A given capacity",
+              "source": {
+                "type": "section",
+                "section": "The Centralized Model",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "Each team has a given capacity, that is, the maximum number of visits it can undertake in the planning period, denoted by ct.",
+                "matchedText": "a given capacity",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Remaining capacity",
+              "source": {
+                "type": "section",
+                "section": "Decentralized Decision Rules for Site Reassign",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 25,
+                "quote": "The algorithm is as follows: (1) set all visit frequencies to f LB (the lowest feasible frequency in the set F) for each site; (2) greedily pick the site with the highest ˆµst and set the visit frequency to the highest feasible frequency in the set F given the team’s remaining capacity; (3) repeat step 2 until the team’s capacity has been allo­ cated.",
+                "matchedText": "remaining capacity",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The specification of the objective function, team participation, and evolving parameters",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 0,
+                "sentence": 66,
+                "quote": "In addi­ tion, we shed light on how the effectiveness of decentra­ lized decision making is influenced by the specification of the objective function, team participation, and evolv­ ing parameters.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Baseline client volumes",
+              "source": {
+                "type": "section",
+                "section": "The Accuracy of Central Planner Parameter Esti",
+                "page": 10,
+                "sectionIndex": 11,
+                "sentence": 7,
+                "quote": "We focus on two areas: baseline client volumes ( ˆλs) and travel times that determine the start times (STst).",
+                "matchedText": "baseline client volumes",
+                "derivation": "literal-explicit-input"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Mobile outreach teams to provide a wide variety of health services",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 14,
+                "quote": "Managerial implications: Humanitarian organizations currently deploy mobile outreach teams to provide a wide variety of health services.",
+                "matchedText": "mobile outreach teams to provide a wide variety of health services",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Its capacity",
+              "source": {
+                "type": "section",
+                "section": "Problem Description",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 18,
+                "quote": "The num­ ber of assigned sites determines how a team allocates its capacity (i.e., the number of days it operates during the year).",
+                "matchedText": "its capacity",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Binary decision variables",
+              "source": {
+                "type": "section",
+                "section": "The Centralized Model",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 11,
+                "quote": "Binary decision variables",
+                "matchedText": "Binary decision variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Whether a takeover should take place",
+              "source": {
+                "type": "section",
+                "section": "Decentralized Decision Rules for Site Reassign",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 20,
+                "quote": "The TR determines whether a takeover should take place",
+                "matchedText": "whether a takeover should take place",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Perform one or more iterations of team meetings",
+              "source": {
+                "type": "section",
+                "section": "Decentralized Approach",
+                "page": 5,
+                "sectionIndex": 2,
+                "sentence": 20,
+                "quote": "We then perform one or more iterations of team meetings",
+                "matchedText": "perform one or more iterations of team meetings",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Instead, we consider a few simple rules that are easily implemented in practice.",
+              "source": {
+                "type": "section",
+                "section": "Grouping Teams into Team Meetings",
+                "page": 6,
+                "quote": "Instead, we consider a few simple rules that are easily implemented in practice."
+              }
+            },
+            {
+              "value": "Parameters remain constant over time, but they may vary in reality",
+              "source": {
+                "type": "section",
+                "section": "Multiperiod Analysis",
+                "page": 12,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "So far, we have assumed that parameters remain con­ stant over time, but they may vary in reality.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper proposes a mixed-integer programming model for centralized site reassignment.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 9
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 11,
+            "section": "7.1. Alternative Objective Functions",
+            "equation": "",
+            "quote": "Simple decentralized decision rules that maximize client volume remain close to optimal even when the “true” objective is to maximize weighted cli­ ent volume or CYPs."
+          }
+        ],
+        "components": [
+          {
+            "id": "alternative-objective-functions",
+            "label": "Alternative Objective Functions",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Simple decentralized decision rules that maximize client volume remain close to optimal even when the “true” objective is to maximize weighted client volume or CYPs.",
+            "searchPhrases": [
+              "how alternative objective functions is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "alternative objective functions modeled objective specification"
+            ],
+            "formal": "Objective relation: Simple decentralized decision rules that maximize client volume remain close to optimal even when the “true” objective is to maximize weighted client volume or CYPs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The results show that maximizing client volume aligns well with maximizing weighted client volume, especially for ω ≤0:7.",
+              "Weights ω ≥0:8 represent almost a complete focus on young or adopter clients.",
+              "The former allocates a higher weight ω > 0:5 to specific types of clients, and a weight 1 ω to other clients."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "7.1. Alternative Objective Functions",
+                "equation": "",
+                "quote": "Simple decentralized decision rules that maximize client volume remain close to optimal even when the “true” objective is to maximize weighted cli­ ent volume or CYPs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “Simple decentralized decision rules that maximize client volume remain close to optimal even when the “true” objective is”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 5,
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "d0ce6512d1362c8bcdf15d06c6a4f9848dd9dee2f41da1012f9eb708eb6dc60b",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "5e04405c1675e1e635772dd11148a227188ccdb2e950a985ac32b97cbcdb0df7",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0437/5e04405c1675e1e635772dd11148a227188ccdb2e950a985ac32b97cbcdb0df7.json",
+      "extractionQaDecisionSha256": "72862a2fcf068695fb39043828cb62ba6efecd464754954f15cdfc38c10c99c8",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

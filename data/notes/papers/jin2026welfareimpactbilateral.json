@@ -1,0 +1,803 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "jin2026welfareimpactbilateral",
+  "sourcePdfSha256": "05c6e8570c09d852d9a55cbeaff6e9b21ad6ed3e320100d12339654536ece3a0",
+  "extractionPagesSha256": "95d16ed42c092ed746e2e86014def5dbbb4776ec43307c47158a1e33e9c081b3",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "3b242d931903baad567895cb5dc6d908bc65a37b02c0a395b973a7d6b4cf1b55",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "02717aa872e432e16a8190d1b4cec068b57c6643234b6f37c52df1389cb70f59",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/jin2026welfareimpactbilateral/02717aa872e432e16a8190d1b4cec068b57c6643234b6f37c52df1389cb70f59.json",
+  "extractionQaDecisionSha256": "1ce99597fd1ce01a679c7778008f888ec350bff90dae41e9e75c09a24335fc1c",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "jin2026welfareimpactbilateral",
+    "question": "Should a ride-sharing platform reveal rider ratings to drivers as well as driver ratings to riders, and how does bilateral display affect active supply/demand, congestion, platform revenue, and welfare?",
+    "overview": "The platform sets prices and a rating-display regime, after which drivers and riders strategically accept matches based on ratings; the authors solve the subgame-perfect equilibrium by backward induction.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        8,
+        11,
+        12
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Ride-sharing ratings, pricing, and welfare",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The platform sets prices and a rating-display regime, after which drivers and riders strategically accept matches based on ratings; the authors solve the subgame-perfect equilibrium by backward induction.",
+        "objects": [
+          "Ride-sharing platform",
+          "Heterogeneous drivers",
+          "Heterogeneous riders"
+        ],
+        "inputs": [
+          "Ratings perfectly reveal type in the base model and are noisy in an extension",
+          "Driver and rider types/ratings are uniform on [-t_0,t_0] in the base model",
+          "Under URDS riders see driver ratings but drivers see only expected rider type; under BRDS both sides see counterpart ratings",
+          "The expected value of the rider’s rating (type)",
+          "Additional utility"
+        ],
+        "decisions": [
+          "Platform chooses rating-display regime, rider price, and driver payment",
+          "Drivers accept or reject assigned riders",
+          "Riders accept or reject assigned drivers",
+          "Sharing platform operating in a region"
+        ],
+        "assumptions": [
+          "Riders have homogeneous base value v and drivers homogeneous base cost w, with rating types entering counterpart utility",
+          "Potential rider/driver arrival masses are Lambda_r and Lambda_d",
+          "Congestion/inconvenience depends on supply–demand imbalance and has an indicator form in the base model",
+          "A driver serves one rider per transaction in the base model; carpooling is an extension",
+          "If downstream acceptance has multiple equilibria, the equilibrium maximizing platform revenue is selected"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Ride-sharing platform",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "ride-sharing platform"
+              }
+            },
+            {
+              "value": "Heterogeneous drivers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "heterogeneous drivers"
+              }
+            },
+            {
+              "value": "Heterogeneous riders",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "heterogeneous riders"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Ratings perfectly reveal type in the base model and are noisy in an extension",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Ratings perfectly reveal type in the base model and are noisy in an extension."
+              }
+            },
+            {
+              "value": "Driver and rider types/ratings are uniform on [-t_0,t_0] in the base model",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Driver and rider types/ratings are uniform on [-t_0,t_0] in the base model."
+              }
+            },
+            {
+              "value": "Under URDS riders see driver ratings but drivers see only expected rider type; under BRDS both sides see counterpart ratings",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Under URDS riders see driver ratings but drivers see only expected rider type; under BRDS both sides see counterpart ratings."
+              }
+            },
+            {
+              "value": "The expected value of the rider’s rating (type)",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 22,
+                "quote": "In BRDS, the rider’s rating (type) is dis­ closed to the driver; in URDS, the driver only knows the expected value of the rider’s rating (type).",
+                "matchedText": "the expected value of the rider’s rating (type)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Additional utility",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 2,
+                "sectionIndex": 3,
+                "sentence": 43,
+                "quote": "A positive Tr indicates that a driver derives additional utility from serving a particular rider, such as from tips or polite behavior.3 Conversely, a negative Tr results in disutil­ ity for the driver, for example, from serving a rude rider or one who acts as a “backseat driver,” frequently giving driving directions.",
+                "matchedText": "additional utility",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Platform chooses rating-display regime, rider price, and driver payment",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "platform chooses rating-display regime, rider price, and driver payment"
+              }
+            },
+            {
+              "value": "Drivers accept or reject assigned riders",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "drivers accept or reject assigned riders"
+              }
+            },
+            {
+              "value": "Riders accept or reject assigned drivers",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "riders accept or reject assigned drivers"
+              }
+            },
+            {
+              "value": "Sharing platform operating in a region",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 2,
+                "sectionIndex": 3,
+                "sentence": 1,
+                "quote": "We examine a monopolistic ride-sharing platform operating in a region where drivers and riders are uni­ formly mixed",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Riders have homogeneous base value v and drivers homogeneous base cost w, with rating types entering counterpart utility",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Riders have homogeneous base value v and drivers homogeneous base cost w, with rating types entering counterpart utility."
+              }
+            },
+            {
+              "value": "Potential rider/driver arrival masses are Lambda_r and Lambda_d",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Potential rider/driver arrival masses are Lambda_r and Lambda_d."
+              }
+            },
+            {
+              "value": "Congestion/inconvenience depends on supply–demand imbalance and has an indicator form in the base model",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Congestion/inconvenience depends on supply–demand imbalance and has an indicator form in the base model."
+              }
+            },
+            {
+              "value": "A driver serves one rider per transaction in the base model; carpooling is an extension",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A driver serves one rider per transaction in the base model; carpooling is an extension."
+              }
+            },
+            {
+              "value": "If downstream acceptance has multiple equilibria, the equilibrium maximizing platform revenue is selected",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "If downstream acceptance has multiple equilibria, the equilibrium maximizing platform revenue is selected."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper models Tr and Td as independent and uniformly distributed random variables indicates that a driver derives additional utility from serving a particular rider, such as from tips or polite behavior.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model",
+          "page": 2,
+          "sentence": 43
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 11,
+            "section": "4.3. Heterogeneous Riders’ Valuation and Drivers’ Cost",
+            "equation": "",
+            "quote": "Unlike in the base model where riders’ valuations and drivers’ costs are homogeneous, resulting in a universal welfare improvement for drivers under BRDS (because drivers’ surplus is fully extracted in URDS), in this exten­ sion, we observe that BRDS improves drivers’ welfare only if v0 is sufficiently low, whereas URDS makes dri­ vers better off when v0 is high."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "pricing",
+              "optimization"
+            ],
+            "explanation": "The platform chooses rider and driver prices to maximize per-transaction margin times the equilibrium match volume under display regime chi.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in platforms and marketplaces",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_{p\\ge h\\ge0}\\ \\Pi(p,h)=(p-h)\\min\\{\\Lambda_r\\pi_r^\\chi,\\Lambda_d\\pi_d^\\chi\\}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "ride price paid by a matched rider · p \\ge h \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "payment passed to a matched driver · 0 \\le h \\le p",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p-h",
+                "meaning": "platform margin per completed ride · nonnegative margin",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Lambda_r, \\Lambda_d",
+                "meaning": "potential arrival masses/rates of riders and drivers · nonnegative market sizes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_r^\\chi, \\pi_d^\\chi",
+                "meaning": "equilibrium active-participation proportions of riders and drivers under rating-display regime chi · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\chi",
+                "meaning": "unilateral or bilateral rating-display regime · paper-defined display-regime set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "If downstream acceptance has multiple equilibria, the equilibrium maximizing platform revenue is selected.",
+              "Potential rider/driver arrival masses are Lambda_r and Lambda_d.",
+              "A driver serves one rider per transaction in the base model; carpooling is an extension."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "Expected-profit objective",
+                "equation": "Problem immediately",
+                "quote": "A given pricing strategy may result in multiple equilibria with different revenues; in such cases, the equilibrium that maximizes the platform’s objective function will be selected."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Pricing: “A given Pricing strategy may result in multiple equilibria with different”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “the equilibrium that maximizes the platform’s objective function will be selected.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "subgame-perfect-platform-pricing-and-bilateral-acceptance-equili",
+            "label": "subgame-perfect platform-pricing and bilateral acceptance equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "optimization"
+            ],
+            "explanation": "The model's equilibrium concept is subgame-perfect platform-pricing and bilateral acceptance equilibrium. Driver and rider acceptance cutoffs determine active fractions pi_d and pi_r; the platform chooses (p,h) anticipating them and the paper explicitly states backward-induction solution and revenue-favoring equilibrium selection.",
+            "searchPhrases": [
+              "how subgame-perfect platform-pricing and bilateral acceptance equilibrium is represented",
+              "strategic response in platforms and marketplaces",
+              "subgame-perfect platform-pricing and bilateral acceptance equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is subgame-perfect platform-pricing and bilateral acceptance equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "ride price paid by a matched rider · p \\ge h \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "payment passed to a matched driver · 0 \\le h \\le p",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p-h",
+                "meaning": "platform margin per completed ride · nonnegative margin",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_r^\\chi, \\pi_d^\\chi",
+                "meaning": "equilibrium active-participation proportions of riders and drivers under rating-display regime chi · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\chi",
+                "meaning": "unilateral or bilateral rating-display regime · paper-defined display-regime set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "If downstream acceptance has multiple equilibria, the equilibrium maximizing platform revenue is selected.",
+              "Potential rider/driver arrival masses are Lambda_r and Lambda_d.",
+              "A driver serves one rider per transaction in the base model; carpooling is an extension."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Analysis",
+                "equation": "",
+                "quote": "A given pricing strategy may result in multiple equilibria with different revenues; in such cases, the equilibrium that maximizes the platform’s objective function will be selected."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “A given Pricing strategy may result in multiple equilibria with different”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Optimization as “objective function”: “the equilibrium that maximizes the platform’s objective function will be selected.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Acceptance cutoff analysis, fixed-point consistency through congestion, backward optimization of platform prices, and regime comparisons for platform revenue, side-specific welfare, quality, and total welfare.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in platforms and marketplaces",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Acceptance cutoff analysis, fixed-point consistency through congestion, backward optimization of platform prices, and regime comparisons for platform revenue, side-specific welfare, quality, and total welfare.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "ride price paid by a matched rider · p \\ge h \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "payment passed to a matched driver · 0 \\le h \\le p",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p-h",
+                "meaning": "platform margin per completed ride · nonnegative margin",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\chi",
+                "meaning": "unilateral or bilateral rating-display regime · paper-defined display-regime set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "If downstream acceptance has multiple equilibria, the equilibrium maximizing platform revenue is selected.",
+              "Congestion/inconvenience depends on supply–demand imbalance and has an indicator form in the base model."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Analysis",
+                "equation": "",
+                "quote": "We solve the game through backward induction."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We solve the game through backward induction.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The platform chooses unilateral or bilateral rating display and sets rider price p and driver payment h. After a match, the driver observes the allowed rider information and accepts/rejects; if accepted, the rider observes driver information and accepts/rejects. platform-led two-sided game sequential bilateral acceptance",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in platforms and marketplaces",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The platform chooses unilateral or bilateral rating display and sets rider price p and driver payment h.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "ride price paid by a matched rider · p \\ge h \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "payment passed to a matched driver · 0 \\le h \\le p",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p-h",
+                "meaning": "platform margin per completed ride · nonnegative margin",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\chi",
+                "meaning": "unilateral or bilateral rating-display regime · paper-defined display-regime set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Similarly, as the drivers’ costs (w) increase, the platform must offer a higher revenue share to keep drivers active and maintain the same equilibrium structure, negatively impacting the platform’s profitability.",
+              "Riders have homogeneous base value v and drivers homogeneous base cost w, with rating types entering counterpart utility.",
+              "Potential rider/driver arrival masses are Lambda_r and Lambda_d.",
+              "A driver serves one rider per transaction in the base model; carpooling is an extension."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.4. Comparison Between URDS and BRDS",
+                "equation": "",
+                "quote": "Similarly, as the drivers’ costs (w) increase, the platform must offer a higher rev­ enue share to keep drivers active and maintain the same equilibrium structure, negatively impacting the platform’s profitability."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Similarly, as the drivers’ costs (w) increase, the platform must offer a higher revenue share to keep drivers”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Driver and rider types/ratings are uniform on [-t_0,t_0] in the base model. Under URDS riders see driver ratings but drivers see only expected rider type; under BRDS both sides see counterpart ratings. Ratings perfectly reveal type in the base model and are noisy in an extension.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "ride price paid by a matched rider · p \\ge h \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "payment passed to a matched driver · 0 \\le h \\le p",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Lambda_r, \\Lambda_d",
+                "meaning": "potential arrival masses/rates of riders and drivers · nonnegative market sizes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_r^\\chi, \\pi_d^\\chi",
+                "meaning": "equilibrium active-participation proportions of riders and drivers under rating-display regime chi · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\chi",
+                "meaning": "unilateral or bilateral rating-display regime · paper-defined display-regime set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Unlike in the base model where riders’ valuations and drivers’ costs are homogeneous, resulting in a universal welfare improvement for drivers under BRDS (because drivers’ surplus is fully extracted in URDS), in this extension, we observe that BRDS improves drivers’ welfare only if v0 is sufficiently low, whereas URDS makes drivers better off when v0 is high.",
+              "Riders have homogeneous base value v and drivers homogeneous base cost w, with rating types entering counterpart utility.",
+              "Potential rider/driver arrival masses are Lambda_r and Lambda_d.",
+              "Congestion/inconvenience depends on supply–demand imbalance and has an indicator form in the base model."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.3. Heterogeneous Riders’ Valuation and Drivers’ Cost",
+                "equation": "",
+                "quote": "Unlike in the base model where riders’ valuations and drivers’ costs are homogeneous, resulting in a universal welfare improvement for drivers under BRDS (because drivers’ surplus is fully extracted in URDS), in this exten­ sion, we observe that BRDS improves drivers’ welfare only if v0 is sufficiently low, whereas URDS makes dri­ vers better off when v0 is high."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Unlike in the base model where riders’ valuations and drivers’ costs are homogeneous, resulting in a universal welfare”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Platform chooses rating-display regime, rider price, and driver payment drivers accept or reject assigned riders riders accept or reject assigned drivers",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in platforms and marketplaces",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Platform chooses rating-display regime, rider price, and driver payment drivers accept or reject assigned riders riders accept or reject assigned drivers",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "ride price paid by a matched rider · p \\ge h \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "payment passed to a matched driver · 0 \\le h \\le p",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p-h",
+                "meaning": "platform margin per completed ride · nonnegative margin",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Lambda_r, \\Lambda_d",
+                "meaning": "potential arrival masses/rates of riders and drivers · nonnegative market sizes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_r^\\chi, \\pi_d^\\chi",
+                "meaning": "equilibrium active-participation proportions of riders and drivers under rating-display regime chi · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\chi",
+                "meaning": "unilateral or bilateral rating-display regime · paper-defined display-regime set",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Riders have homogeneous base value v and drivers homogeneous base cost w, with rating types entering counterpart utility.",
+              "Potential rider/driver arrival masses are Lambda_r and Lambda_d.",
+              "A driver serves one rider per transaction in the base model; carpooling is an extension."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.4. Value of Carpooling Service",
+                "equation": "",
+                "quote": "With pooling, each driver can now accommodate more riders, so the platform chooses to maintain the same fraction of active drivers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “With pooling, each driver can now accommodate more riders, so the platform chooses to maintain the same fraction”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "05c6e8570c09d852d9a55cbeaff6e9b21ad6ed3e320100d12339654536ece3a0",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "02717aa872e432e16a8190d1b4cec068b57c6643234b6f37c52df1389cb70f59",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/jin2026welfareimpactbilateral/02717aa872e432e16a8190d1b4cec068b57c6643234b6f37c52df1389cb70f59.json",
+      "extractionQaDecisionSha256": "1ce99597fd1ce01a679c7778008f888ec350bff90dae41e9e75c09a24335fc1c",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

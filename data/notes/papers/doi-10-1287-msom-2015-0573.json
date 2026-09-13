@@ -1,0 +1,833 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2015-0573",
+  "sourcePdfSha256": "1dd998864084d3d6484383849b1d2ec3c12cbc9e8badd682e8989075e9b2351e",
+  "extractionPagesSha256": "7df73bcf14506889d8f02c66ea8db08b07e8e1a70d6130aeb403a66f314b28fe",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "bad6371d2400ce687a69bf6efca34b9367e777bfc49947bd5c0feac9b4ff1080",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "9fc409019d0e551ffad2fd6a051ffdeeb07f33f3f9a0bc361b306fd6f9cd2bd7",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2015-0573/9fc409019d0e551ffad2fd6a051ffdeeb07f33f3f9a0bc361b306fd6f9cd2bd7.json",
+  "extractionQaDecisionSha256": "d34458dc7d3e7692a8caacef167654e68a091ec3fa75a0f4a24553a03f8786bd",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2015-0573",
+    "question": "How can future information be used to reduce waiting times in the emergency department via diversion?",
+    "overview": "The development of predictive models in healthcare settings has been growing; one such area is the prediction of patient arrivals to the emergency department (ED). The general premise behind these works is that such models may be used to help manage an ED that consistently faces high congestion. In this work, we propose a class of proactive policies that utilize future information of potential patient arrivals to effectively manage admissions into an ED while reducing waiting times for patients who are eventually treated.",
+    "modelTypes": [
+      "Queueing",
+      "Simulation",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "model-of-the-emergency-department",
+        "name": "Model of the Emergency Department",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The development of predictive models in healthcare settings has been growing; one such area is the prediction of patient arrivals to the emergency department (ED). The general premise behind these works is that such models may be used to help manage an ED that consistently faces high congestion. If the quality of the predictive model is insufficient, then it is better to ignore the future information and simply rely on real-time, current information for the basis of decision making.",
+        "objects": [
+          "Patient",
+          "The decision maker",
+          "The servers",
+          "The manager",
+          "Hospital"
+        ],
+        "inputs": [
+          "The service times",
+          "The use",
+          "An arrival stream of homogeneous jobs (patients)",
+          "Service rate",
+          "Historical data"
+        ],
+        "decisions": [
+          "Policy utilizes the predictions to identify",
+          "Policy provides delay improvements over standard policies used in practice",
+          "Policy can reduce delays by up to 15%",
+          "Policy via simulation",
+          "Choose a feasible policy"
+        ],
+        "assumptions": [
+          "This service time is exogenous to focus on the impact of diversion on congestion",
+          "The value of p is fixed as a constant",
+          "S to be a Poisson process of rate 1 −p, and each of its jumps corresponds to the generation of a service token"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "The development of predictive models in healthcare settings has been growing; one such area is the prediction of patient arrivals to the emergency department (ED).",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 27,
+                "quote": "The objective of the decision maker is to choose a feasible policy that minimizes the average waiting time in queue experienced by the admitted jobs.",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The servers",
+              "source": {
+                "type": "section",
+                "section": "The Emergency Department Setting",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 14,
+                "quote": "In the context of our study, we consider beds as the servers, and we deﬁne a patient’s “service time” as the time from ﬁrst treatment to ED discharge and “wait time” as the time the patient spends in the waiting area until ﬁrst treatment.",
+                "matchedText": "the servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The manager",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 3,
+                "quote": "the manager",
+                "matchedText": "the manager",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 29,
+                "quote": "Recall that in our ED context, a diversion in our model can correspond to asking a patient with a low-acuity level to seek treatment elsewhere—such as at an urgent care facility, an ambulance diversion to a different facility, or an internal diversion to a different department or medical resource within the same hospital, depending on the speciﬁc scenario.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The service times",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 131,
+                "quote": "Simulations in §4 examine the more realistic case where only the mean of the service times is known.",
+                "matchedText": "the service times",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The use",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "sectionIndex": 5,
+                "page": 5,
+                "quote": "The use of a service token process corresponds to the case where the jobs’ service times are induced by an exogenous process, e.g., randomness in the speed of the server, and are decoupled from the jobs’ identities."
+              }
+            },
+            {
+              "value": "An arrival stream of homogeneous jobs (patients)",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 3,
+                "quote": "The system receives an arrival stream of homogeneous jobs (patients)",
+                "matchedText": "an arrival stream of homogeneous jobs (patients)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Service rate",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 1,
+                "quote": "service rate",
+                "matchedText": "service rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Historical data",
+              "source": {
+                "type": "section",
+                "section": "Noisy Predictions of Arrivals",
+                "page": 9,
+                "sectionIndex": 6,
+                "sentence": 30,
+                "quote": "historical data",
+                "matchedText": "historical data",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Policy utilizes the predictions to identify",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "Instead of the standard strategy of waiting for queues to build before diverting patients, the proposed policy utilizes the predictions to identify when congestion is going to increase and proactively diverts patients before things get “too bad.” We demonstrate that the proposed policy provides delay improvements over standard policies used in practice.",
+                "matchedText": "policy utilizes the predictions to identify",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Policy provides delay improvements over standard policies used in practice",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "Instead of the standard strategy of waiting for queues to build before diverting patients, the proposed policy utilizes the predictions to identify when congestion is going to increase and proactively diverts patients before things get “too bad.” We demonstrate that the proposed policy provides delay improvements over standard policies used in practice.",
+                "matchedText": "policy provides delay improvements over standard policies used in practice",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Policy can reduce delays by up to 15%",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Using simulation, we find that our proposed policy can reduce delays by up to 15%.",
+                "matchedText": "policy can reduce delays by up to 15%",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Policy via simulation",
+              "source": {
+                "type": "section",
+                "section": "The Emergency Department Setting",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 10,
+                "quote": "We then discuss extensions to settings with heterogeneous patients and explore the performance of the proposed policy via simulation",
+                "matchedText": "policy via simulation",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Choose a feasible policy",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 27,
+                "quote": "The objective of the decision maker is to choose a feasible policy that minimizes the average waiting time in queue experienced by the admitted jobs.",
+                "matchedText": "choose a feasible policy",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "This service time is exogenous to focus on the impact of diversion on congestion",
+              "source": {
+                "type": "section",
+                "section": "The Emergency Department Setting",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 15,
+                "quote": "Though recent work suggests that doctors and nurses may alter behavior depending on the load in the ED (Batt and Terwiesch 2012), we will assume this service time is exogenous to focus on the impact of diversion on congestion.",
+                "matchedText": "this service time is exogenous to focus on the impact of diversion on congestion.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The value of p is fixed as a constant",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 8,
+                "quote": "We will assume that the value of p is ﬁxed as a constant.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "S to be a Poisson process of rate 1 −p, and each of its jumps corresponds to the generation of a service token",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 18,
+                "quote": "We will assume S to be a Poisson process of rate 1 −p, and each of its jumps corresponds to the generation of a service token.",
+                "matchedText": "S to be a Poisson process of rate 1 −p, and each of its jumps corresponds to the generation of a service token.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper proposes and evaluates an algorithm for using predictions of future ED arrivals to make decisions about “diverting” patients.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Introduction",
+          "page": 2,
+          "sentence": 27
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 3,
+            "section": "Model of the Emergency Department",
+            "equation": "",
+            "quote": "EDs are very complex systems, so although our main queueing model cannot incorporate everything, it captures several key characteristics of the congestion dynamics and provides crucial insights and policy guidelines."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-of-the-emergency-department",
+            "label": "Model of the Emergency Department",
+            "role": "process",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "EDs are very complex systems, so although our main queueing model cannot incorporate everything, it captures several key characteristics of the congestion dynamics and provides crucial insights and policy guidelines.",
+            "searchPhrases": [
+              "how model of the emergency department is represented",
+              "system process in policy, sustainability, and public services",
+              "model of the emergency department system process specification"
+            ],
+            "formal": "Process relation: EDs are very complex systems, so although our main queueing model cannot incorporate everything, it captures several key characteristics of the congestion dynamics and provides crucial insights and policy guidelines.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "EDs are very complex systems, so although our main queueing model cannot incorporate everything, it captures several key characteristics of the congestion dynamics and provides crucial insights and policy guidelines."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "Model of the Emergency Department",
+                "equation": "",
+                "quote": "EDs are very complex systems, so although our main queueing model cannot incorporate everything, it captures several key characteristics of the congestion dynamics and provides crucial insights and policy guidelines."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing as “queueing model”: “complex systems, so although our main queueing model cannot incorporate everything, it captures several key characteristics”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "the-emergency-department-setting",
+            "label": "The Emergency Department Setting",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Upon arrival to the ED, a patient is assigned an emergency severity index (ESI) from 1 through 5, with 1 indicating the highest severity.",
+            "searchPhrases": [
+              "how the emergency department setting is represented",
+              "system process in policy, sustainability, and public services",
+              "the emergency department setting system process specification"
+            ],
+            "formal": "Process relation: Upon arrival to the ED, a patient is assigned an emergency severity index (ESI) from 1 through 5, with 1 indicating the highest severity.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In the context of our study, we consider beds as the servers, and we define a patient’s “service time” as the time from first treatment to ED discharge and “wait time” as the time the patient spends in the waiting area until first treatment."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "The Emergency Department Setting",
+                "equation": "",
+                "quote": "Upon arrival to the ED, a patient is assigned an emergency severity index (ESI) from 1 through 5, with 1 indicating the highest severity."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "an-illustration-of-the-basic-queueing-model-where-a-fraction",
+        "name": "An Illustration of the Basic Queueing Model, Where a Fraction",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model of the Emergency Department.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-of-the-emergency-department"
+          }
+        ],
+        "summary": "We will model both the arrival and service processes by Poisson processes in the following ways.",
+        "objects": [
+          "The manager",
+          "The server",
+          "The decision maker",
+          "A patient",
+          "Hospital"
+        ],
+        "inputs": [
+          "The arrival rate",
+          "The service times",
+          "The use",
+          "Service rate"
+        ],
+        "decisions": [
+          "Choose a feasible policy",
+          "Design parameter",
+          "Admit the jobs that are not diverted"
+        ],
+        "assumptions": [
+          "The value of p is fixed as a constant",
+          "S to be a Poisson process of rate 1 −p, and each of its jumps corresponds to the generation of a service token"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The manager",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "the manager",
+                "matchedText": "the manager",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The server",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "Equivalently, we have that the server runs at rate 1 −p.",
+                "matchedText": "the server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 27,
+                "quote": "The objective of the decision maker is to choose a feasible policy that minimizes the average waiting time in queue experienced by the admitted jobs.",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A patient",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 29,
+                "quote": "Recall that in our ED context, a diversion in our model can correspond to asking a patient with a low-acuity level to seek treatment elsewhere—such as at an urgent care facility, an ambulance diversion to a different facility, or an internal diversion to a different department or medical resource within the same hospital, depending on the speciﬁc scenario.",
+                "matchedText": "a patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 29,
+                "quote": "Recall that in our ED context, a diversion in our model can correspond to asking a patient with a low-acuity level to seek treatment elsewhere—such as at an urgent care facility, an ambulance diversion to a different facility, or an internal diversion to a different department or medical resource within the same hospital, depending on the speciﬁc scenario.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "the arrival rate",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service times",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 131,
+                "quote": "Simulations in §4 examine the more realistic case where only the mean of the service times is known.",
+                "matchedText": "the service times",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The use",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "sectionIndex": 0,
+                "page": 5,
+                "quote": "The use of a service token process corresponds to the case where the jobs’ service times are induced by an exogenous process, e.g., randomness in the speed of the server, and are decoupled from the jobs’ identities."
+              }
+            },
+            {
+              "value": "Service rate",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "service rate",
+                "matchedText": "service rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Choose a feasible policy",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 27,
+                "quote": "The objective of the decision maker is to choose a feasible policy that minimizes the average waiting time in queue experienced by the admitted jobs.",
+                "matchedText": "choose a feasible policy",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Design parameter",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 34,
+                "quote": "This is captured by the upper bound on the average rate of diversion, p, which can be chosen by the decision maker as a design parameter",
+                "matchedText": "design parameter",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Admit the jobs that are not diverted",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "admit the jobs that are not diverted",
+                "matchedText": "admit the jobs that are not diverted",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The value of p is fixed as a constant",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "We will assume that the value of p is ﬁxed as a constant.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "S to be a Poisson process of rate 1 −p, and each of its jumps corresponds to the generation of a service token",
+              "source": {
+                "type": "section",
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 18,
+                "quote": "We will assume S to be a Poisson process of rate 1 −p, and each of its jumps corresponds to the generation of a service token.",
+                "matchedText": "S to be a Poisson process of rate 1 −p, and each of its jumps corresponds to the generation of a service token.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "For the first type of priority, we note that the service token model we adopted already implies that the average delay experienced by the admitted jobs are insensitive to the order in which they are served, so long as the service policy is work conserving.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+          "page": 7,
+          "sentence": 123
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+            "equation": "",
+            "quote": "We will model both the arrival and service processes by Poisson processes in the following ways."
+          }
+        ],
+        "components": [
+          {
+            "id": "an-illustration-of-the-basic-queueing-model-where-a-fraction",
+            "label": "An Illustration of the Basic Queueing Model, Where a Fraction",
+            "role": "process",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "We will model both the arrival and service processes by Poisson processes in the following ways.",
+            "searchPhrases": [
+              "how an illustration of the basic queueing model, where a fraction is represented",
+              "system process in policy, sustainability, and public services",
+              "an illustration of the basic queueing model, where a fraction system process specification"
+            ],
+            "formal": "Process relation: We will model both the arrival and service processes by Poisson processes in the following ways.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "of the Incoming Arrivals Can Be Diverted, Up to a Fixed Rate, p Admitted Diverted 1 – p the system is in the overloaded regime."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "An Illustration of the Basic Queueing Model, Where a Fraction",
+                "equation": "",
+                "quote": "We will model both the arrival and service processes by Poisson processes in the following ways."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing as “queueing model”: “We will model both the arrival and service processes by Poisson processes in the following ways.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "1dd998864084d3d6484383849b1d2ec3c12cbc9e8badd682e8989075e9b2351e",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "9fc409019d0e551ffad2fd6a051ffdeeb07f33f3f9a0bc361b306fd6f9cd2bd7",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2015-0573/9fc409019d0e551ffad2fd6a051ffdeeb07f33f3f9a0bc361b306fd6f9cd2bd7.json",
+      "extractionQaDecisionSha256": "d34458dc7d3e7692a8caacef167654e68a091ec3fa75a0f4a24553a03f8786bd",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

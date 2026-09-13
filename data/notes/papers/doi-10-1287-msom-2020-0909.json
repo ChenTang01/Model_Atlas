@@ -1,0 +1,1343 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2020-0909",
+  "sourcePdfSha256": "61324afdfbe02a83f2447bb332f9385f0bed9955fe18b9da5e1f98a3af9658b4",
+  "extractionPagesSha256": "dd051af3165ca34b27f0e8e1dc9ff496289b67c5e384e5e5ede24244aabc288d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "aa08cb11f903a5f066d7b93c848ee853f6e5598a10cd2c6c46a85a168a1ae9ed",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "1ff954ac02abe502f795fe476d6cdf209606405509794885652faf5949a2d889",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0909/1ff954ac02abe502f795fe476d6cdf209606405509794885652faf5949a2d889.json",
+  "extractionQaDecisionSha256": "13ea17b298f7219602717330a3d4ea393e21298dd75284a09d7b349d7e376665",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2020-0909",
+    "question": "How does queue-length information prior to traveling affect customers’ decision to travel?",
+    "overview": "The model considers a service system in which customers must travel to the queue to be served. In our base model, customers observe the queue length and then decide whether to travel. We also consider alternative information models and investigate how the availability of queue-length information affects customer-equilibrium strategies, throughput, and social welfare.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "model-and-preliminaries",
+        "name": "Model and Preliminaries",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers a service system in which customers must travel to the queue to be served. In our base model, customers observe the queue length and then decide whether to travel. We also consider alternative information models and investigate how the availability of queue-length information affects customer-equilibrium strategies, throughput, and social welfare.",
+        "objects": [
+          "The provider",
+          "Customers",
+          "The service facilities",
+          "The population",
+          "Servers"
+        ],
+        "inputs": [
+          "The current state of the service queue, and vice versa",
+          "The arrival rate",
+          "Queue-length information affects customer-equilibrium strategies",
+          "Probability q",
+          "The reward"
+        ],
+        "decisions": [
+          "Whether to join the observable service queue",
+          "Join the observable service queue",
+          "Whether to travel",
+          "Perform the calculation numerically",
+          "A generalized mixed-threshold equilibrium strategy: Travel"
+        ],
+        "assumptions": [
+          "While traveling, customers do not observe the service-queue length"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The provider",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 12,
+                "quote": "Managerial implications: Our results imply that when system congestion is high, the provider can increase throughput by disclosing the queue-length information, whereas at low congestion, the provider benefits from concealing the information.",
+                "matchedText": "the provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We consider a service system in which customers must travel to the queue to be served.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service facilities",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 6,
+                "quote": "In other models, the locations for the service facilities are decision variables (Berman and Krass 2015 and section 11.2.3 in Hassin 2016).",
+                "matchedText": "the service facilities",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The population",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 15,
+                "sectionIndex": 25,
+                "sentence": 9,
+                "quote": "From the provider’s point of view, disclosing information is favorable when the system’s potential congestion is high or when the population that aims to use the service is spread over a larger area, implying higher expected travel time.",
+                "matchedText": "the population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 8,
+                "quote": "Because customers travel simultaneously, we model the traveling queue as a system of an inﬁnite number of servers.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The current state of the service queue, and vice versa",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "We perform the calculation numerically as a result of the model complexity, which is due to the fact that the arrival rate to the traveling queue depends on the current state of the service queue, and vice versa.",
+                "matchedText": "the current state of the service queue, and vice versa",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "We perform the calculation numerically as a result of the model complexity, which is due to the fact that the arrival rate to the traveling queue depends on the current state of the service queue, and vice versa.",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Queue-length information affects customer-equilibrium strategies",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "We also consider alternative information models and investigate how the availability of queue-length information affects customer-equilibrium strategies, throughput, and social welfare."
+              }
+            },
+            {
+              "value": "Probability q",
+              "source": {
+                "type": "section",
+                "section": "No-Information Model",
+                "page": 9,
+                "sectionIndex": 8,
+                "sentence": 7,
+                "quote": "Denote by UN(q) the utility of a tagged customer who decides to travel, when all other customers travel to the queue with probability q.",
+                "matchedText": "probability q",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 12,
+                "sectionIndex": 12,
+                "sentence": 8,
+                "quote": "Throughput, denoted as TP, and social welfare, denoted as SWP, are calculated as in Naor’s model, substituting the reward from service by V −2C/η.",
+                "matchedText": "the reward",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to join the observable service queue",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 12,
+                "quote": "Customers are rational; therefore, the decision of whether to join the observable service queue after traveling ignores the cost of traveling, which cannot be recovered and is considered a sunk cost.",
+                "matchedText": "whether to join the observable service queue after traveling ignores the cost of traveling",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Join the observable service queue",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 12,
+                "quote": "Customers are rational; therefore, the decision of whether to join the observable service queue",
+                "matchedText": "join the observable service queue",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Whether to travel",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In our base model, customers observe the queue length and then decide whether to travel.",
+                "matchedText": "whether to travel",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Perform the calculation numerically",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "We perform the calculation numerically as a result of the model complexity, which is due to the fact that the arrival rate to the traveling queue depends on the current state of the service queue, and vice versa.",
+                "matchedText": "perform the calculation numerically as a result of the model complexity",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "A generalized mixed-threshold equilibrium strategy: Travel",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 11,
+                "quote": "We find that customers may adopt a generalized mixed-threshold equilibrium strategy: Travel when observing short queue lengths, avoid traveling when observing long queue lengths, and mix between traveling and not traveling when observing intermediate queue lengths, with a decreasing probability of traveling.",
+                "matchedText": "a generalized mixed-threshold equilibrium strategy: Travel",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "While traveling, customers do not observe the service-queue length",
+              "source": {
+                "type": "section",
+                "section": "Information Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 3,
+                "quote": "We assume that while traveling, customers do not observe the service-queue length.",
+                "matchedText": "while traveling, customers do not observe the service-queue length.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper computes the equilibrium by artificially truncating the unbounded dimension.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Numerical Solution and Analysis",
+          "page": 7,
+          "sentence": 5
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "4.3. Throughput and Social Welfare",
+            "equation": "",
+            "quote": "Social welfare, denoted as SWI, is calculated as the product of the effective arrival rate to the travel queue and the expected utility from traveling under the equilibrium strategy pe."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-and-preliminaries",
+            "label": "Model and Preliminaries",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Customers located far from a service facility decide whether to travel to obtain service, knowing that upon arrival, they may have to wait before being served.",
+            "searchPhrases": [
+              "how model and preliminaries is represented",
+              "system process in information disclosure and learning",
+              "model and preliminaries system process specification"
+            ],
+            "formal": "Process relation: Customers located far from a service facility decide whether to travel to obtain service, knowing that upon arrival, they may have to wait before being served.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Customers have positive valuation of the service V > 0, but incur a delay cost C > 0 per unit time while traveling to and from the service facility, while waiting, and while being served.",
+              "The traveling queue is unobservable, meaning customers cannot observe how many customers are in the queue at any given moment.",
+              "Customers located far from a service facility decide whether to travel to obtain service, knowing that upon arrival, they may have to wait before being served."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Model and Preliminaries",
+                "equation": "",
+                "quote": "Customers located far from a service facility decide whether to travel to obtain service, knowing that upon arrival, they may have to wait before being served."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-model",
+            "label": "Information Model",
+            "role": "information",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "In the information model, customers observe the service-queue length prior to traveling.",
+            "searchPhrases": [
+              "how information model is represented",
+              "information available to the decision maker in information disclosure and learning",
+              "information model information available to the decision maker specification"
+            ],
+            "formal": "Information structure: In the information model, customers observe the service-queue length prior to traveling.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that while traveling, customers do not observe the service-queue length.",
+              "In the information model, customers observe the service-queue length prior to traveling.",
+              "The next time the traveling customers observe the service-queue length is upon arrival."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4. Information Model",
+                "equation": "",
+                "quote": "In the information model, customers observe the service-queue length prior to traveling."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Queueing: “In the information model, customers observe the service-queue length prior to traveling.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "expected-utility",
+            "label": "Expected Utility",
+            "role": "decision",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "The customer considers the chance that she will end up facing a full queue upon arrival if she decides to travel to the queue.",
+            "searchPhrases": [
+              "how expected utility is represented",
+              "decision rule in information disclosure and learning",
+              "expected utility decision rule specification"
+            ],
+            "formal": "Decision rule: The customer considers the chance that she will end up facing a full queue upon arrival if she decides to travel to the queue.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Note that E(s, t) is only defined for t > 0, because the expected sojourn time is used to calculate a customer’s utility from traveling, which means that at least this customer is traveling to the queue.",
+              "We leave aside for now the cost of traveling back from the service queue and focus on calculating the expected sojourn time, which we define as the expected time of traveling to the service queue and waiting for service completion.",
+              "The expected utility is calculated by a tagged customer, who observes s customers in the service queue and now needs to decide whether to travel."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4.1. Expected Utility",
+                "equation": "",
+                "quote": "The customer considers the chance that she will end up facing a full queue upon arrival if she decides to travel to the queue."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Queueing: “The customer considers the chance that she will end up facing a full queue upon arrival if she”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "equilibrium-strategy",
+            "label": "Equilibrium Strategy",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "In Theorem 1, we prove the existence of a symmetric equilibrium strategy in this model.",
+            "searchPhrases": [
+              "how equilibrium strategy is represented",
+              "strategic response in information disclosure and learning",
+              "equilibrium strategy strategic response specification"
+            ],
+            "formal": "Strategic response: In Theorem 1, we prove the existence of a symmetric equilibrium strategy in this model.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The tagged customer’s best-response strategy is to travel when observing s customers in the service queue if UI(s, p) > 0 and to avoid traveling if UI(s, p) < 0."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.2. Equilibrium Strategy",
+                "equation": "",
+                "quote": "In Theorem 1, we prove the existence of a symmetric equilibrium strategy in this model."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “In Theorem 1, we prove the existence of a symmetric equilibrium strategy in this model.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "throughput-and-social-welfare",
+            "label": "Throughput and Social Welfare",
+            "role": "objective",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "Social welfare, denoted as SWI, is calculated as the product of the effective arrival rate to the travel queue and the expected utility from traveling under the equilibrium strategy pe.",
+            "searchPhrases": [
+              "how throughput and social welfare is represented",
+              "modeled objective in information disclosure and learning",
+              "throughput and social welfare modeled objective specification"
+            ],
+            "formal": "Objective relation: Social welfare, denoted as SWI, is calculated as the product of the effective arrival rate to the travel queue and the expected utility from traveling under the equilibrium strategy pe.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We perform the calculation numerically as a result of the model complexity, which is due to the fact that the arrival rate to the traveling queue depends on the current state of the service queue, and vice versa."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.3. Throughput and Social Welfare",
+                "equation": "",
+                "quote": "Social welfare, denoted as SWI, is calculated as the product of the effective arrival rate to the travel queue and the expected utility from traveling under the equilibrium strategy pe."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Queueing: “Social welfare, denoted as SWI, is calculated as the product of the effective arrival rate to the travel”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The current state of the service queue, and vice versa",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 8,
+                    "quote": "We perform the calculation numerically as a result of the model complexity, which is due to the fact that the arrival rate to the traveling queue depends on the current state of the service queue, and vice versa.",
+                    "matchedText": "the current state of the service queue, and vice versa",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "numerical-solution-and-analysis",
+            "label": "Numerical Solution and Analysis",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In other words, if the algorithm converges to a solution, the stopping criterion ensures that this solution is a symmetric equilibrium.",
+            "searchPhrases": [
+              "how numerical solution and analysis is represented",
+              "solution algorithm in information disclosure and learning",
+              "numerical solution and analysis solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In other words, if the algorithm converges to a solution, the stopping criterion ensures that this solution is a symmetric equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The equilibrium traveling probabilities are nonincreasing in the observed servicequeue length, as stated in Observation 1.",
+              "For example, according to the equilibrium strategy in Figure 1(b), customers travel when they observe at most two customers in the service queue, mix between traveling and not traveling if they observe three or four customers, and avoid traveling if they observe five or more customers."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.4. Numerical Solution and Analysis",
+                "equation": "",
+                "quote": "In other words, if the algorithm converges to a solution, the stopping criterion ensures that this solution is a symmetric equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “In other words, if the algorithm converges to a solution, the stopping criterion ensures that this solution is”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "no-information-model",
+        "name": "No-Information Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model and Preliminaries.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-and-preliminaries"
+          }
+        ],
+        "summary": "In the no-information model, customers cannot observe the service-queue length before traveling. When reaching the congestion levels where customers mix between traveling and not traveling, the effective arrival rate and the throughput become fixed. is the aggregate customer expected utility.",
+        "objects": [
+          "Customers"
+        ],
+        "inputs": [
+          "The arrival rate",
+          "Probability q",
+          "The utility",
+          "The service capacity",
+          "A change in system congestion"
+        ],
+        "decisions": [
+          "Whether to join the observable service queue",
+          "Join the observable service queue",
+          "Whether to travel",
+          "Perform the calculation numerically",
+          "A generalized mixed-threshold equilibrium strategy: Travel"
+        ],
+        "assumptions": [
+          "The service capacity μ is fixed"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "No-Information Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "In the no-information model, customers cannot ob- serve the service-queue length before traveling.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "No-Information Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "The output of the traveling queue is also Poisson with parameter λq (see Burke 1956), which constitutes the arrival rate to the service queue.",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Probability q",
+              "source": {
+                "type": "section",
+                "section": "No-Information Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "Denote by UN(q) the utility of a tagged customer who decides to travel, when all other customers travel to the queue with probability q.",
+                "matchedText": "probability q",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The utility",
+              "source": {
+                "type": "section",
+                "section": "No-Information Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "Denote by UN(q) the utility of a tagged customer who decides to travel, when all other customers travel to the queue with probability q.",
+                "matchedText": "the utility",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service capacity",
+              "source": {
+                "type": "section",
+                "section": "No-Information Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 18,
+                "quote": "Customer Behavior as a Function of Congestion Throughout the paper, we assume the service capacity μ is ﬁxed.",
+                "matchedText": "the service capacity",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A change in system congestion",
+              "source": {
+                "type": "section",
+                "section": "No-Information Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "Hence, we refer to a change in the arrival rate as a change in system congestion.",
+                "matchedText": "a change in system congestion",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to join the observable service queue",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 12,
+                "quote": "Customers are rational; therefore, the decision of whether to join the observable service queue after traveling ignores the cost of traveling, which cannot be recovered and is considered a sunk cost.",
+                "matchedText": "whether to join the observable service queue after traveling ignores the cost of traveling",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Join the observable service queue",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 12,
+                "quote": "Customers are rational; therefore, the decision of whether to join the observable service queue",
+                "matchedText": "join the observable service queue",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Whether to travel",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In our base model, customers observe the queue length and then decide whether to travel.",
+                "matchedText": "whether to travel",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Perform the calculation numerically",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "We perform the calculation numerically as a result of the model complexity, which is due to the fact that the arrival rate to the traveling queue depends on the current state of the service queue, and vice versa.",
+                "matchedText": "perform the calculation numerically as a result of the model complexity",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "A generalized mixed-threshold equilibrium strategy: Travel",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 11,
+                "quote": "We find that customers may adopt a generalized mixed-threshold equilibrium strategy: Travel when observing short queue lengths, avoid traveling when observing long queue lengths, and mix between traveling and not traveling when observing intermediate queue lengths, with a decreasing probability of traveling.",
+                "matchedText": "a generalized mixed-threshold equilibrium strategy: Travel",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The service capacity μ is fixed",
+              "source": {
+                "type": "section",
+                "section": "No-Information Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 18,
+                "quote": "Customer Behavior as a Function of Congestion Throughout the paper, we assume the service capacity μ is ﬁxed.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper proves that a symmetric equilibrium exists in our base model.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 7
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 11,
+            "section": "5.3. Throughput",
+            "equation": "",
+            "quote": "When reaching the congestion levels where customers mix between traveling and not traveling, the effective arrival rate and the throughput become ﬁxed."
+          }
+        ],
+        "components": [
+          {
+            "id": "no-information-model",
+            "label": "No-Information Model",
+            "role": "information",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "In the no-information model, customers cannot observe the service-queue length before traveling.",
+            "searchPhrases": [
+              "how no-information model is represented",
+              "information available to the decision maker in information disclosure and learning",
+              "no-information model information available to the decision maker specification"
+            ],
+            "formal": "Information structure: In the no-information model, customers cannot observe the service-queue length before traveling.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The service queue is an observable M/M/1/ne queue with steadystate probabilities: πs q( ) ρq ( )sπ0 q ( ) for 0 ≤s ≤ne, (10) where s is the number of customers in the service queue and π0(q) 1−ρq 1−(ρq)ne+1 if ρq̸ 1.",
+              "In the no-information model, customers cannot ob- serve the service-queue length before traveling.",
+              "In the no-information model, customers cannot observe the service-queue length before traveling."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5. No-Information Model",
+                "equation": "",
+                "quote": "In the no-information model, customers cannot ob- serve the service-queue length before traveling."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Queueing: “In the no-information model, customers cannot ob- serve the service-queue length before traveling.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "throughput",
+            "label": "Throughput",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "When reaching the congestion levels where customers mix between traveling and not traveling, the effective arrival rate and the throughput become fixed.",
+            "searchPhrases": [
+              "how throughput is represented",
+              "system process in information disclosure and learning",
+              "throughput system process specification"
+            ],
+            "formal": "Process relation: When reaching the congestion levels where customers mix between traveling and not traveling, the effective arrival rate and the throughput become fixed.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When expected travel time is long, such that customers mix between traveling and not traveling, throughput decreases as the expected travel time increases.",
+              "For λ ≥ ̄λ, throughput is fixed and equals ̄λ 1− ̄ρn e 1− ̄ρne+1, where ̄ρ ̄λ μ.",
+              "For this reason, for a short expected travel time, because all customers travel, the throughput is fixed at its maximum value."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.3. Throughput",
+                "equation": "",
+                "quote": "When reaching the congestion levels where customers mix between traveling and not traveling, the effective arrival rate and the throughput become ﬁxed."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "social-welfare",
+            "label": "Social Welfare",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "is the aggregate customer expected utility.",
+            "searchPhrases": [
+              "how social welfare is represented",
+              "modeled objective in information disclosure and learning",
+              "social welfare modeled objective specification"
+            ],
+            "formal": "Objective relation: Is the aggregate customer expected utility.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Customer Behavior as a Function of Congestion Throughout the paper, we assume the service capacity μ is fixed."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.4. Social Welfare",
+                "equation": "",
+                "quote": "Social welfare is the aggregate customer expected utility."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Social welfare is the aggregate customer expected utility.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The service capacity μ is fixed",
+                  "source": {
+                    "type": "section",
+                    "section": "No-Information Model",
+                    "page": 10,
+                    "sectionIndex": 0,
+                    "sentence": 18,
+                    "quote": "Customer Behavior as a Function of Congestion Throughout the paper, we assume the service capacity μ is ﬁxed.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "the-parking-model",
+        "name": "The Parking Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model and Preliminaries.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-and-preliminaries"
+          }
+        ],
+        "summary": "The results of our comparison can be explained by examining the main difference between the parking model and the information model, which is the uncertainty regarding the service-queue length upon arrival and the probability of gaining the reward from service.",
+        "objects": [
+          "The service provider",
+          "Customers"
+        ],
+        "inputs": [
+          "The reward",
+          "The queue length",
+          "Long queues prior to traveling, expecting a shorter queue upon arrival"
+        ],
+        "decisions": [
+          "Whether to join it",
+          "Whether to pay (the parking fee)",
+          "To travel may face a full queue upon arrival to the service queue"
+        ],
+        "assumptions": [
+          "While traveling, customers do not observe the service-queue length"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The service provider",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "the service provider",
+                "matchedText": "the service provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "(16) Customers park near the service queue if their utility is nonnegative; otherwise, they balk.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "Throughput, denoted as TP, and social welfare, denoted as SWP, are calculated as in Naor’s model, substituting the reward from service by V −2C/η.",
+                "matchedText": "the reward",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The queue length",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 22,
+                "quote": "the queue length",
+                "matchedText": "the queue length",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Long queues prior to traveling, expecting a shorter queue upon arrival",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 77,
+                "quote": "As was mentioned above, the intuition behind this result is that under these conditions, customers tend to travel to the service queue, even when they observe long queues prior to traveling, expecting a shorter queue upon arrival.",
+                "matchedText": "long queues prior to traveling, expecting a shorter queue upon arrival",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to join it",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 22,
+                "quote": "whether to join it",
+                "matchedText": "whether to join it",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Whether to pay (the parking fee)",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 22,
+                "quote": "whether to pay (the parking fee)",
+                "matchedText": "whether to pay (the parking fee)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To travel may face a full queue upon arrival to the service queue",
+              "source": {
+                "type": "section",
+                "section": "The Parking Model",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 42,
+                "quote": "By contrast, under the information model, a customer who decides to travel may face a full queue upon arrival to the service queue",
+                "matchedText": "to travel may face a full queue upon arrival to the service queue",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "While traveling, customers do not observe the service-queue length",
+              "source": {
+                "type": "section",
+                "section": "Information Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 3,
+                "quote": "We assume that while traveling, customers do not observe the service-queue length.",
+                "matchedText": "while traveling, customers do not observe the service-queue length.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Formation, we study a parking model, where traveling is instantaneous and the traveling cost is replaced by a fixed parking cost near the service queue that is equal to the expected traveling cost 2C/η.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "The Parking Model",
+          "page": 12,
+          "sentence": 82
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 13,
+            "section": "7. The Parking Model",
+            "equation": "",
+            "quote": "The results of our comparison can be explained by examining the main difference between the parking model and the information model, which is the un- certainty regarding the service-queue length upon arrival and the probability of gaining the reward from service."
+          }
+        ],
+        "components": [
+          {
+            "id": "the-parking-model",
+            "label": "The Parking Model",
+            "role": "process",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "The results of our comparison can be explained by examining the main difference between the parking model and the information model, which is the uncertainty regarding the service-queue length upon arrival and the probability of gaining the reward from service.",
+            "searchPhrases": [
+              "how the parking model is represented",
+              "system process in information disclosure and learning",
+              "the parking model system process specification"
+            ],
+            "formal": "Process relation: The results of our comparison can be explained by examining the main difference between the parking model and the information model, which is the uncertainty regarding the service-queue length upon arrival and the probability of gaining the reward from service.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "As was mentioned above, the intuition behind this result is that under these conditions, customers tend to travel to the service queue, even when they observe long queues prior to traveling, expecting a shorter queue upon arrival."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "7. The Parking Model",
+                "equation": "",
+                "quote": "The results of our comparison can be explained by examining the main difference between the parking model and the information model, which is the un- certainty regarding the service-queue length upon arrival and the probability of gaining the reward from service."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Long queues prior to traveling, expecting a shorter queue upon arrival",
+                  "source": {
+                    "type": "section",
+                    "section": "The Parking Model",
+                    "page": 14,
+                    "sectionIndex": 0,
+                    "sentence": 77,
+                    "quote": "As was mentioned above, the intuition behind this result is that under these conditions, customers tend to travel to the service queue, even when they observe long queues prior to traveling, expecting a shorter queue upon arrival.",
+                    "matchedText": "long queues prior to traveling, expecting a shorter queue upon arrival",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 6,
+        "transformation": "relation-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "61324afdfbe02a83f2447bb332f9385f0bed9955fe18b9da5e1f98a3af9658b4",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "1ff954ac02abe502f795fe476d6cdf209606405509794885652faf5949a2d889",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0909/1ff954ac02abe502f795fe476d6cdf209606405509794885652faf5949a2d889.json",
+      "extractionQaDecisionSha256": "13ea17b298f7219602717330a3d4ea393e21298dd75284a09d7b349d7e376665",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

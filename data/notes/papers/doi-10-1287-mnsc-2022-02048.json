@@ -1,0 +1,800 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2022-02048",
+  "sourcePdfSha256": "fcbe5af835ab6a9bee38c19b0c5a68654d3b384cbfc91bde44373ee3cfd69c97",
+  "extractionPagesSha256": "d77089e551a59312e9b9ed4e283df2b8ca4ec9dc949551f2723d3d1aaae9d60e",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "a42d38d94d94daf7c3ea2ffe77a5e23bb06050f46cd64491a8729f329a27be20",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "8466fd97e9f3d0153b2e1bc46e7b5aced4c3665607c988e55b2e2d2199f74f27",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-02048/8466fd97e9f3d0153b2e1bc46e7b5aced4c3665607c988e55b2e2d2199f74f27.json",
+  "extractionQaDecisionSha256": "09a40da4b63f5910005cfc084ccbccdb1bc137ac28d5f6f8fb92af635a37ce1f",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-02048",
+    "question": "How do learning personalized treatment strategies with predictive and prognostic covariates interact in adaptive clinical trials?",
+    "overview": "Biomedical research may uncover insights regarding the interaction of the treatments of a disease with patient covariates. The paper shows how to use such insights to improve the efficiency of adaptive clinical trials for precision medicine by extending ideas from optimal Bayesian learning. We present a model for response-adaptive multi-arm clinical trials that leverages knowledge about the predictive-prognostic covariate structure to accelerate the learning of personalized treatment strategies that obtain the best expected outcomes for post-trial patients.",
+    "modelTypes": [
+      "Structural model",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        13,
+        15
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Learning Personalized Treatment Strategies with Predictive and Prognostic Covariates in Adaptive Clinical Trials model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Biomedical research may uncover insights regarding the interaction of the treatments of a disease with patient covariates. The paper shows how to use such insights to improve the efficiency of adaptive clinical trials for precision medicine by extending ideas from optimal Bayesian learning. We present a model for response-adaptive multi-arm clinical trials that leverages knowledge about the predictive-prognostic covariate structure to accelerate the learning of personalized treatment strategies that obtain the best expected outcomes for post-trial patients.",
+        "objects": [
+          "Patient",
+          "Managers",
+          "A population",
+          "The trial manager",
+          "Table"
+        ],
+        "inputs": [
+          "Time t",
+          "The available data",
+          "Online rewards",
+          "Offline rewards",
+          "The best treatment strategy for post-trial patients with the expected opportunity cost (EOC)"
+        ],
+        "decisions": [
+          "Each subsequent patient’s treatment allocation",
+          "Design of a potential trial to assess suspected interactions between endotypes and treatments",
+          "The treatment assigned by the TS allocation policy",
+          "The f EVI-based policy that best aligns with their objective"
+        ],
+        "assumptions": [
+          "Patient outcomes are normally distributed",
+          "Here that P is a known constant",
+          "Type Mars3 is predictive with respect to treatments with restrictive fluid management",
+          "The APACHE score at admission is prognostic and not predictive with respect to any treatment",
+          "The 11 original covariates are normally distributed"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Biomedical research may uncover insights regarding the interaction of the treatments of a disease with patient covariates.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Managers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "Our proposed trial design is of interest to funders, designers, and managers of clinical trials.",
+                "matchedText": "managers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A population",
+              "source": {
+                "type": "section",
+                "section": "Mathematical Model of a Sequential",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 7,
+                "quote": "After the trial, the trial manager has learned a treatment strat­ egy, that is, a mapping from patient covariates to treat­ ments, which the manager then applies to a population of post-trial patients.",
+                "matchedText": "a population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The trial manager",
+              "source": {
+                "type": "section",
+                "section": "Mathematical Model of a Sequential",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 2,
+                "quote": "The trial manager assigns a treatment for each enrolled patient after observing the patient’s covariates.",
+                "matchedText": "The trial manager",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Table",
+              "source": {
+                "type": "section",
+                "section": "Mathematical Model of a Sequential",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 9,
+                "quote": "Table EC.1 in the Online Appendix summarizes the notation of the model.",
+                "matchedText": "Table",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Information and Decisions",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "The history Ht represents all the available data at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The available data",
+              "source": {
+                "type": "section",
+                "section": "Information and Decisions",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "The history Ht represents all the available data at time t.",
+                "matchedText": "the available data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Online rewards",
+              "source": {
+                "type": "section",
+                "section": "Mathematical Model of a Sequential",
+                "page": 4,
+                "sectionIndex": 30,
+                "sentence": 7,
+                "quote": "online rewards",
+                "matchedText": "online rewards",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Offline rewards",
+              "source": {
+                "type": "section",
+                "section": "Known Labeling for Offline Rewards",
+                "page": 16,
+                "sectionIndex": 23,
+                "sentence": 64,
+                "quote": "In the experiments of this section, we observed that f EVI has the best performance for offline rewards, and f EVIon has the best performance for online rewards, whereas their respective performance in the other met­ ric is inferior to comparators.",
+                "matchedText": "offline rewards",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The best treatment strategy for post-trial patients with the expected opportunity cost (EOC)",
+              "source": {
+                "type": "section",
+                "section": "Allocation Policies",
+                "page": 12,
+                "sectionIndex": 20,
+                "sentence": 1,
+                "quote": "We measure the ability of allocation policies to learn the best treatment strategy for post-trial patients with the expected opportunity cost (EOC).",
+                "matchedText": "the best treatment strategy for post-trial patients with the expected opportunity cost (EOC)",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each subsequent patient’s treatment allocation",
+              "source": {
+                "type": "section",
+                "section": "Mathematical Model of a Sequential",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "The trial manager assesses all the information collected thus far to decide on each subsequent patient’s treatment allocation",
+                "matchedText": "each subsequent patient’s treatment allocation",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Design of a potential trial to assess suspected interactions between endotypes and treatments",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup for the Two Applications",
+                "page": 13,
+                "sectionIndex": 22,
+                "sentence": 13,
+                "quote": "Here, we explore the design of a potential trial to assess suspected interac­ tions between endotypes and treatments",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The treatment assigned by the TS allocation policy",
+              "source": {
+                "type": "section",
+                "section": "Allocation Policies",
+                "page": 12,
+                "sectionIndex": 20,
+                "sentence": 9,
+                "quote": "Top-two Thompson sampling (TTTS) is an adaptation of Thomp­ son sampling (Russo 2020): With probability β, the pol­ icy assigns the treatment assigned by the TS allocation policy",
+                "matchedText": "the treatment assigned by the TS allocation policy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The f EVI-based policy that best aligns with their objective",
+              "source": {
+                "type": "section",
+                "section": "Known Labeling for Offline Rewards",
+                "page": 16,
+                "sectionIndex": 23,
+                "sentence": 68,
+                "quote": "A decision maker could select the f EVI-based policy that best aligns with their objective",
+                "matchedText": "the f EVI-based policy that best aligns with their objective",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Patient outcomes are normally distributed",
+              "source": {
+                "type": "section",
+                "section": "Overview of Model",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 4,
+                "quote": "We assume patient outcomes are normally distributed.",
+                "matchedText": "patient outcomes are normally distributed.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Here that P is a known constant",
+              "source": {
+                "type": "section",
+                "section": "Information and Decisions",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "We assume here that P is a known constant.",
+                "matchedText": "here that P is a known constant.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Type Mars3 is predictive with respect to treatments with restrictive fluid management",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup for the Two Applications",
+                "page": 13,
+                "sectionIndex": 22,
+                "sentence": 22,
+                "quote": "We assume that type Mars3 is predictive with respect to treatments with restrictive fluid management.",
+                "matchedText": "type Mars3 is predictive with respect to treatments with restrictive fluid management.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The APACHE score at admission is prognostic and not predictive with respect to any treatment",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup for the Two Applications",
+                "page": 13,
+                "sectionIndex": 22,
+                "sentence": 25,
+                "quote": "We assume that the APACHE score at admission is prog­ nostic and not predictive with respect to any treat­ ment.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The 11 original covariates are normally distributed",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup for the Two Applications",
+                "page": 14,
+                "sectionIndex": 22,
+                "sentence": 44,
+                "quote": "We assume that the 11 origi­ nal covariates are normally distributed.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper characterizes the optimal policy for sequentially allocating treatments to in-trial patients and, because it is hard to compute, propose several computable heuristics based on Bayesian one-step look-ahead techniques.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "2. Mathematical Model of a Sequential Trial with Covariates",
+            "equation": "",
+            "quote": "The trial manager assigns a treatment for each enrolled patient after observing the patient’s covariates."
+          }
+        ],
+        "components": [
+          {
+            "id": "mathematical-model-of-a-sequential-trial-with-covariates",
+            "label": "Mathematical Model of a Sequential Trial with Covariates",
+            "role": "decision",
+            "concepts": [
+              "analytical-model"
+            ],
+            "explanation": "The trial manager assigns a treatment for each enrolled patient after observing the patient’s covariates.",
+            "searchPhrases": [
+              "how mathematical model of a sequential trial with covariates is represented",
+              "decision rule in innovation, analytics, and technology",
+              "mathematical model of a sequential trial with covariates decision rule specification"
+            ],
+            "formal": "Decision rule: The trial manager assigns a treatment for each enrolled patient after observing the patient’s covariates.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We formulate a model of an adaptive multi-arm clinical trial that enrolls a fixed number of patients sequentially through time.",
+              "The trial manager assigns a treatment for each enrolled patient after observing the patient’s covariates."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Mathematical Model of a Sequential Trial with Covariates",
+                "equation": "",
+                "quote": "The trial manager assigns a treatment for each enrolled patient after observing the patient’s covariates."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "analytical-model",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Analytical modeling as “mathematical modeling”: “The trial manager assigns a treatment for each enrolled patient after observing the patient’s covariates.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-and-decisions",
+            "label": "Information and Decisions",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "We assume here that P is a known constant.",
+            "searchPhrases": [
+              "how information and decisions is represented",
+              "information available to the decision maker in innovation, analytics, and technology",
+              "information and decisions information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We assume here that P is a known constant.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume here that P is a known constant.",
+              "The implementation decision ̃f ∈f is the treatment strategy implemented for future patients: ̃Wi = ̃f ( ̃Xi)."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.1. Information and Decisions",
+                "equation": "",
+                "quote": "We assume here that P is a known constant."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We assume here that P is a known constant.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "linear-response-function-and-labeling-of-active-regressors",
+            "label": "Linear Response Function and Labeling of Active Regressors",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "We define the labeling j to be the matrix of labels.",
+            "searchPhrases": [
+              "how linear response function and labeling of active regressors is represented",
+              "information available to the decision maker in innovation, analytics, and technology",
+              "linear response function and labeling of active regressors information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We define the labeling j to be the matrix of labels.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume a linear model for rm(x,w) to describe the effects of covariates and their potential interactions with treatments.",
+              "In general, a response function rm(x,w) maps a vector of covariates x ∈X and a treatment w ∈W to the expected outcome.",
+              "We define the labeling j to be the matrix of labels.",
+              "Here, we assume a linear model for rm(x,w) to describe the effects of covariates and their potential interactions with treatments."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.3. Linear Response Function and Labeling of Active Regressors",
+                "equation": "",
+                "quote": "We define the labeling j to be the matrix of labels."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We define the labeling j to be the matrix of labels.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "distribution-of-covariates",
+            "label": "Distribution of Covariates",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "This is similar to the standard assumption in regression analysis that X⊤X is invertible, which ensures estimation can be done.",
+            "searchPhrases": [
+              "how distribution of covariates is represented",
+              "estimation procedure in innovation, analytics, and technology",
+              "distribution of covariates estimation procedure specification"
+            ],
+            "formal": "Estimation relation: This is similar to the standard assumption in regression analysis that X⊤X is invertible, which ensures estimation can be done.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume the covariates of patients enrolled in the trial are exogenous, independent, and identically distributed (i.i.d.) random variables from a known distribution Fx: Xt ~ i:i:d:Fx.",
+              "The distributions Fx of Xt and F ̃x of ̃Xi are such that E[X⊤ t Xt] < ∞and E[ ̃X ⊤ i ̃Xi] < ∞.",
+              "The covariates of post-trial patients are exogenous with a known distribution, ̃Xi ~ i:i:d:F ̃x, which is not necessarily the same distribution as that of the trial patients."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.4. Distribution of Covariates",
+                "equation": "",
+                "quote": "This is similar to the standard assumption in regression analysis that X⊤X is invertible, which ensures estimation can be done."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Model estimation as “estimation”: “that X⊤X is invertible, which ensures estimation can be done.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "bayesian-modeling-and-updating",
+            "label": "Bayesian Modeling and Updating",
+            "role": "information",
+            "concepts": [
+              "bayesian-inference",
+              "bayesian-updating"
+            ],
+            "explanation": "For a known labeling j, we assume a conjugate normal model for patient outcomes and response function parameters and use the operator ⊗of Section 2.3 in describing it.",
+            "searchPhrases": [
+              "how bayesian modeling and updating is represented",
+              "information available to the decision maker in innovation, analytics, and technology",
+              "bayesian modeling and updating information available to the decision maker specification"
+            ],
+            "formal": "Information structure: For a known labeling j, we assume a conjugate normal model for patient outcomes and response function parameters and use the operator ⊗of Section 2.3 in describing it.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume a conjugate normal model for patient outcomes and response function parameters and use the operator ⊗of Section 2.",
+              "For a known labeling j, we assume a conjugate normal model for patient outcomes and response function parameters and use the operator ⊗of Section 2.3 in describing it.",
+              "Specifically, m|Ht ~ N (ut, Σt), where ut and Σt are updated after each observation."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.5. Bayesian Modeling and Updating",
+                "equation": "",
+                "quote": "For a known labeling j, we assume a conjugate nor­ mal model for patient outcomes and response func­ tion parameters and use the operator ⊗of Section 2.3 in describing it."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "bayesian-inference",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Bayesian inference as “Bayesian updating”: “For a known labeling j, we assume a conjugate normal model for patient outcomes and response function parameters”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "bayesian-updating",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Bayesian updating: “For a known labeling j, we assume a conjugate normal model for patient outcomes and response function parameters”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "experimental-setup-for-the-two-applications",
+            "label": "Experimental Setup for the Two Applications",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Sepsis is defined as a life-threatening organ dysfunction caused by dysregulated host response to infection and has been operationalized with an acute increase in the sequential (sepsis-related) organ failure assessment (SOFA) score of two points or more (Singer et al. 2016).",
+            "searchPhrases": [
+              "how experimental setup for the two applications is represented",
+              "information available to the decision maker in innovation, analytics, and technology",
+              "experimental setup for the two applications information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Sepsis is defined as a life-threatening organ dysfunction caused by dysregulated host response to infection and has been operationalized with an acute increase in the sequential (sepsis-related) organ failure assessment (SOFA) score of two points or more (Singer et al. 2016).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the APACHE score at admission is prognostic and not predictive with respect to any treatment.",
+              "We divide the APACHE score at the first and third quartile to obtain a discrete distribution that takes the value 0 (low) with probability 1=4, 1 (medium) with probability 1=2, and 2 (high) with probability 1=4.",
+              "The probabilities for each of the types Mars1, Mars2, Mars3, and Mars4 are independent of the APACHE score at admission and are, respectively, proportional to 150, 184, 129, and 59; the counts for these types reported by Scicluna et al. (2017).",
+              "Sepsis is defined as a life-threatening organ dysfunction caused by dysregulated host response to infection and has been operationalized with an acute increase in the sequential (sepsis-related) organ failure assessment (SOFA) score of two points or more (Singer et al. 2016)."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "8.2. Experimental Setup for the Two Applications",
+                "equation": "",
+                "quote": "Sepsis is defined as a life-threatening organ dysfunc­ tion caused by dysregulated host response to infection and has been operationalized with an acute increase in the sequential (sepsis-related) organ failure assess­ ment (SOFA) score of two points or more (Singer et al. 2016)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Sepsis is defined as a life-threatening organ dysfunction caused by dysregulated host response to infection and has been”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "known-labeling-for-offline-rewards",
+            "label": "Known Labeling for Offline Rewards",
+            "role": "algorithm",
+            "concepts": [
+              "simulation"
+            ],
+            "explanation": "The usefulness of the proposed f EVI-MC algorithm, which uses MC simulation to estimate the f EVI indices, is threefold.",
+            "searchPhrases": [
+              "how known labeling for offline rewards is represented",
+              "solution algorithm in innovation, analytics, and technology",
+              "known labeling for offline rewards solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The usefulness of the proposed f EVI-MC algorithm, which uses MC simulation to estimate the f EVI indices, is threefold.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Second, f EVI-MC avoids a numerical integration required by f EVI when there is positive delay, ∆> 0, or when there is at least one continuous-valued patient covariate.",
+              "Third, because it can handle positive delay, f EVI- MC allows reaping the benefits of knowing the covariates and treatment allocations of pipeline patients before their outcomes are observed, when further treatment allocations are made.",
+              "Knowledge of the pipeline even before seeing the outcome, as done by f EVI-MC, is important and beneficial for arm allocation, particularly for up to sample sizes of four to five times the ∆."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "Known Labeling for Offline Rewards",
+                "equation": "",
+                "quote": "The usefulness of the proposed f EVI-MC algorithm, which uses MC simulation to estimate the f EVI indices, is threefold."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "simulation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Simulation: “f EVI-MC algorithm, which uses MC Simulation to estimate the f EVI indices, is threefold.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "fcbe5af835ab6a9bee38c19b0c5a68654d3b384cbfc91bde44373ee3cfd69c97",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "8466fd97e9f3d0153b2e1bc46e7b5aced4c3665607c988e55b2e2d2199f74f27",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-02048/8466fd97e9f3d0153b2e1bc46e7b5aced4c3665607c988e55b2e2d2199f74f27.json",
+      "extractionQaDecisionSha256": "09a40da4b63f5910005cfc084ccbccdb1bc137ac28d5f6f8fb92af635a37ce1f",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

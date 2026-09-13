@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-0664",
+  "sourcePdfSha256": "db7bd2d1c67d4c603eedf5d15fbd8ac2a1d2fe19fb28f6c7798711eee3c3e049",
+  "extractionPagesSha256": "582c337dbadea15d74826275e84f3d664aed624cdfe2bb2b374d338bbddd1f05",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "2f5ce56c6cec76794ab67845ad7037ce055d3dd1af65e9303c79be914680b747",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "75aae48d02018c69e37dbd59714bea464095b038ca7538b4232a150d00555c14",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0664/75aae48d02018c69e37dbd59714bea464095b038ca7538b4232a150d00555c14.json",
+  "extractionQaDecisionSha256": "42ae1ae094f89bee713f3244037d2b38c3987b7c9e2183dff9098e7360ea65c3",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-0664",
+    "question": "How can robust generator maintenance schedule support frequency-secure power systems?",
+    "overview": "Normal operations of a power system require that alternating current frequency be maintained at a nominal value, for example, 50 Hz, whereas severe deviation from this value due to power deficiencies can cause cascading generator trips. Maintaining the frequency requires adequate inertia and frequency regulation reserve, which are primarily provided by online generators. In daily operations, generators due for preventive maintenance must be taken offline, and thus an improper maintenance schedule could jeopardize frequency security, as exemplified by the recent Texas power blackout.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "scheduling-model",
+        "name": "Scheduling Model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Normal operations of a power system require that alternating current frequency be maintained at a nominal value, for example, 50 Hz, whereas severe deviation from this value due to power deficiencies can cause cascading generator trips. Maintaining the frequency requires adequate inertia and frequency regulation reserve, which are primarily provided by online generators. However, this natural nexus between frequency security and maintenance has been overlooked largely in the literature.",
+        "objects": [
+          "The two resources",
+          "Operator",
+          "Random variables",
+          "Providers"
+        ],
+        "inputs": [
+          "Demand",
+          "Historical data",
+          "Output",
+          "The marginal cost"
+        ],
+        "decisions": [
+          "Load demand and frequency security requirements",
+          "Design an explicit-dual cutting-plane method to efficiently solve the subprograms",
+          "Load demand of IEEE-118 bus system",
+          "Load demand pattern (EIA 2020)",
+          "Load demands to restore frequency and prevent cascading generator trips"
+        ],
+        "assumptions": [
+          "A full-system blackout lasting one day"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The two resources",
+              "source": {
+                "type": "section",
+                "section": "Problem and Motivation",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 15,
+                "quote": "Offline generators require several hours or even days to restart, making them unable to provide the two resources on demand.",
+                "matchedText": "the two resources",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Operator",
+              "source": {
+                "type": "section",
+                "section": "Problem and Motivation",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "To safeguard against deviation, a system operator must schedule adequate frequency regulation resources: inertia and frequency regulation reserve (AEMO 2020).",
+                "matchedText": "operator",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random variables",
+              "source": {
+                "type": "section",
+                "section": "Uncertain Power Deficiency",
+                "page": 9,
+                "sectionIndex": 11,
+                "sentence": 9,
+                "quote": "We model demand uncertainty through ∆P rather than treating Dℓt as ran­ dom variables because the latter would lead to a com­ putationally intractable formulation, as detailed in Online Appendix EC.2.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Providers",
+              "source": {
+                "type": "section",
+                "section": "Explicit-Dual Cutting-Plane Method for Subprograms",
+                "page": 13,
+                "sectionIndex": 15,
+                "sentence": 26,
+                "quote": "Specifically, the optimal marginal cost γ∗ nt can be efficiently determined by sorting the fre­ quency regulation reserve providers based on their costs, as detailed in Online Appendix EC.9.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Methodology Overview",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 7,
+                "quote": "The power deficiency typically follows a two-component mixture distribution; one component represents natural fluctuations caused by the discrepancy between actual and predicted demand, whereas the other accounts for the low-probability yet high-consequence nature of gen­ erator contingencies.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Historical data",
+              "source": {
+                "type": "section",
+                "section": "Contributions and Managerial Insights",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 2,
+                "quote": "We use an uncertainty interval to hedge against uncertainties of power deficiency and a Wasserstein ambiguity set to characterize inertia uncer­ tainties based on historical data.",
+                "matchedText": "historical data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Output",
+              "source": {
+                "type": "section",
+                "section": "Frequency Security Constraints",
+                "page": 6,
+                "sectionIndex": 24,
+                "sentence": 2,
+                "quote": "For operating hour t ∈T m, we let pgt represent the power output level of generator g and introduce unit commitment variables xgt and ygt, where xgt = 1 if generator g is online to produce electricity and 0 otherwise, and ygt = 1 if generator g starts up and 0 otherwise.",
+                "matchedText": "output",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The marginal cost",
+              "source": {
+                "type": "section",
+                "section": "Explicit-Dual Cutting-Plane Method for Subprograms",
+                "sectionIndex": 8,
+                "page": 13,
+                "quote": "the marginal cost",
+                "matchedText": "the marginal cost",
+                "derivation": "literal-explicit-input"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Load demand and frequency security requirements",
+              "source": {
+                "type": "section",
+                "section": "Scheduling Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 8,
+                "quote": "load demand and frequency security requirements",
+                "matchedText": "load demand and frequency security requirements",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design an explicit-dual cutting-plane method to efficiently solve the subprograms",
+              "source": {
+                "type": "section",
+                "section": "Methodology Overview",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 17,
+                "quote": "We design an explicit-dual cutting-plane method to efficiently solve the subprograms",
+                "matchedText": "design an explicit-dual cutting-plane method to efficiently solve the subprograms",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Load demand of IEEE-118 bus system",
+              "source": {
+                "type": "section",
+                "section": "Description of Test System",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 18,
+                "quote": "Moreover, we set the load demand during the four seasons to be 80%, 120%, 90%, and 100% of the baseline load demand of IEEE-118 bus system",
+                "matchedText": "load demand of IEEE-118 bus system",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Load demand pattern (EIA 2020)",
+              "source": {
+                "type": "section",
+                "section": "Description of Test System",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 18,
+                "quote": "Moreover, we set the load demand during the four seasons to be 80%, 120%, 90%, and 100% of the baseline load demand of IEEE-118 bus system, following the U.S. load demand pattern (EIA 2020)",
+                "matchedText": "load demand pattern (EIA 2020)",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Load demands to restore frequency and prevent cascading generator trips",
+              "source": {
+                "type": "section",
+                "section": "Problem and Motivation",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 17,
+                "quote": "In such cases, the sys­ tem operator may need to curtail load demands to restore frequency and prevent cascading generator trips",
+                "matchedText": "load demands to restore frequency and prevent cascading generator trips",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A full-system blackout lasting one day",
+              "source": {
+                "type": "section",
+                "section": "Impact of Frequency Security Constraints",
+                "page": 16,
+                "sectionIndex": 19,
+                "sentence": 45,
+                "quote": "If the frequency nadir falls below the security threshold, then we assume a full-system blackout lasting one day.",
+                "matchedText": "a full-system blackout lasting one day.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "To further enhance computational efficiency, we propose a customized cutting-plane method that decomposes each subprogram (SP) into a master problem, which serves as a relaxation of the subprogram, and multiple subproblems, which generate constraints to be incorporated into the master problem (Birge and Louveaux 2011).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Explicit-Dual Cutting-Plane Method for Subprograms",
+          "page": 12,
+          "sentence": 6
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "Scheduling Model",
+            "equation": "",
+            "quote": "Based on these constraints, a generator maintenance schedul­ ing model is developed in Section 3.4 to jointly opti­ mize maintenance and operational decisions."
+          }
+        ],
+        "components": [
+          {
+            "id": "scheduling-model",
+            "label": "Scheduling Model",
+            "role": "decision",
+            "concepts": [
+              "scheduling",
+              "feasibility-constraints"
+            ],
+            "explanation": "Based on these constraints, a generator maintenance scheduling model is developed in Section 3.4 to jointly optimize maintenance and operational decisions.",
+            "searchPhrases": [
+              "how scheduling model is represented",
+              "decision rule in policy, sustainability, and public services",
+              "scheduling model decision rule specification"
+            ],
+            "formal": "Decision rule: Based on these constraints, a generator maintenance scheduling model is developed in Section 3.4 to jointly optimize maintenance and operational decisions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "At interval m, let GM m ⊆[G] be the collection of generators scheduled for maintenance.",
+              "For notational convenience, we denote x = [ugm,vgm,xgt,ygt, pgt,θit]⊤ g∈[G],i∈[I],t∈T m,m∈[M] as the collection of maintenance and unit commitment variables and yt = [Ht, HG t ,HB t ,rG gt,rD lt]⊤ g∈[G],l∈[L] as the collection of frequency regulation variables at operating hour t.",
+              "Uncertain Inertia from Renewable Energy Sources The model (RAGMS) requires the probability distribution of the inertia prediction error ∆ ̃H S t ."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Scheduling Model",
+                "equation": "",
+                "quote": "Based on these constraints, a generator maintenance schedul­ ing model is developed in Section 3.4 to jointly opti­ mize maintenance and operational decisions."
+              },
+              {
+                "page": 8,
+                "section": "Scheduling Model",
+                "equation": "",
+                "quote": "The benefit of applying CVaR is that it provides the flexibil­ ity to optimize the expectation or right tail of the frequency regulation cost distribution by properly choosing the risk level."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Scheduling: “on these constraints, a generator maintenance Scheduling model is developed in Section 3.4 to jointly”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Feasibility constraints as “model constraint”: “Based on these constraints, a generator maintenance scheduling model is developed in Section 3.4 to jointly optimize maintenance”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "unit-commitment-constraints",
+            "label": "Unit Commitment Constraints",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Constraints (3g) represent Kirchhoff’s law, that is, the sum of incoming power flows equals the sum of outgoing power flows on each bus of the system, where Gi ⊆[G] and Li ⊆[L] are the sets of generators and electric loads located on bus i, respectively.",
+            "searchPhrases": [
+              "how unit commitment constraints is represented",
+              "system process in policy, sustainability, and public services",
+              "unit commitment constraints system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Constraints (3g) represent Kirchhoff’s law, that is, the sum of incoming power flows equals the sum of outgoing power flows on each bus of the system, where Gi ⊆[G] and Li ⊆[L] are the sets of generators and electric loads located on bus i, respectively.",
+              "Constraints (3f) and (3g) are known as the power flow constraints."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Unit Commitment Constraints",
+                "equation": "",
+                "quote": "Constraints (3g) represent Kirchhoff’s law, that is, the sum of incoming power flows equals the sum of outgoing power flows on each bus of the system, where Gi ⊆[G] and Li ⊆[L] are the sets of generators and elec­ tric loads located on bus i, respectively."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Constraints (3g) represent Kirchhoff’s law, that is, the sum of incoming power flows equals the sum of outgoing”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "frequency-security-constraints",
+            "label": "Frequency Security Constraints",
+            "role": "constraint",
+            "concepts": [
+              "energy-systems"
+            ],
+            "explanation": "The frequency regulation reserve [unit: MW] is the standby power capacity in the system to compensate for the sudden power deficiency under disturbances and recover frequency in the following tens of seconds (AEMO 2020, Du et al. 2020).",
+            "searchPhrases": [
+              "how frequency security constraints is represented",
+              "feasibility condition in policy, sustainability, and public services",
+              "frequency security constraints feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: The frequency regulation reserve [unit: MW] is the standby power capacity in the system to compensate for the sudden power deficiency under disturbances and recover frequency in the following tens of seconds (AEMO 2020, Du et al. 2020).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Now, consider a sudden disturbance with power deficiency ∆P ∈R+ that occurs at a certain moment in operating hour t.",
+              "That is, the frequency regulation reserve of online generators g ∈GT t is fully delivered at or before the arrival of the frequency nadir.",
+              "Because each generator’s ramp rate Vg varies significantly across generator types, we need to impose this constraint individually for each generator g ∈[G]."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.3. Frequency Security Constraints",
+                "equation": "",
+                "quote": "The frequency regulation reserve [unit: MW] is the standby power capacity in the system to compensate for the sudden power deficiency under disturbances and recover frequency in the following tens of seconds (AEMO 2020, Du et al. 2020)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "energy-systems",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Energy systems as “power systems”: “power systems”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "uncertain-power-deficiency",
+            "label": "Uncertain Power Deficiency",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The nature of ∆P implies a two-component mixture distribution for the power deficiency, with most weight given to the small deficiencies under normal operations (representing natural variations) that are less critical from a system security perspective.",
+            "searchPhrases": [
+              "how uncertain power deficiency is represented",
+              "information available to the decision maker in policy, sustainability, and public services",
+              "uncertain power deficiency information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The nature of ∆P implies a two-component mixture distribution for the power deficiency, with most weight given to the small deficiencies under normal operations (representing natural variations) that are less critical from a system security perspective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This modeling strategy implicitly assumes that demand variation and inertia are independent under normal operating conditions, which is reasonable given that the sources of variation for these two uncertainties are different.",
+              "Only exceptionally large power deficiencies—such as those observed during the 2021 Texas power outage—pose serious risks to system safety."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.2. Uncertain Power Deficiency",
+                "equation": "",
+                "quote": "The nature of ∆P implies a two-component mixture distribution for the power deficiency, with most weight given to the small deficiencies under nor­ mal operations (representing natural variations) that are less critical from a system security perspective."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "explicit-dual-cutting-plane-method-for-subprograms",
+            "label": "Explicit-Dual Cutting-Plane Method for Subprograms",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "With the above propositions, we summarize the proposed cutting-plane method for subprograms in Algorithm EC.1.",
+            "searchPhrases": [
+              "how explicit-dual cutting-plane method for subprograms is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "explicit-dual cutting-plane method for subprograms solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: With the above propositions, we summarize the proposed cutting-plane method for subprograms in Algorithm EC.1.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In practice, the power deficiency ∆P can never exceed the overall load demand P l∈[L]Dlt, so we set ∆P ≤P l∈[L]Dlt."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6.2. Explicit-Dual Cutting-Plane Method for Subprograms",
+                "equation": "",
+                "quote": "With the above pro­ positions, we summarize the proposed cutting-plane method for subprograms in Algorithm EC.1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “With the above propositions, we summarize the proposed cutting-plane method for subprograms in Algorithm EC.1.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "reformulation-of-the-rogms-model",
+        "name": "Reformulation of the ROGMS Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Scheduling Model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "scheduling-model"
+          }
+        ],
+        "summary": "Notice that for any fixed decision x and historical data ∆HS n, the feasibility set defined by the frequency security constraints gradually shrinks as ∆P increases. Furthermore, the large scale complicates the computation of a lower bound for the optimal objective value of (ROGMS) using the standard progressive hedging algorithm.",
+        "objects": [
+          "A server"
+        ],
+        "inputs": [
+          "Demand",
+          "Historical data",
+          "Output",
+          "The marginal cost"
+        ],
+        "decisions": [
+          "Load demand and frequency security requirements",
+          "Design an explicit-dual cutting-plane method to efficiently solve the subprograms",
+          "Load demand of IEEE-118 bus system",
+          "Load demand pattern (EIA 2020)",
+          "Load demands to restore frequency and prevent cascading generator trips"
+        ],
+        "assumptions": [
+          "A full-system blackout lasting one day"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A server",
+              "source": {
+                "type": "section",
+                "section": "Decomposition of ROGMS",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "In practice, we can set K to be either the total number of mainte­ nance intervals M or the number of cores in a server to maximize computational efficiency.",
+                "matchedText": "a server",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Methodology Overview",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 7,
+                "quote": "The power deficiency typically follows a two-component mixture distribution; one component represents natural fluctuations caused by the discrepancy between actual and predicted demand, whereas the other accounts for the low-probability yet high-consequence nature of gen­ erator contingencies.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Historical data",
+              "source": {
+                "type": "section",
+                "section": "Contributions and Managerial Insights",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 2,
+                "quote": "We use an uncertainty interval to hedge against uncertainties of power deficiency and a Wasserstein ambiguity set to characterize inertia uncer­ tainties based on historical data.",
+                "matchedText": "historical data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Output",
+              "source": {
+                "type": "section",
+                "section": "Frequency Security Constraints",
+                "page": 6,
+                "sectionIndex": 24,
+                "sentence": 2,
+                "quote": "For operating hour t ∈T m, we let pgt represent the power output level of generator g and introduce unit commitment variables xgt and ygt, where xgt = 1 if generator g is online to produce electricity and 0 otherwise, and ygt = 1 if generator g starts up and 0 otherwise.",
+                "matchedText": "output",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The marginal cost",
+              "source": {
+                "type": "section",
+                "section": "Explicit-Dual Cutting-Plane Method for Subprograms",
+                "sectionIndex": 8,
+                "page": 13,
+                "quote": "the marginal cost",
+                "matchedText": "the marginal cost",
+                "derivation": "literal-explicit-input"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Load demand and frequency security requirements",
+              "source": {
+                "type": "section",
+                "section": "Scheduling Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 8,
+                "quote": "load demand and frequency security requirements",
+                "matchedText": "load demand and frequency security requirements",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design an explicit-dual cutting-plane method to efficiently solve the subprograms",
+              "source": {
+                "type": "section",
+                "section": "Methodology Overview",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 17,
+                "quote": "We design an explicit-dual cutting-plane method to efficiently solve the subprograms",
+                "matchedText": "design an explicit-dual cutting-plane method to efficiently solve the subprograms",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Load demand of IEEE-118 bus system",
+              "source": {
+                "type": "section",
+                "section": "Description of Test System",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 18,
+                "quote": "Moreover, we set the load demand during the four seasons to be 80%, 120%, 90%, and 100% of the baseline load demand of IEEE-118 bus system",
+                "matchedText": "load demand of IEEE-118 bus system",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Load demand pattern (EIA 2020)",
+              "source": {
+                "type": "section",
+                "section": "Description of Test System",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 18,
+                "quote": "Moreover, we set the load demand during the four seasons to be 80%, 120%, 90%, and 100% of the baseline load demand of IEEE-118 bus system, following the U.S. load demand pattern (EIA 2020)",
+                "matchedText": "load demand pattern (EIA 2020)",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Load demands to restore frequency and prevent cascading generator trips",
+              "source": {
+                "type": "section",
+                "section": "Problem and Motivation",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 17,
+                "quote": "In such cases, the sys­ tem operator may need to curtail load demands to restore frequency and prevent cascading generator trips",
+                "matchedText": "load demands to restore frequency and prevent cascading generator trips",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A full-system blackout lasting one day",
+              "source": {
+                "type": "section",
+                "section": "Impact of Frequency Security Constraints",
+                "page": 16,
+                "sectionIndex": 19,
+                "sentence": 45,
+                "quote": "If the frequency nadir falls below the security threshold, then we assume a full-system blackout lasting one day.",
+                "matchedText": "a full-system blackout lasting one day.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper overcome these difficulties by designing an explicit-dual cutting-plane algorithm in Section 6.2 to solve (SP) and a novel method for computing a lower bound for (ROGMS) in Section 6.3.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Decomposition of ROGMS",
+          "page": 12,
+          "sentence": 31
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 10,
+            "section": "5. Reformulation of the ROGMS Model",
+            "equation": "",
+            "quote": "Notice that for any fixed deci­ sion x and historical data ∆HS n, the feasibility set defined by the frequency security constraints gradually shrinks as ∆P increases."
+          }
+        ],
+        "components": [
+          {
+            "id": "reformulation-of-the-rogms-model",
+            "label": "Reformulation of the ROGMS Model",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Notice that for any fixed decision x and historical data ∆HS n, the feasibility set defined by the frequency security constraints gradually shrinks as ∆P increases.",
+            "searchPhrases": [
+              "how reformulation of the rogms model is represented",
+              "decision rule in policy, sustainability, and public services",
+              "reformulation of the rogms model decision rule specification"
+            ],
+            "formal": "Decision rule: Notice that for any fixed decision x and historical data ∆HS n, the feasibility set defined by the frequency security constraints gradually shrinks as ∆P increases.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given a fixed decision x, the maximum of Z† t (x,∆P) is achieved at ∆P = ∆P.",
+              "Notice that for any fixed decision x and historical data ∆HS n, the feasibility set defined by the frequency security constraints gradually shrinks as ∆P increases."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5. Reformulation of the ROGMS Model",
+                "equation": "",
+                "quote": "Notice that for any fixed deci­ sion x and historical data ∆HS n, the feasibility set defined by the frequency security constraints gradually shrinks as ∆P increases."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decomposition-of-rogms",
+            "label": "Decomposition of ROGMS",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Furthermore, the large scale complicates the computation of a lower bound for the optimal objective value of (ROGMS) using the standard progressive hedging algorithm.",
+            "searchPhrases": [
+              "how decomposition of rogms is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "decomposition of rogms solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Furthermore, the large scale complicates the computation of a lower bound for the optimal objective value of (ROGMS) using the standard progressive hedging algorithm.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "However, each of the K subprograms (SP) is still a large-scale problem and cannot be solved directly using existing solvers."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "6.1. Decomposition of ROGMS",
+                "equation": "",
+                "quote": "Fur­ thermore, the large scale complicates the computation of a lower bound for the optimal objective value of (ROGMS) using the standard progressive hedging algorithm."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Furthermore, the large scale complicates the computation of a lower bound for the optimal objective value of (ROGMS)”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "db7bd2d1c67d4c603eedf5d15fbd8ac2a1d2fe19fb28f6c7798711eee3c3e049",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "75aae48d02018c69e37dbd59714bea464095b038ca7538b4232a150d00555c14",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0664/75aae48d02018c69e37dbd59714bea464095b038ca7538b4232a150d00555c14.json",
+      "extractionQaDecisionSha256": "42ae1ae094f89bee713f3244037d2b38c3987b7c9e2183dff9098e7360ea65c3",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

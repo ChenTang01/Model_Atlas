@@ -1,0 +1,1626 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2024-05452",
+  "sourcePdfSha256": "74ef3b9a21e767aa03688dce3c67c4fc962b8c4da0d15482efddeeb20d45b899",
+  "extractionPagesSha256": "57f32943846a12b73cc979f34fcf02109413364643bc036540bec40463ac925d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "b4b3bb156926fee3f28d25108c34a8c764d50a3547bac537d426018676d6244e",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "807aa0e41c5d61d175f12f6c5c8b2532eefe188ca3043b81dc7a00b84c0a5418",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-05452/807aa0e41c5d61d175f12f6c5c8b2532eefe188ca3043b81dc7a00b84c0a5418.json",
+  "extractionQaDecisionSha256": "00d7c681b7798ed60f65f5408b304ff6205e812edcbdbac67e90b50d92a4658d",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-05452",
+    "question": "How should a firm use funding commitments and share repurchases when short sellers can manipulate prices that guide corporate investment?",
+    "overview": "A privately informed manager and speculator trade against noise while a competitive market maker prices order flow and an outside capital provider conditions investment funding on prices. The model explicitly derives pure-strategy Bayesian trading equilibria and optimal contracts that use price-contingent funding and repurchases to control manipulation.",
+    "modelTypes": [
+      "Game theory",
+      "Structural model",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        8,
+        11
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Price Informativeness and Corporate Investment model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A privately informed manager and speculator trade against noise while a competitive market maker prices order flow and an outside capital provider conditions investment funding on prices. The model explicitly derives pure-strategy Bayesian trading equilibria and optimal contracts that use price-contingent funding and repurchases to control manipulation.",
+        "objects": [
+          "Outside capital provider",
+          "Firm manager",
+          "Privately informed speculator",
+          "Competitive market maker"
+        ],
+        "inputs": [
+          "The project's state is high or low and the manager and speculator observe the same signal",
+          "The competitive market maker observes aggregate order flow rather than each trader's identity or signal",
+          "The capital provider observes the price history and any contractible variables",
+          "Noise orders conceal informed and manipulative trades",
+          "Contracts and equilibrium strategies are common knowledge, and off-path beliefs complete the Bayesian equilibrium"
+        ],
+        "decisions": [
+          "Design",
+          "Buy, sell, or abstain in each trading round",
+          "Repurchase shares",
+          "Set Bayesian zero-profit stock prices",
+          "Fund or withhold corporate investment"
+        ],
+        "assumptions": [
+          "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha",
+          "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies",
+          "The market maker is competitive and prices at conditional expected value given order flow",
+          "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase",
+          "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Outside capital provider",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "outside capital provider"
+              }
+            },
+            {
+              "value": "Firm manager",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "firm manager"
+              }
+            },
+            {
+              "value": "Privately informed speculator",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "privately informed speculator"
+              }
+            },
+            {
+              "value": "Competitive market maker",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "competitive market maker"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The project's state is high or low and the manager and speculator observe the same signal",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The project's state is high or low and the manager and speculator observe the same signal, which is informative with probability alpha and uninformative otherwise."
+              }
+            },
+            {
+              "value": "The competitive market maker observes aggregate order flow rather than each trader's identity or signal",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The competitive market maker observes aggregate order flow rather than each trader's identity or signal."
+              }
+            },
+            {
+              "value": "The capital provider observes the price history and any contractible variables",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The capital provider observes the price history and any contractible variables before funding investment."
+              }
+            },
+            {
+              "value": "Noise orders conceal informed and manipulative trades",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Noise orders conceal informed and manipulative trades."
+              }
+            },
+            {
+              "value": "Contracts and equilibrium strategies are common knowledge, and off-path beliefs complete the Bayesian equilibrium",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Contracts and equilibrium strategies are common knowledge, and off-path beliefs complete the Bayesian equilibrium."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "design and accept a financing contract"
+              }
+            },
+            {
+              "value": "Buy, sell, or abstain in each trading round",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "buy, sell, or abstain in each trading round"
+              }
+            },
+            {
+              "value": "Repurchase shares",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "repurchase shares subject to the manager's trading constraint"
+              }
+            },
+            {
+              "value": "Set Bayesian zero-profit stock prices",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "set Bayesian zero-profit stock prices"
+              }
+            },
+            {
+              "value": "Fund or withhold corporate investment",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "fund or withhold corporate investment"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha."
+              }
+            },
+            {
+              "value": "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies."
+              }
+            },
+            {
+              "value": "The market maker is competitive and prices at conditional expected value given order flow",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The market maker is competitive and prices at conditional expected value given order flow."
+              }
+            },
+            {
+              "value": "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase."
+              }
+            },
+            {
+              "value": "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors solve the no-contract trading game across short-cost regions, derive how order pooling and separation affect price informativeness and funding, formulate an optimal direct mechanism, and construct price-contingent funding and repurchase contracts that implement the desired allocation.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 11,
+            "section": "2.3.2. Contractual Implementation of Efficient Invest",
+            "equation": "",
+            "quote": "This result is intuitive as the manager needs to repurchase fewer shares to offset manipulative selling orders of lower sizes, which, in turn, requires capital providers to commit less capital above the initial investment out­ lay."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "Design and accept a financing contract buy, sell, or abstain in each trading round repurchase shares subject to the manager's trading constraint set Bayesian zero-profit stock prices fund or withhold corporate investment",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in how costly short selling and share repurchases shape price informativeness and real investment",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Design and accept a financing contract buy, sell, or abstain in each trading round repurchase shares subject to the manager's trading constraint set Bayesian zero-profit stock prices fund or withhold corporate investment",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s in {l, h, empty}",
+                "meaning": "low, high, or uninformative common signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r_t in {0, 1}",
+                "meaning": "manager's no-repurchase or repurchase order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "per-unit short-selling cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "real investment or funding capacity",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Second, whereas past models focus on financing and investment decisions after the firm’s shares are traded in the market, our model shows that ex ante financial contracting can prevent manipulation and lead to optimal investment policies.",
+              "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha.",
+              "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies.",
+              "The market maker is competitive and prices at conditional expected value given order flow."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. The Model",
+                "equation": "",
+                "quote": "Second, whereas past models focus on financing and investment decisions after the firm’s shares are traded in the market, our model shows that ex ante financial contracting can prevent manipulation and lead to optimal investment policies."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Contract design as “contracting”: “model shows that ex ante financial contracting can prevent manipulation and lead to optimal investment”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "pricing",
+              "signaling"
+            ],
+            "explanation": "Choose an ex ante contract and price-contingent funding rule to maximize firm value subject to the manager's and speculator's trading incentives, competitive Bayesian prices, and the capital provider's break-even condition.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in how costly short selling and share repurchases shape price informativeness and real investment",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "C* is a contract that maximizes firm value subject to a nonnegative expected return for the capital provider; competitive prices satisfy p_1(Q_1,C)=E[V(k,\\omega)-k|Q_1,C] and p_2(Q_1,Q_2,C)=E[V(k,\\omega)-k|Q_1,Q_2,C], with manager and speculator orders as mutual best responses.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s in {l, h, empty}",
+                "meaning": "low, high, or uninformative common signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "probability that the common signal reveals the state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r_t in {0, 1}",
+                "meaning": "manager's no-repurchase or repurchase order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_t",
+                "meaning": "aggregate manager, speculator, and noise order flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "per-unit short-selling cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "real investment or funding capacity",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha.",
+              "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies.",
+              "The market maker is competitive and prices at conditional expected value given order flow.",
+              "The speculator and the manager choose their trading strategies contingent on their own signals, past actions, and previously observed prices to maximize their payoff, given the price-setting rule."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "Expected-profit objective",
+                "equation": "Problem in",
+                "quote": "The speculator and the manager choose their trading strategies contingent on their own signals, past actions, and previously observed prices to maximize their payoff, given the price-setting rule."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Pricing as “price setting”: “The speculator and the manager choose their trading strategies contingent on their own signals, past actions, and previously”.",
+                "conditionRefs": [
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Signaling: “The speculator and the manager choose their trading strategies contingent on their own signals, past actions, and previously”.",
+                "conditionRefs": [
+                  0,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "pure-strategy-bayesian-trading-and-investment-equilibrium-with-c",
+            "label": "Pure-strategy Bayesian trading and investment equilibrium with competitive pricing",
+            "role": "interaction",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "The model's equilibrium concept is Pure-strategy Bayesian trading and investment equilibrium with competitive pricing. Given the contract, manager and speculator orders maximize their respective expected payoffs, the market maker prices at conditional expected value using Bayes-consistent beliefs, and the capital provider's investment is optimal and break even. The paper characterizes equilibrium trading regimes by shorting cost and then selects an optimal implementable contract.",
+            "searchPhrases": [
+              "how pure-strategy bayesian trading and investment equilibrium with competitive pricing is represented",
+              "strategic response in how costly short selling and share repurchases shape price informativeness and real investment",
+              "pure-strategy bayesian trading and investment equilibrium with competitive pricing strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Pure-strategy Bayesian trading and investment equilibrium with competitive pricing.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s in {l, h, empty}",
+                "meaning": "low, high, or uninformative common signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_t",
+                "meaning": "aggregate manager, speculator, and noise order flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "per-unit short-selling cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "real investment or funding capacity",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha.",
+              "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies.",
+              "The market maker is competitive and prices at conditional expected value given order flow."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.2. Equilibrium Without Ex Ante Contracting",
+                "equation": "",
+                "quote": "The most efficient trade and investment equilibrium strategies within this class of equilibria are characterized below."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design as “contracting”: “The most efficient trade and investment equilibrium strategies within this class of equilibria are characterized below.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "The project's state is high or low and the manager and speculator observe the same signal, which is informative with probability alpha and uninformative otherwise. The competitive market maker observes aggregate order flow rather than each trader's identity or signal. The capital provider observes the price history and any contractible variables before funding investment. Noise orders conceal informed and manipulative trades.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in how costly short selling and share repurchases shape price informativeness and real investment",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The project's state is high or low and the manager and speculator observe the same signal, which is informative with probability \\alpha and uninformative otherwise.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s in {l, h, empty}",
+                "meaning": "low, high, or uninformative common signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "probability that the common signal reveals the state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r_t in {0, 1}",
+                "meaning": "manager's no-repurchase or repurchase order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_t",
+                "meaning": "aggregate manager, speculator, and noise order flow",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha.",
+              "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies.",
+              "The market maker is competitive and prices at conditional expected value given order flow."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "2.3. Equilibrium with Ex Ante Contracting",
+                "equation": "",
+                "quote": "If the financial market can provide further information, reinvestment is made when the manager is revealed to be informed about the high state and canceled when identified to be informed about the low state."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design as “contracting”: “If the financial market can provide further information, reinvestment is made when the manager is revealed to be”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The authors solve the no-contract trading game across short-cost regions, derive how order pooling and separation affect price informativeness and funding, formulate an optimal direct mechanism, and construct price-contingent funding and repurchase contracts that implement the desired allocation. Comparative statics link shorting costs, liquidity, and signal precision to real investment.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in how costly short selling and share repurchases shape price informativeness and real investment",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors solve the no-contract trading game across short-cost regions, derive how order pooling and separation affect price informativeness and funding, formulate an optimal direct mechanism, and construct price-contingent funding and repurchase contracts that implement the desired allocation.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r_t in {0, 1}",
+                "meaning": "manager's no-repurchase or repurchase order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_t",
+                "meaning": "aggregate manager, speculator, and noise order flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "per-unit short-selling cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "real investment or funding capacity",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha.",
+              "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies.",
+              "The market maker is competitive and prices at conditional expected value given order flow."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "2.3.2. Contractual Implementation of Efficient Invest",
+                "equation": "",
+                "quote": "This result is intuitive as the manager needs to repurchase fewer shares to offset manipulative selling orders of lower sizes, which, in turn, requires capital providers to commit less capital above the initial investment out­ lay."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "private-information"
+            ],
+            "explanation": "At date 0 the manager and capital provider sign an observable financing contract. At date 1 the state and a possibly informative common signal arrive; the manager and speculator choose orders, a nonstrategic noise trader submits a random order, and the market maker sets a competitive price from aggregate flow. At date 3 the capital provider observes prices and implements the contract's funding and reinvestment decision; final cash flows and trading payoffs follow. A manager with private benefits may try to raise a low price by buying, while a speculator can profit from information or manipulate downward through costly short sales.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in how costly short selling and share repurchases shape price informativeness and real investment",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: At date 0 the manager and capital provider sign an observable financing contract.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s in {l, h, empty}",
+                "meaning": "low, high, or uninformative common signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "probability that the common signal reveals the state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r_t in {0, 1}",
+                "meaning": "manager's no-repurchase or repurchase order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_t",
+                "meaning": "aggregate manager, speculator, and noise order flow",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Intuitively, under this equilibrium, a speculator with private information about the high state always buys but never trades when uninformed or privy about the low state.",
+              "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha.",
+              "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies.",
+              "The market maker is competitive and prices at conditional expected value given order flow."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "2.3.2. Contractual Implementation of Efficient Invest",
+                "equation": "",
+                "quote": "Intuitively, under this equilibrium, a speculator with private information about the high state always buys but never trades when uninformed or privy about the low state."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "private-information",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Private information: “under this equilibrium, a speculator with Private information about the high state always buys but never”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "equilibrium-without-ex-ante-contracting",
+        "name": "Equilibrium Without Ex Ante Contracting",
+        "kind": "alternative",
+        "relation": "This is an alternative to Price Informativeness and Corporate Investment model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "When costs on short sales become high c > c′, short selling in t = 1 is not profitable in equilibrium even for speculators informed about the low state. We next assess the relation between short selling costs and investment capacity: the cutoff level of I below which investment occurs.",
+        "objects": [
+          "The firm",
+          "The manager",
+          "Provider"
+        ],
+        "inputs": [
+          "The informativeness of the speculator’s signal"
+        ],
+        "decisions": [
+          "Design",
+          "Buy, sell, or abstain in each trading round",
+          "Repurchase shares",
+          "Set Bayesian zero-profit stock prices",
+          "Fund or withhold corporate investment"
+        ],
+        "assumptions": [
+          "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha",
+          "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies",
+          "The market maker is competitive and prices at conditional expected value given order flow",
+          "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase",
+          "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium Without Ex Ante Contracting",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "the firm",
+                "matchedText": "the firm",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The manager",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium Without Ex Ante Contracting",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "the manager",
+                "matchedText": "the manager",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Provider",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium Without Ex Ante Contracting",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We begin with a benchmark case where the firm and its capital provider agree on their reinvestment arrangements in t = 3, after trading takes place (spot financing).",
+                "matchedText": "provider",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The informativeness of the speculator’s signal",
+              "source": {
+                "type": "section",
+                "section": "The Relation Between Short Selling Constraints",
+                "page": 6,
+                "sectionIndex": 1,
+                "sentence": 5,
+                "quote": "The relation between shorting costs and investment capac­ ity depends on the informativeness of the speculator’s signal as follows: i.",
+                "matchedText": "the informativeness of the speculator’s signal as follows: i",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "design and accept a financing contract"
+              }
+            },
+            {
+              "value": "Buy, sell, or abstain in each trading round",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "buy, sell, or abstain in each trading round"
+              }
+            },
+            {
+              "value": "Repurchase shares",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "repurchase shares subject to the manager's trading constraint"
+              }
+            },
+            {
+              "value": "Set Bayesian zero-profit stock prices",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "set Bayesian zero-profit stock prices"
+              }
+            },
+            {
+              "value": "Fund or withhold corporate investment",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "fund or withhold corporate investment"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha."
+              }
+            },
+            {
+              "value": "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies."
+              }
+            },
+            {
+              "value": "The market maker is competitive and prices at conditional expected value given order flow",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The market maker is competitive and prices at conditional expected value given order flow."
+              }
+            },
+            {
+              "value": "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase."
+              }
+            },
+            {
+              "value": "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Given our focus on how financial contracting can help firms implement efficient investment policies (e.g., by setting up repurchase programs), we adopt the efficiency refinement for equilibrium characterization.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Equilibrium Without Ex Ante Contracting",
+          "page": 5,
+          "sentence": 6
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "2.2. Equilibrium Without Ex Ante Contracting",
+            "equation": "",
+            "quote": "When costs on short sales become high c > c′, short selling in t = 1 is not profitable in equilib­ rium even for speculators informed about the low state."
+          }
+        ],
+        "components": [
+          {
+            "id": "equilibrium-without-ex-ante-contracting",
+            "label": "Equilibrium Without Ex Ante Contracting",
+            "role": "interaction",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "When costs on short sales become high c > c′, short selling in t = 1 is not profitable in equilibrium even for speculators informed about the low state.",
+            "searchPhrases": [
+              "how equilibrium without ex ante contracting is represented",
+              "strategic response in how costly short selling and share repurchases shape price informativeness and real investment",
+              "equilibrium without ex ante contracting strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s in {l, h, empty}",
+                "meaning": "low, high, or uninformative common signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "per-unit short-selling cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When costs on short sales become high c > c′, short selling in t = 1 is not profitable in equilibrium even for speculators informed about the low state.",
+              "For bc < c < c′ ≡V+ K 12 + V+ V 6 , there is an equilibrium where the speculator informed about the high state buys in t = 1.",
+              "For c > c′, in any equilibrium, no speculator trades in t = 1, the uninformed speculator does not trade in t = 2, and the speculator informed about the low state sells in t = 2.",
+              "For low short selling costs (c < c), both informed and manipulative short sales may occur."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.2. Equilibrium Without Ex Ante Contracting",
+                "equation": "",
+                "quote": "When costs on short sales become high c > c′, short selling in t = 1 is not profitable in equilib­ rium even for speculators informed about the low state."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design as “contracting”: “When costs on short sales become high c > c′, short selling in t = 1 is not”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "the-relation-between-short-selling-constraints",
+            "label": "The Relation Between Short Selling Constraints",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "We next assess the relation between short selling costs and investment capacity: the cutoff level of I below which investment occurs.",
+            "searchPhrases": [
+              "how the relation between short selling constraints is represented",
+              "feasibility condition in how costly short selling and share repurchases shape price informativeness and real investment",
+              "the relation between short selling constraints feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: We next assess the relation between short selling costs and investment capacity: the cutoff level of I below which investment occurs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "per-unit short-selling cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "K",
+                "meaning": "real investment or funding capacity",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When the probability that speculators are informed is low (α < α′), the effect of short selling costs on investment is positive if costs are low to moderately high (c < c′) and negative if costs are moderately high to high (c > bc)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.2.2. The Relation Between Short Selling Constraints",
+                "equation": "",
+                "quote": "We next assess the relation between short selling costs and investment capacity: the cutoff level of I below which investment occurs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “We next assess the relation between short selling costs and investment capacity: the cutoff level of I below”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "equilibrium-with-ex-ante-contracting",
+        "name": "Equilibrium with Ex Ante Contracting",
+        "kind": "alternative",
+        "relation": "This is an alternative to Price Informativeness and Corporate Investment model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Whereas informed managers reveal that they know the state in the unique truth-leaning equilibrium when Es = {{l,h},∅} and there is no further information from trade strategies, the fully disclosed verifiable evidence is not sufficient to identify the state. A short selling ban is efficient when the chance of informed trading is too high (α > α), as in this case, the cost becomes very small (I∗< ̃I).",
+        "objects": [
+          "The manager",
+          "The firm",
+          "Provider"
+        ],
+        "inputs": [
+          "The capital provider’s beliefs about the firm’s value given observed stock prices",
+          "The state in the unique truth-leaning equilibrium",
+          "The reward",
+          "The type of the manager with signal s",
+          "The private benefit"
+        ],
+        "decisions": [
+          "Maximizes the investment capacity of the firm",
+          "Reflects the reinvestment decision",
+          "Through stock repurchases"
+        ],
+        "assumptions": [
+          "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha",
+          "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies",
+          "The market maker is competitive and prices at conditional expected value given order flow",
+          "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase",
+          "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The manager",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Our analysis thus far has shown that the manager’s ability to finance investment after trading in financial markets depends on the capital provider’s beliefs about the firm’s value given observed stock prices.",
+                "matchedText": "the manager",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Our analysis thus far has shown that the manager’s ability to finance investment after trading in financial markets depends on the capital provider’s beliefs about the firm’s value given observed stock prices.",
+                "matchedText": "the firm",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Provider",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Our analysis thus far has shown that the manager’s ability to finance investment after trading in financial markets depends on the capital provider’s beliefs about the firm’s value given observed stock prices.",
+                "matchedText": "provider",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The capital provider’s beliefs about the firm’s value given observed stock prices",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Our analysis thus far has shown that the manager’s ability to finance investment after trading in financial markets depends on the capital provider’s beliefs about the firm’s value given observed stock prices.",
+                "matchedText": "the capital provider’s beliefs about the firm’s value given observed stock prices",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state in the unique truth-leaning equilibrium",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 35,
+                "quote": "the state in the unique truth-leaning equilibrium",
+                "matchedText": "the state in the unique truth-leaning equilibrium",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "the reward",
+                "matchedText": "the reward",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The type of the manager with signal s",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "The information that can be revealed depends on the type of the manager with signal s, which is identified by the pieces of evidence that can be provided from the set Es.",
+                "matchedText": "the type of the manager with signal s",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The private benefit",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "In our model, the manager always wants to obtain a reward as high as possible (including the private bene­ fit investment ) regardless of the obtained information.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Maximizes the investment capacity of the firm",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "We start deriving the outcome from a mechanism design that maximizes the investment capacity of the firm",
+                "matchedText": "maximizes the investment capacity of the firm",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Reflects the reinvestment decision",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium with Ex Ante Contracting",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 30,
+                "quote": "Based on the information disclosure, depending on the manager’s type, the trade strategies must reveal at least the same information so that the stock price reflects the reinvestment decision",
+                "matchedText": "reflects the reinvestment decision",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Through stock repurchases",
+              "source": {
+                "type": "section",
+                "section": "Contractual Implementation of Efficient Invest",
+                "page": 9,
+                "sectionIndex": 1,
+                "sentence": 9,
+                "quote": "Hence, an uninformed manager has the incen­ tive to signal his information by supporting prices through stock repurchases because the manager’s payoff is positive if and only if reinvestment takes place",
+                "matchedText": "through stock repurchases",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The manager and speculator receive a perfectly correlated signal in the baseline, and signal informativeness is governed by alpha."
+              }
+            },
+            {
+              "value": "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Trading orders and states are discrete, and the main analysis restricts attention to pure strategies."
+              }
+            },
+            {
+              "value": "The market maker is competitive and prices at conditional expected value given order flow",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The market maker is competitive and prices at conditional expected value given order flow."
+              }
+            },
+            {
+              "value": "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The speculator pays a fixed per-unit cost c to short, while the manager cannot short but may repurchase."
+              }
+            },
+            {
+              "value": "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The manager enjoys private benefits from investment and may trade to obtain funding for a negative-NPV project."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The authors solve the no-contract trading game across short-cost regions, derive how order pooling and separation affect price informativeness and funding, formulate an optimal direct mechanism, and construct price-contingent funding and repurchase contracts that implement the desired allocation.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "2.3. Equilibrium with Ex Ante Contracting",
+            "equation": "",
+            "quote": "Whereas informed managers reveal that they know the state in the unique truth-leaning equilibrium when Es = {{l,h},∅} and there is no further information from trade strategies, the fully disclosed verifiable evidence is not sufficient to identify the state."
+          }
+        ],
+        "components": [
+          {
+            "id": "equilibrium-with-ex-ante-contracting",
+            "label": "Equilibrium with Ex Ante Contracting",
+            "role": "interaction",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "Whereas informed managers reveal that they know the state in the unique truth-leaning equilibrium when Es = {{l,h},∅} and there is no further information from trade strategies, the fully disclosed verifiable evidence is not sufficient to identify the state.",
+            "searchPhrases": [
+              "how equilibrium with ex ante contracting is represented",
+              "strategic response in how costly short selling and share repurchases shape price informativeness and real investment",
+              "equilibrium with ex ante contracting strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\omega in {l, h}",
+                "meaning": "low or high fundamental state",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s in {l, h, empty}",
+                "meaning": "low, high, or uninformative common signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "per-unit short-selling cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Whereas informed managers reveal that they know the state in the unique truth-leaning equilibrium when Es = {{l,h},∅} and there is no further information from trade strategies, the fully disclosed verifiable evidence is not sufficient to identify the state.",
+              "In the first one, the type of informed manager s ∈{l,h} can fully reveal it, Es = {s,∅}, and in the second ones, only partially so, Es = {{l,h},∅}.",
+              "In both cases, the type of uninformed manager provides no verifiable evidence, E∅= {∅}.",
+              "In our model, the manager always wants to obtain a reward as high as possible (including the private benefit investment ) regardless of the obtained information."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "2.3. Equilibrium with Ex Ante Contracting",
+                "equation": "",
+                "quote": "Whereas informed managers reveal that they know the state in the unique truth-leaning equilibrium when Es = {{l,h},∅} and there is no further information from trade strategies, the fully disclosed verifiable evidence is not sufficient to identify the state."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design as “contracting”: “Whereas informed managers reveal that they know the state in the unique truth-leaning equilibrium when Es = {{l,h},∅}”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "contractual-implementation-of-efficient-invest",
+            "label": "Contractual Implementation of Efficient Invest",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "A short selling ban is efficient when the chance of informed trading is too high (α > α), as in this case, the cost becomes very small (I∗< ̃I).",
+            "searchPhrases": [
+              "how contractual implementation of efficient invest is represented",
+              "modeled objective in how costly short selling and share repurchases shape price informativeness and real investment",
+              "contractual implementation of efficient invest modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "u_t in {-1, 0, 1}",
+                "meaning": "speculator's sell, abstain, or buy order at trading date t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "per-unit short-selling cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A short selling ban is efficient when the chance of informed trading is too high (α > α), as in this case, the cost becomes very small (I∗< ̃I).",
+              "The main takeaway of Corollary 4 is the contribution of repurchases relative to a short selling ban to investment efficiency when the short selling cost is not high (c < c′).",
+              "The benefit comes from efficiently canceling investment when the speculator is informed about the low state (not canceled in the absence of a ban when Q1 = 0 and Q2 = 0, which occurs with probability 1 4) and equals α 2 1 4(K V ).",
+              "Whereas a short selling ban has the benefit of allowing perfect identification of positive private information, it has the cost of not allowing the distinction between uninformed and negatively informed trading."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "2.3.2. Contractual Implementation of Efficient Invest",
+                "equation": "",
+                "quote": "A short selling ban is efficient when the chance of informed trading is too high (α > α), as in this case, the cost becomes very small (I∗< ˜I)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "74ef3b9a21e767aa03688dce3c67c4fc962b8c4da0d15482efddeeb20d45b899",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "807aa0e41c5d61d175f12f6c5c8b2532eefe188ca3043b81dc7a00b84c0a5418",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-05452/807aa0e41c5d61d175f12f6c5c8b2532eefe188ca3043b81dc7a00b84c0a5418.json",
+      "extractionQaDecisionSha256": "00d7c681b7798ed60f65f5408b304ff6205e812edcbdbac67e90b50d92a4658d",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

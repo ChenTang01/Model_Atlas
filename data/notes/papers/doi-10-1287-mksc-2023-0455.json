@@ -1,0 +1,1190 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mksc-2023-0455",
+  "sourcePdfSha256": "54cc2a632f1bbd1b440e332c9f43636d60b0e74fa28ffa7e110a8fdbf1eaffa2",
+  "extractionPagesSha256": "a401d72cecb7f6e7b8b49f63cd94f7d0d9bff8a92638a5fce55143d729af67f6",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "a5a94f71c86d4840bf1c77df4e11db2134cc52c59b6d05d22fc67c3f538f7e18",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "b4d819ca5a044d0f85529f20c33ab5c2e8238413735eb35dec875b2eb8fc80d9",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2023-0455/b4d819ca5a044d0f85529f20c33ab5c2e8238413735eb35dec875b2eb8fc80d9.json",
+  "extractionQaDecisionSha256": "6846a3dce1c91235e1311fa06ef27e3c6a4e7bf8992456a7a1d1c2307c80f68b",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mksc-2023-0455",
+    "question": "How does personalizing a marketplace's product ranking change the prices learned by competing pricing algorithms and the welfare of consumers who search sequentially?",
+    "overview": "Competing sellers delegate repeated price choices to independent Q-learning agents. Their rewards depend on a platform's ranking regime and consumers' optimal sequential search, and the learned policies are compared with Bertrand-Nash and monopoly benchmarks.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8,
+        11,
+        16,
+        17
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Repeated multiagent pricing with personalized or unpersonalized search rankings",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Competing sellers delegate repeated price choices to independent Q-learning agents. Their rewards depend on a platform's ranking regime and consumers' optimal sequential search, and the learned policies are compared with Bertrand-Nash and monopoly benchmarks.",
+        "objects": [
+          "Short-lived consumers making sequential search and purchase decisions",
+          "The sellers",
+          "The available products",
+          "The state space"
+        ],
+        "inputs": [
+          "Sellers observe the previous period's price vector",
+          "Consumers observe prices and qualities, know match-value distributions, and learn product-specific match values through search",
+          "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility",
+          "Pricing agents do not communicate, share Q-tables, or condition on consumer identities"
+        ],
+        "decisions": [
+          "Each seller's agent chooses a price from a discretized action set",
+          "Each consumer decides whether to stop or search the next product",
+          "Each agent updates its state-action value and subsequent pricing policy",
+          "Announce their prices",
+          "Their pricing strategies"
+        ],
+        "assumptions": [
+          "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint",
+          "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search",
+          "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule",
+          "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions",
+          "The platform's ranking regime is fixed rather than strategically reoptimized during the repeated pricing interaction"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Short-lived consumers making sequential search and purchase decisions",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "short-lived consumers making sequential search and purchase decisions"
+              }
+            },
+            {
+              "value": "The sellers",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 2,
+                "quote": "The sell­ ers face no capacity constraints, and each consumer demands one unit among all products.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The available products",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 10,
+                "quote": "In each period, a new cohort of consumers enters the market, explores the available products, learns their match values with a selected subset of pro­ ducts through costly search, makes their purchase deci­ sion, and then leaves the market permanently (or for a sufficiently long time that, upon re-entering, they can be considered as new consumers).",
+                "matchedText": "the available products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Seller Pricing Decisions",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 22,
+                "quote": "In our study, we constrain the state space to include only information from the preceding period.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Sellers observe the previous period's price vector",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Sellers observe the previous period's price vector as the state and observe their own realized profit reward."
+              }
+            },
+            {
+              "value": "Consumers observe prices and qualities, know match-value distributions, and learn product-specific match values through search",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Consumers observe prices and qualities, know match-value distributions, and learn product-specific match values through search."
+              }
+            },
+            {
+              "value": "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility."
+              }
+            },
+            {
+              "value": "Pricing agents do not communicate, share Q-tables, or condition on consumer identities",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Pricing agents do not communicate, share Q-tables, or condition on consumer identities."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each seller's agent chooses a price from a discretized action set",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each seller's agent chooses a price from a discretized action set"
+              }
+            },
+            {
+              "value": "Each consumer decides whether to stop or search the next product",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each consumer decides whether to stop or search the next product and then chooses a product or the outside option"
+              }
+            },
+            {
+              "value": "Each agent updates its state-action value and subsequent pricing policy",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each agent updates its state-action value and subsequent pricing policy"
+              }
+            },
+            {
+              "value": "Announce their prices",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 6,
+                "quote": "In each period, the sellers simultaneously announce their prices",
+                "matchedText": "announce their prices",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Their pricing strategies",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 15,
+                "quote": "their pricing strategies",
+                "matchedText": "their pricing strategies",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint."
+              }
+            },
+            {
+              "value": "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search."
+              }
+            },
+            {
+              "value": "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule."
+              }
+            },
+            {
+              "value": "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions."
+              }
+            },
+            {
+              "value": "The platform's ranking regime is fixed rather than strategically reoptimized during the repeated pricing interaction",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The platform's ranking regime is fixed rather than strategically reoptimized during the repeated pricing interaction."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "To learn the policy that maximizes long-run rewards, we estimate the value Qπ(s,p) for each action p given the state s under a policy π.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Main Model Parametrization",
+          "page": 8,
+          "sentence": 4
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.2. Platform",
+            "equation": "",
+            "quote": "When the personalized ranking is not perfect, because consumers hold correct beliefs about the accu­ racy of the ranking, denoted as λ, they will update their beliefs about the distribution of the match value for the products that they have not searched yet based on the realized match value of the products they have searched and the observed product ranking."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Each seller's agent chooses a price from a discretized action set each consumer decides whether to stop or search the next product and then chooses a product or the outside option each agent updates its state-action value and subsequent pricing policy",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in personalized rankings and strategic algorithmic price competition",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each seller's agent chooses a price from a discretized action set each consumer decides whether to stop or search the next product and then chooses a product or the outside option each agent updates its state-action value and subsequent pricing policy",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi(p\\mid s)",
+                "meaning": "pricing policy mapping an observed state to a distribution over price actions · policy over the finite price-action space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, p",
+                "meaning": "the preceding-price state and current price action · finite state and action spaces",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_{\\pi}(s, p)",
+                "meaning": "expected discounted value of taking price p in state s under policy pi · real value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint.",
+              "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search.",
+              "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule.",
+              "After evaluation, the consumer decides whether to stop searching and purchase the first-ranked product or the outside option or choose another product to evaluate."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Consumer",
+                "equation": "",
+                "quote": "After evaluation, the consumer decides whether to stop searching and purchase the first-ranked product or the outside option or choose another product to evaluate."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “After evaluation, the consumer decides whether to stop searching and purchase the first-ranked product or the outside option”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "Sellers observe the previous period's price vector as the state and observe their own realized profit reward. Consumers observe prices and qualities, know match-value distributions, and learn product-specific match values through search. Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility. Pricing agents do not communicate, share Q-tables, or condition on consumer identities.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in personalized rankings and strategic algorithmic price competition",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Sellers observe the previous period's price vector as the state and observe their own realized profit reward.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi(p\\mid s)",
+                "meaning": "pricing policy mapping an observed state to a distribution over price actions · policy over the finite price-action space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_t",
+                "meaning": "a seller's profit reward in period t · real payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, p",
+                "meaning": "the preceding-price state and current price action · finite state and action spaces",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_{\\pi}(s, p)",
+                "meaning": "expected discounted value of taking price p in state s under policy pi · real value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When the personalized ranking is not perfect, because consumers hold correct beliefs about the accuracy of the ranking, denoted as λ, they will update their beliefs about the distribution of the match value for the products that they have not searched yet based on the realized match value of the products they have searched and the observed product ranking.",
+              "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search.",
+              "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule.",
+              "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2. Platform",
+                "equation": "",
+                "quote": "When the personalized ranking is not perfect, because consumers hold correct beliefs about the accu­ racy of the ranking, denoted as λ, they will update their beliefs about the distribution of the match value for the products that they have not searched yet based on the realized match value of the products they have searched and the observed product ranking."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Matching: “Matching”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "policy-learning"
+            ],
+            "explanation": "Each seller's Q-learning agent chooses a pricing policy to maximize expected discounted long-run profit rewards.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in personalized rankings and strategic algorithmic price competition",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\mathbb{E}\\left[\\sum_{t=0}^{\\infty}\\delta^t R_t\\right].",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\pi(p\\mid s)",
+                "meaning": "pricing policy mapping an observed state to a distribution over price actions · policy over the finite price-action space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_t",
+                "meaning": "a seller's profit reward in period t · real payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta",
+                "meaning": "discount factor trading off current and future rewards · between zero and one",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, p",
+                "meaning": "the preceding-price state and current price action · finite state and action spaces",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_{\\pi}(s, p)",
+                "meaning": "expected discounted value of taking price p in state s under policy pi · real value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint.",
+              "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search.",
+              "The platform's ranking regime is fixed rather than strategically reoptimized during the repeated pricing interaction."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "Expected-profit objective",
+                "equation": "(17)",
+                "quote": "To learn the policy that maximizes long-run rewards, we estimate the value Qπ(s,p) for each action p given the state s under a policy π."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "policy-learning",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Policy learning as “learning a policy”: “To learn the policy that maximizes long-run rewards, we estimate the value Qπ(s,p) for each action p given”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "learned-q-learning-rest-point-outcomes-with-bertrand-nash-benchm",
+            "label": "Learned Q-learning rest-point outcomes with Bertrand-Nash benchmarks",
+            "role": "interaction",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The model's equilibrium concept is Learned Q-learning rest-point outcomes with Bertrand-Nash benchmarks. Section 3.3 says the price points to which competing Q-learning algorithms converge can be viewed as a rest-point equilibrium. The article compares those computational rest points with one-shot Bertrand-Nash and monopoly prices and probes them through one-shot deviations and learned punishment paths; it does not prove a general analytical equilibrium theorem for the learning process.",
+            "searchPhrases": [
+              "how learned q-learning rest-point outcomes with bertrand-nash benchmarks is represented",
+              "strategic response in personalized rankings and strategic algorithmic price competition",
+              "learned q-learning rest-point outcomes with bertrand-nash benchmarks strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Learned Q-learning rest-point outcomes with Bertrand-Nash benchmarks.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R_t",
+                "meaning": "a seller's profit reward in period t · real payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, p",
+                "meaning": "the preceding-price state and current price action · finite state and action spaces",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_{\\pi}(s, p)",
+                "meaning": "expected discounted value of taking price p in state s under policy pi · real value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.3. Seller Pricing Decisions",
+                "equation": "",
+                "quote": "The price points that com­ peting algorithms converge to can be viewed as a rest point equilibrium, which is the equilibrium concept used in this study."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing as “pricing decision”: “The price points that competing algorithms converge to can be viewed as a rest point equilibrium, which is”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "strategic-interaction"
+            ],
+            "explanation": "A personalized or unpersonalized ranking rule is fixed exogenously for an experimental condition. In every period, sellers' Q-learning agents simultaneously choose prices based on the preceding price state; the platform mechanically applies the fixed rule; a new consumer cohort searches sequentially and buys; sellers observe profit rewards and update Q-values before the next period. Ranking changes demand elasticity and therefore both the immediate benefit of undercutting and the learned punishment needed to sustain high prices. Consumers are short-lived, while pricing agents condition current prices on the previous joint price state.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in personalized rankings and strategic algorithmic price competition",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: A personalized or unpersonalized ranking rule is fixed exogenously for an experimental condition.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi(p\\mid s)",
+                "meaning": "pricing policy mapping an observed state to a distribution over price actions · policy over the finite price-action space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_t",
+                "meaning": "a seller's profit reward in period t · real payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta",
+                "meaning": "discount factor trading off current and future rewards · between zero and one",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, p",
+                "meaning": "the preceding-price state and current price action · finite state and action spaces",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_{\\pi}(s, p)",
+                "meaning": "expected discounted value of taking price p in state s under policy pi · real value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint.",
+              "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search.",
+              "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.2. Anatomy of Supra-Competitive Prices",
+                "equation": "",
+                "quote": "Figure shows the prices charged by the two algorithms under personalized ranking (a and b) and under unpersonalized ranking (c and d) when one of the firms deviates to the static best response, price and the deviation lasts for one period only."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Figure shows the prices charged by the two algorithms under personalized ranking (a and b) and under unpersonalized”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  3,
+                  4
+                ]
+              },
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “the firms deviates to the static best response , price and the deviation lasts for one”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "pricing",
+              "upper-confidence-bound"
+            ],
+            "explanation": "The authors combine a Weitzman-style sequential-search model with platform ranking rules to generate demand and seller profit, train independent multiagent Q-learning algorithms in repeated price competition, compare converged outcomes across ranking regimes, and probe the mechanism using deviation paths, demand elasticities, alternative algorithms, and parameter robustness.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in personalized rankings and strategic algorithmic price competition",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors combine a Weitzman-style sequential-search model with platform ranking rules to generate demand and seller profit, train independent multiagent Q-learning algorithms in repeated price competition, compare converged outcomes across ranking regimes, and probe the mechanism using deviation paths, demand elasticities, alternative algorithms, and parameter robustness.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi(p\\mid s)",
+                "meaning": "pricing policy mapping an observed state to a distribution over price actions · policy over the finite price-action space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_t",
+                "meaning": "a seller's profit reward in period t · real payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, p",
+                "meaning": "the preceding-price state and current price action · finite state and action spaces",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q_{\\pi}(s, p)",
+                "meaning": "expected discounted value of taking price p in state s under policy pi · real value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint.",
+              "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search.",
+              "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "Demand",
+                "equation": "",
+                "quote": "Different from our main results that utilize Multiagent Q-learning (see Algorithm 1), Multiagent UCB-tuned algorithm is state-less; that is, the pricing strategy is not dependent on the past prices."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “algorithm is state-less; that is, the Pricing strategy is not dependent on the past prices.”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  2,
+                  3
+                ]
+              },
+              {
+                "conceptId": "upper-confidence-bound",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Upper confidence bound as “UCB”: “Multiagent Q-learning (see Algorithm 1), Multiagent UCB -tuned algorithm is state-less; that is, the pricing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "alternative-learning-algorithms-ucb-tuned",
+        "name": "Alternative Learning Algorithms: UCB-Tuned",
+        "kind": "alternative",
+        "relation": "This is an alternative to Repeated multiagent pricing with personalized or unpersonalized search rankings.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Price Elasticity Under Unpersonalized Ranking Key outcomes Low-quality High-quality Price Ranking",
+        "objects": [
+          "Short-lived consumers making sequential search and purchase decisions",
+          "The sellers",
+          "The available products",
+          "The state space"
+        ],
+        "inputs": [
+          "Sellers observe the previous period's price vector",
+          "Consumers observe prices and qualities, know match-value distributions, and learn product-specific match values through search",
+          "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility",
+          "Pricing agents do not communicate, share Q-tables, or condition on consumer identities"
+        ],
+        "decisions": [
+          "Each seller's agent chooses a price from a discretized action set",
+          "Each consumer decides whether to stop or search the next product",
+          "Each agent updates its state-action value and subsequent pricing policy",
+          "Announce their prices",
+          "Their pricing strategies"
+        ],
+        "assumptions": [
+          "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint",
+          "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search",
+          "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule",
+          "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions",
+          "The platform's ranking regime is fixed rather than strategically reoptimized during the repeated pricing interaction"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Short-lived consumers making sequential search and purchase decisions",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "short-lived consumers making sequential search and purchase decisions"
+              }
+            },
+            {
+              "value": "The sellers",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 2,
+                "quote": "The sell­ ers face no capacity constraints, and each consumer demands one unit among all products.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The available products",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 10,
+                "quote": "In each period, a new cohort of consumers enters the market, explores the available products, learns their match values with a selected subset of pro­ ducts through costly search, makes their purchase deci­ sion, and then leaves the market permanently (or for a sufficiently long time that, upon re-entering, they can be considered as new consumers).",
+                "matchedText": "the available products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Seller Pricing Decisions",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 22,
+                "quote": "In our study, we constrain the state space to include only information from the preceding period.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Sellers observe the previous period's price vector",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Sellers observe the previous period's price vector as the state and observe their own realized profit reward."
+              }
+            },
+            {
+              "value": "Consumers observe prices and qualities, know match-value distributions, and learn product-specific match values through search",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Consumers observe prices and qualities, know match-value distributions, and learn product-specific match values through search."
+              }
+            },
+            {
+              "value": "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility."
+              }
+            },
+            {
+              "value": "Pricing agents do not communicate, share Q-tables, or condition on consumer identities",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Pricing agents do not communicate, share Q-tables, or condition on consumer identities."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each seller's agent chooses a price from a discretized action set",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each seller's agent chooses a price from a discretized action set"
+              }
+            },
+            {
+              "value": "Each consumer decides whether to stop or search the next product",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each consumer decides whether to stop or search the next product and then chooses a product or the outside option"
+              }
+            },
+            {
+              "value": "Each agent updates its state-action value and subsequent pricing policy",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each agent updates its state-action value and subsequent pricing policy"
+              }
+            },
+            {
+              "value": "Announce their prices",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 6,
+                "quote": "In each period, the sellers simultaneously announce their prices",
+                "matchedText": "announce their prices",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Their pricing strategies",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 15,
+                "quote": "their pricing strategies",
+                "matchedText": "their pricing strategies",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each seller supplies one vertically differentiated product at a fixed marginal cost and has no capacity constraint."
+              }
+            },
+            {
+              "value": "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A new unit mass of consumers enters each period; match values are independent Type-I extreme-value draws and become known only after search."
+              }
+            },
+            {
+              "value": "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The first search is free, later searches are costly, consumers can take an outside option, and they use an optimal stopping rule."
+              }
+            },
+            {
+              "value": "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The main computational environment is an asymmetric duopoly with a one-period price vector as the Markov state and discretized price actions."
+              }
+            },
+            {
+              "value": "The platform's ranking regime is fixed rather than strategically reoptimized during the repeated pricing interaction",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The platform's ranking regime is fixed rather than strategically reoptimized during the repeated pricing interaction."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "To learn the policy that maximizes long-run rewards, we estimate the value Qπ(s,p) for each action p given the state s under a policy π.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Main Model Parametrization",
+          "page": 8,
+          "sentence": 4
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 16,
+            "section": "5.3. Alternative Learning Algorithms: UCB-Tuned",
+            "equation": "",
+            "quote": "Price Elasticity Under Unpersonalized Ranking Key outcomes Low-quality High-quality Price Ranking"
+          }
+        ],
+        "components": [
+          {
+            "id": "alternative-learning-algorithms-ucb-tuned",
+            "label": "Alternative Learning Algorithms: UCB-Tuned",
+            "role": "decision",
+            "concepts": [
+              "upper-confidence-bound",
+              "pricing"
+            ],
+            "explanation": "Price Elasticity Under Unpersonalized Ranking Key outcomes Low-quality High-quality Price Ranking",
+            "searchPhrases": [
+              "how alternative learning algorithms: ucb-tuned is represented",
+              "decision rule in personalized rankings and strategic algorithmic price competition",
+              "alternative learning algorithms: ucb-tuned decision rule specification"
+            ],
+            "formal": "Decision rule: Price Elasticity Under Unpersonalized Ranking Key outcomes Low-quality High-quality Price Ranking",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R_t",
+                "meaning": "a seller's profit reward in period t · real payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "5.3. Alternative Learning Algorithms: UCB-Tuned",
+                "equation": "",
+                "quote": "Price Elasticity Under Unpersonalized Ranking Key outcomes Low-quality High-quality Price Ranking"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "upper-confidence-bound",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Upper confidence bound as “UCB”: “Price Elasticity Under Unpersonalized Ranking Key outcomes Low-quality High-quality Price Ranking”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Price Elasticity Under Unpersonalized Ranking Key outcomes Low-quality High-quality Price Ranking”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility",
+                  "source": {
+                    "type": "record",
+                    "field": "information",
+                    "matchedText": "Personalized ranking uses predicted consumer-specific utility; unpersonalized ranking uses aggregate expected utility."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "54cc2a632f1bbd1b440e332c9f43636d60b0e74fa28ffa7e110a8fdbf1eaffa2",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "b4d819ca5a044d0f85529f20c33ab5c2e8238413735eb35dec875b2eb8fc80d9",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2023-0455/b4d819ca5a044d0f85529f20c33ab5c2e8238413735eb35dec875b2eb8fc80d9.json",
+      "extractionQaDecisionSha256": "6846a3dce1c91235e1311fa06ef27e3c6a4e7bf8992456a7a1d1c2307c80f68b",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

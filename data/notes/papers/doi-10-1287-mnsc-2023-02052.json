@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-02052",
+  "sourcePdfSha256": "35280e570d88215d8d5160e5cc2295f028ae086515d6e91f61c6828bf9189101",
+  "extractionPagesSha256": "8d87eef92088c0c0e8cc7d4b20903eec75ab34202bba1714f0ed3f15b81d79ce",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "06e87e16c6cef892feb22350f9ee9d44d42178ca3cfd4c811d3f16c14aa4569a",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "1b7da1537fbb4b5a4a46b73d70f0d7ce5a530051f21253c8a89bcf9dfd288df6",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-02052/1b7da1537fbb4b5a4a46b73d70f0d7ce5a530051f21253c8a89bcf9dfd288df6.json",
+  "extractionQaDecisionSha256": "11d4cb5e6b0785d10779a2470ec0cb84bc2ac2a183cd7fd705b4693718301f2f",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-02052",
+    "question": "How can a search platform recover advertisers' private values from quality-weighted GSP bids and choose ad-quality scoring rules to improve revenue?",
+    "overview": "Advertisers with private values and ad qualities strategically shade bids in a weighted generalized-second-price auction. The paper proves and uses a unique symmetric Bayesian Nash equilibrium to identify valuations and evaluate platform quality-scoring rules.",
+    "modelTypes": [
+      "Game theory",
+      "Structural model",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        5
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Incomplete-information weighted GSP auction with equilibrium-based nonparametric identification of advertiser values",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Advertisers with private values and ad qualities strategically shade bids in a weighted generalized-second-price auction. The paper proves and uses a unique symmetric Bayesian Nash equilibrium to identify valuations and evaluate platform quality-scoring rules.",
+        "objects": [
+          "A sponsored-search platform running a weighted GSP auction",
+          "Advertisers with private per-click values and ad-quality scores",
+          "Search users generating position-dependent clicks"
+        ],
+        "inputs": [
+          "Each advertiser privately observes its value and quality component",
+          "Advertiser types are independently drawn from a common distribution in the baseline",
+          "The number of competitors, position click rates, scoring rule and type distribution are common knowledge",
+          "The platform observes auction bids, scores, positions and clicks but not values directly"
+        ],
+        "decisions": [
+          "Each advertiser chooses a bid per click",
+          "Users click according to position and ad relevance",
+          "The platform applies a known ad-quality scoring rule and ranks weighted bids; the counterfactual analysis varies that rule",
+          "Their bid per click on their ad",
+          "The keywords that trigger their ad display"
+        ],
+        "assumptions": [
+          "Advertisers are symmetric and risk neutral with independent private types",
+          "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium",
+          "Click-through rates are separable into a position component and advertiser quality",
+          "The auction is modeled as static and budgets, dynamic learning and endogenous entry are omitted",
+          "The empirical sample treats observed bids and scores as equilibrium outcomes of the maintained model"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A sponsored-search platform running a weighted GSP auction",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a sponsored-search platform running a weighted GSP auction"
+              }
+            },
+            {
+              "value": "Advertisers with private per-click values and ad-quality scores",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "advertisers with private per-click values and ad-quality scores"
+              }
+            },
+            {
+              "value": "Search users generating position-dependent clicks",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "search users generating position-dependent clicks"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each advertiser privately observes its value and quality component",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each advertiser privately observes its value and quality component."
+              }
+            },
+            {
+              "value": "Advertiser types are independently drawn from a common distribution in the baseline",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Advertiser types are independently drawn from a common distribution in the baseline."
+              }
+            },
+            {
+              "value": "The number of competitors, position click rates, scoring rule and type distribution are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The number of competitors, position click rates, scoring rule and type distribution are common knowledge."
+              }
+            },
+            {
+              "value": "The platform observes auction bids, scores, positions and clicks but not values directly",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The platform observes auction bids, scores, positions and clicks but not values directly."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each advertiser chooses a bid per click",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each advertiser chooses a bid per click"
+              }
+            },
+            {
+              "value": "Users click according to position and ad relevance",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "users click according to position and ad relevance"
+              }
+            },
+            {
+              "value": "The platform applies a known ad-quality scoring rule and ranks weighted bids; the counterfactual analysis varies that rule",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform applies a known ad-quality scoring rule and ranks weighted bids; the counterfactual analysis varies that rule"
+              }
+            },
+            {
+              "value": "Their bid per click on their ad",
+              "source": {
+                "type": "section",
+                "section": "Market Overview",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 16,
+                "quote": "Dur­ ing the bidding stage, advertisers decide their bid per click on their ad",
+                "matchedText": "their bid per click on their ad",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The keywords that trigger their ad display",
+              "source": {
+                "type": "section",
+                "section": "Market Overview",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 16,
+                "quote": "Dur­ ing the bidding stage, advertisers decide their bid per click on their ad and selects the keywords that trigger their ad display",
+                "matchedText": "the keywords that trigger their ad display",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Advertisers are symmetric and risk neutral with independent private types",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Advertisers are symmetric and risk neutral with independent private types."
+              }
+            },
+            {
+              "value": "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium."
+              }
+            },
+            {
+              "value": "Click-through rates are separable into a position component and advertiser quality",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Click-through rates are separable into a position component and advertiser quality."
+              }
+            },
+            {
+              "value": "The auction is modeled as static and budgets, dynamic learning and endogenous entry are omitted",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The auction is modeled as static and budgets, dynamic learning and endogenous entry are omitted."
+              }
+            },
+            {
+              "value": "The empirical sample treats observed bids and scores as equilibrium outcomes of the maintained model",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The empirical sample treats observed bids and scores as equilibrium outcomes of the maintained model."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors derive the weighted-GSP equilibrium, prove nonparametric identification of advertiser values, construct kernel-based estimators, apply them to Yahoo search auctions, and simulate alternative product-specific quality-scoring rules.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "Expected-profit objective",
+            "equation": "(3)",
+            "quote": "Per click profit : (2) Since each advertiser submits a single bid to acquire one of the K available ad positions, the equilibrium bid max­ imizes the expected total profit, which is defined as the sum of the product of the profit for each ad position and the probability of winning that position."
+          }
+        ],
+        "components": [
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "estimation",
+            "concepts": [
+              "auctions"
+            ],
+            "explanation": "The authors derive the weighted-GSP equilibrium, prove nonparametric identification of advertiser values, construct kernel-based estimators, apply them to Yahoo search auctions, and simulate alternative product-specific quality-scoring rules.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "estimation procedure in structural estimation of weighted sponsored-search auctions",
+              "solution or estimation method estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The authors derive the weighted-GSP equilibrium, prove nonparametric identification of advertiser values, construct kernel-based estimators, apply them to Yahoo search auctions, and simulate alternative product-specific quality-scoring rules.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "v_j",
+                "meaning": "advertiser j's private value per click",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_j, q_j",
+                "meaning": "advertiser quality or clickability and the platform's associated quality weight",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_j, b_{j, w}",
+                "meaning": "advertiser j's submitted bid and its quality-weighted bid",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_{j, k}",
+                "meaning": "per-click price paid by advertiser j when winning position k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\omega_j=v_j q_j",
+                "meaning": "advertiser j's weighted value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium.",
+              "Click-through rates are separable into a position component and advertiser quality.",
+              "The empirical sample treats observed bids and scores as equilibrium outcomes of the maintained model."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Theoretical Model",
+                "equation": "",
+                "quote": "Then, we derive the unique equilibrium in the auction and establish identification of valuations."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Auctions: “Then, we derive the unique equilibrium in the auction and establish identification of valuations.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "auctions"
+            ],
+            "explanation": "Each advertiser chooses a bid per click the platform applies a known ad-quality scoring rule and ranks weighted bids; the counterfactual analysis varies that rule users click according to position and ad relevance",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in structural estimation of weighted sponsored-search auctions",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each advertiser chooses a bid per click the platform applies a known ad-quality scoring rule and ranks weighted bids; the counterfactual analysis varies that rule users click according to position and ad relevance",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "v_j",
+                "meaning": "advertiser j's private value per click",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_j, q_j",
+                "meaning": "advertiser quality or clickability and the platform's associated quality weight",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_j, b_{j, w}",
+                "meaning": "advertiser j's submitted bid and its quality-weighted bid",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_k",
+                "meaning": "baseline click-through rate for position k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_{j, k}",
+                "meaning": "per-click price paid by advertiser j when winning position k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\omega_j=v_j q_j",
+                "meaning": "advertiser j's weighted value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The auctioneer assigns the quality score qj ≡q(sj) to each advertiser according to the scoring rule q : [s,s] →[q,q], which is known to auction participants.14 Then, advertiser j’s type is given by (vj, sj).",
+              "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium.",
+              "Click-through rates are separable into a position component and advertiser quality.",
+              "The empirical sample treats observed bids and scores as equilibrium outcomes of the maintained model."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Market Environment",
+                "equation": "",
+                "quote": "The auctioneer assigns the quality score qj ≡q(sj) to each advertiser according to the scoring rule q : [s,s] →[q,q], which is known to auction participants.14 Then, advertiser j’s type is given by (vj, sj)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Auctions: “Auctions”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Each advertiser privately observes its value and quality component. Advertiser types are independently drawn from a common distribution in the baseline. The number of competitors, position click rates, scoring rule and type distribution are common knowledge. The platform observes auction bids, scores, positions and clicks but not values directly.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in structural estimation of weighted sponsored-search auctions",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Each advertiser privately observes its value and quality component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "v_j",
+                "meaning": "advertiser j's private value per click",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_j, q_j",
+                "meaning": "advertiser quality or clickability and the platform's associated quality weight",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_j, b_{j, w}",
+                "meaning": "advertiser j's submitted bid and its quality-weighted bid",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_k",
+                "meaning": "baseline click-through rate for position k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_{j, k}",
+                "meaning": "per-click price paid by advertiser j when winning position k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\omega_j=v_j q_j",
+                "meaning": "advertiser j's weighted value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertisers are symmetric and risk neutral with independent private types.",
+              "Each advertiser knows its type, (v, s), and the scoring rule, q, but does not know the opponents’ bids, quality scores, and values.",
+              "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium.",
+              "Click-through rates are separable into a position component and advertiser quality."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Market Environment",
+                "equation": "",
+                "quote": "Each advertiser knows its type, (v, s), and the scoring rule, q, but does not know the opponents’ bids, quality scores, and values."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Each advertiser knows its type, (v, s), and the scoring rule, q, but does not know the opponents’”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "An advertiser chooses its bid to maximize expected profit summed over possible positions, where each position payoff equals click probability times per-click surplus.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in structural estimation of weighted sponsored-search auctions",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\Pi(b_j;v_j,s_j)=sum_{k=1}^K Pr(b_{j,w}=b^{[k]}_w)(c_k s_j)(v_j-E[p_{j,k}|b_{j,w}=b^{[k]}_w])",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "v_j",
+                "meaning": "advertiser j's private value per click",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_j, q_j",
+                "meaning": "advertiser quality or clickability and the platform's associated quality weight",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_j, b_{j, w}",
+                "meaning": "advertiser j's submitted bid and its quality-weighted bid",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_k",
+                "meaning": "baseline click-through rate for position k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_{j, k}",
+                "meaning": "per-click price paid by advertiser j when winning position k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\omega_j=v_j q_j",
+                "meaning": "advertiser j's weighted value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Per click profit : (2) Since each advertiser submits a single bid to acquire one of the K available ad positions, the equilibrium bid maximizes the expected total profit, which is defined as the sum of the product of the profit for each ad position and the probability of winning that position.",
+              "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium.",
+              "Click-through rates are separable into a position component and advertiser quality."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "(3)",
+                "quote": "Per click profit : (2) Since each advertiser submits a single bid to acquire one of the K available ad positions, the equilibrium bid max­ imizes the expected total profit, which is defined as the sum of the product of the profit for each ad position and the probability of winning that position."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Per click profit : (2) Since each advertiser submits a single bid to acquire one of the K”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "For a search opportunity, advertisers observe their private values and ad qualities and simultaneously submit bids. The platform ranks weighted bids, assigns ordered positions and charges each winner the minimum per-click price needed to retain its rank. Clicks and profits are then realized. Ranking depends on both strategic bids and platform-generated ad-quality weights.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in structural estimation of weighted sponsored-search auctions",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: For a search opportunity, advertisers observe their private values and ad qualities and simultaneously submit bids.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "v_j",
+                "meaning": "advertiser j's private value per click",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_j, q_j",
+                "meaning": "advertiser quality or clickability and the platform's associated quality weight",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_j, b_{j, w}",
+                "meaning": "advertiser j's submitted bid and its quality-weighted bid",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_{j, k}",
+                "meaning": "per-click price paid by advertiser j when winning position k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\omega_j=v_j q_j",
+                "meaning": "advertiser j's weighted value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertisers are symmetric and risk neutral with independent private types.",
+              "Since each advertiser submits a single bid to acquire one of the K available ad positions, the equilibrium bid maximizes the expected total profit, which is defined as the sum of the product of the profit for each ad position and the probability of winning that position.",
+              "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium.",
+              "The empirical sample treats observed bids and scores as equilibrium outcomes of the maintained model."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Market Environment",
+                "equation": "",
+                "quote": "Since each advertiser submits a single bid to acquire one of the K available ad positions, the equilibrium bid max­ imizes the expected total profit, which is defined as the sum of the product of the profit for each ad position and the probability of winning that position."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Since each advertiser submits a single bid to acquire one of the K available ad positions, the equilibrium”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "unique-symmetric-bayesian-nash-equilibrium-of-the-weighted-gener",
+            "label": "Unique symmetric Bayesian Nash equilibrium of the weighted generalized-second-price auction",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Unique symmetric Bayesian Nash equilibrium of the weighted generalized-second-price auction. Assumptions 1 and 2 establish the incomplete-information and monotonicity environment. Theorem 1 reduces equilibrium weighted bids to a function of weighted value, and Lemma 1 gives the unique symmetric Bayesian Nash bidding strategy used for identification.",
+            "searchPhrases": [
+              "how unique symmetric bayesian nash equilibrium of the weighted generalized-second-price auction is represented",
+              "strategic response in structural estimation of weighted sponsored-search auctions",
+              "unique symmetric bayesian nash equilibrium of the weighted generalized-second-price auction strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Unique symmetric Bayesian Nash equilibrium of the weighted generalized-second-price auction.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_j, q_j",
+                "meaning": "advertiser quality or clickability and the platform's associated quality weight",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\omega_j=v_j q_j",
+                "meaning": "advertiser j's weighted value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertisers are symmetric and risk neutral with independent private types.",
+              "The weighted bid is strictly increasing in weighted value, ensuring a unique symmetric equilibrium.",
+              "The auction is modeled as static and budgets, dynamic learning and endogenous entry are omitted."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Identification Analysis",
+                "equation": "",
+                "quote": "We can now derive the unique symmetric equilibrium bidding strategy using Theorem 1 and Assumptions 1 and 2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We can now derive the unique symmetric equilibrium bidding strategy using Theorem 1 and Assumptions 1 and 2.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "35280e570d88215d8d5160e5cc2295f028ae086515d6e91f61c6828bf9189101",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "1b7da1537fbb4b5a4a46b73d70f0d7ce5a530051f21253c8a89bcf9dfd288df6",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-02052/1b7da1537fbb4b5a4a46b73d70f0d7ce5a530051f21253c8a89bcf9dfd288df6.json",
+      "extractionQaDecisionSha256": "11d4cb5e6b0785d10779a2470ec0cb84bc2ac2a183cd7fd705b4693718301f2f",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

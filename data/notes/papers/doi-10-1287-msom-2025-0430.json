@@ -1,0 +1,751 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2025-0430",
+  "sourcePdfSha256": "9d26aaae9813ebec5657437eae10ffa17a41b2ad2f05e502a9508827f8860612",
+  "extractionPagesSha256": "35a15a8b4a6264045faf4883cab8023083fc3c94fe21978842fcc2c3fcceb990",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "3ad4e0b65b4252a5e73689e4236e5cbe41135e430d69ee63bcfa55a400bfcb03",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "01a065cedac97ce748f0e625af9c2b48d1c6a732b3f6bed4d2cc83d4e519f098",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2025-0430/01a065cedac97ce748f0e625af9c2b48d1c6a732b3f6bed4d2cc83d4e519f098.json",
+  "extractionQaDecisionSha256": "1559e0d5351cc2591083e418633c137f9e671b2c6107f19f947f22135371cfa0",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2025-0430",
+    "question": "How should enrollment timing in early-stage patient-centered clinical trials be designed?",
+    "overview": "Early-stage patient-centered clinical trials aim to establish the toxicity profile of investigational drugs and determine safe dose ranges for future trials using cohort-specific consent. Patients considering participation face intricate benefit-risk tradeoffs, particularly regarding the timing of their enrollment: Early enrollment corresponds to low doses with potentially low efficacy and toxicity with high uncertainty around them, whereas late enrollment corresponds to high doses with potentially high efficacy and toxicity with reduced uncertainty, but also an increased risk of disease progression and trial termination. We also establish sufficient conditions for the existence of a control-limit enrollment time policy based on the patient’s health status and beliefs.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "problem-statement-and-model-description",
+        "name": "Problem Statement and Model Description",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Early-stage patient-centered clinical trials aim to establish the toxicity profile of investigational drugs and determine safe dose ranges for future trials using cohort-specific consent. Patients considering participation face intricate benefit-risk tradeoffs, particularly regarding the timing of their enrollment: Early enrollment corresponds to low doses with potentially low efficacy and toxicity with high uncertainty around them, whereas late enrollment corresponds to high doses with potentially high efficacy and toxicity with reduced uncertainty, but also an increased risk of disease progression and trial termination.",
+        "objects": [
+          "Patient",
+          "The decision maker",
+          "The state space",
+          "Cell",
+          "Potentially two cohorts of patients"
+        ],
+        "inputs": [
+          "The benefits",
+          "Standard treatment (or terminal reward) with a known expected benefit",
+          "A terminal reward ψ(hn), marking the end of the process",
+          "The patient’s benefit to be gained from using outside treatment options",
+          "The terminal reward at n + 1"
+        ],
+        "decisions": [
+          "Whether to enroll",
+          "Safe dose ranges for future trials",
+          "To enroll at dose n",
+          "Test these respective doses of 0",
+          "Test the dose associated with decision epoch n only"
+        ],
+        "assumptions": [
+          "The DM, in consultation with clinicians, is fully informed and rational",
+          "Because the outcomes of a cohort of size On are i.i.d. with the same prior belief, we can determine the continuation probability of trials"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Early-stage patient-centered clinical trials aim to establish the toxicity profile of investigational drugs and determine safe dose ranges for future trials using cohort-specific consent.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "Model Overview",
+                "page": 2,
+                "sectionIndex": 16,
+                "sentence": 35,
+                "quote": "Model Overview In the model, a patient diagnosed with a condition, for example, lung cancer, makes periodic visits to a medi­ cal facility for follow-up care and serves as the decision maker (DM) to differentiate from other patients.",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 30,
+                "quote": "Nonetheless, our model can be extended so that the realization of efficacy and toxicity may be dependent to the health status by expanding the state space and considering a larger prior covari­ ance.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cell",
+              "source": {
+                "type": "section",
+                "section": "Dose Escalation and Information Evolution",
+                "page": 12,
+                "sectionIndex": 23,
+                "sentence": 17,
+                "quote": "Case Study This section demonstrates the implications of applying the proposed enrollment policy within a Phase I CT for non-small-cell lung cancer (NSCLC).",
+                "matchedText": "cell",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Potentially two cohorts of patients",
+              "source": {
+                "type": "section",
+                "section": "Dose Escalation and Information Evolution",
+                "sectionIndex": 12,
+                "page": 12,
+                "quote": "Note that in 3+3 there are potentially two cohorts of patients, as in the simulation, but in our model we only allow decision making for a patient before the initiation of a dose."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The benefits",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "The patient periodically learns about the benefits and risks of doses and enrolls in the trial at the optimal time to maximize the expected benefits.",
+                "matchedText": "the benefits",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Standard treatment (or terminal reward) with a known expected benefit",
+              "source": {
+                "type": "section",
+                "section": "Model Overview",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 17,
+                "quote": "Moreover, once the trial is terminated because of unacceptable DLTs, the DM can no longer enroll and instead receives stan­ dard treatment (or terminal reward) with a known expected benefit.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A terminal reward ψ(hn), marking the end of the process",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 41,
+                "quote": "Conse­ quently, the DM receives a terminal reward ψ(hn), marking the end of the process, where ψ(hn) represents the patient’s benefit to be gained from using outside treatment options.",
+                "matchedText": "a terminal reward ψ(hn), marking the end of the process",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The patient’s benefit to be gained from using outside treatment options",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 41,
+                "quote": "Conse­ quently, the DM receives a terminal reward ψ(hn), marking the end of the process, where ψ(hn) represents the patient’s benefit to be gained from using outside treatment options.",
+                "matchedText": "the patient’s benefit to be gained from using outside treatment options",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The terminal reward at n + 1",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 47,
+                "quote": "Then, based on the observation at n, if the trial continues at n + 1, the patient retains the option to enroll for dose n + 1; otherwise, the patient receives the terminal reward at n + 1.",
+                "matchedText": "the terminal reward at n + 1",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to enroll",
+              "source": {
+                "type": "section",
+                "section": "Motivation",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 29,
+                "quote": "whether to enroll",
+                "matchedText": "whether to enroll",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Safe dose ranges for future trials",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Early-stage patient-centered clinical trials aim to establish the toxicity profile of investigational drugs and determine safe dose ranges for future trials using cohort-specific consent.",
+                "matchedText": "safe dose ranges for future trials",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To enroll at dose n",
+              "source": {
+                "type": "section",
+                "section": "Model Overview",
+                "page": 2,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "Given this information, if the DM chooses to enroll at dose n",
+                "matchedText": "to enroll at dose n",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Test these respective doses of 0",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "For example, if the tested dose levels are {0:5,1,1:5}, three cohorts of patients will be recruited to test these respective doses of 0",
+                "matchedText": "test these respective doses of 0",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Test the dose associated with decision epoch n only",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 26,
+                "quote": "The CI will recruit a cohort of patients to test the dose associated with decision epoch n only",
+                "matchedText": "test the dose associated with decision epoch n only",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The DM, in consultation with clinicians, is fully informed and rational",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 9,
+                "quote": "We assume that the DM, in consultation with clinicians, is fully informed and rational.",
+                "matchedText": "the DM, in consultation with clinicians, is fully informed and rational.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Because the outcomes of a cohort of size On are i.i.d. with the same prior belief, we can determine the continuation probability of trials",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 64,
+                "quote": "Because the outcomes of a cohort of size On are i.i.d. with the same prior belief, we can determine the contin­ uation probability of trials.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The machinery for showing the control-limit optimal policy in health status is rather standard: We first prove that the value function is monotone in health.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Main Contributions and Insights",
+          "page": 3,
+          "sentence": 3
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.1. Problem Statement and Model Description",
+            "equation": "",
+            "quote": "This state space is expanded to include an absorbing state n to denote the termination of the whole process, resulting in an augmented state space S+ = S ∪{n}."
+          }
+        ],
+        "components": [
+          {
+            "id": "problem-statement-and-model-description",
+            "label": "Problem Statement and Model Description",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "This state space is expanded to include an absorbing state n to denote the termination of the whole process, resulting in an augmented state space S+ = S ∪{n}.",
+            "searchPhrases": [
+              "how problem statement and model description is represented",
+              "system process in innovation, analytics, and technology",
+              "problem statement and model description system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This state space is expanded to include an absorbing state n to denote the termination of the whole process, resulting in an augmented state space S+ = S ∪{n}.",
+              "Additionally, a binary variable xn ∈{0,1} indicates the state of trial continuation: xn = 1 indicates that the trial stops at the beginning of decision epoch n because of excessive DLTs of the previous dose, and xn = 0 indicates the trial continues at decision epoch n."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Problem Statement and Model Description",
+                "equation": "",
+                "quote": "This state space is expanded to include an absorbing state n to denote the termination of the whole process, resulting in an augmented state space S+ = S ∪{n}."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “This state space is expanded to include an absorbing state n to denote the termination of the whole”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "gaining-insight-through",
+            "label": "Gaining Insight Through",
+            "role": "algorithm",
+            "concepts": [
+              "simulation",
+              "estimation"
+            ],
+            "explanation": "For details on parameter settings, simulation process for transition probability estimation, and backward induction, see Section EC.2.1 in the Online Appendix.",
+            "searchPhrases": [
+              "how gaining insight through is represented",
+              "solution algorithm in innovation, analytics, and technology",
+              "gaining insight through solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: For details on parameter settings, simulation process for transition probability estimation, and backward induction, see Section EC.2.1 in the Online Appendix.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Figure 3(a) demonstrates that, as the toxicity belief of dose 1 increases, the trial termination rate ˇp1(μ1), that is, the probability of dose 1 being classified as toxic escalates from zero to one.",
+              "Furthermore, as the belief about dose 1’s toxicity increases, the probability ˇp1(μ1) also increases, driving the DM to receive the terminal reward when the trial halts after dose 1."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. Gaining Insight Through",
+                "equation": "",
+                "quote": "For details on parameter settings, simulation process for transition probability estimation, and backward induction, see Section EC.2.1 in the Online Appendix."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "simulation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Simulation: “Simulation”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Model estimation as “estimation”: “settings, simulation process for transition probability estimation , and backward induction, see Section EC.2.1 in”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "finite-state-approximated-mdp-model",
+        "name": "Finite-State Approximated MDP Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Problem Statement and Model Description.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "problem-statement-and-model-description"
+          }
+        ],
+        "summary": "Second, the analysis establishes the existence of structured policies for this finite-state MDP.",
+        "objects": [
+          "The state space"
+        ],
+        "inputs": [
+          "The lowest toxicity belief considered, presenting no discernible risk to trial participants"
+        ],
+        "decisions": [
+          "Whether to enroll",
+          "Safe dose ranges for future trials",
+          "To enroll at dose n",
+          "Test these respective doses of 0",
+          "Test the dose associated with decision epoch n only"
+        ],
+        "assumptions": [
+          "The DM, in consultation with clinicians, is fully informed and rational",
+          "Because the outcomes of a cohort of size On are i.i.d. with the same prior belief, we can determine the continuation probability of trials"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Finite-State Approximated MDP Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "First, a grid approx­ imation approach is used to discretize the state space within a compact set.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The lowest toxicity belief considered, presenting no discernible risk to trial participants",
+              "source": {
+                "type": "section",
+                "section": "Finite-State Approximated MDP Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "Here, µ repre­ sents the lowest toxicity belief considered, presenting no discernible risk to trial participants.",
+                "matchedText": "the lowest toxicity belief considered, presenting no discernible risk to trial participants",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to enroll",
+              "source": {
+                "type": "section",
+                "section": "Motivation",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 29,
+                "quote": "whether to enroll",
+                "matchedText": "whether to enroll",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Safe dose ranges for future trials",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Early-stage patient-centered clinical trials aim to establish the toxicity profile of investigational drugs and determine safe dose ranges for future trials using cohort-specific consent.",
+                "matchedText": "safe dose ranges for future trials",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To enroll at dose n",
+              "source": {
+                "type": "section",
+                "section": "Model Overview",
+                "page": 2,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "Given this information, if the DM chooses to enroll at dose n",
+                "matchedText": "to enroll at dose n",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Test these respective doses of 0",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "For example, if the tested dose levels are {0:5,1,1:5}, three cohorts of patients will be recruited to test these respective doses of 0",
+                "matchedText": "test these respective doses of 0",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Test the dose associated with decision epoch n only",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 26,
+                "quote": "The CI will recruit a cohort of patients to test the dose associated with decision epoch n only",
+                "matchedText": "test the dose associated with decision epoch n only",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The DM, in consultation with clinicians, is fully informed and rational",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 9,
+                "quote": "We assume that the DM, in consultation with clinicians, is fully informed and rational.",
+                "matchedText": "the DM, in consultation with clinicians, is fully informed and rational.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Because the outcomes of a cohort of size On are i.i.d. with the same prior belief, we can determine the continuation probability of trials",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement and Model Description",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 64,
+                "quote": "Because the outcomes of a cohort of size On are i.i.d. with the same prior belief, we can determine the contin­ uation probability of trials.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "To streamline the proofs, we introduce the following notation for the grid-approximated Markov Decision Process (MDP) model.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Finite-State Approximated MDP Model",
+          "page": 7,
+          "sentence": 23
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.2. Finite-State Approximated MDP Model",
+            "equation": "",
+            "quote": "Second, the analysis establishes the existence of structured policies for this finite-state MDP."
+          }
+        ],
+        "components": [
+          {
+            "id": "finite-state-approximated-mdp-model",
+            "label": "Finite-State Approximated MDP Model",
+            "role": "state",
+            "concepts": [
+              "markov-decision-process"
+            ],
+            "explanation": "Second, the analysis establishes the existence of structured policies for this finite-state MDP.",
+            "searchPhrases": [
+              "how finite-state approximated mdp model is represented",
+              "decision-relevant state in innovation, analytics, and technology",
+              "finite-state approximated mdp model decision-relevant state specification"
+            ],
+            "formal": "State definition: Second, the analysis establishes the existence of structured policies for this finite-state MDP.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Take μn as an example, recall that μn = (μi n)i∈[N], where μi n ∈R represents the belief about mean toxicity of dose i at epoch n.",
+              "The grid approximation method divides the continuous state space into discrete grids as follows. (1) For each dose i ∈[N], grids are established within the toxicity level range of [μ, ̄μ].",
+              "Then, the dose toxicity belief μn = (μi n)i∈[N] is transformed to μn = m = (ti)i∈[N], where μi n ∈Iti (to differentiate from the continuous state MDP, bold m is used for the discretized MDP)."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2. Finite-State Approximated MDP Model",
+                "equation": "",
+                "quote": "Second, the analysis establishes the existence of structured policies for this finite-state MDP."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "markov-decision-process",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Markov decision process as “MDP”: “Second, the analysis establishes the existence of structured policies for this finite-state MDP.”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "9d26aaae9813ebec5657437eae10ffa17a41b2ad2f05e502a9508827f8860612",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "01a065cedac97ce748f0e625af9c2b48d1c6a732b3f6bed4d2cc83d4e519f098",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2025-0430/01a065cedac97ce748f0e625af9c2b48d1c6a732b3f6bed4d2cc83d4e519f098.json",
+      "extractionQaDecisionSha256": "1559e0d5351cc2591083e418633c137f9e671b2c6107f19f947f22135371cfa0",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

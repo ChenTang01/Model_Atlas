@@ -1,0 +1,862 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2023-4676",
+  "sourcePdfSha256": "37d1c461d5ca5dc619be96f33114d3a780597ec21749519b0961d30751bba882",
+  "extractionPagesSha256": "7057d00fb6843760aba3dbaab611d186f1e4e38f3f33d962635bb87cbf51a930",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "4c5aeaf3c02d97f81204c514c310667818e500c3168278cffbbb88ffc1b5a11c",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "7364d0595b169c82531d60c1318aad4d434be6e514369ea510fc2432f0720644",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4676/7364d0595b169c82531d60c1318aad4d434be6e514369ea510fc2432f0720644.json",
+  "extractionQaDecisionSha256": "5b6a8fc429c951b1b9cf713de6661c1ca10b8367b83a97720576b04c233495d5",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-4676",
+    "question": "How does outpatient care providers usually allow patients to access service via scheduling appointments or direct walk-in?",
+    "overview": "Outpatient care providers usually allow patients to access service via scheduling appointments or direct walk-in. Patients choose strategically between these two access channels (and otherwise balking) based on the trade-off of appointment delay and in-clinic waiting. How to manage outpatient care with such dual access channels, taking into account patient strategic choice behavior, is a challenge faced by providers.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Managing Outpatient Service with Strategic Walk-ins model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Outpatient care providers usually allow patients to access service via scheduling appointments or direct walk-in. Patients choose strategically between these two access channels (and otherwise balking) based on the trade-off of appointment delay and in-clinic waiting. How to manage outpatient care with such dual access channels, taking into account patient strategic choice behavior, is a challenge faced by providers.",
+        "objects": [
+          "Providers",
+          "Patients",
+          "Server",
+          "Two types of patients",
+          "A random variable"
+        ],
+        "inputs": [
+          "Service capacity",
+          "The use",
+          "The patient demand",
+          "Patient willingness to wait in both time scales",
+          "The reward"
+        ],
+        "decisions": [
+          "Rate λS at the first stage",
+          "Design of online scheduling systems",
+          "To walk in (called strategic walk-ins) come for service",
+          "Minimize the expected total daily costs by choosing μS and μW such",
+          "Tend to schedule"
+        ],
+        "assumptions": [
+          "Each patient visit (scheduled appointment or walk-in) consumes one slot",
+          "Walk-in and appointment hours are two disjoint blocks of time in a day",
+          "There are two types of patients based on health conditions",
+          "Strategic patients arrive following a Poisson process with daily rate λ",
+          "The patient incurs a cost CG, which we refer to as the disengagement cost, because the patient is disengaged from the original plan"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Providers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Outpatient care providers usually allow patients to access service via scheduling appointments or direct walk-in.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Outpatient care providers usually allow patients to access service via scheduling appointments or direct walk-in.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "section",
+                "section": "Capacity and Demand Model",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 37,
+                "quote": "Inspired by the previous literature that uses stylized single-server queueing models to study strategic-level questions in appointment scheduling (Green and Savin 2008, Liu and Ziya 2014, Liu 2016, Zacharias and Armony 2016), we use an M/D/1 queue to capture the evolve­ ment of the scheduling process.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Two types of patients",
+              "source": {
+                "type": "section",
+                "section": "Capacity and Demand Model",
+                "sectionIndex": 4,
+                "page": 5,
+                "quote": "We assume that there are two types of patients based on health conditions."
+              }
+            },
+            {
+              "value": "A random variable",
+              "source": {
+                "type": "section",
+                "section": "Patient Strategy and Utility",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 1,
+                "quote": "At the first stage, a strategic patient makes a decision based on the expected utility at the second stage, and at the second stage, after interacting with the schedul­ ing system, the patient observes the exact appoint­ ment delay ˜d, which is a random variable and influenced by the strategy adopted by all other patients.",
+                "matchedText": "a random variable",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Service capacity",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "We study three operational levers to address this management challenge: service capacity allocation between these two channels, appointment delay information revelation via the choice and design of online scheduling systems, and a walk-in triage system that restricts the use of walk-in hours only for acute care.",
+                "matchedText": "service capacity",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The use",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "We study three operational levers to address this management challenge: service capacity allocation between these two channels, appointment delay information revelation via the choice and design of online scheduling systems, and a walk-in triage system that restricts the use of walk-in hours only for acute care.",
+                "matchedText": "the use",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient demand",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Under the provider’s optimal capacity allocation, which scheduling system is more efficient hinges on two key factors: the patient demand–provider capacity relationship and patient willingness to wait.",
+                "matchedText": "the patient demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patient willingness to wait in both time scales",
+              "source": {
+                "type": "section",
+                "section": "Observable vs. Unobservable Setting",
+                "page": 15,
+                "sectionIndex": 14,
+                "sentence": 20,
+                "quote": "When the provider’s daily capacity is sufficiently large but remains in the same magnitude of the provi­ der’s patient demand, we find that which system costs less depends on patient willingness to wait in both time scales.",
+                "matchedText": "patient willingness to wait in both time scales",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "Patient Strategy and Utility",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "the reward",
+                "matchedText": "the reward",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Rate λS at the first stage",
+              "source": {
+                "type": "section",
+                "section": "Patient Equilibrium",
+                "page": 10,
+                "sectionIndex": 6,
+                "sentence": 88,
+                "quote": "To further illustrate, we define three possible scenarios for the equilibrium delay threshold δ at the second stage and the equilibrium scheduling rate λS at the first stage",
+                "matchedText": "rate λS at the first stage",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Design of online scheduling systems",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "We study three operational levers to address this management challenge: service capacity allocation between these two channels, appointment delay information revelation via the choice and design of online scheduling systems, and a walk-in triage system that restricts the use of walk-in hours only for acute care.",
+                "matchedText": "design of online scheduling systems",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "To walk in (called strategic walk-ins) come for service",
+              "source": {
+                "type": "section",
+                "section": "Capacity and Demand Model",
+                "page": 7,
+                "sectionIndex": 4,
+                "sentence": 51,
+                "quote": "During the walk-in hours, both exogenous walk-ins and strategic patients who choose to walk in (called strategic walk-ins) come for service",
+                "matchedText": "to walk in (called strategic walk-ins) come for service",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Minimize the expected total daily costs by choosing μS and μW such",
+              "source": {
+                "type": "section",
+                "section": "The Provider’s Problem",
+                "page": 11,
+                "sectionIndex": 7,
+                "sentence": 1,
+                "quote": "Facing patient strategic behavior, the provider aims to minimize the expected total daily costs by choosing µS and µW such that µS + µW = µ, where µ is the fixed total daily capacity.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Tend to schedule",
+              "source": {
+                "type": "section",
+                "section": "Observable vs. Unobservable Setting",
+                "page": 15,
+                "sectionIndex": 14,
+                "sentence": 16,
+                "quote": "In this case, revealing exact appointment delay information makes patients more “rational” and utilizes appointment hours more efficiently (as patients in the observable setting tend to schedule as long as the current ap­ pointment queue length is short enough)",
+                "matchedText": "tend to schedule",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each patient visit (scheduled appointment or walk-in) consumes one slot",
+              "source": {
+                "type": "section",
+                "section": "Capacity and Demand Model",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 4,
+                "quote": "We assume that each patient visit (scheduled appointment or walk-in) consumes one slot.",
+                "matchedText": "each patient visit (scheduled appointment or walk-in) consumes one slot.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Walk-in and appointment hours are two disjoint blocks of time in a day",
+              "source": {
+                "type": "section",
+                "section": "Capacity and Demand Model",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "Thus, we assume that walk-in and appointment hours are two disjoint blocks of time in a day.",
+                "matchedText": "walk-in and appointment hours are two disjoint blocks of time in a day.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There are two types of patients based on health conditions",
+              "source": {
+                "type": "section",
+                "section": "Capacity and Demand Model",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 8,
+                "quote": "We assume that there are two types of patients based on health conditions.",
+                "matchedText": "there are two types of patients based on health conditions.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Strategic patients arrive following a Poisson process with daily rate λ",
+              "source": {
+                "type": "section",
+                "section": "Capacity and Demand Model",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 13,
+                "quote": "We assume that strategic patients arrive following a Poisson process with daily rate λ.",
+                "matchedText": "strategic patients arrive following a Poisson process with daily rate λ.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The patient incurs a cost CG, which we refer to as the disengagement cost, because the patient is disengaged from the original plan",
+              "source": {
+                "type": "section",
+                "section": "Capacity and Demand Model",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 24,
+                "quote": "if a strategic patient first decides to interact with the scheduling system and then switches to walk in or balk instead (after obtaining the appointment delay information), we assume that the patient incurs a cost CG, which we refer to as the disengagement cost, because the patient is disengaged from the original plan.",
+                "matchedText": "the patient incurs a cost CG, which we refer to as the disengagement cost, because the patient is disengaged from the original plan.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "To establish this result, for any given first stage strategy (λB,λW,λB), we first identify a second stage equilibrium strategy: a strategy for taking second stage decisions that satisfies Condition 2.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Patient Equilibrium",
+          "page": 8,
+          "sentence": 10
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.2. Patient Strategy and Utility",
+            "equation": "",
+            "quote": "At the first stage, a strategic patient makes a decision based on the expected utility at the second stage, and at the second stage, after interacting with the schedul­ ing system, the patient observes the exact appoint­ ment delay ˜d, which is a random variable and influenced by the strategy adopted by all other patients."
+          }
+        ],
+        "components": [
+          {
+            "id": "capacity-and-demand-model",
+            "label": "Capacity and Demand Model",
+            "role": "preference",
+            "concepts": [
+              "queueing",
+              "strategic-queueing"
+            ],
+            "explanation": "The purpose of the queueing model is to capture the overall effect of strategic demand on the appointment queue/delay.",
+            "searchPhrases": [
+              "how capacity and demand model is represented",
+              "modeled preferences in operations and supply chains",
+              "capacity and demand model modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: The purpose of the queueing model is to capture the overall effect of strategic demand on the appointment queue/delay.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "It is this time gap that makes appointment delay information not instantaneously observable to patients and creates frictions potentially holding patients from turning down the appointment option later.",
+              "In addition, after the provider spends effort locating an appointment for the patient, it would be trying for the patient to disengage.",
+              "The patient cannot game the system as in a real-time one by quickly observing the appointment delay and then switching to nonappointment options without bothering the provider."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Capacity and Demand Model",
+                "equation": "",
+                "quote": "The purpose of the queueing model is to capture the overall effect of strategic demand on the appointment queue/delay."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Queueing as “queueing model”: “The purpose of the queueing model is to capture the overall effect of strategic”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "strategic-queueing",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Strategic queue joining as “strategic queueing”: “The purpose of the queueing model is to capture the overall effect of strategic demand on the appointment”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "patient-strategy-and-utility",
+            "label": "Patient Strategy and Utility",
+            "role": "preference",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "At the first stage, a strategic patient makes a decision based on the expected utility at the second stage, and at the second stage, after interacting with the scheduling system, the patient observes the exact appointment delay ̃d, which is a random variable and influenced by the strategy adopted by all other patients.",
+            "searchPhrases": [
+              "how patient strategy and utility is represented",
+              "modeled preferences in operations and supply chains",
+              "patient strategy and utility modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: At the first stage, a strategic patient makes a decision based on the expected utility at the second stage, and at the second stage, after interacting with the scheduling system, the patient observes the exact appointment delay ̃d, which is a random variable and influenced by the strategy adopted by all other patients.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If the patient chooses to walk in (regardless in which stage), the patient does not know the exact in-clinic wait time but can form a belief on the expected in-clinic wait time, denoted by w, which is also influenced by other patients’ strategy.",
+              "At the first stage, a strategic patient makes a decision based on the expected utility at the second stage, and at the second stage, after interacting with the scheduling system, the patient observes the exact appointment delay ̃d, which is a random variable and influenced by the strategy adopted by all other patients.",
+              "We now first analyze patient utilities for any given strategy; in Section 3.3, we define and identify an equilibrium strategy.",
+              "For any patient who observes a delay ̃d after choosing to interact with the scheduling system at the first stage, denote the second stage probabilities of scheduling, walking in, and balking by p2 S( ̃d), p2 W( ̃d), and p2 B( ̃d), respectively."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2. Patient Strategy and Utility",
+                "equation": "",
+                "quote": "At the first stage, a strategic patient makes a decision based on the expected utility at the second stage, and at the second stage, after interacting with the schedul­ ing system, the patient observes the exact appoint­ ment delay ˜d, which is a random variable and influenced by the strategy adopted by all other patients."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Scheduling: “second stage, after interacting with the Scheduling system, the patient observes the exact appointment delay”.",
+                "conditionRefs": [
+                  1,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "patient-equilibrium",
+            "label": "Patient Equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "To further illustrate, we define three possible scenarios for the equilibrium delay threshold δ at the second stage and the equilibrium scheduling rate λS at the first stage.",
+            "searchPhrases": [
+              "how patient equilibrium is represented",
+              "strategic response in operations and supply chains",
+              "patient equilibrium strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When the observed delay does not exceed δ, patients schedule an appointment; otherwise, they walk in or balk, and the proportions of patients who walk in and balk are pW and pB, respectively.",
+              "Finally, if admitting all strategic patients to the walkin hours still allows walking in to be no worse than balking (i.e., u2 W(pS W) ≥ CG in case 3), then balking is never appealing to strategic patients.",
+              "In our notations, we highlight the dependence of E ̃d[ ̃d| ̃d ≤δ,λS] and π(δ,λS) on λS because λS is one of the patient’s strategic choices at the first stage.",
+              "To further illustrate, we define three possible scenarios for the equilibrium delay threshold δ at the second stage and the equilibrium scheduling rate λS at the first stage."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3.3. Patient Equilibrium",
+                "equation": "",
+                "quote": "To further illustrate, we define three possible scenarios for the equilibrium delay threshold δ at the second stage and the equilibrium scheduling rate λS at the first stage."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Scheduling: “the second stage and the equilibrium Scheduling rate λS at the first stage.”.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "the-provider-s-problem",
+            "label": "The Provider’s Problem",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The provider’s daily costs include two components: a lost demand cost at rate CL per balking patient and overtime cost incurred at rate CO per unit time.",
+            "searchPhrases": [
+              "how the provider’s problem is represented",
+              "modeled objective in operations and supply chains",
+              "the provider’s problem modeled objective specification"
+            ],
+            "formal": "\\mu{}S, \\mu{}W≥0",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "\\mu",
+                "meaning": "the fixed total daily capacity"
+              }
+            ],
+            "conditions": [
+              "If the walk-in queue approaches steady state at the end of walk-in hours, then the overtime is the wait time experienced by a walk-in who would have arrived at the end of walk-in hours.",
+              "Facing patient strategic behavior, the provider aims to minimize the expected total daily costs by choosing μS and μW such that μS + μW = μ, where μ is the fixed total daily capacity."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "3.4. The Provider’s Problem",
+                "equation": "",
+                "quote": "The provider’s daily costs include two components: a lost demand cost at rate CL per balk­ ing patient and overtime cost incurred at rate CO per unit time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "two-extreme-cases",
+            "label": "Two Extreme Cases",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "To make our analysis more interpretable and tractable, we focus on two extreme cases: CG = 0 and CG = +∞.",
+            "searchPhrases": [
+              "how two extreme cases is represented",
+              "feasibility condition in operations and supply chains",
+              "two extreme cases feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To make our analysis more interpretable and tractable, we focus on two extreme cases: CG = 0 and CG = +∞."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "3.5. Two Extreme Cases",
+                "equation": "",
+                "quote": "To make our analysis more interpretable and tractable, we focus on two extreme cases: CG = 0 and CG = +∞."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Feasibility constraints”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "impact-of-ms-and-mw-on-patient-equilibrium",
+            "label": "Impact of mS and mW on Patient Equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "resource-allocation",
+              "scheduling"
+            ],
+            "explanation": "Before analyzing the provider’s optimal capacity allocation, it is important to understand which regime patient equilibrium may fall into for given (μS,μW).",
+            "searchPhrases": [
+              "how impact of ms and mw on patient equilibrium is represented",
+              "strategic response in operations and supply chains",
+              "impact of ms and mw on patient equilibrium strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let μW be such that R CWw λE μW ! = 0: (15) Then, if μW < μW, the utility of walking in would be strictly negative even without any strategic walk-ins, and any strategic patient who chooses not to schedule would balk.",
+              "Before analyzing the provider’s optimal capacity allocation, it is important to understand which regime patient equilibrium may fall into for given (μS,μW)."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.1.1. Impact of mS and mW on Patient Equilibrium",
+                "equation": "",
+                "quote": "Before analyzing the provider’s optimal capacity allocation, it is important to understand which regime patient equilibrium may fall into for given (µS,µW)."
+              },
+              {
+                "page": 13,
+                "section": "4.1.1. Impact of mS and mW on Patient Equilibrium",
+                "equation": "Proposition 2",
+                "quote": "In such a setting, strategic patients mix among scheduling, walking in, and balking; the form of patient equilibrium strategy in Theorem 1 can be sim­ plified as the triplet (λS,λW,λB)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "resource-allocation",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Resource allocation as “capacity allocation”: “Before analyzing the provider’s optimal capacity allocation , it is important to understand which regime”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Scheduling: “Scheduling”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-comparison",
+            "label": "Model Comparison",
+            "role": "information",
+            "concepts": [
+              "resource-allocation"
+            ],
+            "explanation": "After analyzing optimal capacity allocation in both the observable and unobservable settings, a natural question is which system design is more operationally efficient.",
+            "searchPhrases": [
+              "how model comparison is represented",
+              "information available to the decision maker in operations and supply chains",
+              "model comparison information available to the decision maker specification"
+            ],
+            "formal": "Information structure: After analyzing optimal capacity allocation in both the observable and unobservable settings, a natural question is which system design is more operationally efficient.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "After analyzing optimal capacity allocation in both the observable and unobservable settings, a natural question is which system design is more operationally efficient."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "5. Model Comparison",
+                "equation": "",
+                "quote": "After analyzing optimal capacity allocation in both the observable and unobservable settings, a natural question is which system design is more operationally efficient."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "resource-allocation",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Resource allocation as “capacity allocation”: “capacity allocation”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "observable-vs-unobservable-setting",
+            "label": "Observable vs. Unobservable Setting",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "To keep the flow of the paper, we defer all relevant technical details to Online Theorem E.1.",
+            "searchPhrases": [
+              "how observable vs. unobservable setting is represented",
+              "system process in operations and supply chains",
+              "observable vs. unobservable setting system process specification"
+            ],
+            "formal": "Process relation: To keep the flow of the paper, we defer all relevant technical details to Online Theorem E.1.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We focus our discussion of the triage model in the context of the observable setting because the analysis and high-level insights in the unobservable setting are similar."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "5.1. Observable vs. Unobservable Setting",
+                "equation": "",
+                "quote": "To keep the flow of the paper, we defer all relevant technical details to Online Theorem E.1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “To keep the flow of the paper, we defer all relevant technical details to Online Theorem E.1.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "business_question",
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "37d1c461d5ca5dc619be96f33114d3a780597ec21749519b0961d30751bba882",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "7364d0595b169c82531d60c1318aad4d434be6e514369ea510fc2432f0720644",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4676/7364d0595b169c82531d60c1318aad4d434be6e514369ea510fc2432f0720644.json",
+      "extractionQaDecisionSha256": "5b6a8fc429c951b1b9cf713de6661c1ca10b8367b83a97720576b04c233495d5",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

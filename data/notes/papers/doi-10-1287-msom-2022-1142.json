@@ -1,0 +1,1016 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2022-1142",
+  "sourcePdfSha256": "f5de73d757a7cccfbe9c9fdf77ec86fd9fa2d93175f6df26601e2ab8e3f9528e",
+  "extractionPagesSha256": "43c18e3e29fa9d8b5013b9063a3193f19de3ba3f03d11c2d1b77b9485938106d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "50fc8f44940fd325a0d597609fb5f7e77910cf87f9a797b6190b3d130d672393",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "9d844d9b3446bdeb1c3ca560670cc81e60f30beb16418e48fa0c66d7f3b6e7a4",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-1142/9d844d9b3446bdeb1c3ca560670cc81e60f30beb16418e48fa0c66d7f3b6e7a4.json",
+  "extractionQaDecisionSha256": "b4ad85422609d1360edeaea0de0e435ee86020ea3083ce8595e09cbfaf95a66f",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2022-1142",
+    "question": "How can managing display-advertising campaigns be represented using markov decision?",
+    "overview": "Managers in ad agencies are responsible for delivering digital ads to viewers on behalf of advertisers, subject to the terms specified in the ad campaigns. They need to develop bidding policies to obtain viewers on an ad exchange and allocate them to the campaigns to maximize the agency’s profits, subject to the goals of the ad campaigns. Determining a rigorous solution methodology is complicated by uncertainties in the arrival rates of viewers and campaigns, as well as uncertainty in the outcomes of bids on the ad exchange.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8,
+        9
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "multiple-campaign-formulation",
+        "name": "Multiple-Campaign Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Managers in ad agencies are responsible for delivering digital ads to viewers on behalf of advertisers, subject to the terms specified in the ad campaigns. They need to develop bidding policies to obtain viewers on an ad exchange and allocate them to the campaigns to maximize the agency’s profits, subject to the goals of the ad campaigns. In practice, ad hoc strategies are often deployed.",
+        "objects": [
+          "The agency",
+          "Subject",
+          "Manager",
+          "Platforms",
+          "The ad agency"
+        ],
+        "inputs": [
+          "The arrival rates",
+          "Random times",
+          "The states",
+          "Unit time",
+          "The next viewer type j for each j"
+        ],
+        "decisions": [
+          "Target that viewer type",
+          "The optimal pricing",
+          "The optimal bid"
+        ],
+        "assumptions": [
+          "Truncating the impressions for one viewer type in a given campaign does not affect the sij for the other viewer types",
+          "The likelihood of underdelivery to a campaign is not too large",
+          "The rates are stationary",
+          "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The agency",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "They need to develop bidding policies to obtain viewers on an ad exchange and allocate them to the campaigns to maximize the agency’s profits, subject to the goals of the ad campaigns.",
+                "matchedText": "the agency",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Subject",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "They need to develop bidding policies to obtain viewers on an ad exchange and allocate them to the campaigns to maximize the agency’s profits, subject to the goals of the ad campaigns.",
+                "matchedText": "subject",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Manager",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 31,
+                "sentence": 18,
+                "quote": "We focus on the decision problem faced by a campaign manager in an ad agency, who manages multiple campaigns simultaneously, rather than on the publishers’ or advertisers’ problems, which are the focus of much of the existing literature.",
+                "matchedText": "manager",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Platforms",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 31,
+                "sentence": 19,
+                "quote": "Our model could also be used by advertisers, Demand-Side Platforms (DSPs), or, occasionally, publishers, who manage their ad campaigns directly.",
+                "matchedText": "Platforms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The ad agency",
+              "source": {
+                "type": "section",
+                "section": "Multiple-Campaign Formulation",
+                "sectionIndex": 2,
+                "page": 8,
+                "quote": "The ad agency then assigns the next viewer to the campaign type i with the highest bid—that is, the largest w1 i (ai)."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The arrival rates",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Academic/practical relevance: Determining a rigorous solution methodology is complicated by uncertainties in the arrival rates of viewers and campaigns, as well as uncertainty in the outcomes of bids on the ad exchange.",
+                "matchedText": "the arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random times",
+              "source": {
+                "type": "section",
+                "section": "The Transition Probabilities",
+                "page": 6,
+                "sectionIndex": 11,
+                "sentence": 1,
+                "quote": "This system is a continuous-time Markov process that has integer state changes occurring at random times.",
+                "matchedText": "random times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The states",
+              "source": {
+                "type": "section",
+                "section": "Heuristic Solution",
+                "page": 8,
+                "sectionIndex": 15,
+                "sentence": 8,
+                "quote": "Then, each campaign i would observe only the state ai, and not the states or bids of the other campaign types.",
+                "matchedText": "the states",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unit time",
+              "source": {
+                "type": "section",
+                "section": "Sensitivity Analysis of the Optimal Solution",
+                "page": 10,
+                "sectionIndex": 18,
+                "sentence": 11,
+                "quote": "unit time",
+                "matchedText": "unit time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The next viewer type j for each j",
+              "source": {
+                "type": "section",
+                "section": "The Transition Probabilities",
+                "page": 6,
+                "sectionIndex": 11,
+                "sentence": 17,
+                "quote": "the next viewer type j for each j",
+                "matchedText": "the next viewer type j for each j",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Target that viewer type",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 8,
+                "sentence": 11,
+                "quote": "The agency can reduce the queue size by bidding higher to increase the probability of winning, or it can limit the number of additional new ad contracts that target that viewer type",
+                "matchedText": "target that viewer type",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The optimal pricing",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 31,
+                "sentence": 21,
+                "quote": "the optimal pricing",
+                "matchedText": "the optimal pricing",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The optimal bid",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 8,
+                "sentence": 13,
+                "quote": "Our model jointly determines the optimal bid for the next viewer and which campaign should receive the viewer if the bid is successful.",
+                "matchedText": "the optimal bid",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Truncating the impressions for one viewer type in a given campaign does not affect the sij for the other viewer types",
+              "source": {
+                "type": "section",
+                "section": "Model Notation",
+                "page": 5,
+                "sectionIndex": 32,
+                "sentence": 17,
+                "quote": "We assume that truncating the impressions for one viewer type in a given campaign does not affect the sij for the other viewer types.",
+                "matchedText": "truncating the impressions for one viewer type in a given campaign does not affect the sij for the other viewer types.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The likelihood of underdelivery to a campaign is not too large",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 31,
+                "sentence": 8,
+                "quote": "Deza et al. (2015) extend these results by considering a chance constraint to ensure that the likelihood of underdelivery to a campaign is not too large.",
+                "matchedText": "the likelihood of underdelivery to a campaign is not too large",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The rates are stationary",
+              "source": {
+                "type": "section",
+                "section": "The Transition Probabilities",
+                "page": 6,
+                "sectionIndex": 1,
+                "sentence": 16,
+                "quote": "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary.",
+                "matchedText": "the rates are stationary.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary",
+              "source": {
+                "type": "section",
+                "section": "The Transition Probabilities",
+                "page": 6,
+                "sectionIndex": 1,
+                "sentence": 16,
+                "quote": "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary.",
+                "matchedText": "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "To obtain an approximate solution to the multiplecampaign problem, we apply the following heuristic method.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Multiple-Campaign Formulation",
+          "page": 8,
+          "sentence": 26
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.3. Heuristic Solution",
+            "equation": "",
+            "quote": "With multiple campaigns, the Heuristic Solution (4) results in a different solution from (3) because of the term ΔW1 i,t−1(ai)."
+          }
+        ],
+        "components": [
+          {
+            "id": "the-model",
+            "label": "The Model",
+            "role": "decision",
+            "concepts": [
+              "queueing",
+              "contract-design"
+            ],
+            "explanation": "The agency can reduce the queue size by bidding higher to increase the probability of winning, or it can limit the number of additional new ad contracts that target that viewer type.",
+            "searchPhrases": [
+              "how the model is represented",
+              "decision rule in operations and supply chains",
+              "the model decision rule specification"
+            ],
+            "formal": "Decision rule: The agency can reduce the queue size by bidding higher to increase the probability of winning, or it can limit the number of additional new ad contracts that target that viewer type.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We operationalize this second option by choosing a capacity limit on the impression queue for each viewer and campaign type."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. The Model",
+                "equation": "",
+                "quote": "The agency can reduce the queue size by bidding higher to increase the probability of winning, or it can limit the number of additional new ad contracts that target that viewer type."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Queueing: “The agency can reduce the queue size by bidding higher to increase the probability of winning, or it”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Contract design as “contracting”: “The agency can reduce the queue size by bidding higher to increase the probability of winning, or it”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-notation",
+            "label": "Model Notation",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "There are V distinct viewer types and N ad-campaign types that are defined by their unique attributes.",
+            "searchPhrases": [
+              "how model notation is represented",
+              "information available to the decision maker in operations and supply chains",
+              "model notation information available to the decision maker specification"
+            ],
+            "formal": "Information structure: There are V distinct viewer types and N ad-campaign types that are defined by their unique attributes.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "There are V distinct viewer types and N ad-campaign types that are defined by their unique attributes.",
+              "A campaign type is defined by the campaigns that share common parameters, which will be discussed in Section 4."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Model Notation",
+                "equation": "",
+                "quote": "There are V distinct viewer types and N ad-campaign types that are deﬁned by their unique attributes."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “There are V distinct viewer types and N ad-campaign types that are defined by their unique attributes.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "expected-profit-for-multiple-campaigns",
+            "label": "Expected Profit for Multiple Campaigns",
+            "role": "objective",
+            "concepts": [
+              "waiting-cost"
+            ],
+            "explanation": "The delay cost per transition is proportional to the length of time τ until the next transition—that is, the arrival of a viewer or a new ad campaign.",
+            "searchPhrases": [
+              "how expected profit for multiple campaigns is represented",
+              "modeled objective in operations and supply chains",
+              "expected profit for multiple campaigns modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Because ai is the state just after a transition takes place, the expected delay cost for campaign i until the next transition is ci(ai)E[τ], where E[τ] 1 λ+μ."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Expected Profit for Multiple Campaigns",
+                "equation": "",
+                "quote": "The delay cost per transition is proportional to the length of time τ until the next transition—that is, the arrival of a viewer or a new ad campaign."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "waiting-cost",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Waiting cost as “delay cost”: “delay cost”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "multiple-campaign-formulation",
+            "label": "Multiple-Campaign Formulation",
+            "role": "process",
+            "concepts": [
+              "waiting-cost"
+            ],
+            "explanation": "The first term in the second line of (2) gives the expected profit for a new campaign arrival, and the second term computes the expected delay cost until the next transition.",
+            "searchPhrases": [
+              "how multiple-campaign formulation is represented",
+              "system process in operations and supply chains",
+              "multiple-campaign formulation system process specification"
+            ],
+            "formal": "Process relation: The first term in the second line of (2) gives the expected profit for a new campaign arrival, and the second term computes the expected delay cost until the next transition.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If ri −ΔiWt(a) < 0, then (3) has no positive solution, and the optimal bid is zero for campaign type i, with wi 0.",
+              "Suppose the ad agency optimizes each campaign type i separately.",
+              "Then, each campaign i would observe only the state ai, and not the states or bids of the other campaign types."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4. Multiple-Campaign Formulation",
+                "equation": "",
+                "quote": "The ﬁrst term in the second line of (2) gives the expected proﬁt for a new campaign arrival, and the second term computes the expected delay cost until the next transition."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "waiting-cost",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Waiting cost as “delay cost”: “the second term computes the expected delay cost until the next transition.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "heuristic-solution",
+            "label": "Heuristic Solution",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "With multiple campaigns, the Heuristic Solution (4) results in a different solution from (3) because of the term ΔW1 i,t−1(ai).",
+            "searchPhrases": [
+              "how heuristic solution is represented",
+              "solution algorithm in operations and supply chains",
+              "heuristic solution solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose the ad agency optimizes each campaign type i separately.",
+              "However, this problem has a very large state space, because each decision depends on all the queue lengths a [ai]1≤i≤N, as well as the time period t.",
+              "Then, each campaign i would observe only the state ai, and not the states or bids of the other campaign types."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.3. Heuristic Solution",
+                "equation": "",
+                "quote": "With multiple campaigns, the Heuristic Solution (4) results in a different solution from (3) because of the term ΔW1 i,t−1(ai)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “With multiple campaigns, the Heuristic Solution (4) results in a different solution from (3) because of the term”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-optimal-steady-state-policies",
+            "label": "The Optimal Steady-State Policies",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "In this section, we solve for the optimal steady-state policies for one campaign type.",
+            "searchPhrases": [
+              "how the optimal steady-state policies is represented",
+              "decision-relevant state in operations and supply chains",
+              "the optimal steady-state policies decision-relevant state specification"
+            ],
+            "formal": "State definition: In this section, we solve for the optimal steady-state policies for one campaign type.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that in steady state, all bids are such that wa > 0 for a ≥1."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.5. The Optimal Steady-State Policies",
+                "equation": "",
+                "quote": "In this section, we solve for the optimal steady-state policies for one campaign type."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “In this section, we solve for the optimal steady-state policies for one campaign type.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "general-dynamic-programming-formulation",
+        "name": "General Dynamic Programming Formulation",
+        "kind": "alternative",
+        "relation": "This is an alternative to Multiple-Campaign Formulation.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "multiple-campaign-formulation"
+          }
+        ],
+        "summary": "The first term in the second line of (2) gives the expected profit for a new campaign arrival, and the second term computes the expected delay cost until the next transition.",
+        "objects": [
+          "State space"
+        ],
+        "inputs": [
+          "The arrival rates",
+          "Random times",
+          "The states",
+          "Unit time",
+          "The next viewer type j for each j"
+        ],
+        "decisions": [
+          "Target that viewer type",
+          "The optimal pricing",
+          "The optimal bid"
+        ],
+        "assumptions": [
+          "Truncating the impressions for one viewer type in a given campaign does not affect the sij for the other viewer types",
+          "The likelihood of underdelivery to a campaign is not too large",
+          "The rates are stationary",
+          "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "General Dynamic Programming Formulation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "state space",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The arrival rates",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Academic/practical relevance: Determining a rigorous solution methodology is complicated by uncertainties in the arrival rates of viewers and campaigns, as well as uncertainty in the outcomes of bids on the ad exchange.",
+                "matchedText": "the arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random times",
+              "source": {
+                "type": "section",
+                "section": "The Transition Probabilities",
+                "page": 6,
+                "sectionIndex": 11,
+                "sentence": 1,
+                "quote": "This system is a continuous-time Markov process that has integer state changes occurring at random times.",
+                "matchedText": "random times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The states",
+              "source": {
+                "type": "section",
+                "section": "Heuristic Solution",
+                "page": 8,
+                "sectionIndex": 15,
+                "sentence": 8,
+                "quote": "Then, each campaign i would observe only the state ai, and not the states or bids of the other campaign types.",
+                "matchedText": "the states",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unit time",
+              "source": {
+                "type": "section",
+                "section": "Sensitivity Analysis of the Optimal Solution",
+                "page": 10,
+                "sectionIndex": 18,
+                "sentence": 11,
+                "quote": "unit time",
+                "matchedText": "unit time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The next viewer type j for each j",
+              "source": {
+                "type": "section",
+                "section": "The Transition Probabilities",
+                "page": 6,
+                "sectionIndex": 11,
+                "sentence": 17,
+                "quote": "the next viewer type j for each j",
+                "matchedText": "the next viewer type j for each j",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Target that viewer type",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 8,
+                "sentence": 11,
+                "quote": "The agency can reduce the queue size by bidding higher to increase the probability of winning, or it can limit the number of additional new ad contracts that target that viewer type",
+                "matchedText": "target that viewer type",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The optimal pricing",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 31,
+                "sentence": 21,
+                "quote": "the optimal pricing",
+                "matchedText": "the optimal pricing",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The optimal bid",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 8,
+                "sentence": 13,
+                "quote": "Our model jointly determines the optimal bid for the next viewer and which campaign should receive the viewer if the bid is successful.",
+                "matchedText": "the optimal bid",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Truncating the impressions for one viewer type in a given campaign does not affect the sij for the other viewer types",
+              "source": {
+                "type": "section",
+                "section": "Model Notation",
+                "page": 5,
+                "sectionIndex": 32,
+                "sentence": 17,
+                "quote": "We assume that truncating the impressions for one viewer type in a given campaign does not affect the sij for the other viewer types.",
+                "matchedText": "truncating the impressions for one viewer type in a given campaign does not affect the sij for the other viewer types.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The likelihood of underdelivery to a campaign is not too large",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 31,
+                "sentence": 8,
+                "quote": "Deza et al. (2015) extend these results by considering a chance constraint to ensure that the likelihood of underdelivery to a campaign is not too large.",
+                "matchedText": "the likelihood of underdelivery to a campaign is not too large",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The rates are stationary",
+              "source": {
+                "type": "section",
+                "section": "The Transition Probabilities",
+                "page": 6,
+                "sectionIndex": 1,
+                "sentence": 16,
+                "quote": "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary.",
+                "matchedText": "the rates are stationary.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary",
+              "source": {
+                "type": "section",
+                "section": "The Transition Probabilities",
+                "page": 6,
+                "sectionIndex": 1,
+                "sentence": 16,
+                "quote": "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary.",
+                "matchedText": "We note that μj and λi could also depend on t, but to simplify the discussion, we will assume that the rates are stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_completed_from_source",
+            "message": "Filled assumptions from literal abstract or source-section phrases.",
+            "category": "assumptions",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Lation for solving the multicampaign problem in the paign types determines the bid b and the index I of the campaign type to receive the next viewer, for each t we develop a heuristic solution method that solves the racy of the heuristic.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "General Dynamic Programming Formulation",
+          "page": 7,
+          "sentence": 25
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.2. General Dynamic Programming Formulation",
+            "equation": "",
+            "quote": "The ﬁrst term in the second line of (2) gives the expected proﬁt for a new campaign arrival, and the second term computes the expected delay cost until the next transition."
+          }
+        ],
+        "components": [
+          {
+            "id": "general-dynamic-programming-formulation",
+            "label": "General Dynamic Programming Formulation",
+            "role": "process",
+            "concepts": [
+              "dynamic-programming",
+              "waiting-cost"
+            ],
+            "explanation": "The first term in the second line of (2) gives the expected profit for a new campaign arrival, and the second term computes the expected delay cost until the next transition.",
+            "searchPhrases": [
+              "how general dynamic programming formulation is represented",
+              "system process in operations and supply chains",
+              "general dynamic programming formulation system process specification"
+            ],
+            "formal": "Process relation: The first term in the second line of (2) gives the expected profit for a new campaign arrival, and the second term computes the expected delay cost until the next transition.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If ri −ΔiWt(a) < 0, then (3) has no positive solution, and the optimal bid is zero for campaign type i, with wi 0."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.2. General Dynamic Programming Formulation",
+                "equation": "",
+                "quote": "The ﬁrst term in the second line of (2) gives the expected proﬁt for a new campaign arrival, and the second term computes the expected delay cost until the next transition."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Dynamic programming: “Dynamic programming”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "waiting-cost",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Waiting cost as “delay cost”: “the second term computes the expected delay cost until the next transition.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "f5de73d757a7cccfbe9c9fdf77ec86fd9fa2d93175f6df26601e2ab8e3f9528e",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "9d844d9b3446bdeb1c3ca560670cc81e60f30beb16418e48fa0c66d7f3b6e7a4",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-1142/9d844d9b3446bdeb1c3ca560670cc81e60f30beb16418e48fa0c66d7f3b6e7a4.json",
+      "extractionQaDecisionSha256": "b4ad85422609d1360edeaea0de0e435ee86020ea3083ce8595e09cbfaf95a66f",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

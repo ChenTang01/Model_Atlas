@@ -1,0 +1,746 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2020-3799",
+  "sourcePdfSha256": "561740a8dca01e64eebcafe3e013dd79f93c862abdb1bd455ddcc5a82fed23bc",
+  "extractionPagesSha256": "047ac820fc532d647cf5c67b2c904c77d5beef6cb99786c348ae00c6bfcb2f53",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "2547b060951906121935e096881fad8e579c8c881620e7ea4ef17345a0f495a6",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "1883518f9d6bbba8454dae4b2de4ae76d31a6a60d1ee257119b72e181aeb7520",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2020-3799/1883518f9d6bbba8454dae4b2de4ae76d31a6a60d1ee257119b72e181aeb7520.json",
+  "extractionQaDecisionSha256": "254cbe7070ec8603af15eaa5030e5f1bd4664f6b79e3c5eefe0c6accd3abc693",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2020-3799",
+    "question": "How should algorithms for inventory systems with fixed costs be learned?",
+    "overview": "The model considers a periodic-review single-product inventory system with fixed cost under censored demand. Under full demand distributional information, it is well known that the celebrated (s, S) policy is optimal. In this paper, we assume the firm does not know the demand distribution a priori and makes adaptive inventory ordering decisions in each period based only on the past sales (a.k.a. censored demand).",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        10
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Marrying Stochastic Gradient Descent with Bandits model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers a periodic-review single-product inventory system with fixed cost under censored demand. Under full demand distributional information, it is well known that the celebrated (s, S) policy is optimal. In this paper, we assume the firm does not know the demand distribution a priori and makes adaptive inventory ordering decisions in each period based only on the past sales (a.k.a. censored demand).",
+        "objects": [
+          "The firm",
+          "The decision maker",
+          "Retailers",
+          "Manager"
+        ],
+        "inputs": [
+          "The exact demand",
+          "Historical information",
+          "The length and the cost of the ith cycle, respectively",
+          "The on-hand inventory, denoted by xn",
+          "The observed sales"
+        ],
+        "decisions": [
+          "Cost K and a variable ordering cost cqt",
+          "Target level",
+          "Cost (for placing the order)",
+          "Quantity and the per-unit ordering cost"
+        ],
+        "assumptions": [
+          "β ≥0 be the warehouse storage capacity so that the after-ordering inventory level is capped by β."
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The firm",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "In this paper, we assume the firm does not know the demand distribution a priori and makes adaptive inventory ordering decisions in each period based only on the past sales (a.k.a. censored demand).",
+                "matchedText": "the firm",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "Main Ideas of SAAP",
+                "page": 10,
+                "sectionIndex": 13,
+                "sentence": 23,
+                "quote": "the decision maker",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Retailers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 7,
+                "quote": "Many major retailers in the United States, such as Walmart and Amazon, have invested substantial resources in in- ventory and supply chain optimization in recent years.",
+                "matchedText": "retailers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Manager",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 37,
+                "quote": "In the lost-sales model, the information available to the inventory manager is further limited because she cannot ob- serve the realized demand but can only observe the sales quantity, which is the smaller of the on-hand inventory level and the realized demand.",
+                "matchedText": "manager",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The exact demand",
+              "source": {
+                "type": "section",
+                "section": "System Dynamics",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 10,
+                "quote": "the exact demand",
+                "matchedText": "the exact demand",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Historical information",
+              "source": {
+                "type": "section",
+                "section": "Objective and the Notion of Regret",
+                "page": 5,
+                "sectionIndex": 7,
+                "sentence": 1,
+                "quote": "Let F t denote the set of all historical information collected up to the beginning of period t, which includes the past censored demand observations and the past ordering decisions.",
+                "matchedText": "historical information",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The length and the cost of the ith cycle, respectively",
+              "source": {
+                "type": "section",
+                "section": "A (δ, S) Learning Algorithm",
+                "page": 6,
+                "sectionIndex": 9,
+                "sentence": 10,
+                "quote": "the length and the cost of the ith cycle, respectively",
+                "matchedText": "the length and the cost of the ith cycle, respectively",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The on-hand inventory, denoted by xn",
+              "source": {
+                "type": "section",
+                "section": "Description of the (δ, S) Learning Algorithm",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 26,
+                "quote": "At the beginning of each epoch n, we observe the on-hand inventory, denoted by xn.",
+                "matchedText": "the on-hand inventory, denoted by xn",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The observed sales",
+              "source": {
+                "type": "section",
+                "section": "Main Ideas of SAAP",
+                "page": 10,
+                "sectionIndex": 13,
+                "sentence": 21,
+                "quote": "Because Sn jn is the largest active S and ¯δn is the largest active δ, the algorithm can use the observed sales (collected in the while-loop) to simulate the cycle pseudo cost for every policy in the active set.",
+                "matchedText": "the observed sales",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Cost K and a variable ordering cost cqt",
+              "source": {
+                "type": "section",
+                "section": "System Dynamics",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 12,
+                "quote": "cost K and a variable ordering cost cqt",
+                "matchedText": "cost K and a variable ordering cost cqt",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Target level",
+              "source": {
+                "type": "section",
+                "section": "Properties of the Transformed Objective",
+                "page": 7,
+                "sectionIndex": 11,
+                "sentence": 7,
+                "quote": "To establish the smoothness of V(δ, S), we prove a nontrivial technical result, which asserts that the hitting time of an ascending random walk is Lipschitz in the hitting target level",
+                "matchedText": "target level",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Cost (for placing the order)",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 17,
+                "quote": "The cost incurred by the ﬁrm is assessed at the end of each period, which includes the ordering cost (for placing the order)",
+                "matchedText": "cost (for placing the order)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Quantity and the per-unit ordering cost",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 19,
+                "quote": "The variable cost is the product of the ordering quantity and the per-unit ordering cost",
+                "matchedText": "quantity and the per-unit ordering cost",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "β ≥0 be the warehouse storage capacity so that the after-ordering inventory level is capped by β.",
+              "source": {
+                "type": "section",
+                "section": "System with Fixed Cost",
+                "page": 5,
+                "quote": "β ≥0 be the warehouse storage capacity so that the after-ordering inventory level is capped by β.",
+                "matchedText": "β ≥0 be the warehouse storage capacity so that the after-ordering inventory level is capped by β.",
+                "derivation": "literal-component-condition"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_completed_from_component_source",
+            "category": "assumptions",
+            "message": "The assumptions field was completed from a literal source anchor retained by the component map."
+          }
+        ],
+        "method": "The paper develops a queueing system argument to bound the loss as a result of this discrepancy between the suggested SGD policy and the implemented learning policy.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Main Results and Contributions",
+          "page": 3,
+          "sentence": 37
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "2.1. System Dynamics",
+            "equation": "",
+            "quote": "If the ﬁrm places a positive order quantity (i.e., qt > 0), it incurs a ﬁxed ordering cost K and a variable ordering cost cqt."
+          }
+        ],
+        "components": [
+          {
+            "id": "system-with-fixed-cost",
+            "label": "System with Fixed Cost",
+            "role": "decision",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "β ≥0 be the warehouse storage capacity so that the after-ordering inventory level is capped by β.",
+            "searchPhrases": [
+              "how system with fixed cost is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "system with fixed cost decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "β ≥0 be the warehouse storage capacity so that the after-ordering inventory level is capped by β.",
+              "Note that even for the “nonlearning” problem (where the exact demand distribution is available) adding a positive order lead time to a lost-sales model with no fixed cost makes the characterization of optimal policies intractable (Zipkin 2008), let alone with fixed costs.",
+              "The order lead time is assumed to be zero."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "System with Fixed Cost",
+                "equation": "",
+                "quote": "β ≥0 be the warehouse storage capacity so that the after-ordering inventory level is capped by β."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Inventory: “storage capacity so that the after-ordering Inventory level is capped by β.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "system-dynamics",
+            "label": "System Dynamics",
+            "role": "decision",
+            "concepts": [
+              "process-dynamics",
+              "fixed-ordering-cost"
+            ],
+            "explanation": "If the firm places a positive order quantity (i.e., qt > 0), it incurs a fixed ordering cost K and a variable ordering cost cqt.",
+            "searchPhrases": [
+              "how system dynamics is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "system dynamics decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If the firm places a positive order quantity (i.e., qt > 0), it incurs a fixed ordering cost K and a variable ordering cost cqt.",
+              "The ending on-hand inventory level (after receiving the order qt) becomes yt xt + qt, and also yt ≤β.",
+              "At the beginning of each period t, the firm observes the beginning on-hand inventory level xt.",
+              "Because demand is censored, the firm only observes sales quantity min(dt, yt)."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.1. System Dynamics",
+                "equation": "",
+                "quote": "If the ﬁrm places a positive order quantity (i.e., qt > 0), it incurs a ﬁxed ordering cost K and a variable ordering cost cqt."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Process dynamics as “system dynamics”: “If the firm places a positive order quantity (i.e., qt > 0), it incurs a fixed ordering cost”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "fixed-ordering-cost",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Fixed ordering cost: “Fixed ordering cost”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "clairvoyant-optimal-s-policy-and-assumptions",
+            "label": "Clairvoyant Optimal (δ, S) Policy and Assumptions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "To set a baseline for seeking a good policy π, we first characterize the clairvoyant optimal policy when the demand distribution D is given a priori.",
+            "searchPhrases": [
+              "how clairvoyant optimal (δ, s) policy and assumptions is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "clairvoyant optimal (δ, s) policy and assumptions decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let F t denote the set of all historical information collected up to the beginning of period t, which includes the past censored demand observations and the past ordering decisions."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.3. Clairvoyant Optimal (δ, S) Policy and Assumptions",
+                "equation": "",
+                "quote": "To set a baseline for seeking a good policy π, we ﬁrst characterize the clairvoyant optimal policy when the demand distribution D is given a priori."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “To set a baseline for seeking a good policy π, we first characterize the clairvoyant optimal policy when”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Historical information",
+                  "source": {
+                    "type": "section",
+                    "section": "Objective and the Notion of Regret",
+                    "page": 5,
+                    "sectionIndex": 7,
+                    "sentence": 1,
+                    "quote": "Let F t denote the set of all historical information collected up to the beginning of period t, which includes the past censored demand observations and the past ordering decisions.",
+                    "matchedText": "historical information",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "transforming-the-objective",
+            "label": "Transforming the Objective",
+            "role": "objective",
+            "concepts": [
+              "lost-sales",
+              "censored-demand"
+            ],
+            "explanation": "However, because of the censored demand, when lost sales occur during a cycle, the cycle cost H(δ, S) is not fully observable.",
+            "searchPhrases": [
+              "how transforming the objective is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "transforming the objective modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "However, because of the censored demand, when lost sales occur during a cycle, the cycle cost H(δ, S) is not fully observable.",
+              "Note that the censored part of the cost Ct(xt, qt, dt) in (1) is p(xt + qt −dt)−, which is not observable whenever a lost sale occurs.",
+              "This simple transformation is crucial for our analysis by observing that (a) the first term pdt is independent of any policy π, and (b) the second term p min{xt + qt, dt} is policy dependent but observable."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Transforming the Objective",
+                "equation": "",
+                "quote": "However, because of the censored demand, when lost sales occur during a cycle, the cycle cost H(δ, S) is not fully observable."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "lost-sales",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Lost sales: “Lost sales”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "censored-demand",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Censored demand: “Censored demand”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "properties-of-the-transformed-objective",
+            "label": "Properties of the Transformed Objective",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Now, we first bound the per-period pseudo cost.",
+            "searchPhrases": [
+              "how properties of the transformed objective is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "properties of the transformed objective modeled objective specification"
+            ],
+            "formal": "Objective relation: Now, we first bound the per-period pseudo cost.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Because G(δ, S) is the cycle pseudo cost and L(δ, S) is the cycle length, following Lemma 1, we immediately have |G(δ, S)/L(δ, S)| ≤γ."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2. Properties of the Transformed Objective",
+                "equation": "",
+                "quote": "Now, we ﬁrst bound the per-period pseudo cost."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Now, we first bound the per-period pseudo cost.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "description-of-the-s-learning-algorithm",
+            "label": "Description of the (δ, S) Learning Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The proposed learning (δ, S) algorithm is the first nonparametric learning algorithm for stochastic inventory systems with fixed costs.",
+            "searchPhrases": [
+              "how description of the (δ, s) learning algorithm is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "description of the (δ, s) learning algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For inventory gap δj, we initialize the target inventory level S1 j ∈[δj, β] arbitrarily.",
+              "We discretize the feasible region of inventory gap δ—namely, [0, β]—into an equal spacing set of J number of inventory gaps {δ1, . . . , δJ}, where δj jβ/J.",
+              "The algorithm maintains what we call an active set An that contains the favorable candidates for the optimal solution of δ at the beginning of the nth iteration."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.3. Description of the (δ, S) Learning Algorithm",
+                "equation": "",
+                "quote": "The proposed learning (δ, S) algorithm is the ﬁrst nonparametric learning algorithm for stochastic in- ventory systems with ﬁxed costs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "learning-algorithm",
+            "label": "Learning Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "By Theorem 3, given the total number of epochs N, our (δ, S) learning algorithm achieves O(log N̅̅̅ N √ ) regret.",
+            "searchPhrases": [
+              "how learning algorithm is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "learning algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "(20) Now, suppose the number of epoch N is unknown.",
+              "Now, suppose the number of epoch N is unknown."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "Learning Algorithm",
+                "equation": "",
+                "quote": "By Theorem 3, given the total number of epochs N, our (δ, S) learning algorithm achieves O(log N̅̅̅ N √ ) regret."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "561740a8dca01e64eebcafe3e013dd79f93c862abdb1bd455ddcc5a82fed23bc",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "1883518f9d6bbba8454dae4b2de4ae76d31a6a60d1ee257119b72e181aeb7520",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2020-3799/1883518f9d6bbba8454dae4b2de4ae76d31a6a60d1ee257119b72e181aeb7520.json",
+      "extractionQaDecisionSha256": "254cbe7070ec8603af15eaa5030e5f1bd4664f6b79e3c5eefe0c6accd3abc693",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

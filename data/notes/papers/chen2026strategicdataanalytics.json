@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "chen2026strategicdataanalytics",
+  "sourcePdfSha256": "9001547daacbafe6a2ebb7ab313e800064875645202282ca1a19f9917a4041bc",
+  "extractionPagesSha256": "7b490d1b7a5ddfa3d8ee129d33b4d7881c72116d3aca26f41c3b4e906490f353",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "58db977853c30c46a609a244c0d1df9328feb838c4fe736e3cc640ac3a34fa33",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "4a6a1872858fc7d367e81540f51186df36e328a2679e16d31c260a5e7129f342",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/chen2026strategicdataanalytics/4a6a1872858fc7d367e81540f51186df36e328a2679e16d31c260a5e7129f342.json",
+  "extractionQaDecisionSha256": "0cb429d42497bdb7eec949e241ee85d74dbed3d2a8a6b3aaa8ee48f567afa830",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "chen2026strategicdataanalytics",
+    "question": "How should a retailer design demand analytics and information sharing when its upstream supplier can use the information to set wholesale terms and encroach through a direct channel?",
+    "overview": "The retailer commits to a signal/data-analytics policy before a sequential supplier-encroachment game. Bayesian persuasion is used to choose information while wholesale price and channel quantities are solved as strategic best responses.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        9,
+        10,
+        12
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Supply chains and contracts",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The retailer commits to a signal/data-analytics policy before a sequential supplier-encroachment game. Bayesian persuasion is used to choose information while wholesale price and channel quantities are solved as strategic best responses.",
+        "objects": [
+          "Downstream retailer",
+          "Upstream supplier with a direct channel"
+        ],
+        "inputs": [
+          "The initial demand forecast",
+          "The supply",
+          "The market state",
+          "A demand forecast",
+          "The ratios"
+        ],
+        "decisions": [
+          "The retailer chooses signal accuracy or posterior distribution",
+          "The retailer discloses or privately uses the signal depending on regime",
+          "The supplier first chooses wholesale price and later chooses direct-channel quantity",
+          "Between those supplier decisions, the retailer chooses its order quantity q_R"
+        ],
+        "assumptions": [
+          "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive",
+          "The retailer can commit ex ante to an analytics policy; under the revelation argument, a binary signal is without loss for the binary state and satisfies Bayes plausibility",
+          "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6",
+          "The learning algorithm satisfies delta_H>=1-delta_L, so a positive prediction is at least as likely in the high state",
+          "All continuation-game primitives other than the demand state/signal are common knowledge"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Downstream retailer",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "downstream retailer"
+              }
+            },
+            {
+              "value": "Upstream supplier with a direct channel",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "upstream supplier with a direct channel"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The initial demand forecast",
+              "source": {
+                "type": "section",
+                "section": "Model Setting",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 5,
+                "quote": "the initial demand forecast",
+                "matchedText": "the initial demand forecast",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The supply",
+              "source": {
+                "type": "section",
+                "section": "Model Setting",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 5,
+                "quote": "the supply",
+                "matchedText": "the supply",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The market state",
+              "source": {
+                "type": "section",
+                "section": "Model Setting",
+                "sectionIndex": 4,
+                "page": 5,
+                "quote": "The market potential ˜a is uncertain and depends on the market state i ∈Ω¢{H,L}."
+              }
+            },
+            {
+              "value": "A demand forecast",
+              "source": {
+                "type": "section",
+                "section": "Channel Competition and Supplier’s Wholesale Pricing Decision",
+                "sectionIndex": 8,
+                "page": 6,
+                "quote": "a demand forecast",
+                "matchedText": "a demand forecast",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The ratios",
+              "source": {
+                "type": "section",
+                "section": "Research Questions and Methodology",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 9,
+                "quote": "In practice, the signaling accuracy is measured by the ratios of type I error (false positive) and type II error (false negative) when using a classification algorithm to predict a binary result.",
+                "matchedText": "the ratios",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The retailer chooses signal accuracy or posterior distribution",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the retailer chooses signal accuracy or posterior distribution"
+              }
+            },
+            {
+              "value": "The retailer discloses or privately uses the signal depending on regime",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the retailer discloses or privately uses the signal depending on regime"
+              }
+            },
+            {
+              "value": "The supplier first chooses wholesale price and later chooses direct-channel quantity",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the supplier first chooses wholesale price and later chooses direct-channel quantity"
+              }
+            },
+            {
+              "value": "Between those supplier decisions, the retailer chooses its order quantity q_R",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "between those supplier decisions, the retailer chooses its order quantity q_R"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive."
+              }
+            },
+            {
+              "value": "The retailer can commit ex ante to an analytics policy; under the revelation argument, a binary signal is without loss for the binary state and satisfies Bayes plausibility",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer can commit ex ante to an analytics policy; under the revelation argument, a binary signal is without loss for the binary state and satisfies Bayes plausibility."
+              }
+            },
+            {
+              "value": "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6."
+              }
+            },
+            {
+              "value": "The learning algorithm satisfies delta_H>=1-delta_L, so a positive prediction is at least as likely in the high state",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The learning algorithm satisfies delta_H>=1-delta_L, so a positive prediction is at least as likely in the high state."
+              }
+            },
+            {
+              "value": "All continuation-game primitives other than the demand state/signal are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "All continuation-game primitives other than the demand state/signal are common knowledge."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected information entry: merged_setup_sentences.",
+            "category": "inputs",
+            "field": "information",
+            "reason": "merged_setup_sentences"
+          }
+        ],
+        "method": "By backward induction, we first derive the equilibrium of the signaling game and then determine the retailer’s optimal data analytics strategy.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Accuracy and Encroachment Cost",
+          "page": 10,
+          "sentence": 7
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 10,
+            "section": "Accuracy and Encroachment Cost",
+            "equation": "",
+            "quote": "By back­ ward induction, we first derive the equilibrium of the signaling game and then determine the retailer’s opti­ mal data analytics strategy."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The retailer chooses signal accuracy or posterior distribution the retailer discloses or privately uses the signal depending on regime the supplier first chooses wholesale price and later chooses direct-channel quantity between those supplier decisions, the retailer chooses its order quantity q_R",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in supply chains and contracts",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "A_h, A_l",
+                "meaning": "posterior mean demand forecasts following positive and negative predictions · a_L \\le A_l \\le \\mu \\le A_h \\le a_H",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_R(A_s)",
+                "meaning": "retailer's equilibrium continuation profit when the shared forecast is A_s · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau A_h+(1-\\tau)A_l=\\mu",
+                "meaning": "Bayes-plausibility condition requiring posterior means to average to the prior · equality constraint",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive.",
+              "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6.",
+              "The retailer can commit ex ante to an analytics policy; under the revelation argument, a binary signal is without loss for the binary state and satisfies Bayes plausibility."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.3. Timeline",
+                "equation": "",
+                "quote": "In the second stage, the supply chain firms make operational decisions: the supplier determines a whole­ sale price w, and the retailer submits its order quantity qR, followed by the supplier’s decision on the direct selling quantity qS."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "demand-forecasting"
+            ],
+            "explanation": "Backward induction in the supplier-retailer quantity game; Bayesian-persuasion analysis for shared data; signaling-game analysis with the intuitive criterion for separate data; and comparison of the two governance regimes.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in supply chains and contracts",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Backward induction in the supplier-retailer quantity game; Bayesian-persuasion analysis for shared data; signaling-game analysis with the intuitive criterion for separate data; and comparison of the two governance regimes.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive.",
+              "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6.",
+              "For the separate-platform signaling analysis, the paper focuses on sufficiently high c so the low type separates without order distortion; among separating equilibria it selects the one surviving the intuitive criterion."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Shared Data Platform",
+                "equation": "",
+                "quote": "Then, we step back­ ward to consider the retailer’s optimal decision on the accuracy (δH,δL) of a classification algorithm that gov­ erns the distribution of the demand forecasts (Ah,Al)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "demand-forecasting",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Demand forecasting: “Then, we step backward to consider the retailer’s optimal decision on the accuracy (δH,δL) of a classification algorithm”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The retailer chooses the probabilities and posterior means generated by its analytics policy to maximize expected continuation profit subject to Bayes plausibility.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in supply chains and contracts",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_{A_h,A_l}\\;\\tau\\pi_R(A_h)+(1-\\tau)\\pi_R(A_l)\\quad\\text{s.t. }\\tau A_h+(1-\\tau)A_l=\\mu,\\;a_L\\le A_l\\le\\mu\\le A_h\\le a_H",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "A_h, A_l",
+                "meaning": "posterior mean demand forecasts following positive and negative predictions · a_L \\le A_l \\le \\mu \\le A_h \\le a_H",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_R(A_s)",
+                "meaning": "retailer's equilibrium continuation profit when the shared forecast is A_s · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau",
+                "meaning": "probability that the analytics system produces the positive/high forecast · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu",
+                "meaning": "prior mean market demand · [a_L,a_H]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_L, a_H",
+                "meaning": "low and high realizations of market potential · a_L \\le a_H",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau A_h+(1-\\tau)A_l=\\mu",
+                "meaning": "Bayes-plausibility condition requiring posterior means to average to the prior · equality constraint",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive.",
+              "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6.",
+              "The bright side of strategic data analytics becomes more salient as the direct selling cost increases, indicating that the supplier and the retailer have more aligned interests in biased data analytics.",
+              "The retailer can commit ex ante to an analytics policy; under the revelation argument, a binary signal is without loss for the binary state and satisfies Bayes plausibility."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.3. Implications of Strategic Data Analytics",
+                "equation": "(6)–(8)",
+                "quote": "The bright side of strategic data analytics becomes more salient as the direct selling cost increases, indicating that the supplier and the retailer have more aligned interests in biased data analytics."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The bright side of strategic data analytics becomes more salient as the direct selling cost increases, indicating that”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "signaling",
+              "private-information"
+            ],
+            "explanation": "The retailer first commits to analytics accuracy/information design. After a prediction is learned, the parties update demand beliefs; the supplier sets wholesale price w, the retailer then orders q_R, and the supplier finally chooses direct-channel quantity q_S before demand realizes. Under a separate platform, the retailer's order also signals its privately observed demand state. information-design commitment supplier-retailer sequential game",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in supply chains and contracts",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The retailer first commits to analytics accuracy/information design.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi_R(A_s)",
+                "meaning": "retailer's equilibrium continuation profit when the shared forecast is A_s · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau",
+                "meaning": "probability that the analytics system produces the positive/high forecast · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_L, a_H",
+                "meaning": "low and high realizations of market potential · a_L \\le a_H",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau A_h+(1-\\tau)A_l=\\mu",
+                "meaning": "Bayes-plausibility condition requiring posterior means to average to the prior · equality constraint",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive.",
+              "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6.",
+              "In the second stage, a signaling game takes place, in which the retailer’s order quantity may disclose its private demand information to influence the supplier’s encroachment decision.",
+              "The retailer can commit ex ante to an analytics policy; under the revelation argument, a binary signal is without loss for the binary state and satisfies Bayes plausibility."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "Accuracy and Encroachment Cost",
+                "equation": "",
+                "quote": "In the second stage, a signaling game takes place, in which the retailer’s order quantity may disclose its private demand information to influ­ ence the supplier’s encroachment decision."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Signaling: “In the second stage, a Signaling game takes place, in which the retailer’s order”.",
+                "conditionRefs": [
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "private-information",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Private information: “In the second stage, a signaling game takes place, in which the retailer’s order quantity may disclose its”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-design-optimum-with-backward-inducted-continuation-e",
+            "label": "Information-design optimum with backward-inducted continuation equilibria",
+            "role": "interaction",
+            "concepts": [
+              "signaling"
+            ],
+            "explanation": "The model's equilibrium concept is Information-design optimum with backward-inducted continuation equilibria; in the separate-data regime, a signaling equilibrium surviving the intuitive criterion. For a shared platform, wholesale price, retailer order, and supplier direct quantity are solved by backward induction for each posterior before the retailer chooses a Bayes-plausible information structure. Propositions 1-4 on PDF pp. 8-9 characterize accuracy, deliberate forecast bias, and channel outcomes. For a separate platform, the retailer privately observes the state and its order enters a signaling game; Lemmas 4-6 and Proposition 5 on PDF pp. 10-11 use the separating equilibrium surviving the intuitive criterion, and Propositions 6-7 on PDF p. 12 compare platform governance.",
+            "searchPhrases": [
+              "how information-design optimum with backward-inducted continuation equilibria is represented",
+              "strategic response in supply chains and contracts",
+              "information-design optimum with backward-inducted continuation equilibria strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Information-design optimum with backward-inducted continuation equilibria; in the separate-data regime, a signaling equilibrium surviving the intuitive criterion.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "A_h, A_l",
+                "meaning": "posterior mean demand forecasts following positive and negative predictions · a_L \\le A_l \\le \\mu \\le A_h \\le a_H",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_R(A_s)",
+                "meaning": "retailer's equilibrium continuation profit when the shared forecast is A_s · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau",
+                "meaning": "probability that the analytics system produces the positive/high forecast · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_L, a_H",
+                "meaning": "low and high realizations of market potential · a_L \\le a_H",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau A_h+(1-\\tau)A_l=\\mu",
+                "meaning": "Bayes-plausibility condition requiring posterior means to average to the prior · equality constraint",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive.",
+              "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6.",
+              "The retailer can commit ex ante to an analytics policy; under the revelation argument, a binary signal is without loss for the binary state and satisfies Bayes plausibility."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "Accuracy and Encroachment Cost",
+                "equation": "",
+                "quote": "By back­ ward induction, we first derive the equilibrium of the signaling game and then determine the retailer’s opti­ mal data analytics strategy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Signaling: “first derive the equilibrium of the Signaling game and then determine the retailer’s optimal data”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "private-information"
+            ],
+            "explanation": "In shared analytics both channel parties receive the designed signal; in separate analytics the retailer can possess more accurate private information subject to Bayes-plausibility constraints.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: In shared analytics both channel parties receive the designed signal; in separate analytics the retailer can possess more accurate private information subject to Bayes-plausibility constraints.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi_R(A_s)",
+                "meaning": "retailer's equilibrium continuation profit when the shared forecast is A_s · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau",
+                "meaning": "probability that the analytics system produces the positive/high forecast · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu",
+                "meaning": "prior mean market demand · [a_L,a_H]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\tau A_h+(1-\\tau)A_l=\\mu",
+                "meaning": "Bayes-plausibility condition requiring posterior means to average to the prior · equality constraint",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Market potential is binary with common prior mean mu, inverse demand is p=a-tilde-Q, and a_L>mu/2 keeps the retailer's baseline quantity positive.",
+              "The retailer's reselling cost is zero, the supplier's direct-selling marginal cost is c, and the core analysis uses c<=5a_L/6.",
+              "Interestingly, compared with strategic data analytics implemented on a shared platform, the retailer’s access to private information can improve the accuracy of data analytics.",
+              "The retailer can commit ex ante to an analytics policy; under the revelation argument, a binary signal is without loss for the binary state and satisfies Bayes plausibility."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.2. Data Analytics Strategy on Separate Platform",
+                "equation": "",
+                "quote": "Interestingly, compared with strategic data analytics implemented on a shared platform, the retailer’s access to private information can improve the accuracy of data analytics."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "private-information",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Private information: “shared platform, the retailer’s access to Private information can improve the accuracy of data analytics.”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "9001547daacbafe6a2ebb7ab313e800064875645202282ca1a19f9917a4041bc",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "4a6a1872858fc7d367e81540f51186df36e328a2679e16d31c260a5e7129f342",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/chen2026strategicdataanalytics/4a6a1872858fc7d367e81540f51186df36e328a2679e16d31c260a5e7129f342.json",
+      "extractionQaDecisionSha256": "0cb429d42497bdb7eec949e241ee85d74dbed3d2a8a6b3aaa8ee48f567afa830",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

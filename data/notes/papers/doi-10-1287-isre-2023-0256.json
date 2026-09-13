@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-isre-2023-0256",
+  "sourcePdfSha256": "5ac1e0e0fe1d78b6308db5ce903720d8f7cd2a585e9d12a7fc72609c7af8e2e9",
+  "extractionPagesSha256": "b9ba8d67863fb91b43b72051f9d809e3794bb19e1d496c6474e1352528206e62",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "b5a5c0a093d47c24c60babb55ddf2da63901503cdbbfb9f44f78b3ffcd52a1df",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "5bf7317912f7a629fa7c41c17dec0a1af94627e8d3b0e8638b66513083c89531",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2023-0256/5bf7317912f7a629fa7c41c17dec0a1af94627e8d3b0e8638b66513083c89531.json",
+  "extractionQaDecisionSha256": "a131b8b7c959c84a7ee6f1cafa9f5401364138dcb0d1f8085b1c72f2f7d85dd0",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-isre-2023-0256",
+    "question": "How do cloud providers' and users' joint security investments, cloud usage, provider competition, and switching costs shape the long-run paths of cloud security, vulnerability, lock-in, and user welfare?",
+    "overview": "The paper is an infinite-horizon dynamic game between two competing cloud service providers and their users. Providers and users sequentially invest in security and users choose cloud usage conditional on Markov states; the paper characterizes a symmetric stationary Markov-perfect equilibrium with no-switching constraints.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        9,
+        10,
+        16,
+        20
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Dynamics of Shared Security in the Cloud model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper is an infinite-horizon dynamic game between two competing cloud service providers and their users. Providers and users sequentially invest in security and users choose cloud usage conditional on Markov states; the paper characterizes a symmetric stationary Markov-perfect equilibrium with no-switching constraints.",
+        "objects": [
+          "Cloud Service Provider 1",
+          "Cloud Service Provider 2",
+          "N users initially subscribed to each provider"
+        ],
+        "inputs": [
+          "Strategies condition on the Markov states rather than the full history",
+          "The numbers of users, state transition functions, cost and benefit functions, and security responsibilities are common knowledge",
+          "At the beginning of period t, players observe the incumbent CSP's accumulated vulnerability and security states (V_j,t-1,S_j,t-1)",
+          "The vulnerability of the target (CSP and users)",
+          "Unit cost"
+        ],
+        "decisions": [
+          "Each CSP chooses period security investment",
+          "Each user chooses period security investment",
+          "Each user chooses cloud-service usage",
+          "Users may stay with or switch from the incumbent CSP"
+        ],
+        "assumptions": [
+          "There are two CSPs and N=2n identical users, initially split evenly",
+          "Security and vulnerability aggregate additively in the baseline and depreciate geometrically",
+          "Attack probabilities p(V) and p_tilde(V) increase convexly in accumulated vulnerability",
+          "User and CSP security investment costs are linear in the baseline",
+          "The horizon is infinite, state pairs are finite, and players use stationary Markov strategies"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Cloud Service Provider 1",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "Cloud Service Provider 1"
+              }
+            },
+            {
+              "value": "Cloud Service Provider 2",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "Cloud Service Provider 2"
+              }
+            },
+            {
+              "value": "N users initially subscribed to each provider",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "n users initially subscribed to each provider"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Strategies condition on the Markov states rather than the full history",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Strategies condition on the Markov states rather than the full history."
+              }
+            },
+            {
+              "value": "The numbers of users, state transition functions, cost and benefit functions, and security responsibilities are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The numbers of users, state transition functions, cost and benefit functions, and security responsibilities are common knowledge."
+              }
+            },
+            {
+              "value": "At the beginning of period t, players observe the incumbent CSP's accumulated vulnerability and security states (V_j,t-1,S_j,t-1)",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "At the beginning of period t, players observe the incumbent CSP's accumulated vulnerability and security states (V_j,t-1,S_j,t-1)."
+              }
+            },
+            {
+              "value": "The vulnerability of the target (CSP and users)",
+              "source": {
+                "type": "section",
+                "section": "State Variables and Information",
+                "page": 8,
+                "sectionIndex": 5,
+                "sentence": 24,
+                "quote": "The proba­ bility of an attack is determined by the vulnerability of the target (CSP and users).",
+                "matchedText": "the vulnerability of the target (CSP and users)",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unit cost",
+              "source": {
+                "type": "section",
+                "section": "Payoffs",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 27,
+                "quote": "unit cost",
+                "matchedText": "unit cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each CSP chooses period security investment",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each CSP chooses period security investment"
+              }
+            },
+            {
+              "value": "Each user chooses period security investment",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each user chooses period security investment"
+              }
+            },
+            {
+              "value": "Each user chooses cloud-service usage",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each user chooses cloud-service usage"
+              }
+            },
+            {
+              "value": "Users may stay with or switch from the incumbent CSP",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "users may stay with or switch from the incumbent CSP subject to security-linked switching costs"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are two CSPs and N=2n identical users, initially split evenly",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "There are two CSPs and N=2n identical users, initially split evenly."
+              }
+            },
+            {
+              "value": "Security and vulnerability aggregate additively in the baseline and depreciate geometrically",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Security and vulnerability aggregate additively in the baseline and depreciate geometrically."
+              }
+            },
+            {
+              "value": "Attack probabilities p(V) and p_tilde(V) increase convexly in accumulated vulnerability",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Attack probabilities p(V) and p_tilde(V) increase convexly in accumulated vulnerability."
+              }
+            },
+            {
+              "value": "User and CSP security investment costs are linear in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "User and CSP security investment costs are linear in the baseline."
+              }
+            },
+            {
+              "value": "The horizon is infinite, state pairs are finite, and players use stationary Markov strategies",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The horizon is infinite, state pairs are finite, and players use stationary Markov strategies."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors formulate accumulated security and vulnerability as payoff-relevant states, derive Bellman/value-function and Euler conditions for users' dynamic choices, then characterize security competition and lock-in through no-switching and participation constraints.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 16,
+            "section": "4.3. Users’ Optimal Value Function with Respect",
+            "equation": "",
+            "quote": "As usage/vulnerability is predicated on security, we turn to the CSP’s security decision, which involves security’s effect on user lock-in, CSP competition, and the public goods paradigm underlying the shared secu­ rity model."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Each user maximizes the discounted stream of cloud-service benefits net of expected breach loss, security investment cost, and any security-linked switching cost.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in cybersecurity and cloud platforms",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "U_{i,j}=\\sum_{t=0}^{\\infty}\\delta^t u_{i,t},\\qquad u_{i,t}=[1-p(V_{j,t})c]b(y_{i,t})-ks_{i,t}-\\lambda S_{j,t-1}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "s_{csp, j, t}",
+                "meaning": "security investment chosen by CSP j in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_{i, t}",
+                "meaning": "security investment chosen by User i in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{i, t}",
+                "meaning": "User i's cloud-service usage in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{j, t}",
+                "meaning": "accumulated security investment under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_{j, t}",
+                "meaning": "accumulated vulnerability under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(V_{j, t})",
+                "meaning": "probability a user under CSP j suffers a successful attack · increasing and convex in V",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "per-unit cost of switching away from the incumbent security umbrella · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta",
+                "meaning": "discount factor in lifetime payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b(y_{i, t})",
+                "meaning": "User i's nonsecurity net benefit from cloud usage · increasing and concave in usage",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, k",
+                "meaning": "fractional loss from a successful attack and per-unit user security-investment cost · 0<c<1 and k>0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{i, j}, u_{i, t}",
+                "meaning": "User i's discounted lifetime payoff under CSP j and period-t payoff · payoffs",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There are two CSPs and N=2n identical users, initially split evenly.",
+              "User and CSP security investment costs are linear in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "Expected-profit objective",
+                "equation": "(4)",
+                "quote": "Nonlinearities with respect to vulnerability instead arise within users’ and CSPs’ expected payoff functions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Nonlinearities with respect to vulnerability instead arise within users’ and CSPs’ expected payoff functions.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "There are two CSPs and N=2n identical users, initially split evenly",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "There are two CSPs and N=2n identical users, initially split evenly."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "At the beginning of period t, players observe the incumbent CSP's accumulated vulnerability and security states (V_j,t-1,S_j,t-1). Strategies condition on the Markov states rather than the full history. The numbers of users, state transition functions, cost and benefit functions, and security responsibilities are common knowledge.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in cybersecurity and cloud platforms",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_{csp, j, t}",
+                "meaning": "security investment chosen by CSP j in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_{i, t}",
+                "meaning": "security investment chosen by User i in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{j, t}",
+                "meaning": "accumulated security investment under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_{j, t}",
+                "meaning": "accumulated vulnerability under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "per-unit cost of switching away from the incumbent security umbrella · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b(y_{i, t})",
+                "meaning": "User i's nonsecurity net benefit from cloud usage · increasing and concave in usage",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There are two CSPs and N=2n identical users, initially split evenly.",
+              "Attack probabilities p(V) and p_tilde(V) increase convexly in accumulated vulnerability."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.3. State Variables and Information",
+                "equation": "",
+                "quote": "Finally, in a Markov perfect equilibrium, the state variables determine the information structure upon which players condition optimal strategies."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Information structure: “equilibrium, the state variables determine the Information structure upon which players condition optimal strategies.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "symmetric-stationary-markov-perfect-equilibrium-with-csp-no-swit",
+            "label": "Symmetric stationary Markov-perfect equilibrium with CSP no-switching constraints",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Symmetric stationary Markov-perfect equilibrium with CSP no-switching constraints. Section 3.6 defines stationary Markov strategies and requires subgame perfection in every state. Sections 4-5 derive user value functions and equilibrium paths, impose no-switching and participation constraints, and characterize the competing CSPs' security responses.",
+            "searchPhrases": [
+              "how symmetric stationary markov-perfect equilibrium with csp no-switching constraints is represented",
+              "strategic response in cybersecurity and cloud platforms",
+              "symmetric stationary markov-perfect equilibrium with csp no-switching constraints strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Symmetric stationary Markov-perfect equilibrium with CSP no-switching constraints.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_{csp, j, t}",
+                "meaning": "security investment chosen by CSP j in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_{i, t}",
+                "meaning": "security investment chosen by User i in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{i, t}",
+                "meaning": "User i's cloud-service usage in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{j, t}",
+                "meaning": "accumulated security investment under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_{j, t}",
+                "meaning": "accumulated vulnerability under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(V_{j, t})",
+                "meaning": "probability a user under CSP j suffers a successful attack · increasing and convex in V",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There are two CSPs and N=2n identical users, initially split evenly.",
+              "User and CSP security investment costs are linear in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3.6. Equilibrium",
+                "equation": "",
+                "quote": "We close our model by studying the symmetric Markov perfect equilibrium of the game."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We close our model by studying the symmetric Markov perfect equilibrium of the game.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "The authors formulate accumulated security and vulnerability as payoff-relevant states, derive Bellman/value-function and Euler conditions for users' dynamic choices, then characterize security competition and lock-in through no-switching and participation constraints. Weakest-link aggregation and quadratic costs provide robustness checks.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in cybersecurity and cloud platforms",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors formulate accumulated security and vulnerability as payoff-relevant states, derive Bellman/value-function and Euler conditions for users' dynamic choices, then characterize security competition and lock-in through no-switching and participation constraints.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_{csp, j, t}",
+                "meaning": "security investment chosen by CSP j in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_{i, t}",
+                "meaning": "security investment chosen by User i in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{j, t}",
+                "meaning": "accumulated security investment under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_{j, t}",
+                "meaning": "accumulated vulnerability under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "per-unit cost of switching away from the incumbent security umbrella · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There are two CSPs and N=2n identical users, initially split evenly.",
+              "Attack probabilities p(V) and p_tilde(V) increase convexly in accumulated vulnerability."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "4.3. Users’ Optimal Value Function with Respect",
+                "equation": "",
+                "quote": "To safeguard against this, it is advisable for user managers to avoid “keeping all their eggs in one basket.” For CSP managers, we suggest that cloud security needs monitoring, control, and testing; and we provide a way to design the vulnerability predic­ tion algorithm."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Forecasting as “prediction”: “a way to design the vulnerability prediction algorithm.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "public-goods",
+              "competition"
+            ],
+            "explanation": "Each CSP chooses period security investment each user chooses period security investment each user chooses cloud-service usage users may stay with or switch from the incumbent CSP subject to security-linked switching costs",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in cybersecurity and cloud platforms",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each CSP chooses period security investment each user chooses period security investment each user chooses cloud-service usage users may stay with or switch from the incumbent CSP subject to security-linked switching costs",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_{csp, j, t}",
+                "meaning": "security investment chosen by CSP j in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_{i, t}",
+                "meaning": "security investment chosen by User i in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{i, t}",
+                "meaning": "User i's cloud-service usage in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{j, t}",
+                "meaning": "accumulated security investment under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(V_{j, t})",
+                "meaning": "probability a user under CSP j suffers a successful attack · increasing and convex in V",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "per-unit cost of switching away from the incumbent security umbrella · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There are two CSPs and N=2n identical users, initially split evenly.",
+              "As usage/vulnerability is predicated on security, we turn to the CSP’s security decision, which involves security’s effect on user lock-in, CSP competition, and the public goods paradigm underlying the shared security model.",
+              "User and CSP security investment costs are linear in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "4.3. Users’ Optimal Value Function with Respect",
+                "equation": "",
+                "quote": "As usage/vulnerability is predicated on security, we turn to the CSP’s security decision, which involves security’s effect on user lock-in, CSP competition, and the public goods paradigm underlying the shared secu­ rity model."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "public-goods",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Public goods: “user lock-in, CSP competition, and the Public goods paradigm underlying the shared security model.”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "competition",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Competition: “Competition”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "In each period t, each CSP first chooses security investment s_csp,j,t. Given the provider's investment, its users choose their own security investments s_i,t. Users then choose cloud-service usage y_i,t under the resulting security umbrella; stay/switch choices must satisfy no-switching and participation constraints. Accumulated security S_j,t and vulnerability V_j,t become the next period's Markov states. providers move before their own users within each period security effort and usage jointly determine next-period vulnerability",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in cybersecurity and cloud platforms",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_{csp, j, t}",
+                "meaning": "security investment chosen by CSP j in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_{i, t}",
+                "meaning": "security investment chosen by User i in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{i, t}",
+                "meaning": "User i's cloud-service usage in period t · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S_{j, t}",
+                "meaning": "accumulated security investment under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_{j, t}",
+                "meaning": "accumulated vulnerability under CSP j · state variable",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "per-unit cost of switching away from the incumbent security umbrella · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There are two CSPs and N=2n identical users, initially split evenly.",
+              "Attack probabilities p(V) and p_tilde(V) increase convexly in accumulated vulnerability."
+            ],
+            "sources": [
+              {
+                "page": 20,
+                "section": "6.1. Weakest-Link Security",
+                "equation": "",
+                "quote": "Irrespec­ tive of the value of δS, the equilibrium levels of security investment in period t satisfy Equation (20)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Irrespective of the value of δS, the equilibrium levels of security investment in period t satisfy Equation (20).”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "5ac1e0e0fe1d78b6308db5ce903720d8f7cd2a585e9d12a7fc72609c7af8e2e9",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "5bf7317912f7a629fa7c41c17dec0a1af94627e8d3b0e8638b66513083c89531",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2023-0256/5bf7317912f7a629fa7c41c17dec0a1af94627e8d3b0e8638b66513083c89531.json",
+      "extractionQaDecisionSha256": "a131b8b7c959c84a7ee6f1cafa9f5401364138dcb0d1f8085b1c72f2f7d85dd0",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

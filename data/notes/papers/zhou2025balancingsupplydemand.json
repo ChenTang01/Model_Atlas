@@ -1,0 +1,809 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "zhou2025balancingsupplydemand",
+  "sourcePdfSha256": "e3af1173efe6f9a92bed4633e71918918be0daa81847dfb629cd73cc72df557b",
+  "extractionPagesSha256": "1f3e2654207a9a11150b373e6e561074db70ff701f2a7cbe873d57fa0c720bbe",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "5e049d28970ef2bd35849221fc75dc832c97f6b48e2a79faee7958a35128e9c6",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "158239c08b22fdba3d0e14775381288234de58b769c1f0ce8f55044dfa4cb869",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/zhou2025balancingsupplydemand/158239c08b22fdba3d0e14775381288234de58b769c1f0ce8f55044dfa4cb869.json",
+  "extractionQaDecisionSha256": "17e02923082e64c61228102fc9f7f5562d8fa350905ce64046483bca0f7ed6fe",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "zhou2025balancingsupplydemand",
+    "question": "How can a ride-hailing platform balance peak and off-peak driver supply when fares are regulated and drivers strategically choose when to work?",
+    "overview": "The platform selects an operational target while anticipating strategic full-time drivers' peak/off-peak labor allocation and participation constraints. The policies are characterized through driver equilibrium and incentive compatibility, not merely optimized against exogenous supply.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8,
+        12,
+        13
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Balancing Supply with Demand on Ride-Hailing Platforms in Markets with Price Regulations model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The platform selects an operational target while anticipating strategic full-time drivers' peak/off-peak labor allocation and participation constraints. The policies are characterized through driver equilibrium and incentive compatibility, not merely optimized against exogenous supply.",
+        "objects": [
+          "Ride-hailing platform",
+          "Strategic full-time drivers",
+          "Available drivers",
+          "Platform",
+          "Subject"
+        ],
+        "inputs": [
+          "The price per unit of service time",
+          "The use",
+          "The service demand",
+          "The magnitude of the additional costs",
+          "The ratio between part-time drivers and full-time drivers in an open system"
+        ],
+        "decisions": [
+          "The platform selects a qualification target or prioritization policy",
+          "Full-time drivers choose their peak-work share and whether to qualify under the policy",
+          "To be proportional to the service time",
+          "Per unit service time",
+          "Per unit of service time"
+        ],
+        "assumptions": [
+          "Passenger fares are fixed by price regulation rather than chosen by the platform",
+          "Demand and driver productivity differ between peak and off-peak periods",
+          "Full-time drivers strategically allocate their modeled work time across periods",
+          "Qualification or prioritization rules are observable and can be committed to by the platform"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Ride-hailing platform",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "ride-hailing platform"
+              }
+            },
+            {
+              "value": "Strategic full-time drivers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "strategic full-time drivers"
+              }
+            },
+            {
+              "value": "Available drivers",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 1,
+                "quote": "Consider an on-demand ride-hailing platform that receives ride requests from passengers and assigns them to available drivers.",
+                "matchedText": "available drivers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Platform",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 1,
+                "quote": "Consider an on-demand ride-hailing platform that receives ride requests from passengers and assigns them to available drivers.",
+                "matchedText": "platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Subject",
+              "source": {
+                "type": "section",
+                "section": "Incentive Schemes vs. Surge Pricing",
+                "page": 12,
+                "sectionIndex": 17,
+                "sentence": 1,
+                "quote": "A key motivation of our proposed incentive schemes is that prices in many markets can be subject to regu­ lations and have limited usefulness in addressing the supply-demand imbalance.",
+                "matchedText": "subject",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The price per unit of service time",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 3,
+                "quote": "To keep the model focused, we assume the transaction price to be proportional to the service time, and we denote the price per unit of ser­ vice time as p.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The use",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "sectionIndex": 3,
+                "page": 4,
+                "quote": "To explore the use of an operational approach for balancing supply and demand, we treat the price per unit service time as exogenous."
+              }
+            },
+            {
+              "value": "The service demand",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "During rush hours, which we refer to as the peak period, the service demand far exceeds the supply capacity from drivers, leading to significant supply shortage.",
+                "matchedText": "the service demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The magnitude of the additional costs",
+              "source": {
+                "type": "section",
+                "section": "Drivers",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 11,
+                "quote": "The parameter k measures the magnitude of the additional costs.",
+                "matchedText": "the magnitude of the additional costs",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The ratio between part-time drivers and full-time drivers in an open system",
+              "source": {
+                "type": "section",
+                "section": "Finite Part-Time Drivers",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 7,
+                "quote": "the ratio between part-time drivers and full-time drivers in an open system as ρ (ρ > 0)",
+                "matchedText": "the ratio between part-time drivers and full-time drivers in an open system as ρ (ρ > 0)",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The platform selects a qualification target or prioritization policy",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform selects a qualification target or prioritization policy"
+              }
+            },
+            {
+              "value": "Full-time drivers choose their peak-work share and whether to qualify under the policy",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "full-time drivers choose their peak-work share and whether to qualify under the policy"
+              }
+            },
+            {
+              "value": "To be proportional to the service time",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 3,
+                "quote": "To keep the model focused, we assume the transaction price to be proportional to the service time",
+                "matchedText": "to be proportional to the service time",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Per unit service time",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 5,
+                "quote": "To explore the use of an operational approach for balancing supply and demand, we treat the price per unit service time as exogenous",
+                "matchedText": "per unit service time",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Per unit of service time",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "sectionIndex": 3,
+                "page": 4,
+                "quote": "To keep the model focused, we assume the transaction price to be proportional to the service time, and we denote the price per unit of ser­ vice time as p"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Passenger fares are fixed by price regulation rather than chosen by the platform",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Passenger fares are fixed by price regulation rather than chosen by the platform."
+              }
+            },
+            {
+              "value": "Demand and driver productivity differ between peak and off-peak periods",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand and driver productivity differ between peak and off-peak periods."
+              }
+            },
+            {
+              "value": "Full-time drivers strategically allocate their modeled work time across periods",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Full-time drivers strategically allocate their modeled work time across periods."
+              }
+            },
+            {
+              "value": "Qualification or prioritization rules are observable and can be committed to by the platform",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Qualification or prioritization rules are observable and can be committed to by the platform."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected assumptions entry: too_long_for_setup_item.",
+            "category": "assumptions",
+            "field": "assumptions",
+            "reason": "too_long_for_setup_item"
+          }
+        ],
+        "method": "The paper first derives the driver’s equilibrium work time allocation when no incentive scheme is implemented.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Benchmark",
+          "page": 5,
+          "sentence": 1
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 12,
+            "section": "5.4. Comparison of the Benchmark and Two",
+            "equation": "",
+            "quote": "When the platform uses either scheme to optimally shift full-time drivers’ work time, it may set the work target such that the full-time drivers’ gain from working in the off-peak period exactly offsets their loss because of the longer work time in the peak period, making the full-time drivers’ welfare unaffected."
+          }
+        ],
+        "components": [
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Backward induction through driver utility comparisons, incentive-compatible target design, and comparison of qualification, prioritization, and open-system policies.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in platforms and marketplaces",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Backward induction through driver utility comparisons, incentive-compatible target design, and comparison of qualification, prioritization, and open-system policies.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "peak-period work target set by the platform for qualification · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta(\\alpha_0)",
+                "meaning": "equilibrium proportion of full-time drivers who qualify at target alpha_0 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "M^Q(\\theta)",
+                "meaning": "expected total matching volume under the qualification scheme · nonnegative match volume",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_q^Q(\\alpha_0)",
+                "meaning": "utility of a driver who qualifies under the target · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{uq}^Q",
+                "meaning": "utility of a driver who remains unqualified · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Qualification or prioritization rules are observable and can be committed to by the platform."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.3. Platform, Incentive Schemes, and System",
+                "equation": "",
+                "quote": "We then analyze two incentive schemes, namely, the qualification scheme and the prioritization scheme, with the goal of shifting service supply from the off-peak period to the peak period to solve the supply-demand imbalance."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "Regulated trip prices are fixed; the platform chooses a work/qualification target or prioritization rule; drivers then choose peak versus off-peak work and whether to qualify/participate; trips and platform matching outcomes follow. platform-driver leader-follower game strategic temporal labor allocation",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in platforms and marketplaces",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: Regulated trip prices are fixed; the platform chooses a work/qualification target or prioritization rule; drivers then choose peak versus off-peak work and whether to qualify/participate; trips and platform matching outcomes follow. platform-driver leader-follower game strategic temporal labor allocation",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "peak-period work target set by the platform for qualification · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta(\\alpha_0)",
+                "meaning": "equilibrium proportion of full-time drivers who qualify at target alpha_0 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "M^Q(\\theta)",
+                "meaning": "expected total matching volume under the qualification scheme · nonnegative match volume",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{uq}^Q",
+                "meaning": "utility of a driver who remains unqualified · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Passenger fares are fixed by price regulation rather than chosen by the platform.",
+              "Full-time drivers strategically allocate their modeled work time across periods."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4.1. Benchmark",
+                "equation": "",
+                "quote": "We next consider the off-peak period and use ˆα to denote all drivers’ average amounts of work time allo­ cated to the peak period in equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We next consider the off-peak period and use ˆα to denote all drivers’ average amounts of work time”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "Under the qualification policy, the platform chooses its target to maximize matching/operational performance while ensuring that targeted drivers prefer qualifying.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in platforms and marketplaces",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_{\\alpha_0}M^Q(\\theta(\\alpha_0))\\quad\\text{s.t. }U_{uq}^Q\\le U_q^Q(\\alpha_0)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "peak-period work target set by the platform for qualification · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta(\\alpha_0)",
+                "meaning": "equilibrium proportion of full-time drivers who qualify at target alpha_0 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "M^Q(\\theta)",
+                "meaning": "expected total matching volume under the qualification scheme · nonnegative match volume",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_q^Q(\\alpha_0)",
+                "meaning": "utility of a driver who qualifies under the target · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{uq}^Q",
+                "meaning": "utility of a driver who remains unqualified · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Passenger fares are fixed by price regulation rather than chosen by the platform.",
+              "Qualification or prioritization rules are observable and can be committed to by the platform.",
+              "Full-time drivers strategically allocate their modeled work time across periods."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Expected-profit objective",
+                "equation": "(5)–(7)",
+                "quote": "Anticipating each type of driver’s choice of (αQ q ,αQ uq), the platform chooses the target α0, which induces θ proportion of full-time drivers to voluntarily partici­ pate, to maximize the expected total matching quantity MQ(θ(α0))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Matching: “participate, to maximize the expected total Matching quantity MQ(θ(α0)).”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "stackelberg-policy-equilibrium-with-driver-incentive-compatibili",
+            "label": "Stackelberg policy equilibrium with driver incentive-compatibility conditions",
+            "role": "interaction",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "The model's equilibrium concept is Stackelberg policy equilibrium with driver incentive-compatibility conditions. Driver peak-allocation and qualification responses are derived first; the platform then optimizes the target knowing those responses, with the qualification constraint binding in the relevant interior case.",
+            "searchPhrases": [
+              "how stackelberg policy equilibrium with driver incentive-compatibility conditions is represented",
+              "strategic response in platforms and marketplaces",
+              "stackelberg policy equilibrium with driver incentive-compatibility conditions strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Stackelberg policy equilibrium with driver incentive-compatibility conditions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "peak-period work target set by the platform for qualification · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta(\\alpha_0)",
+                "meaning": "equilibrium proportion of full-time drivers who qualify at target alpha_0 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "M^Q(\\theta)",
+                "meaning": "expected total matching volume under the qualification scheme · nonnegative match volume",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_q^Q(\\alpha_0)",
+                "meaning": "utility of a driver who qualifies under the target · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{uq}^Q",
+                "meaning": "utility of a driver who remains unqualified · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Passenger fares are fixed by price regulation rather than chosen by the platform.",
+              "Qualification or prioritization rules are observable and can be committed to by the platform."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.3. Prioritization Scheme",
+                "equation": "",
+                "quote": "Anticipating the equilibrium work time allocation of a prioritized driver (α∗ p) and that of an unprioritized driver (α∗ up), the platform chooses the target α0 to max­ imize the total matching volume MP(θ(α0))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Matching: “target α0 to maximize the total Matching volume MP(θ(α0)).”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The platform selects a qualification target or prioritization policy full-time drivers choose their peak-work share and whether to qualify under the policy",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in platforms and marketplaces",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The platform selects a qualification target or prioritization policy full-time drivers choose their peak-work share and whether to qualify under the policy",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "peak-period work target set by the platform for qualification · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta(\\alpha_0)",
+                "meaning": "equilibrium proportion of full-time drivers who qualify at target alpha_0 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "M^Q(\\theta)",
+                "meaning": "expected total matching volume under the qualification scheme · nonnegative match volume",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{uq}^Q",
+                "meaning": "utility of a driver who remains unqualified · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Passenger fares are fixed by price regulation rather than chosen by the platform.",
+              "Qualification or prioritization rules are observable and can be committed to by the platform.",
+              "Full-time drivers strategically allocate their modeled work time across periods."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.4. Comparison of the Benchmark and Two",
+                "equation": "",
+                "quote": "When the platform uses either scheme to optimally shift full-time drivers’ work time, it may set the work target such that the full-time drivers’ gain from working in the off-peak period exactly offsets their loss because of the longer work time in the peak period, making the full-time drivers’ welfare unaffected."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “When the platform uses either scheme to optimally shift full-time drivers’ work time, it may set the work”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "matching",
+              "pricing"
+            ],
+            "explanation": "The platform knows the driver-utility and demand primitives and anticipates driver responses; drivers observe the policy and compare utilities from qualifying and not qualifying.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The platform knows the driver-utility and demand primitives and anticipates driver responses; drivers observe the policy and compare utilities from qualifying and not qualifying.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "peak-period work target set by the platform for qualification · (0,1)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta(\\alpha_0)",
+                "meaning": "equilibrium proportion of full-time drivers who qualify at target alpha_0 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "M^Q(\\theta)",
+                "meaning": "expected total matching volume under the qualification scheme · nonnegative match volume",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When the peak period demand is not significantly higher than the off-peak period demand, we could observe a lower total matching volume from surge pricing.",
+              "Passenger fares are fixed by price regulation rather than chosen by the platform.",
+              "Full-time drivers strategically allocate their modeled work time across periods."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6.1. Incentive Schemes vs. Surge Pricing",
+                "equation": "",
+                "quote": "When the peak period demand is not significantly higher than the off-peak period demand, we could observe a lower total matching vol­ ume from surge pricing."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Matching: “we could observe a lower total Matching volume from surge pricing.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Pricing: “lower total matching volume from surge Pricing .”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e3af1173efe6f9a92bed4633e71918918be0daa81847dfb629cd73cc72df557b",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "158239c08b22fdba3d0e14775381288234de58b769c1f0ce8f55044dfa4cb869",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/zhou2025balancingsupplydemand/158239c08b22fdba3d0e14775381288234de58b769c1f0ce8f55044dfa4cb869.json",
+      "extractionQaDecisionSha256": "17e02923082e64c61228102fc9f7f5562d8fa350905ce64046483bca0f7ed6fe",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

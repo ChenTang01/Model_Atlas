@@ -1,0 +1,780 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2024-07480",
+  "sourcePdfSha256": "40a57fd464efa696cd237284a0c4bf1c5e9aa1ba180aefc0af1a574f06dbebcc",
+  "extractionPagesSha256": "b820a6ebb23074e6e6491a3e4979b5cac94c4df4a2fdb00a7812d031e2767120",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "f83bb2feb55bac4ea3a5ba8c4dda0566fcf70cae9bb60f6608614fd8f281e0b2",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "496598e48cb51e257059e08bb1e2a5c426bfc880742685263d6a0ede602caf30",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-07480/496598e48cb51e257059e08bb1e2a5c426bfc880742685263d6a0ede602caf30.json",
+  "extractionQaDecisionSha256": "4ad3db3372e2fffc8c4d4caf42bfeb7da24f526d0f74e9d5d11e081f1ee47191",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-07480",
+    "question": "How should a platform compose enforceable income-sharing pools so that no participant wants to leave, expel someone, or make an acceptable move to another pool?",
+    "overview": "Prospective pool members strategically form coalitions based solely on pool composition, making this an explicit hedonic coalition-formation game. The paper defines a modified individual-stability solution concept in terms of profitable leave, expulsion, and entry deviations and proves existence and structural results for pools and partitions.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        11,
+        13,
+        14,
+        15
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Income Pools for Superstar Markets model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Prospective pool members strategically form coalitions based solely on pool composition, making this an explicit hedonic coalition-formation game. The paper defines a modified individual-stability solution concept in terms of profitable leave, expulsion, and entry deviations and proves existence and structural results for pools and partitions.",
+        "objects": [
+          "A finite population of prospective income-pool members divided into success-probability classes",
+          "Existing members"
+        ],
+        "inputs": [
+          "Every agent's class and corresponding success probability are public information",
+          "Superstar and nonsuperstar salaries, contribution percentage, population by class, and utility functions are common knowledge",
+          "Success realizations are independent Bernoulli draws in the baseline",
+          "Agents care only about the composition of their own coalition, satisfying the hedonic-game structure",
+          "Contracts are fully enforceable"
+        ],
+        "decisions": [
+          "Join a proposed income pool",
+          "Remain solo or leave",
+          "Unanimously remove an unwanted member",
+          "Accept or veto an outsider",
+          "Under a platform cap, choose among feasible pool compositions of size at most N"
+        ],
+        "assumptions": [
+          "There are finitely many classes ordered by success probability, with the strongest probability no greater than one half",
+          "All agents are risk averse with concave utility; several ordering and dominance results specialize to common exponential utility",
+          "Successful and unsuccessful earnings are class independent in the baseline and superstar earnings are much larger",
+          "Successful agents contribute a common fraction c and the pot is split equally among all members",
+          "The contribution is small enough that even the worst superstar pooling payoff exceeds the best nonsuperstar payoff, removing baseline moral hazard"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A finite population of prospective income-pool members divided into success-probability classes",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a finite population of prospective income-pool members divided into success-probability classes"
+              }
+            },
+            {
+              "value": "Existing members",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "existing members who can unanimously remove or veto another agent"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Every agent's class and corresponding success probability are public information",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Every agent's class and corresponding success probability are public information."
+              }
+            },
+            {
+              "value": "Superstar and nonsuperstar salaries, contribution percentage, population by class, and utility functions are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Superstar and nonsuperstar salaries, contribution percentage, population by class, and utility functions are common knowledge."
+              }
+            },
+            {
+              "value": "Success realizations are independent Bernoulli draws in the baseline",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Success realizations are independent Bernoulli draws in the baseline."
+              }
+            },
+            {
+              "value": "Agents care only about the composition of their own coalition, satisfying the hedonic-game structure",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Agents care only about the composition of their own coalition, satisfying the hedonic-game structure."
+              }
+            },
+            {
+              "value": "Contracts are fully enforceable",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Contracts are fully enforceable after signing, so later superstar realizations do not reopen coalition choices."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Join a proposed income pool",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "join a proposed income pool"
+              }
+            },
+            {
+              "value": "Remain solo or leave",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "remain solo or leave before contract formation"
+              }
+            },
+            {
+              "value": "Unanimously remove an unwanted member",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "unanimously remove an unwanted member"
+              }
+            },
+            {
+              "value": "Accept or veto an outsider",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "accept or veto an outsider"
+              }
+            },
+            {
+              "value": "Under a platform cap, choose among feasible pool compositions of size at most N",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "under a platform cap, choose among feasible pool compositions of size at most N"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are finitely many classes ordered by success probability, with the strongest probability no greater than one half",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "There are finitely many classes ordered by success probability, with the strongest probability no greater than one half."
+              }
+            },
+            {
+              "value": "All agents are risk averse with concave utility; several ordering and dominance results specialize to common exponential utility",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "All agents are risk averse with concave utility; several ordering and dominance results specialize to common exponential utility."
+              }
+            },
+            {
+              "value": "Successful and unsuccessful earnings are class independent in the baseline and superstar earnings are much larger",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Successful and unsuccessful earnings are class independent in the baseline and superstar earnings are much larger."
+              }
+            },
+            {
+              "value": "Successful agents contribute a common fraction c and the pot is split equally among all members",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Successful agents contribute a common fraction c and the pot is split equally among all members."
+              }
+            },
+            {
+              "value": "The contribution is small enough that even the worst superstar pooling payoff exceeds the best nonsuperstar payoff, removing baseline moral hazard",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The contribution is small enough that even the worst superstar pooling payoff exceeds the best nonsuperstar payoff, removing baseline moral hazard."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          },
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected actions entry: shared_source_text_quality.",
+            "category": "decisions",
+            "field": "actions",
+            "reason": "shared_source_text_quality"
+          }
+        ],
+        "method": "The analysis first evaluates the relative increase in social welfare by computing the sum of each agent’s realized utility of being in a pool compared with their realized utility of remaining solo.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Data and Experiment Description",
+          "page": 16,
+          "sentence": 38
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 14,
+            "section": "6. Stable Partitions",
+            "equation": "",
+            "quote": "For instance, rather than allowing agents to freely choose their preferred pool compositions and deviate toward them, the platform could offer a sequence of curated pools that agents can either accept or reject (i.e., removing Stability Conditions 2 and 3)."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Each class-i agent chooses among feasible pool compositions to maximize expected utility from own superstar risk and the random number of other superstar contributors.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in how to form stable income-sharing pools for workers facing winner-take-most career risk",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "u_i(n,p)=E[p_i*g(s_plus*(1-c)+(X_(n-i,p)+1)*c*s_plus/||n||)+(1-p_i)*g(s_minus+X_(n-i,p)*c*s_plus/||n||)], compared with u_i_solo=p_i*g(s_plus)+(1-p_i)*g(s_minus).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "m",
+                "meaning": "number of agent classes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "probability that a class-i agent becomes a superstar",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_i",
+                "meaning": "number of class-i agents in the population",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "(n, p)",
+                "meaning": "pool composition vector and class success-probability vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X_(n, p)",
+                "meaning": "Poisson-binomial number of superstars in pool n",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_plus, s_minus",
+                "meaning": "earnings conditional on superstar success and failure",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "fraction of a successful member's earnings contributed to the pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "g(.)",
+                "meaning": "an individual agent's concave utility function",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N",
+                "meaning": "maximum number of members permitted in a bounded pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Pi_partition",
+                "meaning": "collection of pools assigning each agent exactly once",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Successful and unsuccessful earnings are class independent in the baseline and superstar earnings are much larger.",
+              "All agents are risk averse with concave utility; several ordering and dominance results specialize to common exponential utility.",
+              "Successful agents contribute a common fraction c and the pot is split equally among all members."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "(1)–(2)",
+                "quote": "As a special case, let u∅ i denote the expected utility of a class i agent being in a pool by themself, that is, a solo pool."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “As a special case, let u∅ i denote the expected utility of a class i agent being in”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "In the baseline one-shot simultaneous formation game, agents evaluate proposed pool compositions and can deviate by remaining solo, unanimously expelling a member, or seeking admission to a pool that does not veto them. Once a stable contract is signed, agents independently realize superstar success, successful members contribute the contracted share, and the pot is divided equally. The partition model permits analogous unilateral moves between simultaneously formed pools. Adding a member simultaneously raises the probability of a contribution and dilutes every member's share.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in how to form stable income-sharing pools for workers facing winner-take-most career risk",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: In the baseline one-shot simultaneous formation game, agents evaluate proposed pool compositions and can deviate by remaining solo, unanimously expelling a member, or seeking admission to a pool that does not veto them.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "m",
+                "meaning": "number of agent classes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "probability that a class-i agent becomes a superstar",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_plus, s_minus",
+                "meaning": "earnings conditional on superstar success and failure",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "fraction of a successful member's earnings contributed to the pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N",
+                "meaning": "maximum number of members permitted in a bounded pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Pi_partition",
+                "meaning": "collection of pools assigning each agent exactly once",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Successful and unsuccessful earnings are class independent in the baseline and superstar earnings are much larger.",
+              "There are finitely many classes ordered by success probability, with the strongest probability no greater than one half.",
+              "All agents are risk averse with concave utility; several ordering and dominance results specialize to common exponential utility."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.4. Model Discussion",
+                "equation": "",
+                "quote": "We model income pool formation as a single-period simultaneous-move game (as defined by the modified individual stability concept)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We model income pool formation as a single-period simultaneous-move game (as defined by the modified individual stability concept).”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "modified-individual-stable-income-pool-coalition",
+            "label": "Modified individual-stable income-pool coalition",
+            "role": "interaction",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Modified individual-stable income-pool coalition. Definition 1 requires that no agent prefers a solo deviation, no member is unanimously removable, and no outsider can profitably join without a veto. The authors explicitly interpret violations as profitable best-response deviations in a simultaneous-move hedonic game and prove in Theorem 1 that such a stable pool always exists for a finite population.",
+            "searchPhrases": [
+              "how modified individual-stable income-pool coalition is represented",
+              "strategic response in how to form stable income-sharing pools for workers facing winner-take-most career risk",
+              "modified individual-stable income-pool coalition strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Modified individual-stable income-pool coalition.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "m",
+                "meaning": "number of agent classes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_i",
+                "meaning": "number of class-i agents in the population",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "(n, p)",
+                "meaning": "pool composition vector and class success-probability vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_plus, s_minus",
+                "meaning": "earnings conditional on superstar success and failure",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "fraction of a successful member's earnings contributed to the pool",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Pool contracts are enforceable and pool formation is a single-period game.",
+              "The platform's fee, endogenous effort, group deviations, and future arrival of new agents are omitted from the baseline."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. Comparing Bounded Stable Pools",
+                "equation": "",
+                "quote": "We note that “trading” does not imply instability because this deviation requires two agents to change pools and would not be a best response for one of the agents (i.e., one agent will become worse off)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “best response”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The authors compare expected-utility distributions using stochastic-dominance and coupling arguments, prove existence and structural propositions for single and bounded pools, derive dominance orderings under exponential utility, and construct partitions with a greedy algorithm. Extensions and a data-parameterized baseball simulation assess robustness and welfare.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in how to form stable income-sharing pools for workers facing winner-take-most career risk",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors compare expected-utility distributions using stochastic-dominance and coupling arguments, prove existence and structural propositions for single and bounded pools, derive dominance orderings under exponential utility, and construct partitions with a greedy algorithm.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "m",
+                "meaning": "number of agent classes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "fraction of a successful member's earnings contributed to the pool",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "All agents are risk averse with concave utility; several ordering and dominance results specialize to common exponential utility."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6. Stable Partitions",
+                "equation": "",
+                "quote": "Next, we use the insights of this necessary structure to develop a “greedy” algorithm to build stable parti­ tions (see Algorithm 1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Next, we use the insights of this necessary structure to develop a “greedy” algorithm to build stable partitions”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Join a proposed income pool remain solo or leave before contract formation unanimously remove an unwanted member accept or veto an outsider under the partition model, move from one pool to another under a platform cap, choose among feasible pool compositions of size at most N",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in how to form stable income-sharing pools for workers facing winner-take-most career risk",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Join a proposed income pool remain solo or leave before contract formation unanimously remove an unwanted member accept or veto an outsider under the partition model, move from one pool to another under a platform cap, choose among feasible pool compositions of size at most N",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "m",
+                "meaning": "number of agent classes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "fraction of a successful member's earnings contributed to the pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N",
+                "meaning": "maximum number of members permitted in a bounded pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Pi_partition",
+                "meaning": "collection of pools assigning each agent exactly once",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There are finitely many classes ordered by success probability, with the strongest probability no greater than one half.",
+              "Successful agents contribute a common fraction c and the pot is split equally among all members.",
+              "Pool contracts are enforceable and pool formation is a single-period game."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "6. Stable Partitions",
+                "equation": "",
+                "quote": "For instance, rather than allowing agents to freely choose their preferred pool compositions and deviate toward them, the platform could offer a sequence of curated pools that agents can either accept or reject (i.e., removing Stability Conditions 2 and 3)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Every agent's class and corresponding success probability are public information. Superstar and nonsuperstar salaries, contribution percentage, population by class, and utility functions are common knowledge. Success realizations are independent Bernoulli draws in the baseline. Agents care only about the composition of their own coalition, satisfying the hedonic-game structure.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in how to form stable income-sharing pools for workers facing winner-take-most career risk",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Every agent's class and corresponding success probability are public information.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "m",
+                "meaning": "number of agent classes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "probability that a class-i agent becomes a superstar",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_i",
+                "meaning": "number of class-i agents in the population",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "(n, p)",
+                "meaning": "pool composition vector and class success-probability vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_plus, s_minus",
+                "meaning": "earnings conditional on superstar success and failure",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "fraction of a successful member's earnings contributed to the pool",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Successful and unsuccessful earnings are class independent in the baseline and superstar earnings are much larger.",
+              "In the case of lotteries, these pools mirror a common workplace practice known as an “office lottery pool.” We modify the baseline model by enforcing the sum of success probabilities over all agents in the population to equal one.",
+              "There are finitely many classes ordered by success probability, with the strongest probability no greater than one half.",
+              "All agents are risk averse with concave utility; several ordering and dominance results specialize to common exponential utility."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "7.2. Single Superstar",
+                "equation": "",
+                "quote": "In the case of lotteries, these pools mirror a common workplace practice known as an “office lottery pool.” We modify the baseline model by enforcing the sum of success probabilities over all agents in the pop­ ulation to equal one."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “In the case of lotteries, these pools mirror a common workplace practice known as an “office lottery pool.””.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "40a57fd464efa696cd237284a0c4bf1c5e9aa1ba180aefc0af1a574f06dbebcc",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "496598e48cb51e257059e08bb1e2a5c426bfc880742685263d6a0ede602caf30",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-07480/496598e48cb51e257059e08bb1e2a5c426bfc880742685263d6a0ede602caf30.json",
+      "extractionQaDecisionSha256": "4ad3db3372e2fffc8c4d4caf42bfeb7da24f526d0f74e9d5d11e081f1ee47191",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

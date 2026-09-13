@@ -1,0 +1,1265 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2023-4679",
+  "sourcePdfSha256": "3fd88149e319d903e4d7ef56ca606645d3ded159703e4e905718de8baa127d8d",
+  "extractionPagesSha256": "b959b62862f382ef952a36e37b9fd27bd0534f32cebb84f38294fed320b9eb8d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "085936d1fa8035fe956bcca5826fc93acf26de71ac5348f1d145258711291a1b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "30edff70fe5d04babfe8505d8c019a221a810fd91efe1f119918a1496341a173",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4679/30edff70fe5d04babfe8505d8c019a221a810fd91efe1f119918a1496341a173.json",
+  "extractionQaDecisionSha256": "64c6ee28d0052d0c93651e3b4d8ee540f99ae32e8262e460d42980acabdc5b2a",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-4679",
+    "question": "How should hospital care scheduling during the SARS-CoV-2 pandemic be designed?",
+    "overview": "The COVID-19 pandemic has seen dramatic demand surges for hospital care that have placed a severe strain on health systems worldwide. As a result, policy makers are faced with the challenge of managing scarce hospital capacity to reduce the backlog of non-COVID patients while maintaining the ability to respond to any potential future increases in demand for COVID care. The individual patients’ dynamic programs are coupled through constraints on the available resources, such as hospital beds, doctors, and nurses.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        9,
+        10,
+        12,
+        13,
+        14
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "linear-programming-formulation",
+        "name": "Linear Programming Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The COVID-19 pandemic has seen dramatic demand surges for hospital care that have placed a severe strain on health systems worldwide. As a result, policy makers are faced with the challenge of managing scarce hospital capacity to reduce the backlog of non-COVID patients while maintaining the ability to respond to any potential future increases in demand for COVID care. The individual patients’ dynamic programs are coupled through constraints on the available resources, such as hospital beds, doctors, and nurses.",
+        "objects": [
+          "Hospital",
+          "Policy makers",
+          "Patients",
+          "Tables",
+          "The available resources"
+        ],
+        "inputs": [
+          "The initial state",
+          "The states",
+          "The random state",
+          "An observable signal",
+          "The reward"
+        ],
+        "decisions": [
+          "Require hospitalization for a few days only",
+          "Find a policy",
+          "Require emergency admission",
+          "To hospital immediately if capacity permits"
+        ],
+        "assumptions": [
+          "The model divides the population into four age groups (0–4, 5–19, 20–64, over 65 years), which are then mapped into our three age groups using a linear Table 2.",
+          "Emergency patients who are denied admission die, which is represented by the Dead state",
+          "A patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital",
+          "Caro and Gallien (2007) apply the Lagrangian relaxation principle to a finite horizon multiarmed bandit problem in which the decision maker can pull multiple arms in each time period"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "The COVID-19 pandemic has seen dramatic demand surges for hospital care that have placed a severe strain on health systems worldwide.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Policy makers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "As a result, policy makers are faced with the challenge of managing scarce hospital capacity to reduce the backlog of non-COVID patients while maintaining the ability to respond to any potential future increases in demand for COVID care.",
+                "matchedText": "policy makers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "As a result, policy makers are faced with the challenge of managing scarce hospital capacity to reduce the backlog of non-COVID patients while maintaining the ability to respond to any potential future increases in demand for COVID care.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Tables",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 22,
+                "sentence": 9,
+                "quote": "As for the rewards rjt, we calculate the YLL using standard life tables data provided by the Office for National Statis­ tics (Office for National Statistics 2019).",
+                "matchedText": "tables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The available resources",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 5,
+                "sectionIndex": 1,
+                "sentence": 100,
+                "quote": "Tsitsiklis and Xu (2012) study a multiserver queueing system in which the available resources can be split between centralized and distrib­ uted employment.",
+                "matchedText": "the available resources",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The initial state",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 12,
+                "sectionIndex": 21,
+                "sentence": 3,
+                "quote": "For each group j, we sample the initial state probabilities qj and the (nonstationary) transition probabilities pjt under the pull arm action uniformly at random, whereas each bandit deterministically resides in its current state under the do nothing action.",
+                "matchedText": "the initial state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The states",
+              "source": {
+                "type": "section",
+                "section": "Linear Programming Formulation",
+                "page": 7,
+                "sectionIndex": 3,
+                "sentence": 8,
+                "quote": "The values in the rectangular nodes record the states of the first and second DP, whereas the letters in the oval nodes denote the actions applied to each DP.",
+                "matchedText": "the states",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The random state",
+              "source": {
+                "type": "section",
+                "section": "Linear Programming Formulation",
+                "page": 9,
+                "sectionIndex": 20,
+                "sentence": 14,
+                "quote": "Our results make use of the ran­ dom state ˜st,(j,i) of the (j, i)th DP and the random action ˜at,(j,i) applied to this DP in time period t, respectively.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An observable signal",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 4,
+                "sectionIndex": 1,
+                "sentence": 84,
+                "quote": "In fact, the authors study a generalization of weakly coupled DPs where an ob­ servable signal, which is governed by an exogenous finite-state Markov process, affects the transitions, re­ wards, and/or resource consumption of the constitu­ ent DPs.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 4,
+                "sectionIndex": 1,
+                "sentence": 132,
+                "quote": "the reward",
+                "matchedText": "the reward",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require hospitalization for a few days only",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 9,
+                "sentence": 14,
+                "quote": "The inclusion of designated Last Week states allows us to account for the empirical fact that for some disease types, a large fraction of the patients require hospitaliza­ tion for a few days only",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Find a policy",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 12,
+                "sectionIndex": 21,
+                "sentence": 6,
+                "quote": "The goal is to find a policy that decides which arms to pull in each time period to maximize the expected total reward.",
+                "matchedText": "find a policy",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Require emergency admission",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 12,
+                "sectionIndex": 6,
+                "sentence": 11,
+                "quote": "While in the queue, an elective patient’s condition might worsen and hence require emergency admission",
+                "matchedText": "require emergency admission",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "To hospital immediately if capacity permits",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 9,
+                "sentence": 6,
+                "quote": "Emergency patients are admitted to hospital immediately if capac­ ity permits",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The model divides the population into four age groups (0–4, 5–19, 20–64, over 65 years), which are then mapped into our three age groups using a linear Table 2.",
+              "source": {
+                "type": "section",
+                "section": "Data Sources",
+                "page": 13,
+                "quote": "The model divides the population into four age groups (0–4, 5–19, 20–64, over 65 years), which are then mapped into our three age groups using a linear Table 2."
+              }
+            },
+            {
+              "value": "Emergency patients who are denied admission die, which is represented by the Dead state",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 9,
+                "sentence": 6,
+                "quote": "Emergency patients are admitted to hospital immediately if capac­ ity permits; we assume that emergency patients who are denied admission die, which is represented by the Dead state.",
+                "matchedText": "emergency patients who are denied admission die, which is represented by the Dead state.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 9,
+                "sentence": 13,
+                "quote": "We assume that a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+                "matchedText": "a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Caro and Gallien (2007) apply the Lagrangian relaxation principle to a finite horizon multiarmed bandit problem in which the decision maker can pull multiple arms in each time period",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 4,
+                "sectionIndex": 1,
+                "sentence": 72,
+                "quote": "Caro and Gallien (2007) apply the Lagrangian relaxation principle to a finite horizon multiarmed bandit problem in which the decision maker can pull multiple arms in each time period.",
+                "matchedText": "Caro and Gallien (2007) apply the Lagrangian relaxation principle to a finite horizon multiarmed bandit problem in which the decision maker can pull multiple arms in each time period.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 3
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper models the patient inflows, which determine the inflows using individual level patient records across all hospitals in England from the Hospital Episode Statistics (HES) (NHS Digital 2020).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Data Sources",
+          "page": 13,
+          "sentence": 29
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 13,
+            "section": "5.2. Data Sources",
+            "equation": "",
+            "quote": "We model the patient inflows, which determine the initial state probabilities qt (for patients arriving in week 1) and the transition probabilities pjt (for patients arriving in later weeks), via historical data (for non- COVID patients) and a projection method (for COVID patients)."
+          }
+        ],
+        "components": [
+          {
+            "id": "linear-programming-formulation",
+            "label": "Linear Programming Formulation",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The objective function of (4) maximizes the expected total rewards, and the first four constraints (in order) ensure that σ1j adheres to the initial state distributions qj, the one-step evolutions respect the transition probabilities pjt, and the selected policy πtj, the resource constraints are met and that no DPs “disappear” in any time period, respectively.",
+            "searchPhrases": [
+              "how linear programming formulation is represented",
+              "modeled objective in operations and supply chains",
+              "linear programming formulation modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "A to each possible state s ∈S in each time period t ∈T ."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.1. Linear Programming Formulation",
+                "equation": "",
+                "quote": "The objective function of (4) maximizes the expected total rewards, and the first four constraints (in order) ensure that σ1j adheres to the initial state distri­ butions qj, the one-step evolutions respect the transition probabilities pjt, and the selected policy πtj, the resource constraints are met and that no DPs “disappear” in any time period, respectively."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “objective function”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "synthetic-experiment",
+            "label": "Synthetic Experiment",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In all three approaches, we exploit the group structure inherent in the bandit problem, which implies that the associated LP formulations scale in the number of groups (as opposed to the number of bandits) and can thus be solved within seconds with standard solvers.",
+            "searchPhrases": [
+              "how synthetic experiment is represented",
+              "solution algorithm in operations and supply chains",
+              "synthetic experiment solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In all three approaches, we exploit the group structure inherent in the bandit problem, which implies that the associated LP formulations scale in the number of groups (as opposed to the number of bandits) and can thus be solved within seconds with standard solvers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We have a single resource constraint that requires that in each time period at most b ∈{1% · N, 5% · N,10% · N,25% · N} arms can be pulled.",
+              "Although the optimal policy is known for the ordinary multiarmed bandit problem in the discounted infinite horizon case with b=1 (this is the Gittins index), the problem is known to be hard in our finite horizon setting where multiple arms can be pulled in every time stage.",
+              "This problem is known in the literature as the ordinary (or regular) multiarmed bandit problem, as opposed to the restless multiarmed bandit problem where inactive arms passively transition to new states."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4. Synthetic Experiment",
+                "equation": "",
+                "quote": "In all three approaches, we exploit the group structure inherent in the bandit problem, which implies that the associated LP formulations scale in the number of groups (as opposed to the num­ ber of bandits) and can thus be solved within seconds with standard solvers."
+              },
+              {
+                "page": 12,
+                "section": "4. Synthetic Experiment",
+                "equation": "",
+                "quote": "This problem is known in the literature as the ordinary (or regular) multiarmed bandit problem, as opposed to the restless multiarmed bandit problem where inactive arms passively transition to new states."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "experimental-setup",
+            "label": "Experimental Setup",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "As a case study, we aim to optimally schedule elective procedures for the NHS in England over a 56-week planning horizon (52 reported weeks plus an additional 4 weeks to avoid end-of-time-horizon effects), starting from March 2, 2020, with the objective of minimizing YLL.",
+            "searchPhrases": [
+              "how experimental setup is represented",
+              "modeled objective in operations and supply chains",
+              "experimental setup modeled objective specification"
+            ],
+            "formal": "Objective relation: As a case study, we aim to optimally schedule elective procedures for the NHS in England over a 56-week planning horizon (52 reported weeks plus an additional 4 weeks to avoid end-of-time-horizon effects), starting from March 2, 2020, with the objective of minimizing YLL.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Transitions between G&A and CC are decided on at the beginning of each week, and they are based on transition probabilities that are specific to the different patient groups and admission types (elective or emergency).",
+              "At the beginning of each week, a new inflow of patients in need of elective and emergency care (hereafter denoted as elective and emergency patients, respectively) enters the system."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.1. Experimental Setup",
+                "equation": "",
+                "quote": "As a case study, we aim to optimally schedule elective procedures for the NHS in England over a 56-week planning horizon (52 reported weeks plus an addi­ tional 4 weeks to avoid end-of-time-horizon effects), starting from March 2, 2020, with the objective of min­ imizing YLL."
+              },
+              {
+                "page": 12,
+                "section": "5.1. Experimental Setup",
+                "equation": "",
+                "quote": "Transitions between G&A and CC are decided on at the beginning of each week, and they are based on transition probabilities that are specific to the different patient groups and admission types (elective or emergency)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "data-sources",
+            "label": "Data Sources",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "We model the patient inflows, which determine the initial state probabilities qt (for patients arriving in week 1) and the transition probabilities pjt (for patients arriving in later weeks), via historical data (for non- COVID patients) and a projection method (for COVID patients).",
+            "searchPhrases": [
+              "how data sources is represented",
+              "decision-relevant state in operations and supply chains",
+              "data sources decision-relevant state specification"
+            ],
+            "formal": "State definition: We model the patient inflows, which determine the initial state probabilities qt (for patients arriving in week 1) and the transition probabilities pjt (for patients arriving in later weeks), via historical data (for non- COVID patients) and a projection method (for COVID patients).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For each group j, we sample the initial state probabilities qj and the (nonstationary) transition probabilities pjt under the pull arm action uniformly at random, whereas each bandit deterministically resides in its current state under the do nothing action."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.2. Data Sources",
+                "equation": "",
+                "quote": "We model the patient inflows, which determine the initial state probabilities qt (for patients arriving in week 1) and the transition probabilities pjt (for patients arriving in later weeks), via historical data (for non- COVID patients) and a projection method (for COVID patients)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “We model the patient inflows, which determine the initial state probabilities qt (for patients arriving in week 1)”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The initial state",
+                  "source": {
+                    "type": "section",
+                    "section": "Experimental Setup",
+                    "page": 12,
+                    "sectionIndex": 21,
+                    "sentence": 3,
+                    "quote": "For each group j, we sample the initial state probabilities qj and the (nonstationary) transition probabilities pjt under the pull arm action uniformly at random, whereas each bandit deterministically resides in its current state under the do nothing action.",
+                    "matchedText": "the initial state",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fluid-approximation",
+        "name": "Fluid Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Linear Programming Formulation.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "linear-programming-formulation"
+          }
+        ],
+        "summary": "We then construct the feasible policy πF from the auxiliary policy πred as follows: In each time period t ∈T and for each state-action pair (s,a) ∈S × A with positive probability [πred t (s)](a) > 0, if action a violates the resource limits {btl}t,l, then we shift the probability mass assigned to action a to any alternative actions a′ that satisfy them.",
+        "objects": [
+          "The available resources",
+          "Patients",
+          "Subject"
+        ],
+        "inputs": [
+          "The random state",
+          "The initial state"
+        ],
+        "decisions": [
+          "Require hospitalization for a few days only",
+          "Find a policy",
+          "Require emergency admission",
+          "To hospital immediately if capacity permits"
+        ],
+        "assumptions": [
+          "The model divides the population into four age groups (0–4, 5–19, 20–64, over 65 years), which are then mapped into our three age groups using a linear Table 2.",
+          "Emergency patients who are denied admission die, which is represented by the Dead state",
+          "A patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital",
+          "Caro and Gallien (2007) apply the Lagrangian relaxation principle to a finite horizon multiarmed bandit problem in which the decision maker can pull multiple arms in each time period"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The available resources",
+              "source": {
+                "type": "section",
+                "section": "Fluid Approximation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 51,
+                "quote": "This corresponds to a healthcare system where the number of patients increases and where the avail­ able resources increase proportionately.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Fluid Approximation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 51,
+                "quote": "This corresponds to a healthcare system where the number of patients increases and where the avail­ able resources increase proportionately.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Subject",
+              "source": {
+                "type": "section",
+                "section": "Fluid Approximation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 63,
+                "quote": "As long as the resource violations are small, as is guaranteed to be the case with high probability by Theorems 1 and 2, they are likely to be acceptable in our healthcare appli­ cation because the resource limits are themselves un­ certain and subject to measurement inaccuracies, and the resources in our healthcare application tend to be, within certain limits, expandable.",
+                "matchedText": "subject",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The random state",
+              "source": {
+                "type": "section",
+                "section": "Fluid Approximation",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 36,
+                "quote": "Our results make use of the ran­ dom state ˜st,(j,i) of the (j, i)th DP and the random action ˜at,(j,i) applied to this DP in time period t, respectively.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The initial state",
+              "source": {
+                "type": "section",
+                "section": "Fluid Approximation",
+                "sectionIndex": 0,
+                "page": 9,
+                "quote": "The initial state ˜s1 is random and satisfies P[˜s1 = s] = q(s) for s ∈S."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require hospitalization for a few days only",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 9,
+                "sentence": 14,
+                "quote": "The inclusion of designated Last Week states allows us to account for the empirical fact that for some disease types, a large fraction of the patients require hospitaliza­ tion for a few days only",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Find a policy",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 12,
+                "sectionIndex": 21,
+                "sentence": 6,
+                "quote": "The goal is to find a policy that decides which arms to pull in each time period to maximize the expected total reward.",
+                "matchedText": "find a policy",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Require emergency admission",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 12,
+                "sectionIndex": 6,
+                "sentence": 11,
+                "quote": "While in the queue, an elective patient’s condition might worsen and hence require emergency admission",
+                "matchedText": "require emergency admission",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "To hospital immediately if capacity permits",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 9,
+                "sentence": 6,
+                "quote": "Emergency patients are admitted to hospital immediately if capac­ ity permits",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The model divides the population into four age groups (0–4, 5–19, 20–64, over 65 years), which are then mapped into our three age groups using a linear Table 2.",
+              "source": {
+                "type": "section",
+                "section": "Data Sources",
+                "page": 13,
+                "quote": "The model divides the population into four age groups (0–4, 5–19, 20–64, over 65 years), which are then mapped into our three age groups using a linear Table 2."
+              }
+            },
+            {
+              "value": "Emergency patients who are denied admission die, which is represented by the Dead state",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 9,
+                "sentence": 6,
+                "quote": "Emergency patients are admitted to hospital immediately if capac­ ity permits; we assume that emergency patients who are denied admission die, which is represented by the Dead state.",
+                "matchedText": "emergency patients who are denied admission die, which is represented by the Dead state.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 9,
+                "sentence": 13,
+                "quote": "We assume that a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+                "matchedText": "a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Caro and Gallien (2007) apply the Lagrangian relaxation principle to a finite horizon multiarmed bandit problem in which the decision maker can pull multiple arms in each time period",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 4,
+                "sectionIndex": 1,
+                "sentence": 72,
+                "quote": "Caro and Gallien (2007) apply the Lagrangian relaxation principle to a finite horizon multiarmed bandit problem in which the decision maker can pull multiple arms in each time period.",
+                "matchedText": "Caro and Gallien (2007) apply the Lagrangian relaxation principle to a finite horizon multiarmed bandit problem in which the decision maker can pull multiple arms in each time period.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper investigates how tight the approximation offered by the fluid LP (4) is, and how optimal solutions to (4) allow us to construct nearoptimal policies for the grouped weakly coupled DP.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Fluid Approximation",
+          "page": 9,
+          "sentence": 27
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 10,
+            "section": "3. Fluid Approximation",
+            "equation": "",
+            "quote": "We then con­ struct the feasible policy πF from the auxiliary policy πred as follows: In each time period t ∈T and for each state-action pair (s,a) ∈S × A with positive probability [πred t (s)](a) > 0, if action a violates the resource limits {btl}t,l, then we shift the probability mass assigned to action a to any alternative actions a′ that satisfy them."
+          }
+        ],
+        "components": [
+          {
+            "id": "fluid-approximation",
+            "label": "Fluid Approximation",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "We then construct the feasible policy πF from the auxiliary policy πred as follows: In each time period t ∈T and for each state-action pair (s,a) ∈S × A with positive probability [πred t (s)](a) > 0, if action a violates the resource limits {btl}t,l, then we shift the probability mass assigned to action a to any alternative actions a′ that satisfy them.",
+            "searchPhrases": [
+              "how fluid approximation is represented",
+              "decision rule in operations and supply chains",
+              "fluid approximation decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We then construct the feasible policy πF from the auxiliary policy πred as follows: In each time period t ∈T and for each state-action pair (s,a) ∈S × A with positive probability [πred t (s)](a) > 0, if action a violates the resource limits {btl}t,l, then we shift the probability mass assigned to action a to any alternative actions a′ that satisfy them.",
+              "In this setting, the probabilities 1 |T | · |L|=N2 and 1 |T |(|L| + 1)=N2 in Theorems 1 and 2 approach one.",
+              "That said, we next construct a near-optimal randomized policy πF = {πF t }t, πF t : S →∆(A), for the grouped weakly coupled DP that is guaranteed to be feasible.",
+              "Theorems 1 and 2 guarantee that πred satisfies all resource constraints across all time periods with probability at least 1 |T | · |L|=N2."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3. Fluid Approximation",
+                "equation": "",
+                "quote": "We then con­ struct the feasible policy πF from the auxiliary policy πred as follows: In each time period t ∈T and for each state-action pair (s,a) ∈S × A with positive probability [πred t (s)](a) > 0, if action a violates the resource limits {btl}t,l, then we shift the probability mass assigned to action a to any alternative actions a′ that satisfy them."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We then construct the feasible policy πF from the auxiliary policy πred as follows: In each time period”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dynamic-programming-model-of-an-individual-patient",
+        "name": "Dynamic Programming Model of an Individual Patient",
+        "kind": "alternative",
+        "relation": "This is an alternative to Linear Programming Formulation.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "linear-programming-formulation"
+          }
+        ],
+        "summary": "We emphasize that the policy can choose the action [πt(s)]i ∈Ai for the ith DP in view of the states of all other constituent DPs rather than just the state si; this is important in view of satisfying the coupling constraints. We assume that a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+        "objects": [
+          "Patients",
+          "Hospital"
+        ],
+        "inputs": [
+          "The states",
+          "The initial state",
+          "Initial state"
+        ],
+        "decisions": [
+          "Require hospitalization for a few days only",
+          "To hospital immediately if capacity permits"
+        ],
+        "assumptions": [
+          "Emergency patients who are denied admission die, which is represented by the Dead state",
+          "A patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Grouped Weakly Coupled Dynamic",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "Our healthcare application in Section 5, finally, will model individual patients as DPs, and patients with similar characteristics (arrival time, age group and dis­ ease type) will naturally form groups.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "Grouped Weakly Coupled Dynamic",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "We model individual patients, which form the basis of our healthcare model, as DPs whose states record the patient’s health (elective/emergency, recovered, or de­ ceased) and treatment state (waiting for treatment, in G&A, or in CC), whose actions describe the treatment options (admit or move to G&A or to CC, deny care, or discharge from hospital), whose transition probabilities characterize the stochastic evolution of the patient’s health and whose rewards amount to the years of life gained.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The states",
+              "source": {
+                "type": "section",
+                "section": "Grouped Weakly Coupled Dynamic",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 44,
+                "quote": "The rectangular and oval nodes represent the states and actions, respectively.",
+                "matchedText": "the states",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The initial state",
+              "source": {
+                "type": "section",
+                "section": "Grouped Weakly Coupled Dynamic",
+                "sectionIndex": 0,
+                "page": 5,
+                "quote": "The initial state ˜s1 is random and satisfies P[˜s1 = s] = q(s) for s ∈S."
+              }
+            },
+            {
+              "value": "Initial state",
+              "source": {
+                "type": "section",
+                "section": "Grouped Weakly Coupled Dynamic",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 68,
+                "quote": "initial state",
+                "matchedText": "initial state",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require hospitalization for a few days only",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 1,
+                "sentence": 14,
+                "quote": "The inclusion of designated Last Week states allows us to account for the empirical fact that for some disease types, a large fraction of the patients require hospitaliza­ tion for a few days only",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "To hospital immediately if capacity permits",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "Emergency patients are admitted to hospital immediately if capac­ ity permits",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Emergency patients who are denied admission die, which is represented by the Dead state",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "Emergency patients are admitted to hospital immediately if capac­ ity permits; we assume that emergency patients who are denied admission die, which is represented by the Dead state.",
+                "matchedText": "emergency patients who are denied admission die, which is represented by the Dead state.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Model of an Individual Patient",
+                "page": 14,
+                "sectionIndex": 1,
+                "sentence": 13,
+                "quote": "We assume that a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+                "matchedText": "a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          }
+        ],
+        "method": "The paper subsequently introduce the notion of a grouped weakly coupled DP, which stipulates that some of the DPs within a weakly coupled DP share the same characteristics.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Grouped Weakly Coupled Dynamic",
+          "page": 5,
+          "sentence": 2
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "2. Grouped Weakly Coupled Dynamic Programs",
+            "equation": "",
+            "quote": "We emphasize that the policy can choose the action [πt(s)]i ∈Ai for the ith DP in view of the states of all other constituent DPs rather than just the state si; this is important in view of satis­ fying the coupling constraints."
+          }
+        ],
+        "components": [
+          {
+            "id": "grouped-weakly-coupled-dynamic-programs",
+            "label": "Grouped Weakly Coupled Dynamic Programs",
+            "role": "decision",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "We emphasize that the policy can choose the action [πt(s)]i ∈Ai for the ith DP in view of the states of all other constituent DPs rather than just the state si; this is important in view of satisfying the coupling constraints.",
+            "searchPhrases": [
+              "how grouped weakly coupled dynamic programs is represented",
+              "decision rule in operations and supply chains",
+              "grouped weakly coupled dynamic programs decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In a weakly coupled DP, the admissible actions a ∈AC t (s) in state s ∈S must satisfy the constraints ai ∈Ait(si) of the individual DPs i ∈I and the coupling resource constraints a ∈AC t (s).",
+              "In particular, the feasibility of an action ai ∈Ai for the ith constituent DP is not just determined by the state si ∈Si, but it depends (through the resource constraints) on the states si′ ∈Si′,i′ ∈I ∖ {i}, of the other constituent DPs as well.",
+              "The constraints in AC t allow us to model the resource consumption of individual patients (such as a G&A or CC bed, as well as fractions of doctor and nurse times, each of which can be modeled as a distinct resource l ∈L).",
+              "We emphasize that the policy can choose the action [πt(s)]i ∈Ai for the ith DP in view of the states of all other constituent DPs rather than just the state si; this is important in view of satisfying the coupling constraints."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2. Grouped Weakly Coupled Dynamic Programs",
+                "equation": "",
+                "quote": "We emphasize that the policy can choose the action [πt(s)]i ∈Ai for the ith DP in view of the states of all other constituent DPs rather than just the state si; this is important in view of satis­ fying the coupling constraints."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Dynamic programming as “dynamic program”: “dynamic program”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "dynamic-programming-model-of-an-individual-patient",
+            "label": "Dynamic Programming Model of an Individual Patient",
+            "role": "state",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "We assume that a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+            "searchPhrases": [
+              "how dynamic programming model of an individual patient is represented",
+              "decision-relevant state in operations and supply chains",
+              "dynamic programming model of an individual patient decision-relevant state specification"
+            ],
+            "formal": "State definition: We assume that a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital.",
+              "we assume that emergency patients who are denied admission die, which is represented by the Dead state.",
+              "Apart from the patients that enter our healthcare model in the first week, each patient is Dormant until the beginning of week t = t0, at which point she enters the system either as to be admitted for a planned procedure (Elective) or as emergency (Emergency).",
+              "Emergency patients are admitted to hospital immediately if capacity permits; we assume that emergency patients who are denied admission die, which is represented by the Dead state."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "5.3. Dynamic Programming Model of an Individual Patient",
+                "equation": "",
+                "quote": "We assume that a patient in a Last Week state only consumes half of the hospital resources, which mimics a half-week stay at the hospital."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Dynamic programming: “We assume that a patient in a Last Week state only consumes half of the hospital resources, which”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "3fd88149e319d903e4d7ef56ca606645d3ded159703e4e905718de8baa127d8d",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "30edff70fe5d04babfe8505d8c019a221a810fd91efe1f119918a1496341a173",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4679/30edff70fe5d04babfe8505d8c019a221a810fd91efe1f119918a1496341a173.json",
+      "extractionQaDecisionSha256": "64c6ee28d0052d0c93651e3b4d8ee540f99ae32e8262e460d42980acabdc5b2a",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

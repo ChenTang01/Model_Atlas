@@ -1,0 +1,941 @@
+{
+  "schemaVersion": 1,
+  "reportVersion": "extraction-visual-scope-review-v1",
+  "reviewDate": "2026-09-12",
+  "reviewerRole": "independent_visual_qa",
+  "scope": "Authoring-scope review of the 16 production extractions with unresolved parser-warning or legacy-font-map Extraction QA dispositions.",
+  "authority": {
+    "changesExtractionQaDisposition": false,
+    "authorizesAdjudication": false,
+    "authorizesPromotion": false,
+    "authorizesPublicRelease": false
+  },
+  "method": {
+    "id": "hash-bound-pdf-vs-production-visual-review",
+    "renderer": "Poppler pdftoppm 26.07.0",
+    "dpi": 144,
+    "procedure": "Recompute source PDF, production pages.json, production text.txt, and QA-decision hashes; compare QA-required pages and diagnostic formula, figure, or table pages against rendered source-PDF pages and exact production page text; record only a scoped authoring allowance, never an Extraction QA acceptance.",
+    "proseAllowanceMeaning": "Only legible prose whose meaning does not depend on an excluded formula, plot geometry, table cell binding, or damaged symbol may be used for note authoring.",
+    "structuredAllowanceMeaning": "false forbids treating the production text stream as a faithful structured transcription; a later source-visual transcription remains possible under a separate reviewed workflow."
+  },
+  "restartSafety": {
+    "entryKey": "paperId",
+    "bindingFields": [
+      "sourcePdf.sha256",
+      "productionExtraction.pagesSha256",
+      "productionExtraction.textSha256",
+      "qaDecision.sha256"
+    ],
+    "staleIf": "Any binding field changes, the QA decision is superseded, or the production extraction pointer changes.",
+    "resumeRule": "Re-review only missing or stale entries, merge by paperId, and never propagate this scoped report into a QA acceptance or promotion decision.",
+    "bindingSetCanonicalization": "UTF-8 lines sorted by paperId: paperId TAB sourcePdfSha256 TAB pagesSha256 TAB textSha256 LF",
+    "bindingSetSha256": "a88ea9022ad7eff8b0ce86f7faec2340cedb6e61764c9ede1e5e7ce03f575391"
+  },
+  "accounting": {
+    "expectedEntries": 16,
+    "recordedEntries": 16,
+    "uniquePaperIds": 16,
+    "hashBoundEntries": 16,
+    "needsReviewEntries": 16,
+    "proseAuthoringAllowedEntries": 16,
+    "formalMathAllowedEntries": 0,
+    "structuredFigureTableAllowedEntries": 0
+  },
+  "entries": [
+    {
+      "paperId": "doi-10-1287-isre-2024-1518",
+      "sourcePdf": {
+        "path": "paper/Align Generative Artificial Intelligence with Human Preferences_ A Novel Large Language Model Fine-Tuning Method for[10.1287_isre.2024.1518].pdf",
+        "sha256": "267154c1725bc74cc50d13aebbe76e6392358dd1447444375451b2717d7419ca"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pypdf",
+        "selectedEngineVersion": "6.14.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-isre-2024-1518/bd127804ccc6520c842f725085e3740100f7bcf2c307296aaba7fa4f20d9427e/pages.json",
+        "pagesSha256": "3d53ed9efdfc79039e22c23f9f190a28ea771a4b977c7841d69e30071b7896ac",
+        "textPath": "research/ledger/artifacts/doi-10-1287-isre-2024-1518/bd127804ccc6520c842f725085e3740100f7bcf2c307296aaba7fa4f20d9427e/text.txt",
+        "textSha256": "a234a0a6c7670a608cf38c10e4f4dd82e0ae65a08f472894945bb8de86016762"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-isre-2024-1518/e92f116eeba237c78abf9599ee1a1dc7a52740b821ae6569cc40ae772d5a69a4.json",
+        "sha256": "70a39dad44b2c3d4cc45c9d85ff38b6bc733760ebb25edc96ebd785e42a2656a",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 46, 92],
+      "diagnosticPages": [16, 18],
+      "reviewedPages": [1, 16, 18, 46, 92],
+      "pageObservations": [
+        "Required identity, midpoint, and end pages retain readable ordinary prose for scoped authoring.",
+        "Page 16 visibly contains tuples, set braces, membership, and inequalities, while production emits punctuation-like placeholders.",
+        "Page 18's DPO objective contains pi subscripts, beta, log-sigma, reference-policy notation, and overlapping formula fragments whose production order is scrambled."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "title and abstract",
+        "LLM preference-alignment motivation",
+        "method and empirical findings stated independently in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [16],
+          "regions": ["tuple definitions", "sets of integer pairs", "membership and inequality expressions"],
+          "reason": "Cambria Math glyphs are replaced by punctuation-like placeholders."
+        },
+        {
+          "pages": [18],
+          "regions": ["DPO objective", "pi subscripts", "reference-policy notation", "overlapping formula blocks"],
+          "reason": "Cross-engine agreement preserves a scrambled sequence and is not correctness evidence."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all formal expressions using unresolved Cambria Math layout variants", "all unreviewed figures and tables as structured data"],
+          "reason": "The production stream has no complete geometry-aware formula or structured-region recovery."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mksc-2017-1035",
+      "sourcePdf": {
+        "path": "paper/Match Your Own Price_ Self-Matching as a Retailer’s Multichannel Pricing Strategy.pdf",
+        "sha256": "686ea220a4e96ee18f5dd6b32593826d297a6708f92f511e5b05e965623c01f5"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pypdf",
+        "selectedEngineVersion": "6.14.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mksc-2017-1035/0be9054e97b4ee5a95c158d2e1e3c39680815cbc9d9b7ebb2a14109c4ae20d52/pages.json",
+        "pagesSha256": "fee5675ae1fdfef0c23d4ff92f4676cf442c350a142045497ffe2a6d21e64e65",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mksc-2017-1035/0be9054e97b4ee5a95c158d2e1e3c39680815cbc9d9b7ebb2a14109c4ae20d52/text.txt",
+        "textSha256": "b6da92a02be1d3362bdd66454fdfb2b1db580044104466e941d39edff9658e97"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mksc-2017-1035/e94bd892bf331c7d996cf05a2d5103a301a6cfc546810ef197801f27284b8c21.json",
+        "sha256": "b3f3598168989a6ba88265451af26d653a6b8a5cfa969da184a5c9de5253e8aa",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 12, 23],
+      "diagnosticPages": [5, 8],
+      "reviewedPages": [1, 5, 8, 12, 23],
+      "pageObservations": [
+        "Required beginning, midpoint, and end pages preserve prose sufficiently for a prose-only note.",
+        "Page 5 visually distinguishes theta, eta, and beta, but production substitutes controls or unrelated symbols; Table 1 occupies the right column.",
+        "Page 8 contains equality and comparison operators, profit functions, and a large cases brace split into overlapping blocks."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "self-matching retail-policy motivation",
+        "multichannel pricing mechanism",
+        "qualitative competitive and managerial implications stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [5],
+          "regions": ["theta, eta, and beta notation", "exact model definitions", "Table 1 row and column binding"],
+          "reason": "Several math resources emit controls or incorrect glyph identities, and the table was not approved as a structured transcription."
+        },
+        {
+          "pages": [8],
+          "regions": ["profit equations", "comparison conditions", "cases construction"],
+          "reason": "Operators are lost or changed and brace-extension pieces cannot be flattened to independent characters."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["exact propositions and thresholds", "unreviewed figure and table structure"],
+          "reason": "The production extraction does not provide complete multi-resource or geometry-aware recovery."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mksc-2017-1071",
+      "sourcePdf": {
+        "path": "paper/A Model of Two-Sided Costly Communication for Building New Product Category Demand.pdf",
+        "sha256": "1ab1e1c4a40b512cfdf1eac3d38c2a0bae5fe5d9464b51f4d0056f795840eda1"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pypdf",
+        "selectedEngineVersion": "6.14.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mksc-2017-1071/3a48535b9b1dc4db811c58a78633a047087966d9305c2a569146cb4deefbaf00/pages.json",
+        "pagesSha256": "97a518e482e13ab0d51452dd21bdde6e6acb57719e5ebbccf8ab313e66342a5a",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mksc-2017-1071/3a48535b9b1dc4db811c58a78633a047087966d9305c2a569146cb4deefbaf00/text.txt",
+        "textSha256": "892f1bb118076ed438cd113c5b0dd304e780872e07a94d948a75dcdbac9f4fc8"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mksc-2017-1071/25b42791d2e38f37a93fa8ff7f03e0eafcec4095f30c4083662f0a0bc7e2c981.json",
+        "sha256": "b0523ebda889abdc542d8a992dea7d8b64cda81ed396b01553bcc5eb10525954",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 11, 21],
+      "diagnosticPages": [4, 7],
+      "reviewedPages": [1, 4, 7, 11, 21],
+      "pageObservations": [
+        "Required beginning, midpoint, and end pages retain readable prose and reference identity.",
+        "Page 4 visibly contains d in the interval from zero to one, binary variables, Greek symbols, comparisons, and a spanning Figure 1 region.",
+        "Page 7 contains profit equations, an integral, equality and comparison operators, and a large brace assembled from extension glyphs."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "two-sided costly-communication motivation",
+        "new-product-category demand mechanism",
+        "qualitative market and managerial findings stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [4],
+          "regions": ["interval and binary-variable definitions", "Greek-variable identities", "Figure 1 geometry and labels"],
+          "reason": "Membership, comparisons, and Greek symbols are damaged, and the spanning figure was not recovered as structured content."
+        },
+        {
+          "pages": [7],
+          "regions": ["profit equations", "integral", "cases and brace construction"],
+          "reason": "Formula block order overlaps and integral or brace extensions have geometry-dependent meaning."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["exact propositions, proofs, and thresholds", "unreviewed structured figures and tables"],
+          "reason": "Multi-resource formula recovery remains incomplete."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mksc-2019-1201",
+      "sourcePdf": {
+        "path": "paper/Conspicuous by Its Absence_ Diagnostic Expert Testing Under Uncertainty.pdf",
+        "sha256": "4d7b37fd700fcc9ea8f0f4dcac2c36b9212d3d8a20eb9f872560c6776074a55f"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mksc-2019-1201/4888cba3969bfde075a9fec14f769778572eb4b7d8a55828b941a3c5d1f513a1/pages.json",
+        "pagesSha256": "0f12b9276152638af0983f3c15edff756f177227aad794bbf3fae5a21292a56f",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mksc-2019-1201/4888cba3969bfde075a9fec14f769778572eb4b7d8a55828b941a3c5d1f513a1/text.txt",
+        "textSha256": "b121e6a4a0073d7096273bf61643ac2e6ea19c4a65a83c061af29481ffbeb043"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mksc-2019-1201/ac4c5cac30a316a6657ba886f41d3a7396e6c332d5a344a76cfbff43c92acc56.json",
+        "sha256": "26cc0d501c0eda21c3346d84b1c48d25c1b25e58c139747025a942d15726442e",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 12, 24],
+      "diagnosticPages": [5, 11, 12],
+      "reviewedPages": [1, 5, 11, 12, 24],
+      "pageObservations": [
+        "Page 1 title, abstract, and opening prose agree with production; page 24 references retain readable two-column order.",
+        "Page 5's prose is readable, but visible state definitions use equality signs where production emits exclamation marks.",
+        "Page 11's qualitative undertesting and reputation analysis is readable; exact Proposition 5 threshold notation is not reliable.",
+        "Page 12 visibly contains Figure 2 axes, threshold ticks, arrows, and a polygonal separating-equilibrium region that have no corresponding production text blocks."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "diagnostic undertesting as expert-type signaling",
+        "nonmonotonic reputational-payoff mechanism",
+        "transparency and testing-policy implications stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [5],
+          "regions": ["state definitions", "all equalities and exact model notation"],
+          "reason": "The production extractor renders the relevant equals resource as exclamation marks."
+        },
+        {
+          "pages": [11, 12],
+          "regions": ["Proposition 5 threshold notation", "Figure 2 axes and tick labels", "Figure 2 arrows and equilibrium-region geometry"],
+          "reason": "Threshold decorations are not reliably preserved and the vector figure is absent from production text blocks."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact equations and threshold conditions", "all unreviewed figures and tables as structured data"],
+          "reason": "A narrow equals repair cannot recover independent vector or structured regions."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mksc-2022-1424",
+      "sourcePdf": {
+        "path": "paper/A Model of Product Portfolio Design_ Guiding Consumer Search Through Brand Positioning.pdf",
+        "sha256": "97dc3573eae547c2f04eba9317e07bf730c871c570026103a7ba93ea9067dbec"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pypdf",
+        "selectedEngineVersion": "6.14.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mksc-2022-1424/36d9596ad73387c83aa2d3b6aed4d9e9d06f0c64ee3b56eadd259c4efe2775c5/pages.json",
+        "pagesSha256": "5548898525f6f10241c4ddb281363267087cca292fc503a9611bb7e8bb6efe7e",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mksc-2022-1424/36d9596ad73387c83aa2d3b6aed4d9e9d06f0c64ee3b56eadd259c4efe2775c5/text.txt",
+        "textSha256": "a91d446f290dfb213c8a626978b82c843c16a9e966abea350cbdc5f46f6a2a60"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mksc-2022-1424/96ff0658be6d3c56defd22e70c172fafffd672e66105d5419401111912728f05.json",
+        "sha256": "6e8375519f3161d74103e1e7d18c515b99c8b7f900de47772de6997d9d9e62e3",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 12, 24],
+      "diagnosticPages": [4, 8],
+      "reviewedPages": [1, 4, 8, 12, 24],
+      "pageObservations": [
+        "Required beginning, midpoint, and end pages retain prose sufficient for a scoped conceptual note.",
+        "Page 4 visibly contains the interval from minus one to one, membership and comparison notation, and a piecewise equation that production does not preserve.",
+        "Page 8 contains Delta variables, integrals, decorated notation, equalities, and constraints fragmented across overlapping blocks."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "product-portfolio-design motivation",
+        "brand-positioning and guided-search mechanism",
+        "qualitative consumer-search and managerial implications"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [4],
+          "regions": ["minus-one-to-one interval", "membership and comparisons", "piecewise model definition"],
+          "reason": "Production contains controls or wrong symbols in these spans."
+        },
+        {
+          "pages": [8],
+          "regions": ["Delta and decorated-Delta notation", "integrals", "constraints and equality chains"],
+          "reason": "Proprietary, Type0, and extension-font glyphs are unresolved and formula order is not reconstructable from blocks."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact formulas and comparative-static thresholds", "unreviewed structured figures and tables"],
+          "reason": "Variable-width and geometry-aware math recovery is incomplete."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mnsc-2015-2189",
+      "sourcePdf": {
+        "path": "paper/Optimizing Product Launches in the Presence of Strategic Consumers.pdf",
+        "sha256": "9b6fc01e41d230a692416edd86e6f2f790eb1e969cbde53ab926a668df793c6e"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mnsc-2015-2189/62b7f41e7affc131f7008b16bcf4bb563e3bb9b6d5c984586ba1d3b1ade9aa57/pages.json",
+        "pagesSha256": "ba1a81b0273af75d55bc2564c6823ee4dd27c3cbf832b7c4d1b1485681b763bd",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mnsc-2015-2189/62b7f41e7affc131f7008b16bcf4bb563e3bb9b6d5c984586ba1d3b1ade9aa57/text.txt",
+        "textSha256": "422d020deb916f61df4a831e73184892f7ea0e2ea4f8f0abe16f2c392439b7b3"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mnsc-2015-2189/c7748e200fa83f132cfdbdd3b7a03b4e8fc398bb4e642baceb166240364f2473.json",
+        "sha256": "2e63391dea2b7ed2c9b1fab45e301bc07cf6836662be9fc787cfd10c5d8e5f74",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 11, 22],
+      "diagnosticPages": [11],
+      "reviewedPages": [1, 11, 22],
+      "pageObservations": [
+        "Page 1 abstract and narrative framing are readable; page 22 end matter and references retain prose identity.",
+        "Page 11 visibly contains a coherent Equation 5, while production contains private-use characters and nonsensical formula fragments from several resources."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "product-launch timing problem",
+        "strategic-consumer mechanism",
+        "qualitative launch and pricing implications stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [11],
+          "regions": ["Equation 5", "all adjacent symbolic derivations", "large delimiters and radicals"],
+          "reason": "The visible formula cannot be recovered by one-resource substitution and includes geometry-dependent components."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["exact propositions, proofs, equations, and thresholds", "unreviewed structured figures and tables"],
+          "reason": "Multiple damaged math resources and private-use characters remain unresolved."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mnsc-2015-2391",
+      "sourcePdf": {
+        "path": "paper/Closed-Form Solutions for Robust Inventory Management.pdf",
+        "sha256": "44f4b5976debcb7b45087797d75d17dcf0f1e635862dfd30584dd6d98aa2da1c"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pypdf",
+        "selectedEngineVersion": "6.14.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mnsc-2015-2391/f5139359b83716e14c070f669c70999c71688fdb52a575e0c5b27ce4ab3ed047/pages.json",
+        "pagesSha256": "d507ba6ca4fd5d26683ce6df776da155752cc41d88ab5cc4ee40105df630b61a",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mnsc-2015-2391/f5139359b83716e14c070f669c70999c71688fdb52a575e0c5b27ce4ab3ed047/text.txt",
+        "textSha256": "6b13db8285a76590fc13106e686aeac82522362fde61d56c0ae62b9bb4a23913"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mnsc-2015-2391/c24284dfd9f560b8fea74e178dc6f86242fa2ebd0298421d53caeecfa2c4097f.json",
+        "sha256": "3370661995d32ea3861c6faeef7401a2186fd52acd087491207a4e35d00392c2",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 10, 19],
+      "diagnosticPages": [10],
+      "reviewedPages": [1, 10, 19],
+      "pageObservations": [
+        "Page 1 abstract and introductory prose are legible; page 19 references are usable with ordinary citation spot-checking.",
+        "Page 10's rendered Theorem 2 contains cases, equalities, inequalities, sums, radicals, and large delimiters not faithfully represented by production text."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "robust-inventory motivation",
+        "closed-form-policy contribution stated in prose",
+        "qualitative computational and managerial findings"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [10],
+          "regions": ["Theorem 2 formal statement", "case boundaries", "equalities and inequalities", "sums, radicals, and large delimiters"],
+          "reason": "The pypdf stream contains hundreds of controls, and the selected-engine formula cannot be reconstructed from scalar substitutions."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact closed-form formulas, proofs, and bounds", "unreviewed structured figures and tables"],
+          "reason": "Selected-engine replay and multi-resource recovery remain unresolved."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mnsc-2018-3152",
+      "sourcePdf": {
+        "path": "paper/Sustainable Inventory with Robust Periodic-Affine Policies and Application to Medical Supply Chains.pdf",
+        "sha256": "975596629326638681e60f72c24101e95b33e38dac3aca1ac46cbb5eca949f12"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mnsc-2018-3152/e006301a417a920e23d25e26d2aed8e081be09ea61ff32a28f13e03415855986/pages.json",
+        "pagesSha256": "a0e28a22777108183db651739f269c941d552d58463be15320c61c55acfe0333",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mnsc-2018-3152/e006301a417a920e23d25e26d2aed8e081be09ea61ff32a28f13e03415855986/text.txt",
+        "textSha256": "673314931bd6ce23663e45dbd6ff4d28ddd50c98a9b43c175c0ad9af79ab1a34"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mnsc-2018-3152/0656e5a9b170040c162fe25aa78de1cc8d4022419b783c7b001d3868b76222fb.json",
+        "sha256": "4d3e012c83133045c7b745593a4d9a13580439dd1c3b7f029305f5a47a950320",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 10, 20],
+      "diagnosticPages": [3],
+      "reviewedPages": [1, 3, 10, 20],
+      "pageObservations": [
+        "Required beginning, midpoint, and end pages retain enough ordinary prose for a scoped conceptual note.",
+        "Page 3's inventory-dynamics display visibly confirms equality signs but also uses calligraphic set notation and composite components outside the narrow equals repair."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "sustainable-inventory motivation",
+        "robust periodic-affine policy contribution",
+        "medical supply-chain application and qualitative findings"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [3],
+          "regions": ["inventory-dynamics equations", "calligraphic set symbols", "sums and brace components"],
+          "reason": "Production emits equals as exclamation marks and reduces unresolved calligraphic or composite glyphs to ordinary characters."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact model equations, policies, constraints, and proofs", "unreviewed structured figures and tables"],
+          "reason": "The existing narrow equals candidate is not production and does not resolve other resources."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mnsc-2018-3230",
+      "sourcePdf": {
+        "path": "paper/Constrained Assortment Optimization Under the Markov Chain–based Choice Model.pdf",
+        "sha256": "87ea6cd47b0d9bb36c02a39e2f5df0b7184f7d72ac6cc882eea13699e211c314"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mnsc-2018-3230/a53c51e40291076b54b05ebeeb659ec6049c65e20ec952f73416afd75ba15d66/pages.json",
+        "pagesSha256": "bbb8d908a43d1d3b1bd962013be13c402e81a3a1a954e1428a9bb2e232f5f355",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mnsc-2018-3230/a53c51e40291076b54b05ebeeb659ec6049c65e20ec952f73416afd75ba15d66/text.txt",
+        "textSha256": "aba0759e8ddb863a660e4c29ceb2b4bcfcc617410f7117fa3cf552090e1ea806"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mnsc-2018-3230/58c6492522e6e3ddb1ca2ffe15852e139abc72fc7d13dbe054ca78cecbacbbbf.json",
+        "sha256": "0f2c5301c6a1dd6e1af97b964d3d3b4506c1d07568f0138ba16fc32a5a027a3c",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 12, 24],
+      "diagnosticPages": [12],
+      "reviewedPages": [1, 12, 24],
+      "pageObservations": [
+        "Page 1 framing and page 24 end matter remain readable for prose and citation identity.",
+        "Page 12's analysis and proof region visibly contains equality, sums, braces, overbars, and calligraphic notation; production renders equals as dollar signs and loses composite structure."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "constrained-assortment problem motivation",
+        "Markov-chain choice interpretation",
+        "algorithmic and managerial claims stated independently in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [12],
+          "regions": ["analysis equations", "proof derivation", "sums, braces, overbars, and calligraphic sets"],
+          "reason": "The production equals mapping is wrong and the remaining formula geometry is unresolved."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact optimization formulations, propositions, and proofs", "unreviewed structured figures and tables"],
+          "reason": "The narrow candidate is not production and leaves 16 other glyph classes plus composite resources unresolved."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mnsc-2020-3933",
+      "sourcePdf": {
+        "path": "paper/Data Pooling in Stochastic Optimization.pdf",
+        "sha256": "c10b62eeab39c972dce2afbc9a74bf2b0a0bc7e6e865ba4cd4ccc7fbc4d0c30f"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mnsc-2020-3933/ea7ec3a617629fa14d150e7a87136f122fab76c0b73471fc2b5477f01905e96a/pages.json",
+        "pagesSha256": "71d68b4b386072726cb51566840552c91bfb037d2d13d27667b25b4a4b7ed543",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mnsc-2020-3933/ea7ec3a617629fa14d150e7a87136f122fab76c0b73471fc2b5477f01905e96a/text.txt",
+        "textSha256": "2b5d3e7624c9b1589431e27b1101831100d1e0761a1d3aec038a1c9eed7bd9ef"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mnsc-2020-3933/9596db50573cd39ea5bcf5e1d4418a3ca59dade76e1348db22518f4aebc2bdd3.json",
+        "sha256": "7b4939626c95cf8485942f29293c76c915b4b72356b3f5e42f7044fc8c434149",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 41, 81],
+      "diagnosticPages": [41],
+      "reviewedPages": [1, 41, 81],
+      "pageObservations": [
+        "Page 1 abstract and high-level contribution are readable; page 81 end matter is usable for identity and citation checks.",
+        "Page 41's EC.A.2 display visibly contains a complete expectation and supremum expression with norm delimiters, while production decomposes it into repeated or wrong delimiter characters."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "data-pooling motivation",
+        "stochastic-optimization contribution",
+        "qualitative theoretical and numerical findings stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [41],
+          "regions": ["EC.A.2 expression", "expectation and supremum operators", "norm delimiters", "subscripts and reading order"],
+          "reason": "Extension pieces are emitted as repeated characters and cannot encode the composed delimiter geometry."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact formulas, lemmas, proofs, and bounds", "all extraction-derived figure and table structure"],
+          "reason": "Damaged math resources and composite geometry span the 81-page document."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mnsc-2022-4310",
+      "sourcePdf": {
+        "path": "paper/Pacing Equilibrium in First Price Auction Markets.pdf",
+        "sha256": "876f01c01de05804725db192356793c43b11aa96697b6a0c574c10755439c08c"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mnsc-2022-4310/fa03048af7c1de8c45e0035c54bd76f5f61fd970f71f2d1d00bd29a7dc7c1877/pages.json",
+        "pagesSha256": "bc3831a08d1beef18ed45f87977bdecd819974f4586daccf8b110c85f5fa8b48",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mnsc-2022-4310/fa03048af7c1de8c45e0035c54bd76f5f61fd970f71f2d1d00bd29a7dc7c1877/text.txt",
+        "textSha256": "8eb33ffe33ac10e8c71e0992c8499b63eb8234d7c5deaf1bc319ec798436ba77"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-4310/1146729d1a1e3a7276ab7f654fcee5d359f7b3d31255455b60bae4cd7dbcf067.json",
+        "sha256": "482271a8149ba8e9d02dd804003d2688cad0d2a83231af1ba124678f98907036",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 11, 22],
+      "diagnosticPages": [11, 20],
+      "reviewedPages": [1, 11, 20, 22],
+      "pageObservations": [
+        "Page 1 abstract and page 22 end matter retain readable prose and citation identity.",
+        "Page 11 visibly contains equality, union notation, and proof-closing squares; production emits exclamation marks, dollar signs, or the letter w for those distinct objects.",
+        "Page 20 contains discarded null characters that make production-to-renderer offset alignment nonunique."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "first-price-auction pacing motivation",
+        "economic interpretation of pacing equilibrium",
+        "qualitative market-design findings stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [11],
+          "regions": ["set and equality formulas", "union symbols", "proof-closing markers"],
+          "reason": "Three resources collapse distinct symbols to incorrect printable characters."
+        },
+        {
+          "pages": [20],
+          "regions": ["all formula regions requiring renderer text offsets"],
+          "reason": "Null-character deletion prevents unique selected-engine offset alignment."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact equilibrium definitions, theorems, proofs, and set conditions", "unreviewed structured figures and tables"],
+          "reason": "The known equals mapping cannot safely be applied until replay alignment and other resources are resolved."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mnsc-2023-00994",
+      "sourcePdf": {
+        "path": "paper/Dynamic Persuasion and Strategic Search.pdf",
+        "sha256": "f919fcf35965345df578e000656329948633a436c556cabfba08abc393b64364"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mnsc-2023-00994/d5559f02ace83b7b78c614686a29cab8c102b8704c9f92a3c91895d4dcbcdf03/pages.json",
+        "pagesSha256": "51018e146b0ecd3fe5998b85ad263e221ecfefaa015c8bb1c2687b9b494f1115",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mnsc-2023-00994/d5559f02ace83b7b78c614686a29cab8c102b8704c9f92a3c91895d4dcbcdf03/text.txt",
+        "textSha256": "f528694f30dacf76d752b99f84e25700783efbdf36c4ebcee3cf22fea393d2b3"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00994/ed2f8f0d23ec47856f263e135b5e3045f0f5ef21ccc8dc396104bb290e218b6d.json",
+        "sha256": "36683cf7f2d5b21dbdce68e4e8de9aafa1e82de75946998691e9bdd8071c2aa6",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 14, 27],
+      "diagnosticPages": [5, 7, 20],
+      "reviewedPages": [1, 5, 7, 14, 20, 27],
+      "pageObservations": [
+        "Page 1 title, abstract, and introduction agree with production; page 27 is copyright-only.",
+        "Page 5 distinguishes barred posterior beliefs and displays minus and equality that production turns into controls or misorders.",
+        "Page 7's optimization program and constraints contain damaged equality, minus, and overbar ownership, although surrounding signal-design prose is readable.",
+        "Page 14's Proposition 5 prose is usable, but threshold and prior-interval notation is not.",
+        "Page 20 is a dense proof with nested fractions, bars, a piecewise brace, and equality chains that production linearizes incorrectly."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "dynamic-persuasion and endogenous-search motivation",
+        "high- versus low-search-cost information-policy results",
+        "qualitative prior-region and managerial implications stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [5, 7],
+          "regions": ["posterior-belief bars", "minus and equality operators", "P1, IR1, and F1", "objective and constraints"],
+          "reason": "Controls replace operators and overbars are detached from or ordered before their base symbols."
+        },
+        {
+          "pages": [14],
+          "regions": ["Proposition 5 exact thresholds", "prior intervals", "subscripts and superscripts"],
+          "reason": "Formal conditions contain corrupted operators and decorated symbols."
+        },
+        {
+          "pages": [20],
+          "regions": ["entire formal proof", "nested fractions", "piecewise cases", "A.1 and A.2 equality chains"],
+          "reason": "Production loses formula hierarchy, bar ownership, operators, and reading order."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact models, thresholds, and proofs", "unreviewed structured figures and tables"],
+          "reason": "The unresolved multi-resource formula defects occur beyond the sampled pages."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-mnsc-2023-4810",
+      "sourcePdf": {
+        "path": "paper/Optimal Robust Policy for Feature-Based Newsvendor.pdf",
+        "sha256": "b18c5ad4939d9c84429cf3cbc098e2ce7410e19a4cce13e785f7f780e9294d94"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-mnsc-2023-4810/59839e55fe15a4e9c1797a3a9a6c925a552c955b3cbbf7609cbee3890a5509e3/pages.json",
+        "pagesSha256": "35a25ee4a3e20a921ab9e12bf825b95a21fa19131e3b0608b948f7da37da60ed",
+        "textPath": "research/ledger/artifacts/doi-10-1287-mnsc-2023-4810/59839e55fe15a4e9c1797a3a9a6c925a552c955b3cbbf7609cbee3890a5509e3/text.txt",
+        "textSha256": "6be7db17e2d0d5d982e416e516522a8d5367973fea39b1ce41138b5bbf8083f9"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4810/9bd286afebcccff2856ce9eceb393939f09fb940efbcf003be152064311d9caf.json",
+        "sha256": "befd38a0264d0abd036610a5c0dcc03f25c41f6c028773b47017f98963269376",
+        "reason": "primary_legacy_font_map"
+      },
+      "requiredPages": [1, 17, 34],
+      "diagnosticPages": [15, 17, 33, 34],
+      "reviewedPages": [1, 15, 17, 33, 34],
+      "pageObservations": [
+        "Page 1 abstract and contribution prose agree with production.",
+        "Page 15 Figure 5 has three panels, signed negative ticks, a red zero baseline, legends, boxes, medians, whiskers, and outliers; production drops signs and geometry.",
+        "Page 17 Figure 6 has three panels and the same structural loss, while the adjacent prose states three usable comparative findings.",
+        "Page 33 figures EC.4 and EC.5 and page 34 figure EC.6 lose negative signs, zero-line meaning, panel association, and plotted-object geometry."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "feature-based newsvendor motivation",
+        "Wasserstein robust-policy and Shapley-method contributions",
+        "qualitative empirical findings explicitly stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [15, 17, 33, 34],
+          "regions": ["all boxplot values", "signed axes", "red zero baselines", "panel and legend binding", "boxes, medians, whiskers, and outliers"],
+          "reason": "Production flattens graphical objects and omits negative signs, so numeric direction and distribution cannot be inferred from raw text."
+        },
+        {
+          "pages": [15, 17],
+          "regions": ["Table 1 and Table 3 row and column structure"],
+          "reason": "Cell values may be visually transcribed later, but production text alone does not authorize structured binding."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["exact formulas using the legacy font map", "all unreviewed structured figures and tables"],
+          "reason": "The extraction has a full legacy-font-map signature and no complete formal or structured recovery."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-msom-2019-0815",
+      "sourcePdf": {
+        "path": "paper/Co-Opetition in Service Clusters with Waiting-Area Entertainment.pdf",
+        "sha256": "23767a12010ceed68dceaa6744dab4dba6f076cdf5be65737301bf4aef40da0d"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-msom-2019-0815/ddd0363de19f095d23baadcbdd7bc25bb0481d5c4d8b427e23432c526da68884/pages.json",
+        "pagesSha256": "3b7f21b40fd29bf7aa660f9279e24280f0e2deb88c8c43838ff68ba8e32f62b2",
+        "textPath": "research/ledger/artifacts/doi-10-1287-msom-2019-0815/ddd0363de19f095d23baadcbdd7bc25bb0481d5c4d8b427e23432c526da68884/text.txt",
+        "textSha256": "009dd344517d67f098a381348b0d9549c0a7ac5b17a910be5758273e16214440"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-msom-2019-0815/f239ae821058a281bd1d2a854c6e50a88291481ee2f9756530bdd072b66a0075.json",
+        "sha256": "83eacedb3325c15984f2d9c2d02d783839a6e0cb696f1f1b1e1e8093dc78e60c",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 9, 17],
+      "diagnosticPages": [4, 8, 9, 14, 15],
+      "reviewedPages": [1, 4, 8, 9, 14, 15, 17],
+      "pageObservations": [
+        "Page 1 abstract and introduction agree with production; page 17 references retain readable identity.",
+        "Page 4's demand equation visibly contains equality, minus, exponent, and subscript structure not preserved by production.",
+        "Page 8 contains two occurrence-bound not-equal composites plus Proposition 3 equations; page 14 contains the third not-equal composite.",
+        "Page 9's Corollary 6 and Propositions 4 through 6 have readable explanatory prose but corrupted equality, comparison, hat, star, and superscript notation.",
+        "Page 15 contains two optimization programs whose objectives, constraints, and subscripts cannot be safely read from production."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "waiting-area-entertainment and service-cluster motivation",
+        "monopoly, competition, and co-opetition comparison",
+        "efficiency-fairness and managerial implications stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [4, 8, 9, 14, 15],
+          "regions": ["all equations and optimization programs", "equals, minus, greater-than-or-equal, less-than-or-equal, membership, infinity, and prime operators", "three not-equal composites", "hats, stars, subscripts, and superscripts"],
+          "reason": "Current production maps equals to exclamation marks and loses other scalar or composite operator identities."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact proposition conditions, thresholds, and proofs", "all extraction-derived structured figures and tables"],
+          "reason": "An accepted repair candidate exists but has not been promoted and is intentionally excluded from this current-production review."
+        }
+      ],
+      "candidateStateNote": "Repair candidate af0a86de767141f7222ecab167e830320fef3f0547c907beec9c93449a291ef7 is not the production extraction and contributes no authoring permission here.",
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-msom-2021-0969",
+      "sourcePdf": {
+        "path": "paper/Clinical Ambiguity and Conflicts of Interest in Interventional Cardiology Decision Making.pdf",
+        "sha256": "782793e66ceff6c159b83afe3681dcad77f775b178e331c0888ce28767a0daa5"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-msom-2021-0969/ee69fb0a41b26d5f56b7c664d01deaf007305e9e977eeaefe80098cd582558e1/pages.json",
+        "pagesSha256": "f160f25712cc867cd1ae1cc6323ff8f5f62583350b9df2e1d6b5aa1a450ef302",
+        "textPath": "research/ledger/artifacts/doi-10-1287-msom-2021-0969/ee69fb0a41b26d5f56b7c664d01deaf007305e9e977eeaefe80098cd582558e1/text.txt",
+        "textSha256": "a7147d12c20e1b68926863aa31faf89dec5a489d81691344925331d0eb3875fd"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0969/bf6b4085437d39727d2360074b569468ba79c91458010b724ce71723ed5710d8.json",
+        "sha256": "6f435af6fe6895847b85549a3a65ed7406bdea6ca2297934e927e7e4a66024aa",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 10, 19],
+      "diagnosticPages": [10],
+      "reviewedPages": [1, 10, 19],
+      "pageObservations": [
+        "Page 1 title, abstract, policy claims, and reported one-third reimbursement bonus, five-percent payment increase, and twenty-six-percent overstenting decline agree with the rendered source.",
+        "Page 10 visually distinguishes epsilon, true equality, division strokes, inequalities, phi superscripts, and decorated thresholds that production conflates.",
+        "Page 19 references retain usable identity with ordinary diacritic spot-checking."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "PCI overstenting and clinical-ambiguity motivation",
+        "endogenous FFR testing and conflict-of-interest mechanism",
+        "abstract-level quantitative and policy findings explicitly stated in prose"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [10],
+          "regions": ["Corollaries 2 and 3 exact conditions", "epsilon and division expressions", "phi thresholds", "beta inverse", "theta-star equality"],
+          "reason": "Distinct epsilon, division, equality, and inequality glyphs collapse to exclamation marks, equals signs, or other wrong characters."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all formal decision rules and exact thresholds", "all extraction-derived structured figures and tables"],
+          "reason": "The narrow equals candidate is not production and would not resolve the independent glyph resources."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    {
+      "paperId": "doi-10-1287-msom-2021-0970",
+      "sourcePdf": {
+        "path": "paper/A Theory of Interior Peaks_ Activity Sequencing and Selection for Service Design.pdf",
+        "sha256": "4c5fdb928cf3643d98794e7b104509d30661d7f992334dc03cc45f5eb9551a88"
+      },
+      "productionExtraction": {
+        "selectedEngine": "pymupdf",
+        "selectedEngineVersion": "1.28.2",
+        "pagesPath": "research/ledger/artifacts/doi-10-1287-msom-2021-0970/1fa8c72a3d510f39a80dfdb5afb71388d7bb0cf3460df11830993fd06ab60386/pages.json",
+        "pagesSha256": "06a58308dfd26ac4b216e6535f6c7d46c2e16cae804c786d23dcb1e1ac6fe83e",
+        "textPath": "research/ledger/artifacts/doi-10-1287-msom-2021-0970/1fa8c72a3d510f39a80dfdb5afb71388d7bb0cf3460df11830993fd06ab60386/text.txt",
+        "textSha256": "1283efe0815ddc6e1be0b311195f97161c924fa9d353aeaaf5ce132293ab5878"
+      },
+      "qaDecision": {
+        "path": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0970/acfb9c838f30c92f23203aad5b7d2d3a1f7631c36605e1423fed244f9684a2c7.json",
+        "sha256": "ca40c330690d8a5453bd423715f8b7d76cdf5f60ed84a336a9a0fcaf72497116",
+        "reason": "parser_warning"
+      },
+      "requiredPages": [1, 5, 9],
+      "diagnosticPages": [5],
+      "reviewedPages": [1, 5, 9],
+      "pageObservations": [
+        "Page 1 abstract and behavioral findings agree with production; page 9 endnotes and references retain usable order with diacritic spot-checking.",
+        "Page 5 places Table 1 across both columns before the body text, while production reads both body columns first and appends the table.",
+        "Page 5 tuple-header decimal points become colons and equality signs become exclamation marks in production."
+      ],
+      "proseAuthoringAllowed": true,
+      "proseScope": [
+        "interior-peak and memory-decay motivation",
+        "U, UI, and IU sequence-shape intuition",
+        "qualitative activity-sequencing and service-design findings"
+      ],
+      "formalMathAllowed": false,
+      "structuredFigureTableAllowed": false,
+      "explicitExclusions": [
+        {
+          "pages": [5],
+          "regions": ["Table 1 row and column order", "tuple-header decimal parameters", "scenario equalities", "Propositions 2 and 3 exact conditions"],
+          "reason": "The spanning table is appended after two-column body text, decimal points become colons, and equals signs become exclamation marks."
+        },
+        {
+          "documentWide": true,
+          "pages": [],
+          "regions": ["all exact timing inequalities and scenario parameters", "all extraction-derived structured figures and tables"],
+          "reason": "A narrow equals candidate would not correct decimal-glyph or reading-order defects and is not production."
+        }
+      ],
+      "reviewDisposition": "needs_review",
+      "reviewMethod": "hash-bound-pdf-vs-production-visual-review",
+      "reviewDate": "2026-09-12",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    }
+  ]
+}

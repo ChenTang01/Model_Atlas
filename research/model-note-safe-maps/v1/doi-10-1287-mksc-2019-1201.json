@@ -1,0 +1,350 @@
+{
+  "schemaVersion": "atlas-model-note-safe-map-v1",
+  "safeMapVersion": 1,
+  "paperId": "doi-10-1287-mksc-2019-1201",
+  "sourcePdfSha256": "4d7b37fd700fcc9ea8f0f4dcac2c36b9212d3d8a20eb9f872560c6776074a55f",
+  "extractionPagesSha256": "2be5b6c14932f5f339346da80cb25d30a917a0c97d5c48ce0d506ca66fd6ff1d",
+  "visualScopeReview": {
+    "path": "research/ledger/extraction-visual-scope-review.v1.json",
+    "sha256": "3cc727a92471f5d59b7b111ed71042d5c671a10da9fc294dfcb4ae72a5284260",
+    "entryBinding": {
+      "qaDecisionSha256": "83553f4f1a44cfaba44eebaa67fc29a134083ee3f055456989b37d1622953323",
+      "textSha256": "6b9bfd69063d04a57a6373c7aa08775dafee6356283a93680b453d7e9bbc042c",
+      "reviewDisposition": "needs_review",
+      "reviewVersion": "extraction-visual-scope-review-v1"
+    },
+    "formalMathAllowed": false,
+    "structuredFigureTableAllowed": false
+  },
+  "review": {
+    "status": "approved",
+    "reviewerRole": "independent_content_qa",
+    "reviewedAt": "2026-09-12",
+    "version": "safe-map-content-review-v1"
+  },
+  "question": {
+    "text": "How can a diagnostic expert's testing pathway signal private diagnostic ability when diagnosis is uncertain?",
+    "source": {
+      "page": 3,
+      "section": "1. Introduction",
+      "quote": "An important objective of the work is to analytically investigate whether the expert’s diagnostic pathway can act as a signal of the expert’s diagnostic ability."
+    }
+  },
+  "overview": {
+    "text": "A privately informed diagnostic expert chooses between a signal-based diagnosis and a diagnostic test, while peers update beliefs about the expert's type after observing testing decisions.",
+    "sources": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "quote": "We study the problem a diagnostic expert (e.g., a physician) faces when offering a diagnosis to a client (e.g., a patient) that may be based only on the expert’s own diagnostic ability or supplemented by a diagnostic test—conventional and artiﬁcial intelligence (AI) tools alike—revealing the client’s true condition."
+      },
+      {
+        "page": 3,
+        "section": "1. Introduction",
+        "quote": "Peers have prior beliefs about the type of expert (high or low), which are updated using Bayes’ rule after observing the expert’s testing decisions."
+      }
+    ]
+  },
+  "models": [
+    {
+      "id": "private-type-diagnostic-pathway",
+      "name": "Private-Type Diagnostic Pathway Model",
+      "kind": "baseline",
+      "relation": "",
+      "summary": {
+        "text": "The expert chooses whether to test or diagnose from a private signal, and peers interpret the observed pathway as information about diagnostic ability.",
+        "sources": [
+          {
+            "page": 6,
+            "section": "2. Model",
+            "quote": "The expert can either reach a diagnosis that is based on the signal the expert has received about the client’s state or perform a diagnostic test."
+          },
+          {
+            "page": 3,
+            "section": "1. Introduction",
+            "quote": "Peers have prior beliefs about the type of expert (high or low), which are updated using Bayes’ rule after observing the expert’s testing decisions."
+          }
+        ]
+      },
+      "setup": {
+        "objects": [
+          {
+            "value": "a diagnostic expert",
+            "source": {
+              "page": 1,
+              "section": "Abstract",
+              "quote": "We study the problem a diagnostic expert (e.g., a physician) faces when offering a diagnosis to a client (e.g., a patient) that may be based only on the expert’s own diagnostic ability or supplemented by a diagnostic test—conventional and artiﬁcial intelligence (AI) tools alike—revealing the client’s true condition."
+            }
+          }
+        ],
+        "inputs": [
+          {
+            "value": "a private signal of the client’s state",
+            "source": {
+              "page": 6,
+              "section": "2. Model",
+              "quote": "a private signal of the client’s state."
+            }
+          }
+        ],
+        "decisions": [
+          {
+            "value": "whether to perform the test",
+            "source": {
+              "page": 1,
+              "section": "Abstract",
+              "quote": "The decision of whether to perform the test, which is costly for the client, provides the expert with an opportunity to inﬂuence that perception."
+            }
+          }
+        ],
+        "assumptions": [
+          {
+            "value": "private information",
+            "source": {
+              "page": 1,
+              "section": "Abstract",
+              "quote": "The expert’s diagnostic ability (or type) is private information."
+            }
+          }
+        ]
+      },
+      "method": {
+        "text": "The paper models the expert's sequential decision process and characterizes a perfect Bayesian equilibrium by updating peer beliefs after observed testing choices.",
+        "sources": [
+          {
+            "page": 3,
+            "section": "1. Introduction",
+            "quote": "We model the expert’s sequential decision-making process and characterize the perfect Bayesian equilibrium."
+          },
+          {
+            "page": 3,
+            "section": "1. Introduction",
+            "quote": "Peers have prior beliefs about the type of expert (high or low), which are updated using Bayes’ rule after observing the expert’s testing decisions."
+          }
+        ]
+      },
+      "components": [
+        {
+          "id": "diagnostic-test-choice",
+          "label": "Signal-or-Test Diagnostic Choice",
+          "role": "decision",
+          "conceptIds": [
+            "decision-making"
+          ],
+          "explanation": {
+            "text": "The expert chooses between reaching a diagnosis from the received signal and performing a diagnostic test.",
+            "sources": [
+              {
+                "page": 6,
+                "section": "2. Model",
+                "quote": "The expert can either reach a diagnosis that is based on the signal the expert has received about the client’s state or perform a diagnostic test."
+              },
+              {
+                "page": 1,
+                "section": "Abstract",
+                "quote": "The decision of whether to perform the test, which is costly for the client, provides the expert with an opportunity to inﬂuence that perception."
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "text": "The expert’s diagnostic ability (or type) is private information.",
+              "source": {
+                "page": 1,
+                "section": "Abstract",
+                "quote": "The expert’s diagnostic ability (or type) is private information."
+              }
+            }
+          ]
+        },
+        {
+          "id": "peer-belief-updating",
+          "label": "Peer Belief Updating",
+          "role": "information",
+          "conceptIds": [
+            "information-structure"
+          ],
+          "explanation": {
+            "text": "Peers update their beliefs about expert type after observing the expert's testing decisions.",
+            "sources": [
+              {
+                "page": 3,
+                "section": "1. Introduction",
+                "quote": "Peers have prior beliefs about the type of expert (high or low), which are updated using Bayes’ rule after observing the expert’s testing decisions."
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "text": "The expert’s type information and private signal are both unobservable to the client.",
+              "source": {
+                "page": 3,
+                "section": "1. Introduction",
+                "quote": "The expert’s type information and private signal are both unobservable to the client."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "full-information-diagnostic-benchmark",
+      "name": "Full-Information Diagnostic Benchmark",
+      "kind": "benchmark",
+      "relation": "The benchmark removes private expert type by making it common knowledge while retaining the same signal-or-test diagnostic choice.",
+      "summary": {
+        "text": "The benchmark makes expert type common knowledge while retaining the expert's choice between a signal-based diagnosis and a diagnostic test.",
+        "sources": [
+          {
+            "page": 8,
+            "section": "2.1. Full-Information Benchmark",
+            "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+          },
+          {
+            "page": 6,
+            "section": "2. Model",
+            "quote": "The expert can either reach a diagnosis that is based on the signal the expert has received about the client’s state or perform a diagnostic test."
+          }
+        ]
+      },
+      "setup": {
+        "objects": [
+          {
+            "value": "the expert",
+            "source": {
+              "page": 8,
+              "section": "2.1. Full-Information Benchmark",
+              "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+            }
+          },
+          {
+            "value": "a client",
+            "source": {
+              "page": 1,
+              "section": "Abstract",
+              "quote": "We study the problem a diagnostic expert (e.g., a physician) faces when offering a diagnosis to a client (e.g., a patient) that may be based only on the expert’s own diagnostic ability or supplemented by a diagnostic test—conventional and artiﬁcial intelligence (AI) tools alike—revealing the client’s true condition."
+            }
+          }
+        ],
+        "inputs": [
+          {
+            "value": "the expert’s type",
+            "source": {
+              "page": 8,
+              "section": "2.1. Full-Information Benchmark",
+              "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+            }
+          }
+        ],
+        "decisions": [
+          {
+            "value": "whether to perform the test",
+            "source": {
+              "page": 1,
+              "section": "Abstract",
+              "quote": "The decision of whether to perform the test, which is costly for the client, provides the expert with an opportunity to inﬂuence that perception."
+            }
+          }
+        ],
+        "assumptions": [
+          {
+            "value": "common knowledge",
+            "source": {
+              "page": 8,
+              "section": "2.1. Full-Information Benchmark",
+              "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+            }
+          }
+        ]
+      },
+      "method": {
+        "text": "The paper models the full-information benchmark by treating expert type as common knowledge while retaining the signal-or-test diagnostic choice.",
+        "sources": [
+          {
+            "page": 8,
+            "section": "2.1. Full-Information Benchmark",
+            "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+          },
+          {
+            "page": 6,
+            "section": "2. Model",
+            "quote": "The expert can either reach a diagnosis that is based on the signal the expert has received about the client’s state or perform a diagnostic test."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "quote": "The decision of whether to perform the test, which is costly for the client, provides the expert with an opportunity to inﬂuence that perception."
+          }
+        ]
+      },
+      "components": [
+        {
+          "id": "benchmark-common-knowledge",
+          "label": "Common-Knowledge Expert Type",
+          "role": "information",
+          "conceptIds": [
+            "information-structure"
+          ],
+          "explanation": {
+            "text": "The benchmark changes the information structure by making the expert's type common knowledge.",
+            "sources": [
+              {
+                "page": 8,
+                "section": "2.1. Full-Information Benchmark",
+                "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "text": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge.",
+              "source": {
+                "page": 8,
+                "section": "2.1. Full-Information Benchmark",
+                "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+              }
+            }
+          ]
+        },
+        {
+          "id": "benchmark-signal-or-test-choice",
+          "label": "Full-Information Signal-or-Test Choice",
+          "role": "decision",
+          "conceptIds": [
+            "decision-making"
+          ],
+          "explanation": {
+            "text": "Under common knowledge of expert type, the expert retains the choice between a signal-based diagnosis and a diagnostic test.",
+            "sources": [
+              {
+                "page": 8,
+                "section": "2.1. Full-Information Benchmark",
+                "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+              },
+              {
+                "page": 6,
+                "section": "2. Model",
+                "quote": "The expert can either reach a diagnosis that is based on the signal the expert has received about the client’s state or perform a diagnostic test."
+              },
+              {
+                "page": 1,
+                "section": "Abstract",
+                "quote": "The decision of whether to perform the test, which is costly for the client, provides the expert with an opportunity to inﬂuence that perception."
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "text": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge.",
+              "source": {
+                "page": 8,
+                "section": "2.1. Full-Information Benchmark",
+                "quote": "As a benchmark, we ﬁrst consider the full-information case in which the expert’s type is common knowledge."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

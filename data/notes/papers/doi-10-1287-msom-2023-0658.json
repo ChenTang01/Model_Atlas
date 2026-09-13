@@ -1,0 +1,1712 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-0658",
+  "sourcePdfSha256": "2abfe32fa16c1bd0711755f786cf0ebacc0cf1cbdd3cda6163bc259a49464df4",
+  "extractionPagesSha256": "2dc44e207b4e13c38076bbf4d8b851fdb28ed6d64e3a4c04bc1889ba86487b32",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "e71b8584beaa5d2d8d15149117b6d2dca77eb0bc9bf351f9355e3ed25ee364a0",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "44942cc103a4093a492b4e9fa0ae45758ef0c7cd8f8ed07219d9bade24a8d39e",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0658/44942cc103a4093a492b4e9fa0ae45758ef0c7cd8f8ed07219d9bade24a8d39e.json",
+  "extractionQaDecisionSha256": "4e09d01685771be13d3b76aa755e52d3e2efc5f35e55020b990e82a8aa752437",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-0658",
+    "question": "How can markov chain–based policies support multistage stochastic integer linear programming with an application to disaster relief logistics?",
+    "overview": "Multistage stochastic programs involving mixed-integer state variables and continuous local variables (MSILPs) present a challenging class of optimization problems with limited techniques available to obtain high-quality solutions efficiently. These problems arise in many practical applications, including disaster relief logistics planning for natural disasters such as hurricanes, which is increasingly important due to its significant societal impacts. We introduce an aggregation framework to address MSILPs that impose additional structure on the integer state variables by leveraging information from the underlying stochastic process, which is modeled as a Markov chain (MC).",
+    "modelTypes": [
+      "Structural model",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        11
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "problem-formulation-for-msilp",
+        "name": "Problem Formulation for MSILP",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Multistage stochastic programs involving mixed-integer state variables and continuous local variables (MSILPs) present a challenging class of optimization problems with limited techniques available to obtain high-quality solutions efficiently. These problems arise in many practical applications, including disaster relief logistics planning for natural disasters such as hurricanes, which is increasingly important due to its significant societal impacts. We demonstrate that the aggregated MSILP can be solved exactly via a branch-and-cut algorithm integrated with a variant of the stochastic dual dynamic programming method.",
+        "objects": [
+          "Nodes",
+          "Commodities"
+        ],
+        "inputs": [
+          "The production capacity",
+          "Each time",
+          "Demand",
+          "The forecast",
+          "An initial capacity"
+        ],
+        "decisions": [
+          "Integer decision variables",
+          "Heuristic decision policies derived from 2SLDRs",
+          "Share several assumptions",
+          "Perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)"
+        ],
+        "assumptions": [
+          "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T].",
+          "The underlying stochastic process has finite support and can thus be represented by a scenario tree T",
+          "The hurricane’s evolution is governed by an MC",
+          "Demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Nodes",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 10,
+                "quote": "Let T denote the number of stages and let N be the set of nodes associated with T .",
+                "matchedText": "nodes",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Commodities",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 1,
+                "quote": "Our multistage HDR problem considers the logistics decisions of producing and distributing relief com­ modities from DCs to shelters prior to a hurricane’s landfall.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The production capacity",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 11,
+                "sectionIndex": 10,
+                "sentence": 26,
+                "quote": "Constraint (7c) enforces the pro­ duction capacity, and Constraint (7d) represents the initial DC capacities.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each time",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "sectionIndex": 10,
+                "page": 10,
+                "quote": "Given this uncertainty, we consider an MSILP with a stage defined for each time period when new information is realized (i.e., the hurricane moves to a new MC state)."
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The forecast",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "matchedText": "the forecast",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An initial capacity",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 15,
+                "quote": "an initial capacity",
+                "matchedText": "an initial capacity",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Integer decision variables",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 29,
+                "quote": "Second, the presence of integer decision variables generally renders nonconvex cost-to-go functions, further complicating the solution process.",
+                "matchedText": "integer decision variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Heuristic decision policies derived from 2SLDRs",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 22,
+                "sentence": 13,
+                "quote": "In addition, we demonstrate the empirical per­ formance of the proposed heuristic decision policies derived from 2SLDRs",
+                "matchedText": "heuristic decision policies derived from 2SLDRs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Share several assumptions",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 26,
+                "sentence": 13,
+                "quote": "Despite their differences, HDR problems share sev­ eral assumptions",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 27,
+                "quote": "To demonstrate the applicability of the proposed framework, we perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+                "matchedText": "perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T].",
+              "source": {
+                "type": "section",
+                "section": "Aggregated MSILP",
+                "page": 5,
+                "quote": "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T]."
+              }
+            },
+            {
+              "value": "The underlying stochastic process has finite support and can thus be represented by a scenario tree T",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 7,
+                "quote": "We assume the underlying stochastic process has finite support and can thus be represented by a sce­ nario tree T .",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The hurricane’s evolution is governed by an MC",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 11,
+                "quote": "We assume the hurricane’s evolution is governed by an MC.",
+                "matchedText": "the hurricane’s evolution is governed by an MC.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019)",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "Because Q r already includes the original first-stage integer variables, the SDDP subproblems at stage t = 2 receive zA directly rather than subproblem σ, we introduce a variable θσ to represent the outer approximation of the cost-to-go function, and a set Bσ to store the coefficients of all the cutting planes constructed in this approximation.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "SDDP Integrated B&C Algorithm",
+          "page": 7,
+          "sentence": 96
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "3.4. Aggregated MSILP",
+            "equation": "",
+            "quote": "Although the aggregated problem (PA) may have fewer integer variables than (PR), depending on the transformation Φt, it may remain challenging to solve exactly due to the presence of (aggregated) first-stage integer variables and the continuous state variables defined at each scenario-tree node."
+          }
+        ],
+        "components": [
+          {
+            "id": "state-variables",
+            "label": "State Variables",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "This section describes the proposed aggregation framework to generate informative decision policies for a class of MSILPs, with the main idea of aggregating integer state variables in the MSILP by leveraging the structure of the underlying stochastic process.",
+            "searchPhrases": [
+              "how state variables is represented",
+              "decision-relevant state in innovation, analytics, and technology",
+              "state variables decision-relevant state specification"
+            ],
+            "formal": "State definition: This section describes the proposed aggregation framework to generate informative decision policies for a class of MSILPs, with the main idea of aggregating integer state variables in the MSILP by leveraging the structure of the underlying stochastic process.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume the underlying stochastic process has finite support and can thus be represented by a scenario tree T ."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "State Variables",
+                "equation": "",
+                "quote": "This section describes the proposed aggregation frame­ work to generate informative decision policies for a class of MSILPs, with the main idea of aggregating integer state variables in the MSILP by leveraging the structure of the underlying stochastic process."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “System state”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The underlying stochastic process has finite support and can thus be represented by a scenario tree T",
+                  "source": {
+                    "type": "section",
+                    "section": "Problem Formulation for MSILP",
+                    "page": 3,
+                    "sectionIndex": 4,
+                    "sentence": 7,
+                    "quote": "We assume the underlying stochastic process has finite support and can thus be represented by a sce­ nario tree T .",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "problem-formulation-for-msilp",
+            "label": "Problem Formulation for MSILP",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "We assume the underlying stochastic process has finite support and can thus be represented by a scenario tree T .",
+            "searchPhrases": [
+              "how problem formulation for msilp is represented",
+              "system process in innovation, analytics, and technology",
+              "problem formulation for msilp system process specification"
+            ],
+            "formal": "Process relation: We assume the underlying stochastic process has finite support and can thus be represented by a scenario tree T .",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "T",
+                "meaning": "number of stages and let N be the set of nodes associated with T"
+              }
+            ],
+            "conditions": [
+              "We assume the underlying stochastic process has finite support and can thus be represented by a scenario tree T .",
+              "Let T denote the number of stages and let N be the set of nodes associated with T ."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3.1. Problem Formulation for MSILP",
+                "equation": "",
+                "quote": "We assume the underlying stochastic process has finite support and can thus be represented by a sce­ nario tree T ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “We assume the underlying stochastic process has finite support and can thus be represented by a scenario tree”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "aggregation-framework-via-mc-based-structural-policies",
+            "label": "Aggregation Framework via MC-Based Structural Policies",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "In this paper, we consider the case where the underlying stochastic process is modeled as an MC for two reasons.",
+            "searchPhrases": [
+              "how aggregation framework via mc-based structural policies is represented",
+              "system process in innovation, analytics, and technology",
+              "aggregation framework via mc-based structural policies system process specification"
+            ],
+            "formal": "Process relation: In this paper, we consider the case where the underlying stochastic process is modeled as an MC for two reasons.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To simplify the exposition, we write mt instead of mt(n) and mt instead of mt(n) when we refer to any node n ∈N t.",
+              "This renders the corresponding integer state variables scenario independent, resulting in a static decision policy (Basciftci et al. 2024).",
+              "To start, let M be the set of MC states where each m ∈ M is an s-dimensional vector (i.e., m ∈Rs).",
+              "Let Mt represent the set of MC states that are reachable in stage t ∈[T], starting from a given initial state."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.3. Aggregation Framework via MC-Based Structural Policies",
+                "equation": "",
+                "quote": "In this paper, we consider the case where the under­ lying stochastic process is modeled as an MC for two reasons."
+              },
+              {
+                "page": 5,
+                "section": "3.3. Aggregation Framework via MC-Based Structural Policies",
+                "equation": "",
+                "quote": "This renders the correspond­ ing integer state variables scenario independent, result­ ing in a static decision policy (Basciftci et al. 2024)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "aggregated-msilp",
+            "label": "Aggregated MSILP",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Although the aggregated problem (PA) may have fewer integer variables than (PR), depending on the transformation Φt, it may remain challenging to solve exactly due to the presence of (aggregated) first-stage integer variables and the continuous state variables defined at each scenario-tree node.",
+            "searchPhrases": [
+              "how aggregated msilp is represented",
+              "solution algorithm in innovation, analytics, and technology",
+              "aggregated msilp solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T].",
+              "We employ a mapping function φt : N t →{t} × [qt] to relate a node n ∈N t, which was originally used to index variables z, to the index corresponding to its aggregated variables, that is, φt(n) = (t,Φtmt) for each node n ∈N t.",
+              "The set of new integer state variables is zA t ∈Zl·qt for each t ∈[T]."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.4. Aggregated MSILP",
+                "equation": "",
+                "quote": "Although the aggregated problem (PA) may have fewer integer variables than (PR), depending on the transformation Φt, it may remain challenging to solve exactly due to the presence of (aggregated) first-stage integer variables and the continuous state variables defined at each scenario-tree node."
+              },
+              {
+                "page": 5,
+                "section": "3.4. Aggregated MSILP",
+                "equation": "",
+                "quote": "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T]."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Although the aggregated problem (PA) may have fewer integer variables than (PR), depending on the transformation Φt, it”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "sddp-integrated-b-c-algorithm",
+            "label": "SDDP Integrated B&C Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We now present an exact algorithm for solving (PA) by embedding the SDDP algorithm within a B&C framework.",
+            "searchPhrases": [
+              "how sddp integrated b&c algorithm is represented",
+              "solution algorithm in innovation, analytics, and technology",
+              "sddp integrated b&c algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We now present an exact algorithm for solving (PA) by embedding the SDDP algorithm within a B&C framework.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We employ the multicut version, where each θn for n ∈C(r) represents the value of the outer approximation of the cost-to-go function at node n.",
+              "We represent the SDDP subproblem associated with node n ∈N t by the tuple σ(n) := (t,mt(n),φt(n)).",
+              "Once the full set is used, we iterate until no violated cut is found in any subproblem (i.e., cutAdded = false).",
+              "Let St be the set of all SDDP subproblems defined at stage t ≥2."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.1. SDDP Integrated B&C Algorithm",
+                "equation": "",
+                "quote": "We now present an exact algorithm for solving (PA) by embedding the SDDP algorithm within a B&C frame­ work."
+              },
+              {
+                "page": 8,
+                "section": "4.1. SDDP Integrated B&C Algorithm",
+                "equation": "",
+                "quote": "Once the full set is used, we iterate until no violated cut is found in any subproblem (i.e., cutAdded = false)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We now present an exact algorithm for solving (PA) by embedding the SDDP algorithm within a B&C framework.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "partially-extended-formulation-for-msilp",
+        "name": "Partially Extended Formulation for MSILP",
+        "kind": "alternative",
+        "relation": "This is an alternative to Problem Formulation for MSILP.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "problem-formulation-for-msilp"
+          }
+        ],
+        "summary": "The paper proposes a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables.",
+        "objects": [
+          "Nodes",
+          "Commodities"
+        ],
+        "inputs": [
+          "The production capacity",
+          "Each time",
+          "Demand",
+          "The forecast",
+          "An initial capacity"
+        ],
+        "decisions": [
+          "Integer decision variables",
+          "Heuristic decision policies derived from 2SLDRs",
+          "Share several assumptions",
+          "Perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)"
+        ],
+        "assumptions": [
+          "We propose a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables.",
+          "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T].",
+          "The underlying stochastic process has finite support and can thus be represented by a scenario tree T",
+          "The hurricane’s evolution is governed by an MC",
+          "Demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Nodes",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 10,
+                "quote": "Let T denote the number of stages and let N be the set of nodes associated with T .",
+                "matchedText": "nodes",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Commodities",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 1,
+                "quote": "Our multistage HDR problem considers the logistics decisions of producing and distributing relief com­ modities from DCs to shelters prior to a hurricane’s landfall.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The production capacity",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 11,
+                "sectionIndex": 10,
+                "sentence": 26,
+                "quote": "Constraint (7c) enforces the pro­ duction capacity, and Constraint (7d) represents the initial DC capacities.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each time",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "sectionIndex": 10,
+                "page": 10,
+                "quote": "Given this uncertainty, we consider an MSILP with a stage defined for each time period when new information is realized (i.e., the hurricane moves to a new MC state)."
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The forecast",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "matchedText": "the forecast",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An initial capacity",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 15,
+                "quote": "an initial capacity",
+                "matchedText": "an initial capacity",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Integer decision variables",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 29,
+                "quote": "Second, the presence of integer decision variables generally renders nonconvex cost-to-go functions, further complicating the solution process.",
+                "matchedText": "integer decision variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Heuristic decision policies derived from 2SLDRs",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 22,
+                "sentence": 13,
+                "quote": "In addition, we demonstrate the empirical per­ formance of the proposed heuristic decision policies derived from 2SLDRs",
+                "matchedText": "heuristic decision policies derived from 2SLDRs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Share several assumptions",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 26,
+                "sentence": 13,
+                "quote": "Despite their differences, HDR problems share sev­ eral assumptions",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 27,
+                "quote": "To demonstrate the applicability of the proposed framework, we perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+                "matchedText": "perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We propose a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables.",
+              "source": {
+                "type": "section",
+                "section": "Partially Extended Formulation for MSILP",
+                "page": 4,
+                "quote": "We propose a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables."
+              }
+            },
+            {
+              "value": "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T].",
+              "source": {
+                "type": "section",
+                "section": "Aggregated MSILP",
+                "page": 5,
+                "quote": "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T]."
+              }
+            },
+            {
+              "value": "The underlying stochastic process has finite support and can thus be represented by a scenario tree T",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 7,
+                "quote": "We assume the underlying stochastic process has finite support and can thus be represented by a sce­ nario tree T .",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The hurricane’s evolution is governed by an MC",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 11,
+                "quote": "We assume the hurricane’s evolution is governed by an MC.",
+                "matchedText": "the hurricane’s evolution is governed by an MC.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019)",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper proposes a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Partially Extended Formulation for MSILP",
+          "page": 4,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3.2. Partially Extended Formulation for MSILP",
+            "equation": "",
+            "quote": "We propose a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables."
+          }
+        ],
+        "components": [
+          {
+            "id": "partially-extended-formulation-for-msilp",
+            "label": "Partially Extended Formulation for MSILP",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The paper proposes a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables.",
+            "searchPhrases": [
+              "how partially extended formulation for msilp is represented",
+              "decision rule in innovation, analytics, and technology",
+              "partially extended formulation for msilp decision rule specification"
+            ],
+            "formal": "Decision rule: The paper proposes a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We propose a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables.",
+              "First, by eliminating integer variables from downstream nodes, the cost-to-go functions at each node n ∈N ∖ {r} become piecewise linear convex and involve only continuous variables, thereby enabling the use of standard Benders-type cutting-plane methods.",
+              "More specifically, the key distinction between (PR) and the original formulation (P) is that all integer state variables z = {zn}n∈N , along with Constraints (2a), are now “moved” to the root node problem (i.e., they are treated as first-stage variables and constraints)."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.2. Partially Extended Formulation for MSILP",
+                "equation": "",
+                "quote": "We propose a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as first-stage variables."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We propose a reformulation of (P) as a partially extended formulation, where all integer decisions are treated as”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "problem-description-and-model-formulation",
+        "name": "Problem Description and Model Formulation",
+        "kind": "alternative",
+        "relation": "This is an alternative to Problem Formulation for MSILP.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "problem-formulation-for-msilp"
+          }
+        ],
+        "summary": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019).",
+        "objects": [
+          "Commodities",
+          "Node"
+        ],
+        "inputs": [
+          "Each time",
+          "The production capacity",
+          "Demand",
+          "The forecast",
+          "An initial capacity"
+        ],
+        "decisions": [
+          "Integer decision variables",
+          "Heuristic decision policies derived from 2SLDRs",
+          "Share several assumptions",
+          "Perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)"
+        ],
+        "assumptions": [
+          "The hurricane’s evolution is governed by an MC",
+          "Demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Commodities",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Our multistage HDR problem considers the logistics decisions of producing and distributing relief com­ modities from DCs to shelters prior to a hurricane’s landfall.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Node",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 14,
+                "quote": "We consider a set of contingency modalities partitioned into L disjoint sets, L = L1 ∪⋯∪LL, such that at most one modality from each set can be active in any given node of the scenario tree.",
+                "matchedText": "node",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each time",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 12,
+                "quote": "Given this uncertainty, we consider an MSILP with a stage defined for each time period when new information is realized (i.e., the hurricane moves to a new MC state).",
+                "matchedText": "each time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The production capacity",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 26,
+                "quote": "Constraint (7c) enforces the pro­ duction capacity, and Constraint (7d) represents the initial DC capacities.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The forecast",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "matchedText": "the forecast",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An initial capacity",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "an initial capacity",
+                "matchedText": "an initial capacity",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Integer decision variables",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 29,
+                "quote": "Second, the presence of integer decision variables generally renders nonconvex cost-to-go functions, further complicating the solution process.",
+                "matchedText": "integer decision variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Heuristic decision policies derived from 2SLDRs",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 22,
+                "sentence": 13,
+                "quote": "In addition, we demonstrate the empirical per­ formance of the proposed heuristic decision policies derived from 2SLDRs",
+                "matchedText": "heuristic decision policies derived from 2SLDRs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Share several assumptions",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 26,
+                "sentence": 13,
+                "quote": "Despite their differences, HDR problems share sev­ eral assumptions",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 27,
+                "quote": "To demonstrate the applicability of the proposed framework, we perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+                "matchedText": "perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The hurricane’s evolution is governed by an MC",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 11,
+                "quote": "We assume the hurricane’s evolution is governed by an MC.",
+                "matchedText": "the hurricane’s evolution is governed by an MC.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019)",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper constructs a scenario tree T by considering an initial MC state and all possible MC transitions for up to stage T (i.e., until landfall).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Problem Description and Model Formulation",
+          "page": 10,
+          "sentence": 13
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 10,
+            "section": "5.1. Problem Description and Model Formulation",
+            "equation": "",
+            "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019)."
+          }
+        ],
+        "components": [
+          {
+            "id": "problem-description-and-model-formulation",
+            "label": "Problem Description and Model Formulation",
+            "role": "process",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019).",
+            "searchPhrases": [
+              "how problem description and model formulation is represented",
+              "system process in innovation, analytics, and technology",
+              "problem description and model formulation system process specification"
+            ],
+            "formal": "Process relation: As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019).",
+              "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019).",
+              "Our multistage HDR problem considers the logistics decisions of producing and distributing relief commodities from DCs to shelters prior to a hurricane’s landfall."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5.1. Problem Description and Model Formulation",
+                "equation": "",
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Forecasting: “As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "two-stage-ldr-approximation",
+        "name": "Two-Stage LDR Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Problem Formulation for MSILP.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "problem-formulation-for-msilp"
+          }
+        ],
+        "summary": "Imposing such structure on the decision policies reduces the multistage stochastic program (MSP) to a 2SP, which requires far less computational effort than the SDDP-integrated B&C framework. First, we introduce the notation ξt,n = (dn,qn,fn) to represent the vector of random variable realizations at each node n ∈N t in the scenario tree, including demand dn, production cost qn, and transportation cost fn.",
+        "objects": [
+          "Nodes",
+          "No need to define LDR variables for the root node"
+        ],
+        "inputs": [
+          "Demand",
+          "Production cost",
+          "Transportation cost"
+        ],
+        "decisions": [
+          "Integer decision variables",
+          "Heuristic decision policies derived from 2SLDRs",
+          "Share several assumptions",
+          "Perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)"
+        ],
+        "assumptions": [
+          "We now present the model obtained by applying the LDR transformation to (PA).",
+          "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T].",
+          "The underlying stochastic process has finite support and can thus be represented by a scenario tree T",
+          "The hurricane’s evolution is governed by an MC",
+          "Demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Nodes",
+              "source": {
+                "type": "section",
+                "section": "Two-Stage Linear Decision Rule",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 25,
+                "quote": "Because LDR-M and LDR-T use the same information, but the latter employs a single set of the LDR variables for all nodes in the same stage, LDR-M can yield better policies.",
+                "matchedText": "nodes",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "No need to define LDR variables for the root node",
+              "source": {
+                "type": "section",
+                "section": "Two-Stage Linear Decision Rule",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 32,
+                "quote": "We note that there is no need to define LDR variables for the root node because the xr variables are already first-stage variables; however, we include them in the model for ease of exposition.",
+                "matchedText": "no need to define LDR variables for the root node",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Two-Stage LDR Approximation",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 3,
+                "quote": "First, we introduce the notation ξt,n = (dn,qn,fn) to represent the vector of random variable realizations at each node n ∈N t in the scenario tree, including demand dn, production cost qn, and transportation cost fn.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Production cost",
+              "source": {
+                "type": "section",
+                "section": "Two-Stage LDR Approximation",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 3,
+                "quote": "production cost",
+                "matchedText": "production cost",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Transportation cost",
+              "source": {
+                "type": "section",
+                "section": "Two-Stage LDR Approximation",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 3,
+                "quote": "transportation cost",
+                "matchedText": "transportation cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Integer decision variables",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 29,
+                "quote": "Second, the presence of integer decision variables generally renders nonconvex cost-to-go functions, further complicating the solution process.",
+                "matchedText": "integer decision variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Heuristic decision policies derived from 2SLDRs",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 22,
+                "sentence": 13,
+                "quote": "In addition, we demonstrate the empirical per­ formance of the proposed heuristic decision policies derived from 2SLDRs",
+                "matchedText": "heuristic decision policies derived from 2SLDRs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Share several assumptions",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 26,
+                "sentence": 13,
+                "quote": "Despite their differences, HDR problems share sev­ eral assumptions",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 27,
+                "quote": "To demonstrate the applicability of the proposed framework, we perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+                "matchedText": "perform a case study on a multiperiod hurricane disaster relief logistics planning problem (HDR)",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We now present the model obtained by applying the LDR transformation to (PA).",
+              "source": {
+                "type": "section",
+                "section": "Two-Stage Linear Decision Rule",
+                "page": 9,
+                "quote": "We now present the model obtained by applying the LDR transformation to (PA)."
+              }
+            },
+            {
+              "value": "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T].",
+              "source": {
+                "type": "section",
+                "section": "Aggregated MSILP",
+                "page": 5,
+                "quote": "We now present the formulation of the aggregated MSILP after applying a transformation to the integer state variables z via matrices Φt, t ∈[T]."
+              }
+            },
+            {
+              "value": "The underlying stochastic process has finite support and can thus be represented by a scenario tree T",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation for MSILP",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 7,
+                "quote": "We assume the underlying stochastic process has finite support and can thus be represented by a sce­ nario tree T .",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The hurricane’s evolution is governed by an MC",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 11,
+                "quote": "We assume the hurricane’s evolution is governed by an MC.",
+                "matchedText": "the hurricane’s evolution is governed by an MC.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hurricane Center (Regnier and MacKenzie 2019)",
+              "source": {
+                "type": "section",
+                "section": "Problem Description and Model Formulation",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "As in related works, we assume demand can be estimated from the hurricane’s location and intensity, which are updated every six hours following the forecast cycle of the National Hur­ ricane Center (Regnier and MacKenzie 2019).",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "2SLDRs can be tailored to exploit the structure of the stochastic process, and we introduce new schemes for the MC case.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Two-Stage Linear Decision Rule",
+          "page": 8,
+          "sentence": 3
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.2. Two-Stage Linear Decision Rule Approximation",
+            "equation": "",
+            "quote": "Imposing such structure on the decision policies reduces the multistage stochastic program (MSP) to a 2SP, which requires far less computational effort than the SDDP-integrated B&C framework."
+          }
+        ],
+        "components": [
+          {
+            "id": "two-stage-linear-decision-rule-approximation",
+            "label": "Two-Stage Linear Decision Rule Approximation",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Imposing such structure on the decision policies reduces the multistage stochastic program (MSP) to a 2SP, which requires far less computational effort than the SDDP-integrated B&C framework.",
+            "searchPhrases": [
+              "how two-stage linear decision rule approximation is represented",
+              "decision rule in innovation, analytics, and technology",
+              "two-stage linear decision rule approximation decision rule specification"
+            ],
+            "formal": "Decision rule: Imposing such structure on the decision policies reduces the multistage stochastic program (MSP) to a 2SP, which requires far less computational effort than the SDDP-integrated B&C framework.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The idea behind 2SLDRs is to replace the continuous state variables xn with new variables at each node n ∈ N via a linear relation based on node-specific data.",
+              "Let ξt denote the vector of random variables at stage t ∈[T], and let ξt,n be its realization at node n ∈N t (i.e., ξt,n = {An,Bn,Cn,Dn,En,Fn,Jn,bn,cn,dn,fn,hn}).",
+              "Specifically, 2SLDRs employ basis functions Ψt(·) to map ξt n into feature values, which are then used to linearly represent the state variables as xn = μ⊤ t Ψt(ξt n) ∈Rk, where μt is a vector of the LDR variables at stage t."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.2. Two-Stage Linear Decision Rule Approximation",
+                "equation": "",
+                "quote": "Imposing such structure on the decision policies reduces the multistage stochastic program (MSP) to a 2SP, which requires far less computational effort than the SDDP-integrated B&C framework."
+              },
+              {
+                "page": 8,
+                "section": "4.2. Two-Stage Linear Decision Rule Approximation",
+                "equation": "",
+                "quote": "The idea behind 2SLDRs is to replace the continuous state variables xn with new variables at each node n ∈ N via a linear relation based on node-specific data."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Decision making as “decision rule”: “Imposing such structure on the decision policies reduces the multistage stochastic program (MSP) to a 2SP, which requires”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "two-stage-ldr-approximation",
+            "label": "Two-Stage LDR Approximation",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "First, we introduce the notation ξt,n = (dn,qn,fn) to represent the vector of random variable realizations at each node n ∈N t in the scenario tree, including demand dn, production cost qn, and transportation cost fn.",
+            "searchPhrases": [
+              "how two-stage ldr approximation is represented",
+              "information available to the decision maker in innovation, analytics, and technology",
+              "two-stage ldr approximation information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "First, we introduce the notation ξt,n = (dn,qn,fn) to represent the vector of random variable realizations at each node n ∈N t in the scenario tree, including demand dn, production cost qn, and transportation cost fn."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.3. Two-Stage LDR Approximation",
+                "equation": "",
+                "quote": "First, we introduce the notation ξt,n = (dn,qn,fn) to represent the vector of random variable realizations at each node n ∈N t in the scenario tree, including demand dn, production cost qn, and transportation cost fn."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “First, we introduce the notation ξt,n = (dn,qn,fn) to represent the vector of random variable realizations at each”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "2abfe32fa16c1bd0711755f786cf0ebacc0cf1cbdd3cda6163bc259a49464df4",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "44942cc103a4093a492b4e9fa0ae45758ef0c7cd8f8ed07219d9bade24a8d39e",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0658/44942cc103a4093a492b4e9fa0ae45758ef0c7cd8f8ed07219d9bade24a8d39e.json",
+      "extractionQaDecisionSha256": "4e09d01685771be13d3b76aa755e52d3e2efc5f35e55020b990e82a8aa752437",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

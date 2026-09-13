@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2024-04324",
+  "sourcePdfSha256": "ee68561eb180a3dd503b78602e3d54eda2cbe3b3f8a006b7f8700a8abe76b30b",
+  "extractionPagesSha256": "efd23b9a062a4aac84bf7ba70304e13651195fcfad20cf0ef856f25eb37e7aad",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "8b7251ddb6258bc7d7088241937eb1aac639ba880d3252fc512939ce03f023af",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "84cf5f7bb6bdba25679c54b950235dbc195f6f3e62ef8395464c9dcac1ef6f3f",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-04324/84cf5f7bb6bdba25679c54b950235dbc195f6f3e62ef8395464c9dcac1ef6f3f.json",
+  "extractionQaDecisionSha256": "d263047d189fccdfaecfef180311bc0e7a14eb0f9f23ea45a377852708506431",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-04324",
+    "question": "How should a ride-hailing platform price solo and shared trips when riders’ decentralized choices jointly determine congestion, pairing delays, market size, and the platform’s objective?",
+    "overview": "A platform first sets solo and shared prices; self-interested riders then choose whether to join and which service to use while anticipating the congestion and pairing effects created by other riders. The paper explicitly solves this Stackelberg queueing game.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        7,
+        12
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "A Stackelberg platform-rider game in a queue offering solo and paired services",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A platform first sets solo and shared prices; self-interested riders then choose whether to join and which service to use while anticipating the congestion and pairing effects created by other riders. The paper explicitly solves this Stackelberg queueing game.",
+        "objects": [
+          "Platform",
+          "Drivers",
+          "Customers",
+          "Servers",
+          "Operator"
+        ],
+        "inputs": [
+          "Prices, arrival rates, trip reward, wait-cost rate, and the discomfort distribution are common knowledge",
+          "Each rider privately observes their own sharing discomfort Ξ",
+          "Riders do not observe the real-time queue or whether a pairing partner is waiting; they use stationary expected waits",
+          "The platform knows the discomfort distribution but not individual realizations"
+        ],
+        "decisions": [
+          "Platform sets p_1 and p_2",
+          "Each rider joins or takes an outside option",
+          "A joining rider chooses solo or shared service",
+          "Whether to request a service or resort to their other options",
+          "Decisions in stage 1"
+        ],
+        "assumptions": [
+          "Rider and driver arrivals are independent Poisson processes in the base model",
+          "Drivers leave immediately if no service group is waiting and driver arrival rate is exogenous in the base model",
+          "Riders share a common trip reward and waiting cost but have IID sharing discomfort on a bounded negative interval",
+          "Solo and shared service times are not explicitly modeled; extra travel burden can be absorbed into sharing discomfort",
+          "The platform can select its preferred equilibrium when multiple rider equilibria exist"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Platform",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "We consider the operations of a ride-hailing platform in a designated region (e.g., an airport ride-hailing pickup zone).",
+                "matchedText": "platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Drivers",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 3,
+                "quote": "Below, we describe the modeling details of riders, drivers, and rider-driver matching in turn.",
+                "matchedText": "drivers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 13,
+                "sentence": 19,
+                "quote": "An interesting dynamic is that customers’ adoption of the low-quality service (i.e., shared rides) can improve not only the quality of this service, but also the quality of the high-end service (i.e., solo rides) by producing shorter wait times, and this happens in three ways: boosting the system’s utilizable capacity, moderating the variability of customer in-flow, and curtailing cus­ tomers’ pair-up time.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 6,
+                "sectionIndex": 2,
+                "sentence": 51,
+                "quote": "model to capture this aspect of driver behavior, treating drivers as fixed servers in the system.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Operator",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 13,
+                "sentence": 20,
+                "quote": "Notwithstanding such positive externalities, we demonstrate that a service system operator may wish to keep only the high-end service option.",
+                "matchedText": "operator",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Prices, arrival rates, trip reward, wait-cost rate, and the discomfort distribution are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Prices, arrival rates, trip reward, wait-cost rate, and the discomfort distribution are common knowledge."
+              }
+            },
+            {
+              "value": "Each rider privately observes their own sharing discomfort Ξ",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each rider privately observes their own sharing discomfort Ξ."
+              }
+            },
+            {
+              "value": "Riders do not observe the real-time queue or whether a pairing partner is waiting; they use stationary expected waits",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Riders do not observe the real-time queue or whether a pairing partner is waiting; they use stationary expected waits."
+              }
+            },
+            {
+              "value": "The platform knows the discomfort distribution but not individual realizations",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The platform knows the discomfort distribution but not individual realizations."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Platform sets p_1 and p_2",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "platform sets p_1 and p_2"
+              }
+            },
+            {
+              "value": "Each rider joins or takes an outside option",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each rider joins or takes an outside option"
+              }
+            },
+            {
+              "value": "A joining rider chooses solo or shared service",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "a joining rider chooses solo or shared service"
+              }
+            },
+            {
+              "value": "Whether to request a service or resort to their other options",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 7,
+                "quote": "Upon arrival, riders decide whether to request a service or resort to their other options outside the platform.",
+                "matchedText": "whether to request a service or resort to their other options",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Decisions in stage 1",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 6,
+                "sectionIndex": 2,
+                "sentence": 59,
+                "quote": "In Section 3.3, we study riders’ equilibrium behavior in stage 2, and then in Section 4, we discuss the platform’s pricing decisions in stage 1",
+                "matchedText": "decisions in stage 1",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Rider and driver arrivals are independent Poisson processes in the base model",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Rider and driver arrivals are independent Poisson processes in the base model."
+              }
+            },
+            {
+              "value": "Drivers leave immediately if no service group is waiting and driver arrival rate is exogenous in the base model",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Drivers leave immediately if no service group is waiting and driver arrival rate is exogenous in the base model."
+              }
+            },
+            {
+              "value": "Riders share a common trip reward and waiting cost but have IID sharing discomfort on a bounded negative interval",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Riders share a common trip reward and waiting cost but have IID sharing discomfort on a bounded negative interval."
+              }
+            },
+            {
+              "value": "Solo and shared service times are not explicitly modeled; extra travel burden can be absorbed into sharing discomfort",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Solo and shared service times are not explicitly modeled; extra travel burden can be absorbed into sharing discomfort."
+              }
+            },
+            {
+              "value": "The platform can select its preferred equilibrium when multiple rider equilibria exist",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The platform can select its preferred equilibrium when multiple rider equilibria exist."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          },
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The authors solve a two-dimensional Markov chain for stationary solo and shared wait times, derive rider discomfort cutoffs and joining equilibria, transform platform price choices into induced market outcomes, compare three objectives analytically, and calibrate the model to Chicago data.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "Expected-profit objective",
+            "equation": "",
+            "quote": "Given that our focus is on riders and their choices of the service mode, we choose to simplify the modeling of drivers in this respect.2 We assume that the riders’ total arrival rate Λ, dri­ vers’ arrival rate µ, service reward R, marginal waiting cost rate c, and the distribution of rider discomfort F(·) are common knowledge."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "waiting-cost"
+            ],
+            "explanation": "Riders compare solo, shared, and outside-option utility, while the platform selects prices—equivalently, induced joining and sharing rates—to maximize volume, revenue, or social welfare subject to the rider equilibrium.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in ride-hailing platform pricing with endogenous ride sharing",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "u_1=R−cI(\\lambda,\\eta)−p_1; u_2=R−c\\Pi(\\lambda,\\eta)+\\xi−p_2. Platform objectives are max \\lambda subject to \\lambda[(1−\\eta)p_1+\\eta{}p_2]≥0 (volume), max \\psi=\\lambda[(1−\\eta)p_1+\\eta{}p_2] (revenue), or max SW=\\lambda[R−c((1−\\eta)I+\\eta\\Pi)+∫_{\\xi(\\eta)}^{\\xi_u}x dF(x)] (social welfare), with (\\lambda,\\eta) induced by prices.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\lambda, \\eta",
+                "meaning": "effective rider joining rate and fraction choosing shared rides",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I, \\Pi",
+                "meaning": "expected wait times for solo and shared riders",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_1, p_2",
+                "meaning": "solo and shared trip prices",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi, \\Xi",
+                "meaning": "realized and random sharing discomfort",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R, c",
+                "meaning": "trip reward and waiting cost per unit time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Lambda, \\mu",
+                "meaning": "potential rider and driver arrival rates",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Given that our focus is on riders and their choices of the service mode, we choose to simplify the modeling of drivers in this respect.2 We assume that the riders’ total arrival rate Λ, drivers’ arrival rate μ, service reward R, marginal waiting cost rate c, and the distribution of rider discomfort F(·) are common knowledge.",
+              "Rider and driver arrivals are independent Poisson processes in the base model.",
+              "Riders share a common trip reward and waiting cost but have IID sharing discomfort on a bounded negative interval.",
+              "Solo and shared service times are not explicitly modeled; extra travel burden can be absorbed into sharing discomfort."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "Given that our focus is on riders and their choices of the service mode, we choose to simplify the modeling of drivers in this respect.2 We assume that the riders’ total arrival rate Λ, dri­ vers’ arrival rate µ, service reward R, marginal waiting cost rate c, and the distribution of rider discomfort F(·) are common knowledge."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "waiting-cost",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Waiting cost: “rate μ, service reward R, marginal Waiting cost rate c, and the distribution of rider discomfort”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Platform sets p_1 and p_2 each rider joins or takes an outside option a joining rider chooses solo or shared service",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in ride-hailing platform pricing with endogenous ride sharing",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\lambda, \\eta",
+                "meaning": "effective rider joining rate and fraction choosing shared rides",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I, \\Pi",
+                "meaning": "expected wait times for solo and shared riders",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_1, p_2",
+                "meaning": "solo and shared trip prices",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Rider and driver arrivals are independent Poisson processes in the base model.",
+              "Drivers leave immediately if no service group is waiting and driver arrival rate is exogenous in the base model.",
+              "Solo and shared service times are not explicitly modeled; extra travel burden can be absorbed into sharing discomfort."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Model Description",
+                "equation": "",
+                "quote": "In stage 1, the platform sets the price for a solo ride p1 and that for a shared ride p2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “In stage 1, the platform sets the price for a solo ride p1 and that for a shared”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "In stage 1 the platform posts solo price p_1 and shared price p_2 for one of three objectives. In stage 2 riders arrive, use long-run queue statistics, and simultaneously determine an equilibrium joining rate and sharing fraction; drivers arrive exogenously in the base model and serve the virtual queue first come, first served. A shared trip consumes one driver for two riders but adds partner-pairing delay and discomfort. More sharing reduces system load and can shorten both shared and solo waits.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in ride-hailing platform pricing with endogenous ride sharing",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\lambda, \\eta",
+                "meaning": "effective rider joining rate and fraction choosing shared rides",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I, \\Pi",
+                "meaning": "expected wait times for solo and shared riders",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_1, p_2",
+                "meaning": "solo and shared trip prices",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi, \\Xi",
+                "meaning": "realized and random sharing discomfort",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Rider and driver arrivals are independent Poisson processes in the base model.",
+              "Riders share a common trip reward and waiting cost but have IID sharing discomfort on a bounded negative interval.",
+              "Drivers leave immediately if no service group is waiting and driver arrival rate is exogenous in the base model."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.3. Decisions of Self-Interested Riders",
+                "equation": "",
+                "quote": "Otherwise, riders will select an equilibrium joining rate λ∗and corre­ sponding sharing fraction η∗so that riders with sharing discomfort ξ(η∗) are indifferent between choosing solo rides, shared rides, or balking."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Otherwise, riders will select an equilibrium joining rate λ∗and corresponding sharing fraction η∗so that riders with sharing discomfort”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "stackelberg-equilibrium-with-a-decentralized-rider-joining-and-s",
+            "label": "Stackelberg equilibrium with a decentralized rider joining-and-sharing continuation equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The model's equilibrium concept is Stackelberg equilibrium with a decentralized rider joining-and-sharing continuation equilibrium. Section 3.1 explicitly defines the Stackelberg game. Lemmas 1-2 characterize all-solo, hybrid, and all-shared rider equilibria, and Section 4 optimizes platform prices by working backward through those equilibrium responses.",
+            "searchPhrases": [
+              "how stackelberg equilibrium with a decentralized rider joining-and-sharing continuation equilibrium is represented",
+              "strategic response in ride-hailing platform pricing with endogenous ride sharing",
+              "stackelberg equilibrium with a decentralized rider joining-and-sharing continuation equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Stackelberg equilibrium with a decentralized rider joining-and-sharing continuation equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\lambda, \\eta",
+                "meaning": "effective rider joining rate and fraction choosing shared rides",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_1, p_2",
+                "meaning": "solo and shared trip prices",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In this section, we examine the platform’s optimization in stage 1 of the Stackelberg game and the ensuing market equilibrium.",
+              "Rider and driver arrivals are independent Poisson processes in the base model.",
+              "Solo and shared service times are not explicitly modeled; extra travel burden can be absorbed into sharing discomfort."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4. Platform’s Decisions",
+                "equation": "",
+                "quote": "In this section, we examine the platform’s optimization in stage 1 of the Stackelberg game and the ensuing mar­ ket equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Optimization: “Optimization”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Prices, arrival rates, trip reward, wait-cost rate, and the discomfort distribution are common knowledge. Each rider privately observes their own sharing discomfort Ξ. Riders do not observe the real-time queue or whether a pairing partner is waiting; they use stationary expected waits. The platform knows the discomfort distribution but not individual realizations.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in ride-hailing platform pricing with endogenous ride sharing",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Prices, arrival rates, trip reward, wait-cost rate, and the discomfort distribution are common knowledge.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\lambda, \\eta",
+                "meaning": "effective rider joining rate and fraction choosing shared rides",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I, \\Pi",
+                "meaning": "expected wait times for solo and shared riders",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_1, p_2",
+                "meaning": "solo and shared trip prices",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi, \\Xi",
+                "meaning": "realized and random sharing discomfort",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R, c",
+                "meaning": "trip reward and waiting cost per unit time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Lambda, \\mu",
+                "meaning": "potential rider and driver arrival rates",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Rider and driver arrivals are independent Poisson processes in the base model.",
+              "Riders share a common trip reward and waiting cost but have IID sharing discomfort on a bounded negative interval.",
+              "Drivers leave immediately if no service group is waiting and driver arrival rate is exogenous in the base model."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "6.1. Data and Methodologies",
+                "equation": "",
+                "quote": "The data set is at the trip level and includes information on pickup and drop-off times, locations, total miles, trip fare, tips, and whether the trip was a shared ride, and, if so, the number of sharing riders."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The data set is at the trip level and includes information on pickup and drop-off times, locations, total”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "ee68561eb180a3dd503b78602e3d54eda2cbe3b3f8a006b7f8700a8abe76b30b",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "84cf5f7bb6bdba25679c54b950235dbc195f6f3e62ef8395464c9dcac1ef6f3f",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-04324/84cf5f7bb6bdba25679c54b950235dbc195f6f3e62ef8395464c9dcac1ef6f3f.json",
+      "extractionQaDecisionSha256": "d263047d189fccdfaecfef180311bc0e7a14eb0f9f23ea45a377852708506431",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

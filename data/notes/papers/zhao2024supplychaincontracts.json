@@ -1,0 +1,2268 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "zhao2024supplychaincontracts",
+  "sourcePdfSha256": "091def7e3ca49d64751033a9145e369a67ee05931d976cf5ddca0c51e718384b",
+  "extractionPagesSha256": "7c307957fc01537f9e7a0f906099d1b183b0994ff1c9b28d838febf1038b8042",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "f0bfae2043f18efe87cb2446b52cecd09d2074968a7f7bff08e1451cf893ef71",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "aaff85d63ef25f8fddffdd55cf294c8166c19b3333eb39e2880574c326b5acc1",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/zhao2024supplychaincontracts/aaff85d63ef25f8fddffdd55cf294c8166c19b3333eb39e2880574c326b5acc1.json",
+  "extractionQaDecisionSha256": "85fbe883b219ccec7ab1814a74b744bfe3140a6476c0829d8900bcb0d9762a71",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "zhao2024supplychaincontracts",
+    "question": "How can a supplier set wholesale prices with few observations by combining demand samples with the retailer's revealed best-response orders and guarding against distributional ambiguity?",
+    "overview": "The paper explicitly frames the supplier–retailer interaction as a Stackelberg game: the supplier chooses a wholesale price and anticipates the retailer's order best response. Distributional ambiguity changes the leader's problem, but not the strategic architecture.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Data-driven wholesale contract design",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper explicitly frames the supplier–retailer interaction as a Stackelberg game: the supplier chooses a wholesale price and anticipates the retailer's order best response. Distributional ambiguity changes the leader's problem, but not the strategic architecture.",
+        "objects": [
+          "Supplier",
+          "Retailer"
+        ],
+        "inputs": [
+          "The retailer knows the demand distribution/model",
+          "The supplier has only small historical demand",
+          "Historical optimal orders impose first-order-condition restrictions on candidate distributions",
+          "Price w",
+          "The wholesale prices or past order quantities"
+        ],
+        "decisions": [
+          "Supplier estimates an ambiguity set",
+          "Retailer chooses newsvendor order quantities",
+          "In descending order",
+          "Reflects both the demand data and the historical contract data",
+          "Quantity can be found through bisection search"
+        ],
+        "assumptions": [
+          "Demand has compact support",
+          "Admissible wholesale prices lie on finite product-wise menus",
+          "The retailer knows the demand model and always orders optimally",
+          "Demand distributions are continuous for the FOC construction",
+          "Historical demand samples are i.i.d. within the modeled regime"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Supplier",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "supplier as upper-level decision maker"
+              }
+            },
+            {
+              "value": "Retailer",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "retailer as lower-level newsvendor decision maker"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The retailer knows the demand distribution/model",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "the retailer knows the demand distribution/model"
+              }
+            },
+            {
+              "value": "The supplier has only small historical demand",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "the supplier has only small historical demand and price–order data"
+              }
+            },
+            {
+              "value": "Historical optimal orders impose first-order-condition restrictions on candidate distributions",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "historical optimal orders impose first-order-condition restrictions on candidate distributions"
+              }
+            },
+            {
+              "value": "Price w",
+              "source": {
+                "type": "section",
+                "section": "Solving the Robust Problem",
+                "page": 8,
+                "sectionIndex": 14,
+                "sentence": 7,
+                "quote": "For each wholesale price w, we define a thresh­ old θ(w) on the parameter θ (see Equation (EC.13) in the online appendix, Section EC.4).",
+                "matchedText": "price w",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The wholesale prices or past order quantities",
+              "source": {
+                "type": "section",
+                "section": "Multiproduct Formulation of the AED",
+                "page": 7,
+                "sectionIndex": 12,
+                "sentence": 2,
+                "quote": "the wholesale prices or past order quantities",
+                "matchedText": "the wholesale prices or past order quantities",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Supplier estimates an ambiguity set",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "supplier estimates an ambiguity set and chooses a wholesale-price vector"
+              }
+            },
+            {
+              "value": "Retailer chooses newsvendor order quantities",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "retailer chooses newsvendor order quantities as best responses"
+              }
+            },
+            {
+              "value": "In descending order",
+              "source": {
+                "type": "section",
+                "section": "Single-Product Formulation of the AED",
+                "page": 6,
+                "sectionIndex": 11,
+                "sentence": 1,
+                "quote": "For n = 1, we can arrange the past wholesale prices in descending order as s > w1 >⋯> wt > wt+1 >⋯> wT > 0",
+                "matchedText": "in descending order",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Reflects both the demand data and the historical contract data",
+              "source": {
+                "type": "section",
+                "section": "Contributions",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 15,
+                "quote": "However, we differ from classical DRO because the nominal distribution in our uncertainty set reflects both the demand data and the historical con­ tract data",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Quantity can be found through bisection search",
+              "source": {
+                "type": "section",
+                "section": "Contributions",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 18,
+                "quote": "In the single-product case, the worst-case retailer order quantity can be found through bisection search",
+                "matchedText": "quantity can be found through bisection search",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Demand has compact support",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand has compact support."
+              }
+            },
+            {
+              "value": "Admissible wholesale prices lie on finite product-wise menus",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Admissible wholesale prices lie on finite product-wise menus."
+              }
+            },
+            {
+              "value": "The retailer knows the demand model and always orders optimally",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer knows the demand model and always orders optimally."
+              }
+            },
+            {
+              "value": "Demand distributions are continuous for the FOC construction",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand distributions are continuous for the FOC construction."
+              }
+            },
+            {
+              "value": "Historical demand samples are i.i.d. within the modeled regime",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Historical demand samples are i.i.d. within the modeled regime."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper compares models with and without contract data (in both the robust and nonrobust settings), and identifies settings where the value of historical contract data are the greatest.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Contributions",
+          "page": 2,
+          "sentence": 22
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3. The Data-Driven Regime",
+            "equation": "",
+            "quote": "Because the retailer always orders optimally, we can eliminate those P for which qt ≠q(wt;P) (i.e., qt is not a retailer best response to wt) for any t ∈[T]."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The retailer knows the demand distribution/model the supplier has only small historical demand and price–order data historical optimal orders impose first-order-condition restrictions on candidate distributions",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The retailer knows the demand distribution/model the supplier has only small historical demand and price–order data historical optimal orders impose first-order-condition restrictions on candidate distributions",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "S(\\mathcal D)",
+                "meaning": "supplier's distributionally robust wholesale-price problem for uncertainty set D · max-min optimization problem",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mathcal D",
+                "meaning": "ambiguity set of admissible demand distributions · subset of probability distributions on demand support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The case where the retailer knows P, but the supplier has only partial information, is important.",
+              "The retailer knows the demand model and always orders optimally.",
+              "Demand distributions are continuous for the FOC construction."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. The Data-Driven Regime",
+                "equation": "",
+                "quote": "The case where the retailer knows P, but the supplier has only partial infor­ mation, is important."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The case where the retailer knows P, but the supplier has only partial information, is important.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "The supplier observes historical wholesale prices, retailer orders and demands; it constructs an augmented empirical distribution/uncertainty set and chooses new wholesale prices; the retailer, assumed to know its demand model, chooses an optimal order. supplier-led sequential wholesale-price game retailer best-response subproblem",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in supply chains and contracts",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The supplier observes historical wholesale prices, retailer orders and demands; it constructs an augmented empirical distribution/uncertainty set and chooses new wholesale prices; the retailer, assumed to know its demand model, chooses an optimal order. supplier-led sequential wholesale-price game retailer best-response subproblem",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "S(\\mathcal D)",
+                "meaning": "supplier's distributionally robust wholesale-price problem for uncertainty set D · max-min optimization problem",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mathcal D",
+                "meaning": "ambiguity set of admissible demand distributions · subset of probability distributions on demand support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Because the retailer always orders optimally, we can eliminate those P for which qt ≠q(wt;P) (i.e., qt is not a retailer best response to wt) for any t ∈[T].",
+              "The retailer knows the demand model and always orders optimally."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. The Data-Driven Regime",
+                "equation": "",
+                "quote": "Because the retailer always orders optimally, we can eliminate those P for which qt ≠q(wt;P) (i.e., qt is not a retailer best response to wt) for any t ∈[T]."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “(i.e., qt is not a retailer best response to wt) for any t ∈[T].”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The robust supplier chooses wholesale prices to maximize its worst-case margin times the retailer order induced by any demand distribution in the retailer-data-compatible Wasserstein uncertainty set.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in supply chains and contracts",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "S(\\mathcal D):\\quad\\max_{w\\in W}\\;\\min_{P\\in\\mathcal D}(w-c)^\\top q(w;P)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "S(\\mathcal D)",
+                "meaning": "supplier's distributionally robust wholesale-price problem for uncertainty set D · max-min optimization problem",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mathcal D",
+                "meaning": "ambiguity set of admissible demand distributions · subset of probability distributions on demand support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In the above display, π(w;D) is the worst-case profit for the supplier among distributions P ∈D (and their induced order quantities q = q(w;P)).",
+              "The retailer knows the demand model and always orders optimally."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Expected-profit objective",
+                "equation": "Problem S(D)",
+                "quote": "In the above display, π(w;D) is the worst-case profit for the supplier among distributions P ∈D (and their induced order quantities q = q(w;P))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "supplier-led-stackelberg-bilevel-solution-under-distributional-a",
+            "label": "supplier-led Stackelberg/bilevel solution under distributional ambiguity",
+            "role": "interaction",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is supplier-led Stackelberg/bilevel solution under distributional ambiguity. The supplier moves first in wholesale price and solves S(P) while anticipating the retailer's optimal order q(w;P); the robust extension takes the worst case over distributions compatible with data and revealed retailer responses.",
+            "searchPhrases": [
+              "how supplier-led stackelberg/bilevel solution under distributional ambiguity is represented",
+              "strategic response in supply chains and contracts",
+              "supplier-led stackelberg/bilevel solution under distributional ambiguity strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is supplier-led Stackelberg/bilevel solution under distributional ambiguity.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "S(\\mathcal D)",
+                "meaning": "supplier's distributionally robust wholesale-price problem for uncertainty set D · max-min optimization problem",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mathcal D",
+                "meaning": "ambiguity set of admissible demand distributions · subset of probability distributions on demand support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer knows the demand model and always orders optimally.",
+              "Demand distributions are continuous for the FOC construction."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "6. Incorporating Robustness",
+                "equation": "",
+                "quote": "Rather, it indirectly influences the supplier’s objective through the retailer’s best response q(w;P)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “Rather, it indirectly influences the supplier’s objective through the retailer’s best response q(w;P).”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Supplier estimates an ambiguity set and chooses a wholesale-price vector retailer chooses newsvendor order quantities as best responses",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in supply chains and contracts",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Supplier estimates an ambiguity set and chooses a wholesale-price vector retailer chooses newsvendor order quantities as best responses",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "S(\\mathcal D)",
+                "meaning": "supplier's distributionally robust wholesale-price problem for uncertainty set D · max-min optimization problem",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mathcal D",
+                "meaning": "ambiguity set of admissible demand distributions · subset of probability distributions on demand support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each time we check q ∈Q(w;Do( ˆPT;θ)), we either (i) conclude that q ∈Q(w;Do( ˆPT;θ)) and discard a set of suboptimal order quantities or (ii) conclude that q ∉Q(w;Do( ˆPT;θ)) and discard a set of infeasible order quantities.",
+              "The retailer knows the demand model and always orders optimally.",
+              "The supplier is ambiguity averse in the robust formulation."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "7.2. Solving the Robust Problem",
+                "equation": "",
+                "quote": "Each time we check q ∈Q(w;Do( ˆPT;θ)), we either (i) conclude that q ∈Q(w;Do( ˆPT;θ)) and discard a set of suboptimal order quantities or (ii) conclude that q ∉Q(w;Do( ˆPT;θ)) and discard a set of infeasible order quantities."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Project the empirical demand distribution onto models consistent with observed retailer FOCs using Wasserstein distance; build a compatible ambiguity set; solve single-product cases by bisection and multiproduct cases by a finite cutting-plane algorithm.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in supply chains and contracts",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Project the empirical demand distribution onto models consistent with observed retailer FOCs using Wasserstein distance; build a compatible ambiguity set; solve single-product cases by bisection and multiproduct cases by a finite cutting-plane algorithm.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mathcal D",
+                "meaning": "ambiguity set of admissible demand distributions · subset of probability distributions on demand support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There exists an algorithm (see Algorithm 1 in the online appendix, Section EC.4.3) that, for any ɛ > 0, will converge to an ɛ-optimal solution to Equation (6) after a finite number of iterations.",
+              "The retailer knows the demand model and always orders optimally."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "7.2. Solving the Robust Problem",
+                "equation": "",
+                "quote": "There exists an algorithm (see Algorithm 1 in the online appendix, Section EC.4.3) that, for any ɛ > 0, will converge to an ɛ-optimal solution to Equation (6) after a finite number of iterations."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “optimal solution”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "single-product-formulation-of-the-aed",
+        "name": "Single-Product Formulation of the AED",
+        "kind": "alternative",
+        "relation": "This is an alternative to Data-driven wholesale contract design.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "We also study supply chain contract design, but from the data-driven perspective, and we construct the uncertainty set based on the information that is revealed through the interactions between the supplier and the retailer. A generic demand distribution is denoted by P ∈P(Ξ), and the ξi-marginal of P is denoted by Pi ∈P([0,ξ]). However, these two distributions can be close enough to each other that it is statistically hard to distinguish between them based only on the demand samples, and the supplier can easily choose the wrong distribution.",
+        "objects": [
+          "The supplier",
+          "A retailer"
+        ],
+        "inputs": [
+          "Random demand",
+          "Price w",
+          "The demand model P and the offered wholesale prices w",
+          "The demand data",
+          "The retailer data"
+        ],
+        "decisions": [
+          "A wholesale price contract",
+          "Wholesale prices",
+          "Quantity is θ",
+          "Test to see whether the true distribution is exponential or Pareto",
+          "In descending order"
+        ],
+        "assumptions": [
+          "We obtain the AED by solving the projection problem ˆPT ∈arg min P∈Do T W2 2(P, ˆPe T): (1) Problem (1) is a convex optimization problem because W2 is a metric and Do T is a convex set.",
+          "Demand has compact support",
+          "There is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P",
+          "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P",
+          "N = 1. (i) The optimal values of Problems (1) and (2) are equal. (ii) ˆPT in Equation (3) is an optimal solution of Problem (1)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The supplier",
+              "source": {
+                "type": "section",
+                "section": "Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "The supplier offers a wholesale price contract to a retailer for the sale of n products with random demand.",
+                "matchedText": "The supplier",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A retailer",
+              "source": {
+                "type": "section",
+                "section": "Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "The supplier offers a wholesale price contract to a retailer for the sale of n products with random demand.",
+                "matchedText": "a retailer",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Random demand",
+              "source": {
+                "type": "section",
+                "section": "Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "The supplier offers a wholesale price contract to a retailer for the sale of n products with random demand.",
+                "matchedText": "random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Price w",
+              "source": {
+                "type": "section",
+                "section": "Solving the Robust Problem",
+                "page": 8,
+                "sectionIndex": 8,
+                "sentence": 7,
+                "quote": "For each wholesale price w, we define a thresh­ old θ(w) on the parameter θ (see Equation (EC.13) in the online appendix, Section EC.4).",
+                "matchedText": "price w",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The demand model P and the offered wholesale prices w",
+              "source": {
+                "type": "section",
+                "section": "Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 16,
+                "quote": "the demand model P and the offered wholesale prices w",
+                "matchedText": "the demand model P and the offered wholesale prices w",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The demand data",
+              "source": {
+                "type": "section",
+                "section": "Augmented Empirical Distribution",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 1,
+                "quote": "We now synthesize the demand data with the retailer data.",
+                "matchedText": "the demand data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The retailer data",
+              "source": {
+                "type": "section",
+                "section": "Augmented Empirical Distribution",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 3,
+                "quote": "Under Assumptions 3 and 4, the retailer data are captured by Do T, and we should search within Do T for P.",
+                "matchedText": "the retailer data",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "A wholesale price contract",
+              "source": {
+                "type": "section",
+                "section": "Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "The supplier offers a wholesale price contract to a retailer for the sale of n products with random demand.",
+                "matchedText": "a wholesale price contract",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Wholesale prices",
+              "source": {
+                "type": "section",
+                "section": "Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 16,
+                "quote": "wholesale prices",
+                "matchedText": "wholesale prices",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Quantity is θ",
+              "source": {
+                "type": "section",
+                "section": "Parametric Approach",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 8,
+                "quote": "quantity is θ",
+                "matchedText": "quantity is θ",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Test to see whether the true distribution is exponential or Pareto",
+              "source": {
+                "type": "section",
+                "section": "Parametric Approach",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 15,
+                "quote": "Suppose the supplier wants to conduct a statistical test to see whether the true distribution is exponential or Pareto",
+                "matchedText": "test to see whether the true distribution is exponential or Pareto",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "In descending order",
+              "source": {
+                "type": "section",
+                "section": "Single-Product Formulation of the AED",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 1,
+                "quote": "For n = 1, we can arrange the past wholesale prices in descending order as s > w1 >⋯> wt > wt+1 >⋯> wT > 0",
+                "matchedText": "in descending order",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We obtain the AED by solving the projection problem ˆPT ∈arg min P∈Do T W2 2(P, ˆPe T): (1) Problem (1) is a convex optimization problem because W2 is a metric and Do T is a convex set.",
+              "source": {
+                "type": "section",
+                "section": "Augmented Empirical Distribution",
+                "page": 6,
+                "quote": "We obtain the AED by solving the projection prob­ lem ˆPT ∈arg min P∈Do T W2 2(P, ˆPe T): (1) Problem (1) is a convex optimization problem because W2 is a metric and Do T is a convex set."
+              }
+            },
+            {
+              "value": "Demand has compact support",
+              "source": {
+                "type": "section",
+                "section": "Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 3,
+                "quote": "We assume demand has compact support.",
+                "matchedText": "demand has compact support.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P",
+              "source": {
+                "type": "section",
+                "section": "Incorporating Robustness",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 26,
+                "quote": "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P.",
+                "matchedText": "there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P",
+              "source": {
+                "type": "section",
+                "section": "Incorporating Robustness",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 26,
+                "quote": "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P.",
+                "matchedText": "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "N = 1. (i) The optimal values of Problems (1) and (2) are equal. (ii) ˆPT in Equation (3) is an optimal solution of Problem (1)",
+              "source": {
+                "type": "section",
+                "section": "Single-Product Formulation of the AED",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 7,
+                "quote": "Suppose n = 1. (i) The optimal values of Pro­ blems (1) and (2) are equal. (ii) ˆPT in Equation (3) is an optimal solution of Problem (1).",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper can then reformulate the worst-case profit π(w;Do( ˆPT;θ)) as min q∈Q(w;Do( ˆPT;θ)) (w c)⊤q, (6) where we optimize over the worst-case order quantity.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Solving the Robust Problem",
+          "page": 9,
+          "sentence": 26
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 2,
+            "section": "1.2.2. Robust Game",
+            "equation": "",
+            "quote": "We also study supply chain contract design, but from the data-driven per­ spective, and we construct the uncertainty set based on the information that is revealed through the inter­ actions between the supplier and the retailer."
+          }
+        ],
+        "components": [
+          {
+            "id": "supply-chain-contracts-and-information-asym",
+            "label": "Supply Chain Contracts and Information Asym",
+            "role": "information",
+            "concepts": [
+              "contract-design",
+              "information-asymmetry"
+            ],
+            "explanation": "Our work is related to contract design with information asymmetry (Corbett and Tang 1999, Zhang et al. 2010, Kim and Netessine 2013).",
+            "searchPhrases": [
+              "how supply chain contracts and information asym is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "supply chain contracts and information asym information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Our work is related to contract design with information asymmetry (Corbett and Tang 1999, Zhang et al. 2010, Kim and Netessine 2013).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The typical approach is to model the information asymmetry as an unknown parameter, and then to propose a mechanism design framework.",
+              "Compared with this approach, we model the information asymmetry through an unknown distribution (which is essentially an infinitedimensional parameter)."
+            ],
+            "sources": [
+              {
+                "page": 2,
+                "section": "1.2.1. Supply Chain Contracts and Information Asym",
+                "equation": "",
+                "quote": "Our work is related to contract design with information asymmetry (Corbett and Tang 1999, Zhang et al. 2010, Kim and Netessine 2013)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design: “Contract design”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "information-asymmetry",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Information asymmetry: “Information asymmetry”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "robust-game",
+            "label": "Robust Game",
+            "role": "interaction",
+            "concepts": [
+              "contract-design",
+              "uncertainty"
+            ],
+            "explanation": "We also study supply chain contract design, but from the data-driven perspective, and we construct the uncertainty set based on the information that is revealed through the interactions between the supplier and the retailer.",
+            "searchPhrases": [
+              "how robust game is represented",
+              "strategic response in supply chains and contracts",
+              "robust game strategic response specification"
+            ],
+            "formal": "Strategic response: We also study supply chain contract design, but from the data-driven perspective, and we construct the uncertainty set based on the information that is revealed through the interactions between the supplier and the retailer.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "S(\\mathcal D)",
+                "meaning": "supplier's distributionally robust wholesale-price problem for uncertainty set D · max-min optimization problem",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mathcal D",
+                "meaning": "ambiguity set of admissible demand distributions · subset of probability distributions on demand support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Gupta and Rusmevichientong (2021) introduce bias-corrected policies for optimization problems with a linear objective and uncertain parameters in the small data large-scale regime."
+            ],
+            "sources": [
+              {
+                "page": 2,
+                "section": "1.2.2. Robust Game",
+                "equation": "",
+                "quote": "We also study supply chain contract design, but from the data-driven per­ spective, and we construct the uncertainty set based on the information that is revealed through the inter­ actions between the supplier and the retailer."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design: “We also study supply chain Contract design , but from the data-driven perspective, and we”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Uncertainty: “data-driven perspective, and we construct the Uncertainty set based on the information that is revealed”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "preliminaries",
+            "label": "Preliminaries",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "A generic demand distribution is denoted by P ∈P(Ξ), and the ξi-marginal of P is denoted by Pi ∈P([0,ξ]).",
+            "searchPhrases": [
+              "how preliminaries is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "preliminaries information available to the decision maker specification"
+            ],
+            "formal": "i ∈P([0,\\xi])",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A generic demand distribution is denoted by P ∈P(Ξ), and the ξi-marginal of P is denoted by Pi ∈P([0,ξ]).",
+              "Let j = (ξi)i∈[n] be the vector of random demand for all n products defined on an underlying measurable space (Ω,F), where ξi ≥0 is the random demand for product i ∈[n].",
+              "The contract between the supplier and retailer specifies the wholesale prices w = (wi)i∈[n] for all n products."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2. Preliminaries",
+                "equation": "",
+                "quote": "A generic demand distri­ bution is denoted by P ∈P(Ξ), and the ξi-marginal of P is denoted by Pi ∈P([0,ξ])."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “A generic demand distribution is denoted by P ∈P(Ξ), and the ξi-marginal of P is denoted by Pi”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "parametric-approach",
+            "label": "Parametric Approach",
+            "role": "preference",
+            "concepts": [
+              "preference-modeling"
+            ],
+            "explanation": "However, these two distributions can be close enough to each other that it is statistically hard to distinguish between them based only on the demand samples, and the supplier can easily choose the wrong distribution.",
+            "searchPhrases": [
+              "how parametric approach is represented",
+              "modeled preferences in supply chains and contracts",
+              "parametric approach modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: However, these two distributions can be close enough to each other that it is statistically hard to distinguish between them based only on the demand samples, and the supplier can easily choose the wrong distribution.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this case, the supplier’s optimal wholesale price is the maximizer of (w c)ln(s=w), which is independent of λ.",
+              "Now suppose P is either the exponential distribution Pλ (with mean 1=λ for λ > 0) or the Pareto distribution P(θ,α) (with scale parameter θ > 0 and shape parameter α > 0).",
+              "Under the exponential distribution, the retailer’s optimal order quantity is q(w;Pλ) = (1=λ)ln(s=w) (Liyanage and Shanthikumar 2005)."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4.2. Parametric Approach",
+                "equation": "",
+                "quote": "However, these two distribu­ tions can be close enough to each other that it is statistically hard to distinguish between them based only on the demand samples, and the supplier can eas­ ily choose the wrong distribution."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "preference-modeling",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Preference modeling through this preference specification: “However, these two distributions can be close enough to each other that it is statistically hard to distinguish”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "augmented-empirical-distribution",
+            "label": "Augmented Empirical Distribution",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In the rest of this section, we explain how to solve Problem (1) to construct ˆPT.",
+            "searchPhrases": [
+              "how augmented empirical distribution is represented",
+              "solution algorithm in supply chains and contracts",
+              "augmented empirical distribution solution algorithm specification"
+            ],
+            "formal": "2(P,P′)¢inf\\Pi∈C(P, P′)",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "We obtain the AED by solving the projection problem ˆPT ∈arg min P∈Do T W2 2(P, ˆPe T): (1) Problem (1) is a convex optimization problem because W2 is a metric and Do T is a convex set.",
+              "We will construct an augmented empirical distribution (AED) ˆPT ∈ P(Ξ) by projecting ˆPe T onto Do T.",
+              "The supplier’s modified pricing problem based on ˆPT is then S( ˆPT) : max w∈W π(w; ˆPT): We will demonstrate that the supplier gets better out- of-sample performance using w∗( ˆPT) versus w∗( ˆPe T)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "5.1. Augmented Empirical Distribution",
+                "equation": "",
+                "quote": "In the rest of this section, we explain how to solve Problem (1) to construct ˆPT."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “In the rest of this section, we explain how to solve Problem (1) to construct ˆPT.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "single-product-formulation-of-the-aed",
+            "label": "Single-Product Formulation of the AED",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "For n = 1, we can arrange the past wholesale prices in descending order as s > w1 >⋯> wt > wt+1 >⋯> wT > 0.",
+            "searchPhrases": [
+              "how single-product formulation of the aed is represented",
+              "decision rule in supply chains and contracts",
+              "single-product formulation of the aed decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "For n = 1, we can arrange the past wholesale prices in descending order as s > w1 >⋯> wt > wt+1 >⋯> wT > 0.",
+              "We introduce decision variables βkt ∈R and pkt ∈R for all k ∈[T + 1] and t ∈[T], and let b = (βkt)k∈[T+1],t∈[T] and p = (pkt)k∈[T+1],t∈[T].",
+              "(We assume there are no repeats.) The retailer’s corresponding past order quantities in ascending order are 0 < q1 < ⋯< qt < qt+1 < ⋯< qT < ξ."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "5.2. Single-Product Formulation of the AED",
+                "equation": "",
+                "quote": "For n = 1, we can arrange the past wholesale prices in descending order as s > w1 >⋯> wt > wt+1 >⋯> wT > 0."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “For n = 1, we can arrange the past wholesale prices in descending order as s > w1”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "incorporating-robustness",
+            "label": "Incorporating Robustness",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "For each T ≥1, suppose we solve S(Do( ˆPT;βT)), which has optimal value ν∗(Do( ˆPT;βT)) and optimal solution w∗(Do( ˆPT;βT)).",
+            "searchPhrases": [
+              "how incorporating robustness is represented",
+              "solution algorithm in supply chains and contracts",
+              "incorporating robustness solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "S(\\mathcal D)",
+                "meaning": "supplier's distributionally robust wholesale-price problem for uncertainty set D · max-min optimization problem",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mathcal D",
+                "meaning": "ambiguity set of admissible demand distributions · subset of probability distributions on demand support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Suppose Assumptions 1, 3, and 4 hold, and limT→∞βT = 0.",
+              "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P.",
+              "For each T ≥1, suppose we solve S(Do( ˆPT;βT)), which has optimal value ν∗(Do( ˆPT;βT)) and optimal solution w∗(Do( ˆPT;βT))."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "6. Incorporating Robustness",
+                "equation": "",
+                "quote": "For each T ≥1, suppose we solve S(Do( ˆPT;βT)), which has optimal value ν∗(Do( ˆPT;βT)) and optimal solution w∗(Do( ˆPT;βT))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “has optimal value ν∗(Do( ˆPT;βT)) and optimal solution w∗(Do( ˆPT;βT)).”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P",
+                  "source": {
+                    "type": "section",
+                    "section": "Incorporating Robustness",
+                    "page": 8,
+                    "sectionIndex": 7,
+                    "sentence": 26,
+                    "quote": "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P.",
+                    "matchedText": "Suppose there is a sequence of i.i.d. demand samples generated by P ∞¢ ×∞ t=1 P.",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              },
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solving-the-robust-problem",
+            "label": "Solving the Robust Problem",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Based on these observations, we propose a cutting plane algorithm (see Algorithm 1 in the online appendix, Section EC.4.3) to solve Problem (6), where we iteratively update an outer approximation Q ⊂Ξ of Q(w;Do( ˆPT;θ)).",
+            "searchPhrases": [
+              "how solving the robust problem is represented",
+              "solution algorithm in supply chains and contracts",
+              "solving the robust problem solution algorithm specification"
+            ],
+            "formal": "q∈Q(w;Do(ˆPT;\\theta))",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "If θ < θ(w), then P(w;Do( ˆPT;θ)) has finite support and solves the inclusion Equation (EC.15) (see the online appendix, Section EC.4), and the worst-case order quantity q(w;Do( ˆPT;θ)) is the unique solution to Equation (EC.14). ii.",
+              "When θ < θ(w), q(w;Do( ˆPT;θ)) can be computed efficiently using bisection search (see Equation (EC.14) in the online appendix, Section EC.4).",
+              "Based on these observations, we propose a cutting plane algorithm (see Algorithm 1 in the online appendix, Section EC.4.3) to solve Problem (6), where we iteratively update an outer approximation Q ⊂Ξ of Q(w;Do( ˆPT;θ))."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "7.2. Solving the Robust Problem",
+                "equation": "",
+                "quote": "Based on these observations, we propose a cutting plane algorithm (see Algorithm 1 in the online appen­ dix, Section EC.4.3) to solve Problem (6), where we iteratively update an outer approximation Q ⊂Ξ of Q(w;Do( ˆPT;θ))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "the-data-driven-regime",
+        "name": "The Data-Driven Regime",
+        "kind": "alternative",
+        "relation": "This is an alternative to Data-driven wholesale contract design.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Because the retailer always orders optimally, we can eliminate those P for which qt ≠q(wt;P) (i.e., qt is not a retailer best response to wt) for any t ∈[T].",
+        "objects": [
+          "The supplier",
+          "The retailer",
+          "An online platform",
+          "The sellers",
+          "Customers"
+        ],
+        "inputs": [
+          "The random demand",
+          "Nonstationary demand data",
+          "Historical demand data",
+          "Demand information"
+        ],
+        "decisions": [
+          "An overly optimistic wholesale price",
+          "Quantity is θ"
+        ],
+        "assumptions": [
+          "Demand has compact support",
+          "Admissible wholesale prices lie on finite product-wise menus",
+          "The retailer knows the demand model and always orders optimally",
+          "Demand distributions are continuous for the FOC construction",
+          "Historical demand samples are i.i.d. within the modeled regime"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The supplier",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "In practice, the supplier typically faces demand uncer­ tainty and does not know P precisely.",
+                "matchedText": "the supplier",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The retailer",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "In contrast, the retailer may get closer access to the market (e.g., by communication with existing customers, learning from internal sales data, or launching marketing campaigns) and have better knowledge of P.",
+                "matchedText": "the retailer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An online platform",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 18,
+                "quote": "In this setting, buyers have good estimates of their own greenhouse gas emissions (e.g., by setting up climate programs, or using an online platform for carbon accounting), so the buyers have bet­ ter knowledge about demand than the sellers.",
+                "matchedText": "an online platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The sellers",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 18,
+                "quote": "In this setting, buyers have good estimates of their own greenhouse gas emissions (e.g., by setting up climate programs, or using an online platform for carbon accounting), so the buyers have bet­ ter knowledge about demand than the sellers.",
+                "matchedText": "the sellers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "In contrast, the retailer may get closer access to the market (e.g., by communication with existing customers, learning from internal sales data, or launching marketing campaigns) and have better knowledge of P.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The random demand",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 17,
+                "quote": "The random demand is the buyers’ cre­ ation of greenhouse gases.",
+                "matchedText": "The random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Nonstationary demand data",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 36,
+                "quote": "In general, the demand process is nonstationary, and only very recent observations are informative, even if a long history of nonstationary demand data are avail­ able.",
+                "matchedText": "nonstationary demand data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Historical demand data",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 21,
+                "quote": "Sellers of carbon offsets are then able to obtain historical demand data through the GHGRP.",
+                "matchedText": "historical demand data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Demand information",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "sectionIndex": 0,
+                "page": 4,
+                "quote": "Even though the distributors do not nec­ essarily share demand information, APEAM can still gather demand data for avocados in the United States through third-party channels like the U.S."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "An overly optimistic wholesale price",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 60,
+                "quote": "Because of the piecewise linear structure of π(w; ˆPe T), the supplier tends to choose an overly optimistic wholesale price",
+                "matchedText": "an overly optimistic wholesale price",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Quantity is θ",
+              "source": {
+                "type": "section",
+                "section": "The Data-Driven Regime",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 77,
+                "quote": "quantity is θ",
+                "matchedText": "quantity is θ",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Demand has compact support",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand has compact support."
+              }
+            },
+            {
+              "value": "Admissible wholesale prices lie on finite product-wise menus",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Admissible wholesale prices lie on finite product-wise menus."
+              }
+            },
+            {
+              "value": "The retailer knows the demand model and always orders optimally",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer knows the demand model and always orders optimally."
+              }
+            },
+            {
+              "value": "Demand distributions are continuous for the FOC construction",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand distributions are continuous for the FOC construction."
+              }
+            },
+            {
+              "value": "Historical demand samples are i.i.d. within the modeled regime",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Historical demand samples are i.i.d. within the modeled regime."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper compares models with and without contract data (in both the robust and nonrobust settings), and identifies settings where the value of historical contract data are the greatest.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Contributions",
+          "page": 2,
+          "sentence": 22
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3. The Data-Driven Regime",
+            "equation": "",
+            "quote": "Because the retailer always orders optimally, we can eliminate those P for which qt ≠q(wt;P) (i.e., qt is not a retailer best response to wt) for any t ∈[T]."
+          }
+        ],
+        "components": [
+          {
+            "id": "the-data-driven-regime",
+            "label": "The Data-Driven Regime",
+            "role": "algorithm",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "Because the retailer always orders optimally, we can eliminate those P for which qt ≠q(wt;P) (i.e., qt is not a retailer best response to wt) for any t ∈[T].",
+            "searchPhrases": [
+              "how the data-driven regime is represented",
+              "solution algorithm in supply chains and contracts",
+              "the data-driven regime solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "candidate demand distribution · P \\in \\mathcal D",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Because the retailer always orders optimally, we can eliminate those P for which qt ≠q(wt;P) (i.e., qt is not a retailer best response to wt) for any t ∈[T].",
+              "Let wt i, qt i, and ξt i be the wholesale price, retailer order quantity, and demand realization for product i ∈[n] in period t ∈[T].",
+              "In practice, the supplier typically faces demand uncertainty and does not know P precisely.",
+              "The case where the retailer knows P, but the supplier has only partial information, is important."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. The Data-Driven Regime",
+                "equation": "",
+                "quote": "Because the retailer always orders optimally, we can eliminate those P for which qt ≠q(wt;P) (i.e., qt is not a retailer best response to wt) for any t ∈[T]."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Strategic interaction as “best response”: “(i.e., qt is not a retailer best response to wt) for any t ∈[T].”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "multiproduct-formulation-of-the-aed",
+        "name": "Multiproduct Formulation of the AED",
+        "kind": "alternative",
+        "relation": "This is an alternative to Data-driven wholesale contract design.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Then, in the multiproduct case, we can arrange the past wholesale prices and order quantities as follows.",
+        "objects": [
+          "The retailer"
+        ],
+        "inputs": [
+          "The wholesale prices or past order quantities",
+          "The demand"
+        ],
+        "decisions": [
+          "In descending order"
+        ],
+        "assumptions": [
+          "N ≥2. (i) The optimal values of Problems (1) and (4) are equal. (ii) ˆPT in Equation (5) is an optimal solution of Problem (1)",
+          "Additionally, the demand realizations {jt}T t=1 are independent and identically distributed (i.i.d.) and do not depend on the wholesale prices or past order quantities"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The retailer",
+              "source": {
+                "type": "section",
+                "section": "Multiproduct Formulation of the AED",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "The retailer",
+                "matchedText": "The retailer",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The wholesale prices or past order quantities",
+              "source": {
+                "type": "section",
+                "section": "Multiproduct Formulation of the AED",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "the wholesale prices or past order quantities",
+                "matchedText": "the wholesale prices or past order quantities",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The demand",
+              "source": {
+                "type": "section",
+                "section": "Multiproduct Formulation of the AED",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "Additionally, the demand realizations {jt}T t=1 are independent and identically distributed (i.i.d.) and do not depend on the wholesale prices or past order quantities.",
+                "matchedText": "the demand",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "In descending order",
+              "source": {
+                "type": "section",
+                "section": "Multiproduct Formulation of the AED",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "prices in descending order",
+                "matchedText": "in descending order",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "N ≥2. (i) The optimal values of Problems (1) and (4) are equal. (ii) ˆPT in Equation (5) is an optimal solution of Problem (1)",
+              "source": {
+                "type": "section",
+                "section": "Multiproduct Formulation of the AED",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 13,
+                "quote": "Suppose n ≥2. (i) The optimal values of Pro­ blems (1) and (4) are equal. (ii) ˆPT in Equation (5) is an optimal solution of Problem (1).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Additionally, the demand realizations {jt}T t=1 are independent and identically distributed (i.i.d.) and do not depend on the wholesale prices or past order quantities",
+              "source": {
+                "type": "section",
+                "section": "Multiproduct Formulation of the AED",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "Additionally, the demand realizations {jt}T t=1 are independent and identically distributed (i.i.d.) and do not depend on the wholesale prices or past order quantities.",
+                "matchedText": "Additionally, the demand realizations {jt}T t=1 are independent and identically distributed (i.i.d.) and do not depend on the wholesale prices or past order quantities",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          }
+        ],
+        "method": "The paper compares models with and without contract data (in both the robust and nonrobust settings), and identifies settings where the value of historical contract data are the greatest.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Contributions",
+          "page": 2,
+          "sentence": 22
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "5.3. Multiproduct Formulation of the AED",
+            "equation": "",
+            "quote": "Then, in the multiproduct case, we can arrange the past wholesale prices and order quantities as follows."
+          }
+        ],
+        "components": [
+          {
+            "id": "multiproduct-formulation-of-the-aed",
+            "label": "Multiproduct Formulation of the AED",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Then, in the multiproduct case, we can arrange the past wholesale prices and order quantities as follows.",
+            "searchPhrases": [
+              "how multiproduct formulation of the aed is represented",
+              "decision rule in supply chains and contracts",
+              "multiproduct formulation of the aed decision rule specification"
+            ],
+            "formal": "Decision rule: Then, in the multiproduct case, we can arrange the past wholesale prices and order quantities as follows.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "vector of wholesale prices · w \\in W",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "vector of supplier unit costs · paper-defined cost vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(w;P)",
+                "meaning": "retailer's order-quantity best response to wholesale prices under demand distribution P · nonnegative quantity vector",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Additionally, the demand realizations {jt}T t=1 are independent and identically distributed (i.i.d.) and do not depend on the wholesale prices or past order quantities.",
+              "The retailer’s ordering decision for product i does not depend on the wholesale prices for products j ∈[n] with j ≠i."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "5.3. Multiproduct Formulation of the AED",
+                "equation": "",
+                "quote": "Then, in the multiproduct case, we can arrange the past wholesale prices and order quantities as follows."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Then, in the multiproduct case, we can arrange the past wholesale prices and order quantities as follows.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "091def7e3ca49d64751033a9145e369a67ee05931d976cf5ddca0c51e718384b",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "aaff85d63ef25f8fddffdd55cf294c8166c19b3333eb39e2880574c326b5acc1",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/zhao2024supplychaincontracts/aaff85d63ef25f8fddffdd55cf294c8166c19b3333eb39e2880574c326b5acc1.json",
+      "extractionQaDecisionSha256": "85fbe883b219ccec7ab1814a74b744bfe3140a6476c0829d8900bcb0d9762a71",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2024-1172",
+  "sourcePdfSha256": "fa4a2614ef15455d86646f9a322de56fc7f809dfe9b9bf3cae530e0c7c061920",
+  "extractionPagesSha256": "715a0acd4100142fc8f87da4c891691003f8b6097e058c151d1e577ad215a5a6",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "7d14fa4eb3122a02169511cad357c8ce498bff646b87cea15ee91c5eecd4fa4d",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "9d52d26011da13a4db494c93bc139dbb3431ee7bcea832e9a2e52139acb6058f",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2024-1172/9d52d26011da13a4db494c93bc139dbb3431ee7bcea832e9a2e52139acb6058f.json",
+  "extractionQaDecisionSha256": "a1d119772e3d6ea1666be08cf8824ee06598256303c2e867de020392f5d636a4",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2024-1172",
+    "question": "How does facility specialization affect concurrent management of pandemic and nonpandemic demand?",
+    "overview": "We investigate how a network of healthcare facilities should manage nonpandemic and pandemic demand, asking whether each facility must operate in a specialized (i.e., treating a single patient type) or a generalized (i.e., treating both patient types) mode. Given the many drivers of the specialization-generalization decision, we focus on the value that specialization can create by reducing mix-variability in lengths of stay and limiting the scope and intensity of infection prevention measures. The paper develops two optimization models that minimize the sum of patient waiting costs and facility infection mitigation costs under a static demand allocation policy.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        12,
+        14,
+        15,
+        32
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Preparing for the Next Health Emergency model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "We investigate how a network of healthcare facilities should manage nonpandemic and pandemic demand, asking whether each facility must operate in a specialized (i.e., treating a single patient type) or a generalized (i.e., treating both patient types) mode. Given the many drivers of the specialization-generalization decision, we focus on the value that specialization can create by reducing mix-variability in lengths of stay and limiting the scope and intensity of infection prevention measures.",
+        "objects": [
+          "Facilities",
+          "Patient",
+          "A population",
+          "Hospitals",
+          "Customers"
+        ],
+        "inputs": [
+          "Service times",
+          "The mean service time",
+          "The arrival rate",
+          "The per-unit-time IM costs for each pandemic-specialized and generalized bed, respectively",
+          "The demand"
+        ],
+        "decisions": [
+          "Perform better",
+          "Load and SCV of the aggregate stream arriving at the facility",
+          "Require the probability that the steady-state waiting time exceeds a threshold t",
+          "Whether to join or balk",
+          "The optimal allocation"
+        ],
+        "assumptions": [
+          "IM costs accrue per bed per unit time, regardless of occupancy",
+          "The probabilities of observing minimum and maximum values are equal for Λp, Mp, and Θp",
+          "Patient care is provided by the homogeneous, interchangeable care capacity at each facility and use the term “bed” to designate a unit of this capacity",
+          "Customers are homogeneous"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Facilities",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We investigate how a network of healthcare facilities should manage nonpandemic and pandemic demand, asking whether each facility must operate in a specialized (i.e., treating a single patient type) or a generalized (i.e., treating both patient types) mode.",
+                "matchedText": "facilities",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We investigate how a network of healthcare facilities should manage nonpandemic and pandemic demand, asking whether each facility must operate in a specialized (i.e., treating a single patient type) or a generalized (i.e., treating both patient types) mode.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A population",
+              "source": {
+                "type": "section",
+                "section": "Performance Evaluation Model",
+                "page": 13,
+                "sectionIndex": 28,
+                "sentence": 4,
+                "quote": "Two-Facility Networks Consider a population region served by two hospital facilities.",
+                "matchedText": "a population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "section",
+                "section": "Performance Evaluation Model",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 7,
+                "quote": "Their accuracy are also justified by the fact that hospitals will likely face extra demand during a pandemic, and thus need to operate under high traffic.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Article submitted to Manufacturing & Service Operations Management",
+                "page": 11,
+                "sectionIndex": 8,
+                "sentence": 10,
+                "quote": "Sunar et al. (2021), for example, study observable queues with delay-sensitive customers who decide whether to join or balk, and show that pooling can increase sojourn time and reduce social welfare even when servers and customers are homogeneous.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Service times",
+              "source": {
+                "type": "section",
+                "section": "Performance Evaluation Model",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 2,
+                "quote": "service times",
+                "matchedText": "service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The mean service time",
+              "source": {
+                "type": "section",
+                "section": "Performance Evaluation Model",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 2,
+                "quote": "the mean service time",
+                "matchedText": "the mean service time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Performance Evaluation Model",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 10,
+                "quote": "Consider a finite collection of mutually independent demand streams indexed byj, with λj, 1/µj, and θj representing the arrival rate, service time mean and service time SCV of stream j, respectively.",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The per-unit-time IM costs for each pandemic-specialized and generalized bed, respectively",
+              "source": {
+                "type": "section",
+                "section": "Performance Evaluation Model",
+                "page": 13,
+                "sectionIndex": 28,
+                "sentence": 13,
+                "quote": "Let cp and cm denote the per-unit-time IM costs for each pandemic-specialized and generalized bed, respectively, where cm ≥ cp.",
+                "matchedText": "the per-unit-time IM costs for each pandemic-specialized and generalized bed, respectively, where cm ≥ cp",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The demand",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 23,
+                "quote": "Under static allocation, the demand split determines the demand-supply matching configuration for a network of treatment facilities.",
+                "matchedText": "the demand",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Perform better",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "For the special case of two equal-capacity facilities, we also show that a virtual pooling policy, as a representative dynamic policy, yields substantial savings over the best static policy only at very high traffic intensities; at lower intensities, static allocation can perform better.",
+                "matchedText": "perform better",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Load and SCV of the aggregate stream arriving at the facility",
+              "source": {
+                "type": "section",
+                "section": "Performance Evaluation Model",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 9,
+                "quote": "For a generalized facility, however, it is necessary to evaluate the offered load and SCV of the aggregate stream arriving at the facility",
+                "matchedText": "load and SCV of the aggregate stream arriving at the facility",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Require the probability that the steady-state waiting time exceeds a threshold t",
+              "source": {
+                "type": "section",
+                "section": "Performance Evaluation Model",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 3,
+                "quote": "In addition to the mean, we also require the probability that the steady-state waiting time exceeds a threshold t",
+                "matchedText": "require the probability that the steady-state waiting time exceeds a threshold t",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Whether to join or balk",
+              "source": {
+                "type": "section",
+                "section": "Article submitted to Manufacturing & Service Operations Management",
+                "page": 11,
+                "sectionIndex": 8,
+                "sentence": 10,
+                "quote": "Sunar et al. (2021), for example, study observable queues with delay-sensitive customers who decide whether to join or balk",
+                "matchedText": "whether to join or balk",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The optimal allocation",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 8,
+                "quote": "In a broader sense, we investigate the optimal allocation of mixed patient demand for a multi-hospital network (MHN) during a pandemic.",
+                "matchedText": "the optimal allocation",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "IM costs accrue per bed per unit time, regardless of occupancy",
+              "source": {
+                "type": "section",
+                "section": "Two-Facility Networks",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 11,
+                "quote": "We assume IM costs accrue per bed per unit time, regardless of occupancy.",
+                "matchedText": "IM costs accrue per bed per unit time, regardless of occupancy.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The probabilities of observing minimum and maximum values are equal for Λp, Mp, and Θp",
+              "source": {
+                "type": "section",
+                "section": "Article submitted to Manufacturing & Service Operations Management",
+                "page": 34,
+                "sectionIndex": 24,
+                "sentence": 27,
+                "quote": "We assume the probabilities of observing minimum and maximum values are equal for Λp, Mp, and Θp.",
+                "matchedText": "the probabilities of observing minimum and maximum values are equal for Λp, Mp, and Θp.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Patient care is provided by the homogeneous, interchangeable care capacity at each facility and use the term “bed” to designate a unit of this capacity",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 14,
+                "quote": "We assume that patient care is provided by the homogeneous, interchangeable care capacity at each facility and use the term “bed” to designate a unit of this capacity.",
+                "matchedText": "patient care is provided by the homogeneous, interchangeable care capacity at each facility and use the term “bed” to designate a unit of this capacity.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Customers are homogeneous",
+              "source": {
+                "type": "section",
+                "section": "Article submitted to Manufacturing & Service Operations Management",
+                "page": 11,
+                "sectionIndex": 8,
+                "sentence": 10,
+                "quote": "Sunar et al. (2021), for example, study observable queues with delay-sensitive customers who decide whether to join or balk, and show that pooling can increase sojourn time and reduce social welfare even when servers and customers are homogeneous.",
+                "matchedText": "customers are homogeneous",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 5
+          },
+          {
+            "code": "setup_assumptions_completed_from_source",
+            "message": "Filled assumptions from literal abstract or source-section phrases.",
+            "category": "assumptions",
+            "count": 5
+          }
+        ],
+        "method": "The paper develops two optimization models that minimize the sum of patient waiting costs and facility infection mitigation costs under a static demand allocation policy.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 3
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 12,
+            "section": "3. Performance Evaluation Model",
+            "equation": "",
+            "quote": "Consider a finite collection of mutually independent demand streams indexed byj, with λj, 1/µj, and θj representing the arrival rate, service time mean and service time SCV of stream j, respectively."
+          }
+        ],
+        "components": [
+          {
+            "id": "performance-evaluation-model",
+            "label": "Performance Evaluation Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Consider a finite collection of mutually independent demand streams indexed byj, with λj, 1/μj, and θj representing the arrival rate, service time mean and service time SCV of stream j, respectively.",
+            "searchPhrases": [
+              "how performance evaluation model is represented",
+              "system process in operations and supply chains",
+              "performance evaluation model system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\mu_{j}",
+                "meaning": "offered load of stream j"
+              }
+            ],
+            "conditions": [
+              "The aggregate offered load is given by r = P j rj, where rj = λj/μj represents the offered load of stream j.",
+              "The mean service time of the aggregate stream can be obtained as 1/μ = r/λ, where λ = P j λj.",
+              "Consider a finite collection of mutually independent demand streams indexed byj, with λj, 1/μj, and θj representing the arrival rate, service time mean and service time SCV of stream j, respectively."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "3. Performance Evaluation Model",
+                "equation": "",
+                "quote": "Consider a finite collection of mutually independent demand streams indexed byj, with λj, 1/µj, and θj representing the arrival rate, service time mean and service time SCV of stream j, respectively."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "two-facility-networks",
+            "label": "Two-Facility Networks",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "As we show there, the same algorithm can also be adapted to the DT formulation.",
+            "searchPhrases": [
+              "how two-facility networks is represented",
+              "solution algorithm in operations and supply chains",
+              "two-facility networks solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: As we show there, the same algorithm can also be adapted to the DT formulation.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let yq ∈ [0, 1] denote the proportion of requests of type q allocated to facility 1, so that (1 − yq) is allocated to facility 2.",
+              "Article submitted to Manufacturing & Service Operations Management 13 where βp = λpτprp, β n = λnτnrn, and βm = λpτnrn + λnτprp."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "4. Two-Facility Networks",
+                "equation": "",
+                "quote": "As we show there, the same algorithm can also be adapted to the DT formulation."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “As we show there, the same algorithm can also be adapted to the DT formulation.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "equal-capacities",
+            "label": "Equal Capacities",
+            "role": "objective",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "This allows us to derive the demand allocation that minimizes the total queue length— and, by extension, the average waiting time— which is of independent interest.",
+            "searchPhrases": [
+              "how equal capacities is represented",
+              "modeled objective in operations and supply chains",
+              "equal capacities modeled objective specification"
+            ],
+            "formal": "Objective relation: This allows us to derive the demand allocation that minimizes the total queue length— and, by extension, the average waiting time— which is of independent interest.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For m = 1, the bracketed letter specifies which demand stream (pandemic or non-pandemic) is allocated to the specialized facility, while “u” denotes that one facility is left unused.",
+              "This allows us to derive the demand allocation that minimizes the total queue length— and, by extension, the average waiting time— which is of independent interest."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "4.1. Equal Capacities",
+                "equation": "",
+                "quote": "This allows us to derive the demand allocation that minimizes the total queue length— and, by extension, the average waiting time— which is of independent interest."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "modeling-framework",
+            "label": "Modeling Framework",
+            "role": "process",
+            "concepts": [
+              "network-optimization"
+            ],
+            "explanation": "The model considers a two-hospital network that is designed to provide care for a steady stream of non-pandemic demand, but must also prepare to accommodate the surge in demand triggered by a pandemic, often within a narrow time frame.",
+            "searchPhrases": [
+              "how modeling framework is represented",
+              "system process in operations and supply chains",
+              "modeling framework system process specification"
+            ],
+            "formal": "Process relation: The model considers a two-hospital network that is designed to provide care for a steady stream of non-pandemic demand, but must also prepare to accommodate the surge in demand triggered by a pandemic, often within a narrow time frame.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In our analysis so far, we have been focusing on the demand allocation within a hospital network with fixed patient care capacity.",
+              "Capacity Planning in the Presence of Demand Allocation: A Joint Modeling Framework In our analysis so far, we have been focusing on the demand allocation within a hospital network with fixed patient care capacity.",
+              "We consider a two-hospital network that is designed to provide care for a steady stream of non-pandemic demand, but must also prepare to accommodate the surge in demand triggered by a pandemic, often within a narrow time frame."
+            ],
+            "sources": [
+              {
+                "page": 32,
+                "section": "Modeling Framework",
+                "equation": "",
+                "quote": "We consider a two-hospital network that is designed to provide care for a steady stream of non-pandemic demand, but must also prepare to accommodate the surge in demand triggered by a pandemic, often within a narrow time frame."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "network-optimization",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Network optimization as “network design”: “network design”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "fa4a2614ef15455d86646f9a322de56fc7f809dfe9b9bf3cae530e0c7c061920",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "9d52d26011da13a4db494c93bc139dbb3431ee7bcea832e9a2e52139acb6058f",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2024-1172/9d52d26011da13a4db494c93bc139dbb3431ee7bcea832e9a2e52139acb6058f.json",
+      "extractionQaDecisionSha256": "a1d119772e3d6ea1666be08cf8824ee06598256303c2e867de020392f5d636a4",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

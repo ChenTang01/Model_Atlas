@@ -1,0 +1,818 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-03371",
+  "sourcePdfSha256": "05fdb1703ce07260495eebaf9149a7b274f577732fb26d8557a4c6ae4c40caef",
+  "extractionPagesSha256": "d78a60a3851ba0c871270960d2a73a1bbf01074aee19517843e1f122187c5321",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "765c0f883e1c8c215d9436718b1f88f76c679d01d34b0c6408f31620031d02ec",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "93ba477d4561763932af7e64e5bb6bfcc2008941b80073ba1e7670cc2db9f4ac",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03371/93ba477d4561763932af7e64e5bb6bfcc2008941b80073ba1e7670cc2db9f4ac.json",
+  "extractionQaDecisionSha256": "a7b501d7ac7ed8cf1a99a843a90b04012103e0eaac1ce2138e2ae7793ff3e4dd",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-03371",
+    "question": "Why do clustered limit orders often appear and disappear immediately, and how should exchanges interpret or regulate excessive displayed depth created by uncertain queue priority?",
+    "overview": "Strategic market makers simultaneously choose limit-order quantities while uncertain about time priority, may revise them after queue positions are revealed, and anticipate a liquidity-demanding investor's optimal market order. The paper solves the quantity game by backward induction.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        13,
+        15
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Queuing Uncertainty of Limit Orders model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Strategic market makers simultaneously choose limit-order quantities while uncertain about time priority, may revise them after queue positions are revealed, and anticipate a liquidity-demanding investor's optimal market order. The paper solves the quantity game by backward induction.",
+        "objects": [
+          "N risk-neutral market makers supplying limit orders",
+          "A liquidity-demanding investor submitting a market order"
+        ],
+        "inputs": [
+          "Market makers know primitives and initial aggregate strategic environment but not their queue positions",
+          "Queue positions may be resolved",
+          "The investor privately observes an asset-value signal and a liquidity shock and observes available depth",
+          "Market makers infer execution and adverse-selection risk from the investor's optimal demand"
+        ],
+        "decisions": [
+          "Submit an initial limit-order quantity",
+          "Cancel some queued quantity",
+          "Choose the investor's market-order quantity"
+        ],
+        "assumptions": [
+          "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book",
+          "The queue is randomly ordered because of latency and orders execute by time priority",
+          "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives",
+          "The investor has quadratic trading cost from a liquidity shock and normally distributed value information in the tractable baseline",
+          "The maintained top-of-queue result assumes an ask above the threshold a* and sufficiently precise inventory information tau_U>tau_U*; sufficiently precise private-value information can provide the alternative tail condition"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "N risk-neutral market makers supplying limit orders",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "n risk-neutral market makers supplying limit orders"
+              }
+            },
+            {
+              "value": "A liquidity-demanding investor submitting a market order",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a liquidity-demanding investor submitting a market order"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Market makers know primitives and initial aggregate strategic environment but not their queue positions",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Market makers know primitives and initial aggregate strategic environment but not their queue positions when submitting."
+              }
+            },
+            {
+              "value": "Queue positions may be resolved",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Queue positions may be resolved before the investor arrives with probability eta."
+              }
+            },
+            {
+              "value": "The investor privately observes an asset-value signal and a liquidity shock and observes available depth",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The investor privately observes an asset-value signal and a liquidity shock and observes available depth."
+              }
+            },
+            {
+              "value": "Market makers infer execution and adverse-selection risk from the investor's optimal demand",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Market makers infer execution and adverse-selection risk from the investor's optimal demand."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Submit an initial limit-order quantity",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "submit an initial limit-order quantity"
+              }
+            },
+            {
+              "value": "Cancel some queued quantity",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "cancel some queued quantity after position information arrives"
+              }
+            },
+            {
+              "value": "Choose the investor's market-order quantity",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "choose the investor's market-order quantity"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book."
+              }
+            },
+            {
+              "value": "The queue is randomly ordered because of latency and orders execute by time priority",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The queue is randomly ordered because of latency and orders execute by time priority."
+              }
+            },
+            {
+              "value": "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives."
+              }
+            },
+            {
+              "value": "The investor has quadratic trading cost from a liquidity shock and normally distributed value information in the tractable baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The investor has quadratic trading cost from a liquidity shock and normally distributed value information in the tractable baseline."
+              }
+            },
+            {
+              "value": "The maintained top-of-queue result assumes an ask above the threshold a* and sufficiently precise inventory information tau_U>tau_U*; sufficiently precise private-value information can provide the alternative tail condition",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The maintained top-of-queue result assumes an ask above the threshold a* and sufficiently precise inventory information tau_U>tau_U*; sufficiently precise private-value information can provide the alternative tail condition."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper solves the investor's quadratic demand problem, derives the execution-conditioned profit of each queue position under Bayesian adverse selection, and works backward to market makers' quantity choices before and after queue resolution.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "2.9. Model Discussions",
+            "equation": "",
+            "quote": "First, the market order might arrive too soon, before the market makers can parse the queue information and react accord­ ingly.4 Second, even when there is sufficient time before the market order arrives, limit order traders do not always perfectly learn their queue positions: not all platforms disseminate queue positions (or not always timely), lacking sufficient historical latency data, the inferred queue position might not be reliable, and even one’s exact queue position is known within an exchange, its queue position across all exchanges is still uncertain."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "queueing",
+              "uncertainty"
+            ],
+            "explanation": "Submit an initial limit-order quantity cancel some queued quantity after position information arrives choose the investor's market-order quantity",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in strategic liquidity provision under queue uncertainty",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Submit an initial limit-order quantity cancel some queued quantity after position information arrives choose the investor's market-order quantity",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_i, 0",
+                "meaning": "market maker i's initial limit-order size",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y",
+                "meaning": "aggregate depth available at the ask",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x",
+                "meaning": "investor's market-order quantity",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "z",
+                "meaning": "investor's pretrade marginal valuation E[V|S]-rho U",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi-dot(y)",
+                "meaning": "expected marginal profit of the yth unit in the limit-order queue",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book.",
+              "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives.",
+              "The investor has quadratic trading cost from a liquidity shock and normally distributed value information in the tractable baseline.",
+              "Then, with some probability, the queuing uncertainty is resolved—all market makers observe the queue positions of their orders and can choose to revise them."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.1. Overview",
+                "equation": "",
+                "quote": "Then, with some probability, the queuing uncertainty is resolved—all market makers observe the queue positions of their orders and can choose to revise them."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Queueing as “queuing”: “Then, with some probability, the queuing uncertainty is resolved—all market makers observe the queue”.",
+                "conditionRefs": [
+                  1,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  4
+                ]
+              },
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Uncertainty: “Then, with some probability, the queuing Uncertainty is resolved—all market makers observe the queue positions”.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "Market makers know primitives and initial aggregate strategic environment but not their queue positions when submitting. Queue positions may be resolved before the investor arrives with probability eta. The investor privately observes an asset-value signal and a liquidity shock and observes available depth. Market makers infer execution and adverse-selection risk from the investor's optimal demand.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in strategic liquidity provision under queue uncertainty",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Market makers know primitives and initial aggregate strategic environment but not their queue positions when submitting.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_i, 0",
+                "meaning": "market maker i's initial limit-order size",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i, 1",
+                "meaning": "market maker i's retained order size after possible queue resolution",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\eta",
+                "meaning": "probability that queue uncertainty resolves before the market order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y",
+                "meaning": "aggregate depth available at the ask",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x",
+                "meaning": "investor's market-order quantity",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "z",
+                "meaning": "investor's pretrade marginal valuation E[V|S]-rho U",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "First, the market order might arrive too soon, before the market makers can parse the queue information and react accordingly.4 Second, even when there is sufficient time before the market order arrives, limit order traders do not always perfectly learn their queue positions: not all platforms disseminate queue positions (or not always timely), lacking sufficient historical latency data, the inferred queue position might not be reliable, and even one’s exact queue position is known within an exchange, its queue position across all exchanges is still uncertain.",
+              "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book.",
+              "The queue is randomly ordered because of latency and orders execute by time priority.",
+              "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.9. Model Discussions",
+                "equation": "",
+                "quote": "First, the market order might arrive too soon, before the market makers can parse the queue information and react accord­ ingly.4 Second, even when there is sufficient time before the market order arrives, limit order traders do not always perfectly learn their queue positions: not all platforms disseminate queue positions (or not always timely), lacking sufficient historical latency data, the inferred queue position might not be reliable, and even one’s exact queue position is known within an exchange, its queue position across all exchanges is still uncertain."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "pure-strategy-nash-quantity-equilibrium-solved-by-backward-induc",
+            "label": "Pure-strategy Nash quantity equilibrium solved by backward induction",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Pure-strategy Nash quantity equilibrium solved by backward induction. Section 3 explicitly analyzes equilibrium backward: it first solves the investor's optimal market order, then derives marginal limit-order profitability, and finally characterizes market makers' simultaneous submission and revision choices. Lemma 2 establishes pure-strategy Nash existence. Individual quantities can be nonunique, while aggregate depth and its overshooting properties are characterized.",
+            "searchPhrases": [
+              "how pure-strategy nash quantity equilibrium solved by backward induction is represented",
+              "strategic response in strategic liquidity provision under queue uncertainty",
+              "pure-strategy nash quantity equilibrium solved by backward induction strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Pure-strategy Nash quantity equilibrium solved by backward induction.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_i, 0",
+                "meaning": "market maker i's initial limit-order size",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i, 1",
+                "meaning": "market maker i's retained order size after possible queue resolution",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\eta",
+                "meaning": "probability that queue uncertainty resolves before the market order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y",
+                "meaning": "aggregate depth available at the ask",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x",
+                "meaning": "investor's market-order quantity",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "z",
+                "meaning": "investor's pretrade marginal valuation E[V|S]-rho U",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book.",
+              "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives.",
+              "The investor has quadratic trading cost from a liquidity shock and normally distributed value information in the tractable baseline."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3. Equilibrium",
+                "equation": "",
+                "quote": "The equilibrium is analyzed backward by first deriving the investor’s optimal market order, then characterizing market makers’ limit order profitability, and, finally, examining the limit order submission and revision strategies."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “The equilibrium is analyzed backward by first deriving the investor’s optimal market order, then characterizing market makers’ limit”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "The paper solves the investor's quadratic demand problem, derives the execution-conditioned profit of each queue position under Bayesian adverse selection, and works backward to market makers' quantity choices before and after queue resolution. It maps the solution into order-book observables and welfare and analyzes alternative speed-bump designs.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in strategic liquidity provision under queue uncertainty",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper solves the investor's quadratic demand problem, derives the execution-conditioned profit of each queue position under Bayesian adverse selection, and works backward to market makers' quantity choices before and after queue resolution.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_i, 1",
+                "meaning": "market maker i's retained order size after possible queue resolution",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\eta",
+                "meaning": "probability that queue uncertainty resolves before the market order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y",
+                "meaning": "aggregate depth available at the ask",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x",
+                "meaning": "investor's market-order quantity",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "z",
+                "meaning": "investor's pretrade marginal valuation E[V|S]-rho U",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi-dot(y)",
+                "meaning": "expected marginal profit of the yth unit in the limit-order queue",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book.",
+              "The queue is randomly ordered because of latency and orders execute by time priority.",
+              "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2. Limit Orders’ Profitability",
+                "equation": "",
+                "quote": "That is, if the market makers’ limit orders form a queue, those at the front expect positive profit, whereas those at the rear expect losses."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1,
+                  5
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "queueing",
+              "uncertainty"
+            ],
+            "explanation": "After observing depth and private information, the investor chooses market-order size to maximize expected asset value net of the ask price and quadratic liquidity cost; market makers choose queued quantities to maximize expected execution profit.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in strategic liquidity provision under queue uncertainty",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "max_{0<=x<=y} (E[V|S]-\\rho U-a)x - (\\rho/2)x^2",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "q_i, 0",
+                "meaning": "market maker i's initial limit-order size",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i, 1",
+                "meaning": "market maker i's retained order size after possible queue resolution",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\eta",
+                "meaning": "probability that queue uncertainty resolves before the market order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y",
+                "meaning": "aggregate depth available at the ask",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x",
+                "meaning": "investor's market-order quantity",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "z",
+                "meaning": "investor's pretrade marginal valuation E[V|S]-rho U",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi-dot(y)",
+                "meaning": "expected marginal profit of the yth unit in the limit-order queue",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "severity of adverse selection in conditional asset value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book.",
+              "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives.",
+              "The investor has quadratic trading cost from a liquidity shock and normally distributed value information in the tractable baseline."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "4. Welfare",
+                "equation": "(1)",
+                "quote": "Welfare, Liquidity Supply, and Queuing Uncertainty Welfare is the sum of (i) the investor’s expected trading gain, and (ii) the total expected profit of the n market makers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Queueing as “queuing”: “queuing”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2,
+                  6
+                ]
+              },
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Uncertainty: “Welfare, Liquidity Supply, and Queuing Uncertainty Welfare is the sum of (i) the investor’s”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "queueing",
+              "uncertainty"
+            ],
+            "explanation": "At t=0, market makers simultaneously choose initial order sizes at the best ask and random latency determines their queue order. With probability eta the queue position is revealed before trade; each maker may then reduce but not enlarge the order. At t=1, the investor observes total depth and private signals, chooses a market-order size, and execution follows time priority. All makers want early queue positions but choose size before knowing priority.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in strategic liquidity provision under queue uncertainty",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_i, 0",
+                "meaning": "market maker i's initial limit-order size",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i, 1",
+                "meaning": "market maker i's retained order size after possible queue resolution",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\eta",
+                "meaning": "probability that queue uncertainty resolves before the market order",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y",
+                "meaning": "aggregate depth available at the ask",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x",
+                "meaning": "investor's market-order quantity",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "z",
+                "meaning": "investor's pretrade marginal valuation E[V|S]-rho U",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "All market makers are risk neutral and submit at one fixed best-ask tick into an initially empty book.",
+              "The queue is randomly ordered because of latency and orders execute by time priority.",
+              "After queue resolution, a maker may cancel but cannot add to the initial order before the investor arrives."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "4.2. Market Design Implications",
+                "equation": "",
+                "quote": "As seen from Example 1, the equilibrium depth increases with queuing uncertainty, but a deeper order book does not necessarily mean better welfare, as seen in Proposition 5."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Queueing as “queuing”: “1, the equilibrium depth increases with queuing uncertainty, but a deeper order book does not”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Uncertainty: “the equilibrium depth increases with queuing Uncertainty , but a deeper order book does not”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "05fdb1703ce07260495eebaf9149a7b274f577732fb26d8557a4c6ae4c40caef",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "93ba477d4561763932af7e64e5bb6bfcc2008941b80073ba1e7670cc2db9f4ac",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03371/93ba477d4561763932af7e64e5bb6bfcc2008941b80073ba1e7670cc2db9f4ac.json",
+      "extractionQaDecisionSha256": "a7b501d7ac7ed8cf1a99a843a90b04012103e0eaac1ce2138e2ae7793ff3e4dd",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

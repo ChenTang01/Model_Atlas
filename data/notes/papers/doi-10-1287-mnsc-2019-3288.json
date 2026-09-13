@@ -1,0 +1,795 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2019-3288",
+  "sourcePdfSha256": "cee7646c6cd5cedcd2f7c9796a2b8e916a80a33881fa2fc0935c086303ec3653",
+  "extractionPagesSha256": "bbd2fb3a93239c35e0966fa571a3c2a11b1b3b156b3e845881721dddd61289cd",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "5210e2a25e449ac5f7f96f0dd39e0fa048e0f945cf886e2fbdf9497e041116ca",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "914fa04aa21634c2a7f1efd29419659cf65388b32c6e997795626bd84192de31",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2019-3288/914fa04aa21634c2a7f1efd29419659cf65388b32c6e997795626bd84192de31.json",
+  "extractionQaDecisionSha256": "22b86df3a5425ccf15bfc72fe3e9f146684513977563f052bf26df5e6c78a00e",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2019-3288",
+    "question": "How do lead times affect a learning algorithm for lost-sales inventory systems?",
+    "overview": "The model considers a periodic-review, single-product inventory system with lost sales and positive lead times under censored demand. In contrast to the classical inventory literature, we assume the firm does not know the demand distribution a priori and makes an adaptive inventory-ordering decision in each period based only on the past sales (censored demand) data. The standard performance measure is regret, which is the cost difference between a learning algorithm and the clairvoyant (full-information) benchmark.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        6,
+        8,
+        10,
+        15
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Closing the Gap model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers a periodic-review, single-product inventory system with lost sales and positive lead times under censored demand. In contrast to the classical inventory literature, we assume the firm does not know the demand distribution a priori and makes an adaptive inventory-ordering decision in each period based only on the past sales (censored demand) data. The standard performance measure is regret, which is the cost difference between a learning algorithm and the clairvoyant (full-information) benchmark.",
+        "objects": [
+          "The firm"
+        ],
+        "inputs": [
+          "Lead times",
+          "Sales quantity min(dt, It)",
+          "Unit holding cost h",
+          "Cost p",
+          "The initial state"
+        ],
+        "decisions": [
+          "The ordering decisions on the fly",
+          "Decisions are made",
+          "Minimum extra inventory to maintain no less on-hand inventory than the simulated system",
+          "Serve demand only",
+          "The on-hand inventory level"
+        ],
+        "assumptions": [
+          "Unmet demand at the end of each period is lost rather than being backlogged and carried over to the next period",
+          "The firm does not know the demand distribution a priori but can only collect sales data over time"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "The ﬁrm can only observe the past censored demand data and adjust the ordering decisions on the ﬂy.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Lead times",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We consider a periodic-review, single-product inventory system with lost sales and positive lead times under censored demand.",
+                "matchedText": "lead times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Sales quantity min(dt, It)",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 17,
+                "quote": "Because demand is censored, the ﬁrm only observes sales quantity min(dt, It).",
+                "matchedText": "sales quantity min(dt, It)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Unit holding cost h",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 18,
+                "quote": "unit holding cost h",
+                "matchedText": "unit holding cost h",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cost p",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 18,
+                "quote": "Thus, if dt ≥It, then the ﬁrm does not know the exact demand. (iii) At the end of the period, each remaining on- hand inventory unit incurs a per-unit holding cost h, and each unsatisﬁed demand unit incurs a per-unit lost-sales penalty cost p.",
+                "matchedText": "cost p",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The initial state",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 18,
+                "sentence": 3,
+                "quote": "the initial state",
+                "matchedText": "the initial state",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The ordering decisions on the fly",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "The ﬁrm can only observe the past censored demand data and adjust the ordering decisions on the ﬂy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decisions are made",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 18,
+                "sentence": 5,
+                "quote": "Note that we are not throwing these withheld inventory units away, but rather we pretend them to be nonexistent when ordering decisions are made",
+                "matchedText": "decisions are made",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Minimum extra inventory to maintain no less on-hand inventory than the simulated system",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 18,
+                "sentence": 8,
+                "quote": "By temporarily marking off these inventory units, we order minimum extra inventory to maintain no less on-hand inventory than the simulated system",
+                "matchedText": "minimum extra inventory to maintain no less on-hand inventory than the simulated system",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Serve demand only",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 18,
+                "sentence": 6,
+                "quote": "We use the withheld on-hand inventory to serve demand only",
+                "matchedText": "serve demand only",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The on-hand inventory level",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 18,
+                "sentence": 11,
+                "quote": "the on-hand inventory level",
+                "matchedText": "the on-hand inventory level",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Unmet demand at the end of each period is lost rather than being backlogged and carried over to the next period",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 2,
+                "quote": "The model assumes that unmet demand at the end of each period is lost rather than being backlogged and carried over to the next period.",
+                "matchedText": "unmet demand at the end of each period is lost rather than being backlogged and carried over to the next period.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The firm does not know the demand distribution a priori but can only collect sales data over time",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 5,
+                "quote": "In this paper, contrary to the classical inventory setting, we assume that the ﬁrm does not know the demand distribution a priori but can only collect sales data over time.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          }
+        ],
+        "method": "More precisely, we propose a new nonparametric algorithm termed the simulated cycle-update policy and establish a square-root convergence rate on regret, which is proven to be the lower bound of any learning algorithm.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 11
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 3,
+            "section": "2. Model Description",
+            "equation": "",
+            "quote": "The ﬁrm can only observe the past censored demand data and adjust the ordering decisions on the ﬂy."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-description",
+            "label": "Model Description",
+            "role": "decision",
+            "concepts": [
+              "censored-demand"
+            ],
+            "explanation": "The firm can only observe the past censored demand data and adjust the ordering decisions on the fly.",
+            "searchPhrases": [
+              "how model description is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "model description decision rule specification"
+            ],
+            "formal": "Decision rule: The firm can only observe the past censored demand data and adjust the ordering decisions on the fly.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let t denote the period t 1, 2, . . ., and let D denote a generic one-period demand, which is nonnegative with E[D] > 0.",
+              "The ordering lead time is a fixed integer L ≥1.",
+              "The demands over periods {D1, D2, . . . , Dt, . . .} are independent and identically distributed continuous random variables.",
+              "The firm can only observe the past censored demand data and adjust the ordering decisions on the fly."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2. Model Description",
+                "equation": "",
+                "quote": "The ﬁrm can only observe the past censored demand data and adjust the ordering decisions on the ﬂy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "censored-demand",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Censored demand: “Censored demand”.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "nonparametric-algorithm-scu-policy",
+            "label": "Nonparametric Algorithm: SCU Policy",
+            "role": "algorithm",
+            "concepts": [
+              "policy-learning"
+            ],
+            "explanation": "We present a learning algorithm that we refer to as the SCU policy.",
+            "searchPhrases": [
+              "how nonparametric algorithm: scu policy is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "nonparametric algorithm: scu policy solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We present a learning algorithm that we refer to as the SCU policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Before introducing the SCU policy, we make the following assumption on the optimal (full-information) base-stock level S∗.",
+              "The cost of the system operating under any feasible policy is the same for the two systems and so is the regret bound."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Nonparametric Algorithm: SCU Policy",
+                "equation": "",
+                "quote": "We present a learning algorithm that we refer to as the SCU policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "policy-learning",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Policy learning: “We present a learning algorithm that we refer to as the SCU policy.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-scu-policy",
+            "label": "The SCU Policy",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "With the necessary definitions in place, we present the detailed SCU algorithm.",
+            "searchPhrases": [
+              "how the scu policy is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "the scu policy solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: With the necessary definitions in place, we present the detailed SCU algorithm.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "On a high level, when Sk < Sk−1 (i.e., pushing down the target inventory position), we cannot naively implement the base-stock policy Sk because it may cause the inability to simulate the S system (because of demand censoring).",
+              "In each period t, the algorithm divides the total on-hand inventory ISCU t into two parts, namely the withheld on-hand inventory denoted by ˆISCU t and the regular (or nonwithheld) on-hand inventory denoted by ̃ISCU t ."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. The SCU Policy",
+                "equation": "",
+                "quote": "With the necessary deﬁnitions in place, we present the detailed SCU algorithm."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “With the necessary definitions in place, we present the detailed SCU algorithm.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "main-ideas-of-the-scu-algorithm",
+            "label": "Main Ideas of the SCU Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "inventory",
+              "simulation"
+            ],
+            "explanation": "The paper's approach to resolve this issue is to order the minimum but sufficient quantity to guarantee the correct simulation of the S system but mark any excess on-hand inventory as what we define as withheld inventory.",
+            "searchPhrases": [
+              "how main ideas of the scu algorithm is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "main ideas of the scu algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper's approach to resolve this issue is to order the minimum but sufficient quantity to guarantee the correct simulation of the S system but mark any excess on-hand inventory as what we define as withheld inventory.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In the following, we discuss the main issues encountered for the two cases, Sk < Sk−1 and Sk ≥Sk−1.",
+              "To tackle the difficulties arising in the first case Sk < Sk−1, we introduce a new concept called the withheld inventory.",
+              "Our approach to resolve this issue is to order the minimum but sufficient quantity to guarantee the correct simulation of the S system but mark any excess on-hand inventory as what we define as withheld inventory.",
+              "Now, suppose that the base-stock level for period τk −1 is Sk−1 and that the SCU algorithm recommends a new base-stock policy Sk in period τk for the next cycle."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.3. Main Ideas of the SCU Algorithm",
+                "equation": "",
+                "quote": "Our approach to resolve this issue is to order the minimum but sufﬁcient quantity to guarantee the correct simulation of the S system but mark any excess on-hand inventory as what we deﬁne as withheld inventory."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory: “system but mark any excess on-hand Inventory as what we define as withheld inventory.”.",
+                "conditionRefs": [
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "simulation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Simulation: “sufficient quantity to guarantee the correct Simulation of the S system but mark any excess”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "main-result-of-the-paper",
+            "label": "Main Result of the Paper",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Even with uncensored demand, there exist problem instances such that the expected regret for any learning algorithm is lower bounded by Ω(̅̅ T √ ).",
+            "searchPhrases": [
+              "how main result of the paper is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "main result of the paper solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We consider a periodic-review, single-product inventory system with lost sales and positive lead times under censored demand."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.1. Main Result of the Paper",
+                "equation": "",
+                "quote": "Even with uncensored de- mand, there exist problem instances such that the expected regret for any learning algorithm is lower bounded by Ω(̅̅ T √ )."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Even with uncensored de- mand, there exist problem instances such that the expected regret for any learning algorithm”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Lead times",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 1,
+                    "quote": "We consider a periodic-review, single-product inventory system with lost sales and positive lead times under censored demand.",
+                    "matchedText": "lead times",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "building-blocks-for-regret-analysis",
+            "label": "Building Blocks for Regret Analysis",
+            "role": "algorithm",
+            "concepts": [
+              "regret-analysis",
+              "process-dynamics",
+              "inventory"
+            ],
+            "explanation": "The first result ensures that the cycles used in designing the SCU algorithm are well defined: by maintaining no less on-hand inventory in SCU system than in the S system, the system dynamics of the S system can always be correctly simulated.",
+            "searchPhrases": [
+              "how building blocks for regret analysis is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "building blocks for regret analysis solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The first result ensures that the cycles used in designing the SCU algorithm are well defined: by maintaining no less on-hand inventory in SCU system than in the S system, the system dynamics of the S system can always be correctly simulated.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Recall that only the gradient in the second phase of each cycle k ≥2 is computed and used in the SCU algorithm.",
+              "For the SCU algorithm, in each period of the second phase of any cycle k ≥2, the SCU system has no less on-hand inventory than the G system.",
+              "For the simulated S system, if dk ≤S/(L + 1) for consecutive 2L periods k t to t + 2L −1, then there are no lost sales in the simulated S system from period t + L to period t + 2L −1."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Building Blocks for Regret Analysis",
+                "equation": "",
+                "quote": "The ﬁrst result ensures that the cycles used in designing the SCU algorithm are well deﬁned: by maintaining no less on-hand inventory in SCU system than in the S system, the system dynamics of the S system can always be correctly simulated."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "regret-analysis",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Regret analysis: “The first result ensures that the cycles used in designing the SCU algorithm are well defined: by maintaining”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Process dynamics as “system dynamics”: “than in the S system, the system dynamics of the S system can always be correctly”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory: “Inventory”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "proof-of-the-main-result",
+            "label": "Proof of the Main Result",
+            "role": "objective",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "The three bridging systems are the S system, the G system, and the SCU system, which is defined as the SCU system but with holding costs for the withheld on-hand inventory setting to zero.",
+            "searchPhrases": [
+              "how proof of the main result is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "proof of the main result modeled objective specification"
+            ],
+            "formal": "Objective relation: The three bridging systems are the S system, the G system, and the SCU system, which is defined as the SCU system but with holding costs for the withheld on-hand inventory setting to zero.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The three bridging systems are the S system, the G system, and the SCU system, which is defined as the SCU system but with holding costs for the withheld on-hand inventory setting to zero."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.3. Proof of the Main Result",
+                "equation": "",
+                "quote": "The three bridging systems are the S system, the G system, and the SCU system, which is deﬁned as the SCU system but with holding costs for the withheld on-hand inventory setting to zero."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Inventory: “holding costs for the withheld on-hand Inventory setting to zero.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "the-scu-algorithm-for-uncensored-demand",
+            "label": "The SCU Algorithm for Uncensored Demand",
+            "role": "algorithm",
+            "concepts": [
+              "censored-demand"
+            ],
+            "explanation": "Denote this modified SCU algorithm for the uncensored demand case by SCU-UN, and we formally present it as follows.",
+            "searchPhrases": [
+              "how the scu algorithm for uncensored demand is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "the scu algorithm for uncensored demand solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Denote this modified SCU algorithm for the uncensored demand case by SCU-UN, and we formally present it as follows.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Observe demand dt, and update the states of the SCU-UN system and the S system according to the system dynamics (1). c.",
+              "Observe demand dt, and update the states of the SCU-UN system and the S system according to the system dynamics (1)."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "4.4. The SCU Algorithm for Uncensored Demand",
+                "equation": "",
+                "quote": "Denote this modiﬁed SCU algorithm for the un- censored demand case by SCU-UN, and we formally present it as follows."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "censored-demand",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Censored demand: “modified SCU algorithm for the un- Censored demand case by SCU-UN, and we formally present it”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "cee7646c6cd5cedcd2f7c9796a2b8e916a80a33881fa2fc0935c086303ec3653",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "914fa04aa21634c2a7f1efd29419659cf65388b32c6e997795626bd84192de31",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2019-3288/914fa04aa21634c2a7f1efd29419659cf65388b32c6e997795626bd84192de31.json",
+      "extractionQaDecisionSha256": "22b86df3a5425ccf15bfc72fe3e9f146684513977563f052bf26df5e6c78a00e",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

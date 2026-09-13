@@ -1,0 +1,823 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2022-03698",
+  "sourcePdfSha256": "bd6b8d81144227bd753a71c188a37eaf82f8554b5a74682de723a9ba42bc4194",
+  "extractionPagesSha256": "1e56bb27d7b2dc76a4ec861067975a8f0ad587024e1cf54c75718ed6ee542249",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "dff4173ee2b7a6e560f9e0545372427ae691c6053c4e5503bd66d04c21da66ac",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "0f933aa22d4d2357a41b85d109bf9b561ce97cb5067e233a296534e0496d67f3",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-03698/0f933aa22d4d2357a41b85d109bf9b561ce97cb5067e233a296534e0496d67f3.json",
+  "extractionQaDecisionSha256": "8fd431eb8b96575aca0fe62d6c4a12c95aca5edf7d1fba34a14fcd3551bafad8",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-03698",
+    "question": "How do batching and optimal multistage bipartite allocations interact?",
+    "overview": "In several applications of real-time matching of demand to supply in online marketplaces, the platform allows for some latency to batch the demand and improve the efficiency of the resulting matching. Motivated by these applications, we study the optimal trade-off between batching and inefficiency in the context of designing robust online allocations. As our base model, we consider K-stage variants of the classic vertex-weighted bipartite b-matching in the adversarial setting, where online vertices arrive stagewise and in K batches—in contrast to online arrival.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        9,
+        11,
+        12,
+        13,
+        16,
+        17,
+        19,
+        20
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Batching and Optimal Multistage Bipartite Allocations model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "In several applications of real-time matching of demand to supply in online marketplaces, the platform allows for some latency to batch the demand and improve the efficiency of the resulting matching. Motivated by these applications, we study the optimal trade-off between batching and inefficiency in the context of designing robust online allocations. ACM 54(5):22–es; Aggarwal G, Goel G, Karande C, Mehta A (2011) Online vertex weighted bipartite matching and single-bid budgeted allocations.",
+        "objects": [
+          "The platform",
+          "An offline node",
+          "Users",
+          "Advertisers",
+          "Servers"
+        ],
+        "inputs": [
+          "Output",
+          "Demand",
+          "Available supply"
+        ],
+        "decisions": [
+          "Robust online allocations",
+          "Distribute the demand in a specifically balanced way among supply in different stages",
+          "Design problems",
+          "Design aspect",
+          "Require treating allocations at different price levels differently—as will be clear later"
+        ],
+        "assumptions": [
+          "The number of stages K is fixed and known by the algorithm",
+          "Free disposal, which means that the total allocated impressions to advertiser j can exceed nj, but advertiser j is eventually only paying for the top nj most expensive impressions"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The platform",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "In several applications of real-time matching of demand to supply in online marketplaces, the platform allows for some latency to batch the demand and improve the efficiency of the resulting matching.",
+                "matchedText": "the platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An offline node",
+              "source": {
+                "type": "section",
+                "section": "Configuration Allocation",
+                "page": 9,
+                "sectionIndex": 10,
+                "sentence": 22,
+                "quote": "Also, although we allow for free disposal in the extension model, as allocations of an advertiser’s capacity can value differently (i.e., be at a different price level) for different users and config­ urations, for the special case of vertex-weighted match­ ing, there is no point in free disposal by any multistage algorithm, as all allocations of an offline node’s capac­ ity value the same.",
+                "matchedText": "an offline node",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Users",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 9,
+                "quote": "As digital consumption behaviors change and new technologies provide new ways for users to interact with social media platforms and publishers, tradi­ tional forms of real-time internet ad allocations also evolve.",
+                "matchedText": "users",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Advertisers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 12,
+                "quote": "In this context, when a user starts watching a new video session (e.g., on You­ Tube), an advertising opportunity to display video ads, and hence allocate user impressions to advertisers and charge them based on per-impression rates, is cre­ ated.",
+                "matchedText": "advertisers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 22,
+                "quote": "Besides video advertising, there are also other re­ source allocation applications with latency allowance, for example, matching delivery requests to dispatching centers in Amazon or matching user jobs to computing servers in the Azure cloud computing platform.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Output",
+              "source": {
+                "type": "section",
+                "section": "Overview of the Main Technique",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "To systematically extend the above balanced match­ ing idea under the online setting to the multistage setting—where the algorithm can basically match multi­ ple vertices of the arriving batch to the offline side—we propose using specific stage-dependent convex programs and output their optimal solution in each stage as the fractional matching of that stage.",
+                "matchedText": "output",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Configuration Allocation",
+                "page": 8,
+                "sectionIndex": 27,
+                "sentence": 21,
+                "quote": "Baseline Model: Multistage Vertex- Weighted Matching We study vertex-weighted matching as our baseline bipar­ tite allocation model for matching arriving demand requests to available supply.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Available supply",
+              "source": {
+                "type": "section",
+                "section": "Configuration Allocation",
+                "page": 8,
+                "sectionIndex": 27,
+                "sentence": 21,
+                "quote": "Baseline Model: Multistage Vertex- Weighted Matching We study vertex-weighted matching as our baseline bipar­ tite allocation model for matching arriving demand requests to available supply.",
+                "matchedText": "available supply",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Robust online allocations",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Motivated by these applications, we study the optimal trade-off between batching and inefficiency in the context of designing robust online allocations.",
+                "matchedText": "robust online allocations",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Distribute the demand in a specifically balanced way among supply in different stages",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 16,
+                "quote": "We rely on a particular family of convex programming–based matchings that distribute the demand in a specifically balanced way among supply in different stages while carefully modifying the balancedness of the resulting matching across stages.",
+                "matchedText": "distribute the demand in a specifically balanced way among supply in different stages",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design problems",
+              "source": {
+                "type": "section",
+                "section": "New Challenges for the Configuration Allocation",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 14,
+                "quote": "We should highlight that the con­ nection between LP primal-dual analysis and the convex duality in our paper might be of independent interest in other online algorithm design problems",
+                "matchedText": "design problems",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design aspect",
+              "source": {
+                "type": "section",
+                "section": "Managerial Insights",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "In particular, we could formally capture this design aspect",
+                "matchedText": "design aspect",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Require treating allocations at different price levels differently—as will be clear later",
+              "source": {
+                "type": "section",
+                "section": "Configuration Allocation",
+                "page": 9,
+                "sectionIndex": 28,
+                "sentence": 25,
+                "quote": "Then, we show how to extend these ideas and use our polynomials for the general multi­ stage configuration allocation problem in Section 4, where we require treating allocations at different price levels differently—as will be clear later",
+                "matchedText": "require treating allocations at different price levels differently—as will be clear later",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The number of stages K is fixed and known by the algorithm",
+              "source": {
+                "type": "section",
+                "section": "Preliminaries",
+                "page": 8,
+                "sectionIndex": 11,
+                "sentence": 5,
+                "quote": "We assume the number of stages K is fixed and known by the algorithm.",
+                "matchedText": "the number of stages K is fixed and known by the algorithm.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Free disposal, which means that the total allocated impressions to advertiser j can exceed nj, but advertiser j is eventually only paying for the top nj most expensive impressions",
+              "source": {
+                "type": "section",
+                "section": "Configuration Allocation",
+                "page": 8,
+                "sectionIndex": 10,
+                "sentence": 6,
+                "quote": "We assume free disposal, which means that the total allocated impressions to advertiser j can exceed nj, but advertiser j is eventually only paying for the top nj most expensive impressions.",
+                "matchedText": "free disposal, which means that the total allocated impressions to advertiser j can exceed nj, but advertiser j is eventually only paying for the top nj most expensive impressions.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 4
+          }
+        ],
+        "method": "By providing structural decomposition of the underlying graph using the optimal solutions of these convex programs and recursively connecting the regularizers together, we develop a new multistage primal-dual framework to analyze the competitive ratio of this algorithm.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 19
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 9,
+            "section": "Configuration Allocation",
+            "equation": "",
+            "quote": "Note that the number xi,c,j of impressions that the advertiser is willing to pay is no more than num­ ber of allocated impressions ξi,c,j · zi,c from user i under configuration c, and the first quantity can be strictly smaller than the second (as advertiser j should only pay for at most nj impressions overall)."
+          }
+        ],
+        "components": [
+          {
+            "id": "configuration-allocation",
+            "label": "Configuration Allocation",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Note that the number xi,c,j of impressions that the advertiser is willing to pay is no more than number of allocated impressions ξi,c,j · zi,c from user i under configuration c, and the first quantity can be strictly smaller than the second (as advertiser j should only pay for at most nj impressions overall).",
+            "searchPhrases": [
+              "how configuration allocation is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "configuration allocation decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume free disposal, which means that the total allocated impressions to advertiser j can exceed nj, but advertiser j is eventually only paying for the top nj most expensive impressions."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "Configuration Allocation",
+                "equation": "",
+                "quote": "Note that the number xi,c,j of impressions that the advertiser is willing to pay is no more than num­ ber of allocated impressions ξi,c,j · zi,c from user i under configuration c, and the first quantity can be strictly smaller than the second (as advertiser j should only pay for at most nj impressions overall)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Note that the number xi,c,j of impressions that the advertiser is willing to pay is no more than”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Free disposal, which means that the total allocated impressions to advertiser j can exceed nj, but advertiser j is eventually only paying for the top nj most expensive impressions",
+                  "source": {
+                    "type": "section",
+                    "section": "Configuration Allocation",
+                    "page": 8,
+                    "sectionIndex": 10,
+                    "sentence": 6,
+                    "quote": "We assume free disposal, which means that the total allocated impressions to advertiser j can exceed nj, but advertiser j is eventually only paying for the top nj most expensive impressions.",
+                    "matchedText": "free disposal, which means that the total allocated impressions to advertiser j can exceed nj, but advertiser j is eventually only paying for the top nj most expensive impressions.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "competitive-ratio-analysis",
+            "label": "Competitive Ratio Analysis",
+            "role": "algorithm",
+            "concepts": [
+              "competitive-analysis"
+            ],
+            "explanation": "For randomized multistage algorithms, we abuse the notation, and ALG(I) denotes the expected total weight (respectively, expected total revenue) of the algorithm on an instance I.",
+            "searchPhrases": [
+              "how competitive ratio analysis is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "competitive ratio analysis solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume the number of stages K is fixed and known by the algorithm."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "2.3. Competitive Ratio Analysis",
+                "equation": "",
+                "quote": "For randomized multistage algorithms, we abuse the notation, and ALG(I) denotes the expected total weight (respectively, expected total revenue) of the algorithm on an instance I."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "competitive-analysis",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Competitive analysis as “competitive ratio analysis”: “competitive ratio analysis”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The number of stages K is fixed and known by the algorithm",
+                  "source": {
+                    "type": "section",
+                    "section": "Preliminaries",
+                    "page": 8,
+                    "sectionIndex": 11,
+                    "sentence": 5,
+                    "quote": "We assume the number of stages K is fixed and known by the algorithm.",
+                    "matchedText": "the number of stages K is fixed and known by the algorithm.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "polynomial-regularized-maximum-weight-matching",
+            "label": "Polynomial Regularized Maximum Weight Matching",
+            "role": "algorithm",
+            "concepts": [
+              "matching",
+              "optimization"
+            ],
+            "explanation": "We are now ready to describe our main algorithm, which is an optimal competitive multistage algorithm for vertex-weighted bipartite matching.",
+            "searchPhrases": [
+              "how polynomial regularized maximum weight matching is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "polynomial regularized maximum weight matching solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We are now ready to describe our main algorithm, which is an optimal competitive multistage algorithm for vertex-weighted bipartite matching.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given the sequence of polynomials in Proposition 1, our algorithm solves a different convex program at each stage k ∈[K] and returns its unique optimal solution as the fractional matching of that stage.",
+              "Both problem instances have two stages, where U1 = {u2 1,u2 1}, U2 = {u2 2,u2 2}, and V = {v1,v2,v3,v4}; edges are as drawn in the figures above."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "3.2. Polynomial Regularized Maximum Weight Matching",
+                "equation": "",
+                "quote": "We are now ready to describe our main algorithm, which is an optimal competitive multistage algorithm for vertex-weighted bipartite matching."
+              },
+              {
+                "page": 12,
+                "section": "3.2. Polynomial Regularized Maximum",
+                "equation": "Algorithm 1",
+                "quote": "Given the sequence of polynomials in Proposition 1, our algorithm solves a different convex program at each stage k ∈[K] and returns its unique optimal solution as the fractional matching of that stage."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Matching as “bipartite matching”: “optimal competitive multistage algorithm for vertex-weighted bipartite matching .”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “optimal solution”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "recursive-primal-dual-analysis-of-algo",
+            "label": "Recursive Primal-Dual Analysis of Algo",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "This is a key technical property used in the analysis of our algorithm.",
+            "searchPhrases": [
+              "how recursive primal-dual analysis of algo is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "recursive primal-dual analysis of algo solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: This is a key technical property used in the analysis of our algorithm.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Moreover, our construction relies on a structural decomposition of the subgraph in each stage k, which itself is tied to the solution of the convex program PVWM k of stage k."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "3.3. Recursive Primal-Dual Analysis of Algo",
+                "equation": "",
+                "quote": "This is a key technical property used in the analysis of our algorithm."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “This is a key technical property used in the analysis of our algorithm.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "price-level-regularized-convex-programs-and-configuration-alloca",
+            "label": "Price-Level Regularized Convex Programs and Configuration Allocation",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Regularizing the revenue function separately at different price levels using a convex function in a structured fashion in order to create a controlled hedging through maintaining balancedness in allocation separately at each price level, 2.",
+            "searchPhrases": [
+              "how price-level regularized convex programs and configuration allocation is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "price-level regularized convex programs and configuration allocation decision rule specification"
+            ],
+            "formal": "Decision rule: Regularizing the revenue function separately at different price levels using a convex function in a structured fashion in order to create a controlled hedging through maintaining balancedness in allocation separately at each price level, 2.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Before describing our algorithm, we make an assumption for simplicity (without loss of generality) that there exists a finite universe 0 = ˆw0 < ˆw1 <⋯< ˆwT of T ∈N possible per-impression prices.",
+              "Namely, for each perimpression price wi,c,j, there exists an index τ ∈[T] such that wi,c,j = ˆwτ.",
+              "At each stage k ∈ [K], our algorithm solves a stage-dependent convex program that is essentially a regularized version of the LP for a greedy allocation at that stage."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "4.1. Price-Level Regularized Convex Programs and Configuration Allocation",
+                "equation": "",
+                "quote": "Regularizing the revenue function separately at dif­ ferent price levels using a convex function in a structured fashion in order to create a controlled hedging through maintaining balancedness in allocation separately at each price level, 2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Regularizing the revenue function separately at different price levels using a convex function in a structured fashion in”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "programs-via-convex-duality",
+            "label": "Programs via Convex Duality",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Note that if (x(k),y(k),z(k)) is the fractional allocation selected by Algorithm 2 (i.e., optimal solution of (PMCA k )), then, by definition, Hj,τ(x(k),y(k)) = P τ′≥τη(k) j,τ.",
+            "searchPhrases": [
+              "how programs via convex duality is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "programs via convex duality solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Note that if (x(k),y(k),z(k)) is the fractional allocation selected by Algorithm 2 (i.e., optimal solution of (PMCA k )), then, by definition, Hj,τ(x(k),y(k)) = P τ′≥τη(k) j,τ.",
+              "To characterize the properties of the optimal solution in (PMCA k ) for stage k ∈[K 1], we consider its Lagrangian relaxation and Table 1.",
+              "X τ′≥τ yj,τ′: Note that if (x(k),y(k),z(k)) is the fractional allocation selected by Algorithm 2 (i.e., optimal solution of (PMCA k )), then, by definition, Hj,τ(x(k),y(k)) = P τ′≥τη(k) j,τ."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "Programs via Convex Duality",
+                "equation": "",
+                "quote": "Note that if (x(k),y(k),z(k)) is the fractional allocation selected by Algorithm 2 (i.e., optimal solution of (PMCA k )), then, by definition, Hj,τ(x(k),y(k)) = P τ′≥τη(k) j,τ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “allocation selected by Algorithm 2 (i.e., optimal solution of (PMCA k )), then, by definition, Hj,τ(x(k),y(k))”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "competitive-ratio-analysis-of-algorithm-2",
+            "label": "Competitive Ratio Analysis of Algorithm 2",
+            "role": "algorithm",
+            "concepts": [
+              "competitive-analysis"
+            ],
+            "explanation": "Existence of such a dual assignment will guarantee that Algorithm 2 is Γ(K) competitive.",
+            "searchPhrases": [
+              "how competitive ratio analysis of algorithm 2 is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "competitive ratio analysis of algorithm 2 solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose (l∗,u∗,m∗,p∗) is the optimal solution of the Dual Program (LP-DK).",
+              "In order to show the approximate dual feasibility for constraints corresponding to stages k ∈ [K 1], again, we rely on the “Connection” (Lemma 2).",
+              "X j∈V ξi, c, j · γi, c, j: Existence of such a dual assignment will guarantee that Algorithm 2 is Γ(K) competitive."
+            ],
+            "sources": [
+              {
+                "page": 19,
+                "section": "4.3. Competitive Ratio Analysis of Algorithm 2",
+                "equation": "",
+                "quote": "Existence of such a dual assignment will guarantee that Algorithm 2 is Γ(K) competitive."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "competitive-analysis",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Competitive analysis as “competitive ratio analysis”: “Existence of such a dual assignment will guarantee that Algorithm 2 is Γ(K) competitive.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "proof-of-theorem-3",
+            "label": "Proof of Theorem 3",
+            "role": "algorithm",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "Let ξπ k,j be the expected degree of offline vertex j matched by the algorithm at stage k under permutation π.",
+            "searchPhrases": [
+              "how proof of theorem 3 is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "proof of theorem 3 solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\xi\\pi",
+                "meaning": "the expected degree of offline vertex j matched by the algorithm at stage k under permutation π"
+              }
+            ],
+            "conditions": [
+              "See Figure 3 for an illustration of this randomized problem instance when permutation π(i) = NK i + 1,i ∈ [NK] is realized."
+            ],
+            "sources": [
+              {
+                "page": 20,
+                "section": "5.1. Proof of Theorem 3",
+                "equation": "",
+                "quote": "Let ξπ k,j be the expected degree of offline vertex j matched by the algorithm at stage k under permutation π."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Matching: “Let ξπ k,j be the expected degree of offline vertex j matched by the algorithm at stage k”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "bd6b8d81144227bd753a71c188a37eaf82f8554b5a74682de723a9ba42bc4194",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "0f933aa22d4d2357a41b85d109bf9b561ce97cb5067e233a296534e0496d67f3",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-03698/0f933aa22d4d2357a41b85d109bf9b561ce97cb5067e233a296534e0496d67f3.json",
+      "extractionQaDecisionSha256": "8fd431eb8b96575aca0fe62d6c4a12c95aca5edf7d1fba34a14fcd3551bafad8",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

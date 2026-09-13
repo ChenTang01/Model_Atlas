@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2022-00201",
+  "sourcePdfSha256": "0a0d0227358813df135357d01de2fc29e2f1b4843068e6bd1c69ebdc5ffae7e4",
+  "extractionPagesSha256": "b6f2f34fdf3bb799df24735352787022bffdb669dec4ef09e93f4a81636ca284",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "1ffbcfc52e5f24d9499808042e7794c90939bc11499db4609c171b608cc8e0f7",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "617eae7faa35ffccc938322b9b6ebddd4fb3d8360e8ae9d18d6db371d0790e71",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00201/617eae7faa35ffccc938322b9b6ebddd4fb3d8360e8ae9d18d6db371d0790e71.json",
+  "extractionQaDecisionSha256": "9c23ba5789a69f66e0bbe6cf66c9797c0735dd9873d2f0e6280e13ad3cbebcd2",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-00201",
+    "question": "When should an e-commerce platform finance a capital-constrained third-party seller instead of leaving financing to supplier trade credit, and how does the answer depend on whether default risk is exogenous or created by strategic ordering?",
+    "overview": "A platform, supplier, and financially constrained third-party seller move sequentially. The platform sets a loan rate, the supplier chooses cash and trade-credit wholesale prices, and the limited-liability seller chooses financing and order quantity; equilibrium is solved by backward induction.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8,
+        10,
+        12
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Sequential financing competition among a platform, supplier, and capital-constrained marketplace seller",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A platform, supplier, and financially constrained third-party seller move sequentially. The platform sets a loan rate, the supplier chooses cash and trade-credit wholesale prices, and the limited-liability seller chooses financing and order quantity; equilibrium is solved by backward induction.",
+        "objects": [
+          "An e-commerce platform that earns sales commissions and can offer a loan",
+          "A supplier that sets cash-payment and trade-credit wholesale prices",
+          "A capital-constrained third-party seller with limited liability"
+        ],
+        "inputs": [
+          "All strategic players know the model parameters and the distribution of the sales outcome",
+          "Wholesale, financing",
+          "The exogenous-risk model has a known success probability lambda; failure is independent of actions",
+          "The endogenous-risk model has a uniformly distributed market size, so the seller's order and debt jointly determine default probability",
+          "The baseline has no asymmetric information; uncertainty rather than private information drives the game"
+        ],
+        "decisions": [
+          "The supplier chooses cash and deferred wholesale-price programs",
+          "The seller chooses a financing channel and procurement quantity",
+          "The platform chooses whether and at what interest rate to make platform finance viable",
+          "Quote the wholesale prices",
+          "An interest rate r"
+        ],
+        "assumptions": [
+          "The supplier produces one product at constant unit cost c, and the seller clears the market under a linear inverse-demand function",
+          "The platform charges a fixed commission rate phi on marketplace sales",
+          "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss",
+          "Platform and supplier have abundant capital and the same risk-free capital cost r_f",
+          "Under exogenous risk, revenue is positive with probability lambda and zero upon business failure; under endogenous risk, market size is uniform on [a-delta,a+delta]"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "An e-commerce platform that earns sales commissions and can offer a loan",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "an e-commerce platform that earns sales commissions and can offer a loan"
+              }
+            },
+            {
+              "value": "A supplier that sets cash-payment and trade-credit wholesale prices",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a supplier that sets cash-payment and trade-credit wholesale prices"
+              }
+            },
+            {
+              "value": "A capital-constrained third-party seller with limited liability",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a capital-constrained third-party seller with limited liability"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "All strategic players know the model parameters and the distribution of the sales outcome",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "All strategic players know the model parameters and the distribution of the sales outcome."
+              }
+            },
+            {
+              "value": "Wholesale, financing",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Wholesale, financing, and order decisions are made before the market outcome is realized."
+              }
+            },
+            {
+              "value": "The exogenous-risk model has a known success probability lambda; failure is independent of actions",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The exogenous-risk model has a known success probability lambda; failure is independent of actions."
+              }
+            },
+            {
+              "value": "The endogenous-risk model has a uniformly distributed market size, so the seller's order and debt jointly determine default probability",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The endogenous-risk model has a uniformly distributed market size, so the seller's order and debt jointly determine default probability."
+              }
+            },
+            {
+              "value": "The baseline has no asymmetric information; uncertainty rather than private information drives the game",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The baseline has no asymmetric information; uncertainty rather than private information drives the game."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The supplier chooses cash and deferred wholesale-price programs",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the supplier chooses cash and deferred wholesale-price programs"
+              }
+            },
+            {
+              "value": "The seller chooses a financing channel and procurement quantity",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the seller chooses a financing channel and procurement quantity"
+              }
+            },
+            {
+              "value": "The platform chooses whether and at what interest rate to make platform finance viable",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform chooses whether and at what interest rate to make platform finance viable"
+              }
+            },
+            {
+              "value": "Quote the wholesale prices",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 3,
+                "quote": "The supplier needs to quote the wholesale prices",
+                "matchedText": "quote the wholesale prices",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "An interest rate r",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 8,
+                "quote": "For platform financing, the platform sets an interest rate r",
+                "matchedText": "an interest rate r",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The supplier produces one product at constant unit cost c, and the seller clears the market under a linear inverse-demand function",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The supplier produces one product at constant unit cost c, and the seller clears the market under a linear inverse-demand function."
+              }
+            },
+            {
+              "value": "The platform charges a fixed commission rate phi on marketplace sales",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The platform charges a fixed commission rate phi on marketplace sales."
+              }
+            },
+            {
+              "value": "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss."
+              }
+            },
+            {
+              "value": "Platform and supplier have abundant capital and the same risk-free capital cost r_f",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Platform and supplier have abundant capital and the same risk-free capital cost r_f."
+              }
+            },
+            {
+              "value": "Under exogenous risk, revenue is positive with probability lambda and zero upon business failure; under endogenous risk, market size is uniform on [a-delta,a+delta]",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Under exogenous risk, revenue is positive with probability lambda and zero upon business failure; under endogenous risk, market size is uniform on [a-delta,a+delta]."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors solve the seller's financing and order decision, substitute it into the supplier's wholesale-price problem, and then optimize the platform's interest rate.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.1. Exogenous Default Risk",
+            "equation": "",
+            "quote": "The numerical study reveals that in regions where platform financing arises in equilibrium, the repayment of the wholesale price is lower under platform financing than under trade credit, whereas the seller’s order quantity and the bor­ rowed loan are both higher under platform financing."
+          }
+        ],
+        "components": [
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The authors solve the seller's financing and order decision, substitute it into the supplier's wholesale-price problem, and then optimize the platform's interest rate. The exogenous-risk case is solved analytically; the endogenous-risk case uses analytical best-response regions plus comprehensive numerical equilibrium comparisons.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in platform financing and trade credit",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors solve the seller's financing and order decision, substitute it into the supplier's wholesale-price problem, and then optimize the platform's interest rate.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r, r_f",
+                "meaning": "platform loan rate and common risk-free capital-cost rate · rates subject to equilibrium feasibility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_1, w_2",
+                "meaning": "supplier wholesale prices for immediate cash payment and deferred trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "seller procurement quantities under cash/platform finance and trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "platform commission share of sales revenue · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a",
+                "meaning": "market-size parameter: the successful-state market size under exogenous risk and the mean market size under endogenous risk · positive and sufficiently large to keep the focal market-clearing price nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform charges a fixed commission rate phi on marketplace sales.",
+              "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4.1. Exogenous Default Risk",
+                "equation": "",
+                "quote": "Given the platform’s financing program with an interest rate r and the supplier’s two wholesale pro­ grams with prices w1 and w2, the seller orders q1 under cash payment and q2 under trade credit."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Given the platform’s financing program with an interest rate r and the supplier’s two wholesale programs with prices”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Anticipating the supplier's and seller's best responses, the platform chooses between a subsidized rate that induces platform financing and a high rate that leaves the seller on trade credit, maximizing expected commission plus net loan return.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in platform financing and trade credit",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max\\left\\{\\max_{r<(1+r_f)/\\lambda-1}\\left[\\lambda\\{\\phi(a-q_1(r))q_1(r)+(1+r)w_1(r)q_1(r)\\}-(1+r_f)w_1(r)q_1(r)\\right],\\;\\max_{r\\ge(1+r_f)/\\lambda-1}\\lambda\\phi(a-q_2(r))q_2(r)\\right\\}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "r, r_f",
+                "meaning": "platform loan rate and common risk-free capital-cost rate · rates subject to equilibrium feasibility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_1, w_2",
+                "meaning": "supplier wholesale prices for immediate cash payment and deferred trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "seller procurement quantities under cash/platform finance and trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "platform commission share of sales revenue · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "business-success probability under exogenous default risk · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a",
+                "meaning": "market-size parameter: the successful-state market size under exogenous risk and the mean market size under endogenous risk · positive and sufficiently large to keep the focal market-clearing price nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta",
+                "meaning": "dispersion of the uniformly distributed market size under endogenous default risk · nonnegative, with market size on [a-delta,a+delta]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform charges a fixed commission rate phi on marketplace sales.",
+              "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "On the other hand, inducing the seller to use platform financing, the platform may not only incur an interest cost by offering a rate lower than its capital cost but also expose itself to the seller’s default risk."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "backward-induction-equilibrium-in-financing-wholesale-pricing-an",
+            "label": "Backward-induction equilibrium in financing, wholesale pricing, and procurement",
+            "role": "interaction",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The model's equilibrium concept is Backward-induction equilibrium in financing, wholesale pricing, and procurement. Sections 4.1 and 4.2 solve the seller, supplier, and platform problems by backward induction. Propositions 1-3 characterize the exogenous-risk equilibrium and its adoption thresholds; Propositions 4-5 characterize best responses and equilibrium regimes under endogenous risk, supplemented by numerical optimization where closed forms are intractable.",
+            "searchPhrases": [
+              "how backward-induction equilibrium in financing, wholesale pricing, and procurement is represented",
+              "strategic response in platform financing and trade credit",
+              "backward-induction equilibrium in financing, wholesale pricing, and procurement strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Backward-induction equilibrium in financing, wholesale pricing, and procurement.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r, r_f",
+                "meaning": "platform loan rate and common risk-free capital-cost rate · rates subject to equilibrium feasibility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_1, w_2",
+                "meaning": "supplier wholesale prices for immediate cash payment and deferred trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "seller procurement quantities under cash/platform finance and trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "platform commission share of sales revenue · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a",
+                "meaning": "market-size parameter: the successful-state market size under exogenous risk and the mean market size under endogenous risk · positive and sufficiently large to keep the focal market-clearing price nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta",
+                "meaning": "dispersion of the uniformly distributed market size under endogenous default risk · nonnegative, with market size on [a-delta,a+delta]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform charges a fixed commission rate phi on marketplace sales.",
+              "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. Exogenous Default Risk",
+                "equation": "",
+                "quote": "The numerical study reveals that in regions where platform financing arises in equilibrium, the repayment of the wholesale price is lower under platform financing than under trade credit, whereas the seller’s order quantity and the bor­ rowed loan are both higher under platform financing."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “The numerical study reveals that in regions where platform financing arises in equilibrium, the repayment of the wholesale”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing",
+              "reinforcement-learning"
+            ],
+            "explanation": "The platform chooses whether and at what interest rate to make platform finance viable the supplier chooses cash and deferred wholesale-price programs the seller chooses a financing channel and procurement quantity",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in platform financing and trade credit",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The platform chooses whether and at what interest rate to make platform finance viable the supplier chooses cash and deferred wholesale-price programs the seller chooses a financing channel and procurement quantity",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r, r_f",
+                "meaning": "platform loan rate and common risk-free capital-cost rate · rates subject to equilibrium feasibility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_1, w_2",
+                "meaning": "supplier wholesale prices for immediate cash payment and deferred trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "seller procurement quantities under cash/platform finance and trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "platform commission share of sales revenue · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a",
+                "meaning": "market-size parameter: the successful-state market size under exogenous risk and the mean market size under endogenous risk · positive and sufficiently large to keep the focal market-clearing price nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform charges a fixed commission rate phi on marketplace sales.",
+              "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Endogenous Default Risk",
+                "equation": "",
+                "quote": "In contrast, if the platform offers financing and sets the interest rate r lower than rl(δ), then the supplier will induce the seller to use platform financing and set the cash payment wholesale price at a level that does not result in any default, thereby reining in the seller’s opportunistic behavior."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  4
+                ]
+              },
+              {
+                "conceptId": "reinforcement-learning",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Reinforcement learning as “RL”: “the interest rate r lower than RL (δ), then the supplier will induce the seller”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "uncertainty"
+            ],
+            "explanation": "The platform first announces interest rate r. The supplier then posts a cash wholesale price w_1 and a deferred trade-credit price w_2. The seller chooses the financing channel and order quantities q_1 and q_2. The supplier produces and delivers.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in platform financing and trade credit",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The platform first announces interest rate r.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r, r_f",
+                "meaning": "platform loan rate and common risk-free capital-cost rate · rates subject to equilibrium feasibility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_1, w_2",
+                "meaning": "supplier wholesale prices for immediate cash payment and deferred trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "seller procurement quantities under cash/platform finance and trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "platform commission share of sales revenue · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a",
+                "meaning": "market-size parameter: the successful-state market size under exogenous risk and the mean market size under endogenous risk · positive and sufficiently large to keep the focal market-clearing price nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform charges a fixed commission rate phi on marketplace sales.",
+              "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.2. Endogenous Default Risk",
+                "equation": "",
+                "quote": "In contrast, for low product costs, platform financing equilibrium may manifest only for intermedi­ ate market uncertainty levels, rather than low or high."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Uncertainty: “may manifest only for intermediate market Uncertainty levels, rather than low or high.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "All strategic players know the model parameters and the distribution of the sales outcome. Wholesale, financing, and order decisions are made before the market outcome is realized. The exogenous-risk model has a known success probability lambda; failure is independent of actions. The endogenous-risk model has a uniformly distributed market size, so the seller's order and debt jointly determine default probability.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in platform financing and trade credit",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: All strategic players know the model parameters and the distribution of the sales outcome.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r, r_f",
+                "meaning": "platform loan rate and common risk-free capital-cost rate · rates subject to equilibrium feasibility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_1, w_2",
+                "meaning": "supplier wholesale prices for immediate cash payment and deferred trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_1, q_2",
+                "meaning": "seller procurement quantities under cash/platform finance and trade credit · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "business-success probability under exogenous default risk · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a",
+                "meaning": "market-size parameter: the successful-state market size under exogenous risk and the mean market size under endogenous risk · positive and sufficiently large to keep the focal market-clearing price nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta",
+                "meaning": "dispersion of the uniformly distributed market size under endogenous default risk · nonnegative, with market size on [a-delta,a+delta]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform charges a fixed commission rate phi on marketplace sales.",
+              "Now we extend the analysis to consider that the seller owns initial capital k, known to the supplier and the platform.",
+              "The seller has zero working capital in the baseline, cannot divert loan proceeds, can borrow without a limit, and has limited liability with no deadweight default loss."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.1. Seller’s Initial Capital",
+                "equation": "",
+                "quote": "Now we extend the analysis to consider that the seller owns initial capital k, known to the supplier and the platform."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Now we extend the analysis to consider that the seller owns initial capital k, known to the supplier”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "0a0d0227358813df135357d01de2fc29e2f1b4843068e6bd1c69ebdc5ffae7e4",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "617eae7faa35ffccc938322b9b6ebddd4fb3d8360e8ae9d18d6db371d0790e71",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00201/617eae7faa35ffccc938322b9b6ebddd4fb3d8360e8ae9d18d6db371d0790e71.json",
+      "extractionQaDecisionSha256": "9c23ba5789a69f66e0bbe6cf66c9797c0735dd9873d2f0e6280e13ad3cbebcd2",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,763 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-isre-2021-0349",
+  "sourcePdfSha256": "d658b7a4b17600ef52956ab7e22672e6f8785e86d2fc23f5159c368070a9e414",
+  "extractionPagesSha256": "51184bd62085d168850a3e68d2df7c53b4c3ff7a5d6bd69ad4cf7118046246d3",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "01fc460dbceb230123bd313bf8490021c504708441f67a501917142b4b28bca9",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "6bff0e27eada3142b5e9a10f9033b764cc95a94c7715d02928f2d293e2405ac5",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2021-0349/6bff0e27eada3142b5e9a10f9033b764cc95a94c7715d02928f2d293e2405ac5.json",
+  "extractionQaDecisionSha256": "0ba46374c9510a4c97b8471fd08ece1e0cc6b49c1e7adcce296514b49ec71a72",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-isre-2021-0349",
+    "question": "How should an organization set a bug bounty when researcher productivity, crowd size, security posture, patching complexity, postdiscovery leakage, and legal protection jointly affect vulnerability lifecycle costs?",
+    "overview": "The paper models a bug bounty as a two-stage leader-follower Bayesian tournament. The organization commits to a bounty; privately heterogeneous researchers then choose effort simultaneously, with only the first valid report winning. The organization minimizes expected lifecycle cost while anticipating the researchers' symmetric Bayesian equilibrium.",
+    "modelTypes": [
+      "Game theory",
+      "Structural model",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        9,
+        10
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "How to Make My Bug Bounty Cost-Effective? A Game-Theoretical Model model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper models a bug bounty as a two-stage leader-follower Bayesian tournament. The organization commits to a bounty; privately heterogeneous researchers then choose effort simultaneously, with only the first valid report winning. The organization minimizes expected lifecycle cost while anticipating the researchers' symmetric Bayesian equilibrium.",
+        "objects": [
+          "Organization running the bug-bounty program",
+          "N external security researchers with heterogeneous productivity"
+        ],
+        "inputs": [
+          "The bounty and legal-protection level are public",
+          "Each researcher's productivity a_i is privately known; the uniform productivity distribution and number of researchers are common knowledge",
+          "The organization's security posture, damage, leakage, and patching parameters are common knowledge in the baseline",
+          "Researchers form winning probabilities from the symmetric best-response performance function"
+        ],
+        "decisions": [
+          "The organization chooses the bounty amount",
+          "Each researcher chooses search effort",
+          "The first successful researcher submits the valid vulnerability report",
+          "The organization undertakes remediation during the postdiscovery patching interval"
+        ],
+        "assumptions": [
+          "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty",
+          "Researcher productivity is uniformly distributed and performance equals productivity times effort",
+          "Effort cost is linear, c e_i, and entry is costless in the baseline",
+          "Legal protection l scales researchers' perceived reward and postdiscovery leakage risk",
+          "The organization's security posture beta is exogenous in the main model, and realized patching time is omega beta"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Organization running the bug-bounty program",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "organization running the bug-bounty program"
+              }
+            },
+            {
+              "value": "N external security researchers with heterogeneous productivity",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "n external security researchers with heterogeneous productivity"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The bounty and legal-protection level are public",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The bounty and legal-protection level are public."
+              }
+            },
+            {
+              "value": "Each researcher's productivity a_i is privately known; the uniform productivity distribution and number of researchers are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each researcher's productivity a_i is privately known; the uniform productivity distribution and number of researchers are common knowledge."
+              }
+            },
+            {
+              "value": "The organization's security posture, damage, leakage, and patching parameters are common knowledge in the baseline",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The organization's security posture, damage, leakage, and patching parameters are common knowledge in the baseline."
+              }
+            },
+            {
+              "value": "Researchers form winning probabilities from the symmetric best-response performance function",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Researchers form winning probabilities from the symmetric best-response performance function."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The organization chooses the bounty amount",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the organization chooses the bounty amount"
+              }
+            },
+            {
+              "value": "Each researcher chooses search effort",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each researcher chooses search effort"
+              }
+            },
+            {
+              "value": "The first successful researcher submits the valid vulnerability report",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the first successful researcher submits the valid vulnerability report"
+              }
+            },
+            {
+              "value": "The organization undertakes remediation during the postdiscovery patching interval",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the organization undertakes remediation during the postdiscovery patching interval"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty."
+              }
+            },
+            {
+              "value": "Researcher productivity is uniformly distributed and performance equals productivity times effort",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Researcher productivity is uniformly distributed and performance equals productivity times effort."
+              }
+            },
+            {
+              "value": "Effort cost is linear, c e_i, and entry is costless in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Effort cost is linear, c e_i, and entry is costless in the baseline."
+              }
+            },
+            {
+              "value": "Legal protection l scales researchers' perceived reward and postdiscovery leakage risk",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Legal protection l scales researchers' perceived reward and postdiscovery leakage risk."
+              }
+            },
+            {
+              "value": "The organization's security posture beta is exogenous in the main model, and realized patching time is omega beta",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The organization's security posture beta is exogenous in the main model, and realized patching time is omega beta."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper derives a symmetric Bayesian effort strategy using order statistics for the probability of being first, maps effort into earliest discovery time, integrates lifecycle costs, and solves the organization's bounty problem by backward induction.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 9,
+            "section": "Expected-profit objective",
+            "equation": "(1)",
+            "quote": "Considering all the cost components, the organization minimizes the expected total cost in the BBP by deciding the amount of bounty."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The bounty and legal-protection level are public. Each researcher's productivity a_i is privately known; the uniform productivity distribution and number of researchers are common knowledge. The organization's security posture, damage, leakage, and patching parameters are common knowledge in the baseline. Researchers form winning probabilities from the symmetric best-response performance function.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in cybersecurity and bug-bounty design",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The bounty and legal-protection level are public.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "b",
+                "meaning": "bounty paid for the first valid vulnerability report · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "search effort chosen by Researcher i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i",
+                "meaning": "Researcher i's productivity in vulnerability discovery · a_i\\in[\\underline a,\\overline a]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I",
+                "meaning": "expected earliest vulnerability-discovery time · 0<I<T",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "inverse security-posture measure; lower beta means stronger posture · 0\\le\\beta\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "l",
+                "meaning": "legal-protection factor affecting perceived bounty and leakage · 0\\le l\\le1",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Because the productivity of each researcher cannot be observed, we consider a static game with incomplete information.",
+              "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty.",
+              "Researcher productivity is uniformly distributed and performance equals productivity times effort.",
+              "Effort cost is linear, c e_i, and entry is costless in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2. Model",
+                "equation": "",
+                "quote": "Because the productivity of each researcher cannot be observed, we consider a static game with incomplete information."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Because the productivity of each researcher cannot be observed, we consider a static game with incomplete information.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The organization chooses bounty b to minimize the bounty itself plus expected damage before discovery, expected leakage during patching, and expected damage during the patching interval.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in cybersecurity and bug-bounty design",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\min_b\\;\\Pi=b+\\mathbb{E}\\!\\left[\\int_0^I c_a\\beta\\,dt+\\int_I^{I+\\omega\\beta}c_p n g l\\beta\\,dt+\\int_I^{I+\\omega\\beta}c_a\\beta^2\\,dt\\right]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "b",
+                "meaning": "bounty paid for the first valid vulnerability report · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "search effort chosen by Researcher i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i",
+                "meaning": "Researcher i's productivity in vulnerability discovery · a_i\\in[\\underline a,\\overline a]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I",
+                "meaning": "expected earliest vulnerability-discovery time · 0<I<T",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "inverse security-posture measure; lower beta means stronger posture · 0\\le\\beta\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\omega",
+                "meaning": "patching-complexity coefficient · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "l",
+                "meaning": "legal-protection factor affecting perceived bounty and leakage · 0\\le l\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_a, c_p",
+                "meaning": "unit damage and postdiscovery leakage cost coefficients · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "n",
+                "meaning": "number of security researchers participating in the program · positive integer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "g",
+                "meaning": "a researcher's equilibrium performance, equal to productivity times effort; symmetry gives aggregate performance ng · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty.",
+              "Legal protection l scales researchers' perceived reward and postdiscovery leakage risk.",
+              "The organization's security posture beta is exogenous in the main model, and realized patching time is omega beta."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "Expected-profit objective",
+                "equation": "(1)",
+                "quote": "Considering all the cost components, the organization minimizes the expected total cost in the BBP by deciding the amount of bounty."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “minimize expected cost”: “minimize expected cost”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "Stage 1: the organization publicly commits to bounty b. Stage 2: after observing b, researchers simultaneously choose effort in a Bayesian winner-take-all tournament. The earliest valid report arrives at time I; the organization then patches for omega beta time, after which the modeled vulnerability no longer creates loss. organization commitment to a public bounty simultaneous privately typed researcher effort",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in cybersecurity and bug-bounty design",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: Stage 1: the organization publicly commits to bounty b.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "b",
+                "meaning": "bounty paid for the first valid vulnerability report · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "search effort chosen by Researcher i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i",
+                "meaning": "Researcher i's productivity in vulnerability discovery · a_i\\in[\\underline a,\\overline a]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I",
+                "meaning": "expected earliest vulnerability-discovery time · 0<I<T",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "inverse security-posture measure; lower beta means stronger posture · 0\\le\\beta\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "l",
+                "meaning": "legal-protection factor affecting perceived bounty and leakage · 0\\le l\\le1",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty.",
+              "Researcher productivity is uniformly distributed and performance equals productivity times effort.",
+              "Effort cost is linear, c e_i, and entry is costless in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "2.3. Sequence of the Game",
+                "equation": "",
+                "quote": "We capture all the dynamism discussed so far in a two-stage game."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We capture all the dynamism discussed so far in a two-stage game.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The paper derives a symmetric Bayesian effort strategy using order statistics for the probability of being first, maps effort into earliest discovery time, integrates lifecycle costs, and solves the organization's bounty problem by backward induction. Propositions provide threshold comparative statics.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in cybersecurity and bug-bounty design",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper derives a symmetric Bayesian effort strategy using order statistics for the probability of being first, maps effort into earliest discovery time, integrates lifecycle costs, and solves the organization's bounty problem by backward induction.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "b",
+                "meaning": "bounty paid for the first valid vulnerability report · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i",
+                "meaning": "Researcher i's productivity in vulnerability discovery · a_i\\in[\\underline a,\\overline a]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I",
+                "meaning": "expected earliest vulnerability-discovery time · 0<I<T",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "inverse security-posture measure; lower beta means stronger posture · 0\\le\\beta\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "l",
+                "meaning": "legal-protection factor affecting perceived bounty and leakage · 0\\le l\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "n",
+                "meaning": "number of security researchers participating in the program · positive integer",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty.",
+              "Researcher productivity is uniformly distributed and performance equals productivity times effort.",
+              "Effort cost is linear, c e_i, and entry is costless in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "2.3. Sequence of the Game",
+                "equation": "",
+                "quote": "We use backward induction to derive solutions and present them in the next section."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We use backward induction to derive solutions and present them in the next section.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "effort-choice"
+            ],
+            "explanation": "The organization chooses the bounty amount each researcher chooses search effort the first successful researcher submits the valid vulnerability report the organization undertakes remediation during the postdiscovery patching interval",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in cybersecurity and bug-bounty design",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The organization chooses the bounty amount each researcher chooses search effort the first successful researcher submits the valid vulnerability report the organization undertakes remediation during the postdiscovery patching interval",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "b",
+                "meaning": "bounty paid for the first valid vulnerability report · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "search effort chosen by Researcher i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i",
+                "meaning": "Researcher i's productivity in vulnerability discovery · a_i\\in[\\underline a,\\overline a]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "inverse security-posture measure; lower beta means stronger posture · 0\\le\\beta\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\omega",
+                "meaning": "patching-complexity coefficient · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "l",
+                "meaning": "legal-protection factor affecting perceived bounty and leakage · 0\\le l\\le1",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty.",
+              "Researcher productivity is uniformly distributed and performance equals productivity times effort.",
+              "Effort cost is linear, c e_i, and entry is costless in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3. Solutions",
+                "equation": "",
+                "quote": "We first obtain the optimal decisions of each security researcher given the bounty by computing the individual-level utility maximizing effort levels as fol­ lows."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "effort-choice",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Effort choice as “effort level”: “by computing the individual-level utility maximizing effort level s as follows.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "subgame-perfect-leader-follower-outcome-with-a-symmetric-bayesia",
+            "label": "Subgame-perfect leader-follower outcome with a symmetric Bayesian tournament equilibrium among researchers",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Subgame-perfect leader-follower outcome with a symmetric Bayesian tournament equilibrium among researchers. Section 2.3 gives the two-stage sequence and states that it is solved by backward induction. Lemma 1 provides each type's equilibrium effort after bounty b, and Lemma 2 substitutes those efforts into the organization's problem to derive equilibrium bounty b*.",
+            "searchPhrases": [
+              "how subgame-perfect leader-follower outcome with a symmetric bayesian tournament equilibrium among researchers is represented",
+              "strategic response in cybersecurity and bug-bounty design",
+              "subgame-perfect leader-follower outcome with a symmetric bayesian tournament equilibrium among researchers strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Subgame-perfect leader-follower outcome with a symmetric Bayesian tournament equilibrium among researchers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "b",
+                "meaning": "bounty paid for the first valid vulnerability report · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i",
+                "meaning": "Researcher i's productivity in vulnerability discovery · a_i\\in[\\underline a,\\overline a]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "inverse security-posture measure; lower beta means stronger posture · 0\\le\\beta\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "l",
+                "meaning": "legal-protection factor affecting perceived bounty and leakage · 0\\le l\\le1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "n",
+                "meaning": "number of security researchers participating in the program · positive integer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "g",
+                "meaning": "a researcher's equilibrium performance, equal to productivity times effort; symmetry gives aggregate performance ng · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A single vulnerability is studied in the main model and only the first valid reporter receives the bounty.",
+              "Researcher productivity is uniformly distributed and performance equals productivity times effort.",
+              "Effort cost is linear, c e_i, and entry is costless in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3. Solutions",
+                "equation": "",
+                "quote": "Based on the equilibrium bounty, we can see that the bounty increases in the unit damage cost (i.e., ca), unit effort cost (i.e., c), and benchmark time (i.e., T)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Model interaction”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "d658b7a4b17600ef52956ab7e22672e6f8785e86d2fc23f5159c368070a9e414",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "6bff0e27eada3142b5e9a10f9033b764cc95a94c7715d02928f2d293e2405ac5",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2021-0349/6bff0e27eada3142b5e9a10f9033b764cc95a94c7715d02928f2d293e2405ac5.json",
+      "extractionQaDecisionSha256": "0ba46374c9510a4c97b8471fd08ece1e0cc6b49c1e7adcce296514b49ec71a72",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

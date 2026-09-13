@@ -1,0 +1,496 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2016-2441",
+  "sourcePdfSha256": "f60534f352511758c61517cc3108272994fa7c8c76b6461d4a08a7d5733faac3",
+  "extractionPagesSha256": "f12f06aca7849bca8ae3e6a596234536ce543a5265fe6b3c6e9e517176df1bc5",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "2444bc1e0ef4ee8a080532eff5439fe2518540f122d81a557fdad135a4be91a7",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "4bf4a5b97687fc069acac2cc32f1bc0aeacf3c319ea4b50edddc03301439dabc",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2016-2441/4bf4a5b97687fc069acac2cc32f1bc0aeacf3c319ea4b50edddc03301439dabc.json",
+  "extractionQaDecisionSha256": "c3e8b32eca92d0d3d10530d14c3826980694fcd9f185d40035c07d6b2a23ef0f",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2016-2441",
+    "question": "How do delays affect service times in the intensive care unit?",
+    "overview": "Mainstream queueing models are frequently employed in modeling healthcare delivery in a number of settings, and they further are used in making operational decisions for the same. The vast majority of these queueing models ignore the effects of delay experienced by a patient awaiting care. However, long delays may have adverse effects on patient outcomes and can potentially lead to a longer length of stay (LOS) when the patient ultimately does receive care.",
+    "modelTypes": [
+      "Queueing",
+      "Structural model",
+      "Simulation",
+      "Learning & algorithms"
+    ],
+    "coverage": {
+      "pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "The Impact of Delays on Service Times in the Intensive Care Unit model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Mainstream queueing models are frequently employed in modeling healthcare delivery in a number of settings, and they further are used in making operational decisions for the same. The vast majority of these queueing models ignore the effects of delay experienced by a patient awaiting care. However, long delays may have adverse effects on patient outcomes and can potentially lead to a longer length of stay (LOS) when the patient ultimately does receive care.",
+        "objects": [
+          "A patient",
+          "Server",
+          "Physicians"
+        ],
+        "inputs": [
+          "Patient types",
+          "The service time",
+          "The service rate",
+          "Time t",
+          "The number of jobs in the queue upon the job’s arrival"
+        ],
+        "decisions": [
+          "Admit order was placed until the patient was physically admitted to an inpatient unit",
+          "The selection and ED boarding models",
+          "Calculate the correct standard errors"
+        ],
+        "assumptions": [
+          "Consider an s server queueing system described as follows: Jobs arrive according to a Poisson process",
+          "The service discipline for this system is FCFS"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The vast majority of these queueing models ignore the effects of delay experienced by a patient awaiting care.",
+                "matchedText": "a patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "section",
+                "section": "Incorporating the Delay Effect: M/M( f )/s Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 13,
+                "quote": "Consider an s server queueing system described as follows: Jobs arrive according to a Poisson process at rate λ and are served in a ﬁrst come, ﬁrst served (FCFS) fashion.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Physicians",
+              "source": {
+                "type": "section",
+                "section": "Contributions",
+                "page": 2,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "While physicians recognize that delays are detrimental for an individual patient, our analysis provides insight into the impact such delays may have on increasing overall congestion and reducing access to care for other critical patients.",
+                "matchedText": "physicians",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Patient types",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "Using data of more than 57,000 emergency department (ED) visits, we use an instrumental variable approach to empirically measure the impact of delays in intensive care unit (ICU) admission, i.e., ED boarding, on the patient’s ICU LOS for multiple patient types.",
+                "matchedText": "patient types",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service time",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "We propose a queueing model that incorporates these measured delay effects and characterizes approximations to the expected work in the system when the service time of a job is adversely impacted by the delay experienced by that job.",
+                "matchedText": "the service time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service rate",
+              "source": {
+                "type": "section",
+                "section": "Incorporating the Delay Effect: M/M( f )/s Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 9,
+                "quote": "However, the service rate of the standard exponential random variable now depends on the delay of the job; we denote this dependence by M( f ), where f is an “inﬂation” function that we will deﬁne shortly.",
+                "matchedText": "the service rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Incorporating the Delay Effect: M/M( f )/s Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 14,
+                "quote": "We let Nt denote the number of jobs in the system at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The number of jobs in the queue upon the job’s arrival",
+              "source": {
+                "type": "section",
+                "section": "Incorporating the Delay Effect: M/M( f )/s Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 10,
+                "quote": "Hence, the service time (equivalently, LOS) of a job is inﬂated from some nominal value by a quantity that depends on the number of jobs in the queue upon the job’s arrival.",
+                "matchedText": "the number of jobs in the queue upon the job’s arrival",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Admit order was placed until the patient was physically admitted to an inpatient unit",
+              "source": {
+                "type": "section",
+                "section": "Empirical Motivation: Model and Analysis",
+                "page": 4,
+                "sectionIndex": 16,
+                "sentence": 31,
+                "quote": "Hence, this captures the ED boarding time and is measured as the time from when the admit order was placed until the patient was physically admitted to an inpatient unit",
+                "matchedText": "admit order was placed until the patient was physically admitted to an inpatient unit",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The selection and ED boarding models",
+              "source": {
+                "type": "section",
+                "section": "Estimation",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 56,
+                "quote": "We ﬁrst estimate the selection and ED boarding models",
+                "matchedText": "the selection and ED boarding models",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Calculate the correct standard errors",
+              "source": {
+                "type": "section",
+                "section": "Estimation",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 58,
+                "quote": "What remains is to calculate the correct standard errors.",
+                "matchedText": "calculate the correct standard errors",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Consider an s server queueing system described as follows: Jobs arrive according to a Poisson process",
+              "source": {
+                "type": "section",
+                "section": "Incorporating the Delay Effect: M/M( f )/s Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 13,
+                "quote": "Consider an s server queueing system described as follows: Jobs arrive according to a Poisson process at rate λ and are served in a ﬁrst come, ﬁrst served (FCFS) fashion.",
+                "matchedText": "Consider an s server queueing system described as follows: Jobs arrive according to a Poisson process",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The service discipline for this system is FCFS",
+              "source": {
+                "type": "section",
+                "section": "Approximating the Workload Process",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 7,
+                "quote": "Assume the service discipline for this system is FCFS.",
+                "matchedText": "the service discipline for this system is FCFS.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper proposes a queueing model that incorporates these measured delay effects and characterizes approximations to the expected work in the system when the service time of a job is adversely impacted by the delay experienced by that job.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 7
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 11,
+            "section": "4.2. A General Upper Bound for an M/M( f )/s System",
+            "equation": "Theorem 2",
+            "quote": "A job that immediately begins service contributes a total of 1 2σ2 i work; i.e., it brings work σi that is depleted at constant rate 1 until it completes service."
+          }
+        ],
+        "components": [
+          {
+            "id": "incorporating-the-delay-effect-m-m-f-s-model",
+            "label": "Incorporating the Delay Effect: M/M( f )/s Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Job i arrives at time ti, and its service time is exponentially distributed with mean 1+ f (Nt− i ), where f (·) is a function, referred to as a growth function, which takes values in a finite set and satisfies the following requirements",
+            "searchPhrases": [
+              "how incorporating the delay effect: m/m( f )/s model is represented",
+              "system process in operations and supply chains",
+              "incorporating the delay effect: m/m( f )/s model system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "N_{t}",
+                "meaning": "number of jobs in the system at time t"
+              },
+              {
+                "symbol": "f",
+                "meaning": "an “inflation” function that we will define shortly"
+              }
+            ],
+            "conditions": [
+              "However, the service rate of the standard exponential random variable now depends on the delay of the job; we denote this dependence by M( f ), where f is an “inflation” function that we will define shortly."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3. Incorporating the Delay Effect: M/M( f )/s Model",
+                "equation": "",
+                "quote": "Job i arrives at time ti, and its service time is exponentially distributed with mean 1+ f (Nt− i ), where f (·) is a function, referred to as a growth function, which takes values in a ﬁnite set and satisﬁes the following requirements"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "approximating-the-workload-process",
+            "label": "Approximating the Workload Process",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "The model denotes by W t and Nt the workload and number in system processes in this system, respectively.",
+            "searchPhrases": [
+              "how approximating the workload process is represented",
+              "system process in operations and supply chains",
+              "approximating the workload process system process specification"
+            ],
+            "formal": "Process relation: The model denotes by W t and Nt the workload and number in system processes in this system, respectively.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "A job that immediately begins service contributes a total of 1 2σ2 i work; i.e., it brings work σi that is depleted at constant rate 1 until it completes service.",
+              "We denote by W t and Nt the workload and number in system processes in this system, respectively.",
+              "Let us denote by Wt and Nt the workload and number in system processes in this system, respectively, where we define the workload as the total amount of work in the system based on realized service times.",
+              "Finally, we denote by W t the workload process in an M/M/s system with arrival rate λ and service rate 1, i.e., a system without any delay effect or relationship to the growth function f (m)."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4. Approximating the Workload Process",
+                "equation": "",
+                "quote": "We denote by W t and Nt the workload and number in system processes in this system, respectively."
+              },
+              {
+                "page": 11,
+                "section": "4.2. A General Upper Bound for an M/M( f )/s System",
+                "equation": "Theorem 2",
+                "quote": "A job that immediately begins service contributes a total of 1 2σ2 i work; i.e., it brings work σi that is depleted at constant rate 1 until it completes service."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “We denote by W t and Nt the workload and number in system processes in this system, respectively.”.",
+                "conditionRefs": [
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              },
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "sensitivity-analysis-of-the-bound",
+            "label": "Sensitivity Analysis of the Bound",
+            "role": "constraint",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "We now consider how the upper bound derived in Section 4 can be used to gain a better understanding of a queueing system with delay-dependent service times.",
+            "searchPhrases": [
+              "how sensitivity analysis of the bound is represented",
+              "feasibility condition in operations and supply chains",
+              "sensitivity analysis of the bound feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: We now consider how the upper bound derived in Section 4 can be used to gain a better understanding of a queueing system with delay-dependent service times.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To see this, we focus on the result of Theorem 1, where the growth is represented by a step function.",
+              "We start by examining the behavior of the workload as the magnitude of the delay effect increases in Figure 2.",
+              "What is most striking is the change in workload as the system utilization increases (recall that service times have been normalized to 1)."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5. Sensitivity Analysis of the Bound",
+                "equation": "",
+                "quote": "We now consider how the upper bound derived in Section 4 can be used to gain a better understanding of a queueing system with delay-dependent service times."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Queueing as “queueing system”: “gain a better understanding of a queueing system with delay-dependent service times.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "f60534f352511758c61517cc3108272994fa7c8c76b6461d4a08a7d5733faac3",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "4bf4a5b97687fc069acac2cc32f1bc0aeacf3c319ea4b50edddc03301439dabc",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2016-2441/4bf4a5b97687fc069acac2cc32f1bc0aeacf3c319ea4b50edddc03301439dabc.json",
+      "extractionQaDecisionSha256": "c3e8b32eca92d0d3d10530d14c3826980694fcd9f185d40035c07d6b2a23ef0f",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2023-4923",
+  "sourcePdfSha256": "ae5f4a7a19d9aed790b69abe79c3a34b902197edc4b5671274afa4813f813ffd",
+  "extractionPagesSha256": "e36dfddee424dffe2ccda4781e6b37d7b52ed22a92bdaf48f9c0dfbb6692e1cf",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "0df6ac98315952e473dbe19ef96ab1492247663dd2e2f2bc7fee5bde86ac6b8f",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "1ec1c0b72c32272bc561854fbb7084c85f05a735f4ecd3c7bfcdc00b9e0a45e9",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4923/1ec1c0b72c32272bc561854fbb7084c85f05a735f4ecd3c7bfcdc00b9e0a45e9.json",
+  "extractionQaDecisionSha256": "ec56487a2df90ed2b726b708e23400cb1e17d6aa937fc59e5bc633f0769a6685",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-4923",
+    "question": "What determines some nonprofit organizations (NPOs) manage a complex workforce composed of a mix of volunteers, part-time workers, and full-time workers?",
+    "overview": "Some nonprofit organizations (NPOs) manage a complex workforce composed of a mix of volunteers, part-time workers, and full-time workers. This paper studies the NPO’s finite-horizon staffing problem to determine the optimal initial staff planning decisions and per period optimal hiring and assignment decisions given a budget, capacity constraints, and an uncertain supply of volunteers and part-time workers. The paper's main goal is to solve this problem in a way that is effective and easy to implement while obtaining interesting managerial insights.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        16
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Managing Volunteers and Paid Workers in a Nonprofit Operation model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Some nonprofit organizations (NPOs) manage a complex workforce composed of a mix of volunteers, part-time workers, and full-time workers. This paper studies the NPO’s finite-horizon staffing problem to determine the optimal initial staff planning decisions and per period optimal hiring and assignment decisions given a budget, capacity constraints, and an uncertain supply of volunteers and part-time workers. The paper's main goal is to solve this problem in a way that is effective and easy to implement while obtaining interesting managerial insights.",
+        "objects": [
+          "Workers",
+          "The manager",
+          "Organization",
+          "Servers",
+          "The NPO manager"
+        ],
+        "inputs": [
+          "An uncertain supply",
+          "The unit wage cost for FST and PST, respectively",
+          "A “stochastic proportion” of part-time workers",
+          "The demand",
+          "Part-time workers and volunteers, respectively"
+        ],
+        "decisions": [
+          "The optimal initial staff planning decisions and per period optimal hiring and assignment decisions",
+          "How many full-time and/or part-time workers to initially assign",
+          "How much VST to assign xt v",
+          "The optimal policy exactly"
+        ],
+        "assumptions": [
+          "A constant total available VST of nv for the entire planning horizon",
+          "Part-time workers may resign but are required to inform their managers one period in advance",
+          "Turnover is not related to how many periods the worker has worked",
+          "Volunteer wage cost to be negligible, but we also study the nontrivial case as an extension",
+          "There exists a known upper bound on total possible staffing time allotted in one period for the offered nonprofit activity, d, which is constant across all periods"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Workers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "We study the NPO’s finite-horizon staffing problem to determine the optimal initial staff planning decisions and per period optimal hiring and assignment decisions given a budget, capacity constraints, and an uncertain supply of volunteers and part-time workers.",
+                "matchedText": "workers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The manager",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 27,
+                "quote": "However, the man­ ager can observe it by communicating with volunteers.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Organization",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 20,
+                "sentence": 4,
+                "quote": "Falasca et al. (2011) develop a scheduling model for a small development organiza­ tion’s volunteer workforce.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 20,
+                "sentence": 10,
+                "quote": "Ata et al. (2019) construct a queueing model that regards volunteers as servers.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The NPO manager",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "sectionIndex": 5,
+                "page": 5,
+                "quote": "The NPO manager observes ˜qt at the beginning of each period t and decides on the PST of part-time work­ ers to hire, yt p, at the beginning of each period t ∈[T] based on the observed ˜qt."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "An uncertain supply",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "We study the NPO’s finite-horizon staffing problem to determine the optimal initial staff planning decisions and per period optimal hiring and assignment decisions given a budget, capacity constraints, and an uncertain supply of volunteers and part-time workers.",
+                "matchedText": "an uncertain supply",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unit wage cost for FST and PST, respectively",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "We let wf and wp denote the unit wage cost for FST and PST, respectively.",
+                "matchedText": "the unit wage cost for FST and PST, respectively",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A “stochastic proportion” of part-time workers",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 41,
+                "quote": "Let the turnover rate ˜qt be an independent stochastic process with support on [ql,qu] ⊆[0,1], which repre­ sents a “stochastic proportion” of part-time workers who resign in period t.",
+                "matchedText": "a “stochastic proportion” of part-time workers who resign in period t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The demand",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 63,
+                "quote": "On the demand side, NPOs usually provide service for free or at very low cost (Steinberg and Weisbrod 1998), unlike the for-profit context where demand is usually uncertain and affected by price.",
+                "matchedText": "the demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Part-time workers and volunteers, respectively",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Decomposition of the Optimal Policy",
+                "page": 7,
+                "sectionIndex": 23,
+                "sentence": 16,
+                "quote": "To indicate these priorities, we let P and V denote part-time workers and volunteers, respectively.",
+                "matchedText": "part-time workers and volunteers, respectively",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The optimal initial staff planning decisions and per period optimal hiring and assignment decisions",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "We study the NPO’s finite-horizon staffing problem to determine the optimal initial staff planning decisions and per period optimal hiring and assignment decisions given a budget, capacity constraints, and an uncertain supply of volunteers and part-time workers.",
+                "matchedText": "the optimal initial staff planning decisions and per period optimal hiring and assignment decisions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How many full-time and/or part-time workers to initially assign",
+              "source": {
+                "type": "section",
+                "section": "Main Contributions",
+                "page": 2,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "We also provide guidance on the staffing problem that decides how many full-time and/or part-time workers to initially assign",
+                "matchedText": "how many full-time and/or part-time workers to initially assign",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How much VST to assign xt v",
+              "source": {
+                "type": "section",
+                "section": "Objective Functions and Constraints",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 7,
+                "quote": "In subsequent peri­ ods t, we determine how much VST to assign xt v",
+                "matchedText": "how much VST to assign xt v",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The optimal policy exactly",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming Decomposition of the Optimal Policy",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 13,
+                "quote": "We find that the value functions and optimal policy for Equations (3)–(6) do not have closed form, and so we cannot compute the optimal policy exactly",
+                "matchedText": "the optimal policy exactly",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A constant total available VST of nv for the entire planning horizon",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 25,
+                "quote": "Thus, we assume a constant total available VST of nv for the entire plan­ ning horizon.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Part-time workers may resign but are required to inform their managers one period in advance",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 39,
+                "quote": "Thus, we assume that part-time workers may resign but are required to inform their managers one period in advance.",
+                "matchedText": "part-time workers may resign but are required to inform their managers one period in advance.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Turnover is not related to how many periods the worker has worked",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 40,
+                "quote": "We assume that turnover is not related to how many periods the worker has worked.",
+                "matchedText": "turnover is not related to how many periods the worker has worked.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Volunteer wage cost to be negligible, but we also study the nontrivial case as an extension",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 20,
+                "sentence": 7,
+                "quote": "In our paper, we assume volunteer wage cost to be negligible, but we also study the nontrivial case as an extension.",
+                "matchedText": "volunteer wage cost to be negligible, but we also study the nontrivial case as an extension.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There exists a known upper bound on total possible staffing time allotted in one period for the offered nonprofit activity, d, which is constant across all periods",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 66,
+                "quote": "Hence, we assume that there exists a known upper bound on total possible staffing time allotted in one period for the offered non­ profit activity, d, which is constant across all periods.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "Dynamic Programming Decomposition of the Optimal Policy We start by deriving the dynamic programming (DP) equations for Problem (2).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Objective Functions and Constraints",
+          "page": 6,
+          "sentence": 20
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3. Model Description",
+            "equation": "",
+            "quote": "Let the turnover rate ˜qt be an independent stochastic process with support on [ql,qu] ⊆[0,1], which repre­ sents a “stochastic proportion” of part-time workers who resign in period t."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-description",
+            "label": "Model Description",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Let the turnover rate ̃qt be an independent stochastic process with support on [ql,qu] ⊆[0,1], which represents a “stochastic proportion” of part-time workers who resign in period t.",
+            "searchPhrases": [
+              "how model description is represented",
+              "system process in organizations, incentives, and finance",
+              "model description system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that part-time workers may resign but are required to inform their managers one period in advance.",
+              "We assume that turnover is not related to how many periods the worker has worked.",
+              "Let the turnover rate ̃qt be an independent stochastic process with support on [ql,qu] ⊆[0,1], which represents a “stochastic proportion” of part-time workers who resign in period t."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Model Description",
+                "equation": "",
+                "quote": "Let the turnover rate ˜qt be an independent stochastic process with support on [ql,qu] ⊆[0,1], which repre­ sents a “stochastic proportion” of part-time workers who resign in period t."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-functions-and-constraints",
+            "label": "Objective Functions and Constraints",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "In our model, we maximize the expected social value from service plus the social value of any leftover budget.",
+            "searchPhrases": [
+              "how objective functions and constraints is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "objective functions and constraints modeled objective specification"
+            ],
+            "formal": "Objective relation: In our model, we maximize the expected social value from service plus the social value of any leftover budget.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In our staffing problem, the underlying uncertainty is due to PST turnover ( ̃qt)T 1 t=1 and VST availability ( ̃st)T t=1.",
+              "In the initial planning stage, nf and n1 p are chosen given the initial budget b>0.",
+              "The state at period t ∈[T] is given by the current budget bt and the available PST nt p."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Objective Functions and Constraints",
+                "equation": "",
+                "quote": "In our model, we maximize the expected social value from service plus the social value of any left­ over budget."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “In our model, we maximize the expected social value from service plus the social value of any leftover”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "dynamic-programming-decomposition-of-the-optimal-policy",
+            "label": "Dynamic Programming Decomposition of the Optimal Policy",
+            "role": "algorithm",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "We let {Vt}T+1 t=0 denote the optimal value functions (the expected social value-to-go), which satisfy the DP decomposition: VT+1(bT+1,·) = τbT+1, (3) Figure 1.",
+            "searchPhrases": [
+              "how dynamic programming decomposition of the optimal policy is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "dynamic programming decomposition of the optimal policy solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We let {Vt}T+1 t=0 denote the optimal value functions (the expected social value-to-go), which satisfy the DP decomposition: VT+1(bT+1,·) = τbT+1, (3) Figure 1.",
+              "In period t = 0, we make the initial staff planning decisions (nf,n1 p).",
+              "There is no hiring in period T, so we (i) observe the level ̃sTnv of volunteers; and (ii) then make the staff assignment decisions (xT p, xT v)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.1. Dynamic Programming Decomposition of the Optimal Policy",
+                "equation": "",
+                "quote": "We let {Vt}T+1 t=0 denote the optimal value functions (the expected social value-to-go), which satisfy the DP decomposition: VT+1(bT+1,·) = τbT+1, (3) Figure 1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic programming: “Dynamic programming”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "assignment-policies",
+            "label": "Assignment Policies",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "In some cases, we find that the optimal assignment policy has “assignment priority,” where a certain type of staffing time should be fully assigned before assigning the other type.",
+            "searchPhrases": [
+              "how assignment policies is represented",
+              "decision rule in organizations, incentives, and finance",
+              "assignment policies decision rule specification"
+            ],
+            "formal": "Decision rule: In some cases, we find that the optimal assignment policy has “assignment priority,” where a certain type of staffing time should be fully assigned before assigning the other type.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "First, the FST assignment decision nf is fixed in the initial period t = 0.",
+              "In some cases, we find that the optimal assignment policy has “assignment priority,” where a certain type of staffing time should be fully assigned before assigning the other type.",
+              "In the following definition, the optimal decisions are denoted by a superscript ∗."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.2. Assignment Policies",
+                "equation": "",
+                "quote": "In some cases, we find that the optimal assignment policy has “assignment priority,” where a certain type of staffing time should be fully assigned before assigning the other type."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "hiring-policies",
+            "label": "Hiring Policies",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Rather, a linear program needs to be solved (which gives rise to one of our suggested heuristics).",
+            "searchPhrases": [
+              "how hiring policies is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "hiring policies solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Rather, a linear program needs to be solved (which gives rise to one of our suggested heuristics).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For each period t ∈[T], the objective function of the hiring decision is concave and there exists a state-dependent optimal hiring decision yt p ∗(bt,nt p, ̃qt).",
+              "The budget is shared by hiring and wage payments, so if more budget is used for hiring then less budget is available for the staff assignment that directly contributes to social value.",
+              "Similar to what we did for the assignment policies, next we define two types of hiring policies that are simple and easy-to-implement."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.3. Hiring Policies",
+                "equation": "",
+                "quote": "Rather, a linear program needs to be solved (which gives rise to one of our suggested heuris­ tics)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Rather, a linear program needs to be solved (which gives rise to one of our suggested heuristics).”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "impact-of-the-stochastic-processes-on-the-optimal-social-value-a",
+            "label": "Impact of the Stochastic Processes on the Optimal Social Value and Optimal Staffing Policies",
+            "role": "decision",
+            "concepts": [
+              "uncertainty"
+            ],
+            "explanation": "The optimal assignment decision xt p ∗(xt v ∗) is decreasing (increasing) in ̃st.",
+            "searchPhrases": [
+              "how impact of the stochastic processes on the optimal social value and optimal staffing policies is represented",
+              "decision rule in organizations, incentives, and finance",
+              "impact of the stochastic processes on the optimal social value and optimal staffing policies decision rule specification"
+            ],
+            "formal": "Decision rule: The optimal assignment decision xt p ∗(xt v ∗) is decreasing (increasing) in ̃st.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given two random variables X and Y: X is smaller than Y in the increasing (decreasing) concave order, written as X≤icv (≤dcv )Y, if E[φ(X)] ≤E[φ(Y)] for all increasing (decreasing) concave functions φ : R →R (such that both expectations exist).",
+              "In addition, if the expectation of volunteer availability (E[ ̃st]) is fixed, we prefer a lower variance of VST availability due to the capacity constraint.",
+              "First, we observe that more volunteers are preferred because the cost of assigning VST is zero."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.5. Impact of the Stochastic Processes on the Optimal Social Value and Optimal Staffing Policies",
+                "equation": "",
+                "quote": "The optimal assignment decision xt p ∗(xt v ∗) is decreasing (increasing) in ˜st."
+              },
+              {
+                "page": 9,
+                "section": "4.3. Hiring Policies",
+                "equation": "Proposition 4",
+                "quote": "Impact of the Stochastic Processes on the Optimal Social Value and Optimal Staffing Policies We have two sources of uncertainty in this problem: the turnover rate of part-time workers and volunteer availability."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Uncertainty: “Policies We have two sources of Uncertainty in this problem: the turnover rate of part-time”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "performance-of-easy-to-implement-heuristic-policies",
+            "label": "Performance of Easy-to-Implement Heuristic Policies",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We refer to this heuristic as the linear programming heuristic (LPH), which is implemented as follows.",
+            "searchPhrases": [
+              "how performance of easy-to-implement heuristic policies is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "performance of easy-to-implement heuristic policies solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We refer to this heuristic as the linear programming heuristic (LPH), which is implemented as follows.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Instead, we can compare ALG to an omniscient decision maker denoted by OPT, where OPT(b,ω) is the optimal total utility given budget b and knowledge of ω in advance.",
+              "We compare ALG to OPT in terms of the competitive ratio COM(b,ALG) := E[ALG(b,ω)]=E[OPT(b,ω)](Stein et al. 2020).",
+              "We then get the lower bound COM(b,ALG) ≥E[ALG (b,ω)]=UB(b), which is easier to use in practice."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.2. Performance of Easy-to-Implement Heuristic Policies",
+                "equation": "",
+                "quote": "We refer to this heuristic as the linear programming heuristic (LPH), which is implemented as follows."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We refer to this heuristic as the linear programming heuristic (LPH), which is implemented as follows.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "nonzero-volunteer-cost",
+            "label": "Nonzero Volunteer Cost",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In the context of volunteer fire departments (Brudney and Duncombe 1992, Duncombe and Brudney 1995), there are administrative costs due to recruitment, training, and supervision.",
+            "searchPhrases": [
+              "how nonzero volunteer cost is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "nonzero volunteer cost solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In the context of volunteer fire departments (Brudney and Duncombe 1992, Duncombe and Brudney 1995), there are administrative costs due to recruitment, training, and supervision.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Here we extend our model to include VST cost wv > 0, so the budget bt now follows bt+1 = bt cpyt p wpxt p wvxt v.",
+              "For each period t ∈[T], given any ̃st and ̃qt, there exists an optimal assignment decision (xt p ∗,xt v ∗), and xt p ∗(xt v ∗) is nonincreasing (nondecreasing) in ̃stnv.",
+              "For example, some NPOs offer in-kind gifts to volunteers after providing service."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "6.2. Nonzero Volunteer Cost",
+                "equation": "",
+                "quote": "In the context of volunteer fire depart­ ments (Brudney and Duncombe 1992, Duncombe and Brudney 1995), there are administrative costs due to recruitment, training, and supervision."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “In the context of volunteer fire departments (Brudney and Duncombe 1992, Duncombe and Brudney 1995), there are administrative”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "model_topic",
+        "transformation": "topic-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "ae5f4a7a19d9aed790b69abe79c3a34b902197edc4b5671274afa4813f813ffd",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "1ec1c0b72c32272bc561854fbb7084c85f05a735f4ecd3c7bfcdc00b9e0a45e9",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4923/1ec1c0b72c32272bc561854fbb7084c85f05a735f4ecd3c7bfcdc00b9e0a45e9.json",
+      "extractionQaDecisionSha256": "ec56487a2df90ed2b726b708e23400cb1e17d6aa937fc59e5bc633f0769a6685",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

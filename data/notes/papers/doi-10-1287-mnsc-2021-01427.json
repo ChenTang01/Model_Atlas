@@ -1,0 +1,1075 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2021-01427",
+  "sourcePdfSha256": "c5b6a67465429816ff9b44ed17514e499cd16eb95368ab4eac1cf514a3ce5eee",
+  "extractionPagesSha256": "72052a26aade43bae1485ce43b2fc5f794198869e6ef9200f529a89a20042b3a",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "dcd556909458b7f42362401ecfd43817118ce3ae9ff660ce21327871fd054b3d",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "cb51554b0c7cfe13e37d8fd2aa2aaa7d6813aeca7d3e9506b0cc7f0b123ef4ed",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2021-01427/cb51554b0c7cfe13e37d8fd2aa2aaa7d6813aeca7d3e9506b0cc7f0b123ef4ed.json",
+  "extractionQaDecisionSha256": "143e503739ce3d0ac3355171558883da027bf1cefb185d07c9627675dcedb249",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2021-01427",
+    "question": "How do predictive information for mechanically ventilated patients in the ICU affect extubation decisions?",
+    "overview": "Weaning patients from mechanical ventilators is a crucial decision in intensive care units (ICUs), significantly affecting patient outcomes and the throughput of ICUs. This study aims to improve the current extubation protocols by incorporating predictive information on patient health conditions. The paper develops a discrete-time, finite-horizon Markov decision process with predictions of future state to support extubation decisions.",
+    "modelTypes": [
+      "Structural model",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        11,
+        15,
+        16,
+        19
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "extubation-decisions-with-predictive-information-for-mechanicall",
+        "name": "Extubation Decisions with Predictive Information for Mechanically Ventilated Patients in the ICU baseline model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Weaning patients from mechanical ventilators is a crucial decision in intensive care units (ICUs), significantly affecting patient outcomes and the throughput of ICUs. This study aims to improve the current extubation protocols by incorporating predictive information on patient health conditions. The paper develops a discrete-time, finite-horizon Markov decision process with predictions of future state to support extubation decisions.",
+        "objects": [
+          "Patient",
+          "Physicians",
+          "Hospital",
+          "Service providers",
+          "A physician"
+        ],
+        "inputs": [
+          "The partially observed state",
+          "The benefit of waiting for one more epoch to extubate in a better condition",
+          "Holding cost H",
+          "The data quality",
+          "The unknown parameters"
+        ],
+        "decisions": [
+          "Which parameter to prioritize for improvement",
+          "At every checkpoint (or decision epoch) whether to extubate the patient",
+          "The misclassification matrix via out-of-sample testing",
+          "Whether to invest in a prediction model",
+          "Require additional respiratory support"
+        ],
+        "assumptions": [
+          "There are two classes of patients: class 1, representing patients in a severe condition, and class 2, denoting those in a better state",
+          "The true misclassification matrix of the prediction model is unknown to the DM, and Assumption 2 holds",
+          "The remaining LOS is independent of the length of the patient’s stay",
+          "Note that the misclassification matrix is stationary, meaning prediction errors do not depend on time"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "This study aims to improve the current extubation protocols by incorporating predictive information on patient health conditions.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Physicians",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "We demonstrate that adding predictive information is always beneficial, even if physicians place excessive trust in the predictions, as long as the predictive model is moderately accurate.",
+                "matchedText": "physicians",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Using a comprehensive data set from an ICU in a tertiary hospital in Singapore, we evaluate the effectiveness of various policies and demonstrate that incorporating predictive information can reduce ICU length of stay by up to 3.4% and, simultaneously, decrease the extubation failure rate by up to 20.3%, compared with the optimal policy that does not utilize prediction.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service providers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 61,
+                "quote": "service providers",
+                "matchedText": "service providers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A physician",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Analysis",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "The DM, usually a physician, routinely monitors the patient’s condition and determines at every checkpoint (or decision epoch) whether to extu­ bate the patient.",
+                "matchedText": "a physician",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The partially observed state",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 10,
+                "sectionIndex": 20,
+                "sentence": 2,
+                "quote": "Our problem is a special case, as, in our model, the partially observed state—that is, the patient’s con­ dition at the next epoch—is disclosed at the next epoch.",
+                "matchedText": "the partially observed state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The benefit of waiting for one more epoch to extubate in a better condition",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 94,
+                "quote": "the benefit of waiting for one more epoch to extubate in a better condition",
+                "matchedText": "the benefit of waiting for one more epoch to extubate in a better condition",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Holding cost H",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 90,
+                "quote": "In this situation, the potential cost-saving emerges from not extubating those patients transitioning to class 2 at the next epoch, which equals ∆G minus the holding cost H.",
+                "matchedText": "holding cost H",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The data quality",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 13,
+                "sectionIndex": 9,
+                "sentence": 114,
+                "quote": "The accuracy of this estimation largely depends on the data quality, which could be compromised.",
+                "matchedText": "the data quality",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown parameters",
+              "source": {
+                "type": "section",
+                "section": "Parameter Estimation",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 1,
+                "quote": "In this section, we estimate the unknown parameters of the proposed model.",
+                "matchedText": "the unknown parameters",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Which parameter to prioritize for improvement",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 76,
+                "quote": "In practice, the DM can assess whether Condition (6) is satisfied and decide which parameter to prioritize for improvement",
+                "matchedText": "which parameter to prioritize for improvement",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "At every checkpoint (or decision epoch) whether to extubate the patient",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Analysis",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 8,
+                "quote": "The DM, usually a physician, routinely monitors the patient’s condition and determines at every checkpoint (or decision epoch) whether to extu­ bate the patient",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The misclassification matrix via out-of-sample testing",
+              "source": {
+                "type": "section",
+                "section": "Parameter Estimation",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 4,
+                "quote": "Subsequently, we train a practical prediction model and estimate the misclassification matrix via out-of-sample testing",
+                "matchedText": "the misclassification matrix via out-of-sample testing",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Whether to invest in a prediction model",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 47,
+                "quote": "We provide an upper bound and a lower bound on the benefit of predictive information, serving as a rule of thumb for deciding whether to invest in a prediction model.",
+                "matchedText": "whether to invest in a prediction model",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Require additional respiratory support",
+              "source": {
+                "type": "section",
+                "section": "Parameter Estimation",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 8,
+                "quote": "We expect G(c) to be positively cor­ related with the risk of extubation failure r(c) because patients with failed extubation require additional respi­ ratory support",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are two classes of patients: class 1, representing patients in a severe condition, and class 2, denoting those in a better state",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 18,
+                "quote": "Suppose there are two classes of patients: class 1, representing patients in a severe condition, and class 2, denoting those in a better state.",
+                "matchedText": "there are two classes of patients: class 1, representing patients in a severe condition, and class 2, denoting those in a better state.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The true misclassification matrix of the prediction model is unknown to the DM, and Assumption 2 holds",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 13,
+                "sectionIndex": 9,
+                "sentence": 118,
+                "quote": "Suppose that the true misclassification matrix of the prediction model is unknown to the DM, and Assumption 2 holds.",
+                "matchedText": "the true misclassification matrix of the prediction model is unknown to the DM, and Assumption 2 holds.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The remaining LOS is independent of the length of the patient’s stay",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Analysis",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 40,
+                "quote": "Thus, we assume the remaining LOS is independent of the length of the patient’s stay.",
+                "matchedText": "the remaining LOS is independent of the length of the patient’s stay.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Note that the misclassification matrix is stationary, meaning prediction errors do not depend on time",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Analysis",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "Note that the misclassification matrix is stationary, meaning prediction errors do not depend on time.",
+                "matchedText": "Note that the misclassification matrix is stationary, meaning prediction errors do not depend on time",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "Subsequently, we train a practical prediction model and estimate the misclassification matrix via out-of-sample testing.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model Formulation and Analysis",
+          "page": 13,
+          "sentence": 260
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 11,
+            "section": "4.2. Benefit of Predictive Information",
+            "equation": "",
+            "quote": "The left-hand side of the above inequality represents the expected holding cost saved by early extubation under the policy with predictive information—that is, extubating class 1 patients pre­ dicted to remain in class 1 at the next epoch—compared with the policy of extubating only class 2 patients, or, in other words, keeping all class 1 patients ventilated until their condition improves."
+          }
+        ],
+        "components": [
+          {
+            "id": "benefit-of-predictive-information",
+            "label": "Benefit of Predictive Information",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The left-hand side of the above inequality represents the expected holding cost saved by early extubation under the policy with predictive information—that is, extubating class 1 patients predicted to remain in class 1 at the next epoch—compared with the policy of extubating only class 2 patients, or, in other words, keeping all class 1 patients ventilated until their condition improves.",
+            "searchPhrases": [
+              "how benefit of predictive information is represented",
+              "information available to the decision maker in innovation, analytics, and technology",
+              "benefit of predictive information information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The left-hand side of the above inequality represents the expected holding cost saved by early extubation under the policy with predictive information—that is, extubating class 1 patients predicted to remain in class 1 at the next epoch—compared with the policy of extubating only class 2 patients, or, in other words, keeping all class 1 patients ventilated until their condition improves.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When Condition (5) holds, the benefit of predictive information is bounded above and below by min{β1, β2} and q1β1 + q2β2 max{β1,β2}, respectively, where β1 = p1H= (1 p1) p1(∆G H), and β2 = (1 p1)(∆G H).",
+              "More specifically, the second inequality of Condition (5) can be expressed as (1 γ)H < (1 λ γ)∆G.",
+              "This condition conveys that the holding cost must not be excessively high or low in comparison with the difference between the terminal costs."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.2. Benefit of Predictive Information",
+                "equation": "",
+                "quote": "The left-hand side of the above inequality represents the expected holding cost saved by early extubation under the policy with predictive information—that is, extubating class 1 patients pre­ dicted to remain in class 1 at the next epoch—compared with the policy of extubating only class 2 patients, or, in other words, keeping all class 1 patients ventilated until their condition improves."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "parameter-estimation",
+            "label": "Parameter Estimation",
+            "role": "estimation",
+            "concepts": [
+              "estimation",
+              "maximum-likelihood"
+            ],
+            "explanation": "This involves enforcing Assumptions 1 and 2 during parameter estimation via constrained maximum likelihood estimation.",
+            "searchPhrases": [
+              "how parameter estimation is represented",
+              "estimation procedure in innovation, analytics, and technology",
+              "parameter estimation estimation procedure specification"
+            ],
+            "formal": "Estimation relation: This involves enforcing Assumptions 1 and 2 during parameter estimation via constrained maximum likelihood estimation.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Analogous to terminal costs, transition and misclassification matrices might be subject to estimation errors."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "4.3. Parameter Estimation",
+                "equation": "",
+                "quote": "This involves enfor­ cing Assumptions 1 and 2 during parameter estimation via constrained maximum likelihood estimation."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Model estimation as “parameter estimation”: “This involves enforcing Assumptions 1 and 2 during parameter estimation via constrained maximum likelihood estimation.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "maximum-likelihood",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Maximum likelihood estimation: “This involves enforcing Assumptions 1 and 2 during parameter estimation via constrained maximum likelihood estimation.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "rule-of-thumb",
+            "label": "Rule of Thumb",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "This procedure is repeated 50,000 times, with the matrices arranged in ascending order based on the values of Q(3,3), facilitating the analysis of policy shifts correlated with its variations.",
+            "searchPhrases": [
+              "how rule of thumb is represented",
+              "solution algorithm in innovation, analytics, and technology",
+              "rule of thumb solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "From our simulations, we observe that 100% of the optimal policies with prediction accuracy beyond these thresholds switch from recommending extubation to recommending continued intubation when patients are predicted to improve under ventilation."
+            ],
+            "sources": [
+              {
+                "page": 19,
+                "section": "5.3. Rule of Thumb",
+                "equation": "",
+                "quote": "This procedure is repeated 50,000 times, with the matrices arranged in ascending order based on the values of Q(3,3), facilitating the analysis of policy shifts correlated with its varia­ tions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "model-formulation-and-theoretical-results",
+        "name": "Model Formulation and Theoretical Results",
+        "kind": "alternative",
+        "relation": "This is an alternative to Extubation Decisions with Predictive Information for Mechanically Ventilated Patients in the ICU baseline model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "extubation-decisions-with-predictive-information-for-mechanicall"
+          }
+        ],
+        "summary": "Based on this rich data set, we can identify patients who received MV, observe the ventilation duration and the outcomes of extubation, monitor a patient’s respiratory condition—which is associated with the risk of extubation failure—and construct a model that predicts a patient’s future condition. The decision process for patients ventilated for more than a week is highly complex, significantly deviating from routine procedures. In this section, we first investigate the benefit of perfect prediction (i.e., Q = I), which provides an upper bound for the value of predictive information.",
+        "objects": [
+          "The physicians",
+          "Hospital",
+          "Patients",
+          "Table"
+        ],
+        "inputs": [
+          "The partially observed state",
+          "The benefit of waiting for one more epoch to extubate in a better condition",
+          "Holding cost H",
+          "The data quality",
+          "The unknown parameters"
+        ],
+        "decisions": [
+          "Which parameter to prioritize for improvement",
+          "At every checkpoint (or decision epoch) whether to extubate the patient",
+          "The misclassification matrix via out-of-sample testing",
+          "Whether to invest in a prediction model",
+          "Require additional respiratory support"
+        ],
+        "assumptions": [
+          "There are two classes of patients: class 1, representing patients in a severe condition, and class 2, denoting those in a better state",
+          "The true misclassification matrix of the prediction model is unknown to the DM, and Assumption 2 holds",
+          "The remaining LOS is independent of the length of the patient’s stay",
+          "Note that the misclassification matrix is stationary, meaning prediction errors do not depend on time"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The physicians",
+              "source": {
+                "type": "section",
+                "section": "Clinical Settings and Data",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 44,
+                "quote": "We extracted most of the relevant clinical variables for our study based on the literature and discussions with the physi­ cians.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "Clinical Settings and Data",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Our study is based on data collected from a cardiotho­ racic ICU of a tertiary hospital in Singapore.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Clinical Settings and Data",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "Based on this rich data set, we can identify patients who received MV, observe the ventilation duration and the outcomes of extubation, monitor a patient’s respiratory condition—which is associated with the risk of extubation failure—and construct a model that predicts a patient’s future condition.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Table",
+              "source": {
+                "type": "section",
+                "section": "Clinical Settings and Data",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 40,
+                "quote": "Details of our data selection process are pro­ vided in Table EC.1 in Online Appendix EC.5.",
+                "matchedText": "Table",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The partially observed state",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 10,
+                "sectionIndex": 20,
+                "sentence": 2,
+                "quote": "Our problem is a special case, as, in our model, the partially observed state—that is, the patient’s con­ dition at the next epoch—is disclosed at the next epoch.",
+                "matchedText": "the partially observed state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The benefit of waiting for one more epoch to extubate in a better condition",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 94,
+                "quote": "the benefit of waiting for one more epoch to extubate in a better condition",
+                "matchedText": "the benefit of waiting for one more epoch to extubate in a better condition",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Holding cost H",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 90,
+                "quote": "In this situation, the potential cost-saving emerges from not extubating those patients transitioning to class 2 at the next epoch, which equals ∆G minus the holding cost H.",
+                "matchedText": "holding cost H",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The data quality",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 13,
+                "sectionIndex": 9,
+                "sentence": 114,
+                "quote": "The accuracy of this estimation largely depends on the data quality, which could be compromised.",
+                "matchedText": "the data quality",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown parameters",
+              "source": {
+                "type": "section",
+                "section": "Parameter Estimation",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 1,
+                "quote": "In this section, we estimate the unknown parameters of the proposed model.",
+                "matchedText": "the unknown parameters",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Which parameter to prioritize for improvement",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 76,
+                "quote": "In practice, the DM can assess whether Condition (6) is satisfied and decide which parameter to prioritize for improvement",
+                "matchedText": "which parameter to prioritize for improvement",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "At every checkpoint (or decision epoch) whether to extubate the patient",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Analysis",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 8,
+                "quote": "The DM, usually a physician, routinely monitors the patient’s condition and determines at every checkpoint (or decision epoch) whether to extu­ bate the patient",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The misclassification matrix via out-of-sample testing",
+              "source": {
+                "type": "section",
+                "section": "Parameter Estimation",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 4,
+                "quote": "Subsequently, we train a practical prediction model and estimate the misclassification matrix via out-of-sample testing",
+                "matchedText": "the misclassification matrix via out-of-sample testing",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Whether to invest in a prediction model",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 47,
+                "quote": "We provide an upper bound and a lower bound on the benefit of predictive information, serving as a rule of thumb for deciding whether to invest in a prediction model.",
+                "matchedText": "whether to invest in a prediction model",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Require additional respiratory support",
+              "source": {
+                "type": "section",
+                "section": "Parameter Estimation",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 8,
+                "quote": "We expect G(c) to be positively cor­ related with the risk of extubation failure r(c) because patients with failed extubation require additional respi­ ratory support",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are two classes of patients: class 1, representing patients in a severe condition, and class 2, denoting those in a better state",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 18,
+                "quote": "Suppose there are two classes of patients: class 1, representing patients in a severe condition, and class 2, denoting those in a better state.",
+                "matchedText": "there are two classes of patients: class 1, representing patients in a severe condition, and class 2, denoting those in a better state.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The true misclassification matrix of the prediction model is unknown to the DM, and Assumption 2 holds",
+              "source": {
+                "type": "section",
+                "section": "Benefit of Predictive Information",
+                "page": 13,
+                "sectionIndex": 9,
+                "sentence": 118,
+                "quote": "Suppose that the true misclassification matrix of the prediction model is unknown to the DM, and Assumption 2 holds.",
+                "matchedText": "the true misclassification matrix of the prediction model is unknown to the DM, and Assumption 2 holds.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The remaining LOS is independent of the length of the patient’s stay",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Analysis",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 40,
+                "quote": "Thus, we assume the remaining LOS is independent of the length of the patient’s stay.",
+                "matchedText": "the remaining LOS is independent of the length of the patient’s stay.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Note that the misclassification matrix is stationary, meaning prediction errors do not depend on time",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Analysis",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "Note that the misclassification matrix is stationary, meaning prediction errors do not depend on time.",
+                "matchedText": "Note that the misclassification matrix is stationary, meaning prediction errors do not depend on time",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Recently, McConville and Kress (2012) reaffirmed the RSBI threshold of 105 proposed by Yang and Tobin (1991) while proposing a set of early extubation strategies.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model Formulation and Theoretical Results",
+          "page": 7,
+          "sentence": 27
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3. Clinical Settings and Data",
+            "equation": "",
+            "quote": "Based on this rich data set, we can identify patients who received MV, observe the ventilation duration and the outcomes of extubation, monitor a patient’s respiratory condition—which is associated with the risk of extubation failure—and construct a model that predicts a patient’s future condition."
+          }
+        ],
+        "components": [
+          {
+            "id": "clinical-settings-and-data",
+            "label": "Clinical Settings and Data",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Based on this rich data set, we can identify patients who received MV, observe the ventilation duration and the outcomes of extubation, monitor a patient’s respiratory condition—which is associated with the risk of extubation failure—and construct a model that predicts a patient’s future condition.",
+            "searchPhrases": [
+              "how clinical settings and data is represented",
+              "information available to the decision maker in innovation, analytics, and technology",
+              "clinical settings and data information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Based on this rich data set, we can identify patients who received MV, observe the ventilation duration and the outcomes of extubation, monitor a patient’s respiratory condition—which is associated with the risk of extubation failure—and construct a model that predicts a patient’s future condition.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Because of the unavailability of historical data for patients admitted to the ICU in the initial month of our study period, that is, March 2010, these patients cannot be classified as new admissions or readmissions.",
+              "Following previous medical studies (Demling et al. 1988, Girault et al. 2011) and the practice in our partner ICU, we define extubation failure as the need for reintubation or noninvasive ventilation (NIV) within seven days after extubation.",
+              "Based on this rich data set, we can identify patients who received MV, observe the ventilation duration and the outcomes of extubation, monitor a patient’s respiratory condition—which is associated with the risk of extubation failure—and construct a model that predicts a patient’s future condition."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Clinical Settings and Data",
+                "equation": "",
+                "quote": "Based on this rich data set, we can identify patients who received MV, observe the ventilation duration and the outcomes of extubation, monitor a patient’s respiratory condition—which is associated with the risk of extubation failure—and construct a model that predicts a patient’s future condition."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-formulation-and-theoretical-results",
+            "label": "Model Formulation and Theoretical Results",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "The decision process for patients ventilated for more than a week is highly complex, significantly deviating from routine procedures.",
+            "searchPhrases": [
+              "how model formulation and theoretical results is represented",
+              "system process in innovation, analytics, and technology",
+              "model formulation and theoretical results system process specification"
+            ],
+            "formal": "Process relation: The decision process for patients ventilated for more than a week is highly complex, significantly deviating from routine procedures.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given access to predictive information, the DM can observe not only the current class ct but also a prediction for the patient’s class at the subsequent epoch, denoted as ˆct+1 ∈C.",
+              "In our ICU data set, only 1.6% of patients (n = 67) were on ventilators for more than a week."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Model Formulation and Theoretical Results",
+                "equation": "",
+                "quote": "The deci­ sion process for patients ventilated for more than a week is highly complex, significantly deviating from routine procedures."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “The decision process for patients ventilated for more than a week is highly complex, significantly deviating from routine”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "perfect-prediction-and-the-value-of-future-information",
+            "label": "Perfect Prediction and the Value of Future Information",
+            "role": "information",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "In this section, we first investigate the benefit of perfect prediction (i.e., Q = I), which provides an upper bound for the value of predictive information.",
+            "searchPhrases": [
+              "how perfect prediction and the value of future information is represented",
+              "information available to the decision maker in innovation, analytics, and technology",
+              "perfect prediction and the value of future information information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this section, we first investigate the benefit of perfect prediction (i.e., Q = I), which provides an upper bound for the value of predictive information.",
+              "Information In this section, we first investigate the benefit of perfect prediction (i.e., Q = I), which provides an upper bound for the value of predictive information.",
+              "With the estimated parameters at hand, we can computationally determine the optimal extubation policy without prediction (labeled as OP-B; Figure 3), as well as the optimal extubation policy with perfect predictions (labeled as OP-PP; Figure 4) by setting Q = I."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "5.1. Perfect Prediction and the Value of Future Information",
+                "equation": "",
+                "quote": "In this section, we first investigate the benefit of perfect prediction (i.e., Q = I), which provides an upper bound for the value of predictive information."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Forecasting as “prediction”: “first investigate the benefit of perfect prediction (i.e., Q = I), which provides an upper”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "c5b6a67465429816ff9b44ed17514e499cd16eb95368ab4eac1cf514a3ce5eee",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "cb51554b0c7cfe13e37d8fd2aa2aaa7d6813aeca7d3e9506b0cc7f0b123ef4ed",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2021-01427/cb51554b0c7cfe13e37d8fd2aa2aaa7d6813aeca7d3e9506b0cc7f0b123ef4ed.json",
+      "extractionQaDecisionSha256": "143e503739ce3d0ac3355171558883da027bf1cefb185d07c9627675dcedb249",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

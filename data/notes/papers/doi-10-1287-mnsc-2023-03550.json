@@ -1,0 +1,1960 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-03550",
+  "sourcePdfSha256": "08fe51541b49a00752b370947e2941a36d28b87bd319bec6da8171f6518c3a2f",
+  "extractionPagesSha256": "439f5faa5131daa622db6868d24625360c26b03454e6f42137045561fc77cf47",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "0efdba5a7462df37287cb29d781b338cfeda33ea8877a97d84ac7c57c668c803",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "3325967c21130f657dd56f3bb03ba440d9ec40eadb05d1d4fe5f2ff4b01da10b",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03550/3325967c21130f657dd56f3bb03ba440d9ec40eadb05d1d4fe5f2ff4b01da10b.json",
+  "extractionQaDecisionSha256": "694664e91318a1a2825e462807ea1fa84fbd125387b8c0751e905c2b17e548f7",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-03550",
+    "question": "Can a simple token rule make anonymous self-interested computing servers share idle capacity as efficiently as a fully informed central dispatcher?",
+    "overview": "N self-interested servers with private queue and token states repeatedly decide whether to process own jobs, help others, waste capacity, or request help. The mechanism induces an incomplete-information stochastic dynamic game analyzed through fluid mean-field equilibrium and approximate-best-response guarantees.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8,
+        9,
+        12,
+        16,
+        17,
+        18
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Incentivizing Resource Pooling model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "N self-interested servers with private queue and token states repeatedly decide whether to process own jobs, help others, waste capacity, or request help. The mechanism induces an incomplete-information stochastic dynamic game analyzed through fluid mean-field equilibrium and approximate-best-response guarantees.",
+        "objects": [
+          "N strategic servers, each operating a private M/M/1 queue",
+          "A planner",
+          "A service provider",
+          "Servers",
+          "Agents"
+        ],
+        "inputs": [
+          "A server privately observes its own queue length, tokens, arrivals, and interaction history",
+          "Other servers' states and actions and the shared-pool queue length are hidden",
+          "A server need not know the exact number of servers, only that the market is large",
+          "Arrival/service rates, cost parameters, token protocol, and token-earning probability are common knowledge",
+          "FMFE assumes a stationary history-independent distribution for the shared pool"
+        ],
+        "decisions": [
+          "Request help for one or more queued jobs",
+          "Retain jobs in the local queue",
+          "Serve a local job",
+          "Offer a capacity unit to the shared pool",
+          "Idle and waste a capacity unit"
+        ],
+        "assumptions": [
+          "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service",
+          "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost",
+          "Requests are irrevocable and the shared pool is FCFS and hidden",
+          "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance",
+          "Servers are homogeneous in the baseline and interact only through the shared pool"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "N strategic servers, each operating a private M/M/1 queue",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "N strategic servers, each operating a private M/M/1 queue"
+              }
+            },
+            {
+              "value": "A planner",
+              "source": {
+                "type": "section",
+                "section": "The continuous-time model and its embedded discrete-time model",
+                "page": 18,
+                "sectionIndex": 23,
+                "sentence": 14,
+                "quote": "This is because a planner may intentionally make a server wait for a better-fit job.",
+                "matchedText": "a planner",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A service provider",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation",
+                "page": 4,
+                "sectionIndex": 24,
+                "sentence": 18,
+                "quote": "In their model, a random player requests service in each period, and a mechanism specifies a service provider from those willing to offer help.",
+                "matchedText": "a service provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 1,
+                "quote": "We consider a continuous-time model with N servers indexed by i.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agents",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation",
+                "page": 4,
+                "sectionIndex": 24,
+                "sentence": 5,
+                "quote": "The mean-field equilibrium relaxes the informational requirements of agents, allowing them to know only the aggregate description of the system (in our case, the congestion level of the shared pool in the steady state), which makes it tractable and appealing, and aligns well with our limited informa­ tion setup.",
+                "matchedText": "agents",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A server privately observes its own queue length, tokens, arrivals, and interaction history",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "A server privately observes its own queue length, tokens, arrivals, and interaction history."
+              }
+            },
+            {
+              "value": "Other servers' states and actions and the shared-pool queue length are hidden",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Other servers' states and actions and the shared-pool queue length are hidden."
+              }
+            },
+            {
+              "value": "A server need not know the exact number of servers, only that the market is large",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "A server need not know the exact number of servers, only that the market is large."
+              }
+            },
+            {
+              "value": "Arrival/service rates, cost parameters, token protocol, and token-earning probability are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Arrival/service rates, cost parameters, token protocol, and token-earning probability are common knowledge."
+              }
+            },
+            {
+              "value": "FMFE assumes a stationary history-independent distribution for the shared pool",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "FMFE assumes a stationary history-independent distribution for the shared pool."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Request help for one or more queued jobs",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "request help for one or more queued jobs subject to the token balance"
+              }
+            },
+            {
+              "value": "Retain jobs in the local queue",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "retain jobs in the local queue"
+              }
+            },
+            {
+              "value": "Serve a local job",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "serve a local job"
+              }
+            },
+            {
+              "value": "Offer a capacity unit to the shared pool",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "offer a capacity unit to the shared pool"
+              }
+            },
+            {
+              "value": "Idle and waste a capacity unit",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "idle and waste a capacity unit"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service."
+              }
+            },
+            {
+              "value": "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost."
+              }
+            },
+            {
+              "value": "Requests are irrevocable and the shared pool is FCFS and hidden",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Requests are irrevocable and the shared pool is FCFS and hidden."
+              }
+            },
+            {
+              "value": "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance."
+              }
+            },
+            {
+              "value": "Servers are homogeneous in the baseline and interact only through the shared pool",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Servers are homogeneous in the baseline and interact only through the shared pool."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "To address this, we adopt the equilibrium notion of fluid mean-field equilibrium (FMFE), which is tractable and provides a good approximation to the servers’ strategic behaviors in our mechanism.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Our Contributions",
+          "page": 2,
+          "sentence": 13
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 12,
+            "section": "Policy in Corollary 4.1",
+            "equation": "",
+            "quote": "When the token-earning probability φ equals the job arrival rate λ, by the discussion following Corol­ lary 4.1, it is every server’s best strategy to request help for all incoming jobs and, upon the arrival of a capacity unit, offer help to the shared pool as long as its queue is empty."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Each server chooses a dynamic requesting and capacity-allocation strategy to minimize expected long-run average holding and processing costs.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in token incentives for decentralized resource pooling",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "limsup_{t→∞} (1/t)V_i(t), where V_i(t) ≜ E[\\Sigma_{j≤N_i^\\lambda(t)} w_ij + c(L_i(t)+T_i(t))]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "Q_i(t), S_i(t)",
+                "meaning": "server i's private queue length and token balance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Y_i(t)∈{0, 1, ∅}",
+                "meaning": "serve own job, offer help, or waste a capacity unit",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X_i(t)∈{0, 1}",
+                "meaning": "retain or request an incoming job in the fluid mean-field relaxation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\varphi",
+                "meaning": "probability of earning a token when offering help",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V^F(w)",
+                "meaning": "representative server's fluid mean-field optimization value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_i(t)",
+                "meaning": "server i's expected cumulative waiting and processing cost through time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_i^\\lambda(t)",
+                "meaning": "number of jobs that have arrived to server i by time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_ij",
+                "meaning": "sojourn time of the jth job arriving to server i",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "unit cost incurred when a server processes a job",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "L_i(t), T_i(t)",
+                "meaning": "numbers of capacity units server i uses by time t for its own jobs and for other servers' jobs",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "continuous-time horizon",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service.",
+              "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost.",
+              "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "In this scenario, a central planner has full control over the servers and aims to minimize the expected time-average total cost of the entire system."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “In this scenario, a central planner has full control over the servers and aims to minimize the expected”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "A server privately observes its own queue length, tokens, arrivals, and interaction history. Other servers' states and actions and the shared-pool queue length are hidden. A server need not know the exact number of servers, only that the market is large. Arrival/service rates, cost parameters, token protocol, and token-earning probability are common knowledge.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in token incentives for decentralized resource pooling",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: A server privately observes its own queue length, tokens, arrivals, and interaction history.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Q_i(t), S_i(t)",
+                "meaning": "server i's private queue length and token balance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\varphi",
+                "meaning": "probability of earning a token when offering help",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_i(t)",
+                "meaning": "server i's expected cumulative waiting and processing cost through time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_i^\\lambda(t)",
+                "meaning": "number of jobs that have arrived to server i by time t",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each server i ∈[N] assumes that the shared pool queue length is in the stationary distribution at any time t (whose probability mass function is denoted by Ψ(·)), independent of its observed history hi(t).",
+              "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service.",
+              "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost.",
+              "Requests are irrevocable and the shared pool is FCFS and hidden."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. Mean-Field and Fluid Approximation",
+                "equation": "",
+                "quote": "Each server i ∈[N] assumes that the shared pool queue length is in the stationary distribution at any time t (whose probability mass function is denoted by Ψ(·)), independent of its observed history hi(t)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Queueing: “Each server i ∈[N] assumes that the shared pool queue length is in the stationary distribution at any”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "dynamic-programming",
+              "queueing"
+            ],
+            "explanation": "The paper benchmarks centralized work-conserving control, formulates the incomplete-information stochastic game, relaxes it through stationary mean-field beliefs and fluid token balance, solves the representative server's dynamic program in closed form, imposes equilibrium consistency, optimizes φ, and proves asymptotic near-best-response bounds for the original token-capped game.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in token incentives for decentralized resource pooling",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Q_i(t), S_i(t)",
+                "meaning": "server i's private queue length and token balance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X_i(t)∈{0, 1}",
+                "meaning": "retain or request an incoming job in the fluid mean-field relaxation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V^F(w)",
+                "meaning": "representative server's fluid mean-field optimization value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "unit cost incurred when a server processes a job",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service.",
+              "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.2. Simplification of Mean-Field Approximation",
+                "equation": "",
+                "quote": "The mean-field problem (1) can be formulated as a two-dimensional (i.e., the queue length Qi and number of tokens Si) stochastic dynamic program (DP), but is still challenging to solve."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic programming as “dynamic program”: “dynamic program”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "Jobs and service-capacity units arrive independently to every server in continuous time. At any time, a server may spend tokens to request help for one or more queued jobs and move them irrevocably to the shared pool. On a capacity arrival, it may serve a local job, offer help to the pool, or idle; offering help earns a token with probability φ. The process repeats indefinitely and each server minimizes long-run average cost.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in token incentives for decentralized resource pooling",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: Jobs and service-capacity units arrive independently to every server in continuous time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Q_i(t), S_i(t)",
+                "meaning": "server i's private queue length and token balance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Y_i(t)∈{0, 1, ∅}",
+                "meaning": "serve own job, offer help, or waste a capacity unit",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X_i(t)∈{0, 1}",
+                "meaning": "retain or request an incoming job in the fluid mean-field relaxation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\varphi",
+                "meaning": "probability of earning a token when offering help",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In this section, we solve (2) in closed form for any shared pool waiting time w ≥0, thus completely characterizing a server’s best response in FMFE.",
+              "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service.",
+              "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost.",
+              "Requests are irrevocable and the shared pool is FCFS and hidden."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Server’s Best Response in FMFE",
+                "equation": "",
+                "quote": "In this section, we solve (2) in closed form for any shared pool waiting time w ≥0, thus completely charac­ terizing a server’s best response in FMFE."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “best response”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "Request help for one or more queued jobs subject to the token balance retain jobs in the local queue serve a local job offer a capacity unit to the shared pool idle and waste a capacity unit",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in token incentives for decentralized resource pooling",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Request help for one or more queued jobs subject to the token balance retain jobs in the local queue serve a local job offer a capacity unit to the shared pool idle and waste a capacity unit",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Q_i(t), S_i(t)",
+                "meaning": "server i's private queue length and token balance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Y_i(t)∈{0, 1, ∅}",
+                "meaning": "serve own job, offer help, or waste a capacity unit",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X_i(t)∈{0, 1}",
+                "meaning": "retain or request an incoming job in the fluid mean-field relaxation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\varphi",
+                "meaning": "probability of earning a token when offering help",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service.",
+              "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost.",
+              "Requests are irrevocable and the shared pool is FCFS and hidden."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "Policy in Corollary 4.1",
+                "equation": "",
+                "quote": "When the token-earning probability φ equals the job arrival rate λ, by the discussion following Corol­ lary 4.1, it is every server’s best strategy to request help for all incoming jobs and, upon the arrival of a capacity unit, offer help to the shared pool as long as its queue is empty."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Queueing: “When the token-earning probability φ equals the job arrival rate λ, by the discussion following Corollary 4.1, it”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "fluid-mean-field-equilibrium-with-asymptotically-near-optimal-be",
+            "label": "Fluid mean-field equilibrium with asymptotically near-optimal best responses",
+            "role": "interaction",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Fluid mean-field equilibrium with asymptotically near-optimal best responses. Definition 3.1 requires the representative server's policy to solve V^F(w) and induce the same shared-pool waiting time w when universally adopted. Lemma 4.1 gives the threshold best response, Proposition 4.3 establishes cooperative FMFE, and Section 6 bounds gains from deviation in the original game.",
+            "searchPhrases": [
+              "how fluid mean-field equilibrium with asymptotically near-optimal best responses is represented",
+              "strategic response in token incentives for decentralized resource pooling",
+              "fluid mean-field equilibrium with asymptotically near-optimal best responses strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Fluid mean-field equilibrium with asymptotically near-optimal best responses.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X_i(t)∈{0, 1}",
+                "meaning": "retain or request an incoming job in the fluid mean-field relaxation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V^F(w)",
+                "meaning": "representative server's fluid mean-field optimization value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_i(t)",
+                "meaning": "server i's expected cumulative waiting and processing cost through time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_i^\\lambda(t)",
+                "meaning": "number of jobs that have arrived to server i by time t",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "First, Remark 3.1 still holds, and the definition of the fluid mean-field problem remains unchanged, except that serving a job from the shared pool now costs c′ ≥c.18 Lemma 7.1 characterizes a server’s best response in the fluid mean-field problem, by showing that it mirrors the best response in the base model (Lemma 4.1), with w + ∆c substituting for w.",
+              "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service.",
+              "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost.",
+              "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "Setting",
+                "equation": "",
+                "quote": "First, Remark 3.1 still holds, and the definition of the fluid mean-field problem remains unchanged, except that serving a job from the shared pool now costs c′ ≥c.18 Lemma 7.1 characterizes a ser­ ver’s best response in the fluid mean-field problem, by showing that it mirrors the best response in the base model (Lemma 4.1), with w + ∆c substituting for w."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “best response”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "benchmark-centralized-control-with-full",
+        "name": "Benchmark: Centralized Control with Full Information",
+        "kind": "alternative",
+        "relation": "This is an alternative to Incentivizing Resource Pooling model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "The planner determines the action Yi(t) when a capacity unit arrives at server i at time t. Specifically, when a job arrives, a server relocates the job to the shared pool when it has z jobs or more; otherwise, it adds the job to its queue to process on its own later.",
+        "objects": [
+          "The servers",
+          "Planner",
+          "The planner"
+        ],
+        "inputs": [
+          "Time t"
+        ],
+        "decisions": [
+          "Minimize the expected time-average total cost of the entire system",
+          "Pool and pool service power to serve jobs"
+        ],
+        "assumptions": [
+          "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service",
+          "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost",
+          "Requests are irrevocable and the shared pool is FCFS and hidden",
+          "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance",
+          "Servers are homogeneous in the baseline and interact only through the shared pool"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The servers",
+              "source": {
+                "type": "section",
+                "section": "Benchmark: Centralized Control with Full",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "In this scenario, a central planner has full control over the servers and aims to minimize the expected time-average total cost of the entire system.",
+                "matchedText": "the servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Planner",
+              "source": {
+                "type": "section",
+                "section": "Benchmark: Centralized Control with Full",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "In this scenario, a central planner has full control over the servers and aims to minimize the expected time-average total cost of the entire system.",
+                "matchedText": "planner",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The planner",
+              "source": {
+                "type": "section",
+                "section": "Benchmark: Centralized Control with Full",
+                "sectionIndex": 0,
+                "page": 5,
+                "quote": "The planner determines the action Yi(t) when a capac­ ity unit arrives at server i at time t."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Benchmark: Centralized Control with Full",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "The planner determines the action Yi(t) when a capac­ ity unit arrives at server i at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Minimize the expected time-average total cost of the entire system",
+              "source": {
+                "type": "section",
+                "section": "Benchmark: Centralized Control with Full",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "In this scenario, a central planner has full control over the servers and aims to minimize the expected time-average total cost of the entire system.",
+                "matchedText": "minimize the expected time-average total cost of the entire system",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Pool and pool service power to serve jobs",
+              "source": {
+                "type": "section",
+                "section": "Optimal Control for Centralized Setting",
+                "sectionIndex": 1,
+                "page": 16,
+                "quote": "In particular, when ∆c = 0, ¯q = 0 because m(0) = 0; that is, servers relocate all jobs to the shared pool and pool service power to serve jobs, corre­ sponding to the centralized control (i.e., complete resource pooling) in Section 2.1."
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service."
+              }
+            },
+            {
+              "value": "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Jobs cost one per unit waiting time and c per processing; servers minimize time-average expected cost."
+              }
+            },
+            {
+              "value": "Requests are irrevocable and the shared pool is FCFS and hidden",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Requests are irrevocable and the shared pool is FCFS and hidden."
+              }
+            },
+            {
+              "value": "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Tokens have a finite cap C in the original game; the fluid relaxation replaces this with long-run earning-spending balance."
+              }
+            },
+            {
+              "value": "Servers are homogeneous in the baseline and interact only through the shared pool",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Servers are homogeneous in the baseline and interact only through the shared pool."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_completed_from_source",
+            "message": "Filled assumptions from literal abstract or source-section phrases.",
+            "category": "assumptions",
+            "count": 1
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper identifies the optimal value of z ∈N that minimizes the system’s total cost when the number of servers N is large.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Optimal Control for Centralized Setting",
+          "page": 16,
+          "sentence": 10
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 16,
+            "section": "7.1. Optimal Control for Centralized Setting",
+            "equation": "",
+            "quote": "Specifically, when a job arrives, a server relocates the job to the shared pool when it has z jobs or more; other­ wise, it adds the job to its queue to process on its own later."
+          }
+        ],
+        "components": [
+          {
+            "id": "benchmark-centralized-control-with-full-information",
+            "label": "Benchmark: Centralized Control with Full Information",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "The planner determines the action Yi(t) when a capacity unit arrives at server i at time t.",
+            "searchPhrases": [
+              "how benchmark: centralized control with full information is represented",
+              "feasibility condition in token incentives for decentralized resource pooling",
+              "benchmark: centralized control with full information feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Y_i(t)∈{0, 1, ∅}",
+                "meaning": "serve own job, offer help, or waste a capacity unit",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_i(t)",
+                "meaning": "server i's expected cumulative waiting and processing cost through time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_i^\\lambda(t)",
+                "meaning": "number of jobs that have arrived to server i by time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_ij",
+                "meaning": "sojourn time of the jth job arriving to server i",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Under such a policy, the dynamics of the total number of jobs in the system behave as an M=M=1 queue, with the job arrival and processing rates being Nλ and N, respectively.",
+              "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.1. Benchmark: Centralized Control with Full Information",
+                "equation": "",
+                "quote": "The planner determines the action Yi(t) when a capac­ ity unit arrives at server i at time t."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “The planner determines the action Yi(t) when a capacity unit arrives at server i at time t.”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "optimal-control-for-centralized-setting",
+            "label": "Optimal Control for Centralized Setting",
+            "role": "process",
+            "concepts": [
+              "optimal-control",
+              "queueing"
+            ],
+            "explanation": "Specifically, when a job arrives, a server relocates the job to the shared pool when it has z jobs or more; otherwise, it adds the job to its queue to process on its own later.",
+            "searchPhrases": [
+              "how optimal control for centralized setting is represented",
+              "system process in token incentives for decentralized resource pooling",
+              "optimal control for centralized setting system process specification"
+            ],
+            "formal": "Process relation: Specifically, when a job arrives, a server relocates the job to the shared pool when it has z jobs or more; otherwise, it adds the job to its queue to process on its own later.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Q_i(t), S_i(t)",
+                "meaning": "server i's private queue length and token balance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Y_i(t)∈{0, 1, ∅}",
+                "meaning": "serve own job, offer help, or waste a capacity unit",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_i^\\lambda(t)",
+                "meaning": "number of jobs that have arrived to server i by time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_ij",
+                "meaning": "sojourn time of the jth job arriving to server i",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "From Proposition 4.2, the expected waiting time in the shared pool, denoted by w, diminishes to zero at a rate of w = O 1 N for any cutoff policy.",
+              "We now identify the optimal value of z ∈N that minimizes the system’s total cost when the number of servers N is large.",
+              "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "7.1. Optimal Control for Centralized Setting",
+                "equation": "",
+                "quote": "Specifically, when a job arrives, a server relocates the job to the shared pool when it has z jobs or more; other­ wise, it adds the job to its queue to process on its own later."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimal-control",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Optimal control: “Specifically, when a job arrives, a server relocates the job to the shared pool when it has z”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing: “Specifically, when a job arrives, a server relocates the job to the shared pool when it has z”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "Each server has Poisson job rate λ<1 and service-capacity rate one, with exponential/Poisson-clock service."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mean-field-and-fluid-approximation",
+        "name": "Mean-Field and Fluid Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Incentivizing Resource Pooling model.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "When deciding whether to request help, a server needs to estimate the waiting time in the shared pool if it relocates a job there. Specifically, as will become evident, the expected waiting time in the shared pool diminishes to zero as the number of servers increases by Proposition 4.2.",
+        "objects": [
+          "A planner",
+          "Servers"
+        ],
+        "inputs": [
+          "The initial state"
+        ],
+        "decisions": [
+          "Whether to request help",
+          "Help (as token-earning and token-spending rates are equal)"
+        ],
+        "assumptions": [
+          "Consequently, the distribution of the shared pool’s queue length also remains stationary and uncorrelated over time"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A planner",
+              "source": {
+                "type": "section",
+                "section": "The continuous-time model and its embedded discrete-time model",
+                "page": 18,
+                "sectionIndex": 1,
+                "sentence": 14,
+                "quote": "This is because a planner may intentionally make a server wait for a better-fit job.",
+                "matchedText": "a planner",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Mean-Field and Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "A key feature of our token mechanism is that servers interact with each other only through the shared pool.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The initial state",
+              "source": {
+                "type": "section",
+                "section": "The continuous-time model and its embedded discrete-time model",
+                "page": 18,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "are equivalent because, under any stationary policy, the limiting dis­ tributions of the continuous-time and discrete-time Markov chains converge to the same stationary distribution (which may depend on the initial state if the Markov chain has multiple recurrent classes).",
+                "matchedText": "the initial state",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to request help",
+              "source": {
+                "type": "section",
+                "section": "Mean-Field and Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "When deciding whether to request help, a server needs to estimate the waiting time in the shared pool if it relocates a job there.",
+                "matchedText": "whether to request help",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Help (as token-earning and token-spending rates are equal)",
+              "source": {
+                "type": "section",
+                "section": "Mean-Field and Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 22,
+                "quote": "Therefore, at each server, the rate of requesting help is φ times the rate of offering help (as token-earning and token-spending rates are equal)",
+                "matchedText": "help (as token-earning and token-spending rates are equal)",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Consequently, the distribution of the shared pool’s queue length also remains stationary and uncorrelated over time",
+              "source": {
+                "type": "section",
+                "section": "Mean-Field and Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "Consequently, the distribution of the shared pool’s queue length also remains stationary and uncorrelated over time.",
+                "matchedText": "Consequently, the distribution of the shared pool’s queue length also remains stationary and uncorrelated over time.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_completed_from_source",
+            "message": "Filled assumptions from literal abstract or source-section phrases.",
+            "category": "assumptions",
+            "count": 1
+          }
+        ],
+        "method": "To address this, we adopt the equilibrium notion of fluid mean-field equilibrium (FMFE), which is tractable and provides a good approximation to the servers’ strategic behaviors in our mechanism.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Our Contributions",
+          "page": 2,
+          "sentence": 13
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 18,
+            "section": "11. The continuous-time model and its embedded discrete-time model",
+            "equation": "",
+            "quote": "Specifically, as will become evi­ dent, the expected waiting time in the shared pool diminishes to zero as the number of servers increases by Proposition 4.2."
+          }
+        ],
+        "components": [
+          {
+            "id": "mean-field-and-fluid-approximation",
+            "label": "Mean-Field and Fluid Approximation",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "When deciding whether to request help, a server needs to estimate the waiting time in the shared pool if it relocates a job there.",
+            "searchPhrases": [
+              "how mean-field and fluid approximation is represented",
+              "decision rule in token incentives for decentralized resource pooling",
+              "mean-field and fluid approximation decision rule specification"
+            ],
+            "formal": "Decision rule: When deciding whether to request help, a server needs to estimate the waiting time in the shared pool if it relocates a job there.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Y_i(t)∈{0, 1, ∅}",
+                "meaning": "serve own job, offer help, or waste a capacity unit",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X_i(t)∈{0, 1}",
+                "meaning": "retain or request an incoming job in the fluid mean-field relaxation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V^F(w)",
+                "meaning": "representative server's fluid mean-field optimization value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_i(t)",
+                "meaning": "server i's expected cumulative waiting and processing cost through time t",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each server i ∈[N] assumes that the shared pool queue length is in the stationary distribution at any time t (whose probability mass function is denoted by Ψ(·)), independent of its observed history hi(t).",
+              "The expected waiting time of a job in the shared pool is a constant w ≥0, which is independent of the history.",
+              "Meanwhile, a server considering whether to offer help would take into account the probability that the shared pool is empty, which would allow it to earn a token without incurring the cost of serving a job from the shared pool."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. Mean-Field and Fluid Approximation",
+                "equation": "",
+                "quote": "When deciding whether to request help, a server needs to estimate the waiting time in the shared pool if it relocates a job there."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “When deciding whether to request help, a server needs to estimate the waiting time in the shared pool”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-continuous-time-model-and-its-embedded-discrete-time-model",
+            "label": "The continuous-time model and its embedded discrete-time model",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "Specifically, as will become evident, the expected waiting time in the shared pool diminishes to zero as the number of servers increases by Proposition 4.2.",
+            "searchPhrases": [
+              "how the continuous-time model and its embedded discrete-time model is represented",
+              "decision-relevant state in token incentives for decentralized resource pooling",
+              "the continuous-time model and its embedded discrete-time model decision-relevant state specification"
+            ],
+            "formal": "State definition: Specifically, as will become evident, the expected waiting time in the shared pool diminishes to zero as the number of servers increases by Proposition 4.2.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V_i(t)",
+                "meaning": "server i's expected cumulative waiting and processing cost through time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_i^\\lambda(t)",
+                "meaning": "number of jobs that have arrived to server i by time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_ij",
+                "meaning": "sojourn time of the jth job arriving to server i",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "unit cost incurred when a server processes a job",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "19 Recall that ̄q represents the largest integer z such that m(z) ≤∆c.",
+              "Specifically, as will become evident, the expected waiting time in the shared pool diminishes to zero as the number of servers increases by Proposition 4.2."
+            ],
+            "sources": [
+              {
+                "page": 18,
+                "section": "11. The continuous-time model and its embedded discrete-time model",
+                "equation": "",
+                "quote": "Specifically, as will become evi­ dent, the expected waiting time in the shared pool diminishes to zero as the number of servers increases by Proposition 4.2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “System state”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "simplification-of-mean-field-approximation",
+        "name": "Simplification of Mean-Field Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Incentivizing Resource Pooling model.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "The mean-field problem (1) can be formulated as a two-dimensional (i.e., the queue length Qi and number of tokens Si) stochastic dynamic program (DP), but is still challenging to solve.",
+        "objects": [
+          "A server",
+          "State space"
+        ],
+        "inputs": [
+          "The holding cost",
+          "The expected queue length of a server in the stationary distribution",
+          "Arrival Rate"
+        ],
+        "decisions": [
+          "Request help for one or more queued jobs",
+          "Retain jobs in the local queue",
+          "Serve a local job",
+          "Offer a capacity unit to the shared pool",
+          "Idle and waste a capacity unit"
+        ],
+        "assumptions": [
+          "Instead, the optimal strategy depends only on a server’s individual state xi(t) = (Qi(t),Si(t))—which includes its queue length and token amount—as well as the stationary distribution of the shared pool queue length through the waiting time w in the shared pool.",
+          "All servers follow the FMFE strategy in Corollary 4.1 in the fluid mean-field problem",
+          "Let QΣ(φ) denote the expected number of jobs in the system in the stationary distribution when the token-earning probability equals φ"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A server",
+              "source": {
+                "type": "section",
+                "section": "Simplification of Mean-Field Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Under Assumption 3.1, a server’s optimal strategy is no longer history dependent, because the history’s only purpose is to maintain a belief about the shared pool queue length.",
+                "matchedText": "a server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "Simplification of Mean-Field Approximation",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 28,
+                "quote": "Problem (2) can be formulated as a stochastic dynamic programming problem with a one-dimensional state space, where an optimal stationary policy depends only on the number of jobs in the queue and is independent of the number of tokens the server possesses.",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The holding cost",
+              "source": {
+                "type": "section",
+                "section": "Simplification of Mean-Field Approximation",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 17,
+                "quote": "In the objective function, Qi(t) 1+λ represents the holding cost for jobs in the queue of server i in period t (note that the length of a period is 1 1+λ in expectation), and φ in the last term is the probability that a capacity unit contributed to the shared pool serves a job and hence incurs a cost of c.",
+                "matchedText": "the holding cost",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The expected queue length of a server in the stationary distribution",
+              "source": {
+                "type": "section",
+                "section": "Optimal Value of f",
+                "sectionIndex": 1,
+                "page": 11,
+                "quote": "the expected queue length of a server in the stationary distribution",
+                "matchedText": "the expected queue length of a server in the stationary distribution",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival Rate",
+              "source": {
+                "type": "section",
+                "section": "Optimal Value of f",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 21,
+                "quote": "Arrival Rate",
+                "matchedText": "Arrival Rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Request help for one or more queued jobs",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "request help for one or more queued jobs subject to the token balance"
+              }
+            },
+            {
+              "value": "Retain jobs in the local queue",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "retain jobs in the local queue"
+              }
+            },
+            {
+              "value": "Serve a local job",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "serve a local job"
+              }
+            },
+            {
+              "value": "Offer a capacity unit to the shared pool",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "offer a capacity unit to the shared pool"
+              }
+            },
+            {
+              "value": "Idle and waste a capacity unit",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "idle and waste a capacity unit"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Instead, the optimal strategy depends only on a server’s individual state xi(t) = (Qi(t),Si(t))—which includes its queue length and token amount—as well as the stationary distribution of the shared pool queue length through the waiting time w in the shared pool.",
+              "source": {
+                "type": "section",
+                "section": "Simplification of Mean-Field Approximation",
+                "page": 7,
+                "quote": "Instead, the optimal strategy depends only on a server’s individual state xi(t) = (Qi(t),Si(t))—which includes its queue length and token amount—as well as the stationary distribution of the shared pool queue length through the waiting time w in the shared pool."
+              }
+            },
+            {
+              "value": "All servers follow the FMFE strategy in Corollary 4.1 in the fluid mean-field problem",
+              "source": {
+                "type": "section",
+                "section": "Optimal Value of f",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 9,
+                "quote": "Suppose all servers follow the FMFE strat­ egy in Corollary 4.1 in the fluid mean-field problem.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Let QΣ(φ) denote the expected number of jobs in the system in the stationary distribution when the token-earning probability equals φ",
+              "source": {
+                "type": "section",
+                "section": "Optimal Value of f",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 11,
+                "quote": "Let QΣ(φ) denote the expected number of jobs in the system in the stationary distribution when the token-earning probability equals φ.",
+                "matchedText": "Let QΣ(φ) denote the expected number of jobs in the system in the stationary distribution when the token-earning probability equals φ.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-authored",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "To better handle a server’s problem, we introduce a second level of approximation, where we allow the number of tokens to be negative and to go beyond the upper bound C, and we require only that the tokens satisfy the flow balance constraint, that is, that the expected rates of earning and spending tokens be equal in the long-run average.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Simplification of Mean-Field Approximation",
+          "page": 8,
+          "sentence": 23
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.2. Simplification of Mean-Field Approximation",
+            "equation": "",
+            "quote": "The mean-field problem (1) can be formulated as a two-dimensional (i.e., the queue length Qi and number of tokens Si) stochastic dynamic program (DP), but is still challenging to solve."
+          }
+        ],
+        "components": [
+          {
+            "id": "simplification-of-mean-field-approximation",
+            "label": "Simplification of Mean-Field Approximation",
+            "role": "algorithm",
+            "concepts": [
+              "dynamic-programming",
+              "queueing"
+            ],
+            "explanation": "The mean-field problem (1) can be formulated as a two-dimensional (i.e., the queue length Qi and number of tokens Si) stochastic dynamic program (DP), but is still challenging to solve.",
+            "searchPhrases": [
+              "how simplification of mean-field approximation is represented",
+              "solution algorithm in token incentives for decentralized resource pooling",
+              "simplification of mean-field approximation solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The mean-field problem (1) can be formulated as a two-dimensional (i.e., the queue length Qi and number of tokens Si) stochastic dynamic program (DP), but is still challenging to solve.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Q_i(t), S_i(t)",
+                "meaning": "server i's private queue length and token balance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_i(t)∈[0, Q_i(t)]",
+                "meaning": "number of queued jobs server i requests for outside help at time t in the original dynamic game",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X_i(t)∈{0, 1}",
+                "meaning": "retain or request an incoming job in the fluid mean-field relaxation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "steady-state expected waiting time in the shared pool",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "V^F(w)",
+                "meaning": "representative server's fluid mean-field optimization value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "unit cost incurred when a server processes a job",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Instead, the optimal strategy depends only on a server’s individual state xi(t) = (Qi(t),Si(t))—which includes its queue length and token amount—as well as the stationary distribution of the shared pool queue length through the waiting time w in the shared pool.",
+              "Problem (2) can be formulated as a stochastic dynamic programming problem with a one-dimensional state space, where an optimal stationary policy depends only on the number of jobs in the queue and is independent of the number of tokens the server possesses."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.2. Simplification of Mean-Field Approximation",
+                "equation": "",
+                "quote": "The mean-field problem (1) can be formulated as a two-dimensional (i.e., the queue length Qi and number of tokens Si) stochastic dynamic program (DP), but is still challenging to solve."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic programming as “dynamic program”: “dynamic program”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Instead, the optimal strategy depends only on a server’s individual state xi(t) = (Qi(t),Si(t))—which includes its queue length and token amount—as well as the stationary distribution of the shared pool queue length through the waiting time w in the shared pool.",
+                  "source": {
+                    "type": "section",
+                    "section": "Simplification of Mean-Field Approximation",
+                    "page": 7,
+                    "quote": "Instead, the optimal strategy depends only on a server’s individual state xi(t) = (Qi(t),Si(t))—which includes its queue length and token amount—as well as the stationary distribution of the shared pool queue length through the waiting time w in the shared pool."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "08fe51541b49a00752b370947e2941a36d28b87bd319bec6da8171f6518c3a2f",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "3325967c21130f657dd56f3bb03ba440d9ec40eadb05d1d4fe5f2ff4b01da10b",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03550/3325967c21130f657dd56f3bb03ba440d9ec40eadb05d1d4fe5f2ff4b01da10b.json",
+      "extractionQaDecisionSha256": "694664e91318a1a2825e462807ea1fa84fbd125387b8c0751e905c2b17e548f7",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2023-00829",
+  "sourcePdfSha256": "9645bc914d40976d5961e6c22006b1dc6f8b26103ed9a6094704c0498c8f2bae",
+  "extractionPagesSha256": "1a3478bfda5e8a368676d28906b4e9b5b32e231e945f4aa1e3d0fbcab3f23b1f",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "69c54a0e4552b62fd76de4d3f469ebd0d2ed59bd83199a955b2d91c78d0c7c5b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "182f2dda66019642888e1bf7d0c87ddb2bd9815cf68c42aa68a79b5912f1b8b3",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00829/182f2dda66019642888e1bf7d0c87ddb2bd9815cf68c42aa68a79b5912f1b8b3.json",
+  "extractionQaDecisionSha256": "3c8f5152510f64ff2ebf1a9622706fc84b82ca26d2b0daad13ba04adc4a2ede1",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-00829",
+    "question": "How does active sequential hypothesis testing (ASHT) contribute to challenges in developing liquid biopsies for early-stage cancer detection?",
+    "overview": "This paper addresses challenges in developing liquid biopsies for early-stage cancer detection through active sequential hypothesis testing (ASHT). In the problem of ASHT, a learner seeks to identify the true hypothesis (true cancer type) from a known set of hypotheses (candidate cancer types). The learner is given a set of actions (sequencing genetic intervals) and knows the distribution of the random outcome (whether a mutation is detected) of any action under any true hypothesis.",
+    "modelTypes": [
+      "Structural model",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        10,
+        11
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Toward a Liquid Biopsy model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This paper addresses challenges in developing liquid biopsies for early-stage cancer detection through active sequential hypothesis testing (ASHT). In the problem of ASHT, a learner seeks to identify the true hypothesis (true cancer type) from a known set of hypotheses (candidate cancer types). The learner is given a set of actions (sequencing genetic intervals) and knows the distribution of the random outcome (whether a mutation is detected) of any action under any true hypothesis.",
+        "objects": [
+          "Cell",
+          "Table",
+          "Elements",
+          "Node"
+        ],
+        "inputs": [
+          "Each type",
+          "The minimum expected cost"
+        ],
+        "decisions": [
+          "Test yielded an outcome inconsistent with that hypothesis",
+          "Test costs are replaced by c′",
+          "Admit a solution via computational brute force",
+          "Select the best permutation of U in the following sense"
+        ],
+        "assumptions": [
+          "A probabilistic model for observing mutations in sequenced DNA, wherein every genetic interval is associated with a cancer-specific probability, and mutations are observed independently with that probability during each new sequencing",
+          "The prior π is uniform over the four hypotheses"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Cell",
+              "source": {
+                "type": "section",
+                "section": "Problem and Our Contributions",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 2,
+                "quote": "Note that sequenc­ ing the same interval multiple times for an individual corresponds to sequencing distinct strands of cell-free DNA extracted from their blood, so the probability of observing a mutation captures both (a) the likelihood that an individual’s tumor contains that mutation and (b) the likelihood that the particular strand of cell-free DNA originates from the tumor.",
+                "matchedText": "cell",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Table",
+              "source": {
+                "type": "section",
+                "section": "Problem and Our Contributions",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 5,
+                "quote": "We assume that this mutation table is known: In practice, this would be estimated from widely avail­ able cancer-specific DNA sequencing data as illustrated in our experiments (e.g., COSMIC, Cosmic (2019); UK Biobank, Bycroft et al. (2018)).",
+                "matchedText": "table",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Elements",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 7,
+                "sentence": 11,
+                "quote": "Note that all elements of the tuple (H,A,π,µ,D) are assumed to be known, except for the true hypothesis h∗.",
+                "matchedText": "elements",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Node",
+              "source": {
+                "type": "section",
+                "section": "Decision Trees",
+                "page": 11,
+                "sectionIndex": 18,
+                "sentence": 6,
+                "quote": "At each iteration (or node in the decision tree, equiva­ lently), the hypotheses can be partitioned into (i) those that have been eliminated, in the sense that a previous test yielded an outcome inconsistent with that hypothe­ sis,15 and (ii) those that are alive, or not eliminated.",
+                "matchedText": "node",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each type",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 7,
+                "sentence": 4,
+                "quote": "For liquid biopsies, this prior represents a belief regarding the likelihood that the individual has each type of cancer.",
+                "matchedText": "each type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The minimum expected cost",
+              "source": {
+                "type": "section",
+                "section": "Solving Deterministic Instances via Submodular Function Ranking",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 16,
+                "quote": "Thus, the cover time CT(fh,σ) represents the minimum cost incurred by a partially adaptive algorithm whose permutation is σ when the true hypothesis is h, and the total cover time CT(F,σ) represents the minimum expected cost.",
+                "matchedText": "the minimum expected cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Test yielded an outcome inconsistent with that hypothesis",
+              "source": {
+                "type": "section",
+                "section": "Decision Trees",
+                "page": 11,
+                "sectionIndex": 18,
+                "sentence": 6,
+                "quote": "At each iteration (or node in the decision tree, equiva­ lently), the hypotheses can be partitioned into (i) those that have been eliminated, in the sense that a previous test yielded an outcome inconsistent with that hypothe­ sis",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Test costs are replaced by c′",
+              "source": {
+                "type": "section",
+                "section": "Decision Trees",
+                "page": 12,
+                "sectionIndex": 36,
+                "sentence": 30,
+                "quote": "This motivates us to define another ODT instance I ′ ODT, whose only difference from I ODT is that all test costs are replaced by c′",
+                "matchedText": "test costs are replaced by c′",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Admit a solution via computational brute force",
+              "source": {
+                "type": "section",
+                "section": "Panels and Adaptive Panels Constructed Using a Partially Adaptive Greedy Algorithm",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 7,
+                "quote": "The problem of identifying the opti­ mal adaptive test can similarly be formalized (as we will do), although that problem does not admit a solution via computational brute force",
+                "matchedText": "admit a solution via computational brute force",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Select the best permutation of U in the following sense",
+              "source": {
+                "type": "section",
+                "section": "Solving Deterministic Instances via Submodular Function Ranking",
+                "page": 8,
+                "sectionIndex": 14,
+                "sentence": 12,
+                "quote": "The goal is to select the best permutation of U in the following sense.",
+                "matchedText": "select the best permutation of U in the following sense",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A probabilistic model for observing mutations in sequenced DNA, wherein every genetic interval is associated with a cancer-specific probability, and mutations are observed independently with that probability during each new sequencing",
+              "source": {
+                "type": "section",
+                "section": "Problem and Our Contributions",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 1,
+                "quote": "We assume a probabilistic model for observing muta­ tions in sequenced DNA, wherein every genetic inter­ val is associated with a cancer-specific probability, and mutations are observed independently with that proba­ bility during each new sequencing.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The prior π is uniform over the four hypotheses",
+              "source": {
+                "type": "section",
+                "section": "Adaptivity of Algorithms",
+                "page": 6,
+                "sectionIndex": 9,
+                "sentence": 22,
+                "quote": "Suppose the prior π is uniform over the four hypotheses.",
+                "matchedText": "the prior π is uniform over the four hypotheses.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 3
+          }
+        ],
+        "method": "Motivated by applications in which the number of hypotheses or actions is massive (e.g., genomics-based cancer detection), we propose efficient greedy algorithms and provide the first approximation guarantees for ASHT, under two types of adaptivity.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "2. Model",
+            "equation": "",
+            "quote": "The goal is to sequentially select actions to identify the true hypothesis with sufficiently high confidence and lowest expected cost, where cost is defined as the number of actions selected until a hypothesis is declared."
+          }
+        ],
+        "components": [
+          {
+            "id": "model",
+            "label": "Model",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The goal is to sequentially select actions to identify the true hypothesis with sufficiently high confidence and lowest expected cost, where cost is defined as the number of actions selected until a hypothesis is declared.",
+            "searchPhrases": [
+              "how model is represented",
+              "decision rule in policy, sustainability, and public services",
+              "model decision rule specification"
+            ],
+            "formal": "Decision rule: The goal is to sequentially select actions to identify the true hypothesis with sufficiently high confidence and lowest expected cost, where cost is defined as the number of actions selected until a hypothesis is declared.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Note that all elements of the tuple (H,A,π,μ,D) are assumed to be known, except for the true hypothesis h∗.",
+              "The goal is to sequentially select actions to identify the true hypothesis with sufficiently high confidence and lowest expected cost, where cost is defined as the number of actions selected until a hypothesis is declared."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Model",
+                "equation": "",
+                "quote": "The goal is to sequentially select actions to identify the true hypothesis with sufficiently high confidence and lowest expected cost, where cost is defined as the number of actions selected until a hypothesis is declared."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “The goal is to sequentially select actions to identify the true hypothesis with sufficiently high confidence and lowest”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "benchmark",
+            "label": "Benchmark",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "Number of base pairs required to achieve 90% and 97% accuracy when localizing eight types of cancer.",
+            "searchPhrases": [
+              "how benchmark is represented",
+              "feasibility condition in policy, sustainability, and public services",
+              "benchmark feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: Number of base pairs required to achieve 90% and 97% accuracy when localizing eight types of cancer.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Number of base pairs required to achieve 90% and 97% accuracy when localizing eight types of cancer."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Benchmark",
+                "equation": "",
+                "quote": "Number of base pairs required to achieve 90% and 97% accuracy when localizing eight types of cancer."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Number of base pairs required to achieve 90% and 97% accuracy when localizing eight types of cancer.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "pac-error-and-fairness",
+            "label": "PAC-Error and Fairness",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "For any δ ∈[0,1], an algorithm has a PAC-error of δ if, for any true hypothesis h, the probability of erroneously declaring a different hypothesis is at most δ.",
+            "searchPhrases": [
+              "how pac-error and fairness is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "pac-error and fairness solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For any δ ∈[0,1], an algorithm has a PAC-error of δ if, for any true hypothesis h, the probability of erroneously declaring a different hypothesis is at most δ.",
+              "We represent “confidence” via the notion of PAC-error.",
+              "As a concrete example, suppose a hypothesis (e.g., individuals without cancer) has prior probability 0.99."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.1. PAC-Error and Fairness",
+                "equation": "",
+                "quote": "For any δ ∈[0,1], an algorithm has a PAC-error of δ if, for any true hypothesis h, the probability of erroneously declaring a different hypothesis is at most δ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "adaptivity-of-algorithms",
+            "label": "Adaptivity of Algorithms",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In fact, the “gap” between fully and partially adaptive algorithms can be quite large: For any n ∈N, there are instances with n hypotheses and actions for which the optimal fully adaptive algorithm incurs O(logn) cost, whereas any partially adaptive algorithm incurs Ω(n) cost in expectation.",
+            "searchPhrases": [
+              "how adaptivity of algorithms is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "adaptivity of algorithms solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In fact, the “gap” between fully and partially adaptive algorithms can be quite large: For any n ∈N, there are instances with n hypotheses and actions for which the optimal fully adaptive algorithm incurs O(logn) cost, whereas any partially adaptive algorithm incurs Ω(n) cost in expectation.",
+              "The optimal fully adaptive algorithm essentially performs a binary search; Any partially adaptive algorithm corresponds to a permutation of actions, and each hypothesis cannot be identified until at least where it appears in the permutation.",
+              "Now, although we have focused on the liquid biopsy application, it is worth noting that our setup is highly general and encompasses several well-known problems, such as best-arm identification (Even-Dar et al. 2002), group testing (Du and Hwang 2000), and causal inference (Gan et al. 2021), among others."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.2. Adaptivity of Algorithms",
+                "equation": "",
+                "quote": "In fact, the “gap” between fully and partially adaptive algorithms can be quite large: For any n ∈N, there are instances with n hypotheses and actions for which the optimal fully adaptive algorithm incurs O(logn) cost, whereas any partially adaptive algorithm incurs Ω(n) cost in expectation."
+              },
+              {
+                "page": 10,
+                "section": "2. The guarantee that results from this simple analy",
+                "equation": "Algorithm 1",
+                "quote": "Let (σ∗,T∗) be an optimal partially adaptive algorithm and (σRnB,TRnB) be our RnB algorithm."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "assumptions",
+            "label": "Assumptions",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "To conclude this section, we state our assumptions.",
+            "searchPhrases": [
+              "how assumptions is represented",
+              "decision-relevant state in policy, sustainability, and public services",
+              "assumptions decision-relevant state specification"
+            ],
+            "formal": "State definition: To conclude this section, we state our assumptions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Note that the separation parameter s = 0 implies that all entries of the mean-outcome table are identical.13 Assumption 2 (s-Separation).",
+              "Concretely, in Figure 2, the above states that any pair of rows must differ by at least one entry."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.3. Assumptions",
+                "equation": "",
+                "quote": "To conclude this section, we state our assumptions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “To conclude this section, we state our assumptions.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decision-trees",
+            "label": "Decision Trees",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Each test T has a cost c(T), and the goal is to construct a decision tree that always identifies the true hypothesis, at the minimum expected total cost.",
+            "searchPhrases": [
+              "how decision trees is represented",
+              "decision rule in policy, sustainability, and public services",
+              "decision trees decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The algorithm then greedily selects the test T that maximizes Score(T)=c(T).",
+              "In the ODT problem, an unknown true hypothesis h∗is drawn from a set of hypotheses H with a known prior distribution π (thus far, this is the same setup as our ASHT problem, and so we have used the same notations).",
+              "There exists a set of tests, each being a known mapping from H to a set O of outcomes."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "Decision Trees",
+                "equation": "",
+                "quote": "Each test T has a cost c(T), and the goal is to construct a decision tree that always identifies the true hypothesis, at the minimum expected total cost."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Each test T has a cost c(T), and the goal is to construct a decision tree that always”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "business_question",
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "9645bc914d40976d5961e6c22006b1dc6f8b26103ed9a6094704c0498c8f2bae",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "182f2dda66019642888e1bf7d0c87ddb2bd9815cf68c42aa68a79b5912f1b8b3",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00829/182f2dda66019642888e1bf7d0c87ddb2bd9815cf68c42aa68a79b5912f1b8b3.json",
+      "extractionQaDecisionSha256": "3c8f5152510f64ff2ebf1a9622706fc84b82ca26d2b0daad13ba04adc4a2ede1",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

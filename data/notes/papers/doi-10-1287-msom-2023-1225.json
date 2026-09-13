@@ -1,0 +1,1293 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-1225",
+  "sourcePdfSha256": "6f1e5e2444ebf5cb8a50c9c8668748ce9547bea8b816455e7e3bb0dc57f7db1d",
+  "extractionPagesSha256": "62b164535483a0839ed72eb351bc14217794f417c7460db26ebdb53275a28265",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "b5ff040826779bdbd63556cab665f065b0f289583a1e1b366f93980837783288",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "bc4ae3c863d91ebc22b678aa38d7f983972dd94ae66d3319e9825356d54a74bc",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1225/bc4ae3c863d91ebc22b678aa38d7f983972dd94ae66d3319e9825356d54a74bc.json",
+  "extractionQaDecisionSha256": "db1dce6340890d027be6651d32968b775f19db2840ffeaea4cbfb36ea4c17b5b",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-1225",
+    "question": "How does data-driven trade-off differ between waiting and traveling?",
+    "overview": "Patient-level data from 72 magnetic resonance imaging (MRI) hospitals in Ontario, Canada from 2013 to 2017 show that over 60% of patients exceeded their wait time targets. We conduct a data-driven analysis to quantify the reduction in the patient fraction exceeding (FET) target for MRI services through geographic virtual resource-sharing while limiting incremental driving time. We present a data-driven method to solve the geographic pooling problem of partitioning 72 hospitals with heterogeneous patients with different wait time targets located in a two-dimensional region into a set of clusters.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        15,
+        16
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "simple-linear-model-of-geographical",
+        "name": "Simple Linear Model of Geographical Resource Pooling",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Patient-level data from 72 magnetic resonance imaging (MRI) hospitals in Ontario, Canada from 2013 to 2017 show that over 60% of patients exceeded their wait time targets. We conduct a data-driven analysis to quantify the reduction in the patient fraction exceeding (FET) target for MRI services through geographic virtual resource-sharing while limiting incremental driving time. We then use neural networks to predict patient arrival and service times.",
+        "objects": [
+          "Patient",
+          "Hospitals",
+          "Servers",
+          "Subject",
+          "The Three Resource"
+        ],
+        "inputs": [
+          "Service capacity",
+          "The arrival rates",
+          "The priority class of a patient",
+          "Service times",
+          "Scanner capacities and patient arrivals"
+        ],
+        "decisions": [
+          "Target for MRI services through geographic virtual resource-sharing",
+          "Patient arrival and service times",
+          "Sharing model that hospitals can readily implement",
+          "Patient i’s expected order of service E[order of service]",
+          "Find the optimal clustering of N hospitals"
+        ],
+        "assumptions": [
+          "In this case, we assume that all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service.",
+          "All hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Patient-level data from 72 magnetic resonance imaging (MRI) hospitals in Ontario, Canada from 2013 to 2017 show that over 60% of patients exceeded their wait time targets.",
+                "matchedText": "Patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Patient-level data from 72 magnetic resonance imaging (MRI) hospitals in Ontario, Canada from 2013 to 2017 show that over 60% of patients exceeded their wait time targets.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 1,
+                "quote": "servers mitigate the advantage of pooling.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Subject",
+              "source": {
+                "type": "section",
+                "section": "Pooling Model",
+                "page": 10,
+                "sectionIndex": 30,
+                "sentence": 23,
+                "quote": "Set covering is a common combinatorial problem that finds the partition of a set subject to certain constraints.",
+                "matchedText": "subject",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The Three Resource",
+              "source": {
+                "type": "section",
+                "section": "Strategic Capacity Expansion",
+                "page": 16,
+                "sectionIndex": 24,
+                "sentence": 13,
+                "quote": "Comparing the Three Resource-Pooling Models Pooling model FET, % Waiting time, days Traveling time, hours Computational time, seconds per patient Complete pooling with perfect information 34.6 25.9 5.2 32 Geographic pooling with perfect information 33.7 25.2 2.6 1.",
+                "matchedText": "the Three Resource",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Service capacity",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 13,
+                "quote": "Our paper only focuses on exoge­ nously determined service capacity as all our servers are machines; thus, their performance is not affected by pooling.",
+                "matchedText": "service capacity",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rates",
+              "source": {
+                "type": "section",
+                "section": "The Actual Two-Dimensional Geographic",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 31,
+                "quote": "the arrival rates",
+                "matchedText": "the arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The priority class of a patient",
+              "source": {
+                "type": "section",
+                "section": "The Actual Two-Dimensional Geographic",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 15,
+                "quote": "the priority class of a patient",
+                "matchedText": "the priority class of a patient",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "Service times",
+              "source": {
+                "type": "section",
+                "section": "The Actual Two-Dimensional Geographic",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 31,
+                "quote": "service times",
+                "matchedText": "service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Scanner capacities and patient arrivals",
+              "source": {
+                "type": "section",
+                "section": "Strategic Capacity Expansion",
+                "page": 16,
+                "sectionIndex": 24,
+                "sentence": 1,
+                "quote": "The FET is influenced by scanner capacities and patient arrivals.",
+                "matchedText": "scanner capacities and patient arrivals",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Target for MRI services through geographic virtual resource-sharing",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "We conduct a data-driven analysis to quantify the reduction in the patient fraction exceeding (FET) target for MRI services through geographic virtual resource-sharing while limiting incremental driving time.",
+                "matchedText": "target for MRI services through geographic virtual resource-sharing",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Patient arrival and service times",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "We then use neural networks to predict patient arrival and service times.",
+                "matchedText": "patient arrival and service times",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Sharing model that hospitals can readily implement",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 12,
+                "quote": "Managerial implications: Our paper provides a practical, data-driven geographical resource-sharing model that hospitals can readily implement.",
+                "matchedText": "sharing model that hospitals can readily implement",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Patient i’s expected order of service E[order of service]",
+              "source": {
+                "type": "section",
+                "section": "Pooling Model",
+                "page": 10,
+                "sectionIndex": 30,
+                "sentence": 5,
+                "quote": "The patients are then ordered by their score to determine patient i’s expected order of service E[order of service]",
+                "matchedText": "patient i’s expected order of service E[order of service]",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Find the optimal clustering of N hospitals",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "The objective is to find the optimal clustering of N hospitals that mini­ mizes the total cost (1) experienced by the patients.",
+                "matchedText": "find the optimal clustering of N hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this case, we assume that all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service.",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 5,
+                "quote": "In this case, we assume that all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service."
+              }
+            },
+            {
+              "value": "All hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 19,
+                "quote": "In this case, we assume that all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service.",
+                "matchedText": "all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "Using our data, we constructed the simulation to obtain near-optimal clusters.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Clustering and Geographic Resource Pools",
+          "page": 11,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.2. The Actual Two-Dimensional Geographic Partial-Pooling Problem",
+            "equation": "",
+            "quote": "This makes the practical problem much more complicated, and an analytical solution no longer exists. (The objective to minimize FET has important ramifications; as shown in the online appendix, even if geographic pooling has a negligible impact on expected waiting times, it can still “compress” the upper tail of the waiting time distribu­ tion and thus, the FET.) Equation (1) proposed in Section 3.1 finds the optimal clustering that balances the trade-off between driving and waiting."
+          }
+        ],
+        "components": [
+          {
+            "id": "simple-linear-model-of-geographical-resource-pooling",
+            "label": "Simple Linear Model of Geographical Resource Pooling",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "We have a total of N homogeneous hospitals, each with a Poisson arrival rate of λ and an exponential service rate of μ.",
+            "searchPhrases": [
+              "how simple linear model of geographical resource pooling is represented",
+              "system process in operations and supply chains",
+              "simple linear model of geographical resource pooling system process specification"
+            ],
+            "formal": "C = E[W] + \\tau{}E[D]",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "D",
+                "meaning": "a patient’s distance traveled and W his or her expected waiting time"
+              }
+            ],
+            "conditions": [
+              "Given independent exponential interarrival and service times, a patient’s expected waiting time at the nearest hospital is E[WN clusters] = λ μ(μ λ) = ρ μ(1 ρ).",
+              "As usual, let ρ = λ=μ denote the hospital utilization, assumed to be below one to ensure stability.",
+              "Let CD > 0 and CW > 0 denote the patient’s cost to travel one unit of distance and wait one unit of time."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Simple Linear Model of Geographical Resource Pooling",
+                "equation": "",
+                "quote": "We have a total of N homogeneous hospitals, each with a Poisson arrival rate of λ and an exponential ser­ vice rate of µ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-actual-two-dimensional-geographic-partial-pooling-problem",
+            "label": "The Actual Two-Dimensional Geographic Partial-Pooling Problem",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "This makes the practical problem much more complicated, and an analytical solution no longer exists. (The objective to minimize FET has important ramifications; as shown in the online appendix, even if geographic pooling has a negligible impact on expected waiting times, it can still “compress” the upper tail of the waiting time distribution and thus, the FET.) Equation (1) proposed in Section 3.1 finds the optimal clustering that balances the trade-off between driving and waiting.",
+            "searchPhrases": [
+              "how the actual two-dimensional geographic partial-pooling problem is represented",
+              "modeled objective in operations and supply chains",
+              "the actual two-dimensional geographic partial-pooling problem modeled objective specification"
+            ],
+            "formal": "Objective relation: This makes the practical problem much more complicated, and an analytical solution no longer exists. (The objective to minimize FET has important ramifications; as shown in the online appendix, even if geographic pooling has a negligible impact on expected waiting times, it can still “compress” the upper tail of the waiting time distribution and thus, the FET.) Equation (1) proposed in Section 3.1 finds the optimal clustering that balances the trade-off between driving and waiting.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The expected traveling cost becomes E[Dp clusters] = 1 4p, whereas the expected waiting time is E[Wp clusters] = p NE[WN clusters]."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. The Actual Two-Dimensional Geographic Partial-Pooling Problem",
+                "equation": "",
+                "quote": "This makes the practical problem much more complicated, and an analytical solution no longer exists. (The objective to minimize FET has important ramifications; as shown in the online appendix, even if geographic pooling has a negligible impact on expected waiting times, it can still “compress” the upper tail of the waiting time distribu­ tion and thus, the FET.) Equation (1) proposed in Section 3.1 finds the optimal clustering that balances the trade-off between driving and waiting."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "descriptive-analytics",
+            "label": "Descriptive Analytics",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "In particular, the fraction of patients for whom waiting time exceeds the target (FET) is a key performance metric to be minimized.",
+            "searchPhrases": [
+              "how descriptive analytics is represented",
+              "modeled objective in operations and supply chains",
+              "descriptive analytics modeled objective specification"
+            ],
+            "formal": "Objective relation: In particular, the fraction of patients for whom waiting time exceeds the target (FET) is a key performance metric to be minimized.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The waiting time is defined as (treatment time scheduled time)+, which ideally is less than the patient’s priority-specific wait time target."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Descriptive Analytics",
+                "equation": "",
+                "quote": "In particular, the frac­ tion of patients for whom waiting time exceeds the tar­ get (FET) is a key performance metric to be minimized."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “In particular, the fraction of patients for whom waiting time exceeds the target (FET) is a key performance”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "patient-s-home-address",
+            "label": "Patient’s Home Address",
+            "role": "decision",
+            "concepts": [
+              "privacy"
+            ],
+            "explanation": "Patient home addresses are not disclosed in our data set for privacy reasons.",
+            "searchPhrases": [
+              "how patient’s home address is represented",
+              "decision rule in operations and supply chains",
+              "patient’s home address decision rule specification"
+            ],
+            "formal": "Decision rule: Patient home addresses are not disclosed in our data set for privacy reasons.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "After consulting with many doctors, primary physicians, and the employees from cancer care ontario (CCO), there were no official documents on exactly how patients were assigned to their current hospital."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.3. Patient’s Home Address",
+                "equation": "",
+                "quote": "Patient home addresses are not disclosed in our data set for privacy reasons."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "privacy",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Privacy: “Patient home addresses are not disclosed in our data set for privacy reasons.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "sequencing-patients-within-a-cluster-augmented-priority-rule",
+            "label": "Sequencing Patients Within a Cluster: Augmented-Priority Rule",
+            "role": "algorithm",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "In this section, we design a heuristic sequencing model for the patients in a given cluster of hospitals (we will determine and optimize clusters in Section 8) to assign them to specific scanners at a specific location within the cluster.",
+            "searchPhrases": [
+              "how sequencing patients within a cluster: augmented-priority rule is represented",
+              "solution algorithm in operations and supply chains",
+              "sequencing patients within a cluster: augmented-priority rule solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In this section, we design a heuristic sequencing model for the patients in a given cluster of hospitals (we will determine and optimize clusters in Section 8) to assign them to specific scanners at a specific location within the cluster.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We set Ni(t) = Pi + [Ti (t Ai)]+, (6) where Pi denotes patient i’s priority class and where Ti and Ai(t) are patient i’s wait time target and arrival time, respectively."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "5. Sequencing Patients Within a Cluster: Augmented-Priority Rule",
+                "equation": "",
+                "quote": "In this section, we design a heuristic sequencing model for the patients in a given cluster of hospitals (we will determine and optimize clusters in Section 8) to assign them to specific scanners at a specific location within the cluster."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Scheduling as “sequencing”: “this section, we design a heuristic sequencing model for the patients in a given cluster”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "predicting-nonstationary-arrivals-using-time-series",
+            "label": "Predicting Nonstationary Arrivals Using Time Series",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "ARIMA models can capture some of the underlying relationships observed the data.",
+            "searchPhrases": [
+              "how predicting nonstationary arrivals using time series is represented",
+              "information available to the decision maker in operations and supply chains",
+              "predicting nonstationary arrivals using time series information available to the decision maker specification"
+            ],
+            "formal": "Information structure: ARIMA models can capture some of the underlying relationships observed the data.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Using the equation yt = μ + α1yt 1 + ⋯+αpyt p θ1ɛt 1 :: θq ɛt 1, we can express the current term of the time series linearly in terms of its previous values and in terms of current and previous residual series.",
+              "Furthermore, it is assumed that there is a constant standard deviation in errors in the ARIMA model, which in practice, may not be satisfied.",
+              "ARIMA models can capture some of the underlying relationships observed the data."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "6.1. Predicting Nonstationary Arrivals Using Time Series",
+                "equation": "",
+                "quote": "ARIMA models can capture some of the underlying relationships observed the data."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “ARIMA models can capture some of the underlying relationships observed the data.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "recurrent-neural-network-traditional-vs-long",
+            "label": "Recurrent Neural Network: Traditional vs. Long",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The inability to learn long-term dependence causes traditional RNN to be biased toward more recent information.",
+            "searchPhrases": [
+              "how recurrent neural network: traditional vs. long is represented",
+              "information available to the decision maker in operations and supply chains",
+              "recurrent neural network: traditional vs. long information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The inability to learn long-term dependence causes traditional RNN to be biased toward more recent information.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Unlike other neural networks, such as a feed-forward network that assumes all inputs are independent of each other, RNN can use internal state memory to process data in sequence, thus capturing the dependency between inputs."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "6.1.2. Recurrent Neural Network: Traditional vs. Long",
+                "equation": "",
+                "quote": "The inabil­ ity to learn long-term dependence causes traditional RNN to be biased toward more recent information."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The inability to learn long-term dependence causes traditional RNN to be biased toward more recent information.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "clustering-mechanisms",
+            "label": "Clustering Mechanisms",
+            "role": "algorithm",
+            "concepts": [
+              "machine-learning"
+            ],
+            "explanation": "A genetic algorithm, more specifically the chromosomes representation of a genetic algorithm (GA), is a clustering technique (Maulik and Bandyopadhyay 2000) used in machine learning to find the optimal grouping among the elements of the set (Kumar et al. 2010).",
+            "searchPhrases": [
+              "how clustering mechanisms is represented",
+              "solution algorithm in operations and supply chains",
+              "clustering mechanisms solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: A genetic algorithm, more specifically the chromosomes representation of a genetic algorithm (GA), is a clustering technique (Maulik and Bandyopadhyay 2000) used in machine learning to find the optimal grouping among the elements of the set (Kumar et al. 2010).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To calibrate the chromosome representation to our data, we denote the hospitals’ partition as a chromosome.",
+              "Set covering is a common combinatorial problem that finds the partition of a set subject to certain constraints."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "7.1. Clustering Mechanisms",
+                "equation": "",
+                "quote": "A genetic algorithm, more specifically the chromosomes representation of a genetic algorithm (GA), is a clustering technique (Maulik and Bandyopadhyay 2000) used in machine learning to find the optimal grouping among the elements of the set (Kumar et al. 2010)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "machine-learning",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Machine learning: “(Maulik and Bandyopadhyay 2000) used in Machine learning to find the optimal grouping among the elements”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "clustering-and-geographic-resource-pools",
+            "label": "Clustering and Geographic Resource Pools",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We use the trained genetic algorithm to find a near-optimal clustering of the 72 hospitals using our generated data.",
+            "searchPhrases": [
+              "how clustering and geographic resource pools is represented",
+              "solution algorithm in operations and supply chains",
+              "clustering and geographic resource pools solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We use the trained genetic algorithm to find a near-optimal clustering of the 72 hospitals using our generated data.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the incremental traveling time is limited to three hours (based on the traveling constraints used by the Central Intake Program).",
+              "Throughout this section, we assume that the incremental traveling time is limited to three hours (based on the traveling constraints used by the Central Intake Program)."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "8.1. Clustering and Geographic Resource Pools",
+                "equation": "",
+                "quote": "We use the trained genetic algorithm to find a near-optimal clustering of the 72 hospitals using our generated data."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We use the trained genetic algorithm to find a near-optimal clustering of the 72 hospitals using our generated”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "two-benchmark-resource-pooling-models",
+            "label": "Two Benchmark Resource-Pooling Models",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Because we are trying to minimize the objective function for all patients, we cannot assign patients with the highest ranking to the next available scanner.",
+            "searchPhrases": [
+              "how two benchmark resource-pooling models is represented",
+              "modeled objective in operations and supply chains",
+              "two benchmark resource-pooling models modeled objective specification"
+            ],
+            "formal": "Objective relation: Because we are trying to minimize the objective function for all patients, we cannot assign patients with the highest ranking to the next available scanner.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This model is a good benchmark for the geographic pooling model as it shares all the same characteristics but avoids bad routing decisions caused by forecasting error.",
+              "Because we are trying to minimize the objective function for all patients, we cannot assign patients with the highest ranking to the next available scanner."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "9.1. Two Benchmark Resource-Pooling Models",
+                "equation": "",
+                "quote": "Because we are try­ ing to minimize the objective function for all patients, we cannot assign patients with the highest ranking to the next available scanner."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “objective function”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "strategic-capacity-expansion",
+            "label": "Strategic Capacity Expansion",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "So, how sensitive is the FET to capacity expansions, and what is the capacity needed to achieve 10% FET?",
+            "searchPhrases": [
+              "how strategic capacity expansion is represented",
+              "feasibility condition in operations and supply chains",
+              "strategic capacity expansion feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: So, how sensitive is the FET to capacity expansions, and what is the capacity needed to achieve 10% FET?",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We showed that resource sharing and efficient scheduling cannot achieve 10% FET with the current capacity."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "10. Strategic Capacity Expansion",
+                "equation": "",
+                "quote": "So, how sensitive is the FET to capacity expan­ sions, and what is the capacity needed to achieve 10% FET?"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “So, how sensitive is the FET to capacity expansions, and what is the capacity needed to achieve 10%”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "pooling-model",
+        "name": "Pooling Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Simple Linear Model of Geographical Resource Pooling.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "simple-linear-model-of-geographical"
+          }
+        ],
+        "summary": "Using geographic pooling, we have enough capacity to ensure that all high-priority patients are treated on the day of their arrival. In this section, we compare our results with two other benchmark models: (1) complete resource sharing with perfect information where we have advanced information on the arrival and service rates before making the sequencing decisions and (2) geographic pooling with perfect information.",
+        "objects": [
+          "Patient",
+          "Hospitals",
+          "Servers",
+          "Subject",
+          "The Three Resource"
+        ],
+        "inputs": [
+          "Service capacity",
+          "The arrival rates",
+          "The priority class of a patient",
+          "Service times",
+          "Scanner capacities and patient arrivals"
+        ],
+        "decisions": [
+          "Sharing with perfect information"
+        ],
+        "assumptions": [
+          "In this case, we assume that all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service.",
+          "All hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Patient-level data from 72 magnetic resonance imaging (MRI) hospitals in Ontario, Canada from 2013 to 2017 show that over 60% of patients exceeded their wait time targets.",
+                "matchedText": "Patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Patient-level data from 72 magnetic resonance imaging (MRI) hospitals in Ontario, Canada from 2013 to 2017 show that over 60% of patients exceeded their wait time targets.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 1,
+                "quote": "servers mitigate the advantage of pooling.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Subject",
+              "source": {
+                "type": "section",
+                "section": "Pooling Model",
+                "page": 10,
+                "sectionIndex": 30,
+                "sentence": 23,
+                "quote": "Set covering is a common combinatorial problem that finds the partition of a set subject to certain constraints.",
+                "matchedText": "subject",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The Three Resource",
+              "source": {
+                "type": "section",
+                "section": "Strategic Capacity Expansion",
+                "page": 16,
+                "sectionIndex": 24,
+                "sentence": 13,
+                "quote": "Comparing the Three Resource-Pooling Models Pooling model FET, % Waiting time, days Traveling time, hours Computational time, seconds per patient Complete pooling with perfect information 34.6 25.9 5.2 32 Geographic pooling with perfect information 33.7 25.2 2.6 1.",
+                "matchedText": "the Three Resource",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Service capacity",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 13,
+                "quote": "Our paper only focuses on exoge­ nously determined service capacity as all our servers are machines; thus, their performance is not affected by pooling.",
+                "matchedText": "service capacity",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rates",
+              "source": {
+                "type": "section",
+                "section": "The Actual Two-Dimensional Geographic",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 31,
+                "quote": "the arrival rates",
+                "matchedText": "the arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The priority class of a patient",
+              "source": {
+                "type": "section",
+                "section": "The Actual Two-Dimensional Geographic",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 15,
+                "quote": "the priority class of a patient",
+                "matchedText": "the priority class of a patient",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "Service times",
+              "source": {
+                "type": "section",
+                "section": "The Actual Two-Dimensional Geographic",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 31,
+                "quote": "service times",
+                "matchedText": "service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Scanner capacities and patient arrivals",
+              "source": {
+                "type": "section",
+                "section": "Strategic Capacity Expansion",
+                "page": 16,
+                "sectionIndex": 24,
+                "sentence": 1,
+                "quote": "The FET is influenced by scanner capacities and patient arrivals.",
+                "matchedText": "scanner capacities and patient arrivals",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Sharing with perfect information",
+              "source": {
+                "type": "section",
+                "section": "Geographic Pooling vs. Complete",
+                "page": 15,
+                "sectionIndex": 1,
+                "sentence": 3,
+                "quote": "In this section, we compare our results with two other bench­ mark models: (1) complete resource sharing with per­ fect information where we have advanced information on the arrival and service rates",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this case, we assume that all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service.",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 5,
+                "quote": "In this case, we assume that all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service."
+              }
+            },
+            {
+              "value": "All hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service",
+              "source": {
+                "type": "section",
+                "section": "Simple Linear Model of Geographical",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 19,
+                "quote": "In this case, we assume that all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service.",
+                "matchedText": "all hospitals combine their resources into one centralized location, and all patients must travel to the centralized location to receive service.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "After dividing the hospitals into desirable clusters using simulation based on the empirical data, we evaluate our resource-sharing model’s effectiveness.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Pooling Model",
+          "page": 12,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 15,
+            "section": "9. Geographic Pooling vs. Complete Resource Sharing",
+            "equation": "",
+            "quote": "In this section, we compare our results with two other bench­ mark models: (1) complete resource sharing with per­ fect information where we have advanced information on the arrival and service rates before making the sequencing decisions and (2) geographic pooling with perfect information."
+          }
+        ],
+        "components": [
+          {
+            "id": "pooling-model",
+            "label": "Pooling Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Using geographic pooling, we have enough capacity to ensure that all high-priority patients are treated on the day of their arrival.",
+            "searchPhrases": [
+              "how pooling model is represented",
+              "system process in operations and supply chains",
+              "pooling model system process specification"
+            ],
+            "formal": "Process relation: Using geographic pooling, we have enough capacity to ensure that all high-priority patients are treated on the day of their arrival.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Inefficient capacity utilization is prevalent under nonpreemptive priority as many high-priority patients are treated before their wait time target elapses.",
+              "Effectiveness of the Geographic Pooling Model After dividing the hospitals into desirable clusters using simulation based on the empirical data, we evaluate our resource-sharing model’s effectiveness.",
+              "After dividing the hospitals into desirable clusters using simulation based on the empirical data, we evaluate our resource-sharing model’s effectiveness."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "Pooling Model",
+                "equation": "",
+                "quote": "Using geo­ graphic pooling, we have enough capacity to ensure that all high-priority patients are treated on the day of their arrival."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Using geographic pooling, we have enough capacity to ensure that all high-priority patients are treated on the day”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "geographic-pooling-vs-complete-resource-sharing",
+            "label": "Geographic Pooling vs. Complete Resource Sharing",
+            "role": "information",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "In this section, we compare our results with two other benchmark models: (1) complete resource sharing with perfect information where we have advanced information on the arrival and service rates before making the sequencing decisions and (2) geographic pooling with perfect information.",
+            "searchPhrases": [
+              "how geographic pooling vs. complete resource sharing is represented",
+              "information available to the decision maker in operations and supply chains",
+              "geographic pooling vs. complete resource sharing information available to the decision maker specification"
+            ],
+            "formal": "Information structure: In this section, we compare our results with two other benchmark models: (1) complete resource sharing with perfect information where we have advanced information on the arrival and service rates before making the sequencing decisions and (2) geographic pooling with perfect information.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We showed that geographic pooling achieves a 30% reduction in FET for D = 3 hours.",
+              "Complete Resource Sharing We showed that geographic pooling achieves a 30% reduction in FET for D = 3 hours.",
+              "In this section, we compare our results with two other benchmark models: (1) complete resource sharing with perfect information where we have advanced information on the arrival and service rates before making the sequencing decisions and (2) geographic pooling with perfect information."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "9. Geographic Pooling vs. Complete Resource Sharing",
+                "equation": "",
+                "quote": "In this section, we compare our results with two other bench­ mark models: (1) complete resource sharing with per­ fect information where we have advanced information on the arrival and service rates before making the sequencing decisions and (2) geographic pooling with perfect information."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Scheduling as “sequencing”: “and service rates before making the sequencing decisions and (2) geographic pooling with perfect information.”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "6f1e5e2444ebf5cb8a50c9c8668748ce9547bea8b816455e7e3bb0dc57f7db1d",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "bc4ae3c863d91ebc22b678aa38d7f983972dd94ae66d3319e9825356d54a74bc",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1225/bc4ae3c863d91ebc22b678aa38d7f983972dd94ae66d3319e9825356d54a74bc.json",
+      "extractionQaDecisionSha256": "db1dce6340890d027be6651d32968b775f19db2840ffeaea4cbfb36ea4c17b5b",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1208 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "curated-source-v1",
+  "authoringMode": "curated",
+  "paperId": "doi-10-1287-mnsc-2016-2515",
+  "sourcePdfSha256": "8e02c1e12b190e4fa2bf2bfbaea9ede2dd2317020feb0ac6070d6e6600796017",
+  "extractionPagesSha256": "5c6ee75637f6454ac8b0cbf74eb7acca7a697646e15a701113583846d813aa13",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "fb9b8025ddf74ff28e3557d97219f567065c9a63ad251ba99316ac2a157787d9",
+  "note": {
+    "id": "doi-10-1287-mnsc-2016-2515",
+    "question": "How do bank loans, single-supplier trade credit, and mixed financing change a retailer's multiproduct inventory choices when limited liability creates risk-shifting incentives?",
+    "overview": "A retailer with limited wealth chooses inventory for two products under uncertain demand and finances the shortfall with bank debt, supplier credit, or a mixture of both. Because shareholders receive the upside but not the bankruptcy-state payoff, bank debt can tilt inventory toward riskier items. A single supplier can condition credit terms on the observed order and restore first-best inventory, while mixed financing combines this incentive alignment with the bank's lower cost of capital; sequential credit from multiple suppliers can reintroduce risk shifting.",
+    "modelTypes": [
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ],
+      "note": "The common demand environment, bank-financing benchmark, first-best comparison, single-supplier trade credit, mixed financing, and two-supplier extension are mapped from visually reviewed source pages. Equations are Atlas-normalized transcriptions with explicit subscripts and superscripts; proofs and ancillary comparative statics are not reconstructed exhaustively."
+    },
+    "models": [
+      {
+        "id": "bank-financed-two-product-inventory",
+        "name": "Bank-financed two-product inventory",
+        "kind": "baseline",
+        "relation": "Baseline financing regime for comparison with supplier and mixed financing.",
+        "relationships": [],
+        "summary": "The retailer chooses a loan and then allocates available capital between two products. Shareholders maximize expected equity value, which omits bankruptcy-state revenue, whereas the first-best benchmark maximizes total firm value.",
+        "objects": [
+          "A shareholder-controlled retailer with limited wealth",
+          "A bank that supplies fairly priced debt",
+          "Two products with uncertain demand"
+        ],
+        "inputs": [
+          "Demand shocks D and product cost vector c",
+          "Retail prices or inverse-demand parameters and salvage values",
+          "Retailer wealth W, bankruptcy cost b, and bank cost of capital φ_B"
+        ],
+        "decisions": [
+          "Choose the bank loan L",
+          "Choose the two-product inventory vector Q"
+        ],
+        "assumptions": [
+          "Demand follows an arbitrary continuous distribution.",
+          "Revenue is continuous, nondecreasing, and jointly concave in inventory.",
+          "Retailer wealth is insufficient to finance the full inventory investment.",
+          "The bank prices debt to earn zero expected profit."
+        ],
+        "method": "Solve the retailer's second-stage inventory problem conditional on loan terms, solve the first-stage borrowing problem under fair pricing, and compare the resulting equity-maximizing allocation with a total-firm-value first-best benchmark.",
+        "sources": [
+          {
+            "page": 5,
+            "section": "2.1. Bank Financing",
+            "equation": "(6)–(7)",
+            "quote": "In the first stage, the firm chooses the optimal loan amount"
+          }
+        ],
+        "components": [
+          {
+            "id": "two-revenue-specifications",
+            "label": "Newsvendor and linear-demand revenue",
+            "role": "process",
+            "concepts": [
+              "inventory",
+              "newsvendor",
+              "uncertainty"
+            ],
+            "explanation": "The common model admits either newsvendor revenue with lost sales and salvage or a linear inverse-demand system in which product substitutability links the two market-clearing prices.",
+            "searchPhrases": [
+              "two-product newsvendor revenue with salvage",
+              "linear demand with substitutable products",
+              "uncertain demand revenue specifications"
+            ],
+            "formal": "Newsvendor: π(D,Q)=Σ_(i=1)^2[p_i min(Q_i,D_i)+s_i(Q_i−min(Q_i,D_i))]. Linear demand: p_i(D,x)=D_i−x_i−γx_(3−i), with γ∈[0,1).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "D=(D_1,D_2)′",
+                "meaning": "Random demand shocks or inverse-demand intercepts"
+              },
+              {
+                "symbol": "Q=(Q_1,Q_2)′",
+                "meaning": "Inventory quantities for the two products"
+              },
+              {
+                "symbol": "p_i,c_i,s_i",
+                "meaning": "Retail price, unit cost, and salvage value of product i"
+              },
+              {
+                "symbol": "γ",
+                "meaning": "Product substitutability in the linear-demand model"
+              }
+            ],
+            "conditions": [
+              "The newsvendor specification sells available inventory up to realized demand and salvages the remainder.",
+              "The linear-demand specification uses additive uncertainty and γ∈[0,1).",
+              "For the newsvendor specification, s_i<c_i<p_i for each product."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Model — Newsvendor Model",
+                "equation": "(1)",
+                "quote": "These assumptions are satisfied, among others"
+              },
+              {
+                "page": 4,
+                "section": "2. Model — Linear Demand Model",
+                "equation": "(2)",
+                "quote": "the vector of stochastic demand curve intercepts"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "Q records the two inventory quantities and enters both revenue specifications.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "newsvendor",
+                "status": "modeled",
+                "representation": "One revenue specification is a two-product newsvendor with salvage.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "Random demand shocks affect realized revenue in both specifications.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "id": "bank-borrowing-and-inventory-sequence",
+            "label": "Two-stage bank-financing choice",
+            "role": "process",
+            "concepts": [
+              "inventory",
+              "optimization",
+              "principal-agent"
+            ],
+            "explanation": "Given loan terms, the retailer first solves for equity-maximizing inventory subject to its capital constraint. It then chooses the loan amount while anticipating the bank's fair-pricing response and the later inventory choice.",
+            "searchPhrases": [
+              "bank loan and inventory two-stage problem",
+              "equity maximizing inventory under debt",
+              "fairly priced loan with endogenous order quantities"
+            ],
+            "formal": "L+W=c′Q; Q^BF(L,r)∈arg max_(Q≥0)V(Q|L,r); L^BF∈arg max_(L≥0)V(L,r^BF(L),Q^BF(L)).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "L,r",
+                "meaning": "Bank-loan principal and promised interest"
+              },
+              {
+                "symbol": "W",
+                "meaning": "Retailer's internal wealth available for inventory"
+              },
+              {
+                "symbol": "Q^BF",
+                "meaning": "Inventory selected under bank financing"
+              },
+              {
+                "symbol": "V",
+                "meaning": "Expected terminal value of equity"
+              }
+            ],
+            "conditions": [
+              "The loan and inventory satisfy L+W=c′Q.",
+              "Loan terms are fairly priced by the bank.",
+              "The first-stage borrower anticipates the second-stage inventory choice."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.1. Bank Financing",
+                "equation": "(3)–(5)",
+                "quote": "we assume that debt is fairly priced, i.e., the bank expects to make zero profit."
+              },
+              {
+                "page": 5,
+                "section": "2.1. Bank Financing",
+                "equation": "(6)–(7)",
+                "quote": "The firm chooses the amount of borrowing and inventory in two stages."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "The second-stage decision chooses inventory under the loan-funded capital constraint.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "Nested maximization problems determine inventory and then the loan amount.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  2,
+                  3
+                ]
+              },
+              {
+                "conceptId": "principal-agent",
+                "status": "modeled",
+                "representation": "Shareholders choose inventory after debt is issued, while the bank anticipates that action when pricing the loan.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "id": "first-best-firm-value-benchmark",
+            "label": "First-best total-firm-value benchmark",
+            "role": "objective",
+            "concepts": [
+              "optimization",
+              "risk-management"
+            ],
+            "explanation": "The benchmark jointly chooses inventory and borrowing to maximize expected total firm value net of inventory, financing, and expected bankruptcy costs, while preserving the financing and fair-pricing constraints.",
+            "searchPhrases": [
+              "first best inventory and borrowing benchmark",
+              "maximize total firm value under bankruptcy cost",
+              "compare shareholder and total value inventory choices"
+            ],
+            "formal": "(Q^*,L^*,r^*)∈arg max_(Q,L,r≥0){E[π(Q)]−c′Q−φ_B L−Pr(Ω_b)b}, subject to the capital and fair-pricing constraints.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "Q^*,L^*,r^*",
+                "meaning": "First-best inventory, loan principal, and interest"
+              },
+              {
+                "symbol": "φ_B",
+                "meaning": "Bank's cost of capital"
+              },
+              {
+                "symbol": "Ω_b",
+                "meaning": "Bankruptcy event"
+              },
+              {
+                "symbol": "b",
+                "meaning": "Bankruptcy cost"
+              }
+            ],
+            "conditions": [
+              "The benchmark maximizes equity plus debt value rather than shareholder equity alone.",
+              "Retailer wealth remains limited and debt remains fairly priced.",
+              "The bankruptcy probability depends on inventory and financing choices."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.2. First Best",
+                "equation": "(10)",
+                "quote": "the firm chooses the amount of borrowing and inventory that jointly maximize total firm value"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "The benchmark jointly optimizes inventory and financing for total firm value.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0
+                ]
+              },
+              {
+                "conceptId": "risk-management",
+                "status": "modeled",
+                "representation": "Expected bankruptcy cost enters the first-best objective explicitly.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  2,
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "id": "debt-induced-risk-shifting",
+            "label": "Debt-induced inventory risk shifting",
+            "role": "preference",
+            "concepts": [
+              "inventory",
+              "risk-management"
+            ],
+            "explanation": "Under the proposition's bankruptcy-state asymmetry and relative-salvage conditions, bank financing makes the retailer overinvest in the riskier first product or underinvest in the second relative to first best. The same qualitative mechanism appears in the linear-demand experiments.",
+            "searchPhrases": [
+              "debt induced multiproduct inventory distortion",
+              "overinvest in the riskier inventory item",
+              "linear demand risk shifting with substitutability"
+            ],
+            "formal": "If b=0, π is the newsvendor model or the linear-demand model with γ=0, Pr(Ω_(2b)(Q^BF))>0, Pr(Ω_(1b)(Q^BF))=0, and s_1/c_1≤s_2/c_2, then Q_1^BF>Q_1^* or Q_2^BF<Q_2^*.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "Q_i^BF",
+                "meaning": "Bank-financed inventory of product i"
+              },
+              {
+                "symbol": "Q_i^*",
+                "meaning": "First-best inventory of product i"
+              },
+              {
+                "symbol": "Ω_(ib)",
+                "meaning": "Bankruptcy state associated with sales region i"
+              },
+              {
+                "symbol": "s_i/c_i",
+                "meaning": "Relative salvage value of product i"
+              }
+            ],
+            "conditions": [
+              "Bankruptcy cost is zero in Proposition 1.",
+              "Low sales of product 1 can trigger bankruptcy even if product 2 sells out, but the reverse state cannot.",
+              "Product 1 has weakly lower relative salvage value than product 2.",
+              "In the linear-demand experiments, greater substitutability raises relative agency cost."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3. Risk Shifting and Inventory — Proposition 1",
+                "equation": "(14)–(15)",
+                "quote": "Under bank financing, the firm overinvests in product 1, or it underinvests in product 2"
+              },
+              {
+                "page": 11,
+                "section": "3.2. Linear Demand Model",
+                "equation": "",
+                "quote": "We observe exactly the same phenomenon under the linear demand model."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "The result compares debt-financed stocking levels with first-best levels.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  3
+                ]
+              },
+              {
+                "conceptId": "risk-management",
+                "status": "modeled",
+                "representation": "Limited liability shifts inventory toward the product whose low-sales states expose creditors to more downside.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "single-supplier-trade-credit",
+        "name": "Single-supplier trade credit",
+        "kind": "alternative",
+        "relation": "This financing regime is an alternative to bank-financed two-product inventory.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "bank-financed-two-product-inventory"
+          }
+        ],
+        "summary": "One supplier finances the inventory shortfall and sets the interest rate after observing actual order quantities. This order-contingent pricing restores the first-best stocking decision, although the supplier's cost of capital can exceed the bank's.",
+        "objects": [
+          "A retailer ordering two products",
+          "A single supplier providing goods and residual financing"
+        ],
+        "inputs": [
+          "The common demand and revenue environment",
+          "Retailer wealth W and wholesale-cost vector c",
+          "Supplier cost of capital φ_S"
+        ],
+        "decisions": [
+          "Retailer chooses inventory Q",
+          "Supplier sets credit terms after observing Q"
+        ],
+        "assumptions": [
+          "Both products come from the same supplier.",
+          "Trade credit is fairly priced.",
+          "The supplier observes Q before setting interest."
+        ],
+        "method": "Substitute the supplier's fair-pricing condition into the retailer's inventory problem and compare the resulting choice with the first-best program.",
+        "sources": [
+          {
+            "page": 11,
+            "section": "4.1. Single Supplier",
+            "equation": "(21)–(22)",
+            "quote": "Trade credit differs from bank credit in two ways."
+          }
+        ],
+        "components": [
+          {
+            "id": "order-contingent-supplier-credit",
+            "label": "Order-contingent supplier credit",
+            "role": "process",
+            "concepts": [
+              "inventory",
+              "pricing",
+              "supply-chain-coordination"
+            ],
+            "explanation": "The supplier finances L=c′Q−W and sets the interest rate only after observing Q. The retailer anticipates credit terms that reflect the actual order's risk.",
+            "searchPhrases": [
+              "supplier observes quantity before pricing credit",
+              "trade credit financing of inventory shortfall",
+              "order contingent interest rate"
+            ],
+            "formal": "L=c′Q−W; (1+φ_S)L=Pr(Ω_a)(L+r)+Pr(Ω_b)E[π−b|Ω_b]; Q^TC∈arg max_(Q≥0)V(Q,L^TC(Q),r^TC(Q)).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "φ_S",
+                "meaning": "Supplier's cost of capital"
+              },
+              {
+                "symbol": "L^TC(Q),r^TC(Q)",
+                "meaning": "Trade-credit terms conditioned on the order"
+              },
+              {
+                "symbol": "Q^TC",
+                "meaning": "Inventory selected under single-supplier trade credit"
+              }
+            ],
+            "conditions": [
+              "The supplier provides all residual inventory financing.",
+              "Trade credit is fairly priced.",
+              "The supplier observes Q before setting interest."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.1. Single Supplier",
+                "equation": "(21)–(22)",
+                "quote": "unlike a bank, the supplier sets the interest rate after observing the actual order quantities."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "The supplier finances the inventory-cost shortfall and observes Q before setting the rate.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "The credit rate is set after the order and must satisfy fair pricing.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "supply-chain-coordination",
+                "status": "modeled",
+                "representation": "One supplier coordinates goods and financing terms around the same observed order.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal"
+              }
+            ]
+          },
+          {
+            "id": "single-supplier-first-best",
+            "label": "First-best inventory under trade credit",
+            "role": "preference",
+            "concepts": [
+              "inventory",
+              "supply-chain-coordination"
+            ],
+            "explanation": "Because supplier credit terms are contingent on inventory, the retailer's equity-maximizing order also maximizes total firm value. The first-best conditions use the supplier's rather than the bank's cost of capital.",
+            "searchPhrases": [
+              "trade credit restores first best inventory",
+              "single supplier eliminates risk shifting",
+              "supplier financing aligns inventory incentives"
+            ],
+            "formal": "Q^TC=Q^*; the trade-credit solution satisfies the first-best program with φ_B replaced by φ_S.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "Q^TC",
+                "meaning": "Inventory selected under trade credit"
+              },
+              {
+                "symbol": "Q^*",
+                "meaning": "First-best inventory"
+              },
+              {
+                "symbol": "φ_B,φ_S",
+                "meaning": "Bank and supplier costs of capital"
+              }
+            ],
+            "conditions": [
+              "Both products are ordered from one supplier.",
+              "The supplier sets fairly priced credit terms after observing inventory."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.1. Single Supplier — Proposition 5",
+                "equation": "Proposition 5",
+                "quote": "Under trade credit financing, the firm chooses the first-best inventory levels"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "Proposition 5 equates trade-credit inventory with first-best inventory.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "supply-chain-coordination",
+                "status": "modeled",
+                "representation": "Order-contingent financing by one supplier removes the modeled asset-substitution distortion.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mixed-bank-and-trade-credit",
+        "name": "Mixed bank and supplier financing",
+        "kind": "extension",
+        "relation": "This extension combines bank debt with single-supplier trade credit.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "single-supplier-trade-credit"
+          }
+        ],
+        "summary": "The retailer chooses a bank loan and then orders inventory using supplier credit for the remaining gap. This retains order-contingent incentive alignment while applying the bank's lower funding cost to a secured portion of debt.",
+        "objects": [
+          "A retailer",
+          "A bank with lower cost of capital",
+          "A supplier providing goods and residual trade credit"
+        ],
+        "inputs": [
+          "Bank and supplier costs of capital φ_B and φ_S",
+          "Retailer wealth W, salvage values s, and bankruptcy cost b",
+          "The common two-product revenue environment"
+        ],
+        "decisions": [
+          "Choose bank financing L_B in the first stage",
+          "Choose inventory Q and residual supplier credit L_S in the second stage"
+        ],
+        "assumptions": [
+          "Bank debt is senior to supplier credit.",
+          "Both financing sources are fairly priced.",
+          "The supplier observes inventory before setting its credit terms."
+        ],
+        "method": "Solve the second-stage inventory and supplier-credit problem conditional on bank terms, then optimize the senior bank loan and compare equity value with pure trade credit.",
+        "sources": [
+          {
+            "page": 12,
+            "section": "4.2. Mixed Financing",
+            "equation": "(23)–(27)",
+            "quote": "our intuition about the advantage of mixed financing."
+          }
+        ],
+        "components": [
+          {
+            "id": "mixed-financing-sequence",
+            "label": "Nested mixed-financing choice",
+            "role": "process",
+            "concepts": [
+              "inventory",
+              "optimization"
+            ],
+            "explanation": "The retailer commits to the senior bank loan first. Conditional on those terms, it chooses inventory and uses supplier credit for the residual financing need.",
+            "searchPhrases": [
+              "two-stage mixed bank and supplier financing",
+              "senior bank loan before trade credit",
+              "inventory choice with residual supplier credit"
+            ],
+            "formal": "Q^MF(L_B,r_B)∈arg max_(Q≥0)V(Q,L_S,r_S|L_B,r_B); L_B^MF∈arg max_(L_B≥0)V(Q,L_S,r_S,L_B,r_B).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "L_B,r_B",
+                "meaning": "Senior bank-loan terms"
+              },
+              {
+                "symbol": "L_S,r_S",
+                "meaning": "Residual supplier-credit terms"
+              },
+              {
+                "symbol": "Q^MF",
+                "meaning": "Inventory selected under mixed financing"
+              }
+            ],
+            "conditions": [
+              "The bank loan is chosen before inventory.",
+              "Supplier credit finances the residual inventory cost.",
+              "The bank has seniority over later creditors."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.2. Mixed Financing",
+                "equation": "(23)–(26)",
+                "quote": "for the optimal mixed financing strategy"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "Inventory is chosen after bank terms and determines residual supplier credit.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "Nested maximization problems determine inventory and the bank loan.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mixed-financing-dominance",
+            "label": "Mixed-financing value advantage",
+            "role": "preference",
+            "concepts": [
+              "risk-management",
+              "supply-chain-coordination"
+            ],
+            "explanation": "Mixed financing weakly dominates pure trade credit because the retailer can choose no bank debt. With positive salvage and wealth and zero bankruptcy cost, a safely repayable bank portion lowers funding cost without disturbing first-best inventory.",
+            "searchPhrases": [
+              "mixed financing dominates trade credit",
+              "secured bank portion lowers financing cost",
+              "first best inventory with lower capital cost"
+            ],
+            "formal": "V^MF≥V^TC. If s>0, W>0, b=0, and π is either revenue model, then V^MF−V^TC≥(φ_S−φ_B)W min{s_1/c_1,s_2/c_2}/(1+φ_B).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "V^MF,V^TC",
+                "meaning": "Optimal equity values under mixed financing and trade credit"
+              },
+              {
+                "symbol": "φ_S−φ_B",
+                "meaning": "Supplier's funding-cost premium"
+              },
+              {
+                "symbol": "s_i/c_i",
+                "meaning": "Relative salvage value securing a bank-financed portion"
+              }
+            ],
+            "conditions": [
+              "Weak dominance holds without the strict-result conditions.",
+              "The positive lower bound assumes s>0, W>0, and b=0.",
+              "The strict result applies to both revenue specifications."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.2. Mixed Financing — Proposition 6",
+                "equation": "(27)",
+                "quote": "The retailer prefers mixed financing over trade credit financing"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "risk-management",
+                "status": "modeled",
+                "representation": "A secured bank portion lowers funding cost without adding inventory risk shifting.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "supply-chain-coordination",
+                "status": "modeled",
+                "representation": "Mixed financing retains the supplier's order-contingent coordination while adding cheaper senior capital.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sequential-two-supplier-trade-credit",
+        "name": "Sequential trade credit from two suppliers",
+        "kind": "extension",
+        "relation": "This extension separates the two products across sequential supplier-credit contracts.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "single-supplier-trade-credit"
+          }
+        ],
+        "summary": "Each product is ordered from a different supplier in sequence. Because the later order changes the second supplier's share of liquidation value, the retailer can shift bankruptcy losses toward the earlier supplier, so trade credit no longer guarantees first-best inventory.",
+        "objects": [
+          "A retailer",
+          "Supplier 1 financing product 1",
+          "Supplier 2 financing product 2"
+        ],
+        "inputs": [
+          "Product-specific costs and demand",
+          "Two fair trade-credit contracts",
+          "A proportional bankruptcy liquidation rule"
+        ],
+        "decisions": [
+          "Choose Q_1 before contracting with supplier 2",
+          "Choose Q_2 after the first contract is fixed"
+        ],
+        "assumptions": [
+          "Suppliers have the same cost of capital.",
+          "Bankruptcy proceeds are divided in proportion to face-value claims.",
+          "The retailer anticipates the second-stage order when choosing Q_1."
+        ],
+        "method": "Solve the second supplier's order problem conditional on the first contract, solve the first-stage order anticipating that response, and compare the later order with first best.",
+        "sources": [
+          {
+            "page": 12,
+            "section": "4.3. Two Suppliers",
+            "equation": "(28)–(30)",
+            "quote": "We consider the following sequence of events."
+          }
+        ],
+        "components": [
+          {
+            "id": "sequential-supplier-contracts",
+            "label": "Sequential supplier-credit contracts",
+            "role": "process",
+            "concepts": [
+              "inventory",
+              "principal-agent"
+            ],
+            "explanation": "The retailer orders product 1 and receives its credit first, then orders product 2 and receives a second contract. Both suppliers charge the same interest rate under the proportional-claims fair-pricing rule.",
+            "searchPhrases": [
+              "two suppliers sequential trade credit",
+              "second order after first credit contract",
+              "proportional bankruptcy claims across suppliers"
+            ],
+            "formal": "L_i=c_iQ_i and r_1/L_1=r_2/L_2; Q_2^TC(Q_1,L_1,r_1)∈arg max_(Q_2≥0)V(Q_2,L_2,r_2|Q_1,L_1,r_1).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "L_i=c_iQ_i",
+                "meaning": "Supplier i's trade-credit principal"
+              },
+              {
+                "symbol": "r_i/L_i",
+                "meaning": "Interest rate charged by supplier i"
+              },
+              {
+                "symbol": "Q_2^TC(Q_1,L_1,r_1)",
+                "meaning": "Second order conditional on the first contract"
+              }
+            ],
+            "conditions": [
+              "Supplier 1's contract is completed before supplier 2's contract begins.",
+              "Suppliers divide liquidation value in proportion to claims.",
+              "Equal supplier funding costs imply equal interest rates."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.3. Two Suppliers",
+                "equation": "(28)–(30)",
+                "quote": "The retailer first orders Q1 units of product 1 from supplier 1"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "Each product order determines the corresponding supplier-credit principal.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "conceptId": "principal-agent",
+                "status": "modeled",
+                "representation": "The later order can change how creditor losses are divided between suppliers.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "id": "second-supplier-overordering",
+            "label": "Risk shifting toward the second supplier",
+            "role": "preference",
+            "concepts": [
+              "inventory",
+              "risk-management"
+            ],
+            "explanation": "Under Proposition 7's tractable special case, the retailer overorders product 2 because a larger second claim transfers more bankruptcy-state value to the later supplier at the expense of the earlier supplier.",
+            "searchPhrases": [
+              "overorder from the second supplier",
+              "multiple supplier trade credit risk shifting",
+              "sequential financing agency distortion"
+            ],
+            "formal": "If b=0, ∂π_i/∂Q_j=0 for i≠j, and π_2(D,Q^TC)=0 in bankruptcy states, then Q_2^TC>Q_2^*.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "Q_2^TC",
+                "meaning": "Second order under sequential trade credit"
+              },
+              {
+                "symbol": "Q_2^*",
+                "meaning": "First-best inventory of product 2"
+              },
+              {
+                "symbol": "∂π_i/∂Q_j",
+                "meaning": "Cross-product marginal-revenue effect"
+              }
+            ],
+            "conditions": [
+              "The bankruptcy cost parameter b equals zero.",
+              "There is no cross-product marginal-revenue effect.",
+              "The last unit of product 2 has no value in bankruptcy states."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "4.3. Two Suppliers — Proposition 7",
+                "equation": "Proposition 7",
+                "quote": "The retailer overorders from the second supplier"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "The proposition compares the second supplier's order with first-best inventory.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "risk-management",
+                "status": "modeled",
+                "representation": "Sequential supplier financing creates an asset-substitution incentive that single-supplier credit removes.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "curated-source-v1",
+      "sourceTier": "full-source-curated-note",
+      "editorialStatus": "AI-assisted editorial source review",
+      "formulaPolicy": "Equations were normalized from visually reviewed source pages; subscripts and superscripts are explicit and raw TeX delimiters are not used.",
+      "sourcePdfSha256": "8e02c1e12b190e4fa2bf2bfbaea9ede2dd2317020feb0ac6070d6e6600796017",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "7ff73fe2a7f7d5712cddbd52adfdd28e043b2da302286bbb8539aa9523fcf943",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2016-2515/7ff73fe2a7f7d5712cddbd52adfdd28e043b2da302286bbb8539aa9523fcf943.json",
+      "extractionQaDecisionSha256": "a62ec09bcd3c35c82266f82dcaa4bbef6ea05f7e75922f22fd17e73fe6debaad",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  },
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "7ff73fe2a7f7d5712cddbd52adfdd28e043b2da302286bbb8539aa9523fcf943",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2016-2515/7ff73fe2a7f7d5712cddbd52adfdd28e043b2da302286bbb8539aa9523fcf943.json",
+  "extractionQaDecisionSha256": "a62ec09bcd3c35c82266f82dcaa4bbef6ea05f7e75922f22fd17e73fe6debaad",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null
+}

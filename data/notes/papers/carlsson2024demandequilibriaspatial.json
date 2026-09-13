@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "carlsson2024demandequilibriaspatial",
+  "sourcePdfSha256": "f31635b1aefaa852fa86ae600438cdb52e6820c1c975cf01612623a2ab674a4b",
+  "extractionPagesSha256": "62f732d0f1b15bae749bd66a1347bf5cca35cba497111a1e8fea644a13eae3e2",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "91129ac0ab55a697bb47907a63463007ea68b543d103ab2463c6a72534c54705",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "7f128633d0b3735d5a851ffab925e0b91b8d49aed15ef6500f25268950f87d0b",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/carlsson2024demandequilibriaspatial/7f128633d0b3735d5a851ffab925e0b91b8d49aed15ef6500f25268950f87d0b.json",
+  "extractionQaDecisionSha256": "eeff4d8b314b88b65d9f3f9a3c41eeca9a4d2e7aa78776a169ab1c597b114ae7",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "carlsson2024demandequilibriaspatial",
+    "question": "What determines healthcare and public services?",
+    "overview": "A continuum of customers simultaneously selects facilities to minimize travel plus congestion cost, producing a nonatomic Wardrop-type demand equilibrium; a provider then uses service-rate choices to shape that equilibrium.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        9,
+        14
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Demand Equilibria in Spatial Service Systems model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A continuum of customers simultaneously selects facilities to minimize travel plus congestion cost, producing a nonatomic Wardrop-type demand equilibrium; a provider then uses service-rate choices to shape that equilibrium.",
+        "objects": [
+          "Nonatomic spatial customers"
+        ],
+        "inputs": [
+          "Facility locations and service rates are public; each customer knows her location and anticipates equilibrium waiting cost",
+          "Demand",
+          "The arrival rate",
+          "Random times",
+          "The aggregate arrival rate"
+        ],
+        "decisions": [
+          "Each customer chooses a service facility",
+          "The partition and impose it on customers with fixed service rates μk",
+          "Accept a higher waiting time at facility 2 in order",
+          "Allocation to zero (essentially closing the facility) for larger c",
+          "Load on a facility"
+        ],
+        "assumptions": [
+          "Customers form a continuum over a bounded two-dimensional region",
+          "Demand arrivals are exogenous spatial Poisson with fixed total rate lambda, facilities are independent M/M/1 queues, and stationary expected waiting costs are used",
+          "Customers minimize distance d_k(x) plus congestion cost f_k(A_k); the baseline application uses Euclidean distance",
+          "Aggregate service capacity exceeds aggregate arrival demand",
+          "Facility locations are fixed and publicly known"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Nonatomic spatial customers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "nonatomic spatial customers"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Facility locations and service rates are public; each customer knows her location and anticipates equilibrium waiting cost",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Facility locations and service rates are public; each customer knows her location and anticipates equilibrium waiting cost as a function of the mass assigned to each facility."
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Definitions",
+                "sectionIndex": 5,
+                "page": 3,
+                "quote": "The exogenous Poisson arrival assumption implies that demand at each location x arises independently of other locations; roughly speaking, the arrival process in each infinitesimal subregion is an independent renewal process."
+              }
+            },
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Definitions",
+                "sectionIndex": 5,
+                "page": 4,
+                "quote": "Thus, the arrival rate to each queue will be determined endog­ enously by the set of customers who prefer that facility to others."
+              }
+            },
+            {
+              "value": "Random times",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 10,
+                "quote": "We study the equilibrium using a queueing model in which customers arrive according to a spatiotemporal Poisson process (not only at random times but at ran­ dom locations), and each facility is represented by an M/M/1 queue.",
+                "matchedText": "random times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The aggregate arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Comparative Statics of the Equilibrium Solution",
+                "page": 5,
+                "sectionIndex": 7,
+                "sentence": 1,
+                "quote": "In this section, we fix the normalized arrival intensity function m(x) and investigate how the expected waiting times change as the aggregate arrival rate λ and the ser­ vice rates µk change.",
+                "matchedText": "the aggregate arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each customer chooses a service facility",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each customer chooses a service facility"
+              }
+            },
+            {
+              "value": "The partition and impose it on customers with fixed service rates μk",
+              "source": {
+                "type": "section",
+                "section": "Socially Optimal Partitions",
+                "page": 7,
+                "sectionIndex": 10,
+                "sentence": 1,
+                "quote": "First, we consider the case where the service provider can design the partition and impose it on customers with fixed service rates µk",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Accept a higher waiting time at facility 2 in order",
+              "source": {
+                "type": "section",
+                "section": "Socially Optimal Partitions",
+                "page": 8,
+                "sectionIndex": 10,
+                "sentence": 23,
+                "quote": "In other words, the central­ ized approach asks 3.8% of customers to accept a higher waiting time at facility 2 in order to improve the condi­ tions for 25% of customers at facility 1",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Allocation to zero (essentially closing the facility) for larger c",
+              "source": {
+                "type": "section",
+                "section": "Socially Optimal Resource Allocation",
+                "page": 10,
+                "sectionIndex": 11,
+                "sentence": 46,
+                "quote": "The global optimum balances the externality across facilities by significantly reducing the allocation to facility 1 for small c and setting that allocation to zero (essentially closing the facility) for larger c",
+                "matchedText": "allocation to zero (essentially closing the facility) for larger c",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Load on a facility",
+              "source": {
+                "type": "section",
+                "section": "Demand Equilibria in Spatial Service Systems",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "Customer deci­ sions affect waiting times by increasing the load on a facility",
+                "matchedText": "load on a facility",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Customers form a continuum over a bounded two-dimensional region",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Customers form a continuum over a bounded two-dimensional region."
+              }
+            },
+            {
+              "value": "Demand arrivals are exogenous spatial Poisson with fixed total rate lambda, facilities are independent M/M/1 queues, and stationary expected waiting costs are used",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand arrivals are exogenous spatial Poisson with fixed total rate lambda, facilities are independent M/M/1 queues, and stationary expected waiting costs are used."
+              }
+            },
+            {
+              "value": "Customers minimize distance d_k(x) plus congestion cost f_k(A_k); the baseline application uses Euclidean distance",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Customers minimize distance d_k(x) plus congestion cost f_k(A_k); the baseline application uses Euclidean distance."
+              }
+            },
+            {
+              "value": "Aggregate service capacity exceeds aggregate arrival demand",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Aggregate service capacity exceeds aggregate arrival demand."
+              }
+            },
+            {
+              "value": "Facility locations are fixed and publicly known",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Facility locations are fixed and publicly known."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper characterizes demand equilibria in such spatial service systems using a combination of queueing models and computational geometry.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Demand Equilibria in Spatial Service Systems",
+          "page": 1,
+          "sentence": 8
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 6,
+            "section": "4. Social Welfare and the Equilibrium",
+            "equation": "",
+            "quote": "We characterize the geometry of such a socially optimal partition and compare it with the decentralized parti­ tion in equilibrium studied in Section 3."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "At equilibrium, every customer assigned to facility k weakly minimizes travel plus waiting cost over all facilities.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in healthcare and public services",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "d_k(x)+f_k(A_k)\\le\\min_{j\\ne k}\\{d_j(x)+f_j(A_j)\\},\\qquad x\\in A_k,\\ k=1,\\ldots,K",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "customer location assigned to a service region · spatial demand domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_k",
+                "meaning": "location of service facility k · spatial domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "A_k",
+                "meaning": "set of customer locations assigned to facility k · measurable subset of demand space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_k(x)",
+                "meaning": "distance cost from customer x to facility k; instantiated as Euclidean distance in the baseline · nonnegative distance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f_k(A_k)",
+                "meaning": "M/M/1 waiting cost c/(mu_k-lambda A_k) when A_k<mu_k/lambda, and infinity otherwise · nonnegative extended-real congestion cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Customers form a continuum over a bounded two-dimensional region.",
+              "Demand arrivals are exogenous spatial Poisson with fixed total rate lambda, facilities are independent M/M/1 queues, and stationary expected waiting costs are used.",
+              "Customers minimize distance d_k(x) plus congestion cost f_k(A_k); the baseline application uses Euclidean distance."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "Expected-profit objective",
+                "equation": "(1)",
+                "quote": "The constant c is used to weigh these two types of costs; one may think of c as the slope of a linear utility function used to convert between distance and time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The constant c is used to weigh these two types of costs; one may think of c as”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "unique-nonatomic-spatial-demand",
+            "label": "Unique nonatomic spatial demand",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Unique nonatomic spatial demand (Wardrop) equilibrium. Customer assignments satisfy minimum generalized cost and congestion consistency. Theorem 1 on PDF p. 5 proves existence, and Theorem 2 on the same page proves uniqueness. Theorem 3 on PDF p. 6 gives comparative statics. Theorems 4-6 on PDF pp. 7, 9-10 characterize the social partition and conditions under which optimized service rates decentralize it.",
+            "searchPhrases": [
+              "how unique nonatomic spatial demand is represented",
+              "strategic response in healthcare and public services",
+              "unique nonatomic spatial demand strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Unique nonatomic spatial demand (Wardrop) equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "customer location assigned to a service region · spatial demand domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "A_k",
+                "meaning": "set of customer locations assigned to facility k · measurable subset of demand space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_k(x)",
+                "meaning": "distance cost from customer x to facility k; instantiated as Euclidean distance in the baseline · nonnegative distance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f_k(A_k)",
+                "meaning": "M/M/1 waiting cost c/(mu_k-lambda A_k) when A_k<mu_k/lambda, and infinity otherwise · nonnegative extended-real congestion cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand arrivals are exogenous spatial Poisson with fixed total rate lambda, facilities are independent M/M/1 queues, and stationary expected waiting costs are used.",
+              "Customers minimize distance d_k(x) plus congestion cost f_k(A_k); the baseline application uses Euclidean distance."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.2. Existence and Uniqueness of the Equilibrium",
+                "equation": "",
+                "quote": "Because the weights determine the partition in an additively weighted Voronoi diagram, uniqueness of w∗implies the uniqueness of the equilibrium partition (1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Model interaction”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "For a fixed vector of facility service rates supplied by the centralized design layer, customers observe locations and anticipated congestion and simultaneously choose a facility; the resulting arrival masses and waiting costs must be consistent with those choices. The paper separately optimizes service rates and compares equilibrium with the social partition. nonatomic congestion game spatial facility-choice equilibrium",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in healthcare and public services",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: For a fixed vector of facility service rates supplied by the centralized design layer, customers observe locations and anticipated congestion and simultaneously choose a facility; the resulting arrival masses and waiting costs must be consistent with those choices.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "customer location assigned to a service region · spatial demand domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_k",
+                "meaning": "location of service facility k · spatial domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "A_k",
+                "meaning": "set of customer locations assigned to facility k · measurable subset of demand space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_k(x)",
+                "meaning": "distance cost from customer x to facility k; instantiated as Euclidean distance in the baseline · nonnegative distance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f_k(A_k)",
+                "meaning": "M/M/1 waiting cost c/(mu_k-lambda A_k) when A_k<mu_k/lambda, and infinity otherwise · nonnegative extended-real congestion cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Customers form a continuum over a bounded two-dimensional region.",
+              "Demand arrivals are exogenous spatial Poisson with fixed total rate lambda, facilities are independent M/M/1 queues, and stationary expected waiting costs are used.",
+              "Customers minimize distance d_k(x) plus congestion cost f_k(A_k); the baseline application uses Euclidean distance."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Social Welfare and the Equilibrium",
+                "equation": "",
+                "quote": "We characterize the geometry of such a socially optimal partition and compare it with the decentralized parti­ tion in equilibrium studied in Section 3."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We characterize the geometry of such a socially optimal partition and compare it with the decentralized partition in”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Each customer chooses a service facility",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in healthcare and public services",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each customer chooses a service facility",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "customer location assigned to a service region · spatial demand domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_k",
+                "meaning": "location of service facility k · spatial domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "A_k",
+                "meaning": "set of customer locations assigned to facility k · measurable subset of demand space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_k(x)",
+                "meaning": "distance cost from customer x to facility k; instantiated as Euclidean distance in the baseline · nonnegative distance",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Facility locations are fixed and publicly known."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.2. Socially Optimal Partitions",
+                "equation": "",
+                "quote": "The second term captures the total externality (i.e., the marginal disutility) that a customer choosing facility k imposes on others who also choose facility k."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “The second term captures the total externality (i.e., the marginal disutility) that a customer choosing facility k imposes”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "resource-allocation",
+              "resource-assignment"
+            ],
+            "explanation": "Fixed-point formulation using weighted Voronoi cells, Brouwer existence, uniqueness analysis, and capacity-design optimization.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in healthcare and public services",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Fixed-point formulation using weighted Voronoi cells, Brouwer existence, uniqueness analysis, and capacity-design optimization.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "customer location assigned to a service region · spatial demand domain",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Facility locations and service rates are public; each customer knows her location and anticipates equilibrium waiting cost as a function of the mass assigned to each facility."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.3. Socially Optimal Resource Allocation",
+                "equation": "",
+                "quote": "Every such local optimum corresponds to an additively weighted Voro­ noi diagram whose weights solve yet another type of equilibrium equation, and the service rates µ∗∗have a closed-form dependence on the areas A∗∗."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "resource-allocation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Resource allocation: “Resource allocation”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "resource-assignment",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Resource assignment: “Resource assignment”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Facility locations and service rates are public; each customer knows her location and anticipates equilibrium waiting cost",
+                  "source": {
+                    "type": "record",
+                    "field": "information",
+                    "matchedText": "Facility locations and service rates are public; each customer knows her location and anticipates equilibrium waiting cost as a function of the mass assigned to each facility."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Facility locations and service rates are public; each customer knows her location and anticipates equilibrium waiting cost as a function of the mass assigned to each facility.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in healthcare and public services",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Facility locations and service rates are public; each customer knows her location and anticipates equilibrium waiting cost as a function of the mass assigned to each facility.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "customer location assigned to a service region · spatial demand domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_k",
+                "meaning": "location of service facility k · spatial domain",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "A_k",
+                "meaning": "set of customer locations assigned to facility k · measurable subset of demand space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_k(x)",
+                "meaning": "distance cost from customer x to facility k; instantiated as Euclidean distance in the baseline · nonnegative distance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f_k(A_k)",
+                "meaning": "M/M/1 waiting cost c/(mu_k-lambda A_k) when A_k<mu_k/lambda, and infinity otherwise · nonnegative extended-real congestion cost",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand arrivals are exogenous spatial Poisson with fixed total rate lambda, facilities are independent M/M/1 queues, and stationary expected waiting costs are used.",
+              "Next, we observe that the equilibrium type may not necessarily affect the optimal placement of a new facility; perhaps unsurprisingly, in all three cases, the best location is in the isolated population cluster in the northern part of the map.",
+              "Customers minimize distance d_k(x) plus congestion cost f_k(A_k); the baseline application uses Euclidean distance."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "6. Case Study: Hospital Beds in Los",
+                "equation": "",
+                "quote": "Next, we observe that the equilibrium type may not necessarily affect the optimal placement of a new facil­ ity; perhaps unsurprisingly, in all three cases, the best location is in the isolated population cluster in the north­ ern part of the map."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "model_topic",
+        "transformation": "topic-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "f31635b1aefaa852fa86ae600438cdb52e6820c1c975cf01612623a2ab674a4b",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "7f128633d0b3735d5a851ffab925e0b91b8d49aed15ef6500f25268950f87d0b",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/carlsson2024demandequilibriaspatial/7f128633d0b3735d5a851ffab925e0b91b8d49aed15ef6500f25268950f87d0b.json",
+      "extractionQaDecisionSha256": "eeff4d8b314b88b65d9f3f9a3c41eeca9a4d2e7aa78776a169ab1c597b114ae7",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

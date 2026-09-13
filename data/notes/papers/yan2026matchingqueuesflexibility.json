@@ -1,0 +1,661 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "yan2026matchingqueuesflexibility",
+  "sourcePdfSha256": "cc4cb8ff71fc00579d33385f43d3bf2943139ec56999318cb128f09b518f23f9",
+  "extractionPagesSha256": "263cb957e09f5756b8decdb6ac954e82a346db74aec74f5e1892f6bf26aee52d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "a8dfec89a29f2ff4112d042c3473893140332c88bc0facd539036ada6a0f562b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "eb00fff2aff66d31fbdbc40457ed2fb3fd72951452c5e4ff2acb25a8620ff8d5",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/yan2026matchingqueuesflexibility/eb00fff2aff66d31fbdbc40457ed2fb3fd72951452c5e4ff2acb25a8620ff8d5.json",
+  "extractionQaDecisionSha256": "3a0683af90f19a011feab177f10ed5a63ee8ffec5da138904653906ebceaf355",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "yan2026matchingqueuesflexibility",
+    "question": "How should a platform route jobs when agents privately know whether they are flexible or specialized and may join the wrong queue to obtain faster matching?",
+    "overview": "The paper explicitly defines a queue-choice Nash equilibrium for privately typed agents and analyzes platform-policy performance across equilibria.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        7,
+        8,
+        11,
+        12
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Strategic matching queues",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper explicitly defines a queue-choice Nash equilibrium for privately typed agents and analyzes platform-policy performance across equilibria.",
+        "objects": [
+          "Matching platform",
+          "Flexible and specialized strategic agents"
+        ],
+        "inputs": [
+          "Agent type is private and unobservable to the platform",
+          "Arrival-process primitives and policy are public",
+          "Arriving agents do not observe current queue lengths and base choices on steady-state expectations",
+          "Arrival rates",
+          "Public information"
+        ],
+        "decisions": [
+          "Platform selects queues and job-specific priority lists",
+          "Agents choose a possibly mixed queue-joining strategy",
+          "Agents accept compatible offers",
+          "Whether to join the system",
+          "Join the system"
+        ],
+        "assumptions": [
+          "One flexible agent type serves all job types and each specialized type serves one corresponding type",
+          "Agent/job arrivals are general counting processes with long-run rates",
+          "Agent patience is exponential and jobs survive each rejection with probability p",
+          "All compatible jobs give the same value and waiting incurs linear cost",
+          "Agents already participate, so system-entry choice is excluded"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Matching platform",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "matching platform"
+              }
+            },
+            {
+              "value": "Flexible and specialized strategic agents",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "flexible and specialized strategic agents"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Agent type is private and unobservable to the platform",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "agent type is private and unobservable to the platform"
+              }
+            },
+            {
+              "value": "Arrival-process primitives and policy are public",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "arrival-process primitives and policy are public"
+              }
+            },
+            {
+              "value": "Arriving agents do not observe current queue lengths and base choices on steady-state expectations",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "arriving agents do not observe current queue lengths and base choices on steady-state expectations"
+              }
+            },
+            {
+              "value": "Arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 15,
+                "quote": "arrival rates",
+                "matchedText": "arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Public information",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 18,
+                "quote": "However, the detailed arrival processes for all job and agent types are public information known to both the platform and the agents.",
+                "matchedText": "public information",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Platform selects queues and job-specific priority lists",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "platform selects queues and job-specific priority lists"
+              }
+            },
+            {
+              "value": "Agents choose a possibly mixed queue-joining strategy",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "agents choose a possibly mixed queue-joining strategy"
+              }
+            },
+            {
+              "value": "Agents accept compatible offers",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "agents accept compatible offers and reject incompatible offers"
+              }
+            },
+            {
+              "value": "Whether to join the system",
+              "source": {
+                "type": "section",
+                "section": "Agent Strategies",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 16,
+                "quote": "We abstract from the decision of whether to join the system, focusing instead on the behavior of agents who are already active participants.",
+                "matchedText": "whether to join the system",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Join the system",
+              "source": {
+                "type": "section",
+                "section": "Agent Strategies",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 16,
+                "quote": "We abstract from the decision of whether to join the system",
+                "matchedText": "join the system",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "One flexible agent type serves all job types and each specialized type serves one corresponding type",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "One flexible agent type serves all job types and each specialized type serves one corresponding type."
+              }
+            },
+            {
+              "value": "Agent/job arrivals are general counting processes with long-run rates",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Agent/job arrivals are general counting processes with long-run rates."
+              }
+            },
+            {
+              "value": "Agent patience is exponential and jobs survive each rejection with probability p",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Agent patience is exponential and jobs survive each rejection with probability p."
+              }
+            },
+            {
+              "value": "All compatible jobs give the same value and waiting incurs linear cost",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "All compatible jobs give the same value and waiting incurs linear cost."
+              }
+            },
+            {
+              "value": "Agents already participate, so system-entry choice is excluded",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Agents already participate, so system-entry choice is excluded."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "For each policy-graph pair, we compute the induced equilibrium joining behavior via a replicator dynamics procedure and then, simulate the resulting system.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Simulation Experiments",
+          "page": 13,
+          "sentence": 2
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.1. Full Information",
+            "equation": "",
+            "quote": "In particular, we show that when the platform has full information about agent types, the FR policy maximizes the long-run average throughput among all state-dependent matching policies that assign each arriving job to an agent type based on the current system state (i.e., the number of available agents of each type) and the job’s type."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "queueing",
+              "matching"
+            ],
+            "explanation": "Platform selects queues and job-specific priority lists agents choose a possibly mixed queue-joining strategy agents accept compatible offers and reject incompatible offers",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in platforms and marketplaces",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Platform selects queues and job-specific priority lists agents choose a possibly mixed queue-joining strategy agents accept compatible offers and reject incompatible offers",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "TP(\\pi;\\sigma)",
+                "meaning": "long-run average matching throughput under platform policy pi and agent strategy profile sigma · nonnegative rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi",
+                "meaning": "platform matching policy · paper-defined admissible policy class",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When a job is dispatched to a queue (or multiple queues with the same priority), we assume that it will be assigned uniformly at random among agents in that queue (or those queues).",
+              "All compatible jobs give the same value and waiting incurs linear cost.",
+              "Agents already participate, so system-entry choice is excluded.",
+              "Within a priority class offers are randomized uniformly."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Matching Policy",
+                "equation": "",
+                "quote": "When a job is dispatched to a queue (or multiple queues with the same priority), we assume that it will be assigned uniformly at random among agents in that queue (or those queues)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Queueing: “When a job is dispatched to a queue (or multiple queues with the same priority), we assume that”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Matching: “When a job is dispatched to a queue (or multiple queues with the same priority), we assume that”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The platform evaluates a policy by its long-run average throughput, the expected number of matches per unit time under agents' induced strategy profile.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in platforms and marketplaces",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "TP(\\pi;\\sigma)=\\limsup_{T\\to\\infty}\\frac{1}{T}\\mathbb{E}[M^{\\pi}(T;\\sigma)\\mid A^{(0)}=A]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "TP(\\pi;\\sigma)",
+                "meaning": "long-run average matching throughput under platform policy pi and agent strategy profile sigma · nonnegative rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi",
+                "meaning": "platform matching policy · paper-defined admissible policy class",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma",
+                "meaning": "customers' and suppliers' strategic flexibility choices · paper-defined strategy profile",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "M^{\\pi}(T;\\sigma)",
+                "meaning": "cumulative number of matches completed by time T · nonnegative integer-valued process",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "A^{(0)}=A",
+                "meaning": "initial state of available agent types in the matching system · paper-defined state space",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Agent/job arrivals are general counting processes with long-run rates.",
+              "Agents already participate, so system-entry choice is excluded."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Expected-profit objective",
+                "equation": "(1)",
+                "quote": "Platform’s Objective Our goal is to investigate how various policies affect the system’s performance in terms of throughput (i.e., the long-run average number of matches)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Platform’s Objective Our goal is to investigate how various policies affect the system’s performance in terms of throughput”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "matching",
+              "system-state"
+            ],
+            "explanation": "Agent type is private and unobservable to the platform arrival-process primitives and policy are public arriving agents do not observe current queue lengths and base choices on steady-state expectations",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Agent type is private and unobservable to the platform arrival-process primitives and policy are public arriving agents do not observe current queue lengths and base choices on steady-state expectations",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "TP(\\pi;\\sigma)",
+                "meaning": "long-run average matching throughput under platform policy pi and agent strategy profile sigma · nonnegative rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi",
+                "meaning": "platform matching policy · paper-defined admissible policy class",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma",
+                "meaning": "customers' and suppliers' strategic flexibility choices · paper-defined strategy profile",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "One flexible agent type serves all job types and each specialized type serves one corresponding type.",
+              "Agent/job arrivals are general counting processes with long-run rates.",
+              "Agent patience is exponential and jobs survive each rejection with probability p."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. Full Information",
+                "equation": "",
+                "quote": "In particular, we show that when the platform has full information about agent types, the FR policy maximizes the long-run average throughput among all state-dependent matching policies that assign each arriving job to an agent type based on the current system state (i.e., the number of available agents of each type) and the job’s type."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Matching: “Matching”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses System state: “System state”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "nash-equilibrium-in-agents-queue-joining-strategies",
+            "label": "Nash equilibrium in agents' queue-joining strategies",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Nash equilibrium in agents' queue-joining strategies. Equation (NE) requires every queue used by a type to maximize its expected utility; Proposition 1 proves existence via a variational inequality/fixed point.",
+            "searchPhrases": [
+              "how nash equilibrium in agents' queue-joining strategies is represented",
+              "strategic response in platforms and marketplaces",
+              "nash equilibrium in agents' queue-joining strategies strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Nash equilibrium in agents' queue-joining strategies.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "One flexible agent type serves all job types and each specialized type serves one corresponding type.",
+              "Agents already participate, so system-entry choice is excluded."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. FRfb: Policy Definition and Performance",
+                "equation": "",
+                "quote": "This guarantee is particularly strong as it relies on no equilibrium assumption beyond the very mild requirement that specialized agents play weakly domi­ nant strategies."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “This guarantee is particularly strong as it relies on no equilibrium assumption beyond the very mild requirement that”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "The platform commits to a queue-priority matching policy; agents arrive, privately know type and choose a queue without observing current queue lengths; jobs arrive and are offered by the policy; agents accept compatible jobs or decline incompatible ones and may abandon while waiting. platform commitment to a nonmonetary matching policy nonatomic/type-level queue-choice Nash game",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in platforms and marketplaces",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The platform commits to a queue-priority matching policy; agents arrive, privately know type and choose a queue without observing current queue lengths; jobs arrive and are offered by the policy; agents accept compatible jobs or decline incompatible ones and may abandon while waiting. platform commitment to a nonmonetary matching policy nonatomic/type-level queue-choice Nash game",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "TP(\\pi;\\sigma)",
+                "meaning": "long-run average matching throughput under platform policy pi and agent strategy profile sigma · nonnegative rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi",
+                "meaning": "platform matching policy · paper-defined admissible policy class",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "A^{(0)}=A",
+                "meaning": "initial state of available agent types in the matching system · paper-defined state space",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "One flexible agent type serves all job types and each specialized type serves one corresponding type.",
+              "Agent patience is exponential and jobs survive each rejection with probability p.",
+              "All compatible jobs give the same value and waiting incurs linear cost."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.2. Illustration of Results and Insights",
+                "equation": "",
+                "quote": "Panel (b) shows the fraction of flexi­ ble agents that join queue 1 in equilibrium for policies FR and FRfb."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "cc4cb8ff71fc00579d33385f43d3bf2943139ec56999318cb128f09b518f23f9",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "eb00fff2aff66d31fbdbc40457ed2fb3fd72951452c5e4ff2acb25a8620ff8d5",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/yan2026matchingqueuesflexibility/eb00fff2aff66d31fbdbc40457ed2fb3fd72951452c5e4ff2acb25a8620ff8d5.json",
+      "extractionQaDecisionSha256": "3a0683af90f19a011feab177f10ed5a63ee8ffec5da138904653906ebceaf355",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,2758 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2023-4963",
+  "sourcePdfSha256": "426ed729cff88ff1d771b71049c639271950e0c90cccaf02780b85b8e3fc2462",
+  "extractionPagesSha256": "83456717d5b81e464c5136672bfff58375645ccc8b27d355decbec84de7da637",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "0abab3f2e4fe3734c3552ce3063918bef0cb8543077cfca48a2e493bd6603eb4",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "8001256252b6c84b7cc310403e611315c9e5fd73f1486a294b97f588000c6ad5",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4963/8001256252b6c84b7cc310403e611315c9e5fd73f1486a294b97f588000c6ad5.json",
+  "extractionQaDecisionSha256": "bf0a8e79687a556302ce621c7704065dbd01df003b89951f852e6afe7a86e38a",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-4963",
+    "question": "How do external information and inventory constraint affect dynamic pricing?",
+    "overview": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory. The merchant utilizes new external information that is observed at the beginning of each time period, whereas the demand function—how the external information and the price jointly impact that single-period demand distribution—is unknown. The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        2,
+        4,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "dynamic-pricing-with-external-information-and-inventory-constrai",
+        "name": "Dynamic Pricing with External Information and Inventory Constraint baseline model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory. The merchant utilizes new external information that is observed at the beginning of each time period, whereas the demand function—how the external information and the price jointly impact that single-period demand distribution—is unknown. This analytical framework also inspires the design of two dual-based dynamic pricing algorithms for the clairvoyant and online regimes.",
+        "objects": [
+          "A merchant",
+          "The seller",
+          "The customer",
+          "Multiple products",
+          "Element"
+        ],
+        "inputs": [
+          "The unknown demand",
+          "The random demand",
+          "The distribution of X",
+          "The unknown horizon",
+          "The unknown parameter"
+        ],
+        "decisions": [
+          "Prices in each time period",
+          "Choices is not essential",
+          "The replenishment quantity",
+          "Decision comes",
+          "Require that the choices of the price at time t be within 0"
+        ],
+        "assumptions": [
+          "Boundedness instead for an easier proof demonstration",
+          "The horizon length T is known a priori",
+          "In that case, there would be a small positive probability that the demand in every single period exceeds the total inventory bT",
+          "At this optimal price, each single-period demand has expectation β⊤x 2",
+          "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A merchant",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory.",
+                "matchedText": "A merchant",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The seller",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 7,
+                "quote": "Right at the beginning of the time period t, the seller observes a real­ ization of the external information Xt.",
+                "matchedText": "the seller",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The customer",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 5,
+                "quote": "In quantity-based network revenue man­ agement, the decision of acceptance or rejection comes after the revealing of the customer order, whereas in our formulation (aligned with the dynamic pricing literature), the pricing decision comes before the real­ ized demand.",
+                "matchedText": "the customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Multiple products",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 17,
+                "quote": "Another direction to extend our model is to consider the case of multiple products.",
+                "matchedText": "multiple products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Element",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "The first element of all xt’s is always set to be one such that a constant term is absorbed into xt.",
+                "matchedText": "element",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The unknown demand",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue.",
+                "matchedText": "the unknown demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The random demand",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 10,
+                "quote": "the random demand",
+                "matchedText": "the random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The distribution of X",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 26,
+                "quote": "We denote the distribution of X as P.",
+                "matchedText": "the distribution of X as P",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown horizon",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 18,
+                "sentence": 5,
+                "quote": "the unknown horizon",
+                "matchedText": "the unknown horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown parameter",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 19,
+                "quote": "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation.",
+                "matchedText": "the unknown parameter",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Prices in each time period",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory.",
+                "matchedText": "prices in each time period",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Choices is not essential",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 53,
+                "quote": "We note that this relaxation on the range of price choices is not essential",
+                "matchedText": "choices is not essential",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The replenishment quantity",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 56,
+                "quote": "When the seller has the power to choose the replenishment quantity",
+                "matchedText": "the replenishment quantity",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decision comes",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 5,
+                "quote": "In quantity-based network revenue man­ agement, the decision of acceptance or rejection comes after the revealing of the customer order, whereas in our formulation (aligned with the dynamic pricing literature), the pricing decision comes",
+                "matchedText": "decision comes",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require that the choices of the price at time t be within 0",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 51,
+                "quote": "We instead only require that the choices of the price at time t be within 0",
+                "matchedText": "require that the choices of the price at time t be within 0",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Boundedness instead for an easier proof demonstration",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 37,
+                "quote": "We assume boundedness instead for an easier proof demonstra­ tion.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The horizon length T is known a priori",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 18,
+                "sentence": 3,
+                "quote": "In this paper, we assume the horizon length T is known a priori.",
+                "matchedText": "the horizon length T is known a priori.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In that case, there would be a small positive probability that the demand in every single period exceeds the total inventory bT",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 36,
+                "quote": "In that case, there would be a small positive probability that the demand in every sin­ gle period exceeds the total inventory bT.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "At this optimal price, each single-period demand has expectation β⊤x 2",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 47,
+                "quote": "At this optimal price, each single-period de­ mand has expectation β⊤x 2 .",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 1,
+                "sentence": 48,
+                "quote": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price.",
+                "matchedText": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "Via Lagrangian In this section, we develop a generic method to analyze the regret incurred by any sequential pricing policy, pertaining to either the clairvoyant or online regime.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Unconstrained Regret Decomposition",
+          "page": 8,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "Benchmarks",
+            "equation": "",
+            "quote": "Because the clairvoyant’s optimal expected revenue and the associated clairvoyant optimal policy are the solution of a DP that has no closed-form solution, the lit­ erature uses a deterministic quadratic program (DQP) to approximate DP, in particular, when an inventory constraint is present."
+          }
+        ],
+        "components": [
+          {
+            "id": "algorithm-wise-we-design-two-dual-based-algo",
+            "label": "Algorithm-wise, we design two dual-based algo",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design",
+              "dynamic-pricing",
+              "inventory"
+            ],
+            "explanation": "The first, the inventory-driven dynamic pricing (IDP) algorithm, is a near-optimal algorithm for the clairvoyant regime.",
+            "searchPhrases": [
+              "how algorithm-wise, we design two dual-based algo is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "algorithm-wise, we design two dual-based algo solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The first, the inventory-driven dynamic pricing (IDP) algorithm, is a near-optimal algorithm for the clairvoyant regime.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue."
+            ],
+            "sources": [
+              {
+                "page": 2,
+                "section": "5. Algorithm-wise, we design two dual-based algo",
+                "equation": "",
+                "quote": "The first, the inventory-driven dynamic pricing (IDP) algorithm, is a near-optimal algo­ rithm for the clairvoyant regime."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Algorithm design: “The first, the inventory-driven dynamic pricing (IDP) algorithm, is a near-optimal algorithm for the clairvoyant regime.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "dynamic-pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic pricing: “The first, the inventory-driven dynamic pricing (IDP) algorithm, is a near-optimal algorithm for the clairvoyant regime.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory: “The first, the inventory-driven dynamic pricing (IDP) algorithm, is a near-optimal algorithm for the clairvoyant regime.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The unknown demand",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 3,
+                    "quote": "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue.",
+                    "matchedText": "the unknown demand",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "model-setup",
+            "label": "Model Setup",
+            "role": "process",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "This modeling framework uses a linear pricing model as a simplification and addresses the dependence of both the baseline market size and the price sensitivity on the external information that can change from period to period.",
+            "searchPhrases": [
+              "how model setup is represented",
+              "system process in pricing, consumers, and revenue management",
+              "model setup system process specification"
+            ],
+            "formal": "Process relation: This modeling framework uses a linear pricing model as a simplification and addresses the dependence of both the baseline market size and the price sensitivity on the external information that can change from period to period.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given xt,β,γ ∈Rd, the first term β⊤xt represents the baseline market size and γ⊤xt represents the price sensitivity.",
+              "After observing the external information xt at the beginning of time period t, the seller sets a price pt ≥0 on the product for that time period.",
+              "Right at the beginning of the time period t, the seller observes a realization of the external information Xt."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Model Setup",
+                "equation": "",
+                "quote": "This model­ ing framework uses a linear pricing model as a simpli­ fication and addresses the dependence of both the baseline market size and the price sensitivity on the external information that can change from period to period."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Pricing: “This modeling framework uses a linear Pricing model as a simplification and addresses the dependence”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "benchmarks",
+            "label": "Benchmarks",
+            "role": "objective",
+            "concepts": [
+              "optimization",
+              "inventory"
+            ],
+            "explanation": "Because the clairvoyant’s optimal expected revenue and the associated clairvoyant optimal policy are the solution of a DP that has no closed-form solution, the literature uses a deterministic quadratic program (DQP) to approximate DP, in particular, when an inventory constraint is present.",
+            "searchPhrases": [
+              "how benchmarks is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "benchmarks modeled objective specification"
+            ],
+            "formal": "Objective relation: Because the clairvoyant’s optimal expected revenue and the associated clairvoyant optimal policy are the solution of a DP that has no closed-form solution, the literature uses a deterministic quadratic program (DQP) to approximate DP, in particular, when an inventory constraint is present.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This clairvoyant knows the underlying demand model parameters θ = (β,γ) and the probability distribution P of the external information.",
+              "A worst case regret for a dynamic pricing policy πo is defined as ∆DP T (πo)¢ sup θ∈Θ, P∈Ξ ∆θ, P T (πo) that maximizes the regret over all possible model inputs.",
+              "In this DQP formulation, the decision maker knows in advance all the external information."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Benchmarks",
+                "equation": "",
+                "quote": "Because the clairvoyant’s optimal expected revenue and the associated clairvoyant optimal policy are the solution of a DP that has no closed-form solution, the lit­ erature uses a deterministic quadratic program (DQP) to approximate DP, in particular, when an inventory constraint is present."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “optimal solution”: “Because the clairvoyant’s optimal expected revenue and the associated clairvoyant optimal policy are the solution of a DP”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Inventory: “approximate DP, in particular, when an Inventory constraint is present.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "unconstrained-regret-decomposition",
+            "label": "Unconstrained Regret Decomposition",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The major difficulty is the presence of the constraint, and therefore, the idea is to consider the Lagrangian of the problem and convert the constraint to a part of the objective.",
+            "searchPhrases": [
+              "how unconstrained regret decomposition is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "unconstrained regret decomposition modeled objective specification"
+            ],
+            "formal": "Objective relation: The major difficulty is the presence of the constraint, and therefore, the idea is to consider the Lagrangian of the problem and convert the constraint to a part of the objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4. Unconstrained Regret Decomposition",
+                "equation": "",
+                "quote": "The major difficulty is the presence of the constraint, and therefore, the idea is to consider the Lagrangian of the problem and convert the constraint to a part of the objec­ tive."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The major difficulty is the presence of the constraint, and therefore, the idea is to consider the Lagrangian”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The unknown demand",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 3,
+                    "quote": "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue.",
+                    "matchedText": "the unknown demand",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "remaining-inventory-level-and-stopping-time",
+            "label": "Remaining Inventory Level and Stopping Time",
+            "role": "algorithm",
+            "concepts": [
+              "inventory",
+              "regret-analysis",
+              "algorithm-design"
+            ],
+            "explanation": "To begin, we define several quantities that are closely related to both the algorithm design and regret analysis.",
+            "searchPhrases": [
+              "how remaining inventory level and stopping time is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "remaining inventory level and stopping time solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: To begin, we define several quantities that are closely related to both the algorithm design and regret analysis.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If the inventory level is greater than s throughout the whole process, we let τs = T + 1: Thus, τs is a stopping time adapted to the stochastic process {Bt}T t=1: In particular, τ0 denotes the first time that the inventory is exhausted.",
+              "To begin, we define several quantities that are closely related to both the algorithm design and regret analysis.",
+              "Stopping Time To begin, we define several quantities that are closely related to both the algorithm design and regret analysis."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Remaining Inventory Level and Stopping Time",
+                "equation": "",
+                "quote": "To begin, we define several quantities that are closely related to both the algorithm design and regret analy­ sis."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory: “To begin, we define several quantities that are closely related to both the algorithm design and regret analysis.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "regret-analysis",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Regret analysis: “to both the algorithm design and Regret analysis .”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Algorithm design: “are closely related to both the Algorithm design and regret analysis.”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "inventory-driven-dynamic-pricing-algorithm",
+            "label": "Inventory-Driven Dynamic Pricing Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "dynamic-pricing",
+              "inventory",
+              "optimization"
+            ],
+            "explanation": "The algorithm is inspired by the closed-form optimal solution to the Lagrangian problem RL T (5) and constructs a sequential pricing policy for the clairvoyant regime.",
+            "searchPhrases": [
+              "how inventory-driven dynamic pricing algorithm is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "inventory-driven dynamic pricing algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The algorithm is inspired by the closed-form optimal solution to the Lagrangian problem RL T (5) and constructs a sequential pricing policy for the clairvoyant regime.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Recall that the optimal dual solution in RL T is λ∗= 2b β⊤EX γ⊤EX ."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. Inventory-Driven Dynamic Pricing Algorithm",
+                "equation": "",
+                "quote": "The algorithm is inspired by the closed-form optimal solution to the Lagrangian problem RL T (5) and constructs a sequential pricing policy for the clairvoy­ ant regime."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic pricing: “The algorithm is inspired by the closed-form optimal solution to the Lagrangian problem RL T (5) and constructs”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory: “The algorithm is inspired by the closed-form optimal solution to the Lagrangian problem RL T (5) and constructs”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “optimal solution”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "fete-algorithm",
+            "label": "FETE Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Differently, the FETE algorithm conducts the experimentation at the beginning (not along the way).",
+            "searchPhrases": [
+              "how fete algorithm is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "fete algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Differently, the FETE algorithm conducts the experimentation at the beginning (not along the way).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Differently, the FETE algorithm conducts the experimentation at the beginning (not along the way).",
+              "This aligns with the literature on dynamic pricing with finite inventory (Besbes and Zeevi 2009, Wang et al. 2014), which all do the experimentation at the beginning."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "6.1. FETE Algorithm",
+                "equation": "",
+                "quote": "Differently, the FETE algorithm conducts the experi­ mentation at the beginning (not along the way)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Differently, the FETE algorithm conducts the experimentation at the beginning (not along the way).”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "regret-analysis",
+            "label": "Regret Analysis",
+            "role": "estimation",
+            "concepts": [
+              "regret-analysis",
+              "estimation"
+            ],
+            "explanation": "The estimation of β and γ can be viewed as linear regression with a random design matrix.",
+            "searchPhrases": [
+              "how regret analysis is represented",
+              "estimation procedure in pricing, consumers, and revenue management",
+              "regret analysis estimation procedure specification"
+            ],
+            "formal": "Estimation rule: fit the stated model to observations under its identifying conditions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6.2. Regret Analysis",
+                "equation": "",
+                "quote": "The estimation of β and γ can be viewed as linear regression with a random design matrix."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "regret-analysis",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Regret analysis: “The estimation of β and γ can be viewed as linear regression with a random design matrix.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Model estimation as “estimation”: “The estimation of β and γ can be viewed as”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The unknown parameter",
+                  "source": {
+                    "type": "section",
+                    "section": "Discussions on Other Variants of the Demand Model",
+                    "page": 14,
+                    "sectionIndex": 18,
+                    "sentence": 19,
+                    "quote": "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation.",
+                    "matchedText": "the unknown parameter",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "clairvoyant-and-deterministic-regimes",
+        "name": "Clairvoyant and Deterministic Regimes",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Pricing with External Information and Inventory Constraint baseline model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "dynamic-pricing-with-external-information-and-inventory-constrai"
+          }
+        ],
+        "summary": "RDP T ≤RDQP T : The theorem states that the optimal value of the deterministic regime is an upper bound of the optimal value of the clairvoyant regime.",
+        "objects": [
+          "A merchant",
+          "The seller",
+          "The customer",
+          "Multiple products",
+          "Element"
+        ],
+        "inputs": [
+          "The unknown demand",
+          "The random demand",
+          "The distribution of X",
+          "The unknown horizon",
+          "The unknown parameter"
+        ],
+        "decisions": [
+          "Prices in each time period",
+          "Choices is not essential",
+          "The replenishment quantity",
+          "Decision comes",
+          "Require that the choices of the price at time t be within 0"
+        ],
+        "assumptions": [
+          "Boundedness instead for an easier proof demonstration",
+          "The horizon length T is known a priori",
+          "In that case, there would be a small positive probability that the demand in every single period exceeds the total inventory bT",
+          "At this optimal price, each single-period demand has expectation β⊤x 2",
+          "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A merchant",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory.",
+                "matchedText": "A merchant",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The seller",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 7,
+                "quote": "Right at the beginning of the time period t, the seller observes a real­ ization of the external information Xt.",
+                "matchedText": "the seller",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The customer",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 5,
+                "quote": "In quantity-based network revenue man­ agement, the decision of acceptance or rejection comes after the revealing of the customer order, whereas in our formulation (aligned with the dynamic pricing literature), the pricing decision comes before the real­ ized demand.",
+                "matchedText": "the customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Multiple products",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 17,
+                "quote": "Another direction to extend our model is to consider the case of multiple products.",
+                "matchedText": "multiple products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Element",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "The first element of all xt’s is always set to be one such that a constant term is absorbed into xt.",
+                "matchedText": "element",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The unknown demand",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue.",
+                "matchedText": "the unknown demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The random demand",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 10,
+                "quote": "the random demand",
+                "matchedText": "the random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The distribution of X",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 26,
+                "quote": "We denote the distribution of X as P.",
+                "matchedText": "the distribution of X as P",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown horizon",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 18,
+                "sentence": 5,
+                "quote": "the unknown horizon",
+                "matchedText": "the unknown horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown parameter",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 19,
+                "quote": "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation.",
+                "matchedText": "the unknown parameter",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Prices in each time period",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory.",
+                "matchedText": "prices in each time period",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Choices is not essential",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 53,
+                "quote": "We note that this relaxation on the range of price choices is not essential",
+                "matchedText": "choices is not essential",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The replenishment quantity",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 56,
+                "quote": "When the seller has the power to choose the replenishment quantity",
+                "matchedText": "the replenishment quantity",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decision comes",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 5,
+                "quote": "In quantity-based network revenue man­ agement, the decision of acceptance or rejection comes after the revealing of the customer order, whereas in our formulation (aligned with the dynamic pricing literature), the pricing decision comes",
+                "matchedText": "decision comes",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require that the choices of the price at time t be within 0",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 51,
+                "quote": "We instead only require that the choices of the price at time t be within 0",
+                "matchedText": "require that the choices of the price at time t be within 0",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Boundedness instead for an easier proof demonstration",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 37,
+                "quote": "We assume boundedness instead for an easier proof demonstra­ tion.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The horizon length T is known a priori",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 18,
+                "sentence": 3,
+                "quote": "In this paper, we assume the horizon length T is known a priori.",
+                "matchedText": "the horizon length T is known a priori.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In that case, there would be a small positive probability that the demand in every single period exceeds the total inventory bT",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 36,
+                "quote": "In that case, there would be a small positive probability that the demand in every sin­ gle period exceeds the total inventory bT.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "At this optimal price, each single-period demand has expectation β⊤x 2",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 47,
+                "quote": "At this optimal price, each single-period de­ mand has expectation β⊤x 2 .",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 1,
+                "sentence": 48,
+                "quote": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price.",
+                "matchedText": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "In the analyses, we derive an unconstrained representation of the optimality gap for generic constrained online learning problems, which renders tractable lower and upper bounds for the expected revenue achieved by dynamic pricing algorithms between different regimes.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.3. Relation Between Clairvoyant Optimal RDP T",
+            "equation": "",
+            "quote": "RDP T ≤RDQP T : The theorem states that the optimal value of the deter­ ministic regime is an upper bound of the optimal value of the clairvoyant regime."
+          }
+        ],
+        "components": [
+          {
+            "id": "relation-between-clairvoyant-optimal-rdp-t",
+            "label": "Relation Between Clairvoyant Optimal RDP T",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "RDP T ≤RDQP T : The theorem states that the optimal value of the deterministic regime is an upper bound of the optimal value of the clairvoyant regime.",
+            "searchPhrases": [
+              "how relation between clairvoyant optimal rdp t is represented",
+              "decision-relevant state in pricing, consumers, and revenue management",
+              "relation between clairvoyant optimal rdp t decision-relevant state specification"
+            ],
+            "formal": "State rule: collect the decision-relevant variables defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "RDP T ≤RDQP T : The theorem states that the optimal value of the deterministic regime is an upper bound of the optimal value of the clairvoyant regime.",
+              "T ≤RDQP T : The theorem states that the optimal value of the deterministic regime is an upper bound of the optimal value of the clairvoyant regime."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.3. Relation Between Clairvoyant Optimal RDP T",
+                "equation": "",
+                "quote": "RDP T ≤RDQP T : The theorem states that the optimal value of the deter­ ministic regime is an upper bound of the optimal value of the clairvoyant regime."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “System state”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "optimal-policy-for-clairvoyant-regime",
+        "name": "Optimal Policy for Clairvoyant Regime",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Pricing with External Information and Inventory Constraint baseline model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "dynamic-pricing-with-external-information-and-inventory-constrai"
+          }
+        ],
+        "summary": "Because the remaining inventory bt and the covariates xt may take value in a large state space (possibly even infinite or uncountable), the dynamic programming formulation is intractable to solve. The model denotes the class of all nonanticipatory policies as Πna: Note that we do not restrict the knowledge of the model parameters in defining such policies; the true model parameters can be either known or unknown. Now, we present a near-optimal algorithm for the clairvoyant regime inspired by the optimal solution in the deterministic regime.",
+        "objects": [
+          "A merchant",
+          "The seller",
+          "The customer",
+          "Multiple products",
+          "Element"
+        ],
+        "inputs": [
+          "The unknown demand",
+          "The random demand",
+          "The distribution of X",
+          "The unknown horizon",
+          "The unknown parameter"
+        ],
+        "decisions": [
+          "Prices in each time period",
+          "Choices is not essential",
+          "The replenishment quantity",
+          "Decision comes",
+          "Require that the choices of the price at time t be within 0"
+        ],
+        "assumptions": [
+          "Boundedness instead for an easier proof demonstration",
+          "The horizon length T is known a priori",
+          "In that case, there would be a small positive probability that the demand in every single period exceeds the total inventory bT",
+          "At this optimal price, each single-period demand has expectation β⊤x 2",
+          "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A merchant",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory.",
+                "matchedText": "A merchant",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The seller",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 7,
+                "quote": "Right at the beginning of the time period t, the seller observes a real­ ization of the external information Xt.",
+                "matchedText": "the seller",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The customer",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 5,
+                "quote": "In quantity-based network revenue man­ agement, the decision of acceptance or rejection comes after the revealing of the customer order, whereas in our formulation (aligned with the dynamic pricing literature), the pricing decision comes before the real­ ized demand.",
+                "matchedText": "the customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Multiple products",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 17,
+                "quote": "Another direction to extend our model is to consider the case of multiple products.",
+                "matchedText": "multiple products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Element",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "The first element of all xt’s is always set to be one such that a constant term is absorbed into xt.",
+                "matchedText": "element",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The unknown demand",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue.",
+                "matchedText": "the unknown demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The random demand",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 10,
+                "quote": "the random demand",
+                "matchedText": "the random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The distribution of X",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 26,
+                "quote": "We denote the distribution of X as P.",
+                "matchedText": "the distribution of X as P",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown horizon",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 18,
+                "sentence": 5,
+                "quote": "the unknown horizon",
+                "matchedText": "the unknown horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown parameter",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 19,
+                "quote": "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation.",
+                "matchedText": "the unknown parameter",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Prices in each time period",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory.",
+                "matchedText": "prices in each time period",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Choices is not essential",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 53,
+                "quote": "We note that this relaxation on the range of price choices is not essential",
+                "matchedText": "choices is not essential",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The replenishment quantity",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 56,
+                "quote": "When the seller has the power to choose the replenishment quantity",
+                "matchedText": "the replenishment quantity",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decision comes",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 5,
+                "quote": "In quantity-based network revenue man­ agement, the decision of acceptance or rejection comes after the revealing of the customer order, whereas in our formulation (aligned with the dynamic pricing literature), the pricing decision comes",
+                "matchedText": "decision comes",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require that the choices of the price at time t be within 0",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 51,
+                "quote": "We instead only require that the choices of the price at time t be within 0",
+                "matchedText": "require that the choices of the price at time t be within 0",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Boundedness instead for an easier proof demonstration",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 37,
+                "quote": "We assume boundedness instead for an easier proof demonstra­ tion.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The horizon length T is known a priori",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 18,
+                "sentence": 3,
+                "quote": "In this paper, we assume the horizon length T is known a priori.",
+                "matchedText": "the horizon length T is known a priori.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In that case, there would be a small positive probability that the demand in every single period exceeds the total inventory bT",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 36,
+                "quote": "In that case, there would be a small positive probability that the demand in every sin­ gle period exceeds the total inventory bT.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "At this optimal price, each single-period demand has expectation β⊤x 2",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 47,
+                "quote": "At this optimal price, each single-period de­ mand has expectation β⊤x 2 .",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 1,
+                "sentence": 48,
+                "quote": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price.",
+                "matchedText": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "As discussed earlier, the optimal policy for the clairvoyant regime is specified by a dynamic programming formulation and is intractable to solve.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Revenue Performance Analysis for IDP Algorithm",
+          "page": 12,
+          "sentence": 10
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.1. Optimal Policy for Clairvoyant Regime",
+            "equation": "",
+            "quote": "Because the remaining inventory bt and the covariates xt may take value in a large state space (possibly even infinite or uncountable), the dynamic programming formulation is intractable to solve."
+          }
+        ],
+        "components": [
+          {
+            "id": "optimal-policy-for-clairvoyant-regime",
+            "label": "Optimal Policy for Clairvoyant Regime",
+            "role": "algorithm",
+            "concepts": [
+              "dynamic-programming",
+              "inventory"
+            ],
+            "explanation": "Because the remaining inventory bt and the covariates xt may take value in a large state space (possibly even infinite or uncountable), the dynamic programming formulation is intractable to solve.",
+            "searchPhrases": [
+              "how optimal policy for clairvoyant regime is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "optimal policy for clairvoyant regime solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Because the remaining inventory bt and the covariates xt may take value in a large state space (possibly even infinite or uncountable), the dynamic programming formulation is intractable to solve.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "RDP T ≤RDQP T : The theorem states that the optimal value of the deterministic regime is an upper bound of the optimal value of the clairvoyant regime.",
+              "T ≤RDQP T : The theorem states that the optimal value of the deterministic regime is an upper bound of the optimal value of the clairvoyant regime."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.1. Optimal Policy for Clairvoyant Regime",
+                "equation": "",
+                "quote": "Because the remaining inventory bt and the covariates xt may take value in a large state space (possibly even infinite or uncountable), the dynamic programming formulation is intractable to solve."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic programming: “(possibly even infinite or uncountable), the Dynamic programming formulation is intractable to solve.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory: “Because the remaining Inventory bt and the covariates xt may take value”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "nonanticipatory-policy",
+            "label": "Nonanticipatory Policy",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The model denotes the class of all nonanticipatory policies as Πna: Note that we do not restrict the knowledge of the model parameters in defining such policies; the true model parameters can be either known or unknown.",
+            "searchPhrases": [
+              "how nonanticipatory policy is represented",
+              "information available to the decision maker in pricing, consumers, and revenue management",
+              "nonanticipatory policy information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "So the class Πna embraces all the online policies, that is, Πo ⊂Πna and also part of the clairvoyant policies: those not using future covariate information when making the price decisions.",
+              "We denote the class of all nonanticipatory policies as Πna: Note that we do not restrict the knowledge of the model parameters in defining such policies; the true model parameters can be either known or unknown."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.2. Nonanticipatory Policy",
+                "equation": "",
+                "quote": "We denote the class of all nonanticipatory policies as Πna: Note that we do not restrict the knowledge of the model parameters in defining such policies; the true model parameters can be either known or unknown."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We denote the class of all nonanticipatory policies as Πna: Note that we do not restrict the knowledge”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "near-optimal-clairvoyant-algorithm",
+            "label": "Near-Optimal Clairvoyant Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Now, we present a near-optimal algorithm for the clairvoyant regime inspired by the optimal solution in the deterministic regime.",
+            "searchPhrases": [
+              "how near-optimal clairvoyant algorithm is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "near-optimal clairvoyant algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Now, we present a near-optimal algorithm for the clairvoyant regime inspired by the optimal solution in the deterministic regime.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "From Section 3.1, we know that the optimal policy and the associated revenue for the clairvoyant regime satisfy a Bellman equation via dynamic programming and are intractable to solve."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5. Near-Optimal Clairvoyant Algorithm",
+                "equation": "",
+                "quote": "Now, we present a near-optimal algorithm for the clairvoyant regime inspired by the optimal solution in the deterministic regime."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “the clairvoyant regime inspired by the optimal solution in the deterministic regime.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "revenue-performance-analysis-for-idp-algorithm",
+            "label": "Revenue Performance Analysis for IDP Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Denote the pricing policy specified by the IDP algorithm as πIDP and the revenue as RT(πIDP): Theorem 5 derives an O(log T) upper bound for the optimality gap of the IDP algorithm against the deterministic optimal, combining the upper bound in Theorem 4 with the results in Proposition 4.",
+            "searchPhrases": [
+              "how revenue performance analysis for idp algorithm is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "revenue performance analysis for idp algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.2. Revenue Performance Analysis for IDP Algorithm",
+                "equation": "",
+                "quote": "Denote the pricing policy specified by the IDP algo­ rithm as πIDP and the revenue as RT(πIDP): Theorem 5 derives an O(log T) upper bound for the optimality gap of the IDP algorithm against the deterministic opti­ mal, combining the upper bound in Theorem 4 with the results in Proposition 4."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Denote the Pricing policy specified by the IDP algorithm as πIDP”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The unknown demand",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 3,
+                    "quote": "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue.",
+                    "matchedText": "the unknown demand",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "optimal-solution-for-deterministic-regime",
+        "name": "Optimal Solution for Deterministic Regime",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Pricing with External Information and Inventory Constraint baseline model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "dynamic-pricing-with-external-information-and-inventory-constrai"
+          }
+        ],
+        "summary": "Importantly, the optimal solution inspires our algorithm design in the online regime discussed in detail in later sections.",
+        "objects": [
+          "A merchant",
+          "The seller",
+          "The customer",
+          "Multiple products",
+          "Element"
+        ],
+        "inputs": [
+          "The unknown demand",
+          "The random demand",
+          "The distribution of X",
+          "The unknown horizon",
+          "The unknown parameter"
+        ],
+        "decisions": [
+          "Prices in each time period",
+          "Choices is not essential",
+          "The replenishment quantity",
+          "Decision comes",
+          "Require that the choices of the price at time t be within 0"
+        ],
+        "assumptions": [
+          "Boundedness instead for an easier proof demonstration",
+          "The horizon length T is known a priori",
+          "In that case, there would be a small positive probability that the demand in every single period exceeds the total inventory bT",
+          "At this optimal price, each single-period demand has expectation β⊤x 2",
+          "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A merchant",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory.",
+                "matchedText": "A merchant",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The seller",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 7,
+                "quote": "Right at the beginning of the time period t, the seller observes a real­ ization of the external information Xt.",
+                "matchedText": "the seller",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The customer",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 5,
+                "quote": "In quantity-based network revenue man­ agement, the decision of acceptance or rejection comes after the revealing of the customer order, whereas in our formulation (aligned with the dynamic pricing literature), the pricing decision comes before the real­ ized demand.",
+                "matchedText": "the customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Multiple products",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 17,
+                "quote": "Another direction to extend our model is to consider the case of multiple products.",
+                "matchedText": "multiple products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Element",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "The first element of all xt’s is always set to be one such that a constant term is absorbed into xt.",
+                "matchedText": "element",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The unknown demand",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "The merchant’s decision, setting price dynamically, serves dual roles to learn the unknown demand function and to balance inventory with an ultimate objective to maximize the expected cumulative revenue.",
+                "matchedText": "the unknown demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The random demand",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 10,
+                "quote": "the random demand",
+                "matchedText": "the random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The distribution of X",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 26,
+                "quote": "We denote the distribution of X as P.",
+                "matchedText": "the distribution of X as P",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown horizon",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 18,
+                "sentence": 5,
+                "quote": "the unknown horizon",
+                "matchedText": "the unknown horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown parameter",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 19,
+                "quote": "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation.",
+                "matchedText": "the unknown parameter",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Prices in each time period",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "A merchant dynamically sets prices in each time period when selling a product over a finite time horizon with a given initial inventory.",
+                "matchedText": "prices in each time period",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Choices is not essential",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 53,
+                "quote": "We note that this relaxation on the range of price choices is not essential",
+                "matchedText": "choices is not essential",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The replenishment quantity",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 18,
+                "sentence": 56,
+                "quote": "When the seller has the power to choose the replenishment quantity",
+                "matchedText": "the replenishment quantity",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decision comes",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 5,
+                "quote": "In quantity-based network revenue man­ agement, the decision of acceptance or rejection comes after the revealing of the customer order, whereas in our formulation (aligned with the dynamic pricing literature), the pricing decision comes",
+                "matchedText": "decision comes",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require that the choices of the price at time t be within 0",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 51,
+                "quote": "We instead only require that the choices of the price at time t be within 0",
+                "matchedText": "require that the choices of the price at time t be within 0",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Boundedness instead for an easier proof demonstration",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 37,
+                "quote": "We assume boundedness instead for an easier proof demonstra­ tion.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The horizon length T is known a priori",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 18,
+                "sentence": 3,
+                "quote": "In this paper, we assume the horizon length T is known a priori.",
+                "matchedText": "the horizon length T is known a priori.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In that case, there would be a small positive probability that the demand in every single period exceeds the total inventory bT",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 36,
+                "quote": "In that case, there would be a small positive probability that the demand in every sin­ gle period exceeds the total inventory bT.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "At this optimal price, each single-period demand has expectation β⊤x 2",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 47,
+                "quote": "At this optimal price, each single-period de­ mand has expectation β⊤x 2 .",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price",
+              "source": {
+                "type": "section",
+                "section": "Model Setup",
+                "page": 5,
+                "sectionIndex": 1,
+                "sentence": 48,
+                "quote": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price.",
+                "matchedText": "The assumption b ≤b is exactly corresponding to that the average inventory available per time period is insufficient compared with the single-period expected demand under the optimal price.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "In the analyses, we derive an unconstrained representation of the optimality gap for generic constrained online learning problems, which renders tractable lower and upper bounds for the expected revenue achieved by dynamic pricing algorithms between different regimes.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.2. Optimal Solution for Deterministic Regime",
+            "equation": "",
+            "quote": "Importantly, the optimal solution inspires our algo­ rithm design in the online regime discussed in detail in later sections."
+          }
+        ],
+        "components": [
+          {
+            "id": "optimal-solution-for-deterministic-regime",
+            "label": "Optimal Solution for Deterministic Regime",
+            "role": "algorithm",
+            "concepts": [
+              "optimization",
+              "algorithm-design"
+            ],
+            "explanation": "Importantly, the optimal solution inspires our algorithm design in the online regime discussed in detail in later sections.",
+            "searchPhrases": [
+              "how optimal solution for deterministic regime is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "optimal solution for deterministic regime solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Importantly, the optimal solution inspires our algorithm design in the online regime discussed in detail in later sections.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In addition, if the seller wants to adopt a similar dual-based pricing rule, the seller also needs to learn/estimate the optimal dual solution λD T so as to know a proper price adjustment level."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.2. Optimal Solution for Deterministic Regime",
+                "equation": "",
+                "quote": "Importantly, the optimal solution inspires our algo­ rithm design in the online regime discussed in detail in later sections."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “Importantly, the optimal solution inspires our algorithm design in the online regime”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Algorithm design: “Importantly, the optimal solution inspires our Algorithm design in the online regime discussed in detail in”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "discussions-on-other-variants-of-the-demand-model",
+        "name": "Discussions on Other Variants of the Demand Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Pricing with External Information and Inventory Constraint baseline model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "dynamic-pricing-with-external-information-and-inventory-constrai"
+          }
+        ],
+        "summary": "The constraint causes an additional challenge that one needs not only to perform model learning in a nonstationary environment, but also to allocate the inventory against the future demand uncertainty brought by the nonstationarity.",
+        "objects": [
+          "Multiple products",
+          "The seller"
+        ],
+        "inputs": [
+          "The unknown horizon",
+          "The unknown parameter",
+          "The price",
+          "Demand",
+          "The demand"
+        ],
+        "decisions": [
+          "The replenishment quantity"
+        ],
+        "assumptions": [
+          "The horizon length T is known a priori"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Multiple products",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 17,
+                "quote": "Another direction to extend our model is to consider the case of multiple products.",
+                "matchedText": "multiple products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The seller",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 56,
+                "quote": "the seller",
+                "matchedText": "the seller",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The unknown horizon",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "the unknown horizon",
+                "matchedText": "the unknown horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown parameter",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation.",
+                "matchedText": "the unknown parameter",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The price",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "sectionIndex": 0,
+                "page": 14,
+                "quote": "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation."
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "sectionIndex": 0,
+                "page": 14,
+                "quote": "The constraint causes an addi­ tional challenge that one needs not only to perform model learning in a nonstationary environment, but also to allocate the inventory against the future demand uncertainty brought by the nonstationarity."
+              }
+            },
+            {
+              "value": "The demand",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 38,
+                "quote": "Throughout the paper, we focus on the setting in which the demand function remains unchanged throughout the horizon.",
+                "matchedText": "the demand",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The replenishment quantity",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 56,
+                "quote": "When the seller has the power to choose the replenishment quantity",
+                "matchedText": "the replenishment quantity",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The horizon length T is known a priori",
+              "source": {
+                "type": "section",
+                "section": "Discussions on Other Variants of the Demand Model",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "In this paper, we assume the horizon length T is known a priori.",
+                "matchedText": "the horizon length T is known a priori.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          }
+        ],
+        "method": "In the analyses, we derive an unconstrained representation of the optimality gap for generic constrained online learning problems, which renders tractable lower and upper bounds for the expected revenue achieved by dynamic pricing algorithms between different regimes.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 14,
+            "section": "7.1. Discussions on Other Variants of the Demand Model",
+            "equation": "",
+            "quote": "The constraint causes an addi­ tional challenge that one needs not only to perform model learning in a nonstationary environment, but also to allocate the inventory against the future demand uncertainty brought by the nonstationarity."
+          }
+        ],
+        "components": [
+          {
+            "id": "discussions-on-other-variants-of-the-demand-model",
+            "label": "Discussions on Other Variants of the Demand Model",
+            "role": "preference",
+            "concepts": [
+              "uncertainty",
+              "inventory",
+              "feasibility-constraints"
+            ],
+            "explanation": "The constraint causes an additional challenge that one needs not only to perform model learning in a nonstationary environment, but also to allocate the inventory against the future demand uncertainty brought by the nonstationarity.",
+            "searchPhrases": [
+              "how discussions on other variants of the demand model is represented",
+              "modeled preferences in pricing, consumers, and revenue management",
+              "discussions on other variants of the demand model modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: The constraint causes an additional challenge that one needs not only to perform model learning in a nonstationary environment, but also to allocate the inventory against the future demand uncertainty brought by the nonstationarity.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If we relate the price–demand dependence with the covariates, then the unknown parameter vectors β,γ become tensors but lead to no essential change to their estimation.",
+              "Specifically, when the true horizon is unknown but the uncertainty is sublinear in T, then a sublinear regret is still achievable for our algorithms (similar to Freund and Banerjee 2019).",
+              "Essentially, in the context of our problem, this is because the horizon length not only affects the parameter learning in the unknown horizon setting, but also determines the inventory allocated to each period."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "7.1. Discussions on Other Variants of the Demand Model",
+                "equation": "",
+                "quote": "The constraint causes an addi­ tional challenge that one needs not only to perform model learning in a nonstationary environment, but also to allocate the inventory against the future demand uncertainty brought by the nonstationarity."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Uncertainty: “the inventory against the future demand Uncertainty brought by the nonstationarity.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Inventory: “Inventory”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Feasibility constraints as “model constraint”: “The constraint causes an additional challenge that one needs not only to perform model learning in a nonstationary”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "426ed729cff88ff1d771b71049c639271950e0c90cccaf02780b85b8e3fc2462",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "8001256252b6c84b7cc310403e611315c9e5fd73f1486a294b97f588000c6ad5",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-4963/8001256252b6c84b7cc310403e611315c9e5fd73f1486a294b97f588000c6ad5.json",
+      "extractionQaDecisionSha256": "bf0a8e79687a556302ce621c7704065dbd01df003b89951f852e6afe7a86e38a",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

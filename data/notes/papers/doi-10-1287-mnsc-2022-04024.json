@@ -1,0 +1,854 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2022-04024",
+  "sourcePdfSha256": "baf6c9b8b807ec8cd9cc8d117e3be0291a264e9df2865453d9ab3698e913de62",
+  "extractionPagesSha256": "d61365c985ed15b19ca7d6a6483ad7b9699872c952d0e86b963640306d1cec93",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "99fa871fd3a45133d30191dfebf30c9d6b1b62c44ff211b0563628db8ab2ee9b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "f40f9d25086ea2edcb6921d1e65f24bb270eca705c5b3d7c274a3e4d2e09300a",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-04024/f40f9d25086ea2edcb6921d1e65f24bb270eca705c5b3d7c274a3e4d2e09300a.json",
+  "extractionQaDecisionSha256": "de8e7864e1e05c7d164fee5a3f7e98ad84c85d28b7576e54b8745f8708a343ce",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-04024",
+    "question": "How should the impact of community first responders be modeled?",
+    "overview": "In community first responder (CFR) systems, traditional emergency service response is augmented by a network of trained volunteers who are dispatched via an app. A central application of such systems is out-of-hospital cardiac arrest (OHCA), where a very fast response is crucial. For a target performance level, how many volunteers are needed, and from which locations should they be recruited?",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        8,
+        9,
+        10
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Modeling the Impact of Community First Responders model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "In community first responder (CFR) systems, traditional emergency service response is augmented by a network of trained volunteers who are dispatched via an app. A central application of such systems is out-of-hospital cardiac arrest (OHCA), where a very fast response is crucial. For a target performance level, how many volunteers are needed, and from which locations should they be recruited?",
+        "objects": [
+          "Hospital",
+          "Several elements",
+          "Patients",
+          "Random variable",
+          "The population"
+        ],
+        "inputs": [
+          "The time it takes for the first responder to arrive on site",
+          "Two components: (1) the response delay, and (2) walking time",
+          "Demand",
+          "CFRs and their distribution throughout the city affect response times",
+          "The CFR density"
+        ],
+        "decisions": [
+          "Accept a notification should it be sent to them",
+          "Accept an alert but not initiate their departure immediately",
+          "Accept the alert",
+          "Perform spatial optimization"
+        ],
+        "assumptions": [
+          "Available CFRs are distributed throughout the city according to a spatial Poisson point process",
+          "An ambulance always responds and that volunteers are alerted if they are close to the incident",
+          "A constant response delay, which consists of a triage and system activation time as well as a delay for CFR acceptance",
+          "Ambulances are placed to meet the SJAS target of responding within 12minutes for at least 95% of their patients (Ministry of Health 2020)",
+          "Accepting CFRs respond on foot, and we use the most conservative estimate of Slaa (2020) in the Netherlands to model their speed at six kilometers per hour"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "A central application of such systems is out-of-hospital cardiac arrest (OHCA), where a very fast response is crucial.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Several elements",
+              "source": {
+                "type": "section",
+                "section": "Profile Optimization",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 3,
+                "quote": "several elements",
+                "matchedText": "several elements",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Response Process",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 30,
+                "quote": "Because OHCA patients only constitute a small por­ tion of all the requests served by SJAS, it is not reason­ able to assume the ambulances are placed optimally with respect to OHCA response targets.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random variable",
+              "source": {
+                "type": "section",
+                "section": "Response-Time Distribution",
+                "page": 5,
+                "sectionIndex": 22,
+                "sentence": 2,
+                "quote": "random variable",
+                "matchedText": "random variable",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The population",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 24,
+                "quote": "The num­ ber of registered CFRs ranges from 0.1% of the population in a newly introduced system in New Zea­ land (Global Resuscitation Alliance 2019) to more than 1% in a mature system in the Netherlands (Wikipedia 2020).",
+                "matchedText": "the population",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The time it takes for the first responder to arrive on site",
+              "source": {
+                "type": "section",
+                "section": "Response Process",
+                "page": 8,
+                "sectionIndex": 14,
+                "sentence": 2,
+                "quote": "Of interest is the time it takes for the first responder to arrive on site.",
+                "matchedText": "the time it takes for the first responder to arrive on site",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "Two components: (1) the response delay, and (2) walking time",
+              "source": {
+                "type": "section",
+                "section": "Using a Poisson Point Process",
+                "page": 4,
+                "sectionIndex": 21,
+                "sentence": 24,
+                "quote": "We are interested in the distri­ bution of the response time of this closest CFR, which depends on two components: (1) the response delay, and (2) walking time.",
+                "matchedText": "two components: (1) the response delay, and (2) walking time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Response-Time Distribution",
+                "page": 5,
+                "sectionIndex": 22,
+                "sentence": 32,
+                "quote": "With these reasons in mind, we now identify the opti­ mal probability distribution ν for a given demand distri­ bution λ.",
+                "matchedText": "demand",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "CFRs and their distribution throughout the city affect response times",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 21,
+                "quote": "The central goal of this paper is to determine how the availability of CFRs and their distribution throughout the city affect response times.",
+                "matchedText": "CFRs and their distribution throughout the city affect response times",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The CFR density",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 23,
+                "quote": "The response time largely depends on the CFR density, which, in turn, depends on the number of regis­ tered CFRs and their distribution over the city.",
+                "matchedText": "the CFR density",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Accept a notification should it be sent to them",
+              "source": {
+                "type": "section",
+                "section": "Using a Poisson Point Process",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 1,
+                "quote": "We say that CFRs are available if they are present in the city, have the app running on their phone, and will accept a notification should it be sent to them",
+                "matchedText": "accept a notification should it be sent to them",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Accept an alert but not initiate their departure immediately",
+              "source": {
+                "type": "section",
+                "section": "Response Process",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 23,
+                "quote": "The assumed 30-second CFR acceptance delay is not perfect because volunteers may accept an alert but not initiate their departure immediately",
+                "matchedText": "accept an alert but not initiate their departure immediately",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Accept the alert",
+              "source": {
+                "type": "section",
+                "section": "Response Process",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 23,
+                "quote": "The assumed 30-second CFR acceptance delay is not perfect because volunteers may accept an alert but not initiate their departure immediately, or they may accept the alert",
+                "matchedText": "accept the alert",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Perform spatial optimization",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 46,
+                "quote": "We view the primary contributions of this work to be (1) the introduction of a new class of CFR problems to the operations research community, and (2) the selection of, and interplay between, Poisson point processes to model volunteers and convex optimization to perform spatial optimization",
+                "matchedText": "perform spatial optimization",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Available CFRs are distributed throughout the city according to a spatial Poisson point process",
+              "source": {
+                "type": "section",
+                "section": "Using a Poisson Point Process",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "We assume that available CFRs are distributed throughout the city according to a spatial Poisson point process.",
+                "matchedText": "available CFRs are distributed throughout the city according to a spatial Poisson point process.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "An ambulance always responds and that volunteers are alerted if they are close to the incident",
+              "source": {
+                "type": "section",
+                "section": "Response Process",
+                "page": 8,
+                "sectionIndex": 14,
+                "sentence": 1,
+                "quote": "We assume that an ambulance always responds and that volunteers are alerted if they are close to the incident.",
+                "matchedText": "an ambulance always responds and that volunteers are alerted if they are close to the incident.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A constant response delay, which consists of a triage and system activation time as well as a delay for CFR acceptance",
+              "source": {
+                "type": "section",
+                "section": "Response Process",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 17,
+                "quote": "We assume a constant response delay, which consists of a triage and system activation time as well as a delay for CFR acceptance.",
+                "matchedText": "a constant response delay, which consists of a triage and system activation time as well as a delay for CFR acceptance.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Ambulances are placed to meet the SJAS target of responding within 12minutes for at least 95% of their patients (Ministry of Health 2020)",
+              "source": {
+                "type": "section",
+                "section": "Response Process",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 31,
+                "quote": "Instead, we assume that ambulances are placed to meet the SJAS tar­ get of responding within 12minutes for at least 95% of their patients (Ministry of Health 2020).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Accepting CFRs respond on foot, and we use the most conservative estimate of Slaa (2020) in the Netherlands to model their speed at six kilometers per hour",
+              "source": {
+                "type": "section",
+                "section": "Response Process",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 16,
+                "quote": "We assume that accepting CFRs respond on foot, and we use the most conservative esti­ mate of Slaa (2020) in the Netherlands to model their speed at six kilometers per hour.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper models the presence of volunteers throughout a region as a Poisson point process, which permits the computation of the response-time distribution of the first-arriving volunteer.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 4
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3.1. Using a Poisson Point Process",
+            "equation": "",
+            "quote": "We assume that available CFRs are distributed throughout the city according to a spatial Poisson point process."
+          }
+        ],
+        "components": [
+          {
+            "id": "modeling-cfr-response",
+            "label": "Modeling CFR Response",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "However, our modeling approach applies whether the area under consideration is a city, a county, a state, or even a nation, at least in principle.",
+            "searchPhrases": [
+              "how modeling cfr response is represented",
+              "decision-relevant state in organizations, incentives, and finance",
+              "modeling cfr response decision-relevant state specification"
+            ],
+            "formal": "State definition: However, our modeling approach applies whether the area under consideration is a city, a county, a state, or even a nation, at least in principle.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We are interested in the distribution of the response time of this closest CFR, which depends on two components: (1) the response delay, and (2) walking time."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Modeling CFR Response",
+                "equation": "",
+                "quote": "However, our modeling approach applies whether the area under consideration is a city, a county, a state, or even a nation, at least in principle."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “System state”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Two components: (1) the response delay, and (2) walking time",
+                  "source": {
+                    "type": "section",
+                    "section": "Using a Poisson Point Process",
+                    "page": 4,
+                    "sectionIndex": 21,
+                    "sentence": 24,
+                    "quote": "We are interested in the distri­ bution of the response time of this closest CFR, which depends on two components: (1) the response delay, and (2) walking time.",
+                    "matchedText": "two components: (1) the response delay, and (2) walking time",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "using-a-poisson-point-process",
+            "label": "Using a Poisson Point Process",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "We assume that available CFRs are distributed throughout the city according to a spatial Poisson point process.",
+            "searchPhrases": [
+              "how using a poisson point process is represented",
+              "system process in organizations, incentives, and finance",
+              "using a poisson point process system process specification"
+            ],
+            "formal": "Process relation: We assume that available CFRs are distributed throughout the city according to a spatial Poisson point process.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that available CFRs are distributed throughout the city according to a spatial Poisson point process.",
+              "We assume that the set of available CFRs does not depend on call volume, which is reasonable because, typically, CFRs are called out on the order of once per year (Pijls et al. 2019), at least in the context of OHCA.",
+              "It is therefore sufficient to henceforth assume that μ = nαν, where n indicates the overall number of CFRs who have the same availability probability α ∈(0,1) and the same location probability distribution ν, conditional on being available."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Using a Poisson Point Process",
+                "equation": "",
+                "quote": "We assume that available CFRs are distributed throughout the city according to a spatial Poisson point process."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “We assume that available CFRs are distributed throughout the city according to a spatial Poisson point process.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "response-time-distribution",
+            "label": "Response-Time Distribution",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "The response time to an incident is the minimum of the time until a CFR or ambulance arrives at the scene, with these intervals measured from the moment the call to EMS is initiated.",
+            "searchPhrases": [
+              "how response-time distribution is represented",
+              "system process in organizations, incentives, and finance",
+              "response-time distribution system process specification"
+            ],
+            "formal": "Process relation: The response time to an incident is the minimum of the time until a CFR or ambulance arrives at the scene, with these intervals measured from the moment the call to EMS is initiated.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the closest available CFR is dispatched to an incident as long as the CFR is within a given maximal distance from the patient.",
+              "We assume that ambulance bases are given and ambulances respond from their bases and not from the road.",
+              "For simplicity, the total response delay for a CFR is assumed to be constant and is denoted by κ."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.2. Response-Time Distribution",
+                "equation": "",
+                "quote": "The response time to an incident is the minimum of the time until a CFR or ambulance arrives at the scene, with these intervals measured from the moment the call to EMS is initiated."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “The response time to an incident is the minimum of the time until a CFR or ambulance arrives”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-ideal-cfr-distribution",
+            "label": "The Ideal CFR Distribution",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The first is a standard objective in EMS; the second is more general and can capture, for example, the average response time and the probability of patient survival (under the assumption that it is known how survival declines with response time).",
+            "searchPhrases": [
+              "how the ideal cfr distribution is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "the ideal cfr distribution modeled objective specification"
+            ],
+            "formal": "Objective relation: The first is a standard objective in EMS; the second is more general and can capture, for example, the average response time and the probability of patient survival (under the assumption that it is known how survival declines with response time).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The first is a standard objective in EMS; the second is more general and can capture, for example, the average response time and the probability of patient survival (under the assumption that it is known how survival declines with response time)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. The Ideal CFR Distribution",
+                "equation": "",
+                "quote": "The first is a standard objective in EMS; the second is more general and can capture, for example, the average response time and the probability of patient survival (under the assumption that it is known how survival declines with response time)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "optimizing-coverage",
+            "label": "Optimizing Coverage",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "A more precise description of the algorithm can be found in Online Appendix 4.",
+            "searchPhrases": [
+              "how optimizing coverage is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "optimizing coverage solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: A more precise description of the algorithm can be found in Online Appendix 4.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Coverage is defined as the fraction of demand that can be served within a predefined threshold time τ."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.1. Optimizing Coverage",
+                "equation": "",
+                "quote": "A more precise description of the algorithm can be found in Online Appendix 4."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “A more precise description of the algorithm can be found in Online Appendix 4.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "profile-optimization",
+            "label": "Profile Optimization",
+            "role": "algorithm",
+            "concepts": [
+              "optimization",
+              "versioning"
+            ],
+            "explanation": "To solve the optimization problem with profiles, we implemented a version of the away-step Frank-Wolfe algorithm in Bomze et al. (2020) with an adaptive line search and a stopping criterion based on the (optimality) gap between the objective value of the current iterate and a lower bound obtained through a cutting plane method that relies on convexity of the objective function.",
+            "searchPhrases": [
+              "how profile optimization is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "profile optimization solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: To solve the optimization problem with profiles, we implemented a version of the away-step Frank-Wolfe algorithm in Bomze et al. (2020) with an adaptive line search and a stopping criterion based on the (optimality) gap between the objective value of the current iterate and a lower bound obtained through a cutting plane method that relies on convexity of the objective function.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For each time block t ∈T , let P(t) ∈[0,1]|L|×m denote the given CFR profile matrix in which P(t) li is the probability, in time block t, that a CFR with profile i appears in region l.",
+              "We have P l∈LP(t) li ≤1 for all t ∈T , with strict inequality when CFRs temporarily leave the city.",
+              "To prove Proposition 4, observe that the objective function becomes a weighted sum of (3) or (5) over the set of time blocks T , which remain convex."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.4. Profile Optimization",
+                "equation": "",
+                "quote": "To solve the optimization problem with profiles, we implemented a version of the away-step Frank-Wolfe algorithm in Bomze et al. (2020) with an adaptive line search and a stopping criterion based on the (optimality) gap between the objective value of the current iterate and a lower bound obtained through a cutting plane method that relies on convexity of the objective function."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “objective function”: “that relies on convexity of the objective function .”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "versioning",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Versioning: “To solve the optimization problem with profiles, we implemented a version of the away-step Frank-Wolfe algorithm in Bomze”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "response-process",
+            "label": "Response Process",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "For triage and system activation, we assume 1.5minutes; this is in line with Slaa (2020), who estimated this time at 105seconds before a system update that automates and thereby speeds up system activation.",
+            "searchPhrases": [
+              "how response process is represented",
+              "system process in organizations, incentives, and finance",
+              "response process system process specification"
+            ],
+            "formal": "Process relation: For triage and system activation, we assume 1.5minutes; this is in line with Slaa (2020), who estimated this time at 105seconds before a system update that automates and thereby speeds up system activation.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume a constant response delay, which consists of a triage and system activation time as well as a delay for CFR acceptance.",
+              "We assume that accepting CFRs respond on foot, and we use the most conservative estimate of Slaa (2020) in the Netherlands to model their speed at six kilometers per hour.",
+              "For the probability that a volunteer accepts an alert, we use the historical value as observed in the data: α = 0.14.",
+              "For triage and system activation, we assume 1.5minutes; this is in line with Slaa (2020), who estimated this time at 105seconds before a system update that automates and thereby speeds up system activation."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.2. Response Process",
+                "equation": "",
+                "quote": "For triage and system activation, we assume 1.5minutes; this is in line with Slaa (2020), who estimated this time at 105seconds before a system update that automates and thereby speeds up system activation."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “For triage and system activation, we assume 1.5minutes; this is in line with Slaa (2020), who estimated this”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "cfr-profiles",
+            "label": "CFR Profiles",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Although we defined profiles per area unit, it is also possible to have more—or fewer—profiles than area units, for example, based on other location aggregation levels, for example, people who work at the airport or other properties on which one can distinguish recruitment, for example, students.",
+            "searchPhrases": [
+              "how cfr profiles is represented",
+              "information available to the decision maker in organizations, incentives, and finance",
+              "cfr profiles information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Although we defined profiles per area unit, it is also possible to have more—or fewer—profiles than area units, for example, based on other location aggregation levels, for example, people who work at the airport or other properties on which one can distinguish recruitment, for example, students.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that everyone stays in the area unit where they live.",
+              "For the profiles during nights and weekends, we assume that everyone stays in the area unit where they live."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5.3. CFR Profiles",
+                "equation": "",
+                "quote": "Although we defined profiles per area unit, it is also possible to have more—or fewer—profiles than area units, for example, based on other location aggrega­ tion levels, for example, people who work at the airport or other properties on which one can distinguish recruitment, for example, students."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "baf6c9b8b807ec8cd9cc8d117e3be0291a264e9df2865453d9ab3698e913de62",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "f40f9d25086ea2edcb6921d1e65f24bb270eca705c5b3d7c274a3e4d2e09300a",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-04024/f40f9d25086ea2edcb6921d1e65f24bb270eca705c5b3d7c274a3e4d2e09300a.json",
+      "extractionQaDecisionSha256": "de8e7864e1e05c7d164fee5a3f7e98ad84c85d28b7576e54b8745f8708a343ce",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

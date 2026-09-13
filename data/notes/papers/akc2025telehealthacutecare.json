@@ -1,0 +1,812 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "akc2025telehealthacutecare",
+  "sourcePdfSha256": "6711b77e745f682413e6af8659998f09c8f45c23e8f3c61e6301133ea1a94feb",
+  "extractionPagesSha256": "6603f5f0bf5255f0158925d273429b193353946474851bacc704c52f244b00db",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "2fc6cb41daa636f5b683cfe46fadd49c30a6c58630f28dfcbfad96fe91448a96",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "7ad6024b88b67e719f0ef288165ddd7ffac04929fc957c6aa5342250a3ee9925",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/akc2025telehealthacutecare/7ad6024b88b67e719f0ef288165ddd7ffac04929fc957c6aa5342250a3ee9925.json",
+  "extractionQaDecisionSha256": "8b67621505e5cb5a0aa28676a9dde982b8fba3b9c3e289b4d5dd631cbef09b79",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "akc2025telehealthacutecare",
+    "question": "How does a payer's telehealth reimbursement rate affect a provider's division of capacity between office and virtual care, strategic patients' channel choices, duplicate visits, and overall acute-care access?",
+    "overview": "The paper nests a strategic patient queueing equilibrium inside sequential reimbursement and provider-capacity decisions, so equilibrium analysis is central rather than incidental.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        9,
+        16
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Healthcare operations and telehealth policy",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper nests a strategic patient queueing equilibrium inside sequential reimbursement and provider-capacity decisions, so equilibrium analysis is central rather than incidental.",
+        "objects": [
+          "Payer",
+          "Capacity-constrained healthcare provider",
+          "Strategic acute-care patients"
+        ],
+        "inputs": [
+          "Patients make symmetric choices using equilibrium waiting-time expectations",
+          "The reimbursement, capacity allocation, service rates, rewards, and expected delays are common knowledge",
+          "A telehealth visit may generate a duplicate office visit with publicly known probability q",
+          "The patient demand",
+          "The patient access rate"
+        ],
+        "decisions": [
+          "Payer chooses reimbursement r, including whether to impose pay parity",
+          "Provider chooses telehealth capacity commitment theta",
+          "Patients choose telehealth, office care, or balking",
+          "A capacity commitment between the two channels",
+          "Join the system"
+        ],
+        "assumptions": [
+          "The base system has a single provider/server whose capacity is split between office and telehealth service",
+          "Potential patients are homogeneous in the main model and act strategically with respect to expected delay and net benefit",
+          "Telehealth can lead to an additional office visit with probability q",
+          "The provider maximizes reimbursement revenue rather than patient access or social welfare",
+          "The main large-market model uses stationary Markovian queueing primitives; the paper also studies a small-market variant and operational extensions"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Payer",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "payer"
+              }
+            },
+            {
+              "value": "Capacity-constrained healthcare provider",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "capacity-constrained healthcare provider"
+              }
+            },
+            {
+              "value": "Strategic acute-care patients",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "strategic acute-care patients"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Patients make symmetric choices using equilibrium waiting-time expectations",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Patients make symmetric choices using equilibrium waiting-time expectations."
+              }
+            },
+            {
+              "value": "The reimbursement, capacity allocation, service rates, rewards, and expected delays are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The reimbursement, capacity allocation, service rates, rewards, and expected delays are common knowledge."
+              }
+            },
+            {
+              "value": "A telehealth visit may generate a duplicate office visit with publicly known probability q",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "A telehealth visit may generate a duplicate office visit with publicly known probability q."
+              }
+            },
+            {
+              "value": "The patient demand",
+              "source": {
+                "type": "section",
+                "section": "Small-Market Setting",
+                "page": 11,
+                "sectionIndex": 12,
+                "sentence": 4,
+                "quote": "That is, when the provider has a way to capture all the patient demand in both channels, provider and patients are aligned under any reimbursement level.",
+                "matchedText": "the patient demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient access rate",
+              "source": {
+                "type": "section",
+                "section": "Large-Market Setting",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 9,
+                "quote": "the patient access rate",
+                "matchedText": "the patient access rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Payer chooses reimbursement r, including whether to impose pay parity",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "payer chooses reimbursement r, including whether to impose pay parity"
+              }
+            },
+            {
+              "value": "Provider chooses telehealth capacity commitment theta",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "provider chooses telehealth capacity commitment theta"
+              }
+            },
+            {
+              "value": "Patients choose telehealth, office care, or balking",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "patients choose telehealth, office care, or balking"
+              }
+            },
+            {
+              "value": "A capacity commitment between the two channels",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 3,
+                "quote": "In the second stage, the provider decides on a capacity commitment between the two channels",
+                "matchedText": "a capacity commitment between the two channels",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Join the system",
+              "source": {
+                "type": "section",
+                "section": "Large-Market Setting",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 1,
+                "quote": "We start with the large-market setting, where patients cannot obtain a nonnegative expected utility if they all join the system",
+                "matchedText": "join the system",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The base system has a single provider/server whose capacity is split between office and telehealth service",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The base system has a single provider/server whose capacity is split between office and telehealth service."
+              }
+            },
+            {
+              "value": "Potential patients are homogeneous in the main model and act strategically with respect to expected delay and net benefit",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Potential patients are homogeneous in the main model and act strategically with respect to expected delay and net benefit."
+              }
+            },
+            {
+              "value": "Telehealth can lead to an additional office visit with probability q",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Telehealth can lead to an additional office visit with probability q."
+              }
+            },
+            {
+              "value": "The provider maximizes reimbursement revenue rather than patient access or social welfare",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The provider maximizes reimbursement revenue rather than patient access or social welfare."
+              }
+            },
+            {
+              "value": "The main large-market model uses stationary Markovian queueing primitives; the paper also studies a small-market variant and operational extensions",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The main large-market model uses stationary Markovian queueing primitives; the paper also studies a small-market variant and operational extensions."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "Stationary queueing analysis and patient indifference conditions characterize the downstream symmetric equilibrium; regime thresholds and concavity then solve the provider response and payer policy by backward induction.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 16,
+            "section": "6.3. Specialization",
+            "equation": "",
+            "quote": "Unlike in our main model, in the second stage of the game, rather than each provider offering one or both channels, we consider the case where the providers may specialize—that is, one provider offers service exclu­ sively via telehealth, and the other provider exclusively via the office, in which case duplicate visits resulting from the telehealth provider’s panel are referred to the office of the other provider."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Payer chooses reimbursement r, including whether to impose pay parity provider chooses telehealth capacity commitment theta patients choose telehealth, office care, or balking",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in healthcare and public services",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Payer chooses reimbursement r, including whether to impose pay parity provider chooses telehealth capacity commitment \\theta patients choose telehealth, office care, or balking",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "F(r, \\theta)",
+                "meaning": "provider revenue per unit time under telehealth reimbursement r and commitment theta · nonnegative revenue rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "reimbursement for a telehealth visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "provider's probability/commitment of serving a telehealth patient at a service epoch · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "reimbursement for an office visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that a telehealth patient requires a duplicate office visit · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_O(\\theta), \\pi_T(\\theta)",
+                "meaning": "equilibrium proportions joining the office and telehealth channels · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The base system has a single provider/server whose capacity is split between office and telehealth service.",
+              "Potential patients are homogeneous in the main model and act strategically with respect to expected delay and net benefit.",
+              "Telehealth can lead to an additional office visit with probability q."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Model",
+                "equation": "",
+                "quote": "In the second stage, the provider decides on a capacity commitment between the two channels."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “In the second stage, the provider decides on a capacity commitment between the two channels.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "queueing",
+              "resource-allocation"
+            ],
+            "explanation": "Stationary queueing analysis and patient indifference conditions characterize the downstream symmetric equilibrium; regime thresholds and concavity then solve the provider response and payer policy by backward induction.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in healthcare and public services",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Stationary queueing analysis and patient indifference conditions characterize the downstream symmetric equilibrium; regime thresholds and concavity then solve the provider response and payer policy by backward induction.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "F(r, \\theta)",
+                "meaning": "provider revenue per unit time under telehealth reimbursement r and commitment theta · nonnegative revenue rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "reimbursement for a telehealth visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "provider's probability/commitment of serving a telehealth patient at a service epoch · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that a telehealth patient requires a duplicate office visit · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_O(\\theta), \\pi_T(\\theta)",
+                "meaning": "equilibrium proportions joining the office and telehealth channels · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The base system has a single provider/server whose capacity is split between office and telehealth service.",
+              "The provider maximizes reimbursement revenue rather than patient access or social welfare.",
+              "The main large-market model uses stationary Markovian queueing primitives; the paper also studies a small-market variant and operational extensions."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Third Stage: Patients’ Choice of Telehealth",
+                "equation": "",
+                "quote": "Moreover, the equilibrium queueing model we use in the third stage ensures that patient demand is responsive to this capacity allocation decision."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Queueing as “queueing model”: “Moreover, the equilibrium queueing model we use in the third stage ensures that”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "resource-allocation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Resource allocation as “capacity allocation”: “patient demand is responsive to this capacity allocation decision.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The reimbursement, capacity allocation, service rates, rewards, and expected delays are common knowledge. Patients make symmetric choices using equilibrium waiting-time expectations. A telehealth visit may generate a duplicate office visit with publicly known probability q.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in healthcare and public services",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The reimbursement, capacity allocation, service rates, rewards, and expected delays are common knowledge.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "F(r, \\theta)",
+                "meaning": "provider revenue per unit time under telehealth reimbursement r and commitment theta · nonnegative revenue rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "reimbursement for a telehealth visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "provider's probability/commitment of serving a telehealth patient at a service epoch · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "reimbursement for an office visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that a telehealth patient requires a duplicate office visit · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_O(\\theta), \\pi_T(\\theta)",
+                "meaning": "equilibrium proportions joining the office and telehealth channels · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In our setting, this means the provider receives an expected revenue for each visit, including duplicate visits (again, this is common in the United States).6 Define the expected revenue7 of an office visit to be R ≥0 and the expected revenue of a telehealth visit to be r ≥0.",
+              "The base system has a single provider/server whose capacity is split between office and telehealth service.",
+              "Potential patients are homogeneous in the main model and act strategically with respect to expected delay and net benefit.",
+              "Telehealth can lead to an additional office visit with probability q."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Third Stage: Patients’ Choice of Telehealth",
+                "equation": "",
+                "quote": "In our setting, this means the provider receives an ex­ pected revenue for each visit, including duplicate visits (again, this is common in the United States).6 Define the expected revenue7 of an office visit to be R ≥0 and the expected revenue of a telehealth visit to be r ≥0."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "subgame-perfect-stackelberg-equilibrium-with-a-symmetric-patient",
+            "label": "subgame-perfect Stackelberg equilibrium with a symmetric patient queueing Nash equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is subgame-perfect Stackelberg equilibrium with a symmetric patient queueing Nash equilibrium. The patient subgame is partitioned into office-only, telehealth-only, both-channel, and balking regimes; provider and payer choices are then solved backward using those equilibrium regimes.",
+            "searchPhrases": [
+              "how subgame-perfect stackelberg equilibrium with a symmetric patient queueing nash equilibrium is represented",
+              "strategic response in healthcare and public services",
+              "subgame-perfect stackelberg equilibrium with a symmetric patient queueing nash equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is subgame-perfect Stackelberg equilibrium with a symmetric patient queueing Nash equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "F(r, \\theta)",
+                "meaning": "provider revenue per unit time under telehealth reimbursement r and commitment theta · nonnegative revenue rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "reimbursement for a telehealth visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "provider's probability/commitment of serving a telehealth patient at a service epoch · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that a telehealth patient requires a duplicate office visit · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_O(\\theta), \\pi_T(\\theta)",
+                "meaning": "equilibrium proportions joining the office and telehealth channels · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The base system has a single provider/server whose capacity is split between office and telehealth service.",
+              "The provider maximizes reimbursement revenue rather than patient access or social welfare.",
+              "The main large-market model uses stationary Markovian queueing primitives; the paper also studies a small-market variant and operational extensions."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Large-Market Setting",
+                "equation": "",
+                "quote": "In the large-market setting, there is one possible pure strategy equilibrium: B all patients balk; and three possible mixed-strategy equilibria: BO, where patients mix between balk and office, BT, where patients mix between balk and telehealth, and BOT, where patients mix among balk, office, and telehealth."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “In the large-market setting, there is one possible pure strategy equilibrium: B all patients balk; and three possible”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Given reimbursement r and the patient equilibrium induced by capacity share theta, the provider maximizes revenue from office encounters, telehealth encounters, and duplicate follow-up office visits.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in healthcare and public services",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "F(r,\\theta)=\\lambda\\left[R\\pi_O(\\theta)+(r+Rq)\\pi_T(\\theta)\\right]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "F(r, \\theta)",
+                "meaning": "provider revenue per unit time under telehealth reimbursement r and commitment theta · nonnegative revenue rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "reimbursement for a telehealth visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "provider's probability/commitment of serving a telehealth patient at a service epoch · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "patient arrival rate · positive rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "reimbursement for an office visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that a telehealth patient requires a duplicate office visit · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_O(\\theta), \\pi_T(\\theta)",
+                "meaning": "equilibrium proportions joining the office and telehealth channels · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "We define the provider’s revenue per unit time as F(r,θ), a function of r, the telehealth reimbursement, and θ, the telehealth commitment.",
+              "The base system has a single provider/server whose capacity is split between office and telehealth service.",
+              "Telehealth can lead to an additional office visit with probability q.",
+              "The provider maximizes reimbursement revenue rather than patient access or social welfare."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "Expected-profit objective",
+                "equation": "(23)",
+                "quote": "We define the provider’s revenue per unit time as F(r,θ), a function of r, the telehealth reimburse­ ment, and θ, the telehealth commitment."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The payer selects the telehealth reimbursement first; the provider then commits a share of capacity to telehealth; patients subsequently choose telehealth, office care, or balking in the induced queueing network. three-stage Stackelberg game strategic queueing game",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in healthcare and public services",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The payer selects the telehealth reimbursement first; the provider then commits a share of capacity to telehealth; patients subsequently choose telehealth, office care, or balking in the induced queueing network. three-stage Stackelberg game strategic queueing game",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "F(r, \\theta)",
+                "meaning": "provider revenue per unit time under telehealth reimbursement r and commitment theta · nonnegative revenue rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "reimbursement for a telehealth visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "provider's probability/commitment of serving a telehealth patient at a service epoch · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "reimbursement for an office visit · nonnegative reimbursement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that a telehealth patient requires a duplicate office visit · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_O(\\theta), \\pi_T(\\theta)",
+                "meaning": "equilibrium proportions joining the office and telehealth channels · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The base system has a single provider/server whose capacity is split between office and telehealth service.",
+              "Potential patients are homogeneous in the main model and act strategically with respect to expected delay and net benefit.",
+              "Telehealth can lead to an additional office visit with probability q."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "6.3. Specialization",
+                "equation": "",
+                "quote": "Unlike in our main model, in the second stage of the game, rather than each provider offering one or both channels, we consider the case where the providers may specialize—that is, one provider offers service exclu­ sively via telehealth, and the other provider exclusively via the office, in which case duplicate visits resulting from the telehealth provider’s panel are referred to the office of the other provider."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Unlike in our main model, in the second stage of the game, rather than each provider offering one”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "6711b77e745f682413e6af8659998f09c8f45c23e8f3c61e6301133ea1a94feb",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "7ad6024b88b67e719f0ef288165ddd7ffac04929fc957c6aa5342250a3ee9925",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/akc2025telehealthacutecare/7ad6024b88b67e719f0ef288165ddd7ffac04929fc957c6aa5342250a3ee9925.json",
+      "extractionQaDecisionSha256": "8b67621505e5cb5a0aa28676a9dde982b8fba3b9c3e289b4d5dd631cbef09b79",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

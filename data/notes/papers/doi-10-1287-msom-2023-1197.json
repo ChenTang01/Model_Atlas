@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-1197",
+  "sourcePdfSha256": "8bcf5c8e8b159e6a7b0827f8466fcefe3cdb6edf1c8fe85e539e2258eca2867f",
+  "extractionPagesSha256": "17a5f76eeb73288e604ad5c31b548d492a847e898eca09115559d583b84d74be",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "851bb848aa7f1af938ec8fdbfbbff3dd3e92b16db9bfb79c701bd74f8efb16fe",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "3262468dd428a92a59a4b47a7a37b4afa7a6e7482d56895a00628e29cf4baa24",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1197/3262468dd428a92a59a4b47a7a37b4afa7a6e7482d56895a00628e29cf4baa24.json",
+  "extractionQaDecisionSha256": "71ef5525310579be7ab62d6187adbb53f75fb88d8d8e6516f07d42edc498aa53",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-1197",
+    "question": "What role does blockchain operations play in the presence of security concerns?",
+    "overview": "A blockchain payment system, such as Bitcoin or Ethereum, validates electronic transactions and stores them in a chain of blocks without a central authority. Miners with computing power compete for the rights to create blocks according to a preset protocol, referred to as hashing or mining, and, in return, earn fees paid by users who submit transactions. Because of security concerns caused by decentralization, a transaction is confirmed after a number of additional blocks are subsequently extended to the block containing it.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Stochastic model",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        7,
+        9
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Blockchain Operations in the Presence of Security Concerns model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A blockchain payment system, such as Bitcoin or Ethereum, validates electronic transactions and stores them in a chain of blocks without a central authority. Miners with computing power compete for the rights to create blocks according to a preset protocol, referred to as hashing or mining, and, in return, earn fees paid by users who submit transactions. Because of security concerns caused by decentralization, a transaction is confirmed after a number of additional blocks are subsequently extended to the block containing it.",
+        "objects": [
+          "Users",
+          "Server",
+          "The customers",
+          "Developers"
+        ],
+        "inputs": [
+          "The time",
+          "Arrival rate"
+        ],
+        "decisions": [
+          "Design parameter for two reasons",
+          "Call for running the hashing process at its capacity"
+        ],
+        "assumptions": [
+          "Users are homogeneous with the same security target and, hence, confirmation latency z",
+          "Miners are motivated solely by the transaction fees in our basic model and incorporate block rewards in Section 7",
+          "Users’ required security levels are independent and identically distributed continuous random variables drawn from a distribution on [0,δ], where 0 < δ ≪1",
+          "Forking attacks can only occur to confirmed transactions",
+          "Suppose that users’ required security levels are independent and identically distributed continuous random variables drawn from a distribution on [0,δ], where 0 < δ ≪1"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Users",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Miners with computing power compete for the rights to create blocks according to a preset protocol, referred to as hashing or mining, and, in return, earn fees paid by users who submit transactions.",
+                "matchedText": "users",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Methodology/results: The hashing process is essentially a single-server queue with batch services based on a fee-based priority discipline, and confirmation latency adds complexity to the equilibrium behavior and optimal design.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The customers",
+              "source": {
+                "type": "section",
+                "section": "Operations of the BPS",
+                "page": 4,
+                "sectionIndex": 30,
+                "sentence": 12,
+                "quote": "Our queueing model differs from theirs in that our transaction fee affects both the position of the customers and the equilibrium behavior of the miners (servers), leading to a more involved influence on the waiting time of users.",
+                "matchedText": "the customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Developers",
+              "source": {
+                "type": "section",
+                "section": "System Designs",
+                "page": 8,
+                "sectionIndex": 15,
+                "sentence": 5,
+                "quote": "First, some blockchains do adopt nonzero entrance fees for different reasons; for example, Ethereum sets a nonzero base fee plus a tip (https://ethereum.org/en/developers/docs/ gas/).",
+                "matchedText": "developers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The time",
+              "source": {
+                "type": "section",
+                "section": "Operations of the BPS",
+                "sectionIndex": 6,
+                "page": 4,
+                "quote": "Given that the expected block mining rate is kept constant at µ, the number of trials needed to mine a block is geometrically distributed with a fixed success probability from each trial, and hence, the time to mine a block can be approximated by an exponential random variable with rate µ."
+              }
+            },
+            {
+              "value": "Arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Operations of the BPS",
+                "page": 4,
+                "sectionIndex": 30,
+                "sentence": 36,
+                "quote": "arrival rate",
+                "matchedText": "arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design parameter for two reasons",
+              "source": {
+                "type": "section",
+                "section": "System Designs",
+                "page": 8,
+                "sectionIndex": 15,
+                "sentence": 4,
+                "quote": "We endogenize b and treat it as a design parameter for two reasons",
+                "matchedText": "design parameter for two reasons",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Call for running the hashing process at its capacity",
+              "source": {
+                "type": "section",
+                "section": "System Designs",
+                "page": 9,
+                "sectionIndex": 15,
+                "sentence": 13,
+                "quote": "As we see, simple and easily implementable designs that call for running the hashing process at its capacity",
+                "matchedText": "call for running the hashing process at its capacity",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Users are homogeneous with the same security target and, hence, confirmation latency z",
+              "source": {
+                "type": "section",
+                "section": "Operations of the BPS",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 14,
+                "quote": "We assume that users are homogeneous with the same security target and, hence, confirmation latency z.",
+                "matchedText": "users are homogeneous with the same security target and, hence, confirmation latency z.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Miners are motivated solely by the transaction fees in our basic model and incorporate block rewards in Section 7",
+              "source": {
+                "type": "section",
+                "section": "User and Miner Behavior",
+                "page": 4,
+                "sectionIndex": 7,
+                "sentence": 4,
+                "quote": "We assume that miners are motivated solely by the transaction fees in our basic model and incorporate block rewards in Section 7.",
+                "matchedText": "miners are motivated solely by the transaction fees in our basic model and incorporate block rewards in Section 7.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Users’ required security levels are independent and identically distributed continuous random variables drawn from a distribution on [0,δ], where 0 < δ ≪1",
+              "source": {
+                "type": "section",
+                "section": "User Heterogeneity",
+                "page": 11,
+                "sectionIndex": 22,
+                "sentence": 15,
+                "quote": "Suppose that users’ required security levels are independent and identically distributed continuous random variables drawn from a distribution on [0,δ], where 0 < δ ≪1.",
+                "matchedText": "users’ required security levels are independent and identically distributed continuous random variables drawn from a distribution on [0,δ], where 0 < δ ≪1.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Forking attacks can only occur to confirmed transactions",
+              "source": {
+                "type": "section",
+                "section": "Incorporating Forking Attacks Before",
+                "page": 11,
+                "sectionIndex": 23,
+                "sentence": 1,
+                "quote": "Confirmation In our basic model, we assume that forking attacks can only occur to confirmed transactions.",
+                "matchedText": "forking attacks can only occur to confirmed transactions.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Suppose that users’ required security levels are independent and identically distributed continuous random variables drawn from a distribution on [0,δ], where 0 < δ ≪1",
+              "source": {
+                "type": "section",
+                "section": "User Heterogeneity",
+                "page": 11,
+                "sectionIndex": 22,
+                "sentence": 15,
+                "quote": "Suppose that users’ required security levels are independent and identically distributed continuous random variables drawn from a distribution on [0,δ], where 0 < δ ≪1.",
+                "matchedText": "Suppose that users’ required security levels are independent and identically distributed continuous random variables drawn from a distribution on [0,δ], where 0 < δ ≪1.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper estimates C 2.079 Satoshis per second per byte and R(10 4,0) 8,270 Satoshis per byte by Theorem 1 using the data.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Empirical and Model Predictions",
+          "page": 14,
+          "sentence": 2
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.3.1. Probability of a Successful Attack on a Confirmed",
+            "equation": "",
+            "quote": "However, we ignore this possibility in our basic model for the following reasons: (1) The impact of a transaction not being confirmed at all on users’ partici­ pation decisions is much less compared with the loss when a confirmed payment is invalidated."
+          }
+        ],
+        "components": [
+          {
+            "id": "operations-of-the-bps",
+            "label": "Operations of the BPS",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "A new block is mined when a cryptographic puzzle is solved by a miner.",
+            "searchPhrases": [
+              "how operations of the bps is represented",
+              "solution algorithm in operations and supply chains",
+              "operations of the bps solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: A new block is mined when a cryptographic puzzle is solved by a miner.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The service is prioritized by the transaction fee b ≥b that a user is willing to pay, where b is the entrance fee, and the higher the transaction fee, the sooner the transaction will be selected by miners.",
+              "The process of solving a cryptographic puzzle is essentially a continuous flipping of a coin independently with an extremely low success probability, and a miner’s computing power determines the frequency at which the miner is able to conduct trials."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Operations of the BPS",
+                "equation": "",
+                "quote": "A new block is mined when a cryptographic puzzle is solved by a miner."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “A new block is mined when a cryptographic puzzle is solved by a miner.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "user-and-miner-behavior",
+            "label": "User and Miner Behavior",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "That is, we allow users’ fee decision to be a mixed strategy as a pure strategy equilibrium may not exist, and hence, G(b) represents the proportion of users who pay a fee no greater than b.",
+            "searchPhrases": [
+              "how user and miner behavior is represented",
+              "information available to the decision maker in operations and supply chains",
+              "user and miner behavior information available to the decision maker specification"
+            ],
+            "formal": "Information structure: That is, we allow users’ fee decision to be a mixed strategy as a pure strategy equilibrium may not exist, and hence, G(b) represents the proportion of users who pay a fee no greater than b.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "G(b)",
+                "meaning": "proportion of users who pay a fee no greater than b"
+              }
+            ],
+            "conditions": [
+              "If the total potential market size is Λ, the actual arrival rate λ = pΛ, and users pay an expected total transaction fee Φ = λ R ∞ b bdG(b).",
+              "We assume that miners are motivated solely by the transaction fees in our basic model and incorporate block rewards in Section 7."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.2. User and Miner Behavior",
+                "equation": "",
+                "quote": "That is, we allow users’ fee decision to be a mixed strat­ egy as a pure strategy equilibrium may not exist, and hence, G(b) represents the proportion of users who pay a fee no greater than b."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “That is, we allow users’ fee decision to be a mixed strategy as a pure strategy equilibrium may”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "probability-of-a-successful-attack-on-a-confirmed",
+            "label": "Probability of a Successful Attack on a Confirmed",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "However, we ignore this possibility in our basic model for the following reasons: (1) The impact of a transaction not being confirmed at all on users’ participation decisions is much less compared with the loss when a confirmed payment is invalidated.",
+            "searchPhrases": [
+              "how probability of a successful attack on a confirmed is represented",
+              "decision rule in operations and supply chains",
+              "probability of a successful attack on a confirmed decision rule specification"
+            ],
+            "formal": "Decision rule: However, we ignore this possibility in our basic model for the following reasons: (1) The impact of a transaction not being confirmed at all on users’ participation decisions is much less compared with the loss when a confirmed payment is invalidated.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The main purpose of a forking attack is to invalidate a transaction after the physical transfer of goods has already been completed, which occurs only after the transaction is confirmed.",
+              "Because a confirmed block in the longest chain by definition has already been followed by at least z blocks, an adversary must catch up with the longest chain from at least z blocks behind.",
+              "Note that a confirmed block must first survive the confirmation latency after it is mined, and a low probability of a successful attack on confirmed transactions γ(β,z) does not guarantee a low probability that a block will not survive the confirmation process."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.3.1. Probability of a Successful Attack on a Confirmed",
+                "equation": "",
+                "quote": "However, we ignore this possibility in our basic model for the following reasons: (1) The impact of a transaction not being confirmed at all on users’ partici­ pation decisions is much less compared with the loss when a confirmed payment is invalidated."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "users-equilibrium-behavior-p-g-for-a-given",
+            "label": "Users’ Equilibrium Behavior (p∗,G∗) for a Given",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "Users’ equilibrium strategy (p∗,G∗) is defined as one that maximizes a user’s expected utility given that all other users apply the same strategy; that is, it is a solution to sup(p,G){U((p,G) | (p∗,G∗),z)}.",
+            "searchPhrases": [
+              "how users’ equilibrium behavior (p∗,g∗) for a given is represented",
+              "strategic response in operations and supply chains",
+              "users’ equilibrium behavior (p∗,g∗) for a given strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this case, λ*= Λ, that is, p∗(z) = 1, and all users achieve a nonnegative expected utility.",
+              "Users’ equilibrium strategy (p∗,G∗) is defined as one that maximizes a user’s expected utility given that all other users apply the same strategy; that is, it is a solution to sup(p,G){U((p,G) | (p∗,G∗),z)}.",
+              "As z further increases and p∗(z) drops below one, fewer users participate, and the system is less congested, leading to lower transaction fees."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1.2. Users’ Equilibrium Behavior (p∗,G∗) for a Given",
+                "equation": "",
+                "quote": "Users’ equilibrium strategy (p∗,G∗) is defined as one that maximizes a user’s expected utility given that all other users apply the same strategy; that is, it is a solu­ tion to sup(p,G){U((p,G) | (p∗,G∗),z)}."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Users’ equilibrium strategy (p∗,G∗) is defined as one that maximizes a user’s expected utility given that all other”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "system-equilibria",
+            "label": "System Equilibria",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Because confirmation latency z∗uniquely determines users’ equilibrium decisions (p∗,G∗(·)) by Theorem 1 and, hence, the total transaction fee Φ∗by (8), we define (z∗,β∗) that satisfies (2) and (9) as a system equilibrium.",
+            "searchPhrases": [
+              "how system equilibria is represented",
+              "decision rule in operations and supply chains",
+              "system equilibria decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "By Proposition 2, β∗(z) increases when p∗= 1 and then strictly decreases when p∗< 1 as z increases and, hence, p∗decreases.",
+              "The quasi-convexity of γ(β∗(z),z) leads directly to the possibility of up to two system equilibria existing and a unique equilibrium occurring if and only if minz{γ (β∗(z),z)} = δ.",
+              "Because confirmation latency z∗uniquely determines users’ equilibrium decisions (p∗,G∗(·)) by Theorem 1 and, hence, the total transaction fee Φ∗by (8), we define (z∗,β∗) that satisfies (2) and (9) as a system equilibrium."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.2. System Equilibria",
+                "equation": "",
+                "quote": "Because confirmation latency z∗uniquely determines users’ equilibrium decisions (p∗,G∗(·)) by Theorem 1 and, hence, the total transaction fee Φ∗by (8), we define (z∗,β∗) that satisfies (2) and (9) as a system equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Because confirmation latency z∗uniquely determines users’ equilibrium decisions (p∗,G∗(·)) by Theorem 1 and, hence, the total transaction fee”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "the-constraints-and-feasibility",
+            "label": "The Constraints and Feasibility",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "As we will see, simply running at capacity and setting the block size as small as possible is always optimal although it may not be the only optimal design under both objectives.",
+            "searchPhrases": [
+              "how the constraints and feasibility is represented",
+              "feasibility condition in operations and supply chains",
+              "the constraints and feasibility feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: As we will see, simply running at capacity and setting the block size as small as possible is always optimal although it may not be the only optimal design under both objectives.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "K and require that K ≥Km: (10) Furthermore, transactions in each new block are required to be broadcasted in the system once it is mined, and there is an upper limit on the rate at which transactions can be broadcasted, defined as the system capacity η.",
+              "Then, zλ is an equilibrium confirmation latency when (μ,K,b) = η Km ,Km, 1 1 δ R(δ,0) c Wq Λ η Km ,Km + zλKm η + , (14) under which the system runs at full capacity and sets the block size as small as possible.",
+              "Because each block must contain both transaction data and headers that identify the block in the entire blockchain, a small block size requires more headers and greater data storage."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.1. The Constraints and Feasibility",
+                "equation": "",
+                "quote": "As we will see, simply running at capacity and setting the block size as small as possible is always optimal although it may not be the only optimal design under both objectives."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “As we will see, simply running at capacity and setting the block size as small as possible is”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "8bcf5c8e8b159e6a7b0827f8466fcefe3cdb6edf1c8fe85e539e2258eca2867f",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "3262468dd428a92a59a4b47a7a37b4afa7a6e7482d56895a00628e29cf4baa24",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1197/3262468dd428a92a59a4b47a7a37b4afa7a6e7482d56895a00628e29cf4baa24.json",
+      "extractionQaDecisionSha256": "71ef5525310579be7ab62d6187adbb53f75fb88d8d8e6516f07d42edc498aa53",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

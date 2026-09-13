@@ -1,0 +1,736 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-00906",
+  "sourcePdfSha256": "3691a9d88b13b995206254999aba62aa00ac4eb7e117137f59891c94d1376ec0",
+  "extractionPagesSha256": "472691f7f25b71f14c8da9dfe6b3f6a996e2262a45653c07f91c9091c7f99092",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "c42297f75c854a6382f334ebd0becf21ef36cc719f55a97343aaf83788cad01a",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "1cd9d155e18bbf54833305de52cca0cf980f8cd8c49459de91ca188a45299c5e",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00906/1cd9d155e18bbf54833305de52cca0cf980f8cd8c49459de91ca188a45299c5e.json",
+  "extractionQaDecisionSha256": "dd3770de2d3d5fe1cfd4da33576d332efa8fe3d84fdd8730143178ed7a7986b5",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-00906",
+    "question": "How can an electricity-market operator price discrete startup and dispatch decisions so that generators prefer the efficient allocation while the operator balances its budget and avoids uncompensated losses?",
+    "overview": "The paper designs a market mechanism for generators with discrete startup and production decisions. Prices support a competitive equilibrium when the market clears and every generator's centralized allocation is a profit-maximizing best response; individual rationality, budget balance, and revenue adequacy are proved under explicit conditions.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        9,
+        12
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Copositive Duality for Discrete Energy Markets model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper designs a market mechanism for generators with discrete startup and production decisions. Prices support a competitive equilibrium when the market clears and every generator's centralized allocation is a profit-maximizing best response; individual rationality, budget balance, and revenue adequacy are proved under explicit conditions.",
+        "objects": [
+          "System operator coordinating unit commitment",
+          "Electricity generators with discrete startup and continuous output decisions",
+          "Inelastic electricity load paying the mechanism"
+        ],
+        "inputs": [
+          "Demand is inelastic and known for each time period",
+          "Generator production costs, startup costs, capacity bounds",
+          "The mechanism uses an optimal primal allocation and an optimal copositive-dual solution",
+          "The equilibrium analysis is complete-information and focuses on allocation incentives rather than private cost reports"
+        ],
+        "decisions": [
+          "The operator selects commitment and dispatch in the central problem",
+          "Each generator can start up, remain offline",
+          "The operator chooses dual-price and cross-term payment components",
+          "RCDP imposes generator revenue-adequacy constraints"
+        ],
+        "assumptions": [
+          "Startup and on/off choices are discrete, production is continuous, and load is inelastic",
+          "The displayed unit-commitment model abstracts from transmission and several operational details, although additional linear constraints can be incorporated",
+          "The mixed-binary quadratic reformulation satisfies the structural conditions for an equivalent completely positive program",
+          "Strong CPP-COP duality follows because the unit-commitment objective is linear and hence convex under the cited result",
+          "CDP's full individual rationality is guaranteed when the lifted balance price Lambda* equals zero; otherwise only most generators may be covered after a decomposition-based modification"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "System operator coordinating unit commitment",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "system operator coordinating unit commitment"
+              }
+            },
+            {
+              "value": "Electricity generators with discrete startup and continuous output decisions",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "electricity generators with discrete startup and continuous output decisions"
+              }
+            },
+            {
+              "value": "Inelastic electricity load paying the mechanism",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "inelastic electricity load paying the mechanism"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Demand is inelastic and known for each time period",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Demand is inelastic and known for each time period."
+              }
+            },
+            {
+              "value": "Generator production costs, startup costs, capacity bounds",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Generator production costs, startup costs, capacity bounds, and operational constraints are parameters of the unit-commitment problem."
+              }
+            },
+            {
+              "value": "The mechanism uses an optimal primal allocation and an optimal copositive-dual solution",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The mechanism uses an optimal primal allocation and an optimal copositive-dual solution."
+              }
+            },
+            {
+              "value": "The equilibrium analysis is complete-information and focuses on allocation incentives rather than private cost reports",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The equilibrium analysis is complete-information and focuses on allocation incentives rather than private cost reports."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The operator selects commitment and dispatch in the central problem",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the operator selects commitment and dispatch in the central problem"
+              }
+            },
+            {
+              "value": "Each generator can start up, remain offline",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each generator can start up, remain offline, and choose feasible production"
+              }
+            },
+            {
+              "value": "The operator chooses dual-price and cross-term payment components",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the operator chooses dual-price and cross-term payment components"
+              }
+            },
+            {
+              "value": "RCDP imposes generator revenue-adequacy constraints",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "RCDP imposes generator revenue-adequacy constraints"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Startup and on/off choices are discrete, production is continuous, and load is inelastic",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Startup and on/off choices are discrete, production is continuous, and load is inelastic."
+              }
+            },
+            {
+              "value": "The displayed unit-commitment model abstracts from transmission and several operational details, although additional linear constraints can be incorporated",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The displayed unit-commitment model abstracts from transmission and several operational details, although additional linear constraints can be incorporated."
+              }
+            },
+            {
+              "value": "The mixed-binary quadratic reformulation satisfies the structural conditions for an equivalent completely positive program",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The mixed-binary quadratic reformulation satisfies the structural conditions for an equivalent completely positive program."
+              }
+            },
+            {
+              "value": "Strong CPP-COP duality follows because the unit-commitment objective is linear and hence convex under the cited result",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Strong CPP-COP duality follows because the unit-commitment objective is linear and hence convex under the cited result."
+              }
+            },
+            {
+              "value": "CDP's full individual rationality is guaranteed when the lifted balance price Lambda* equals zero; otherwise only most generators may be covered after a decomposition-based modification",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "CDP's full individual rationality is guaranteed when the lifted balance price Lambda* equals zero; otherwise only most generators may be covered after a decomposition-based modification."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "To facilitate implementation, we develop a cutting plane algorithm based on a co-positivity certificate proposed by Anstreicher (2021), and the algorithm exactly solves COPs when it terminates.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Our Contributions",
+          "page": 3,
+          "sentence": 10
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 12,
+            "section": "5.1. The Algorithm",
+            "equation": "",
+            "quote": "We can use solutions of the MBQP problem and the strong duality property between CPP and COP to help the cutting plane algorithm in the following ways: • If the optimal objective of the MBQP and the cut­ ting plane algorithm are equal, then the algorithm has terminated at an optimal solution."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Demand is inelastic and known for each time period. Generator production costs, startup costs, capacity bounds, and operational constraints are parameters of the unit-commitment problem. The mechanism uses an optimal primal allocation and an optimal copositive-dual solution. The equilibrium analysis is complete-information and focuses on allocation incentives rather than private cost reports.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in equilibrium-supporting prices for nonconvex electricity markets",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Demand is inelastic and known for each time period.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_gt, u_gt, z_gt",
+                "meaning": "production level, startup amount, and binary online status of generator g at time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_t",
+                "meaning": "inelastic load in time period t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_g^Gen(p_-g)",
+                "meaning": "generator g's maximum profit given the other generators' production decisions and mechanism prices",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "For t ∈T , dt denotes the load, whereas cp g, cu g, pmin g , and pmax g are the production cost, startup cost, lower production limit, and upper production limit, respectively, for g ∈G.",
+              "Startup and on/off choices are discrete, production is continuous, and load is inelastic.",
+              "The displayed unit-commitment model abstracts from transmission and several operational details, although additional linear constraints can be incorporated.",
+              "Strong CPP-COP duality follows because the unit-commitment objective is linear and hence convex under the cited result."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4. Pricing Unit Commitment",
+                "equation": "",
+                "quote": "For t ∈T , dt denotes the load, whereas cp g, cu g, pmin g , and pmax g are the production cost, startup cost, lower production limit, and upper production limit, respectively, for g ∈G."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Pricing: “For t ∈T , dt denotes the load, whereas cp g, cu g, pmin g , and pmax”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The central market objective minimizes total production and startup cost, while equilibrium requires each generator's allocated action to maximize that generator's price-based revenue minus its own operating costs.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in equilibrium-supporting prices for nonconvex electricity markets",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "UC: min sum_{g in G} sum_{t in T} (c_g^p p_gt + c_g^u u_gt); generator g: max \\pi_g^Gen(p_-g) = price payments - c_g^p p_gt - c_g^u u_gt",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "G, T",
+                "meaning": "sets of generators and time periods",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_gt, u_gt, z_gt",
+                "meaning": "production level, startup amount, and binary online status of generator g at time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_t",
+                "meaning": "inelastic load in time period t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda, \\phi, \\Lambda, \\Phi",
+                "meaning": "linear and lifted shadow-price components from the copositive dual",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X",
+                "meaning": "matrix of lifted products in the completely positive reformulation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_g^Gen(p_-g)",
+                "meaning": "generator g's maximum profit given the other generators' production decisions and mechanism prices",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Startup and on/off choices are discrete, production is continuous, and load is inelastic.",
+              "The displayed unit-commitment model abstracts from transmission and several operational details, although additional linear constraints can be incorporated.",
+              "Strong CPP-COP duality follows because the unit-commitment objective is linear and hence convex under the cited result."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "(8a), (10a)",
+                "quote": "The objective (8a) minimizes the total cost of power pro­ duction and generator startup."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The objective (8a) minimizes the total cost of power production and generator startup.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The operator selects commitment and dispatch in the central problem each generator can start up, remain offline, and choose feasible production the operator chooses dual-price and cross-term payment components RCDP imposes generator revenue-adequacy constraints",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in equilibrium-supporting prices for nonconvex electricity markets",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The operator selects commitment and dispatch in the central problem each generator can start up, remain offline, and choose feasible production the operator chooses dual-price and cross-term payment components RCDP imposes generator revenue-adequacy constraints",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_gt, u_gt, z_gt",
+                "meaning": "production level, startup amount, and binary online status of generator g at time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda, \\phi, \\Lambda, \\Phi",
+                "meaning": "linear and lifted shadow-price components from the copositive dual",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_g^Gen(p_-g)",
+                "meaning": "generator g's maximum profit given the other generators' production decisions and mechanism prices",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Startup and on/off choices are discrete, production is continuous, and load is inelastic.",
+              "The displayed unit-commitment model abstracts from transmission and several operational details, although additional linear constraints can be incorporated.",
+              "RCDP's support of the optimal allocation is conditional on its augmented dual retaining the original optimal value."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4. Pricing Unit Commitment",
+                "equation": "",
+                "quote": "Constraints (8d) and (8e) set the lower and upper bounds for power output when the generator is on and ensure that the production level is 0 when the generator is off."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Constraints (8d) and (8e) set the lower and upper bounds for power output when the generator is on”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "competitive-equilibrium-supported-by-copositive-duality-prices",
+            "label": "Competitive equilibrium supported by copositive-duality prices",
+            "role": "interaction",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The model's equilibrium concept is Competitive equilibrium supported by copositive-duality prices. Definition 1 constructs CDP from optimal CPP and COP solutions. Theorem 1 proves aggregate generator revenue neutrality and system-operator budget balance. Theorem 2 proves individual rationality when Lambda*=0; because the power-balance constraints always clear the market, this condition supports a competitive equilibrium. Propositions 4-6 give budget balance, optimal-allocation support, and individual-rationality conditions for RCDP.",
+            "searchPhrases": [
+              "how competitive equilibrium supported by copositive-duality prices is represented",
+              "strategic response in equilibrium-supporting prices for nonconvex electricity markets",
+              "competitive equilibrium supported by copositive-duality prices strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Competitive equilibrium supported by copositive-duality prices.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_gt, u_gt, z_gt",
+                "meaning": "production level, startup amount, and binary online status of generator g at time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda, \\phi, \\Lambda, \\Phi",
+                "meaning": "linear and lifted shadow-price components from the copositive dual",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_g^Gen(p_-g)",
+                "meaning": "generator g's maximum profit given the other generators' production decisions and mechanism prices",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The displayed unit-commitment model abstracts from transmission and several operational details, although additional linear constraints can be incorporated.",
+              "Strong CPP-COP duality follows because the unit-commitment objective is linear and hence convex under the cited result."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.4. Ensuring Individual Revenue Adequacy",
+                "equation": "",
+                "quote": "To summarize, when the conditions of Theorem 2 and Proposition 6 are satisfied, CDP and RCDP support optimal UC solutions and market equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Optimization as “optimal solution”: “To summarize, when the conditions of Theorem 2 and Proposition 6 are satisfied, CDP and RCDP support optimal”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The system operator solves the centralized unit-commitment problem, obtains an optimal primal allocation and copositive-dual prices, and announces the CDP or RCDP payment rule. Given those prices and the other generators' allocated production, each generator can choose its own startup status and output to maximize profit. An equilibrium is supported when the centralized allocation clears demand and is every generator's best response. The operator's primal allocation couples generators through power balance, while each generator's deviation problem contains only its feasible technology and assigned price terms.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in equilibrium-supporting prices for nonconvex electricity markets",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The system operator solves the centralized unit-commitment problem, obtains an optimal primal allocation and copositive-dual prices, and announces the CDP or RCDP payment rule.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "G, T",
+                "meaning": "sets of generators and time periods",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_gt, u_gt, z_gt",
+                "meaning": "production level, startup amount, and binary online status of generator g at time t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda, \\phi, \\Lambda, \\Phi",
+                "meaning": "linear and lifted shadow-price components from the copositive dual",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_g^Gen(p_-g)",
+                "meaning": "generator g's maximum profit given the other generators' production decisions and mechanism prices",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Startup and on/off choices are discrete, production is continuous, and load is inelastic.",
+              "The displayed unit-commitment model abstracts from transmission and several operational details, although additional linear constraints can be incorporated.",
+              "Strong CPP-COP duality follows because the unit-commitment objective is linear and hence convex under the cited result."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.4. Ensuring Individual Revenue Adequacy",
+                "equation": "",
+                "quote": "RCDP is to the best of our knowledge the first shadow pricing-based scheme for discrete markets that uses only uniform prices, is uplift-free, and under certain conditions supports a market equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “of our knowledge the first shadow Pricing -based scheme for discrete markets that uses only”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2,
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The authors express mixed-binary quadratic programs as completely positive programs, take the copositive dual, and exploit strong duality to define market payments. They prove budget-balance, allocation-support, individual-rationality, and revenue-adequacy properties; use Shapley-Folkman arguments to bound the number of generators needing adjustment; design an exact-when-terminating MILP cutting-plane algorithm with an SOCP strengthening; and compare pricing schemes computationally.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in equilibrium-supporting prices for nonconvex electricity markets",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors express mixed-binary quadratic programs as completely positive programs, take the copositive dual, and exploit strong duality to define market payments.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "G, T",
+                "meaning": "sets of generators and time periods",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda, \\phi, \\Lambda, \\Phi",
+                "meaning": "linear and lifted shadow-price components from the copositive dual",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "X",
+                "meaning": "matrix of lifted products in the completely positive reformulation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_g^Gen(p_-g)",
+                "meaning": "generator g's maximum profit given the other generators' production decisions and mechanism prices",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Strong CPP-COP duality follows because the unit-commitment objective is linear and hence convex under the cited result.",
+              "CDP's full individual rationality is guaranteed when the lifted balance price Lambda* equals zero; otherwise only most generators may be covered after a decomposition-based modification."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.1. The Algorithm",
+                "equation": "",
+                "quote": "We can use solutions of the MBQP problem and the strong duality property between CPP and COP to help the cutting plane algorithm in the following ways: • If the optimal objective of the MBQP and the cut­ ting plane algorithm are equal, then the algorithm has terminated at an optimal solution."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “the algorithm has terminated at an optimal solution .”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "3691a9d88b13b995206254999aba62aa00ac4eb7e117137f59891c94d1376ec0",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "1cd9d155e18bbf54833305de52cca0cf980f8cd8c49459de91ca188a45299c5e",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00906/1cd9d155e18bbf54833305de52cca0cf980f8cd8c49459de91ca188a45299c5e.json",
+      "extractionQaDecisionSha256": "dd3770de2d3d5fe1cfd4da33576d332efa8fe3d84fdd8730143178ed7a7986b5",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

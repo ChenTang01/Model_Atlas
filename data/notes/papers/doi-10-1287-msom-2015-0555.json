@@ -1,0 +1,1381 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2015-0555",
+  "sourcePdfSha256": "fc02bce1271d32f3ae1ef4fd94edc197b40a8529eaf621162b5864c0a599f968",
+  "extractionPagesSha256": "d00ccb7d272678700e0ecafea3a5b3bbaf4a267d367a5a02fdacd16c2cdee66f",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "1e3e1c69323d08067e315d56e10b1ffe55534b10590257fa5672dc47fdbc4363",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "9c41a1777f94e6c650b1f07c10e246dc88ac6c0ce91103081cb16a970dcb15e0",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2015-0555/9c41a1777f94e6c650b1f07c10e246dc88ac6c0ce91103081cb16a970dcb15e0.json",
+  "extractionQaDecisionSha256": "7c9ca488532b670d65b1a7f0359eb47110fc492f279a0d36b9c6ecd4f885b3ba",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2015-0555",
+    "question": "What role does the vehicle mix decision play in emergency medical service systems?",
+    "overview": "The model considers the problem of selecting the number of advanced life support (ALS) and basic life support (BLS) ambulances—the vehicle mix—to deploy in an emergency medical service (EMS) system, given a budget constraint. ALS ambulances can treat a wider range of emergencies, whereas BLS ambulances are less expensive to operate. To this end, we develop a framework under which the performance of a system operating under a given vehicle mix can be evaluated.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        9,
+        10
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "formulation",
+        "name": "Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers the problem of selecting the number of advanced life support (ALS) and basic life support (BLS) ambulances—the vehicle mix—to deploy in an emergency medical service (EMS) system, given a budget constraint. ALS ambulances can treat a wider range of emergencies, whereas BLS ambulances are less expensive to operate. To this end, we develop a framework under which the performance of a system operating under a given vehicle mix can be evaluated.",
+        "objects": [
+          "The state space",
+          "Provider",
+          "Nodes",
+          "The patient",
+          "Providers"
+        ],
+        "inputs": [
+          "A budget",
+          "Demand",
+          "The long-run proportion of low-priority calls receiving an ALS response in this situation",
+          "Input the arrival rates",
+          "The service rate"
+        ],
+        "decisions": [
+          "Require that ALS ambulances respond to every low-priority call that arrives",
+          "How to dispatch these ambulances to incoming calls",
+          "Perform comparably in all of our problem instances",
+          "Perform noticeably worse in the extended model",
+          "An action to every system state"
+        ],
+        "assumptions": [
+          "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3.",
+          "Ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another",
+          "To be given",
+          "The interarrival and service time distributions do not vary with time",
+          "The average utilization of ambulances in our system is 0.4"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 15,
+                "quote": "the state space",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Provider",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 3,
+                "quote": "An EMS provider can respond to these calls with a ﬂeet of NA ALS and NB BLS ambulances, which can be deployed at a set of base locations ¯N ⊆ N .",
+                "matchedText": "provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Nodes",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "is a set of demand nodes and E is a set of edges.",
+                "matchedText": "nodes",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "the patient",
+                "matchedText": "the patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Providers",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "This is consistent with what occurs in practice, as EMS providers may redirect calls to external services, such as a neighboring EMS or the ﬁre department, during periods of severe congestion, but we revisit this assumption in §3.3.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A budget",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We consider the problem of selecting the number of advanced life support (ALS) and basic life support (BLS) ambulances—the vehicle mix—to deploy in an emergency medical service (EMS) system, given a budget constraint.",
+                "matchedText": "a budget",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "is a set of demand nodes and E is a set of edges.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The long-run proportion of low-priority calls receiving an ALS response in this situation",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 18,
+                "quote": "the long-run proportion of low-priority calls receiving an ALS response in this situation",
+                "matchedText": "the long-run proportion of low-priority calls receiving an ALS response in this situation",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Input the arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 36,
+                "quote": "input the arrival rates",
+                "matchedText": "input the arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service rate",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 2,
+                "sentence": 36,
+                "quote": "the service rate",
+                "matchedText": "the service rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require that ALS ambulances respond to every low-priority call that arrives",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 17,
+                "quote": "As in the MDP model, we allow BLS units to be dispatched to high-priority calls, and ALS units to be dispatched to low-priority calls, but we do not require that ALS ambulances respond to every low-priority call that arrives",
+                "matchedText": "require that ALS ambulances respond to every low-priority call that arrives",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "How to dispatch these ambulances to incoming calls",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 3,
+                "sectionIndex": 19,
+                "sentence": 7,
+                "quote": "how to dispatch these ambulances to incoming calls",
+                "matchedText": "how to dispatch these ambulances to incoming calls",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Perform comparably in all of our problem instances",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 24,
+                "sentence": 4,
+                "quote": "We also observe that the two systems perform comparably in all of our problem instances",
+                "matchedText": "perform comparably in all of our problem instances",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Perform noticeably worse in the extended model",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 24,
+                "sentence": 11,
+                "quote": "Fleets operating too few ALS ambulances perform noticeably worse in the extended model",
+                "matchedText": "perform noticeably worse in the extended model",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "An action to every system state",
+              "source": {
+                "type": "section",
+                "section": "Optimality Equations",
+                "page": 5,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "an action to every system state",
+                "matchedText": "an action to every system state",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3.",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "quote": "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3."
+              }
+            },
+            {
+              "value": "Ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 13,
+                "quote": "We assume that ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another.",
+                "matchedText": "ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To be given",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 20,
+                "quote": "to be given",
+                "matchedText": "to be given",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The interarrival and service time distributions do not vary with time",
+              "source": {
+                "type": "section",
+                "section": "Computational Study of the MDP",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "We use the term “loosely” because we select inputs to our model using a data set obtained from Toronto EMS, but we assume that the interarrival and service time distributions do not vary with time.",
+                "matchedText": "the interarrival and service time distributions do not vary with time.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The average utilization of ambulances in our system is 0.4",
+              "source": {
+                "type": "section",
+                "section": "Optimal Dispatching Policy, as a Function of NA",
+                "page": 6,
+                "sectionIndex": 22,
+                "sentence": 3,
+                "quote": "To determine our system’s operating budget B, we assume that the average utilization of ambulances in our system is 0.4.",
+                "matchedText": "the average utilization of ambulances in our system is 0.4.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper constructs our objective function as follows.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Formulation",
+          "page": 9,
+          "sentence": 22
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 9,
+            "section": "5.1. Formulation",
+            "equation": "",
+            "quote": "As in the MDP model, we allow BLS units to be dispatched to high-priority calls, and ALS units to be dispatched to low-priority calls, but we do not require that ALS ambulances respond to every low-priority call that arrives when all BLS ambulances are busy."
+          }
+        ],
+        "components": [
+          {
+            "id": "setup",
+            "label": "Setup",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Typically, these two goals conflict, and we can adjust how they are weighted in the objective function by changing the reward structure.",
+            "searchPhrases": [
+              "how setup is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "setup modeled objective specification"
+            ],
+            "formal": "Objective relation: Typically, these two goals conflict, and we can adjust how they are weighted in the objective function by changing the reward structure.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3.",
+              "we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.",
+              "We define the state space to be S = 801 11 0 0 0 1 NA9 × 801 11 0 0 0 1 NB9, where 4i1 j5 ∈S denotes the state in which i ALS and j BLS units in the system are busy."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Setup",
+                "equation": "",
+                "quote": "Typically, these two goals conﬂict, and we can adjust how they are weighted in the objective function by changing the reward structure."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “how they are weighted in the objective function by changing the reward structure.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "optimality-equations",
+            "label": "Optimality Equations",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We do this using the policy iteration algorithm in Section 8.6.1 of Puterman (2005).",
+            "searchPhrases": [
+              "how optimality equations is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "optimality equations solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We do this using the policy iteration algorithm in Section 8.6.1 of Puterman (2005).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We use the term “loosely” because we select inputs to our model using a data set obtained from Toronto EMS, but we assume that the interarrival and service time distributions do not vary with time."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Optimality Equations",
+                "equation": "",
+                "quote": "We do this using the policy iteration algorithm in Section 8.6.1 of Puterman (2005)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We do this using the policy iteration algorithm in Section 8.6.1 of Puterman (2005).”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The interarrival and service time distributions do not vary with time",
+                  "source": {
+                    "type": "section",
+                    "section": "Computational Study of the MDP",
+                    "page": 5,
+                    "sectionIndex": 5,
+                    "sentence": 2,
+                    "quote": "We use the term “loosely” because we select inputs to our model using a data set obtained from Toronto EMS, but we assume that the interarrival and service time distributions do not vary with time.",
+                    "matchedText": "the interarrival and service time distributions do not vary with time.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "formulation",
+            "label": "Formulation",
+            "role": "process",
+            "concepts": [
+              "markov-decision-process"
+            ],
+            "explanation": "As in the MDP model, we allow BLS units to be dispatched to high-priority calls, and ALS units to be dispatched to low-priority calls, but we do not require that ALS ambulances respond to every low-priority call that arrives when all BLS ambulances are busy.",
+            "searchPhrases": [
+              "how formulation is represented",
+              "system process in policy, sustainability, and public services",
+              "formulation system process specification"
+            ],
+            "formal": "Process relation: As in the MDP model, we allow BLS units to be dispatched to high-priority calls, and ALS units to be dispatched to low-priority calls, but we do not require that ALS ambulances respond to every low-priority call that arrives when all BLS ambulances are busy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another.",
+              "Calls to which an ambulance cannot be immediately dispatched are redirected to an external service.",
+              "Finally, we define rewards RHA, RHB, and RL as before."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.1. Formulation",
+                "equation": "",
+                "quote": "As in the MDP model, we allow BLS units to be dispatched to high-priority calls, and ALS units to be dispatched to low-priority calls, but we do not require that ALS ambulances respond to every low-priority call that arrives when all BLS ambulances are busy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "markov-decision-process",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Markov decision process as “MDP”: “As in the MDP model, we allow BLS units to be dispatched”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "extensions-to-the-mdp",
+        "name": "Extensions to the MDP",
+        "kind": "extension",
+        "relation": "This extension builds on Formulation.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "formulation"
+          }
+        ],
+        "summary": "The paper's MDP model can be modified to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space.",
+        "objects": [
+          "The state space"
+        ],
+        "inputs": [
+          "A budget",
+          "Demand",
+          "The long-run proportion of low-priority calls receiving an ALS response in this situation",
+          "Input the arrival rates",
+          "The service rate"
+        ],
+        "decisions": [
+          "Require that ALS ambulances respond to every low-priority call that arrives",
+          "How to dispatch these ambulances to incoming calls",
+          "Perform comparably in all of our problem instances",
+          "Perform noticeably worse in the extended model",
+          "An action to every system state"
+        ],
+        "assumptions": [
+          "Our MDP model can be modified to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space.",
+          "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3.",
+          "Ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another",
+          "To be given",
+          "The interarrival and service time distributions do not vary with time"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Extensions to the MDP",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Our MDP model can be modiﬁed to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A budget",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We consider the problem of selecting the number of advanced life support (ALS) and basic life support (BLS) ambulances—the vehicle mix—to deploy in an emergency medical service (EMS) system, given a budget constraint.",
+                "matchedText": "a budget",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "is a set of demand nodes and E is a set of edges.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The long-run proportion of low-priority calls receiving an ALS response in this situation",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 18,
+                "quote": "the long-run proportion of low-priority calls receiving an ALS response in this situation",
+                "matchedText": "the long-run proportion of low-priority calls receiving an ALS response in this situation",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Input the arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 36,
+                "quote": "input the arrival rates",
+                "matchedText": "input the arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service rate",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 2,
+                "sentence": 36,
+                "quote": "the service rate",
+                "matchedText": "the service rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require that ALS ambulances respond to every low-priority call that arrives",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 17,
+                "quote": "As in the MDP model, we allow BLS units to be dispatched to high-priority calls, and ALS units to be dispatched to low-priority calls, but we do not require that ALS ambulances respond to every low-priority call that arrives",
+                "matchedText": "require that ALS ambulances respond to every low-priority call that arrives",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "How to dispatch these ambulances to incoming calls",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 3,
+                "sectionIndex": 19,
+                "sentence": 7,
+                "quote": "how to dispatch these ambulances to incoming calls",
+                "matchedText": "how to dispatch these ambulances to incoming calls",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Perform comparably in all of our problem instances",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 24,
+                "sentence": 4,
+                "quote": "We also observe that the two systems perform comparably in all of our problem instances",
+                "matchedText": "perform comparably in all of our problem instances",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Perform noticeably worse in the extended model",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 24,
+                "sentence": 11,
+                "quote": "Fleets operating too few ALS ambulances perform noticeably worse in the extended model",
+                "matchedText": "perform noticeably worse in the extended model",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "An action to every system state",
+              "source": {
+                "type": "section",
+                "section": "Optimality Equations",
+                "page": 5,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "an action to every system state",
+                "matchedText": "an action to every system state",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Our MDP model can be modified to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space.",
+              "source": {
+                "type": "section",
+                "section": "Extensions to the MDP",
+                "page": 5,
+                "quote": "Our MDP model can be modiﬁed to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space."
+              }
+            },
+            {
+              "value": "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3.",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "quote": "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3."
+              }
+            },
+            {
+              "value": "Ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 13,
+                "quote": "We assume that ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another.",
+                "matchedText": "ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To be given",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 20,
+                "quote": "to be given",
+                "matchedText": "to be given",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The interarrival and service time distributions do not vary with time",
+              "source": {
+                "type": "section",
+                "section": "Computational Study of the MDP",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "We use the term “loosely” because we select inputs to our model using a data set obtained from Toronto EMS, but we assume that the interarrival and service time distributions do not vary with time.",
+                "matchedText": "the interarrival and service time distributions do not vary with time.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "For our computational work in §4, we focus primarily on the base model we formulated in §3.1, as our extended model yields very similar numerical results.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Extensions to the MDP",
+          "page": 5,
+          "sentence": 3
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.3. Extensions to the MDP",
+            "equation": "",
+            "quote": "Our MDP model can be modiﬁed to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space."
+          }
+        ],
+        "components": [
+          {
+            "id": "extensions-to-the-mdp",
+            "label": "Extensions to the MDP",
+            "role": "state",
+            "concepts": [
+              "markov-decision-process"
+            ],
+            "explanation": "The paper's MDP model can be modified to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space.",
+            "searchPhrases": [
+              "how extensions to the mdp is represented",
+              "decision-relevant state in policy, sustainability, and public services",
+              "extensions to the mdp decision-relevant state specification"
+            ],
+            "formal": "State definition: The paper's MDP model can be modified to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Our MDP model can be modified to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space.",
+              "In Online Appendix A, we formulate an extended MDP in which low-priority calls can be placed in queue during periods of congestion, and in which ALS units may need to be brought on scene to assist BLS first responses to high-priority calls."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.3. Extensions to the MDP",
+                "equation": "",
+                "quote": "Our MDP model can be modiﬁed to relax some of the previously mentioned assumptions without dramatically increasing the size of the state space."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "markov-decision-process",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Markov decision process as “MDP”: “MDP”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "extensions-to-the-ip",
+        "name": "Extensions to the IP",
+        "kind": "extension",
+        "relation": "This extension builds on Formulation.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "formulation"
+          }
+        ],
+        "summary": "Perhaps the three most significant assumptions we make in formulating our integer program (IP) are that calls do not queue",
+        "objects": [
+          "The state space",
+          "Provider",
+          "Nodes",
+          "The patient",
+          "Providers"
+        ],
+        "inputs": [
+          "A budget",
+          "Demand",
+          "The long-run proportion of low-priority calls receiving an ALS response in this situation",
+          "Input the arrival rates",
+          "The service rate"
+        ],
+        "decisions": [
+          "Require that ALS ambulances respond to every low-priority call that arrives",
+          "How to dispatch these ambulances to incoming calls",
+          "Perform comparably in all of our problem instances",
+          "Perform noticeably worse in the extended model",
+          "An action to every system state"
+        ],
+        "assumptions": [
+          "In Online Appendix B, we formulate an extended IP model that incorporates correction factors to our objective function.",
+          "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3.",
+          "Ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another",
+          "To be given",
+          "The interarrival and service time distributions do not vary with time"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 15,
+                "quote": "the state space",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Provider",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 3,
+                "quote": "An EMS provider can respond to these calls with a ﬂeet of NA ALS and NB BLS ambulances, which can be deployed at a set of base locations ¯N ⊆ N .",
+                "matchedText": "provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Nodes",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "is a set of demand nodes and E is a set of edges.",
+                "matchedText": "nodes",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "the patient",
+                "matchedText": "the patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Providers",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "This is consistent with what occurs in practice, as EMS providers may redirect calls to external services, such as a neighboring EMS or the ﬁre department, during periods of severe congestion, but we revisit this assumption in §3.3.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A budget",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We consider the problem of selecting the number of advanced life support (ALS) and basic life support (BLS) ambulances—the vehicle mix—to deploy in an emergency medical service (EMS) system, given a budget constraint.",
+                "matchedText": "a budget",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "is a set of demand nodes and E is a set of edges.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The long-run proportion of low-priority calls receiving an ALS response in this situation",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 18,
+                "quote": "the long-run proportion of low-priority calls receiving an ALS response in this situation",
+                "matchedText": "the long-run proportion of low-priority calls receiving an ALS response in this situation",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Input the arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 36,
+                "quote": "input the arrival rates",
+                "matchedText": "input the arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service rate",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 2,
+                "sentence": 36,
+                "quote": "the service rate",
+                "matchedText": "the service rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require that ALS ambulances respond to every low-priority call that arrives",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 17,
+                "quote": "As in the MDP model, we allow BLS units to be dispatched to high-priority calls, and ALS units to be dispatched to low-priority calls, but we do not require that ALS ambulances respond to every low-priority call that arrives",
+                "matchedText": "require that ALS ambulances respond to every low-priority call that arrives",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "How to dispatch these ambulances to incoming calls",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 3,
+                "sectionIndex": 19,
+                "sentence": 7,
+                "quote": "how to dispatch these ambulances to incoming calls",
+                "matchedText": "how to dispatch these ambulances to incoming calls",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Perform comparably in all of our problem instances",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 24,
+                "sentence": 4,
+                "quote": "We also observe that the two systems perform comparably in all of our problem instances",
+                "matchedText": "perform comparably in all of our problem instances",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Perform noticeably worse in the extended model",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 8,
+                "sectionIndex": 24,
+                "sentence": 11,
+                "quote": "Fleets operating too few ALS ambulances perform noticeably worse in the extended model",
+                "matchedText": "perform noticeably worse in the extended model",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "An action to every system state",
+              "source": {
+                "type": "section",
+                "section": "Optimality Equations",
+                "page": 5,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "an action to every system state",
+                "matchedText": "an action to every system state",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In Online Appendix B, we formulate an extended IP model that incorporates correction factors to our objective function.",
+              "source": {
+                "type": "section",
+                "section": "Extensions to the IP",
+                "page": 10,
+                "quote": "In Online Appendix B, we formulate an extended IP model that incorporates correction factors to our objective function."
+              }
+            },
+            {
+              "value": "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3.",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 4,
+                "quote": "In this case, we assume that the BLS unit can adequately treat the high-priority call, but that such a dispatch is undesirable, in a way that we clarify in §3.1.2; we also revisit this assumption in §3.3."
+              }
+            },
+            {
+              "value": "Ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 13,
+                "quote": "We assume that ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another.",
+                "matchedText": "ambulances of the same type operate under the same utilization, and that all ambulances are busy independently of one another.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To be given",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 20,
+                "quote": "to be given",
+                "matchedText": "to be given",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The interarrival and service time distributions do not vary with time",
+              "source": {
+                "type": "section",
+                "section": "Computational Study of the MDP",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "We use the term “loosely” because we select inputs to our model using a data set obtained from Toronto EMS, but we assume that the interarrival and service time distributions do not vary with time.",
+                "matchedText": "the interarrival and service time distributions do not vary with time.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "For our computational work in §6, we study the IP model we formulated in §5.1, as the extended IP model yields qualitatively similar results.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Extensions to the IP",
+          "page": 10,
+          "sentence": 10
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 10,
+            "section": "5.3. Extensions to the IP",
+            "equation": "",
+            "quote": "Perhaps the three most signiﬁcant assumptions we make in formulating our integer program (IP) are that calls do not queue"
+          }
+        ],
+        "components": [
+          {
+            "id": "extensions-to-the-ip",
+            "label": "Extensions to the IP",
+            "role": "state",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "Perhaps the three most significant assumptions we make in formulating our integer program (IP) are that calls do not queue",
+            "searchPhrases": [
+              "how extensions to the ip is represented",
+              "decision-relevant state in policy, sustainability, and public services",
+              "extensions to the ip decision-relevant state specification"
+            ],
+            "formal": "State definition: Perhaps the three most significant assumptions we make in formulating our integer program (IP) are that calls do not queue",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In Online Appendix B, we formulate an extended IP model that incorporates correction factors to our objective function.",
+              "Perhaps the three most significant assumptions we make in formulating our integer program (IP) are that calls do not queue, that ambulances are busy independently of one another, and that these probabilities do not depend on location.",
+              "Relaxing the assumption of location-independent busy probabilities is difficult, as the utilization of a single ambulance depends upon how all other ambulances are deployed, resulting in nonlinear interactions."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5.3. Extensions to the IP",
+                "equation": "",
+                "quote": "Perhaps the three most signiﬁcant assumptions we make in formulating our integer program (IP) are that calls do not queue"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Queueing: “Perhaps the three most significant assumptions we make in formulating our integer program (IP) are that calls do”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "fc02bce1271d32f3ae1ef4fd94edc197b40a8529eaf621162b5864c0a599f968",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "9c41a1777f94e6c650b1f07c10e246dc88ac6c0ce91103081cb16a970dcb15e0",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2015-0555/9c41a1777f94e6c650b1f07c10e246dc88ac6c0ce91103081cb16a970dcb15e0.json",
+      "extractionQaDecisionSha256": "7c9ca488532b670d65b1a7f0359eb47110fc492f279a0d36b9c6ecd4f885b3ba",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

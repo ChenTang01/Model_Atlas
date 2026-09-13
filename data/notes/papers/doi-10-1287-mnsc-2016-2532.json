@@ -1,0 +1,1362 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2016-2532",
+  "sourcePdfSha256": "39c81e0db86799087eeb55e53aa2383c4235fecd2f9868a222dfad291721eeb7",
+  "extractionPagesSha256": "d631e5e830191b84defcb231562407494883439d27fe5bb38193369cf117e025",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "abb4e1adc07b280c7f543acd59e0b4581b66b87527e9312f9572b50d95d4d14b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "52c0f07e29542b29e05f7382376548846bbc10ee7801147dcd10e1a0b9427205",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2016-2532/52c0f07e29542b29e05f7382376548846bbc10ee7801147dcd10e1a0b9427205.json",
+  "extractionQaDecisionSha256": "2b7bc5da7087b1b95dfa59ba36ae5ff3933751c7c93651197f3148bf3681fecd",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2016-2532",
+    "question": "How do joint panel sizing and appointment scheduling interact in outpatient care?",
+    "overview": "Patients nationwide experience difficulties in accessing medical care in a timely manner due to long backlogs of appointments. Medical practices aim to utilize their valuable resources efficiently, deliver timely access to care, and at the same time they strive to provide short waiting times for patients present at the medical facility. The paper addresses the joint problem of determining the panel size of a medical practice and the number of offered appointment slots per day, so that patients do not face long backlogs and the clinic is not overcrowded.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        11,
+        12,
+        14
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "joint-panel-sizing-and-appointment-scheduling-in-outpatient-care",
+        "name": "Joint Panel Sizing and Appointment Scheduling in Outpatient Care baseline model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Patients nationwide experience difficulties in accessing medical care in a timely manner due to long backlogs of appointments. Medical practices aim to utilize their valuable resources efficiently, deliver timely access to care, and at the same time they strive to provide short waiting times for patients present at the medical facility. We explicitly model the two time scales involved in accessing medical care: appointment delay (order of days, weeks) and clinic delay (order of minutes, hours).",
+        "objects": [
+          "Patients",
+          "The server",
+          "Pointment book we consider a holding cost ca per time unit that each patient",
+          "The available physicians",
+          "Customers"
+        ],
+        "inputs": [
+          "Random service times",
+          "Random demand",
+          "Its state",
+          "Time t",
+          "A holding cost"
+        ],
+        "decisions": [
+          "Whether to book an appointment or not depends on the state",
+          "Decisions in a joint framework",
+          "Appointment slots at a rate s slots per day",
+          "Join the backlog depends on its state"
+        ],
+        "assumptions": [
+          "The service discipline of the appointment book is FIFO (first in, first out)",
+          "Requests for an appointment arrive according to a Poisson process",
+          "The cost of waiting one day for an appointment is of the same order as the cost of waiting one hour in the clinic, i.e., ca ∼cw"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Medical practices aim to utilize their valuable resources efficiently, deliver timely access to care, and at the same time they strive to provide short waiting times for patients present at the medical facility.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The server",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 12,
+                "quote": "The server continues to work overtime as well, beyond T, until the queue empties.",
+                "matchedText": "The server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Pointment book we consider a holding cost ca per time unit that each patient",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "sectionIndex": 2,
+                "page": 4,
+                "quote": "For the ap- pointment book we consider a holding cost ca per time unit that each patient who joins the backlog has to wait for her scheduled appointment, and a balking cost cb per patient who encounters a long backlog and decides to not book an appointment."
+              }
+            },
+            {
+              "value": "The available physicians",
+              "source": {
+                "type": "section",
+                "section": "Related Literature",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 38,
+                "quote": "the available physicians",
+                "matchedText": "the available physicians",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Comparison with Green and Savin (2008) and Liu and Ziya (2014)",
+                "page": 18,
+                "sectionIndex": 9,
+                "sentence": 37,
+                "quote": "Finally, we note that the gap between the recommendations from Green and Savin (2008) and Liu and Ziya (2014) is, to some extent, due to the assumption of the former paper that all no-show customers immediately reschedule a new appointment.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Random service times",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Our model captures many features of the complex reality of outpatient care, including patient no-shows, balking behavior, and random service times.",
+                "matchedText": "random service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random demand",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 11,
+                "sentence": 21,
+                "quote": "random demand",
+                "matchedText": "random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Its state",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "The patients’ decision whether to join the backlog depends on its state.",
+                "matchedText": "its state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 6,
+                "quote": "Let Aa(t) be the cumulative number of patients that have booked an appointment in [0, t], Ab(t) be the cumulative number of balking patients in [0, t], and Wa(t) be the workload (or equivalently the oﬀered waiting time) of the appointment book at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A holding cost",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 17,
+                "quote": "a holding cost",
+                "matchedText": "a holding cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to book an appointment or not depends on the state",
+              "source": {
+                "type": "section",
+                "section": "The Appointment Book",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "Patients’ decision of whether to book an appointment or not depends on the state of the appointment book: the less congested the latter, the more likely it is that a patient will have access to a slot of her preference.",
+                "matchedText": "whether to book an appointment or not depends on the state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Decisions in a joint framework",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Our analysis provides theoretical and numerical support for the optimality of an “open access” policy in outpatient scheduling when we account for both types of delay, and it demonstrates the importance of considering panel sizing and scheduling decisions in a joint framework.",
+                "matchedText": "decisions in a joint framework",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Appointment slots at a rate s slots per day",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 12,
+                "sentence": 26,
+                "quote": "appointment slots at a rate s slots per day",
+                "matchedText": "appointment slots at a rate s slots per day",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Join the backlog depends on its state",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "The patients’ decision whether to join the backlog depends on its state",
+                "matchedText": "join the backlog depends on its state",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The service discipline of the appointment book is FIFO (first in, first out)",
+              "source": {
+                "type": "section",
+                "section": "The Appointment Book",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 13,
+                "quote": "To quantify the waiting time for an appointment, we assume that the service discipline of the appointment book is FIFO (ﬁrst in, ﬁrst out).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Requests for an appointment arrive according to a Poisson process",
+              "source": {
+                "type": "section",
+                "section": "A Simulation Experiment",
+                "page": 16,
+                "sectionIndex": 8,
+                "sentence": 3,
+                "quote": "Requests for an appointment arrive according to a Poisson process at a rate λ per day, and s appointment slots are oﬀered per day.",
+                "matchedText": "Requests for an appointment arrive according to a Poisson process",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The cost of waiting one day for an appointment is of the same order as the cost of waiting one hour in the clinic, i.e., ca ∼cw",
+              "source": {
+                "type": "section",
+                "section": "Characterization of the Optimal Solution",
+                "page": 14,
+                "sectionIndex": 4,
+                "sentence": 22,
+                "quote": "First, in order to capture the impact of both time scales, we consider that the cost of waiting one day for an appointment is of the same order as the cost of waiting one hour in the clinic, i.e., ca ∼cw.",
+                "matchedText": "the cost of waiting one day for an appointment is of the same order as the cost of waiting one hour in the clinic, i.e., ca ∼cw.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "In our simulation study, we also investigate the role of the ratio ca/cw for values between 0 (i.e., appointment delay is not important at all) and 2.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Characterization of the Optimal Solution",
+          "page": 14,
+          "sentence": 23
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 12,
+            "section": "6. Optimal Panel Sizing and Appointment Scheduling",
+            "equation": "",
+            "quote": "Having developed the necessary tools to approximate the appointment backlog and the in-clinic queue, we aim to maximize the long-run average daily net beneﬁt of the medical facility from providing care to patients with respect to the panel size, N, and the number of oﬀered appointment slots per working day, s."
+          }
+        ],
+        "components": [
+          {
+            "id": "problem-formulation",
+            "label": "Problem Formulation",
+            "role": "process",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "In this section we introduce the modeling framework and we formulate the optimization problem under study.",
+            "searchPhrases": [
+              "how problem formulation is represented",
+              "system process in operations and supply chains",
+              "problem formulation system process specification"
+            ],
+            "formal": "Process relation: In this section we introduce the modeling framework and we formulate the optimization problem under study.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "A patient who does not show up in the clinic occupies a position in the appointment book until the time of her scheduled appointment, and the backlog dynamics are unaffected (that is, we assume that no-show patients do not notify the clinic in advance)."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Problem Formulation",
+                "equation": "",
+                "quote": "In this section we introduce the modeling framework and we formulate the optimization problem under study."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Optimization: “In this section we introduce the modeling framework and we formulate the optimization problem under study.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-appointment-book",
+            "label": "The Appointment Book",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "First, we are interested in characterizing the evolution of the appointment backlog as a function of the panel size and the number of offered slots per working day, disregarding the clinic intraday dynamics.",
+            "searchPhrases": [
+              "how the appointment book is represented",
+              "decision rule in operations and supply chains",
+              "the appointment book decision rule specification"
+            ],
+            "formal": "Decision rule: First, we are interested in characterizing the evolution of the appointment backlog as a function of the panel size and the number of offered slots per working day, disregarding the clinic intraday dynamics.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the offered appointments are allocated evenly throughout the regular length of the clinic working day T, and we consider that one time unit corresponds to one working day.",
+              "we assume that the service discipline of the appointment book is FIFO (first in, first out).",
+              "To quantify the waiting time for an appointment, we assume that the service discipline of the appointment book is FIFO (first in, first out)."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "4. The Appointment Book",
+                "equation": "",
+                "quote": "First, we are interested in characterizing the evolution of the appointment backlog as a function of the panel size and the number of oﬀered slots per working day, disregarding the clinic intraday dynamics."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “First, we are interested in characterizing the evolution of the appointment backlog as a function of the panel”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "diffusion-limit",
+            "label": "Diffusion Limit",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "The stochastic process Z(t) has analytically tractable transient and steady state behavior.",
+            "searchPhrases": [
+              "how diffusion limit is represented",
+              "decision-relevant state in operations and supply chains",
+              "diffusion limit decision-relevant state specification"
+            ],
+            "formal": "State definition: The stochastic process Z(t) has analytically tractable transient and steady state behavior.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Z(t)",
+                "meaning": "an ROU process with infinitesimal drift (α −γz) and infinitesimal variance σ2"
+              }
+            ],
+            "conditions": [
+              "Our model captures many features of the complex reality of outpatient care, including patient no-shows, balking behavior, and random service times."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4.1. Diffusion Limit",
+                "equation": "",
+                "quote": "The stochastic process Z(t) has analytically tractable transient and steady state behavior."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “The stochastic process Z(t) has analytically tractable transient and steady state behavior.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Random service times",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 6,
+                    "quote": "Our model captures many features of the complex reality of outpatient care, including patient no-shows, balking behavior, and random service times.",
+                    "matchedText": "random service times",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "optimal-panel-sizing-and-appointment-scheduling",
+            "label": "Optimal Panel Sizing and Appointment Scheduling",
+            "role": "objective",
+            "concepts": [
+              "appointment-scheduling",
+              "queueing"
+            ],
+            "explanation": "Having developed the necessary tools to approximate the appointment backlog and the in-clinic queue, we aim to maximize the long-run average daily net benefit of the medical facility from providing care to patients with respect to the panel size, N, and the number of offered appointment slots per working day, s.",
+            "searchPhrases": [
+              "how optimal panel sizing and appointment scheduling is represented",
+              "modeled objective in operations and supply chains",
+              "optimal panel sizing and appointment scheduling modeled objective specification"
+            ],
+            "formal": "Objective relation: Having developed the necessary tools to approximate the appointment backlog and the in-clinic queue, we aim to maximize the long-run average daily net benefit of the medical facility from providing care to patients with respect to the panel size, N, and the number of offered appointment slots per working day, s.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Recall that the analysis of the in-clinic queue in Section 5 is based on a fixed arrival rate for a given day."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "6. Optimal Panel Sizing and Appointment Scheduling",
+                "equation": "",
+                "quote": "Having developed the necessary tools to approximate the appointment backlog and the in-clinic queue, we aim to maximize the long-run average daily net beneﬁt of the medical facility from providing care to patients with respect to the panel size, N, and the number of oﬀered appointment slots per working day, s."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "appointment-scheduling",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Appointment scheduling: “Having developed the necessary tools to approximate the appointment backlog and the in-clinic queue, we aim to maximize”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Queueing: “Having developed the necessary tools to approximate the appointment backlog and the in-clinic queue, we aim to maximize”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "characterization-of-the-optimal-solution",
+            "label": "Characterization of the Optimal Solution",
+            "role": "algorithm",
+            "concepts": [
+              "optimization",
+              "simulation"
+            ],
+            "explanation": "However, if we make one simplifying assumption, motivated by (16) and the simulation results displayed in Figure EC.3 of the electronic companion, and for the sake of analytical tractability, we are able to provide a neat characterization of the optimal solution.",
+            "searchPhrases": [
+              "how characterization of the optimal solution is represented",
+              "solution algorithm in operations and supply chains",
+              "characterization of the optimal solution solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: However, if we make one simplifying assumption, motivated by (16) and the simulation results displayed in Figure EC.3 of the electronic companion, and for the sake of analytical tractability, we are able to provide a neat characterization of the optimal solution.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The optimization problem (P) is analytically intractable; the objective function involves the pdf, cdf, and hazard rate of a standard normal random variable.",
+              "Under the assumption of Theorem 3, supply for medical appointments should be at least as high as the demand in outpatient care, and furthermore, (P) reduces to a single variable optimization problem.",
+              "For instance, in the extreme case that the balking threshold has an average of only two days (uniformly distributed) and that requests for appointment arrive according to a Poisson process, then λ∗ s∗< ξθ2π/(4m(π −2)2) ≈0.15, which practically results to a solution close to regime (a)."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "6.1. Characterization of the Optimal Solution",
+                "equation": "",
+                "quote": "However, if we make one simplifying assumption, motivated by (16) and the simulation results displayed in Figure EC.3 of the electronic companion, and for the sake of analytical tractability, we are able to provide a neat characterization of the optimal solution."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “provide a neat characterization of the optimal solution .”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "simulation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Simulation: “assumption, motivated by (16) and the Simulation results displayed in Figure EC.3 of the electronic”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "proposed-approximation",
+        "name": "Proposed Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Joint Panel Sizing and Appointment Scheduling in Outpatient Care baseline model.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "joint-panel-sizing-and-appointment-scheduling-in-outpatient-care"
+          }
+        ],
+        "summary": "One would expect the appointment backlog to be decreasing in s, the daily rate at which the clinic offers appointment slots.",
+        "objects": [
+          "Patients",
+          "The server",
+          "Pointment book we consider a holding cost ca per time unit that each patient",
+          "The available physicians",
+          "Customers"
+        ],
+        "inputs": [
+          "Random service times",
+          "Random demand",
+          "Its state",
+          "Time t",
+          "A holding cost"
+        ],
+        "decisions": [
+          "Whether to book an appointment or not depends on the state",
+          "Decisions in a joint framework",
+          "Appointment slots at a rate s slots per day",
+          "Join the backlog depends on its state"
+        ],
+        "assumptions": [
+          "We propose an approximation for the appointment backlog based on the diffusion limit in Theorem 1.",
+          "The arrival process is Poisson, and the balking threshold is uniformly distributed with mean m"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Medical practices aim to utilize their valuable resources efficiently, deliver timely access to care, and at the same time they strive to provide short waiting times for patients present at the medical facility.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The server",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 12,
+                "quote": "The server continues to work overtime as well, beyond T, until the queue empties.",
+                "matchedText": "The server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Pointment book we consider a holding cost ca per time unit that each patient",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "sectionIndex": 2,
+                "page": 4,
+                "quote": "For the ap- pointment book we consider a holding cost ca per time unit that each patient who joins the backlog has to wait for her scheduled appointment, and a balking cost cb per patient who encounters a long backlog and decides to not book an appointment."
+              }
+            },
+            {
+              "value": "The available physicians",
+              "source": {
+                "type": "section",
+                "section": "Related Literature",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 38,
+                "quote": "the available physicians",
+                "matchedText": "the available physicians",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Comparison with Green and Savin (2008) and Liu and Ziya (2014)",
+                "page": 18,
+                "sectionIndex": 9,
+                "sentence": 37,
+                "quote": "Finally, we note that the gap between the recommendations from Green and Savin (2008) and Liu and Ziya (2014) is, to some extent, due to the assumption of the former paper that all no-show customers immediately reschedule a new appointment.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Random service times",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Our model captures many features of the complex reality of outpatient care, including patient no-shows, balking behavior, and random service times.",
+                "matchedText": "random service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random demand",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 11,
+                "sentence": 21,
+                "quote": "random demand",
+                "matchedText": "random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Its state",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "The patients’ decision whether to join the backlog depends on its state.",
+                "matchedText": "its state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 6,
+                "quote": "Let Aa(t) be the cumulative number of patients that have booked an appointment in [0, t], Ab(t) be the cumulative number of balking patients in [0, t], and Wa(t) be the workload (or equivalently the oﬀered waiting time) of the appointment book at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A holding cost",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 17,
+                "quote": "a holding cost",
+                "matchedText": "a holding cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to book an appointment or not depends on the state",
+              "source": {
+                "type": "section",
+                "section": "The Appointment Book",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "Patients’ decision of whether to book an appointment or not depends on the state of the appointment book: the less congested the latter, the more likely it is that a patient will have access to a slot of her preference.",
+                "matchedText": "whether to book an appointment or not depends on the state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Decisions in a joint framework",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Our analysis provides theoretical and numerical support for the optimality of an “open access” policy in outpatient scheduling when we account for both types of delay, and it demonstrates the importance of considering panel sizing and scheduling decisions in a joint framework.",
+                "matchedText": "decisions in a joint framework",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Appointment slots at a rate s slots per day",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 12,
+                "sentence": 26,
+                "quote": "appointment slots at a rate s slots per day",
+                "matchedText": "appointment slots at a rate s slots per day",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Join the backlog depends on its state",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "The patients’ decision whether to join the backlog depends on its state",
+                "matchedText": "join the backlog depends on its state",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We propose an approximation for the appointment backlog based on the diffusion limit in Theorem 1.",
+              "source": {
+                "type": "section",
+                "section": "Proposed Approximation",
+                "page": 5,
+                "quote": "We propose an approximation for the appointment backlog based on the diﬀusion limit in Theorem 1."
+              }
+            },
+            {
+              "value": "The arrival process is Poisson, and the balking threshold is uniformly distributed with mean m",
+              "source": {
+                "type": "section",
+                "section": "Proposed Approximation",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "The arrival process is Poisson, and the balking threshold is uniformly distributed with mean m.",
+                "matchedText": "The arrival process is Poisson, and the balking threshold is uniformly distributed with mean m",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper proposes an approximation for the appointment backlog based on the diffusion limit in Theorem 1.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Proposed Approximation",
+          "page": 5,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "4.2. Proposed Approximation",
+            "equation": "",
+            "quote": "One would expect the appointment backlog to be decreasing in s, the daily rate at which the clinic oﬀers appointment slots."
+          }
+        ],
+        "components": [
+          {
+            "id": "proposed-approximation",
+            "label": "Proposed Approximation",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "One would expect the appointment backlog to be decreasing in s, the daily rate at which the clinic offers appointment slots.",
+            "searchPhrases": [
+              "how proposed approximation is represented",
+              "decision rule in operations and supply chains",
+              "proposed approximation decision rule specification"
+            ],
+            "formal": "Decision rule: One would expect the appointment backlog to be decreasing in s, the daily rate at which the clinic offers appointment slots.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We propose an approximation for the appointment backlog based on the diffusion limit in Theorem 1."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.2. Proposed Approximation",
+                "equation": "",
+                "quote": "One would expect the appointment backlog to be decreasing in s, the daily rate at which the clinic oﬀers appointment slots."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “One would expect the appointment backlog to be decreasing in s, the daily rate at which the clinic”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "We propose an approximation for the appointment backlog based on the diffusion limit in Theorem 1.",
+                  "source": {
+                    "type": "section",
+                    "section": "Proposed Approximation",
+                    "page": 5,
+                    "quote": "We propose an approximation for the appointment backlog based on the diﬀusion limit in Theorem 1."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "diffusion-approximation",
+        "name": "Diffusion Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Joint Panel Sizing and Appointment Scheduling in Outpatient Care baseline model.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "joint-panel-sizing-and-appointment-scheduling-in-outpatient-care"
+          }
+        ],
+        "summary": "For the service times, we consider an independent sequence of iid random variables {vi: i ≥0}, where vi corresponds to the service time of the ith arrival, has finite mean μ−1, and has a finite squared coefficient of variation c2 v.",
+        "objects": [
+          "The server",
+          "A physician",
+          "Patients",
+          "Random variables"
+        ],
+        "inputs": [
+          "Output",
+          "The service times",
+          "The arrival rate"
+        ],
+        "decisions": [
+          "Whether to book an appointment or not depends on the state",
+          "Decisions in a joint framework",
+          "Appointment slots at a rate s slots per day",
+          "Join the backlog depends on its state"
+        ],
+        "assumptions": [
+          "The service discipline of the appointment book is FIFO (first in, first out)",
+          "Requests for an appointment arrive according to a Poisson process",
+          "The cost of waiting one day for an appointment is of the same order as the cost of waiting one hour in the clinic, i.e., ca ∼cw"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The server",
+              "source": {
+                "type": "section",
+                "section": "Diffusion Approximation",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "the server",
+                "matchedText": "the server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A physician",
+              "source": {
+                "type": "section",
+                "section": "Diffusion Approximation",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "On a particular day, if x patients are scheduled to see a physician",
+                "matchedText": "a physician",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Diffusion Approximation",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "Patients show up for their scheduled appointment with probability p ∈(0, 1].",
+                "matchedText": "Patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random variables",
+              "source": {
+                "type": "section",
+                "section": "Diffusion Approximation",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 12,
+                "quote": "random variables",
+                "matchedText": "random variables",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Output",
+              "source": {
+                "type": "section",
+                "section": "Diffusion Approximation",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "We would like to emphasize that x is a realization of the random daily output from the appointment book in (17).",
+                "matchedText": "output",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service times",
+              "source": {
+                "type": "section",
+                "section": "Diffusion Approximation",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 12,
+                "quote": "the service times",
+                "matchedText": "the service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Diffusion Approximation",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "the arrival rate",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to book an appointment or not depends on the state",
+              "source": {
+                "type": "section",
+                "section": "The Appointment Book",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "Patients’ decision of whether to book an appointment or not depends on the state of the appointment book: the less congested the latter, the more likely it is that a patient will have access to a slot of her preference.",
+                "matchedText": "whether to book an appointment or not depends on the state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Decisions in a joint framework",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Our analysis provides theoretical and numerical support for the optimality of an “open access” policy in outpatient scheduling when we account for both types of delay, and it demonstrates the importance of considering panel sizing and scheduling decisions in a joint framework.",
+                "matchedText": "decisions in a joint framework",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Appointment slots at a rate s slots per day",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 12,
+                "sentence": 26,
+                "quote": "appointment slots at a rate s slots per day",
+                "matchedText": "appointment slots at a rate s slots per day",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Join the backlog depends on its state",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "The patients’ decision whether to join the backlog depends on its state",
+                "matchedText": "join the backlog depends on its state",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The service discipline of the appointment book is FIFO (first in, first out)",
+              "source": {
+                "type": "section",
+                "section": "The Appointment Book",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 13,
+                "quote": "To quantify the waiting time for an appointment, we assume that the service discipline of the appointment book is FIFO (ﬁrst in, ﬁrst out).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Requests for an appointment arrive according to a Poisson process",
+              "source": {
+                "type": "section",
+                "section": "A Simulation Experiment",
+                "page": 16,
+                "sectionIndex": 8,
+                "sentence": 3,
+                "quote": "Requests for an appointment arrive according to a Poisson process at a rate λ per day, and s appointment slots are oﬀered per day.",
+                "matchedText": "Requests for an appointment arrive according to a Poisson process",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The cost of waiting one day for an appointment is of the same order as the cost of waiting one hour in the clinic, i.e., ca ∼cw",
+              "source": {
+                "type": "section",
+                "section": "Characterization of the Optimal Solution",
+                "page": 14,
+                "sectionIndex": 4,
+                "sentence": 22,
+                "quote": "First, in order to capture the impact of both time scales, we consider that the cost of waiting one day for an appointment is of the same order as the cost of waiting one hour in the clinic, i.e., ca ∼cw.",
+                "matchedText": "the cost of waiting one day for an appointment is of the same order as the cost of waiting one hour in the clinic, i.e., ca ∼cw.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper models the outpatient clinic as a GI/GI/1 queue.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Diffusion Approximation",
+          "page": 10,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 11,
+            "section": "5.1. Diffusion Approximation",
+            "equation": "",
+            "quote": "For the service times, we consider an independent sequence of iid random variables {vi: i ≥0}, where vi corresponds to the service time of the ith arrival, has ﬁnite mean µ−1, and has a ﬁnite squared coeﬃcient of variation c2 v."
+          }
+        ],
+        "components": [
+          {
+            "id": "diffusion-approximation",
+            "label": "Diffusion Approximation",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "For the service times, we consider an independent sequence of iid random variables {vi: i ≥0}, where vi corresponds to the service time of the ith arrival, has finite mean μ−1, and has a finite squared coefficient of variation c2 v.",
+            "searchPhrases": [
+              "how diffusion approximation is represented",
+              "solution algorithm in operations and supply chains",
+              "diffusion approximation solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For the service times, we consider an independent sequence of iid random variables {vi: i ≥0}, where vi corresponds to the service time of the ith arrival, has finite mean μ−1, and has a finite squared coefficient of variation c2 v.",
+              "For the arrival process we consider a sequence of iid random variables {uc, i: i ≥0}, with associated renewal processes Nc(t) max{k ≥0: Pk i 1 uc, i ≤t}.",
+              "The workload right before the ith arrival, denoted as Wi, can be expressed by the classical Lindley recursion as Wi max{Wi−1 + vi−1 −uc, i, 0}, for i ≥2, (18) and W1 0."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. Diffusion Approximation",
+                "equation": "",
+                "quote": "For the service times, we consider an independent sequence of iid random variables {vi: i ≥0}, where vi corresponds to the service time of the ith arrival, has ﬁnite mean µ−1, and has a ﬁnite squared coeﬃcient of variation c2 v."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “For the service times, we consider an independent sequence of iid random variables {vi: i ≥0}, where vi”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "39c81e0db86799087eeb55e53aa2383c4235fecd2f9868a222dfad291721eeb7",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "52c0f07e29542b29e05f7382376548846bbc10ee7801147dcd10e1a0b9427205",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2016-2532/52c0f07e29542b29e05f7382376548846bbc10ee7801147dcd10e1a0b9427205.json",
+      "extractionQaDecisionSha256": "2b7bc5da7087b1b95dfa59ba36ae5ff3933751c7c93651197f3148bf3681fecd",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

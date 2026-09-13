@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2022-0098",
+  "sourcePdfSha256": "b27d4ee45f76b03becc5abfca0c3825ef43c3df370ea8b8d06d3a610458cac9c",
+  "extractionPagesSha256": "bc07ce4f4ae3c28b90650c7ea6376b76b76c470b7ccd042fef503af85226d39a",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "96f139f846aa1ccc543b5d94eee4fb8a9dd492d4aa38a54449c671c8d9638e4a",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "402604a6f479112c750ffc617228cb9d6f06961bd4edf48a0befbf524280d1f5",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-0098/402604a6f479112c750ffc617228cb9d6f06961bd4edf48a0befbf524280d1f5.json",
+  "extractionQaDecisionSha256": "b6bc4e987305ab5614ff94b67f9785af7b0988534c94a316aacf0e830d7840cb",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2022-0098",
+    "question": "How do invisible customers affect waiting time prediction?",
+    "overview": "Motivated by technological advances in real-time data collection about customers location in service systems, we study the effect of partial visibility of customers on waiting time prediction. The model considers systems where the predictor observes only a subset of the customers interacting with the system while serving all customers indiscriminately. The paper formulates a novel model of a partially visible queue and analyze the waiting time prediction problem, deriving a closed-form expression for the optimal prediction.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        10,
+        11,
+        12,
+        13
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Waiting Time Prediction with Invisible Customers model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Motivated by technological advances in real-time data collection about customers location in service systems, we study the effect of partial visibility of customers on waiting time prediction. The model considers systems where the predictor observes only a subset of the customers interacting with the system while serving all customers indiscriminately. The paper formulates a novel model of a partially visible queue and analyze the waiting time prediction problem, deriving a closed-form expression for the optimal prediction.",
+        "objects": [
+          "Customers",
+          "The server",
+          "Patients",
+          "Providers",
+          "The hospital"
+        ],
+        "inputs": [
+          "Service rates",
+          "The timing and type of past (observable) events",
+          "Output",
+          "Some methods require more data or a more careful training process",
+          "Time t"
+        ],
+        "decisions": [
+          "Perform better with the feature set II"
+        ],
+        "assumptions": [
+          "This distinction does not affect the server, which identically processes all customers",
+          "One observes that although visible customers arrive according to a Poisson process"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Motivated by technological advances in real-time data collection about customers location in service systems, we study the effect of partial visibility of customers on waiting time prediction.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The server",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "We assume that this distinction does not affect the server, which identically processes all custo­ mers.",
+                "matchedText": "the server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 7,
+                "quote": "This model proxies the environment of DFCI where the predictor has access to the RTLS, which uses elec­ tronic badges to track patients.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Providers",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 10,
+                "quote": "For similar reasons, the exact status of the server is not always available in real time as it requires that both providers’ and patients’ data are available in the RTLS.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The hospital",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "The hospital employs around 400 staff members daily, including 250 health providers (medical doctors, reg­ istered nurses, infusion nurses, etc.).",
+                "matchedText": "The hospital",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Service rates",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 1,
+                "quote": "Let λ and µ, respectively, denote the arrival and ser­ vice rates of an M/M/1 queue that is operating according to an FCFS service policy.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The timing and type of past (observable) events",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 15,
+                "quote": "Therefore, the stochastic pro­ cess defined only for visible customers is no longer an M/M/1 queue, and its stochastic characterization depends on the timing and type of past (observable) events.",
+                "matchedText": "the timing and type of past (observable) events",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Output",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 11,
+                "sectionIndex": 11,
+                "sentence": 14,
+                "quote": "Utilization increases variance (more ran­ domness in the system and the data), and invisibility increases the bias (a more flexible model is needed to capture the dependency between the input and output variables).",
+                "matchedText": "output",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Some methods require more data or a more careful training process",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 10,
+                "sectionIndex": 20,
+                "sentence": 24,
+                "quote": "We also observe that some methods require more data or a more careful training process.",
+                "matchedText": "some methods require more data or a more careful training process",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "sectionIndex": 6,
+                "page": 5,
+                "quote": "At any point in time t, prediction about the expected waiting time of arriving customers to an M/M/1 sys­ tem can be made using the total number of customers L(t) currently in the system (both visible and invisible customers, excluding the arriving customer).",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Perform better with the feature set II",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 11,
+                "sectionIndex": 11,
+                "sentence": 9,
+                "quote": "On the other hand, the experi­ ments also show that the parametric model LR per­ forms better with the feature set ALL, whereas the nonparametric models EBM and XGBoost perform better with the feature set II",
+                "matchedText": "perform better with the feature set II",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "This distinction does not affect the server, which identically processes all customers",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "We assume that this distinction does not affect the server, which identically processes all custo­ mers.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "One observes that although visible customers arrive according to a Poisson process",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 14,
+                "quote": "One observes that although visible customers arrive according to a Poisson process whose rate is λvis, their effective service time distribution (which includes the service of invisible customers) is no longer exponential.",
+                "matchedText": "One observes that although visible customers arrive according to a Poisson process",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper formulates a novel model of a partially visible queue and analyzes the waiting time prediction problem, deriving a closed-form expression for the optimal prediction.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 3
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 13,
+            "section": "5.3. Prediction Methods",
+            "equation": "",
+            "quote": "We compare the following prediction methods: visible (predicting optimally with complete nonanticipative information about all visible and invisible customers); YMM1 (the closed-form solution where we substitute λ and µ with the average arrival and service rates); the queueing heuristics; and the ML models LR, EBM, and XGBoost (this subset of models most often out­ performed others in experiments1-3 and repre­ sents parametric and nonparametric models)."
+          }
+        ],
+        "components": [
+          {
+            "id": "problem-formulation",
+            "label": "Problem Formulation",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "We assume that this distinction does not affect the server, which identically processes all customers.",
+            "searchPhrases": [
+              "how problem formulation is represented",
+              "system process in operations and supply chains",
+              "problem formulation system process specification"
+            ],
+            "formal": "Process relation: We assume that this distinction does not affect the server, which identically processes all customers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that this distinction does not affect the server, which identically processes all customers.",
+              "Arriving customers are visible with probability pvis (and are, otherwise, invisible with probability pinv = 1 pvis), and this probability is independent of other customers and events.",
+              "We consider the model from the perspective of a predictor that only observes events relating to a subset of customers, which we refer to as “visible,” whereas events relating to all other “invisible” customers are unknown to the predictor."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Problem Formulation",
+                "equation": "",
+                "quote": "We assume that this distinction does not affect the server, which identically processes all custo­ mers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “We assume that this distinction does not affect the server, which identically processes all customers.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "prediction-methods",
+            "label": "Prediction Methods",
+            "role": "information",
+            "concepts": [
+              "forecasting",
+              "queueing"
+            ],
+            "explanation": "We compare the following prediction methods: visible (predicting optimally with complete nonanticipative information about all visible and invisible customers); YMM1 (the closed-form solution where we substitute λ and μ with the average arrival and service rates); the queueing heuristics; and the ML models LR, EBM, and XGBoost (this subset of models most often outperformed others in experiments1-3 and represents parametric and nonparametric models).",
+            "searchPhrases": [
+              "how prediction methods is represented",
+              "information available to the decision maker in operations and supply chains",
+              "prediction methods information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In addition, we observe that although FCFS still holds, first in, first out may no longer hold (a customer who arrives later may finish service earlier because of parallel processing).",
+              "Inspired by the analysis in Section 3, we split case A (the last observed server activity is service) into three cases A1, A2, and A3.",
+              "Intuitively, these binary indicators are informative for estimating the number of invisible customers who have arrived before j2 and are still in service."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.3. Prediction Methods",
+                "equation": "",
+                "quote": "We compare the following prediction methods: visible (predicting optimally with complete nonanticipative information about all visible and invisible customers); YMM1 (the closed-form solution where we substitute λ and µ with the average arrival and service rates); the queueing heuristics; and the ML models LR, EBM, and XGBoost (this subset of models most often out­ performed others in experiments1-3 and repre­ sents parametric and nonparametric models)."
+              },
+              {
+                "page": 6,
+                "section": "3.3. Discussion",
+                "equation": "Proposition 1",
+                "quote": "We further denote j2 as the visible cus­ tomer at the head of the queue at time Ai, which may turn out to be customer i if there are no visible custo­ mers in the queue at that moment."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Forecasting as “prediction”: “prediction”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Queueing as “queueing model”: “queueing model”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-impact-of-partial-visibility-on-prediction-accuracy",
+            "label": "The Impact of Partial Visibility on Prediction Accuracy",
+            "role": "estimation",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "We measure accuracy in terms of the RMSE, which is an intuitive and widely used performance measure in regression (and particularly, waiting time prediction) problems.",
+            "searchPhrases": [
+              "how the impact of partial visibility on prediction accuracy is represented",
+              "estimation procedure in operations and supply chains",
+              "the impact of partial visibility on prediction accuracy estimation procedure specification"
+            ],
+            "formal": "Estimation relation: We measure accuracy in terms of the RMSE, which is an intuitive and widely used performance measure in regression (and particularly, waiting time prediction) problems.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In all experiments, we set μ = 1 and the simulator time unit to minutes.",
+              "In experiment1, we set the invisibility ratio pinv to the values in {0:1, 0:5,0:9}, reflecting lower to higher invisibility while setting congestion to a range of lower to higher values (ρ ∈{0:5,0:7,0:9})."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. The Impact of Partial Visibility on Prediction Accuracy",
+                "equation": "",
+                "quote": "We measure accuracy in terms of the RMSE, which is an intuitive and widely used performance measure in regression (and particularly, waiting time prediction) problems."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Forecasting as “prediction”: “in regression (and particularly, waiting time prediction ) problems.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "methods",
+            "label": "Methods",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We also observe that some methods require more data or a more careful training process.",
+            "searchPhrases": [
+              "how methods is represented",
+              "solution algorithm in operations and supply chains",
+              "methods solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We also observe that some methods require more data or a more careful training process.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "ML models that are trained in this feature set can be viewed as more sophisticated queuelength predictors. • II = {Lvis,Ai Aj1,Ai Aj2,τ Aj1,Ai τ,Aj2 Aj1} represents the interval information (II)."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "Methods",
+                "equation": "",
+                "quote": "We also observe that some methods require more data or a more careful training process."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We also observe that some methods require more data or a more careful training process.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model",
+            "label": "Model",
+            "role": "decision",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "On the other hand, ML methods that utilize a small set of carefully selected features perform near optimally, even using simple linear models that do not capture the complex relationship between the system state and the expected waiting time (Proposition 1).",
+            "searchPhrases": [
+              "how model is represented",
+              "decision rule in operations and supply chains",
+              "model decision rule specification"
+            ],
+            "formal": "Decision rule: On the other hand, ML methods that utilize a small set of carefully selected features perform near optimally, even using simple linear models that do not capture the complex relationship between the system state and the expected waiting time (Proposition 1).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Finally, we observe that, as often is the case when dealing with structured data, XGBoost works quite well and outperforms other tree-based methods.",
+              "Third, the comparison of feature sets in Table 2 suggests that feature engineering is highly beneficial, with models trained on all observable features (ALL) performing significantly better than models trained on the minimal feature set MI."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "Model",
+                "equation": "",
+                "quote": "On the other hand, ML methods that utilize a small set of carefully selected features per­ form near optimally, even using simple linear models that do not capture the complex relationship between the system state and the expected waiting time (Prop­ osition 1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses System state: “capture the complex relationship between the System state and the expected waiting time (Proposition 1).”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "service-systems-characteristics",
+            "label": "Service Systems Characteristics",
+            "role": "constraint",
+            "concepts": [
+              "service-operations"
+            ],
+            "explanation": "This paper studies an M/M/c model where the service rate of a single server is μ and the overall capacity is c · μ.",
+            "searchPhrases": [
+              "how service systems characteristics is represented",
+              "feasibility condition in operations and supply chains",
+              "service systems characteristics feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the arrival rate throughout the day is piecewise constant with rates λ + ∆, λ, and λ ∆during the first, middle, and final eight hours of the day.",
+              "We study an M/M/c model where the service rate of a single server is μ and the overall capacity is c · μ.",
+              "We consider an M/G/1 model where the service time distribution follows the log-normal distribution, allowing us to measure the impact of changes in the variance of the service time while controlling for the mean value."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.1. Service Systems Characteristics",
+                "equation": "",
+                "quote": "We study an M/M/c model where the service rate of a single server is µ and the overall capac­ ity is c · µ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "service-operations",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Service operations as “service system”: “We study an M/M/c model where the service rate of a single server is μ and the overall”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "experimental-design",
+            "label": "Experimental Design",
+            "role": "decision",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "To enable a meaningful comparison across queueing models, we choose comparable service and utilization rates for the other models.",
+            "searchPhrases": [
+              "how experimental design is represented",
+              "decision rule in operations and supply chains",
+              "experimental design decision rule specification"
+            ],
+            "formal": "Decision rule: To enable a meaningful comparison across queueing models, we choose comparable service and utilization rates for the other models.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We construct a collection of problem instances whose parameters vary along the unique dimension of each queueing model.",
+              "We set the standard deviation of the log-normal distribution to the values σ ∈{0:8,1,1:2} (σ = 1 is comparable with the M/M/1 model in terms of the coefficient of variation)."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.2. Experimental Design",
+                "equation": "",
+                "quote": "To enable a mean­ ingful comparison across queueing models, we choose comparable service and utilization rates for the other models."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Queueing as “queueing model”: “To enable a meaningful comparison across queueing model s, we choose comparable service and utilization rates”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "b27d4ee45f76b03becc5abfca0c3825ef43c3df370ea8b8d06d3a610458cac9c",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "402604a6f479112c750ffc617228cb9d6f06961bd4edf48a0befbf524280d1f5",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-0098/402604a6f479112c750ffc617228cb9d6f06961bd4edf48a0befbf524280d1f5.json",
+      "extractionQaDecisionSha256": "b6bc4e987305ab5614ff94b67f9785af7b0988534c94a316aacf0e830d7840cb",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

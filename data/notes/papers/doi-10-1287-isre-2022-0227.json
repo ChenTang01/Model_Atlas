@@ -1,0 +1,849 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-isre-2022-0227",
+  "sourcePdfSha256": "e368df3e2776ec9ea4bf04043300d1fca9c4431fb6d26ca38ee4649ed137433f",
+  "extractionPagesSha256": "e1d732d082a18e48244a5d80a4a45f9a163fe9d7e1ea01e470afa243b4ee3aad",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "ac129b810c68267d16de132eb8341ce6209513a79fa014ebf106c034e421a836",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "20ae0e6c69c9905770f425bf52ad9a8a6dc9fd89f753cd3d6ee33372513d6129",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2022-0227/20ae0e6c69c9905770f425bf52ad9a8a6dc9fd89f753cd3d6ee33372513d6129.json",
+  "extractionQaDecisionSha256": "4867a4fc8f4d91e021f9286232e6bed1bf88de31bf05175a0b6b0bc66747378b",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-isre-2022-0227",
+    "question": "When should a data broker sell collective insights exclusively or nonexclusively to competing publishers, and how do those choices affect publisher competition, advertiser surplus, and aggregate welfare?",
+    "overview": "The paper is a multistage leader-follower game: a data broker commits to an insight price, two downstream publishers make discrete data-purchase choices and then compete in advertising prices, and advertisers choose the publisher offering the highest utility. The paper solves the subgame-perfect equilibrium by backward induction.",
+    "modelTypes": [
+      "Game theory",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        8,
+        17
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Data-broker pricing and downstream publisher competition",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper is a multistage leader-follower game: a data broker commits to an insight price, two downstream publishers make discrete data-purchase choices and then compete in advertising prices, and advertisers choose the publisher offering the highest utility. The paper solves the subgame-perfect equilibrium by backward induction.",
+        "objects": [
+          "Monopoly data broker",
+          "Large publisher (Publisher 1)",
+          "Small publisher (Publisher 2)",
+          "A unit mass of heterogeneous advertisers"
+        ],
+        "inputs": [
+          "Publishers observe the broker's price",
+          "The broker's analytics capability alpha, publisher data sizes, data externality gamma, and the pricing menu are common knowledge",
+          "The data broker’s price for individual insights and collective insights",
+          "The small publisher’s data size β",
+          "The data analytics level"
+        ],
+        "decisions": [
+          "The data broker chooses the insight price and thereby implements an OO, OB, BO, or BB selling regime",
+          "Each publisher chooses individual or collective insights",
+          "Each publisher chooses its advertising price",
+          "Advertisers choose"
+        ],
+        "assumptions": [
+          "A single data broker is the market leader and its analytics capability alpha is exogenous",
+          "Publisher 1's data size is normalized to one and Publisher 2's size is beta<1",
+          "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline",
+          "Advertiser valuation v is uniform on [0,1], and the baseline advertiser market is fully covered",
+          "The data externality gamma and publishers' insight purchases are common knowledge"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Monopoly data broker",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "monopoly data broker"
+              }
+            },
+            {
+              "value": "Large publisher (Publisher 1)",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "large publisher (Publisher 1)"
+              }
+            },
+            {
+              "value": "Small publisher (Publisher 2)",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "small publisher (Publisher 2)"
+              }
+            },
+            {
+              "value": "A unit mass of heterogeneous advertisers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a unit mass of heterogeneous advertisers"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Publishers observe the broker's price",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Publishers observe the broker's price before selecting insights and observe purchasing choices when competing in advertising prices."
+              }
+            },
+            {
+              "value": "The broker's analytics capability alpha, publisher data sizes, data externality gamma, and the pricing menu are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The broker's analytics capability alpha, publisher data sizes, data externality gamma, and the pricing menu are common knowledge."
+              }
+            },
+            {
+              "value": "The data broker’s price for individual insights and collective insights",
+              "source": {
+                "type": "section",
+                "section": "Independent Pricing Decisions for Individual",
+                "page": 15,
+                "sectionIndex": 14,
+                "sentence": 6,
+                "quote": "We denote the data broker’s price for individual insights and collective insights as w and φ, respectively.",
+                "matchedText": "the data broker’s price for individual insights and collective insights as w and φ, respectively",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The small publisher’s data size β",
+              "source": {
+                "type": "section",
+                "section": "Independent Pricing Decisions for Individual",
+                "page": 16,
+                "sectionIndex": 14,
+                "sentence": 45,
+                "quote": "Moreover, we find that the equilibrium regions for BB and BO depend on the small publisher’s data size β.",
+                "matchedText": "the small publisher’s data size β",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The data analytics level",
+              "source": {
+                "type": "section",
+                "section": "Independent Pricing Decisions for Individual",
+                "page": 17,
+                "sectionIndex": 14,
+                "sentence": 60,
+                "quote": "Moreover, we find that the equilibrium regions for BB and BO depend on the data analytics level.",
+                "matchedText": "the data analytics level",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The data broker chooses the insight price and thereby implements an OO, OB, BO, or BB selling regime",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the data broker chooses the insight price and thereby implements an OO, OB, BO, or BB selling regime"
+              }
+            },
+            {
+              "value": "Each publisher chooses individual or collective insights",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each publisher chooses individual or collective insights"
+              }
+            },
+            {
+              "value": "Each publisher chooses its advertising price",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each publisher chooses its advertising price"
+              }
+            },
+            {
+              "value": "Advertisers choose",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "advertisers choose where to buy targeted advertising"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A single data broker is the market leader and its analytics capability alpha is exogenous",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A single data broker is the market leader and its analytics capability alpha is exogenous."
+              }
+            },
+            {
+              "value": "Publisher 1's data size is normalized to one and Publisher 2's size is beta<1",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Publisher 1's data size is normalized to one and Publisher 2's size is beta<1."
+              }
+            },
+            {
+              "value": "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline."
+              }
+            },
+            {
+              "value": "Advertiser valuation v is uniform on [0,1], and the baseline advertiser market is fully covered",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Advertiser valuation v is uniform on [0,1], and the baseline advertiser market is fully covered."
+              }
+            },
+            {
+              "value": "The data externality gamma and publishers' insight purchases are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The data externality gamma and publishers' insight purchases are common knowledge."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected information entry: merged_setup_sentences.",
+            "category": "inputs",
+            "field": "information",
+            "reason": "merged_setup_sentences"
+          }
+        ],
+        "method": "The paper derives the subgame perfect equilibrium using a backward induction approach.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Heterogeneous Targeting Values",
+          "page": 17,
+          "sentence": 6
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "Data Insights and Pricing Ads",
+            "equation": "",
+            "quote": "Specifically, each publisher’s optimal responses are summarized as fol­ lows: (i) given that Publisher 1 chooses O, Publisher 2 would choose B if w < w1; (ii) given that Publisher 2 chooses O, Publisher 1 would choose B if w < w2; (iii) given that Publisher 1 chooses B, Publisher 2 would choose B if w < w3; (iv) given that Publisher 2 chooses B, Publisher 1 would choose B if w < w4."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The broker's analytics capability alpha, publisher data sizes, data externality gamma, and the pricing menu are common knowledge. Publishers observe the broker's price before selecting insights and observe purchasing choices when competing in advertising prices. Advertisers know publishers' insight-purchase decisions and prices. Each advertiser has a traffic valuation v drawn from the common-knowledge uniform distribution U[0,1]; the model does not require an advertiser's individual draw to be publicly observed.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in data markets and digital advertising",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "price per analyzed data set; individual insights cost w and collective insights cost 2w · w>0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_i\\in\\{O, B\\}",
+                "meaning": "Publisher i's choice of individual (O) or collective (B) insights · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "advertising price charged by Publisher i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_i",
+                "meaning": "advertiser demand served by Publisher i · share of the unit-mass advertiser market",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "data broker's data-analytics capability · 0<\\alpha<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "small publisher's data/traffic size relative to the large publisher · 0<\\beta<1",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Without loss of generality, the total amount of consumer data associated with Publisher 1 is normalized to 1, while the total amount of consumer data related to Publisher 2 is denoted by β (β < 1).7 Hereafter, we refer to Publisher 1 as the large publisher and Publisher 2 as the small publisher.",
+              "Publisher 1's data size is normalized to one and Publisher 2's size is beta<1.",
+              "A single data broker is the market leader and its analytics capability alpha is exogenous.",
+              "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Publishers",
+                "equation": "",
+                "quote": "Without loss of generality, the total amount of con­ sumer data associated with Publisher 1 is normalized to 1, while the total amount of consumer data related to Publisher 2 is denoted by β (β < 1).7 Hereafter, we refer to Publisher 1 as the large publisher and Publisher 2 as the small publisher."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Publisher i maximizes advertising revenue net of its data-insight fee; anticipating publisher purchase and pricing responses, the data broker chooses w to maximize its fee revenue.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in data markets and digital advertising",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\pi_i(s_i)=\\begin{cases}p_iD_i-w,&s_i=O,\\\\ p_iD_i-2w,&s_i=B.\\end{cases}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "price per analyzed data set; individual insights cost w and collective insights cost 2w · w>0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_i\\in\\{O, B\\}",
+                "meaning": "Publisher i's choice of individual (O) or collective (B) insights · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "advertising price charged by Publisher i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_i",
+                "meaning": "advertiser demand served by Publisher i · share of the unit-mass advertiser market",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "data broker's data-analytics capability · 0<\\alpha<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "small publisher's data/traffic size relative to the large publisher · 0<\\beta<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of the external value created by combining publishers' data · bounded to keep both publishers active; values above one are superadditive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Publisher 1's data size is normalized to one and Publisher 2's size is beta<1.",
+              "A single data broker is the market leader and its analytics capability alpha is exogenous.",
+              "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "The two publishers decide the ad prices p1 and p2, and advertisers will purchase targeted ads from the publisher that offers a higher utility."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Backward induction first solves advertiser allocation and publishers' advertising-price competition, then publishers' binary insight-purchase game, and finally the broker's price and selling regime. Closed-form comparative statics and parameter-region figures evaluate competition and welfare.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in data markets and digital advertising",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Backward induction first solves advertiser allocation and publishers' advertising-price competition, then publishers' binary insight-purchase game, and finally the broker's price and selling regime.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "price per analyzed data set; individual insights cost w and collective insights cost 2w · w>0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_i\\in\\{O, B\\}",
+                "meaning": "Publisher i's choice of individual (O) or collective (B) insights · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_i",
+                "meaning": "advertiser demand served by Publisher i · share of the unit-mass advertiser market",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of the external value created by combining publishers' data · bounded to keep both publishers active; values above one are superadditive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A single data broker is the market leader and its analytics capability alpha is exogenous.",
+              "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline.",
+              "Advertiser valuation v is uniform on [0,1], and the baseline advertiser market is fully covered."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4. Analysis and Results",
+                "equation": "",
+                "quote": "We use the backward induction approach to derive the subgame perfect equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We use the backward induction approach to derive the subgame perfect equilibrium.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The data broker chooses the insight price and thereby implements an OO, OB, BO, or BB selling regime each publisher chooses individual or collective insights each publisher chooses its advertising price advertisers choose where to buy targeted advertising",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in data markets and digital advertising",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The data broker chooses the insight price and thereby implements an OO, OB, BO, or BB selling regime each publisher chooses individual or collective insights each publisher chooses its advertising price advertisers choose where to buy targeted advertising",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "price per analyzed data set; individual insights cost w and collective insights cost 2w · w>0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_i\\in\\{O, B\\}",
+                "meaning": "Publisher i's choice of individual (O) or collective (B) insights · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "advertising price charged by Publisher i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_i",
+                "meaning": "advertiser demand served by Publisher i · share of the unit-mass advertiser market",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "data broker's data-analytics capability · 0<\\alpha<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "small publisher's data/traffic size relative to the large publisher · 0<\\beta<1",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Publisher 1's data size is normalized to one and Publisher 2's size is beta<1.",
+              "Specifically, each publisher’s optimal responses are summarized as follows: (i) given that Publisher 1 chooses O, Publisher 2 would choose B if w < w1; (ii) given that Publisher 2 chooses O, Publisher 1 would choose B if w < w2; (iii) given that Publisher 1 chooses B, Publisher 2 would choose B if w < w3; (iv) given that Publisher 2 chooses B, Publisher 1 would choose B if w < w4.",
+              "A single data broker is the market leader and its analytics capability alpha is exogenous.",
+              "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Data Insights and Pricing Ads",
+                "equation": "",
+                "quote": "Specifically, each publisher’s optimal responses are summarized as fol­ lows: (i) given that Publisher 1 chooses O, Publisher 2 would choose B if w < w1; (ii) given that Publisher 2 chooses O, Publisher 1 would choose B if w < w2; (iii) given that Publisher 1 chooses B, Publisher 2 would choose B if w < w3; (iv) given that Publisher 2 chooses B, Publisher 1 would choose B if w < w4."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Specifically, each publisher’s optimal responses are summarized as follows: (i) given that Publisher 1 chooses O, Publisher 2”.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "subgame-perfect-equilibrium-of-the-broker-led-data-insight-prici",
+            "label": "Subgame-perfect equilibrium of the broker-led data-insight pricing game",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "procurement"
+            ],
+            "explanation": "The model's equilibrium concept is Subgame-perfect equilibrium of the broker-led data-insight pricing game. Section 4 explicitly solves by backward induction. Lemma 1 gives Nash advertising-price equilibria in each OO, OB, BO, and BB subgame; Lemma 2 gives publishers' equilibrium insight purchases as functions of w; Proposition 1 compares the broker's induced profits and characterizes its equilibrium selling strategy.",
+            "searchPhrases": [
+              "how subgame-perfect equilibrium of the broker-led data-insight pricing game is represented",
+              "strategic response in data markets and digital advertising",
+              "subgame-perfect equilibrium of the broker-led data-insight pricing game strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Subgame-perfect equilibrium of the broker-led data-insight pricing game.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "price per analyzed data set; individual insights cost w and collective insights cost 2w · w>0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_i\\in\\{O, B\\}",
+                "meaning": "Publisher i's choice of individual (O) or collective (B) insights · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of the external value created by combining publishers' data · bounded to keep both publishers active; values above one are superadditive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Depending on the data broker’s data price w, the competing publishers’ strategies for purchasing data insights are summarized as follows: (i) When γ > γ1, if 0 < w < w4, BB is the equilibrium outcome; if w4 < w < w1, OB is the equilibrium outcome; if w1 < w < w, OO is the equilibrium outcome.",
+              "A single data broker is the market leader and its analytics capability alpha is exogenous.",
+              "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline.",
+              "The data externality gamma and publishers' insight purchases are common knowledge."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "Data Insights and Pricing Ads",
+                "equation": "",
+                "quote": "Depending on the data broker’s data price w, the competing publishers’ strategies for purchasing data insights are summarized as follows: (i) When γ > γ1, if 0 < w < w4, BB is the equilibrium outcome; if w4 < w < w1, OB is the equilibrium outcome; if w1 < w < w, OO is the equilibrium outcome."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Depending on the data broker’s data price w, the competing publishers’ strategies for purchasing data insights are summarized”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              },
+              {
+                "conceptId": "procurement",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Procurement as “purchasing”: “w, the competing publishers’ strategies for purchasing data insights are summarized as follows: (i) When”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "competition"
+            ],
+            "explanation": "Stage 1: the data broker sets the price w per analyzed data set. Stage 2: each publisher chooses individual insights O or collective insights B. Stage 3: the two publishers simultaneously set advertising prices p_i. Stage 4: advertisers choose the publisher that gives them the higher utility.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in data markets and digital advertising",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: Stage 1: the data broker sets the price w per analyzed data set.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w",
+                "meaning": "price per analyzed data set; individual insights cost w and collective insights cost 2w · w>0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_i\\in\\{O, B\\}",
+                "meaning": "Publisher i's choice of individual (O) or collective (B) insights · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "advertising price charged by Publisher i · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D_i",
+                "meaning": "advertiser demand served by Publisher i · share of the unit-mass advertiser market",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "data broker's data-analytics capability · 0<\\alpha<1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "small publisher's data/traffic size relative to the large publisher · 0<\\beta<1",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Publisher 1's data size is normalized to one and Publisher 2's size is beta<1.",
+              "A single data broker is the market leader and its analytics capability alpha is exogenous.",
+              "The broker uses flat-fee pricing: individual insights cost w and collective insights cost 2w in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "5.1. Independent Pricing Decisions for Individual",
+                "equation": "",
+                "quote": "WTP for collective insights increases because the large publisher can now obtain a higher external data value from the small publisher; at the same time, the small publisher’s incentive to buy collective insights decreases because the external data value does not change and buying collective insights would intensify the competi­ tion."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing as “pricing decision”: “pricing decision”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "conceptId": "competition",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Competition: “buying collective insights would intensify the Competition .”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e368df3e2776ec9ea4bf04043300d1fca9c4431fb6d26ca38ee4649ed137433f",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "20ae0e6c69c9905770f425bf52ad9a8a6dc9fd89f753cd3d6ee33372513d6129",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2022-0227/20ae0e6c69c9905770f425bf52ad9a8a6dc9fd89f753cd3d6ee33372513d6129.json",
+      "extractionQaDecisionSha256": "4867a4fc8f4d91e021f9286232e6bed1bf88de31bf05175a0b6b0bc66747378b",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

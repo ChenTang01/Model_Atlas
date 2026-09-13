@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-1187",
+  "sourcePdfSha256": "6974ed21135b7314eecccf990bc087905a96d0f26af63856c28c512a5c958d22",
+  "extractionPagesSha256": "9705f5d0c35c41256526c02f5efce0c608af107515858566f09877b0f7596943",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "83a24f88c17163bcf21e7a4be095ef6cb736c9a23abfc1788e0bb473d3fea409",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "04fa65bca3ffaaf214c20f96805969b5dee0bf2ede4f4d965e6d876f279080ce",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1187/04fa65bca3ffaaf214c20f96805969b5dee0bf2ede4f4d965e6d876f279080ce.json",
+  "extractionQaDecisionSha256": "7d2d12c39ecb0db9bec1010bd16df573562b5bf270a4893605a3972a21ef592d",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-1187",
+    "question": "How does physician integration affect bundled payments?",
+    "overview": "Under the prevailing fee-for-service (FFS) payments, hospitals receive a fixed payment, whereas physicians receive separate fees for each treatment or procedure performed for a given diagnosis. Under FFS, incentives of hospitals and physicians are misaligned, leading to large inefficiencies. Bundled payments (BP), an alternative to FFS unifying payments to the hospital and physicians, are expected to encourage care coordination and reduce ever increasing healthcare costs.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8,
+        10,
+        11,
+        13
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "The Business of Healthcare model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Under the prevailing fee-for-service (FFS) payments, hospitals receive a fixed payment, whereas physicians receive separate fees for each treatment or procedure performed for a given diagnosis. Under FFS, incentives of hospitals and physicians are misaligned, leading to large inefficiencies. Bundled payments (BP), an alternative to FFS unifying payments to the hospital and physicians, are expected to encourage care coordination and reduce ever increasing healthcare costs.",
+        "objects": [
+          "Hospitals",
+          "Physicians",
+          "Policy makers",
+          "A population",
+          "Agents"
+        ],
+        "inputs": [
+          "The hospital influencing effort",
+          "An exogenous parameter",
+          "The maximum amount it pays the physician to incentivize cost reduction",
+          "Effort level",
+          "A single DRG-based payment, rh, and incurs costs"
+        ],
+        "decisions": [
+          "Optimal efforts",
+          "Whether to enroll in BP",
+          "Share savings",
+          "Accept in exchange of overtreatment",
+          "Effort level"
+        ],
+        "assumptions": [
+          "The costlier pathway is a superset of the cheaper pathway, with a higher volume or intensity of the procedures performed",
+          "The hospital is initially operating under FFS and is next offered BP"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Under the prevailing fee-for-service (FFS) payments, hospitals receive a fixed payment, whereas physicians receive separate fees for each treatment or procedure performed for a given diagnosis.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Physicians",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Under the prevailing fee-for-service (FFS) payments, hospitals receive a fixed payment, whereas physicians receive separate fees for each treatment or procedure performed for a given diagnosis.",
+                "matchedText": "physicians",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Policy makers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "Managerial implications: Our findings have important managerial implications for policy makers, payers such as the Center for Medicare and Medicaid Services, and hospitals: (1) policy makers and payers should be aware of and account for potential negative effects of current BP design on a subset of hospital systems, including a possible quality reduction; (2) in deciding whether to enroll in BP, hospitals should consider their level of physician integration and possible implications for quality.",
+                "matchedText": "policy makers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A population",
+              "source": {
+                "type": "section",
+                "section": "Intensity of Care",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 24,
+                "quote": "For a given DRG, consider a population of patients with severity index s.",
+                "matchedText": "a population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agents",
+              "source": {
+                "type": "section",
+                "section": "Bundled Payment Analytical Models",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 8,
+                "quote": "We remark that our base model captures the common role of physicians in the hospital setting in the U.S. healthcare system, that is, physicians are independent agents admitting patients to hospitals and managing quality, whereas the hospitals manage the physical assets (its organization and coordination) and pay the produc­ tion costs.",
+                "matchedText": "agents",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The hospital influencing effort",
+              "source": {
+                "type": "section",
+                "section": "Intensity of Care",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 71,
+                "quote": "the hospital influencing effort",
+                "matchedText": "the hospital influencing effort",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "An exogenous parameter",
+              "source": {
+                "type": "section",
+                "section": "Hospital and Physician Objectives",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 16,
+                "quote": "We consider rBP as an exogenous parameter chosen by the payer.",
+                "matchedText": "an exogenous parameter",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The maximum amount it pays the physician to incentivize cost reduction",
+              "source": {
+                "type": "section",
+                "section": "Hospital and Physician Objectives",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 25,
+                "quote": "Specifically, in addi­ tion to the exerted effort level, ih, the hospital decides on the care intensity incentives, denoted by T, which repre­ sents the maximum amount it pays the physician to incentivize cost reduction.",
+                "matchedText": "the maximum amount it pays the physician to incentivize cost reduction",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Effort level",
+              "source": {
+                "type": "section",
+                "section": "Hospital and Physician Objectives",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 25,
+                "quote": "Specifically, in addi­ tion to the exerted effort level, ih, the hospital decides on the care intensity incentives, denoted by T, which repre­ sents the maximum amount it pays the physician to incentivize cost reduction.",
+                "matchedText": "effort level",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A single DRG-based payment, rh, and incurs costs",
+              "source": {
+                "type": "section",
+                "section": "Hospital and Physician Objectives",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 9,
+                "quote": "Under FFS, the hospital receives a single DRG-based pay­ ment, rh, and incurs costs because of patients receiving care via either the costlier or cheaper pathway.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Optimal efforts",
+              "source": {
+                "type": "section",
+                "section": "Hospital and Physician Objectives",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 32,
+                "quote": "In the second stage, the hospital and the physicians jointly choose optimal efforts",
+                "matchedText": "optimal efforts",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Whether to enroll in BP",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "Managerial implications: Our findings have important managerial implications for policy makers, payers such as the Center for Medicare and Medicaid Services, and hospitals: (1) policy makers and payers should be aware of and account for potential negative effects of current BP design on a subset of hospital systems, including a possible quality reduction; (2) in deciding whether to enroll in BP, hospitals should consider their level of physician integration and possible implications for quality.",
+                "matchedText": "whether to enroll in BP",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Share savings",
+              "source": {
+                "type": "section",
+                "section": "Analysis of the Base Model",
+                "page": 8,
+                "sectionIndex": 9,
+                "sentence": 18,
+                "quote": "Note that under BP, hospital and physicians operate as a single entity and share savings",
+                "matchedText": "share savings",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Accept in exchange of overtreatment",
+              "source": {
+                "type": "section",
+                "section": "Analysis of the Base Model",
+                "page": 8,
+                "sectionIndex": 9,
+                "sentence": 20,
+                "quote": "when multiplied by wb, the quantity corresponds to the minimum financial gain that the phy­ sician is willing to accept in exchange of overtreatment",
+                "matchedText": "accept in exchange of overtreatment",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Effort level",
+              "source": {
+                "type": "section",
+                "section": "Hospital and Physician Objectives",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 25,
+                "quote": "Specifically, in addi­ tion to the exerted effort level, ih, the hospital decides on the care intensity incentives, denoted by T, which repre­ sents the maximum amount it pays the physician to incentivize cost reduction.",
+                "matchedText": "effort level",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The costlier pathway is a superset of the cheaper pathway, with a higher volume or intensity of the procedures performed",
+              "source": {
+                "type": "section",
+                "section": "Intensity of Care",
+                "page": 5,
+                "sectionIndex": 7,
+                "sentence": 17,
+                "quote": "For the ease of inter­ pretation, we assume that the costlier pathway is a super­ set of the cheaper pathway, with a higher volume or intensity of the procedures performed.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The hospital is initially operating under FFS and is next offered BP",
+              "source": {
+                "type": "section",
+                "section": "Hospital and Physician Objectives",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 3,
+                "quote": "In line with the commonly practiced BP models, we assume that the hospi­ tal is initially operating under FFS and is next offered BP.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper formulates game-theoretic models to study (1) the impact of the level of integration between the hospital and physicians in the uptake of BP and (2) the consequences of bundling with respect to overall care quality and costs/savings across the spectrum of integration levels.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 7
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "4.1. Intensity of Care",
+            "equation": "",
+            "quote": "Under the FFS model, once the care is complete, the hospital receives a pre-deter­ mined amount of payment for each DRG regardless of the costs for treating the patient, whereas the physician is paid separately for each service he or she provides."
+          }
+        ],
+        "components": [
+          {
+            "id": "intensity-of-care",
+            "label": "Intensity of Care",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Under the FFS model, once the care is complete, the hospital receives a pre-determined amount of payment for each DRG regardless of the costs for treating the patient, whereas the physician is paid separately for each service he or she provides.",
+            "searchPhrases": [
+              "how intensity of care is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "intensity of care modeled objective specification"
+            ],
+            "formal": "Objective relation: Under the FFS model, once the care is complete, the hospital receives a pre-determined amount of payment for each DRG regardless of the costs for treating the patient, whereas the physician is paid separately for each service he or she provides.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Under the FFS model, once the care is complete, the hospital receives a pre-determined amount of payment for each DRG regardless of the costs for treating the patient, whereas the physician is paid separately for each service he or she provides.",
+              "we assume that the costlier pathway is a superset of the cheaper pathway, with a higher volume or intensity of the procedures performed.",
+              "For the ease of interpretation, we assume that the costlier pathway is a superset of the cheaper pathway, with a higher volume or intensity of the procedures performed."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4.1. Intensity of Care",
+                "equation": "",
+                "quote": "Under the FFS model, once the care is complete, the hospital receives a pre-deter­ mined amount of payment for each DRG regardless of the costs for treating the patient, whereas the physician is paid separately for each service he or she provides."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "hospital-and-physician-objectives",
+            "label": "Hospital and Physician Objectives",
+            "role": "algorithm",
+            "concepts": [
+              "equilibrium-analysis"
+            ],
+            "explanation": "For the overall game, we derive the subgame perfect Nash equilibrium using backward induction.",
+            "searchPhrases": [
+              "how hospital and physician objectives is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "hospital and physician objectives solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: For the overall game, we derive the subgame perfect Nash equilibrium using backward induction.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this section, we model hospital and physician objectives and the corresponding utility functions.",
+              "we assume that the hospital is initially operating under FFS and is next offered BP.",
+              "In line with the commonly practiced BP models, we assume that the hospital is initially operating under FFS and is next offered BP."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.2. Hospital and Physician Objectives",
+                "equation": "",
+                "quote": "For the overall game, we derive the subgame perfect Nash equilibrium using backward induction."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Equilibrium analysis as “nash equilibrium”: “For the overall game, we derive the subgame perfect Nash equilibrium using backward induction.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "analysis-of-the-base-model",
+            "label": "Analysis of the Base Model",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The analysis starts with characterizing the equilibrium intensity under FFS as a function of the physician integration level, Ψ.",
+            "searchPhrases": [
+              "how analysis of the base model is represented",
+              "strategic response in organizations, incentives, and finance",
+              "analysis of the base model strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The equilibrium intensity under FFS, I∗, is given by I∗= I0 + ∆rp 2wb if Ψ ≤Ψ 1 Ψ otherwise 8 < : where Ψ := 1 I0 ∆rp 2wb : (4) Two observations follow from Lemma 1.",
+              "First, under FFS, the physician operating under low level of integration (i.e., Ψ ≤Ψ) prefers to increase the care intensity beyond I0 by the quality-adjusted financial motives, ∆rp 2wb.",
+              "Second, when the level of integration is high (i.e., Ψ > Ψ), the equilibrium intensity under FFS (i.e., status quo) is inversely related to the physician integration."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.3. Analysis of the Base Model",
+                "equation": "",
+                "quote": "We start with characterizing the equilibrium intensity under FFS as a function of the physician integration level, Ψ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We start with characterizing the equilibrium intensity under FFS as a function of the physician integration level, Ψ.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "assessment-of-outcomes-under-bundled-pay",
+            "label": "Assessment of Outcomes Under Bundled Pay",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "Specifically, we estimate cost parameters based on total knee replacement.",
+            "searchPhrases": [
+              "how assessment of outcomes under bundled pay is represented",
+              "estimation procedure in organizations, incentives, and finance",
+              "assessment of outcomes under bundled pay estimation procedure specification"
+            ],
+            "formal": "Estimation relation: Specifically, we estimate cost parameters based on total knee replacement.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let Σ := rFFS rBP, the difference between the total reimbursement under FFS and the minimal acceptable reimbursement under BP, represent the overall savings from BP.",
+              "As the physician integration increases beyond Ψ, the savings start to decrease and ultimately disappear altogether when physician integration is beyond ̃Ψ := min(Ψ0,Ψ+), where Ψ0, and Ψ+ are the bounds for the feasibility of bundling from Theorem 1.",
+              "On the other hand, in hospital systems with a higher level of integration, as in Case II, quality may go in either direction after bundling, depending on the size of overprovision/underprovision of care prior to bundling as driven by the level of integration."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.3.1. Assessment of Outcomes Under Bundled Pay",
+                "equation": "",
+                "quote": "Specifically, we estimate cost parameters based on total knee replacement."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “Specifically, we estimate cost parameters based on total knee replacement.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "analysis-of-the-general-model",
+            "label": "Analysis of the General Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "The primary difference of the theorem is the additional impact of wq, the hospital quality concern variable, on incentive dynamics for bundling.",
+            "searchPhrases": [
+              "how analysis of the general model is represented",
+              "system process in organizations, incentives, and finance",
+              "analysis of the general model system process specification"
+            ],
+            "formal": "Process relation: The primary difference of the theorem is the additional impact of wq, the hospital quality concern variable, on incentive dynamics for bundling.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Specifically, we see an additional case with very high physician integration, Ψ > ˆΨ, where the hospital chooses to keep the intensity higher so as to maintain quality.",
+              "As before, we start with the FFS analysis and characterize the equilibrium intensity under FFS as a function of the physician integration level, Ψ, as follows: Lemma 3 (Status quo Intensity)."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.4. Analysis of the General Model",
+                "equation": "",
+                "quote": "The primary difference of the theorem is the additional impact of wq, the hospital quality concern variable, on incentive dynamics for bundling."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “The primary difference of the theorem is the additional impact of wq, the hospital quality concern variable, on”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "bp-programs",
+            "label": "BP Programs",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "Hospitals with relatively lower physician integration (i.e., Ψ ≤Ψ) enjoy the highest savings.",
+            "searchPhrases": [
+              "how bp programs is represented",
+              "feasibility condition in organizations, incentives, and finance",
+              "bp programs feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If integration is low, that is, Ψ < Ψ, then overprovision of services characterizes FFS; in that case, BP will improve quality (i.e., ∆Q > 0) if ∆c 2wb < (1 I0) + ∆rp 2wb + wq 2wb (19) and worsen it otherwise.",
+              "If integration is moderate, that is, Ψ < Ψ < ˆΨ, then both underprovision and overprovision of services are possible under FFS.",
+              "Hospitals with relatively lower physician integration (i.e., Ψ ≤Ψ) enjoy the highest savings.",
+              "Our analyses based on the voluntary BP models showed that bundling is particularly promising for improving care coordination in hospital systems with low physician integration while cost savings and potential quality improvements tend to degrade as the level of integration increases."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "BP Programs",
+                "equation": "",
+                "quote": "Hospitals with relatively lower physician integration (i.e., Ψ ≤Ψ) enjoy the highest savings."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Hospitals with relatively lower physician integration (i.e., Ψ ≤Ψ) enjoy the highest savings.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "6974ed21135b7314eecccf990bc087905a96d0f26af63856c28c512a5c958d22",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "04fa65bca3ffaaf214c20f96805969b5dee0bf2ede4f4d965e6d876f279080ce",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1187/04fa65bca3ffaaf214c20f96805969b5dee0bf2ede4f4d965e6d876f279080ce.json",
+      "extractionQaDecisionSha256": "7d2d12c39ecb0db9bec1010bd16df573562b5bf270a4893605a3972a21ef592d",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

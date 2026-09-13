@@ -1,0 +1,1404 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2024-07817",
+  "sourcePdfSha256": "ef46c06c278878e9f9195feee4f46b114fe20bd5bb0943a98ad4ee685cd51dcb",
+  "extractionPagesSha256": "deb9d77ebe20babf3ad23d843288195977d17d535e29123c2e2005c19ec910ce",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "57f1cddb3f5f555c2964629b9a45323bbd9ed2eaf996cbaa3d613fe1ce3a52a6",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "e82fa4cbe4743db87a3c45b0c7506ceb51668f8f97829f55406c76315f426ee8",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-07817/e82fa4cbe4743db87a3c45b0c7506ceb51668f8f97829f55406c76315f426ee8.json",
+  "extractionQaDecisionSha256": "ab8ac950b4ae2a1fbe602f71d99b6245990e50d0a460621635181533aaff1611",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-07817",
+    "question": "How should a dynamic matching problem where each new arrival (a refugee case) be matched immediately and irrevocably to one of the static resources (a location with a fixed annual quota)?",
+    "overview": "Motivated by our collaboration with a major refugee resettlement agency in the United States, we study a dynamic matching problem where each new arrival (a refugee case) must be matched immediately and irrevocably to one of the static resources (a location with a fixed annual quota). In addition to consuming the static resource, each case requires postallocation service from a server, such as a translator. Given the time-consuming nature of service, a server may not be available at a given time, thus we refer to it as a dynamic resource.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        8,
+        12,
+        16
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "model-and-preliminaries",
+        "name": "Model and Preliminaries",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Motivated by our collaboration with a major refugee resettlement agency in the United States, we study a dynamic matching problem where each new arrival (a refugee case) must be matched immediately and irrevocably to one of the static resources (a location with a fixed annual quota). In addition to consuming the static resource, each case requires postallocation service from a server, such as a translator. Upon matching, the case will wait to avail service in a first-come-first-serve manner.",
+        "objects": [
+          "A server",
+          "Agency",
+          "Planner",
+          "Platform",
+          "Managers"
+        ],
+        "inputs": [
+          "The rewards",
+          "The horizon",
+          "The type",
+          "Unreliable or delayed backlog information, rendering it unsuitable for matching decisions",
+          "The use"
+        ],
+        "decisions": [
+          "Design algorithms that do not rely on distributional knowledge constructed",
+          "Design a dual-adjusted score-based algorithm (Algorithm 2) for this problem",
+          "Target affiliate",
+          "The matching decisions that maximize the dual-adjusted score",
+          "Its learning process (particularly the time-varying learning rates)"
+        ],
+        "assumptions": [
+          "To model this, we endow each affiliate with a server, also referred to as a dynamic resource, whose availability follows an i.i.d",
+          "We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service",
+          "Model and Preliminaries We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service",
+          "The service availability of affiliate i follows an i.i.d",
+          "In particular, we assume that the service availability of affiliate i follows an i.i.d"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A server",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In addition to consuming the static resource, each case requires postallocation service from a server, such as a translator.",
+                "matchedText": "a server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agency",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Motivated by our collaboration with a major refugee resettlement agency in the United States, we study a dynamic matching problem where each new arrival (a refugee case) must be matched immediately and irrevocably to one of the static resources (a location with a fixed annual quota).",
+                "matchedText": "agency",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Planner",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Consequently, the central planner (the agency) faces a dynamic matching problem with an objective that combines the matching reward (captured by pair-specific employment outcomes) with the cost for congestion for dynamic resources and overallocation for the static ones.",
+                "matchedText": "planner",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Platform",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 12,
+                "quote": "This paper was accepted by Martin Bichler, market design, platform, and demand analytics.",
+                "matchedText": "platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Managers",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 72,
+                "quote": "Our framework offers managers flexibility to balance allocation rewards and resource costs (both static and dynamic) to varying degrees.",
+                "matchedText": "managers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The rewards",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 5,
+                "quote": "Upon arrival, the agency also observes the rewards of matching the case to each affiliate, representing the employment probabilities predicted by the ML models.",
+                "matchedText": "the rewards",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The horizon",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 13,
+                "quote": "We measure server congestion via its back­ logs throughout the horizon, representing the number of matched cases awaiting service at the affiliate in each period.",
+                "matchedText": "the horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The type",
+              "source": {
+                "type": "section",
+                "section": "Problem Setup",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 6,
+                "quote": "The second component of the type is a target affiliate denoted by i† t , which is a predetermined affiliate to which the case must be matched.",
+                "matchedText": "the type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unreliable or delayed backlog information, rendering it unsuitable for matching decisions",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 49,
+                "quote": "For example, some agencies may only have access to unreliable or delayed backlog infor­ mation, rendering it unsuitable for matching decisions.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The use",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 52,
+                "quote": "We design a dual-adjusted score-based algorithm (Algorithm 2) for this problem, similar to CA-DL, but with subtle differences in the learning process, includ­ ing the use of a time-varying learning rate, to control the drift of the backlog.",
+                "matchedText": "the use",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design algorithms that do not rely on distributional knowledge constructed",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Motivated by the observed fluctuations in the composition of refugee pools across the years, we design algorithms that do not rely on distributional knowledge constructed based on past years’ data.",
+                "matchedText": "design algorithms that do not rely on distributional knowledge constructed",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design a dual-adjusted score-based algorithm (Algorithm 2) for this problem",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 52,
+                "quote": "We design a dual-adjusted score-based algorithm (Algorithm 2) for this problem",
+                "matchedText": "design a dual-adjusted score-based algorithm (Algorithm 2) for this problem",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Target affiliate",
+              "source": {
+                "type": "section",
+                "section": "Problem Setup",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 8,
+                "quote": "In contrast, we use i† t = 0 to denote a free case, which does not have any tar­ get affiliate.",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The matching decisions that maximize the dual-adjusted score",
+              "source": {
+                "type": "section",
+                "section": "Motivation: Surrogate Dual Problem",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 11,
+                "quote": "Motivated by this observation, we adopt a learning-based approach, iteratively updating the dual variables and choosing the matching decisions that maximize the dual-adjusted score",
+                "matchedText": "the matching decisions that maximize the dual-adjusted score",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Its learning process (particularly the time-varying learning rates)",
+              "source": {
+                "type": "section",
+                "section": "Algorithm and Analysis",
+                "page": 14,
+                "sectionIndex": 8,
+                "sentence": 43,
+                "quote": "Returning to CO-DL, although φt is not exactly equal to 0.5, we have designed its learning process (particu­ larly the time-varying learning rates) so that φt highly concentrates around 0",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "To model this, we endow each affiliate with a server, also referred to as a dynamic resource, whose availability follows an i.i.d",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 10,
+                "quote": "To model this, we endow each affiliate with a server, also referred to as a dynamic resource, whose availability follows an i.i.d.",
+                "matchedText": "To model this, we endow each affiliate with a server, also referred to as a dynamic resource, whose availability follows an i.i.d.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 1,
+                "quote": "We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service.",
+                "matchedText": "We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Model and Preliminaries We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 5,
+                "sectionIndex": 31,
+                "sentence": 26,
+                "quote": "Model and Preliminaries We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service.",
+                "matchedText": "Model and Preliminaries We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service availability of affiliate i follows an i.i.d",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 24,
+                "quote": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "matchedText": "the service availability of affiliate i follows an i.i.d.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In particular, we assume that the service availability of affiliate i follows an i.i.d",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 24,
+                "quote": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "matchedText": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper proves Theorem 3 by constructing a simple single-affiliate instance similar to Example 1 (will be discussed shortly).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Algorithm and Analysis",
+          "page": 14,
+          "sentence": 21
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 12,
+            "section": "3.3. Proof Sketch of Theorem 1",
+            "equation": "",
+            "quote": "Similar to Agrawal and Deva­ nur (2014) and Balseiro et al. (2023), our proof leverages the adversarial online learning regret guarantee of the online mirror descent algorithm used to update the dual variables for static resources (see update rules (7) and related discussion)."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-and-preliminaries",
+            "label": "Model and Preliminaries",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Specifically, we describe two types of resource limitations in this setting, which we refer to as static and dynamic resource limitations.",
+            "searchPhrases": [
+              "how model and preliminaries is represented",
+              "system process in auctions, matching, and market design",
+              "model and preliminaries system process specification"
+            ],
+            "formal": "Process relation: Specifically, we describe two types of resource limitations in this setting, which we refer to as static and dynamic resource limitations.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Next, we define an offline benchmark based on this objective, along with the notion of regret used for performance evaluation."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Model and Preliminaries",
+                "equation": "",
+                "quote": "Specifically, we describe two types of resource limitations in this setting, which we refer to as static and dynamic resource limitations."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "problem-setup",
+            "label": "Problem Setup",
+            "role": "objective",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "This reward wt,i can be equivalently thought of as the predicted employment outcome if case t is matched to affiliate i.",
+            "searchPhrases": [
+              "how problem setup is represented",
+              "modeled objective in auctions, matching, and market design",
+              "problem setup modeled objective specification"
+            ],
+            "formal": "Objective relation: This reward wt,i can be equivalently thought of as the predicted employment outcome if case t is matched to affiliate i.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The first component of the type is a vector wt = (wt,i)i∈[m], where wt,i is a caseaffiliate pairwise reward from matching case t to affiliate i.",
+              "The problem consists of m affiliates and an arrival sequence of T refugee cases, where case t arrives at the beginning of period t.",
+              "The second component of the type is a target affiliate denoted by i† t , which is a predetermined affiliate to which the case must be matched."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.2. Problem Setup",
+                "equation": "",
+                "quote": "This reward wt,i can be equivalently thought of as the predicted employment outcome if case t is matched to affiliate i."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Matching: “This reward wt,i can be equivalently thought of as the predicted employment outcome if case t is matched”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-setting",
+            "label": "Information Setting",
+            "role": "information",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Before formalizing the agency’s objective, we describe the information available for decision-making.",
+            "searchPhrases": [
+              "how information setting is represented",
+              "information available to the decision maker in auctions, matching, and market design",
+              "information setting information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Before formalizing the agency’s objective, we describe the information available for decision-making.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When matching case t to an affiliate, the exact realization of server availability st,i is not known, reflecting uncertainty in service times.",
+              "Before formalizing the agency’s objective, we describe the information available for decision-making.",
+              "In the congestionaware setting (Section 3), the agency observes the current backlog bt 1 at the time of decision making."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.4. Information Setting",
+                "equation": "",
+                "quote": "Before formalizing the agency’s objective, we describe the information available for decision-making."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Decision making: “Before formalizing the agency’s objective, we describe the information available for decision-making.”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective",
+            "label": "Objective",
+            "role": "objective",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "We now formally define the agency’s matching process and its objective.",
+            "searchPhrases": [
+              "how objective is represented",
+              "modeled objective in auctions, matching, and market design",
+              "objective modeled objective specification"
+            ],
+            "formal": "Objective relation: We now formally define the agency’s matching process and its objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "As we highlighted earlier, a feasible matching profile in our model must satisfy (i) zπ t ∈Z(i† t ) and (ii) constraints Capacity Feasibility-t , for all t ∈[T].",
+              "X T t=1 bπ t,i, where {bπ t }T t=1 are the backlog vectors induced by the matching decisions {zπ t }T t=1 through the backlog dynamics in (1).",
+              "Formally, an online algorithm π is a mapping from an observable history Ht 1 and current arrival type At to a matching decision zπ t ."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.5. Objective",
+                "equation": "",
+                "quote": "We now formally define the agency’s matching process and its objective."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Matching: “We now formally define the agency’s matching process and its objective.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "performance-metric",
+            "label": "Performance Metric",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We compare the performance of any online algorithm against an optimal offline benchmark.",
+            "searchPhrases": [
+              "how performance metric is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "performance metric solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We compare the performance of any online algorithm against an optimal offline benchmark.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "First, note that we impose the capacity constraint only at t = T when defining the offline benchmark.",
+              "Second, it is straightforward to see that in any optimal solution, at least one of these constraints is binding: bt,i ≥0 or bt,i ≥bt 1,i + zt,i st,i.",
+              "We evaluate an algorithm based on its worst-case performance across all instances, where each instance I comprises (i) the set of affiliates [m], (ii) the capacity ratios r, and (iii) the (unknown) arrival type distribution F."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "2.6. Performance Metric",
+                "equation": "",
+                "quote": "We compare the performance of any online algorithm against an optimal offline benchmark."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We compare the performance of any online algorithm against an optimal offline benchmark.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "algorithm-design-for-congestion-aware-setting",
+            "label": "Algorithm Design for Congestion-Aware Setting",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In this section, we propose our first learning-based algorithm for the congestion-aware setting.",
+            "searchPhrases": [
+              "how algorithm design for congestion-aware setting is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "algorithm design for congestion-aware setting solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In this section, we propose our first learning-based algorithm for the congestion-aware setting.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Next, in Section 3.2, we formally present the congestion-aware dual-learning algorithm (CA-DL) and show its (asymptotically optimal) sublinear regret guarantees in both stable and near-critical regimes, provided the congestion penalty parameter satisfies γ = o(T).",
+              "We also show an impossibility result (Proposition 2), establishing that the condition γ = o(T) is indeed unavoidable to achieve sublinear regret."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3. Algorithm Design for Congestion-Aware Setting",
+                "equation": "",
+                "quote": "In this section, we propose our first learning-based algorithm for the congestion-aware setting."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Algorithm design: “In this section, we propose our first learning-based algorithm for the congestion-aware setting.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "proof-sketch-of-theorem-1",
+            "label": "Proof Sketch of Theorem 1",
+            "role": "algorithm",
+            "concepts": [
+              "regret-analysis"
+            ],
+            "explanation": "Similar to Agrawal and Devanur (2014) and Balseiro et al. (2023), our proof leverages the adversarial online learning regret guarantee of the online mirror descent algorithm used to update the dual variables for static resources (see update rules (7) and related discussion).",
+            "searchPhrases": [
+              "how proof sketch of theorem 1 is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "proof sketch of theorem 1 solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Similar to Agrawal and Devanur (2014) and Balseiro et al. (2023), our proof leverages the adversarial online learning regret guarantee of the online mirror descent algorithm used to update the dual variables for static resources (see update rules (7) and related discussion).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For all sample paths, bt 1 · (zt st) ≤Dt ≤bt 1 · (zt st) + O(1): We prove Lemma 3 in Section EC.6.1 in the Online Appendix.",
+              "Moreover, setting bt = ζbt 1 and ignoring the additive error O(ζ), the pseudo-reward is exactly gt(ut,lt,bt), the per-period surrogate dual function evaluated at the current estimate of dual variables (see Equation (5) in Definition 4)."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "3.3. Proof Sketch of Theorem 1",
+                "equation": "",
+                "quote": "Similar to Agrawal and Deva­ nur (2014) and Balseiro et al. (2023), our proof leverages the adversarial online learning regret guarantee of the online mirror descent algorithm used to update the dual variables for static resources (see update rules (7) and related discussion)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "regret-analysis",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Regret analysis as “learning regret”: “our proof leverages the adversarial online learning regret guarantee of the online mirror descent algorithm used”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "resource-limitations",
+        "name": "Resource Limitations",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model and Preliminaries.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-and-preliminaries"
+          }
+        ],
+        "summary": "In the following, we elaborate on each type of resources separately and formally explain their associated constraints and their corresponding penalty terms in the objective function of the agency.",
+        "objects": [
+          "The agency",
+          "Server",
+          "Service resource"
+        ],
+        "inputs": [
+          "Random service times",
+          "The agency’s tolerance for congestion",
+          "The service rate"
+        ],
+        "decisions": [
+          "Design algorithms that do not rely on distributional knowledge constructed",
+          "Design a dual-adjusted score-based algorithm (Algorithm 2) for this problem",
+          "Target affiliate",
+          "The matching decisions that maximize the dual-adjusted score",
+          "Its learning process (particularly the time-varying learning rates)"
+        ],
+        "assumptions": [
+          "The service availability of affiliate i follows an i.i.d",
+          "In particular, we assume that the service availability of affiliate i follows an i.i.d"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The agency",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 30,
+                "quote": "If the server becomes available but no case is waiting, we assume it begins serving an “outside” task (e.g., external cases or other operational task within the agency) with the same service time distribution.",
+                "matchedText": "the agency",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "Dynamic Resource (Server): Each case further requires postallocation service.",
+                "matchedText": "Server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service resource",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 45,
+                "quote": "From a practical perspective, each affiliate’s quota is partly determined based on its service resource availability, making the quota roughly proportional to the available service resources (Bansak and Paulson 2024).",
+                "matchedText": "service resource",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Random service times",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 28,
+                "quote": "random service times",
+                "matchedText": "random service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The agency’s tolerance for congestion",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 39,
+                "quote": "Similar to the overallocation penalty parameter α, the congestion penalty parameter γ repre­ sents the agency’s tolerance for congestion.",
+                "matchedText": "the agency’s tolerance for congestion",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service rate",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 26,
+                "quote": "We also refer to ri as the ser­ vice rate.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design algorithms that do not rely on distributional knowledge constructed",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Motivated by the observed fluctuations in the composition of refugee pools across the years, we design algorithms that do not rely on distributional knowledge constructed based on past years’ data.",
+                "matchedText": "design algorithms that do not rely on distributional knowledge constructed",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design a dual-adjusted score-based algorithm (Algorithm 2) for this problem",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 52,
+                "quote": "We design a dual-adjusted score-based algorithm (Algorithm 2) for this problem",
+                "matchedText": "design a dual-adjusted score-based algorithm (Algorithm 2) for this problem",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Target affiliate",
+              "source": {
+                "type": "section",
+                "section": "Problem Setup",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 8,
+                "quote": "In contrast, we use i† t = 0 to denote a free case, which does not have any tar­ get affiliate.",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The matching decisions that maximize the dual-adjusted score",
+              "source": {
+                "type": "section",
+                "section": "Motivation: Surrogate Dual Problem",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 11,
+                "quote": "Motivated by this observation, we adopt a learning-based approach, iteratively updating the dual variables and choosing the matching decisions that maximize the dual-adjusted score",
+                "matchedText": "the matching decisions that maximize the dual-adjusted score",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Its learning process (particularly the time-varying learning rates)",
+              "source": {
+                "type": "section",
+                "section": "Algorithm and Analysis",
+                "page": 14,
+                "sectionIndex": 8,
+                "sentence": 43,
+                "quote": "Returning to CO-DL, although φt is not exactly equal to 0.5, we have designed its learning process (particu­ larly the time-varying learning rates) so that φt highly concentrates around 0",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The service availability of affiliate i follows an i.i.d",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "matchedText": "the service availability of affiliate i follows an i.i.d.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In particular, we assume that the service availability of affiliate i follows an i.i.d",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "matchedText": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "In evaluating our proposed algorithms, we distinguish two parameter regimes for the service slack ɛ, formally defined as follows.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Resource Limitations",
+          "page": 7,
+          "sentence": 46
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "2.3. Resource Limitations",
+            "equation": "",
+            "quote": "In the following, we elaborate on each type of resources separately and formally explain their associated constraints and their corresponding penalty terms in the objective function of the agency."
+          }
+        ],
+        "components": [
+          {
+            "id": "resource-limitations",
+            "label": "Resource Limitations",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "In the following, we elaborate on each type of resources separately and formally explain their associated constraints and their corresponding penalty terms in the objective function of the agency.",
+            "searchPhrases": [
+              "how resource limitations is represented",
+              "modeled objective in auctions, matching, and market design",
+              "resource limitations modeled objective specification"
+            ],
+            "formal": "Objective relation: In the following, we elaborate on each type of resources separately and formally explain their associated constraints and their corresponding penalty terms in the objective function of the agency.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We further define ρi = ci=T, referred to as the capacity ratio.",
+              "Second, we introduce a soft constraint through a penalty α ≥0 per unit of overallocation.",
+              "Formally, for each affiliate i, the agency incurs an overallocation cost given by α(PT t=1 zt,i ci)+."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.3. Resource Limitations",
+                "equation": "",
+                "quote": "In the following, we elaborate on each type of resources separately and formally explain their associated constraints and their corresponding penalty terms in the objective function of the agency."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “their corresponding penalty terms in the objective function of the agency.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "data-and-benchmarks",
+        "name": "Data and Benchmarks",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model and Preliminaries.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-and-preliminaries"
+          }
+        ],
+        "summary": "We then present numerical results showing that our algorithm outperforms both the current practice and other algorithms proposed in the refugee matching literature. Specifically, each arriving free case is matched to an actual affiliate i with the highest adjusted score (possibly negative) among those with remaining capacity, and dual variables are updated according to Line 7 of Algorithm 1.",
+        "objects": [
+          "A server",
+          "Agency",
+          "Planner",
+          "Platform",
+          "Managers"
+        ],
+        "inputs": [
+          "Service rates"
+        ],
+        "decisions": [
+          "A deterministic service flow with service rates equal to r"
+        ],
+        "assumptions": [
+          "To model this, we endow each affiliate with a server, also referred to as a dynamic resource, whose availability follows an i.i.d",
+          "We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service",
+          "Model and Preliminaries We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service",
+          "The service availability of affiliate i follows an i.i.d",
+          "In particular, we assume that the service availability of affiliate i follows an i.i.d"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A server",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In addition to consuming the static resource, each case requires postallocation service from a server, such as a translator.",
+                "matchedText": "a server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agency",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Motivated by our collaboration with a major refugee resettlement agency in the United States, we study a dynamic matching problem where each new arrival (a refugee case) must be matched immediately and irrevocably to one of the static resources (a location with a fixed annual quota).",
+                "matchedText": "agency",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Planner",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Consequently, the central planner (the agency) faces a dynamic matching problem with an objective that combines the matching reward (captured by pair-specific employment outcomes) with the cost for congestion for dynamic resources and overallocation for the static ones.",
+                "matchedText": "planner",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Platform",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 12,
+                "quote": "This paper was accepted by Martin Bichler, market design, platform, and demand analytics.",
+                "matchedText": "platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Managers",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 72,
+                "quote": "Our framework offers managers flexibility to balance allocation rewards and resource costs (both static and dynamic) to varying degrees.",
+                "matchedText": "managers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Service rates",
+              "source": {
+                "type": "section",
+                "section": "Data and Benchmarks",
+                "page": 16,
+                "sectionIndex": 1,
+                "sentence": 12,
+                "quote": "To mea­ sure backlog, following the approach of Bansak and Paulson (2024), we adopt a deterministic service flow with service rates equal to r.",
+                "matchedText": "service rates",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "A deterministic service flow with service rates equal to r",
+              "source": {
+                "type": "section",
+                "section": "Data and Benchmarks",
+                "page": 16,
+                "sectionIndex": 1,
+                "sentence": 12,
+                "quote": "To mea­ sure backlog, following the approach of Bansak and Paulson (2024), we adopt a deterministic service flow with service rates equal to r",
+                "matchedText": "a deterministic service flow with service rates equal to r",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "To model this, we endow each affiliate with a server, also referred to as a dynamic resource, whose availability follows an i.i.d",
+              "source": {
+                "type": "section",
+                "section": "Model for Dynamic Matching with Postallocation",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 10,
+                "quote": "To model this, we endow each affiliate with a server, also referred to as a dynamic resource, whose availability follows an i.i.d.",
+                "matchedText": "To model this, we endow each affiliate with a server, also referred to as a dynamic resource, whose availability follows an i.i.d.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 1,
+                "quote": "We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service.",
+                "matchedText": "We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Model and Preliminaries We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service",
+              "source": {
+                "type": "section",
+                "section": "Model and Preliminaries",
+                "page": 5,
+                "sectionIndex": 31,
+                "sentence": 26,
+                "quote": "Model and Preliminaries We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service.",
+                "matchedText": "Model and Preliminaries We start by formally introducing our model for dynamic refugee matching with unknown i.i.d. arrivals and postallocation service.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service availability of affiliate i follows an i.i.d",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 24,
+                "quote": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "matchedText": "the service availability of affiliate i follows an i.i.d.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In particular, we assume that the service availability of affiliate i follows an i.i.d",
+              "source": {
+                "type": "section",
+                "section": "Resource Limitations",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 24,
+                "quote": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "matchedText": "In particular, we assume that the service availability of affiliate i follows an i.i.d.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Resettlement Data In this section, we numerically evaluate our learningbased approach using data from our partner agency.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Case Study on Refugee",
+          "page": 16,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 16,
+            "section": "5.1. Data and Benchmarks",
+            "equation": "",
+            "quote": "Specifically, each arriving free case is matched to an actual affiliate i with the highest adjusted score (possibly negative) among those with remaining capacity, and dual variables are updated according to Line 7 of Algorithm 1."
+          }
+        ],
+        "components": [
+          {
+            "id": "case-study-on-refugee-resettlement-data",
+            "label": "Case Study on Refugee Resettlement Data",
+            "role": "algorithm",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "We then present numerical results showing that our algorithm outperforms both the current practice and other algorithms proposed in the refugee matching literature.",
+            "searchPhrases": [
+              "how case study on refugee resettlement data is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "case study on refugee resettlement data solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We then present numerical results showing that our algorithm outperforms both the current practice and other algorithms proposed in the refugee matching literature.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To measure backlog, following the approach of Bansak and Paulson (2024), we adopt a deterministic service flow with service rates equal to r."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "5. Case Study on Refugee Resettlement Data",
+                "equation": "",
+                "quote": "We then present numerical results show­ ing that our algorithm outperforms both the current practice and other algorithms proposed in the refugee matching literature."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Matching: “other algorithms proposed in the refugee Matching literature.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Service rates",
+                  "source": {
+                    "type": "section",
+                    "section": "Data and Benchmarks",
+                    "page": 16,
+                    "sectionIndex": 1,
+                    "sentence": 12,
+                    "quote": "To mea­ sure backlog, following the approach of Bansak and Paulson (2024), we adopt a deterministic service flow with service rates equal to r.",
+                    "matchedText": "service rates",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "data-and-benchmarks",
+            "label": "Data and Benchmarks",
+            "role": "algorithm",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "Specifically, each arriving free case is matched to an actual affiliate i with the highest adjusted score (possibly negative) among those with remaining capacity, and dual variables are updated according to Line 7 of Algorithm 1.",
+            "searchPhrases": [
+              "how data and benchmarks is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "data and benchmarks solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Specifically, each arriving free case is matched to an actual affiliate i with the highest adjusted score (possibly negative) among those with remaining capacity, and dual variables are updated according to Line 7 of Algorithm 1.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We use the actual sequence of refugee arrivals to construct a sequence of type arrivals At = (wt,i† t ).",
+              "Under our primitives, because Pm i=1 ρi = 1, there is always at least one affiliate with remaining capacity at each period t ∈[T].",
+              "This adaptation mirrors real-world heuristics, as each case must be matched to an actual affiliate (see also Remark 2 on incorporating this adaptation into our theoretical analysis)."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "5.1. Data and Benchmarks",
+                "equation": "",
+                "quote": "Specifically, each arriving free case is matched to an actual affiliate i with the highest adjusted score (possibly negative) among those with remaining capacity, and dual variables are updated according to Line 7 of Algorithm 1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Matching: “Matching”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "business_question",
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "ef46c06c278878e9f9195feee4f46b114fe20bd5bb0943a98ad4ee685cd51dcb",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "e82fa4cbe4743db87a3c45b0c7506ceb51668f8f97829f55406c76315f426ee8",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-07817/e82fa4cbe4743db87a3c45b0c7506ceb51668f8f97829f55406c76315f426ee8.json",
+      "extractionQaDecisionSha256": "ab8ac950b4ae2a1fbe602f71d99b6245990e50d0a460621635181533aaff1611",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

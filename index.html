@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Atlas maps 1,653 research papers to the modeling ideas, formulations, and evidence they contain.">
+  <meta name="theme-color" content="#04070e">
+  <title>Atlas (Beta) · Research Model Galaxy</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/explorer.css">
+  <link rel="stylesheet" href="assets/galaxy-shell.css">
+  <link rel="stylesheet" href="assets/relevance.css">
+  <link rel="stylesheet" href="assets/reader.css">
+  <link rel="stylesheet" href="assets/component-stack.css">
+  <link rel="stylesheet" href="assets/panels.css">
+  <link rel="stylesheet" href="assets/main-atlas.css">
+  <script defer src="data/model_notes.js"></script>
+  <script defer src="assets/math.js"></script>
+  <script defer src="assets/component-stack.js"></script>
+  <script defer src="assets/topics.js"></script>
+  <script defer src="assets/galaxy.js"></script>
+  <script defer src="assets/explorer.js"></script>
+  <script defer src="assets/data-loader.js"></script>
+  <script defer src="assets/galaxy-controller.js"></script>
+</head>
+<body data-atlas-mode="home" data-result-view="galaxy">
+  <a class="skip-link" href="#atlasQuery">Skip to search</a>
+  <canvas id="galaxyCanvas" role="img" aria-label="A research galaxy with 1,653 selectable paper nodes. Use Panels for a keyboard-accessible list.">Use Panels to browse the papers.</canvas>
+  <div class="space-wash" aria-hidden="true"></div>
+  <div class="space-grain" aria-hidden="true"></div>
+
+  <header class="atlas-nav" aria-label="Atlas navigation">
+    <a id="brandHome" class="atlas-brand" href="./" aria-label="Atlas Beta — return to the galaxy">
+      <span class="brand-copy"><strong><span class="brand-name">Atlas</span><span class="brand-beta">(Beta)</span></strong></span>
+    </a>
+    <nav class="nav-actions" aria-label="Main navigation">
+      <button id="viewToggle" class="view-toggle" type="button" aria-pressed="false"><span aria-hidden="true">≡</span><span id="viewToggleLabel">Panels</span></button>
+      <a class="about-link" href="about.html">About <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="atlasMain">
+    <section id="homeView" class="home-stage" aria-labelledby="homeTitle">
+      <div class="home-copy">
+        <h1 id="homeTitle">Research models,<br><em>mapped.</em></h1>
+      </div>
+      <nav id="topicIndex" class="topic-index" aria-label="Browse research by subject">
+        <div class="index-heading"><h2>The subject index</h2></div>
+        <div id="topicList" class="topic-list"></div>
+        <button id="resetTopic" class="reset-topic" type="button" hidden>← All subjects</button>
+      </nav>
+    </section>
+
+    <div class="map-marginalia" aria-hidden="true"><span>Drag to orbit · Scroll to zoom</span></div>
+
+    <section id="searchStage" class="search-stage" aria-label="Search the model atlas">
+      <form id="atlasSearch" class="atlas-search" role="search">
+        <span class="search-symbol" aria-hidden="true"></span>
+        <label for="atlasQuery" class="sr-only">Search a modeling idea, description, author, title, or DOI</label>
+        <input id="atlasQuery" type="search" autocomplete="off" spellcheck="false" placeholder="Find an idea, a paper, a connection…" enterkeyhint="search">
+        <button type="submit"><span>Search</span><span aria-hidden="true">↗</span></button>
+      </form>
+      <div class="search-suggestions"><span>For example</span><button type="button" data-query="strategic consumers">strategic consumers</button><button type="button" data-query="waiting time guarantees">waiting time guarantees</button><button type="button" data-query="demand learning">demand learning</button></div>
+    </section>
+
+    <section id="resultsHud" class="results-hud" aria-labelledby="queryLabel" hidden>
+      <p class="eyebrow">From the collection</p>
+      <h2 id="queryLabel"></h2>
+      <p id="resultsCount" class="result-count" aria-live="polite"></p>
+      <p id="galaxyMatchNote" class="galaxy-match-note"></p>
+      <div id="rankedHeader" class="ranked-header"><h3 id="rankedTitle">Relevant papers</h3><button id="toggleRanked" type="button" aria-expanded="true" aria-controls="rankedBody">Collapse −</button></div>
+      <div id="rankedBody"><p class="ranked-guide">Most relevant first</p><ol id="rankedMatches" aria-labelledby="rankedTitle"></ol><button id="expandMatches" class="quiet-action" type="button" aria-expanded="false" aria-controls="rankedMatches" hidden>Show all matches +</button></div>
+    </section>
+    <div id="galaxyViewActions" class="galaxy-view-actions" hidden>
+      <div id="relevanceKey" class="relevance-key" aria-label="Larger, brighter stars are more relevant"><span>Higher relevance</span><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span>Lower relevance</span></div>
+      <button id="seeInPanels" type="button" aria-controls="classicPanel">See in Panels <span aria-hidden="true">↗</span></button>
+    </div>
+    <div id="emptyState" class="empty-state" hidden><p class="eyebrow">No close connection</p><h2>The galaxy is quiet here.</h2><p>No matching paper was found. Try a shorter concept or remove a filter.</p><button type="button" class="quiet-action" data-reset>Show the collection</button></div>
+
+    <section id="nodeTooltip" class="node-tooltip" role="region" aria-labelledby="tooltipHeading" tabindex="-1" hidden>
+      <div class="preview-header"><h2 id="tooltipHeading">Paper preview</h2><button id="tooltipClose" class="icon-action" type="button" aria-label="Close paper preview">×</button></div>
+      <p id="tooltipMeta" class="tooltip-meta"></p><h3 id="tooltipTitle"></h3><p id="tooltipAuthors" class="tooltip-authors"></p>
+      <div class="preview-connection"><p id="tooltipDimension" class="match-dimension"></p><p id="tooltipNotice" class="match-notice" hidden></p><p id="tooltipReason" class="tooltip-reason"></p><div id="tooltipContextBlock" class="tooltip-context-block" hidden><p id="tooltipContextLabel" class="tooltip-context-label"></p><p id="tooltipContextText" class="tooltip-context-text"></p></div></div>
+      <div id="tooltipActions" class="preview-actions"></div>
+    </section>
+
+    <section id="explore-view"><div class="workspace">
+      <section id="classicPanel" class="classic-panel results-pane" aria-label="Matching papers in Panels" hidden>
+        <header class="classic-header"><div><p class="eyebrow">Panels</p><h2 id="panelsTitle">Modeling papers</h2></div><button id="closeClassic" type="button" aria-label="Back to galaxy">← Back to galaxy</button></header>
+        <div class="panels-controls">
+          <div class="filterbar"><div class="filter-controls">
+            <label>Model family<select id="typeFilter"><option value="">All approaches</option></select></label>
+            <label>Journal<select id="journalFilter"><option value="">All journals</option></select></label>
+            <label>Source provenance<select id="levelFilter"><option value="">All source records</option><option value="model_map">Original deep model map</option><option value="literature">Original evidence index</option></select></label>
+          </div><button id="resetFilters" class="text-button" type="button" hidden>Reset all ×</button></div>
+          <div class="pane-title"><h2 id="panelResultCount">1,653 papers</h2><span id="resultSort">Corpus order</span></div>
+        </div>
+        <div id="searchExplanation" class="search-explanation" aria-live="polite"></div>
+        <div id="panelResults" class="classic-list"></div>
+        <button id="loadMorePanels" class="load-more-panels" type="button" hidden>Load more papers</button>
+      </section>
+      <article id="detailView" class="reader-pane detail-view" aria-label="Selected paper" hidden>
+        <div class="detail-shell"><div class="reader-topbar"><div class="mini-detail-toolbar"><button id="backToResults" type="button" class="back-action">← Back to results</button></div><div id="readerSearchGuide" class="reader-search-guide" aria-label="Search matches in this paper" hidden></div></div><div id="detailContent" tabindex="-1"><p class="loading">Loading the model index…</p></div></div>
+      </article>
+    </div></section>
+  </main>
+  <div id="loadState" class="load-state" role="status">Loading the corpus…</div>
+  <div id="toast" role="status" class="toast" hidden></div>
+  <noscript><p class="noscript">Atlas needs JavaScript for search, model cards, and links to original papers through DOI and Google Scholar.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,861 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-04078",
+  "sourcePdfSha256": "08059b10800baf9023146f15fe109a8fef44feb93d02176652cc8d99249bd297",
+  "extractionPagesSha256": "34be0f20e2c7602317d2dd1bbca3b57146fa20865ec0a35d149df364936a398b",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "e3a2169236d6618e5a67da31dfcb605e26d086bccdd4b19d2bc3e19e167a0c49",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "a501930ff7aea509a2632482015cc6e0fb5d003ceb92fa9fd739c3cbbf492f54",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-04078/a501930ff7aea509a2632482015cc6e0fb5d003ceb92fa9fd739c3cbbf492f54.json",
+  "extractionQaDecisionSha256": "f44f7a9a4dd6ab402f48fd7abbc0678bc847ecae4762ea945cab6ead2d9e499a",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-04078",
+    "question": "Should an online service platform set one common price or let privately informed providers set their own prices, and what fee schedule preserves decentralized autonomy while optimally regulating competition?",
+    "overview": "A platform commits to a pricing regime and fee schedule while a continuum of privately informed agents strategically chooses participation and, under decentralization, prices. The paper defines a nonatomic price equilibrium, solves centralized and decentralized regimes, and designs incentive-compatible fees that implement the platform-optimal allocation.",
+    "modelTypes": [
+      "Game theory",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        5,
+        8
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Pricing Control and Regulation on Online Service Platforms model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A platform commits to a pricing regime and fee schedule while a continuum of privately informed agents strategically chooses participation and, under decentralization, prices. The paper defines a nonatomic price equilibrium, solves centralized and decentralized regimes, and designs incentive-compatible fees that implement the platform-optimal allocation.",
+        "objects": [
+          "One online service platform",
+          "A unit mass of independent service providers with heterogeneous private costs",
+          "Customers",
+          "Population"
+        ],
+        "inputs": [
+          "Each agent privately observes its per-unit cost c",
+          "The cost distribution, demand parameters beta and gamma, sequence, and fee rules are common knowledge",
+          "Posted prices are publicly observable",
+          "Each nonatomic agent takes the aggregate average price",
+          "The platform observes posted prices and served quantities but not agent costs directly unless agents report them in the direct mechanism"
+        ],
+        "decisions": [
+          "The platform selects centralized or decentralized pricing",
+          "The platform selects commission, fixed, cost-report, or quantity-based fee terms",
+          "Each agent decides whether to participate",
+          "Under decentralization each active agent chooses a posted price",
+          "Under the direct mechanism each agent reports its private cost"
+        ],
+        "assumptions": [
+          "There is a unit mass of risk-neutral agents whose per-unit costs are uniformly distributed on [0,1] in the closed-form baseline",
+          "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it",
+          "Differentiated demand is linear: q(p,p-bar)=1-beta p-bar+gamma(p-bar-p), with positive beta and gamma",
+          "The baseline focuses on beta greater than one so some high-cost agents optimally remain inactive",
+          "The platform maximizes its own fee revenue and agents have a zero outside option"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "One online service platform",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "one online service platform"
+              }
+            },
+            {
+              "value": "A unit mass of independent service providers with heterogeneous private costs",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a unit mass of independent service providers with heterogeneous private costs"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Platform Model",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 1,
+                "quote": "We model a platform that mediates transactions between customers and a large population of indepen­ dent agents that offer a differentiated service.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "section",
+                "section": "Platform Model",
+                "page": 3,
+                "sectionIndex": 4,
+                "sentence": 1,
+                "quote": "We model a platform that mediates transactions between customers and a large population of indepen­ dent agents that offer a differentiated service.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each agent privately observes its per-unit cost c",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each agent privately observes its per-unit cost c."
+              }
+            },
+            {
+              "value": "The cost distribution, demand parameters beta and gamma, sequence, and fee rules are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The cost distribution, demand parameters beta and gamma, sequence, and fee rules are common knowledge."
+              }
+            },
+            {
+              "value": "Posted prices are publicly observable",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Posted prices are publicly observable after they are chosen."
+              }
+            },
+            {
+              "value": "Each nonatomic agent takes the aggregate average price",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each nonatomic agent takes the aggregate average price as given but correctly anticipates its equilibrium value."
+              }
+            },
+            {
+              "value": "The platform observes posted prices and served quantities but not agent costs directly unless agents report them in the direct mechanism",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The platform observes posted prices and served quantities but not agent costs directly unless agents report them in the direct mechanism."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The platform selects centralized or decentralized pricing",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform selects centralized or decentralized pricing"
+              }
+            },
+            {
+              "value": "The platform selects commission, fixed, cost-report, or quantity-based fee terms",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform selects commission, fixed, cost-report, or quantity-based fee terms"
+              }
+            },
+            {
+              "value": "Each agent decides whether to participate",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each agent decides whether to participate"
+              }
+            },
+            {
+              "value": "Under decentralization each active agent chooses a posted price",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "under decentralization each active agent chooses a posted price"
+              }
+            },
+            {
+              "value": "Under the direct mechanism each agent reports its private cost",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "under the direct mechanism each agent reports its private cost"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There is a unit mass of risk-neutral agents whose per-unit costs are uniformly distributed on [0,1] in the closed-form baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "There is a unit mass of risk-neutral agents whose per-unit costs are uniformly distributed on [0,1] in the closed-form baseline."
+              }
+            },
+            {
+              "value": "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it."
+              }
+            },
+            {
+              "value": "Differentiated demand is linear: q(p,p-bar)=1-beta p-bar+gamma(p-bar-p), with positive beta and gamma",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Differentiated demand is linear: q(p,p-bar)=1-beta p-bar+gamma(p-bar-p), with positive beta and gamma."
+              }
+            },
+            {
+              "value": "The baseline focuses on beta greater than one so some high-cost agents optimally remain inactive",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The baseline focuses on beta greater than one so some high-cost agents optimally remain inactive."
+              }
+            },
+            {
+              "value": "The platform maximizes its own fee revenue and agents have a zero outside option",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The platform maximizes its own fee revenue and agents have a zero outside option."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors solve centralized and decentralized commission equilibria in closed form, compare platform and agent earnings across competition intensities, formulate the revelation-principle direct mechanism under private costs, and derive priceand quantity-affine decentralized fees that implement the direct optimum.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 3,
+            "section": "3. Platform Model",
+            "equation": "",
+            "quote": "The platform’s design for this market consists of (i) the fees that agents pay to partici­ pate on the platform and (ii) a pricing regime; with decentralized pricing, each agent selects their own price, whereas with centralized pricing, the platform chooses a single price that applies to all agents on the platform."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing",
+              "platform-markets"
+            ],
+            "explanation": "The platform selects centralized or decentralized pricing the platform selects commission, fixed, cost-report, or quantity-based fee terms each agent decides whether to participate under decentralization each active agent chooses a posted price under the direct mechanism each agent reports its private cost",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in optimal delegation of pricing control on service platforms",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The platform selects centralized or decentralized pricing the platform selects commission, fixed, cost-report, or quantity-based fee terms each agent decides whether to participate under decentralization each active agent chooses a posted price under the direct mechanism each agent reports its private cost",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c",
+                "meaning": "an agent's privately observed per-unit service cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(c), p-bar",
+                "meaning": "agent c's posted price and the quantity-weighted average price actually paid on the platform",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of competition from an agent's price relative to the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "variable component of a per-unit platform fee, interpreted as a commission or quantity coefficient depending on the mechanism",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "fixed base fee per unit served, which may become a subsidy in the commission-plus design",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_h",
+                "meaning": "highest cost among agents active on the platform",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The platform maximizes its own fee revenue and agents have a zero outside option.",
+              "Risk aversion, effort moral hazard, platform competition, and multidimensional strategic decisions are outside the baseline.",
+              "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Platform Model",
+                "equation": "",
+                "quote": "The platform’s design for this market consists of (i) the fees that agents pay to partici­ pate on the platform and (ii) a pricing regime; with decentralized pricing, each agent selects their own price, whereas with centralized pricing, the platform chooses a single price that applies to all agents on the platform."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “on the platform and (ii) a Pricing regime; with decentralized pricing, each agent selects their”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "platform-markets",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Platform markets: “Platform markets”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The authors solve centralized and decentralized commission equilibria in closed form, compare platform and agent earnings across competition intensities, formulate the revelation-principle direct mechanism under private costs, and derive priceand quantity-affine decentralized fees that implement the direct optimum. Extensions cover capacity, alternative cost distributions, and throughput objectives.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in optimal delegation of pricing control on service platforms",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors solve centralized and decentralized commission equilibria in closed form, compare platform and agent earnings across competition intensities, formulate the revelation-principle direct mechanism under private costs, and derive priceand quantity-affine decentralized fees that implement the direct optimum.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c",
+                "meaning": "an agent's privately observed per-unit service cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(c), p-bar",
+                "meaning": "agent c's posted price and the quantity-weighted average price actually paid on the platform",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of competition from an agent's price relative to the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "variable component of a per-unit platform fee, interpreted as a commission or quantity coefficient depending on the mechanism",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "fixed base fee per unit served, which may become a subsidy in the commission-plus design",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_h",
+                "meaning": "highest cost among agents active on the platform",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "All aspects of the market (e.g., sequence of events, demand parameters, etc.) are common knowledge with the sole exception of each agent’s private cost.",
+              "There is a unit mass of risk-neutral agents whose per-unit costs are uniformly distributed on [0,1] in the closed-form baseline.",
+              "The platform maximizes its own fee revenue and agents have a zero outside option.",
+              "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.4. Sequence of Events and Information",
+                "equation": "",
+                "quote": "All aspects of the market (e.g., sequence of events, demand parameters, etc.) are common knowledge with the sole exception of each agent’s private cost."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “All aspects of the market (e.g., sequence of events, demand parameters, etc.) are common knowledge with the sole”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "unique-nonatomic-price-equilibrium-under-price-affine-fees-with-",
+            "label": "Unique nonatomic price equilibrium under price-affine fees with truth-inducing optimal mechanism implementations",
+            "role": "interaction",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The model's equilibrium concept is Unique nonatomic price equilibrium under price-affine fees with truth-inducing optimal mechanism implementations. A price profile is an equilibrium when every active agent's price maximizes that agent's profit given the resulting average price and participation cutoff. Proposition 2 proves uniqueness only for price-affine fees. Proposition 5 gives the truth-inducing direct optimum, and Propositions 6-7 identify unique optimal commission-plus and quantity-based fee parameterizations that implement the same allocation and payoffs.",
+            "searchPhrases": [
+              "how unique nonatomic price equilibrium under price-affine fees with truth-inducing optimal mechanism implementations is represented",
+              "strategic response in optimal delegation of pricing control on service platforms",
+              "unique nonatomic price equilibrium under price-affine fees with truth-inducing optimal mechanism implementations strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Unique nonatomic price equilibrium under price-affine fees with truth-inducing optimal mechanism implementations.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c",
+                "meaning": "an agent's privately observed per-unit service cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(c), p-bar",
+                "meaning": "agent c's posted price and the quantity-weighted average price actually paid on the platform",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "strength of the platform-attractiveness effect of the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of competition from an agent's price relative to the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "variable component of a per-unit platform fee, interpreted as a commission or quantity coefficient depending on the mechanism",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "fixed base fee per unit served, which may become a subsidy in the commission-plus design",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Differentiated demand is linear: q(p,p-bar)=1-beta p-bar+gamma(p-bar-p), with positive beta and gamma.",
+              "The platform maximizes its own fee revenue and agents have a zero outside option.",
+              "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.5. Price Equilibrium",
+                "equation": "",
+                "quote": "As each agent’s demand depends only on the average price, p, and their own price, for convenience, we refer to a set of prices as being in equilibrium when the price assigned to each agent is optimal for the agent given the resulting aver­ age price, p."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “As each agent’s demand depends only on the average price, p, and their own price, for convenience, we”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Differentiated demand is linear: q(p,p-bar)=1-beta p-bar+gamma(p-bar-p), with positive beta and gamma",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "Differentiated demand is linear: q(p,p-bar)=1-beta p-bar+gamma(p-bar-p), with positive beta and gamma."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "competition"
+            ],
+            "explanation": "The platform first announces who controls prices, the fee structure, and under centralized pricing the common price. Agents then observe the policy and their own private costs, decide whether to participate, and under decentralized pricing choose posted prices while correctly anticipating the aggregate market price. Customers receive service, revenue is earned, and the platform collects fees. The platform moves first by selecting price control and payment rules.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in optimal delegation of pricing control on service platforms",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The platform first announces who controls prices, the fee structure, and under centralized pricing the common price.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c",
+                "meaning": "an agent's privately observed per-unit service cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(c), p-bar",
+                "meaning": "agent c's posted price and the quantity-weighted average price actually paid on the platform",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of competition from an agent's price relative to the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "variable component of a per-unit platform fee, interpreted as a commission or quantity coefficient depending on the mechanism",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "fixed base fee per unit served, which may become a subsidy in the commission-plus design",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_h",
+                "meaning": "highest cost among agents active on the platform",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "There is a unit mass of risk-neutral agents whose per-unit costs are uniformly distributed on [0,1] in the closed-form baseline.",
+              "The baseline focuses on beta greater than one so some high-cost agents optimally remain inactive.",
+              "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4. Centralized Pricing Equilibrium",
+                "equation": "",
+                "quote": "Under centralized pricing, the platform completely eliminates competition among the agents by selecting a single price, so the degree of platform competition, γ, does not influence the equilibrium outcome."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "competition",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Competition: “Competition”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Each agent privately observes its per-unit cost c. The cost distribution, demand parameters beta and gamma, sequence, and fee rules are common knowledge. Posted prices are publicly observable after they are chosen. Each nonatomic agent takes the aggregate average price as given but correctly anticipates its equilibrium value.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in optimal delegation of pricing control on service platforms",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Each agent privately observes its per-unit cost c.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c",
+                "meaning": "an agent's privately observed per-unit service cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(c), p-bar",
+                "meaning": "agent c's posted price and the quantity-weighted average price actually paid on the platform",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p, p-bar)",
+                "meaning": "agent demand 1-beta p-bar+gamma(p-bar-p)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "strength of the platform-attractiveness effect of the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of competition from an agent's price relative to the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "variable component of a per-unit platform fee, interpreted as a commission or quantity coefficient depending on the mechanism",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Differentiated demand is linear: q(p,p-bar)=1-beta p-bar+gamma(p-bar-p), with positive beta and gamma.",
+              "There is a unit mass of risk-neutral agents whose per-unit costs are uniformly distributed on [0,1] in the closed-form baseline.",
+              "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "5. Decentralized Pricing Equilibrium",
+                "equation": "",
+                "quote": "As each agent’s demand depends on the other agents’ price choice only through the aggregate price metric, p, a price equilibrium can be defined in terms of the average price on the platform."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The platform chooses an allocation-price schedule and per-unit fee schedule to maximize total fee revenue subject to truth-telling, participation, and aggregate-price consistency; each decentralized agent in turn prices to maximize its own demand times net unit margin.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in optimal delegation of pricing control on service platforms",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_{p(\\cdot),f(\\cdot)}\\;\\Pi=\\int_0^{c_h}q(p(c),\\bar p)f(c)\\,dc\\quad\\text{s.t. }\\pi_c(c)\\ge\\pi_c(\\widetilde c)\\;\\forall c,\\widetilde c,\\;\\pi_c(c)\\ge0\\;\\forall c,\\;\\bar p=\\frac{\\int_0^{c_h}q(p(c),\\bar p)p(c)\\,dc}{\\int_0^{c_h}q(p(c),\\bar p)\\,dc}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "c",
+                "meaning": "an agent's privately observed per-unit service cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p(c), p-bar",
+                "meaning": "agent c's posted price and the quantity-weighted average price actually paid on the platform",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p, p-bar)",
+                "meaning": "agent demand 1-beta p-bar+gamma(p-bar-p)",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta",
+                "meaning": "strength of the platform-attractiveness effect of the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "strength of competition from an agent's price relative to the average price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\phi",
+                "meaning": "variable component of a per-unit platform fee, interpreted as a commission or quantity coefficient depending on the mechanism",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w",
+                "meaning": "fixed base fee per unit served, which may become a subsidy in the commission-plus design",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_h",
+                "meaning": "highest cost among agents active on the platform",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Differentiated demand is linear: q(p,p-bar)=1-beta p-bar+gamma(p-bar-p), with positive beta and gamma.",
+              "There is a unit mass of risk-neutral agents whose per-unit costs are uniformly distributed on [0,1] in the closed-form baseline.",
+              "Each agent is nonatomic and cannot individually move the weighted average price, although collective price choices determine it."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "With those mechanisms, each agent reports a cost, ˜c, and the platform announces a menu that maps the set of possibly reported costs into a price posted for the agent, p(˜c), and a per-unit served fee, f(˜c), that the agent pays the platform."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "08059b10800baf9023146f15fe109a8fef44feb93d02176652cc8d99249bd297",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "a501930ff7aea509a2632482015cc6e0fb5d003ceb92fa9fd739c3cbbf492f54",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-04078/a501930ff7aea509a2632482015cc6e0fb5d003ceb92fa9fd739c3cbbf492f54.json",
+      "extractionQaDecisionSha256": "f44f7a9a4dd6ab402f48fd7abbc0678bc847ecae4762ea945cab6ead2d9e499a",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

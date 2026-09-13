@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2016-2621",
+  "sourcePdfSha256": "42bf062dee5fcfc9a9c35fc08b44ece0f1e4e6dffce686a48c0c4d2152eba440",
+  "extractionPagesSha256": "78c1d959e5585b18501acc2cd7d863b146d9282d2931f23bd5b712952bc19b71",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "abf33e8f265305a5daf5f9fe8eb69c727fa4f8f93516f3ef9265375cc9c52763",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "e88bbee96e965f2fd2bf45d214fb39a672818ba6b346ebb35d6ce5dfec50e829",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2016-2621/e88bbee96e965f2fd2bf45d214fb39a672818ba6b346ebb35d6ce5dfec50e829.json",
+  "extractionQaDecisionSha256": "d408336cc900925b193cc3da5e6deb88a3f745fb2a63802cca1bccfbe0f8f323",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2016-2621",
+    "question": "How can dynamic abandon/extract decisions support failed cardiac leads?",
+    "overview": "When a cardiac lead fails, physicians implant a new lead and may opt to extract the failed lead and/or any previously abandoned leads. Because the risk of extraction increases in lead age, physicians may extract leads to reduce the future risk of mandatory extraction, due to either infection or limited space in the vein. The paper develops discrete-time semi-Markov decision process models for various types of cardiac devices to determine patient-specific, lifetime-maximizing extraction policies as a function of patient age and the age of every implanted lead.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Dynamic Abandon/Extract Decisions for Failed Cardiac Leads model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "When a cardiac lead fails, physicians implant a new lead and may opt to extract the failed lead and/or any previously abandoned leads. Because the risk of extraction increases in lead age, physicians may extract leads to reduce the future risk of mandatory extraction, due to either infection or limited space in the vein. We use clinical data to calibrate these models and present insightful numerical results, including comparisons to policies commonly used in practice.",
+        "objects": [
+          "Patient",
+          "The state space"
+        ],
+        "inputs": [
+          "Patient age",
+          "The exact ages of the other implanted leads",
+          "The time",
+          "The lead age vector at this decision epoch, i",
+          "A patient age"
+        ],
+        "decisions": [
+          "Require a “forced” extraction",
+          "Require two identical pacemaker leads",
+          "Require two pacemaker leads and one ICD lead",
+          "Monitor the heart rhythm and deliver therapy to the heart"
+        ],
+        "assumptions": [
+          "Procedural complications related to different leads are independent",
+          "Failures precede unrelated infections within each period"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "We develop discrete-time semi-Markov decision process models for various types of cardiac devices to determine patient-specific, lifetime-maximizing extraction policies as a function of patient age and the age of every implanted lead.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Policy Comparisons",
+                "page": 12,
+                "sectionIndex": 13,
+                "sentence": 4,
+                "quote": "the state space",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Patient age",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Abandon/Extract Decisions for Failed Cardiac Leads",
+                "sectionIndex": 0,
+                "page": 1,
+                "quote": "We develop discrete-time semi-Markov decision process models for various types of cardiac devices to determine patient-speciﬁc, lifetime-maximizing extraction policies as a function of patient age and the age of every implanted lead.",
+                "matchedText": "patient age",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The exact ages of the other implanted leads",
+              "source": {
+                "type": "section",
+                "section": "An Example Optimal Policy",
+                "page": 8,
+                "sectionIndex": 5,
+                "sentence": 15,
+                "quote": "the exact ages of the other implanted leads",
+                "matchedText": "the exact ages of the other implanted leads",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The time",
+              "source": {
+                "type": "section",
+                "section": "Single-Chamber Devices",
+                "sectionIndex": 2,
+                "page": 5,
+                "quote": "the time to failure for a new lead, i.e., a lead of age 0."
+              }
+            },
+            {
+              "value": "The lead age vector at this decision epoch, i",
+              "source": {
+                "type": "section",
+                "section": "Notation",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 16,
+                "quote": "the lead age vector at this decision epoch, i",
+                "matchedText": "the lead age vector at this decision epoch, i",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A patient age",
+              "source": {
+                "type": "section",
+                "section": "Policy Comparisons",
+                "page": 13,
+                "sectionIndex": 13,
+                "sentence": 13,
+                "quote": "a patient age",
+                "matchedText": "a patient age",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require a “forced” extraction",
+              "source": {
+                "type": "section",
+                "section": "An Example Optimal Policy",
+                "page": 8,
+                "sectionIndex": 5,
+                "sentence": 11,
+                "quote": "require a “forced” extraction",
+                "matchedText": "require a “forced” extraction",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Require two identical pacemaker leads",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 74,
+                "quote": "We then simplify the model for dual-chamber ICDs to suit the special case of dual-chamber pacemakers, which require two identical pacemaker leads",
+                "matchedText": "require two identical pacemaker leads",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Require two pacemaker leads and one ICD lead",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 3,
+                "sectionIndex": 1,
+                "sentence": 75,
+                "quote": "Finally, we develop a model for CRT-D devices, which require two pacemaker leads and one ICD lead",
+                "matchedText": "require two pacemaker leads and one ICD lead",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Monitor the heart rhythm and deliver therapy to the heart",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 98,
+                "quote": "These leads, which consist of small sensors that monitor the heart rhythm and deliver therapy to the heart",
+                "matchedText": "monitor the heart rhythm and deliver therapy to the heart",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Procedural complications related to different leads are independent",
+              "source": {
+                "type": "section",
+                "section": "Single-Chamber Devices",
+                "page": 5,
+                "sectionIndex": 2,
+                "sentence": 26,
+                "quote": "We assume procedural complications related to diﬀerent leads are independent.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Failures precede unrelated infections within each period",
+              "source": {
+                "type": "section",
+                "section": "Notation",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 5,
+                "quote": "failures precede unrelated infections within each period.",
+                "matchedText": "failures precede unrelated infections within each period.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          }
+        ],
+        "method": "The analysis then solves for the optimal policy under the misspecified values, evaluate the resulting policy under the true parameter values, and compares its performance (relative to the three heuristic policies) to the true optimal policy.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Sensitivity and Robustness Analysis",
+          "page": 16,
+          "sentence": 19
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.1. An Example Optimal Policy",
+            "equation": "",
+            "quote": "Interestingly, in the example policy in Figure 3, we observe that the abandon/extract decision for each lead depends only on its age, patient age, its age rank (e.g., second youngest) among the lead ages and the total number of implanted leads; that is, the optimal action for each lead does not depend on the ages of other implanted leads."
+          }
+        ],
+        "components": [
+          {
+            "id": "single-chamber-devices",
+            "label": "Single-Chamber Devices",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "At every failure decision epoch, a new lead must be implanted for the device to function.",
+            "searchPhrases": [
+              "how single-chamber devices is represented",
+              "decision rule in policy, sustainability, and public services",
+              "single-chamber devices decision rule specification"
+            ],
+            "formal": "Decision rule: At every failure decision epoch, a new lead must be implanted for the device to function.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that failures, when they occur, do so at the end of the year, at which point patients immediately undergo surgery to receive new lead(s).",
+              "At every failure decision epoch, a new lead must be implanted for the device to function.",
+              "636 of time between decision epochs (either due to failure or infection) follows a general (discrete) distribution, we refer to the models formulated in this section as semi-Markov.",
+              "First, we assume that failures, when they occur, do so at the end of the year, at which point patients immediately undergo surgery to receive new lead(s)."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.1. Single-Chamber Devices",
+                "equation": "",
+                "quote": "At every failure decision epoch, a new lead must be implanted for the device to function."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “At every failure decision epoch, a new lead must be implanted for the device to function.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "notation-description",
+            "label": "Notation Description",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "Otherwise, if a lead replacement procedure-induced infection occurs, the process instantaneously enters state (l′′(a, 0), 0), at which point the patient receives the total expected reward of Vt(l′′(a, 0), 0), given by Equation (8).",
+            "searchPhrases": [
+              "how notation description is represented",
+              "decision-relevant state in policy, sustainability, and public services",
+              "notation description decision-relevant state specification"
+            ],
+            "formal": "State rule: collect the decision-relevant variables defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If an unrelated infection occurs in m < n years, the total expected reward to go is Vt+m(l′(m), 0).",
+              "we assume that failures precede unrelated infections within each period.",
+              "638 Starting from patient age t, the first expression in Equation (7) gives the total expected reward when the next failure occurs in n years at patient age t + n < ̄T."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Notation Description",
+                "equation": "",
+                "quote": "Otherwise, if a lead replacement procedure-induced infection occurs, the process instantaneously enters state (l′′(a, 0), 0), at which point the patient receives the total expected reward of Vt(l′′(a, 0), 0), given by Equation (8)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “Otherwise, if a lead replacement procedure-induced infection occurs, the process instantaneously enters state (l′′(a, 0), 0), at which”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "multichamber-devices",
+            "label": "Multichamber Devices",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "For dual-chamber ICDs, at every failure decision epoch the value of w determines the number and type(s) of the lead(s) that must be implanted.",
+            "searchPhrases": [
+              "how multichamber devices is represented",
+              "decision rule in policy, sustainability, and public services",
+              "multichamber devices decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Because all failed leads may be treated identically, the values of l(i), i ∈{3, . . . , L}, are ordered nonincreasingly in the vector l regardless of their associated lead types.",
+              "For dual-chamber ICDs, at every failure decision epoch the value of w determines the number and type(s) of the lead(s) that must be implanted."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.2. Multichamber Devices",
+                "equation": "",
+                "quote": "For dual-chamber ICDs, at every failure decision epoch the value of w determines the number and type(s) of the lead(s) that must be implanted."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "an-example-optimal-policy",
+            "label": "An Example Optimal Policy",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Interestingly, in the example policy in Figure 3, we observe that the abandon/extract decision for each lead depends only on its age, patient age, its age rank (e.g., second youngest) among the lead ages and the total number of implanted leads; that is, the optimal action for each lead does not depend on the ages of other implanted leads.",
+            "searchPhrases": [
+              "how an example optimal policy is represented",
+              "information available to the decision maker in policy, sustainability, and public services",
+              "an example optimal policy information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Interestingly, in the example policy in Figure 3, we observe that the abandon/extract decision for each lead depends only on its age, patient age, its age rank (e.g., second youngest) among the lead ages and the total number of implanted leads; that is, the optimal action for each lead does not depend on the ages of other implanted leads.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Last, all else held constant, we consistently observe that the policy is of the threshold type in lead age, patient age, and the lead’s age rank.",
+              "Interestingly, in the example policy in Figure 3, we observe that the abandon/extract decision for each lead depends only on its age, patient age, its age rank (e.g., second youngest) among the lead ages and the total number of implanted leads; that is, the optimal action for each lead does not depend on the ages of other implanted leads."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.1. An Example Optimal Policy",
+                "equation": "",
+                "quote": "Interestingly, in the example policy in Figure 3, we observe that the abandon/extract decision for each lead depends only on its age, patient age, its age rank (e.g., second youngest) among the lead ages and the total number of implanted leads; that is, the optimal action for each lead does not depend on the ages of other implanted leads."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Interestingly, in the example policy in Figure 3, we observe that the abandon/extract decision for each lead depends”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "structural-properties",
+            "label": "Structural Properties",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "For any given lead age vector l and decision epoch type θ, if patient age t1 ≤t2, then Vt2(l, θ) ≤Vt1(l, θ).",
+            "searchPhrases": [
+              "how structural properties is represented",
+              "decision rule in policy, sustainability, and public services",
+              "structural properties decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For any given lead age vector l and decision epoch type θ, if patient age t1 ≤t2, then Vt2(l, θ) ≤Vt1(l, θ).",
+              "For any patient age t and lead age vectors l1 [l1 (1), l1 (2), . . . , l1 (L)] and l2 [l2 (1), l2 (2) . . . , l2 (L)], if condition (17) holds and l2 ≤l1, then Vt(l1, 1) ≤Vt(l2, 1).",
+              "Recall that when a decision epoch is due to an infection, i.e., θ 0, all leads must be extracted."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.2. Structural Properties",
+                "equation": "",
+                "quote": "For any given lead age vector l and decision epoch type θ, if patient age t1 ≤t2, then Vt2(l, θ) ≤Vt1(l, θ)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “For any given lead age vector l and decision epoch type θ, if patient age t1 ≤t2, then”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "42bf062dee5fcfc9a9c35fc08b44ece0f1e4e6dffce686a48c0c4d2152eba440",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "e88bbee96e965f2fd2bf45d214fb39a672818ba6b346ebb35d6ce5dfec50e829",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2016-2621/e88bbee96e965f2fd2bf45d214fb39a672818ba6b346ebb35d6ce5dfec50e829.json",
+      "extractionQaDecisionSha256": "d408336cc900925b193cc3da5e6deb88a3f745fb2a63802cca1bccfbe0f8f323",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,901 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2021-0999",
+  "sourcePdfSha256": "df3b7c0330eca146f47069f424608f498d78f07f16a3f5709194bbdbe2fff7e1",
+  "extractionPagesSha256": "ebbf55f39babbd6d1aa43ec434a158dcb5112813f0a06b80fa0f182b8a5d081d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "8ba360a20463e1f04f3ec75e83c79d59e6c7e75660405264d0555ccccdd0b3a0",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "53b4e5ff7453e8ecd12572f917c447844994da08ea3237d6c2b3841a0e3330ae",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0999/53b4e5ff7453e8ecd12572f917c447844994da08ea3237d6c2b3841a0e3330ae.json",
+  "extractionQaDecisionSha256": "601da2ef7b6a170fcf78b43feb11529cb9ecef10ddf74e8f754e62f8e54fd8f2",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2021-0999",
+    "question": "How do machine learning and racial bias interact in medical appointment scheduling?",
+    "overview": "Machine learning is often employed in appointment scheduling to identify the patients with the greatest no-show risk, so as to schedule them into or right after overbooked slots. That scheduling decision maximizes the clinic performance, as measured by a weighted sum of all patients’ waiting time and the provider’s overtime and idle time. However, if a racial group is characterized by a higher no-show risk, then the patients belonging to that racial group will be scheduled into or right after overbooked slots disproportionately to the general population.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        8,
+        9,
+        10,
+        15
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "clinic-model",
+        "name": "Clinic Model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Machine learning is often employed in appointment scheduling to identify the patients with the greatest no-show risk, so as to schedule them into or right after overbooked slots. That scheduling decision maximizes the clinic performance, as measured by a weighted sum of all patients’ waiting time and the provider’s overtime and idle time. Thus, the challenge becomes minimizing the schedule cost while avoiding racial disparities.",
+        "objects": [
+          "The patients",
+          "The provider",
+          "Population",
+          "One provider",
+          "Patients"
+        ],
+        "inputs": [
+          "The time",
+          "Patient information",
+          "Poorer quality care, and experience worse healthcare outcomes (Centers for Disease Control 2013)",
+          "Level 2 and the model built with all features except the socio-economic features"
+        ],
+        "decisions": [
+          "Sharing the earliest scheduled time",
+          "The classifier with the smallest Brier’s score",
+          "Test set were 0",
+          "Set (80% of the data) and a test set (20% of the data)",
+          "Patients in increasing order of their show probability"
+        ],
+        "assumptions": [
+          "The average show probabilities of the two groups are significantly different (p < 0.0001)."
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The patients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Machine learning is often employed in appointment scheduling to identify the patients with the greatest no-show risk, so as to schedule them into or right after overbooked slots.",
+                "matchedText": "the patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The provider",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "That scheduling decision maximizes the clinic performance, as measured by a weighted sum of all patients’ waiting time and the provider’s overtime and idle time.",
+                "matchedText": "the provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "However, if a racial group is characterized by a higher no-show risk, then the patients belonging to that racial group will be scheduled into or right after overbooked slots disproportionately to the general population.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "One provider",
+              "source": {
+                "type": "section",
+                "section": "Clinic Model",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We consider an outpatient clinic where one provider sees patients sequentially during the day.",
+                "matchedText": "one provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Clinic Model",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We consider an outpatient clinic where one provider sees patients sequentially during the day.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The time",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "Academic/Practical Relevance: That scheduling decision is problematic because patients scheduled in those slots tend to have a worse service experience than the other patients, as measured by the time they spend in the waiting room.",
+                "matchedText": "the time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patient information",
+              "source": {
+                "type": "section",
+                "section": "Clinic Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "patient information",
+                "matchedText": "patient information",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Poorer quality care, and experience worse healthcare outcomes (Centers for Disease Control 2013)",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "poorer quality care, and experience worse healthcare outcomes (Centers for Disease Control 2013)",
+                "matchedText": "poorer quality care, and experience worse healthcare outcomes (Centers for Disease Control 2013)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Level 2 and the model built with all features except the socio-economic features",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 42,
+                "quote": "We refer to the model built with all features as Level 2 and the model built with all features except the socio-economic features as Level 1.",
+                "matchedText": "Level 2 and the model built with all features except the socio-economic features as Level 1",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Sharing the earliest scheduled time",
+              "source": {
+                "type": "section",
+                "section": "Clinic Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 24,
+                "quote": "sharing the earliest scheduled time",
+                "matchedText": "sharing the earliest scheduled time",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The classifier with the smallest Brier’s score",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 9,
+                "sectionIndex": 9,
+                "sentence": 34,
+                "quote": "the classiﬁer with the smallest Brier’s score",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Test set were 0",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 45,
+                "quote": "The AUC and Brier’s score obtained on the test set were 0",
+                "matchedText": "test set were 0",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Set (80% of the data) and a test set (20% of the data)",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 9,
+                "sectionIndex": 9,
+                "sentence": 22,
+                "quote": "First, we randomly partition the data into a training set (80% of the data) and a test set (20% of the data)",
+                "matchedText": "set (80% of the data) and a test set (20% of the data)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Patients in increasing order of their show probability",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 22,
+                "quote": "patients in increasing order of their show probability",
+                "matchedText": "patients in increasing order of their show probability",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The average show probabilities of the two groups are significantly different (p < 0.0001).",
+              "source": {
+                "type": "section",
+                "section": "6.1. Predictive Model",
+                "page": 9,
+                "quote": "The average show probabilities of the two groups are signiﬁcantly different (p < 0.0001).",
+                "derivation": "literal-component-condition"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper solves each problem using strategies that differ in the objective function and in the features used to predict the patients’ show probabilities.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Scheduling Results",
+          "page": 10,
+          "sentence": 9
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 10,
+            "section": "6.2. Scheduling Results",
+            "equation": "",
+            "quote": "We solve each problem using strategies that differ in the objective function and in the features used to predict the patients’ show probabilities."
+          }
+        ],
+        "components": [
+          {
+            "id": "clinic-model",
+            "label": "Clinic Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "This way of breaking ties reflects the fact that patients typically check in sequentially, even if they arrive at the same time, and are seen in the order they check in.",
+            "searchPhrases": [
+              "how clinic model is represented",
+              "system process in operations and supply chains",
+              "clinic model system process specification"
+            ],
+            "formal": "Process relation: This way of breaking ties reflects the fact that patients typically check in sequentially, even if they arrive at the same time, and are seen in the order they check in.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Throughout the paper, we consider a static scheduling problem where all appointment requests and patient information is known in advance.",
+              "An example of such a technique is proposed by Samorani and Harris (2019), who use static schedules to guide sequential scheduling decisions in the case where patients have individual characteristics.",
+              "Additionally, although some clinics operate with scheduling templates where the shape of the schedule is fixed (e.g., so that which slots are overbooked are fixed), in this paper the resulting schedule shape may change every day, depending on the specific set of individual show probabilities."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Clinic Model",
+                "equation": "",
+                "quote": "This way of breaking ties reﬂects the fact that patients typically check in sequentially, even if they arrive at the same time, and are seen in the order they check in."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “This way of breaking ties reflects the fact that patients typically check in sequentially, even if they arrive”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "traditional-objective-function",
+            "label": "Traditional Objective Function",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The TOF objective is to minimize a weighted sum of the patients’ expected waiting time and the provider’s expected overtime and idle time.",
+            "searchPhrases": [
+              "how traditional objective function is represented",
+              "modeled objective in operations and supply chains",
+              "traditional objective function modeled objective specification"
+            ],
+            "formal": "Objective relation: The TOF objective is to minimize a weighted sum of the patients’ expected waiting time and the provider’s expected overtime and idle time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Academic/Practical Relevance: That scheduling decision is problematic because patients scheduled in those slots tend to have a worse service experience than the other patients, as measured by the time they spend in the waiting room."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Traditional Objective Function",
+                "equation": "",
+                "quote": "The TOF objective is to minimize a weighted sum of the pa- tients’ expected waiting time and the provider’s ex- pected overtime and idle time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “objective function”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The time",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 4,
+                    "quote": "Academic/Practical Relevance: That scheduling decision is problematic because patients scheduled in those slots tend to have a worse service experience than the other patients, as measured by the time they spend in the waiting room.",
+                    "matchedText": "the time",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "unbiased-objective-function",
+            "label": "Unbiased Objective Function",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "We now turn our attention to developing an objective function which, in addition to minimizing waiting time, idle time, and overtime, also minimizes the disparity among patient groups.",
+            "searchPhrases": [
+              "how unbiased objective function is represented",
+              "modeled objective in operations and supply chains",
+              "unbiased objective function modeled objective specification"
+            ],
+            "formal": "Objective relation: We now turn our attention to developing an objective function which, in addition to minimizing waiting time, idle time, and overtime, also minimizes the disparity among patient groups.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This formulation for computing a group’s waiting time is well aligned with computing the average waiting time among the showing patients of that group.",
+              "The average show probabilities of the two groups are significantly different (p < 0.0001).",
+              "Because of this scaling, Wmax can be interpreted as the sum of all patients’ waiting times, under the assumption that all patients’ waiting time is the same, and equal to the average waiting time of the group that waits the longest."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4. Unbiased Objective Function",
+                "equation": "",
+                "quote": "We now turn our attention to developing an objective function which, in addition to minimizing waiting time, idle time, and overtime, also minimizes the disparity among patient groups."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “turn our attention to developing an objective function which, in addition to minimizing waiting time, idle”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The average show probabilities of the two groups are significantly different (p < 0.0001).",
+                  "source": {
+                    "type": "section",
+                    "section": "6.1. Predictive Model",
+                    "page": 9,
+                    "quote": "The average show probabilities of the two groups are signiﬁcantly different (p < 0.0001).",
+                    "derivation": "literal-component-condition"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "scheduling-results",
+            "label": "Scheduling Results",
+            "role": "algorithm",
+            "concepts": [
+              "scheduling",
+              "optimization"
+            ],
+            "explanation": "We solve each problem using strategies that differ in the objective function and in the features used to predict the patients’ show probabilities.",
+            "searchPhrases": [
+              "how scheduling results is represented",
+              "solution algorithm in operations and supply chains",
+              "scheduling results solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We solve each problem using strategies that differ in the objective function and in the features used to predict the patients’ show probabilities.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We define two groups for UOF: G1 is the group of black patients and G2 the group of nonblack patients.",
+              "However, instead of defining the two groups based on the patients’ race, here we define them based on their no-show risk: G1 is the group of patients at highest risk of no-show and G2 is the group of patients at lowest risk of no-show.",
+              "After building the schedules under each strategy, we consider the appointments’ actual show outcome from the data and record the schedules’ cost, overtime, and idle time."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "6.2. Scheduling Results",
+                "equation": "",
+                "quote": "We solve each problem using strategies that differ in the objective function and in the features used to predict the patients’ show probabilities."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Scheduling: “Scheduling”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “objective function”: “objective function”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "obtained-by-each-strategy-and-the-schedule-cost-obtained-by-tof-",
+            "label": "Obtained by Each Strategy and the Schedule Cost Obtained by TOF-2",
+            "role": "objective",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "As an extreme example, consider a schedule where all patients are scheduled in the first slot of the day: the difference in wait times would be small and the difference in costs would be zero.",
+            "searchPhrases": [
+              "how obtained by each strategy and the schedule cost obtained by tof-2 is represented",
+              "modeled objective in operations and supply chains",
+              "obtained by each strategy and the schedule cost obtained by tof-2 modeled objective specification"
+            ],
+            "formal": "Objective relation: As an extreme example, consider a schedule where all patients are scheduled in the first slot of the day: the difference in wait times would be small and the difference in costs would be zero.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "As cW grows, the racial disparity of TOF-2 grows dramatically, highlighting the unsuitability of this strategy in contexts where limiting disparity is a concern."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "Obtained by Each Strategy and the Schedule Cost Obtained by TOF-2",
+                "equation": "",
+                "quote": "As an extreme example, consider a schedule where all patients are scheduled in the ﬁrst slot of the day: the difference in wait times would be small and the difference in costs would be zero."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Scheduling: “Scheduling”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "generalization-of-our-results",
+            "label": "Generalization of Our Results",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "N to achieve a balance between supply and demand.",
+            "searchPhrases": [
+              "how generalization of our results is represented",
+              "decision-relevant state in operations and supply chains",
+              "generalization of our results decision-relevant state specification"
+            ],
+            "formal": "State definition: N to achieve a balance between supply and demand.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We only consider scheduling problems of N 7 patients to be scheduled in F slots, where F ∈4,5,6 { }.",
+              "A set of N appointment requests is generated by assuming that each request has a probability r of belonging to G1 and 1 −r of belonging to G2, where r ∈0:25,0:50,0:75 { }.",
+              "The population show rate is set to q F N to achieve a balance between supply and demand."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "7. Generalization of Our Results",
+                "equation": "",
+                "quote": "N to achieve a balance between supply and demand."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “N to achieve a balance between supply and demand.”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "predictive-model",
+        "name": "Predictive Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Clinic Model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "clinic-model"
+          }
+        ],
+        "summary": "The average show probabilities of the two groups are significantly different (p < 0.0001).",
+        "objects": [
+          "Patients"
+        ],
+        "inputs": [
+          "Level 2 and the model built with all features except the socio-economic features"
+        ],
+        "decisions": [
+          "The classifier with the smallest Brier’s score",
+          "Test set were 0",
+          "Set (80% of the data) and a test set (20% of the data)"
+        ],
+        "assumptions": [
+          "The average show probabilities of the two groups are significantly different (p < 0.0001)."
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "It contains approximately 40, 000 appointments made over three years by 13, 000 patients, most of whom identify themselves as white or black.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Level 2 and the model built with all features except the socio-economic features",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 42,
+                "quote": "We refer to the model built with all features as Level 2 and the model built with all features except the socio-economic features as Level 1.",
+                "matchedText": "Level 2 and the model built with all features except the socio-economic features as Level 1",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The classifier with the smallest Brier’s score",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 34,
+                "quote": "the classiﬁer with the smallest Brier’s score",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Test set were 0",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 45,
+                "quote": "The AUC and Brier’s score obtained on the test set were 0",
+                "matchedText": "test set were 0",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Set (80% of the data) and a test set (20% of the data)",
+              "source": {
+                "type": "section",
+                "section": "Predictive Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 22,
+                "quote": "First, we randomly partition the data into a training set (80% of the data) and a test set (20% of the data)",
+                "matchedText": "set (80% of the data) and a test set (20% of the data)",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The average show probabilities of the two groups are significantly different (p < 0.0001).",
+              "source": {
+                "type": "section",
+                "section": "6.1. Predictive Model",
+                "page": 9,
+                "quote": "The average show probabilities of the two groups are signiﬁcantly different (p < 0.0001).",
+                "derivation": "literal-component-condition"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "For the nonprobabilistic classifiers, we derived the show probabilities using Platt’s method (Platt 1999), which consists of building a logistic regression model that predicts the binary show outcome given the show score.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Predictive Model",
+          "page": 9,
+          "sentence": 26
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 9,
+            "section": "6.1. Predictive Model",
+            "equation": "",
+            "quote": "The average show probabilities of the two groups are signiﬁcantly different (p < 0.0001)."
+          }
+        ],
+        "components": [
+          {
+            "id": "predictive-model",
+            "label": "Predictive Model",
+            "role": "constraint",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "The average show probabilities of the two groups are significantly different (p < 0.0001).",
+            "searchPhrases": [
+              "how predictive model is represented",
+              "feasibility condition in operations and supply chains",
+              "predictive model feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The average show probabilities of the two groups are significantly different (p < 0.0001)."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "6.1. Predictive Model",
+                "equation": "",
+                "quote": "The average show probabilities of the two groups are signiﬁcantly different (p < 0.0001)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Forecasting as “predictive model”: “The average show probabilities of the two groups are significantly different (p < 0.0001).”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "df3b7c0330eca146f47069f424608f498d78f07f16a3f5709194bbdbe2fff7e1",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "53b4e5ff7453e8ecd12572f917c447844994da08ea3237d6c2b3841a0e3330ae",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0999/53b4e5ff7453e8ecd12572f917c447844994da08ea3237d6c2b3841a0e3330ae.json",
+      "extractionQaDecisionSha256": "601da2ef7b6a170fcf78b43feb11529cb9ecef10ddf74e8f754e62f8e54fd8f2",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

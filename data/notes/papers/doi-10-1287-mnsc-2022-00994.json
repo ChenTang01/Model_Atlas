@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2022-00994",
+  "sourcePdfSha256": "1c5cdf9fad0ccdf4b9be94b88f74e1a4c0a37579389de9ec1ede78e1d4ba4b41",
+  "extractionPagesSha256": "379f6bae5cc9703e2d9337c67f146dc4d1f8e01acbcd5990dde453d7929ea049",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "fea27e445b74e5a7d5b001798c7ce6c0a607a3229c6aa3a238250e82f541c7a2",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "c4b577ec91ac0f96adad31618a780ee342cfd077e5dbcaf24d41095a483ecd3c",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00994/c4b577ec91ac0f96adad31618a780ee342cfd077e5dbcaf24d41095a483ecd3c.json",
+  "extractionQaDecisionSha256": "9a6799335679bf74d2ae3ea90c6e6fc6ba24191b20f1cf2692698c393ab278fd",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-00994",
+    "question": "How does access to crowdfunding change a startup's equity offer and competing venture capital firms' investment timing and amount?",
+    "overview": "A startup chooses an equity offer while two VC firms with heterogeneous beliefs strategically decide whether to invest before or after a public crowdfunding signal. The model uses a negotiated investment-level rule, Bayesian updating, and backward induction to characterize preemptive and delayed investment outcomes; a second-price auction appears as the beta=0 special case.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "The Crowdfunding Effects on Venture Capital Investment model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A startup chooses an equity offer while two VC firms with heterogeneous beliefs strategically decide whether to invest before or after a public crowdfunding signal. The model uses a negotiated investment-level rule, Bayesian updating, and backward induction to characterize preemptive and delayed investment outcomes; a second-price auction appears as the beta=0 special case.",
+        "objects": [
+          "Startup seeking at least R_0 in funding",
+          "More optimistic venture capital firm VC1",
+          "Less optimistic venture capital firm VC2"
+        ],
+        "inputs": [
+          "VC1 and VC2 have public heterogeneous prior beliefs p1 at least p2",
+          "The startup has its own private prior belief p_a",
+          "The true success state is unobserved by all players",
+          "The crowdfunding outcome is a public noisy signal with common-knowledge accuracy rho",
+          "The funding target, project payoffs, bargaining parameter, and equity rule are common knowledge"
+        ],
+        "decisions": [
+          "Startup chooses the offered equity share",
+          "Each VC chooses invest now, wait, or decline",
+          "The investment amount follows a negotiated rule reflecting VC valuations and the startup's outside option",
+          "Startup launches crowdfunding if no early VC investment occurs",
+          "VCs update beliefs and revisit investment"
+        ],
+        "assumptions": [
+          "Project success and failure are binary, with revenues R_s greater than R_0 greater than R_f",
+          "VC beliefs are ordered and publicly known, while the startup's belief is private",
+          "Crowdfunding succeeds for K in (0,R_0) or yields zero and never fully funds the project",
+          "Launching a campaign is costless after failed early VC funding",
+          "After successful crowdfunding the offered equity scales proportionally with the residual funding need"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Startup seeking at least R_0 in funding",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "startup seeking at least R_0 in funding"
+              }
+            },
+            {
+              "value": "More optimistic venture capital firm VC1",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "more optimistic venture capital firm VC1"
+              }
+            },
+            {
+              "value": "Less optimistic venture capital firm VC2",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "less optimistic venture capital firm VC2"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "VC1 and VC2 have public heterogeneous prior beliefs p1 at least p2",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "VC1 and VC2 have public heterogeneous prior beliefs p1 at least p2."
+              }
+            },
+            {
+              "value": "The startup has its own private prior belief p_a",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The startup has its own private prior belief p_a."
+              }
+            },
+            {
+              "value": "The true success state is unobserved by all players",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The true success state is unobserved by all players."
+              }
+            },
+            {
+              "value": "The crowdfunding outcome is a public noisy signal with common-knowledge accuracy rho",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The crowdfunding outcome is a public noisy signal with common-knowledge accuracy rho."
+              }
+            },
+            {
+              "value": "The funding target, project payoffs, bargaining parameter, and equity rule are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The funding target, project payoffs, bargaining parameter, and equity rule are common knowledge."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Startup chooses the offered equity share",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "startup chooses the offered equity share"
+              }
+            },
+            {
+              "value": "Each VC chooses invest now, wait, or decline",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each VC chooses invest now, wait, or decline"
+              }
+            },
+            {
+              "value": "The investment amount follows a negotiated rule reflecting VC valuations and the startup's outside option",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the investment amount follows a negotiated rule reflecting VC valuations and the startup's outside option"
+              }
+            },
+            {
+              "value": "Startup launches crowdfunding if no early VC investment occurs",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "startup launches crowdfunding if no early VC investment occurs"
+              }
+            },
+            {
+              "value": "VCs update beliefs and revisit investment",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "VCs update beliefs and revisit investment after the signal"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Project success and failure are binary, with revenues R_s greater than R_0 greater than R_f",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Project success and failure are binary, with revenues R_s greater than R_0 greater than R_f."
+              }
+            },
+            {
+              "value": "VC beliefs are ordered and publicly known, while the startup's belief is private",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "VC beliefs are ordered and publicly known, while the startup's belief is private."
+              }
+            },
+            {
+              "value": "Crowdfunding succeeds for K in (0,R_0) or yields zero and never fully funds the project",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Crowdfunding succeeds for K in (0,R_0) or yields zero and never fully funds the project."
+              }
+            },
+            {
+              "value": "Launching a campaign is costless after failed early VC funding",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Launching a campaign is costless after failed early VC funding."
+              }
+            },
+            {
+              "value": "After successful crowdfunding the offered equity scales proportionally with the residual funding need",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "After successful crowdfunding the offered equity scales proportionally with the residual funding need."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper solves a no-crowdfunding benchmark and a crowdfunding-enabled sequential game by backward induction, derives VC waiting and equity thresholds, updates heterogeneous beliefs using Bayes' rule, and compares equilibrium equity and investment levels across regimes.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 11,
+            "section": "5.2. Startup’s Equity Offer Decision",
+            "equation": "",
+            "quote": "This is because, with a more optimis­ tic prior belief, the startup expects a higher opportunity to experience a successful crowdfunding outcome, which makes its expected payoff after crowdfunding higher than that before crowdfunding."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "competition",
+              "pricing"
+            ],
+            "explanation": "The startup first chooses equity share alpha. At pre-crowdfunding time t0, both VCs decide whether to invest; if VC1 invests, fundraising ends. Otherwise the startup launches a costless campaign. The public success or failure signal updates all beliefs and may provide K funds.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in crowdfunding as financing, public information, and a threat in vc competition",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The startup first chooses equity share \\alpha.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\alpha",
+                "meaning": "equity share offered by the startup before crowdfunding",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_0, R_s, R_f",
+                "meaning": "minimum funding need and project revenues in success and failure",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\kappa(v_1, v_2, R_0)",
+                "meaning": "negotiated investment level for the equity share",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho, \\Theta",
+                "meaning": "crowdfunding signal accuracy and public signal S or F",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "minimum equity share inducing VC1 to invest before crowdfunding",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Note that although the startup’s offered price is assumed to be constant between t0 and t1, it can achieve a higher final transaction price than its reservation price through two mechanisms: one is to introduce competition among VC firms, and the other is to start a crowdfunding campaign and achieve success, which increases VC firms’ beliefs and valuations.",
+              "Project success and failure are binary, with revenues R_s greater than R_0 greater than R_f.",
+              "VC beliefs are ordered and publicly known, while the startup's belief is private.",
+              "Crowdfunding succeeds for K in (0,R_0) or yields zero and never fully funds the project."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.4. Timeline",
+                "equation": "",
+                "quote": "Note that although the startup’s offered price is assumed to be constant between t0 and t1, it can achieve a higher final transaction price than its reservation price through two mechanisms: one is to introduce competition among VC firms, and the other is to start a crowdfund­ ing campaign and achieve success, which increases VC firms’ beliefs and valuations."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "competition",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Competition: “Competition”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Note that although the startup’s offered price is assumed to be constant between t0 and t1, it can”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The paper solves a no-crowdfunding benchmark and a crowdfunding-enabled sequential game by backward induction, derives VC waiting and equity thresholds, updates heterogeneous beliefs using Bayes' rule, and compares equilibrium equity and investment levels across regimes.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in crowdfunding as financing, public information, and a threat in vc competition",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper solves a no-crowdfunding benchmark and a crowdfunding-enabled sequential game by backward induction, derives VC waiting and equity thresholds, updates heterogeneous beliefs using Bayes' rule, and compares equilibrium equity and investment levels across regimes.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_i",
+                "meaning": "prior belief of VC i that the startup succeeds",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\kappa(v_1, v_2, R_0)",
+                "meaning": "negotiated investment level for the equity share",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Delta_a",
+                "meaning": "startup value of waiting, post-crowdfunding payoff minus preemptive payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "VC beliefs are ordered and publicly known, while the startup's belief is private.",
+              "After successful crowdfunding the offered equity scales proportionally with the residual funding need."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4. No Crowdfunding",
+                "equation": "",
+                "quote": "Using backward induction, we solve the startup’s optimization problem to decide the equity share to offer."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “Using backward induction, we solve the startup’s optimization problem to decide the equity share to offer.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Startup chooses the offered equity share each VC chooses invest now, wait, or decline the investment amount follows a negotiated rule reflecting VC valuations and the startup's outside option startup launches crowdfunding if no early VC investment occurs VCs update beliefs and revisit investment after the signal",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in crowdfunding as financing, public information, and a threat in vc competition",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Startup chooses the offered equity share each VC chooses invest now, wait, or decline the investment amount follows a negotiated rule reflecting VC valuations and the startup's outside option startup launches crowdfunding if no early VC investment occurs VCs update beliefs and revisit investment after the signal",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\alpha",
+                "meaning": "equity share offered by the startup before crowdfunding",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\kappa(v_1, v_2, R_0)",
+                "meaning": "negotiated investment level for the equity share",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho, \\Theta",
+                "meaning": "crowdfunding signal accuracy and public signal S or F",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "minimum equity share inducing VC1 to invest before crowdfunding",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "For the former component, because of the reduction in the equity share after crowdfunding, by choosing to wait, VC1 exposes itself to the event that the crowdfunding campaign succeeds, and, as a result, the startup secures K and offers a smaller equity share.",
+              "VC beliefs are ordered and publicly known, while the startup's belief is private.",
+              "Crowdfunding succeeds for K in (0,R_0) or yields zero and never fully funds the project.",
+              "Launching a campaign is costless after failed early VC funding."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "5.1. VC Firms’ Investment Decisions",
+                "equation": "",
+                "quote": "For the former compo­ nent, because of the reduction in the equity share after crowdfunding, by choosing to wait, VC1 exposes itself to the event that the crowdfunding campaign succeeds, and, as a result, the startup secures K and offers a smaller equity share."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Anticipating VC timing, the startup chooses its equity offer to maximize either its payoff from immediate VC funding or its probability-weighted payoff after a successful crowdfunding signal.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in crowdfunding as financing, public information, and a threat in vc competition",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "max_\\alpha I{\\alpha_0 <= \\alpha <= 1}(1-\\alpha)e_a + I{R_0/e_tilde_1|S <= \\alpha < \\alpha_0}[1-((R_0-K)/R_0)\\alpha] e_tilde_a|S P(S|p_a)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\alpha",
+                "meaning": "equity share offered by the startup before crowdfunding",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "prior belief of VC i that the startup succeeds",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_0, R_s, R_f",
+                "meaning": "minimum funding need and project revenues in success and failure",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\kappa(v_1, v_2, R_0)",
+                "meaning": "negotiated investment level for the equity share",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho, \\Theta",
+                "meaning": "crowdfunding signal accuracy and public signal S or F",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "minimum equity share inducing VC1 to invest before crowdfunding",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Delta_a",
+                "meaning": "startup value of waiting, post-crowdfunding payoff minus preemptive payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Second, as mentioned, owing to VC1 possessing a more optimistic prior belief compared with VC2, VC1 holds a belief of a higher investment cost after the crowdfunding than before.",
+              "VC beliefs are ordered and publicly known, while the startup's belief is private.",
+              "Crowdfunding succeeds for K in (0,R_0) or yields zero and never fully funds the project.",
+              "Launching a campaign is costless after failed early VC funding."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "Sec­ ond, as mentioned, owing to VC1 possessing a more optimistic prior belief compared with VC2, VC1 holds a belief of a higher investment cost after the crowdfund­ ing than before."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "VC1 and VC2 have public heterogeneous prior beliefs p1 at least p2. The startup has its own private prior belief p_a. The true success state is unobserved by all players. The crowdfunding outcome is a public noisy signal with common-knowledge accuracy rho.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in crowdfunding as financing, public information, and a threat in vc competition",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: VC1 and VC2 have public heterogeneous prior beliefs p1 at least p2.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\alpha",
+                "meaning": "equity share offered by the startup before crowdfunding",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "prior belief of VC i that the startup succeeds",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho, \\Theta",
+                "meaning": "crowdfunding signal accuracy and public signal S or F",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha_0",
+                "meaning": "minimum equity share inducing VC1 to invest before crowdfunding",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Project success and failure are binary, with revenues R_s greater than R_0 greater than R_f.",
+              "VC beliefs are ordered and publicly known, while the startup's belief is private.",
+              "Crowdfunding succeeds for K in (0,R_0) or yields zero and never fully funds the project."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.2. Startup’s Equity Offer Decision",
+                "equation": "",
+                "quote": "This is because, with a more optimis­ tic prior belief, the startup expects a higher opportunity to experience a successful crowdfunding outcome, which makes its expected payoff after crowdfunding higher than that before crowdfunding."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "1c5cdf9fad0ccdf4b9be94b88f74e1a4c0a37579389de9ec1ede78e1d4ba4b41",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "c4b577ec91ac0f96adad31618a780ee342cfd077e5dbcaf24d41095a483ecd3c",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00994/c4b577ec91ac0f96adad31618a780ee342cfd077e5dbcaf24d41095a483ecd3c.json",
+      "extractionQaDecisionSha256": "9a6799335679bf74d2ae3ea90c6e6fc6ba24191b20f1cf2692698c393ab278fd",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

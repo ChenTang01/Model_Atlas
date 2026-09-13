@@ -1,0 +1,792 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "martin2026tradecreditcostly",
+  "sourcePdfSha256": "ce827d179ebca32d540a2bd34ae7d879af2200fb1b1858a502d22bc84217bf30",
+  "extractionPagesSha256": "64cb1cab8639b36619465186bff358776d4571e17cbf1a3353c3d1f81b825e93",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "d2935071feea16a0710590a68b59c100c65fce776408f9ca94a3bbcd7a0dac3d",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "5f1130a4f2988463016e73ed4e9d2b7596b89fcac08356c9a65ce7c22e1c2d3e",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/martin2026tradecreditcostly/5f1130a4f2988463016e73ed4e9d2b7596b89fcac08356c9a65ce7c22e1c2d3e.json",
+  "extractionQaDecisionSha256": "a144747bf2783365e1a56bb6c362659258fd80f94396e6a2ce87e17797a6ec1c",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "martin2026tradecreditcostly",
+    "question": "How should a supplier set wholesale and credit terms when a financially constrained retailer privately observes sales revenue and the supplier must pay to verify a suspicious repayment claim?",
+    "overview": "A supplier's trade-credit contract anticipates a post-demand signaling/verification subgame, which the authors solve as a perfect Bayesian equilibrium.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        11,
+        12
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Trade credit and costly verification",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A supplier's trade-credit contract anticipates a post-demand signaling/verification subgame, which the authors solve as a perfect Bayesian equilibrium.",
+        "objects": [
+          "Upstream supplier/creditor",
+          "Financially constrained retailer/borrower",
+          "The supplier",
+          "The retailer",
+          "Subject"
+        ],
+        "inputs": [
+          "Realized sales revenue is privately observed by the retailer",
+          "The supplier knows the demand distribution and updates beliefs",
+          "Verification reveals revenue but consumes a fraction beta of the verified amount/cost base specified by the model",
+          "Random demand",
+          "Price r"
+        ],
+        "decisions": [
+          "Supplier chooses wholesale price and maximum trade credit",
+          "Retailer chooses order quantity and later a repayment/settlement report",
+          "Supplier accepts the proposed settlement or verifies realized revenue",
+          "A trade credit contract to the retailer",
+          "A net-terms contract without an early payment discount"
+        ],
+        "assumptions": [
+          "The retailer is financially constrained and uses supplier trade credit for an order",
+          "Demand is single-period and stochastic; unsold inventory and repayment follow the paper's limited-liability structure",
+          "Sales-revenue verification is accurate but costly, with proportional cost parameter beta",
+          "The supplier can commit to w and the credit limit but cannot observe revenue costlessly"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Upstream supplier/creditor",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "upstream supplier/creditor"
+              }
+            },
+            {
+              "value": "Financially constrained retailer/borrower",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "financially constrained retailer/borrower"
+              }
+            },
+            {
+              "value": "The supplier",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Assumptions",
+                "page": 3,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "In the first stage, the supplier offers a trade credit contract to the retailer, who pledges his assets (with liquidated value α) to secure the loan.",
+                "matchedText": "the supplier",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The retailer",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Assumptions",
+                "page": 3,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "In the first stage, the supplier offers a trade credit contract to the retailer, who pledges his assets (with liquidated value α) to secure the loan.",
+                "matchedText": "the retailer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Subject",
+              "source": {
+                "type": "section",
+                "section": "The Stage-2 Formulation",
+                "page": 5,
+                "sectionIndex": 7,
+                "sentence": 11,
+                "quote": "Because α is known, it is not subject to verification costs.",
+                "matchedText": "subject",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Realized sales revenue is privately observed by the retailer",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Realized sales revenue is privately observed by the retailer after demand realizes."
+              }
+            },
+            {
+              "value": "The supplier knows the demand distribution and updates beliefs",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The supplier knows the demand distribution and updates beliefs after a repayment proposal."
+              }
+            },
+            {
+              "value": "Verification reveals revenue but consumes a fraction beta of the verified amount/cost base specified by the model",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Verification reveals revenue but consumes a fraction beta of the verified amount/cost base specified by the model."
+              }
+            },
+            {
+              "value": "Random demand",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Assumptions",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 7,
+                "quote": "In Stage 2, only the retailer observes the realization x of random demand X and offers to pay an amount p to settle the loan.",
+                "matchedText": "random demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Price r",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Assumptions",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 14,
+                "quote": "The retailer’s assets α, the demand distri­ bution, the unit retail price r, the unit production cost c and the verification cost parameter β are common knowledge.",
+                "matchedText": "price r",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Supplier chooses wholesale price and maximum trade credit",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "supplier chooses wholesale price and maximum trade credit"
+              }
+            },
+            {
+              "value": "Retailer chooses order quantity and later a repayment/settlement report",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "retailer chooses order quantity and later a repayment/settlement report"
+              }
+            },
+            {
+              "value": "Supplier accepts the proposed settlement or verifies realized revenue",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "supplier accepts the proposed settlement or verifies realized revenue"
+              }
+            },
+            {
+              "value": "A trade credit contract to the retailer",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Assumptions",
+                "page": 3,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "In the first stage, the supplier offers a trade credit contract to the retailer",
+                "matchedText": "a trade credit contract to the retailer",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A net-terms contract without an early payment discount",
+              "source": {
+                "type": "section",
+                "section": "Model Formulation and Assumptions",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 35,
+                "quote": "The supplier offers a net-terms contract without an early payment discount",
+                "matchedText": "a net-terms contract without an early payment discount",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The retailer is financially constrained and uses supplier trade credit for an order",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The retailer is financially constrained and uses supplier trade credit for an order."
+              }
+            },
+            {
+              "value": "Demand is single-period and stochastic; unsold inventory and repayment follow the paper's limited-liability structure",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand is single-period and stochastic; unsold inventory and repayment follow the paper's limited-liability structure."
+              }
+            },
+            {
+              "value": "Sales-revenue verification is accurate but costly, with proportional cost parameter beta",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Sales-revenue verification is accurate but costly, with proportional cost parameter beta."
+              }
+            },
+            {
+              "value": "The supplier can commit to w and the credit limit but cannot observe revenue costlessly",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The supplier can commit to w and the credit limit but cannot observe revenue costlessly."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "Costly-state-verification signaling analysis derives the stage-2 threshold PBE; backward induction then obtains retailer order quantity and the supplier's outer contract choice.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3. Model Formulation and Assumptions",
+            "equation": "",
+            "quote": "The assumption that the supplier knows the distribution of demand is standard in papers modeling costly state verification (e.g., Townsend 1979) and in papers modeling revenue sharing with imperfect information (e.g., Heese and Kemahlioglu-Ziya 2014)."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "The supplier first chooses wholesale price w and credit limit ell-bar; the retailer chooses order quantity. Demand/revenue is then privately observed by the retailer, who proposes a settlement; the supplier accepts or invokes costly verification based on the report and beliefs. supplier-led contracting game Bayesian signaling/verification subgame",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in supply chains and contracts",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The supplier first chooses wholesale price w and credit limit ell-bar; the retailer chooses order quantity.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w^*",
+                "meaning": "supplier's optimal wholesale price · c \\le w \\le r",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar\\ell^*",
+                "meaning": "supplier's optimal trade-credit limit · \\bar\\ell \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_{S, 1}(w, \\bar\\ell)",
+                "meaning": "supplier's first-stage expected profit after the ordering and settlement-verification continuation games · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "supplier's unit cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "retail sales revenue per unit in the paper's normalized transaction · paper-defined positive revenue",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer is financially constrained and uses supplier trade credit for an order.",
+              "Demand is single-period and stochastic; unsold inventory and repayment follow the paper's limited-liability structure.",
+              "Sales-revenue verification is accurate but costly, with proportional cost parameter beta."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Model Formulation and Assumptions",
+                "equation": "",
+                "quote": "In the first stage, the supplier offers a trade credit contract to the retailer, who pledges his assets (with liquidated value α) to secure the loan."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design as “contracting”: “In the first stage, the supplier offers a trade credit contract to the retailer, who pledges his assets”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Realized sales revenue is privately observed by the retailer after demand realizes. The supplier knows the demand distribution and updates beliefs after a repayment proposal. Verification reveals revenue but consumes a fraction beta of the verified amount/cost base specified by the model.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in supply chains and contracts",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Realized sales revenue is privately observed by the retailer after demand realizes.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w^*",
+                "meaning": "supplier's optimal wholesale price · c \\le w \\le r",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar\\ell^*",
+                "meaning": "supplier's optimal trade-credit limit · \\bar\\ell \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_{S, 1}(w, \\bar\\ell)",
+                "meaning": "supplier's first-stage expected profit after the ordering and settlement-verification continuation games · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "supplier's unit cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "retail sales revenue per unit in the paper's normalized transaction · paper-defined positive revenue",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The assumption that the supplier knows the distribution of demand is standard in papers modeling costly state verification (e.g., Townsend 1979) and in papers modeling revenue sharing with imperfect information (e.g., Heese and Kemahlioglu-Ziya 2014).",
+              "The retailer is financially constrained and uses supplier trade credit for an order.",
+              "Demand is single-period and stochastic; unsold inventory and repayment follow the paper's limited-liability structure.",
+              "Sales-revenue verification is accurate but costly, with proportional cost parameter beta."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Model Formulation and Assumptions",
+                "equation": "",
+                "quote": "The assumption that the supplier knows the distribution of demand is standard in papers modeling costly state verification (e.g., Townsend 1979) and in papers modeling revenue sharing with imperfect information (e.g., Heese and Kemahlioglu-Ziya 2014)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The assumption that the supplier knows the distribution of demand is standard in papers modeling costly state verification”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "perfect-bayesian-equilibrium-in-settlement-verification-nested-i",
+            "label": "perfect Bayesian equilibrium in settlement/verification, nested in a supplier-led contract equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "equilibrium-analysis"
+            ],
+            "explanation": "The model's equilibrium concept is perfect Bayesian equilibrium in settlement/verification, nested in a supplier-led contract equilibrium. The paper specifies the retailer's reporting strategy, the supplier's verification response and posterior beliefs, proves that equilibrium repayment follows a single-threshold strategy supported by Bayes-consistent beliefs, and then optimizes the ex ante trade-credit terms.",
+            "searchPhrases": [
+              "how perfect bayesian equilibrium in settlement/verification, nested in a supplier-led contract equilibrium is represented",
+              "strategic response in supply chains and contracts",
+              "perfect bayesian equilibrium in settlement/verification, nested in a supplier-led contract equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is perfect Bayesian equilibrium in settlement/verification, nested in a supplier-led contract equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w^*",
+                "meaning": "supplier's optimal wholesale price · c \\le w \\le r",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar\\ell^*",
+                "meaning": "supplier's optimal trade-credit limit · \\bar\\ell \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_{S, 1}(w, \\bar\\ell)",
+                "meaning": "supplier's first-stage expected profit after the ordering and settlement-verification continuation games · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "supplier's unit cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "retail sales revenue per unit in the paper's normalized transaction · paper-defined positive revenue",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer is financially constrained and uses supplier trade credit for an order.",
+              "Demand is single-period and stochastic; unsold inventory and repayment follow the paper's limited-liability structure.",
+              "Sales-revenue verification is accurate but costly, with proportional cost parameter beta."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. The Stage-2 Formulation",
+                "equation": "",
+                "quote": "We utilize the perfect Bayesian equilibrium (PBE) framework (Fudenberg and Tirole 1991, chapter 8) to identify an equilibrium of the report-verify game, which comprises strategies γ∗(p|x), v∗(p) and posterior belief µ(ξ|p) that simultaneously satisfy (3)–(5)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis as “perfect bayesian equilibrium”: “We utilize the perfect bayesian equilibrium (PBE) framework (Fudenberg and Tirole 1991, chapter 8)”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "service-operations"
+            ],
+            "explanation": "After inserting the retailer's ordering decision and the settlement/verification PBE, the supplier chooses the wholesale price and credit limit to maximize first-stage expected profit.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in supply chains and contracts",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "(w^*,\\bar\\ell^*)\\in\\arg\\max_{c\\le w\\le r,\\ \\bar\\ell\\ge0}\\ \\pi_{S,1}(w,\\bar\\ell)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "w^*",
+                "meaning": "supplier's optimal wholesale price · c \\le w \\le r",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar\\ell^*",
+                "meaning": "supplier's optimal trade-credit limit · \\bar\\ell \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_{S, 1}(w, \\bar\\ell)",
+                "meaning": "supplier's first-stage expected profit after the ordering and settlement-verification continuation games · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "supplier's unit cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "retail sales revenue per unit in the paper's normalized transaction · paper-defined positive revenue",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer is financially constrained and uses supplier trade credit for an order.",
+              "Sales-revenue verification is accurate but costly, with proportional cost parameter beta.",
+              "The supplier can commit to w and the credit limit but cannot observe revenue costlessly."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "(8)–(9)",
+                "quote": "Martin and Gupta: Trade Credit with Costly Sales Revenue Verification Manufacturing & Service Operations Management, 2026, vol."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "service-operations",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Service operations: “Costly Sales Revenue Verification Manufacturing & Service operations Management, 2026, vol.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Supplier chooses wholesale price and maximum trade credit retailer chooses order quantity and later a repayment/settlement report supplier accepts the proposed settlement or verifies realized revenue",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in supply chains and contracts",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Supplier chooses wholesale price and maximum trade credit retailer chooses order quantity and later a repayment/settlement report supplier accepts the proposed settlement or verifies realized revenue",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w^*",
+                "meaning": "supplier's optimal wholesale price · c \\le w \\le r",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar\\ell^*",
+                "meaning": "supplier's optimal trade-credit limit · \\bar\\ell \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_{S, 1}(w, \\bar\\ell)",
+                "meaning": "supplier's first-stage expected profit after the ordering and settlement-verification continuation games · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "supplier's unit cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "retail sales revenue per unit in the paper's normalized transaction · paper-defined positive revenue",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "If the retailer’s assets are low (i.e., α ≤αL), the retailer orders q∗ 2(w) for low wholesale price and q∗ 3 for high wholesale price.",
+              "The retailer is financially constrained and uses supplier trade credit for an order.",
+              "Demand is single-period and stochastic; unsold inventory and repayment follow the paper's limited-liability structure.",
+              "The supplier can commit to w and the credit limit but cannot observe revenue costlessly."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. Equilibrium Order Quantity q∗(w)",
+                "equation": "",
+                "quote": "If the retailer’s assets are low (i.e., α ≤αL), the retailer orders q∗ 2(w) for low wholesale price and q∗ 3 for high wholesale price."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “If the retailer’s assets are low (i.e., α ≤αL), the retailer orders q∗ 2(w) for low wholesale price”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Costly-state-verification signaling analysis derives the stage-2 threshold PBE; backward induction then obtains retailer order quantity and the supplier's outer contract choice.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in supply chains and contracts",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Costly-state-verification signaling analysis derives the stage-2 threshold PBE; backward induction then obtains retailer order quantity and the supplier's outer contract choice.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "w^*",
+                "meaning": "supplier's optimal wholesale price · c \\le w \\le r",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar\\ell^*",
+                "meaning": "supplier's optimal trade-credit limit · \\bar\\ell \\ge 0",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_{S, 1}(w, \\bar\\ell)",
+                "meaning": "supplier's first-stage expected profit after the ordering and settlement-verification continuation games · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "supplier's unit cost · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "retail sales revenue per unit in the paper's normalized transaction · paper-defined positive revenue",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer is financially constrained and uses supplier trade credit for an order.",
+              "The supplier can commit to w and the credit limit but cannot observe revenue costlessly."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "Assets and Wholesale Prices",
+                "equation": "",
+                "quote": "They include cases in which the supplier’s expected profit is higher at q∗ 2(w) or the retailer’s terminal wealth is simultaneously maxi­ mized at qS if the loan limit prevents him from order­ ing his unconstrained optimum quantity."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “They include cases in which the supplier’s expected profit is higher at q∗ 2(w) or the retailer’s terminal”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "ce827d179ebca32d540a2bd34ae7d879af2200fb1b1858a502d22bc84217bf30",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "5f1130a4f2988463016e73ed4e9d2b7596b89fcac08356c9a65ce7c22e1c2d3e",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/martin2026tradecreditcostly/5f1130a4f2988463016e73ed4e9d2b7596b89fcac08356c9a65ce7c22e1c2d3e.json",
+      "extractionQaDecisionSha256": "a144747bf2783365e1a56bb6c362659258fd80f94396e6a2ce87e17797a6ec1c",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

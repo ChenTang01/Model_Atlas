@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-03464",
+  "sourcePdfSha256": "a2629e1a234100a730c720a473af17ad9259b3aa205eea2ba1e8a6b646b80c27",
+  "extractionPagesSha256": "d8c0163f2283c2a73de13b078af80f2b46b49201590f7db448708ef98208d89d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "5453a2eb70b9f33c8ae65d575549b18ada5c332fb61f32e10aacfa72f6771992",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "123efd3d08a5e20c024b50c6c0b2a9d59315f5bc24fa4c10b6845d22a2a964f9",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03464/123efd3d08a5e20c024b50c6c0b2a9d59315f5bc24fa4c10b6845d22a2a964f9.json",
+  "extractionQaDecisionSha256": "e9d4d8e0b3bd1501684a91c35188c5699a38c822afdddd1e473b9b0a9e2adc5c",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-03464",
+    "question": "Can competing firms using only their own revenue gradients learn prices that are both Nash optimal and dynamically stable when consumer reference prices evolve over time?",
+    "overview": "Competing firms repeatedly choose prices under MNL demand and memory-based reference effects; the paper proves that decentralized first-order learning converges to stationary Nash equilibrium under loss-neutral and loss-averse regimes.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        8,
+        9,
+        15
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Last-Iterate Convergence in No-Regret Learning model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Competing firms repeatedly choose prices under MNL demand and memory-based reference effects; the paper proves that decentralized first-order learning converges to stationary Nash equilibrium under loss-neutral and loss-averse regimes.",
+        "objects": [
+          "N competing firms, each selling one substitutable product"
+        ],
+        "inputs": [
+          "A firm need not observe rivals' prices, reference prices, market shares, or demand functions",
+          "Each firm observes enough own-price, sensitivity, and own-share or revenue information to compute first-order feedback",
+          "Reference prices are deterministic functions of own past posted prices",
+          "Consumer utility shocks are i.i.d. standard Gumbel"
+        ],
+        "decisions": [
+          "Each firm chooses its price each period",
+          "Each firm updates price using own log-revenue gradient or subgradient information",
+          "Consumers choose one product or the outside option",
+          "Prices at the beginning of each period over an infinite time horizon",
+          "Before setting its own price"
+        ],
+        "assumptions": [
+          "Each firm offers one substitute and prices lie in a common positive compact interval",
+          "Demand follows multinomial logit with brand-specific price and reference sensitivities",
+          "Reference prices update through exponential smoothing of each product's own historical prices",
+          "The loss-neutral model has symmetric gain/loss response; the loss-averse model has stronger response to surcharges than discounts",
+          "Firms use prescribed diminishing step sizes and first-order feedback; convergence rates require additional step-size conditions"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "N competing firms, each selling one substitutable product",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "n competing firms, each selling one substitutable product"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A firm need not observe rivals' prices, reference prices, market shares, or demand functions",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "A firm need not observe rivals' prices, reference prices, market shares, or demand functions."
+              }
+            },
+            {
+              "value": "Each firm observes enough own-price, sensitivity, and own-share or revenue information to compute first-order feedback",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each firm observes enough own-price, sensitivity, and own-share or revenue information to compute first-order feedback."
+              }
+            },
+            {
+              "value": "Reference prices are deterministic functions of own past posted prices",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Reference prices are deterministic functions of own past posted prices."
+              }
+            },
+            {
+              "value": "Consumer utility shocks are i.i.d. standard Gumbel",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Consumer utility shocks are i.i.d. standard Gumbel."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each firm chooses its price each period",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each firm chooses its price each period"
+              }
+            },
+            {
+              "value": "Each firm updates price using own log-revenue gradient or subgradient information",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each firm updates price using own log-revenue gradient or subgradient information"
+              }
+            },
+            {
+              "value": "Consumers choose one product or the outside option",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "consumers choose one product or the outside option"
+              }
+            },
+            {
+              "value": "Prices at the beginning of each period over an infinite time horizon",
+              "source": {
+                "type": "section",
+                "section": "MNL Demand Model with Reference Effects",
+                "page": 5,
+                "sectionIndex": 9,
+                "sentence": 3,
+                "quote": "In our discrete-time setting, firms simultaneously set prices at the beginning of each period over an infi­ nite time horizon",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Before setting its own price",
+              "source": {
+                "type": "section",
+                "section": "MNL Demand Model with Reference Effects",
+                "page": 5,
+                "sectionIndex": 9,
+                "sentence": 4,
+                "quote": "Hence, in the current period, the firm does not observe its competitors’ prices before set­ ting its own price",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each firm offers one substitute and prices lie in a common positive compact interval",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each firm offers one substitute and prices lie in a common positive compact interval."
+              }
+            },
+            {
+              "value": "Demand follows multinomial logit with brand-specific price and reference sensitivities",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Demand follows multinomial logit with brand-specific price and reference sensitivities."
+              }
+            },
+            {
+              "value": "Reference prices update through exponential smoothing of each product's own historical prices",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Reference prices update through exponential smoothing of each product's own historical prices."
+              }
+            },
+            {
+              "value": "The loss-neutral model has symmetric gain/loss response; the loss-averse model has stronger response to surcharges than discounts",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The loss-neutral model has symmetric gain/loss response; the loss-averse model has stronger response to surcharges than discounts."
+              }
+            },
+            {
+              "value": "Firms use prescribed diminishing step sizes and first-order feedback; convergence rates require additional step-size conditions",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Firms use prescribed diminishing step sizes and first-order feedback; convergence rates require additional step-size conditions."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The paper evaluates the convergence of gradient-based learning algorithms in a repeated oligopoly price competition with reference effects, where the multiperiod setting stems from the intertemporal nature of the reference price.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Contributions",
+          "page": 2,
+          "sentence": 1
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "5. Loss-Neutral: Online Projected",
+            "equation": "",
+            "quote": "Under the setting of first-order feedback, the firm is incapable of computing either the equilibrium price, as defined in Equation (5), or the best-response price, that is, the optimal response to the competitors’ previous-period prices and all firms’ current reference prices."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "A firm need not observe rivals' prices, reference prices, market shares, or demand functions. Each firm observes enough own-price, sensitivity, and own-share or revenue information to compute first-order feedback. Reference prices are deterministic functions of own past posted prices. Consumer utility shocks are i.i.d. standard Gumbel.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in learning and stability in repeated pricing games with reference effects",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: A firm need not observe rivals' prices, reference prices, market shares, or demand functions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_i, r_i",
+                "meaning": "firm i's current price and memory-based reference price · common compact price interval",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_i(p, r)",
+                "meaning": "MNL market share of product i · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Pi_i(p, r)",
+                "meaning": "firm i revenue p_i d_i(p,r) · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p^E(r)",
+                "meaning": "single-period pure-strategy Nash equilibrium pricing policy conditional on reference prices · price vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_i^+, c_i^-",
+                "meaning": "consumer sensitivities to gains and losses relative to reference price · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand follows multinomial logit with brand-specific price and reference sensitivities.",
+              "Reference prices update through exponential smoothing of each product's own historical prices."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.3. First-Order Feedback",
+                "equation": "",
+                "quote": "To access this oracle, the firm does not require any information about its competitors, includ­ ing their prices, reference prices, and market shares, as well as the scheme behind reference price updates."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Pricing: “To access this oracle, the firm does not require any information about its competitors, including their prices, reference”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  3,
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "bandit-feedback"
+            ],
+            "explanation": "For a fixed reference-price vector, each firm chooses its price as a best response to rivals to maximize price times MNL market share; a stationary Nash equilibrium is a fixed point where equilibrium prices equal reference prices.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in learning and stability in repeated pricing games with reference effects",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "p_i^E(r)=\\arg\\max_{p_i\\in P}\\{p_i d_i((p_i,p_{-i}^E(r)),r)\\}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "p_i, r_i",
+                "meaning": "firm i's current price and memory-based reference price · common compact price interval",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_i(p, r)",
+                "meaning": "MNL market share of product i · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Pi_i(p, r)",
+                "meaning": "firm i revenue p_i d_i(p,r) · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p^E(r)",
+                "meaning": "single-period pure-strategy Nash equilibrium pricing policy conditional on reference prices · price vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "reference-price memory parameter · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_i^+, c_i^-",
+                "meaning": "consumer sensitivities to gains and losses relative to reference price · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In addition, if the firms have a good understanding of their own sensitivity parameters from operational experiences, the first-order feedback reduces to the bandit feedback, since knowing only the revenue Πi(p,r) is sufficient for firm i to compute ∂log(Πi(p,r))=∂pi.",
+              "Demand follows multinomial logit with brand-specific price and reference sensitivities.",
+              "Reference prices update through exponential smoothing of each product's own historical prices."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "(5)",
+                "quote": "In addition, if the firms have a good understanding of their own sensitivity parameters from operational experiences, the first-order feedback reduces to the bandit feedback, since knowing only the revenue Πi(p,r) is sufficient for firm i to compute ∂log(Πi(p,r))=∂pi."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "bandit-feedback",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Bandit feedback: “the first-order feedback reduces to the Bandit feedback , since knowing only the revenue Πi(p,r) is”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Each firm chooses its price each period each firm updates price using own log-revenue gradient or subgradient information consumers choose one product or the outside option",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in learning and stability in repeated pricing games with reference effects",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each firm chooses its price each period each firm updates price using own log-revenue gradient or subgradient information consumers choose one product or the outside option",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_i, r_i",
+                "meaning": "firm i's current price and memory-based reference price · common compact price interval",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Pi_i(p, r)",
+                "meaning": "firm i revenue p_i d_i(p,r) · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand follows multinomial logit with brand-specific price and reference sensitivities.",
+              "Reference prices update through exponential smoothing of each product's own historical prices."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "5. Loss-Neutral: Online Projected",
+                "equation": "",
+                "quote": "Gradient Ascent We first consider the loss-neutral scenario and explore the convergence behavior of the price and reference price paths under the Online Projected Gradient Ascent (OPGA) method, as outlined in Algorithm 1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Gradient Ascent We first consider the loss-neutral scenario and explore the convergence behavior of the price and reference”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "stationary-nash-equilibrium-with-decentralized-no-regret-learnin",
+            "label": "Stationary Nash equilibrium with decentralized no-regret learning",
+            "role": "interaction",
+            "concepts": [
+              "strategic-interaction",
+              "pricing"
+            ],
+            "explanation": "The model's equilibrium concept is Stationary Nash equilibrium with decentralized no-regret learning. An SNE is the fixed point p^E(p*)=p*, so each firm's price is a best response when current and reference prices coincide and the state remains stable thereafter. The paper proves convergence to the unique SNE or SNE set under its loss-neutral and loss-averse conditions.",
+            "searchPhrases": [
+              "how stationary nash equilibrium with decentralized no-regret learning is represented",
+              "strategic response in learning and stability in repeated pricing games with reference effects",
+              "stationary nash equilibrium with decentralized no-regret learning strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Stationary Nash equilibrium with decentralized no-regret learning.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_i, r_i",
+                "meaning": "firm i's current price and memory-based reference price · common compact price interval",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Pi_i(p, r)",
+                "meaning": "firm i revenue p_i d_i(p,r) · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p^E(r)",
+                "meaning": "single-period pure-strategy Nash equilibrium pricing policy conditional on reference prices · price vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_i^+, c_i^-",
+                "meaning": "consumer sensitivities to gains and losses relative to reference price · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand follows multinomial logit with brand-specific price and reference sensitivities.",
+              "Reference prices update through exponential smoothing of each product's own historical prices."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "5. Loss-Neutral: Online Projected",
+                "equation": "",
+                "quote": "Under the setting of first-order feedback, the firm is incapable of computing either the equilibrium price, as defined in Equation (5), or the best-response price, that is, the optimal response to the competitors’ previous-period prices and all firms’ current reference prices."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “best response”: “Under the setting of first-order feedback, the firm is incapable of computing either the equilibrium price, as defined”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Under the setting of first-order feedback, the firm is incapable of computing either the equilibrium price, as defined”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  2,
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "equilibrium-analysis"
+            ],
+            "explanation": "At each discrete period, firms simultaneously post prices without observing current rivals' prices. Consumers choose under MNL utility with current and reference prices. Revenues and own first-order feedback are observed, reference prices update by exponential smoothing, and firms apply OPGA or its conservative loss-averse variant for the next period. Each period's posted price changes the future reference state as well as current demand.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in learning and stability in repeated pricing games with reference effects",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: At each discrete period, firms simultaneously post prices without observing current rivals' prices.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_i, r_i",
+                "meaning": "firm i's current price and memory-based reference price · common compact price interval",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "d_i(p, r)",
+                "meaning": "MNL market share of product i · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p^E(r)",
+                "meaning": "single-period pure-strategy Nash equilibrium pricing policy conditional on reference prices · price vector",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_i^+, c_i^-",
+                "meaning": "consumer sensitivities to gains and losses relative to reference price · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Demand follows multinomial logit with brand-specific price and reference sensitivities.",
+              "Reference prices update through exponential smoothing of each product's own historical prices."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.1. Convergence Results for OPGA",
+                "equation": "",
+                "quote": "Then, their price and reference price paths converge to the unique stationary Nash equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Then, their price and reference price paths converge to the unique stationary Nash equilibrium.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  2,
+                  3
+                ]
+              },
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis as “nash equilibrium”: “Then, their price and reference price paths converge to the unique stationary Nash equilibrium.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The authors analyze nonlinear MNL revenue and reference-state dynamics, establish SNE properties, design projected-gradient algorithms using firm-local feedback, prove last-iterate convergence and regret bounds, and test trajectories numerically under several robustness variants.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in learning and stability in repeated pricing games with reference effects",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors analyze nonlinear MNL revenue and reference-state dynamics, establish SNE properties, design projected-gradient algorithms using firm-local feedback, prove last-iterate convergence and regret bounds, and test trajectories numerically under several robustness variants.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Firms use prescribed diminishing step sizes and first-order feedback; convergence rates require additional step-size conditions.",
+              "The analysis does not claim convergence under gain-seeking reference effects, where SNE may fail to exist."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "7.2. Inexact First-Order Oracle",
+                "equation": "",
+                "quote": "Then, the price and reference price paths generated by Algorithm 1 (or Algorithm 2 with threshold ɛ) converge to an O(δ)-neigh­ borhood of the unique SNE in the loss-neutral scenario (or an O(δ + ɛ)-SNE in the loss-averse scenario), where the conver­ gence rate has the same order as the setting of exact first-order oracle."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Then, the price and reference price paths generated by Algorithm 1 (or Algorithm 2 with threshold ɛ) converge”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "a2629e1a234100a730c720a473af17ad9259b3aa205eea2ba1e8a6b646b80c27",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "123efd3d08a5e20c024b50c6c0b2a9d59315f5bc24fa4c10b6845d22a2a964f9",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03464/123efd3d08a5e20c024b50c6c0b2a9d59315f5bc24fa4c10b6845d22a2a964f9.json",
+      "extractionQaDecisionSha256": "e9d4d8e0b3bd1501684a91c35188c5699a38c822afdddd1e473b9b0a9e2adc5c",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

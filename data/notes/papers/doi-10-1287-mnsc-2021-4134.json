@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2021-4134",
+  "sourcePdfSha256": "a6ce735642712b5da009bdafd74b7e1d35a4f64425614a8e164d8c47456b165e",
+  "extractionPagesSha256": "20a378cbd1f4e57b44ad96487d6a6b4eb1dcaeec2dfd2ced591c5133eb9b2914",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "07fe3a2d73d7b44feb54e5e97b567915b261b70ef3078b21de4985f1f1ac9f8d",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "57f9a1bd621554712715cd95bc18d8ce754c8341fed721618f60e0da8b0d1e5b",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2021-4134/57f9a1bd621554712715cd95bc18d8ce754c8341fed721618f60e0da8b0d1e5b.json",
+  "extractionQaDecisionSha256": "b6fc4e3dfcae16d07686b08895400a8a85872d52db441da3f3795ce2e04a5ebd",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2021-4134",
+    "question": "How do reusable resources affect online assortment optimization?",
+    "overview": "The model considers an online assortment optimization problem where we have n substitutable products with fixed reusable capacities [Formula: see text]. In each period t, a user with some preferences (potentially adversarially chosen) who offers a subset of products, S t , from the set of available products arrives at the seller’s platform. The user selects product [Formula: see text] with probability given by the preference model and uses it for a random number of periods, [Formula: see text], that is distributed i.i.d. according to some distribution that depends only on j generating a revenue [Formula: see text] for the seller.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        8,
+        9,
+        10
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Online Assortment Optimization with Reusable Resources model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers an online assortment optimization problem where we have n substitutable products with fixed reusable capacities [Formula: see text]. In each period t, a user with some preferences (potentially adversarially chosen) who offers a subset of products, S t , from the set of available products arrives at the seller’s platform. The goal of the seller is to find a policy that maximizes the expected cumulative revenue over a finite horizon T.",
+        "objects": [
+          "A user",
+          "The seller",
+          "Available products",
+          "Platform",
+          "The user"
+        ],
+        "inputs": [
+          "The preference",
+          "The realizations of product choices and usage times beforehand",
+          "Product type",
+          "Arrival types"
+        ],
+        "decisions": [
+          "Find a policy",
+          "A product or no purchase according to the user’s choice model φt",
+          "The DP policy assuming the knowledge of the distribution of arrival types",
+          "Whether to allocate a unit of the resource to arrival t"
+        ],
+        "assumptions": [
+          "The goal of the seller is to find a policy that maximizes the expected cumulative revenue over a finite horizon T",
+          "Assumptions 1 and 2"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A user",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In each period t, a user with some preferences (potentially adversarially chosen) who offers a subset of products, S t, from the set of available products arrives at the seller’s platform.",
+                "matchedText": "a user",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The seller",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In each period t, a user with some preferences (potentially adversarially chosen) who offers a subset of products, S t, from the set of available products arrives at the seller’s platform.",
+                "matchedText": "the seller",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Available products",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In each period t, a user with some preferences (potentially adversarially chosen) who offers a subset of products, S t, from the set of available products arrives at the seller’s platform.",
+                "matchedText": "available products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Platform",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In each period t, a user with some preferences (potentially adversarially chosen) who offers a subset of products, S t, from the set of available products arrives at the seller’s platform.",
+                "matchedText": "platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The user",
+              "source": {
+                "type": "section",
+                "section": "Online Assortment Optimization with Reusable Resources",
+                "sectionIndex": 0,
+                "page": 1,
+                "quote": "The user selects product j ∈St with probability given by the preference model and uses it for a random number of periods, ˜tj, that is distributed i.i.d. according to some distribution that depends only on j generating a revenue rj(˜tj) for the seller."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The preference",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "The user selects product [Formula: see text] with probability given by the preference model and uses it for a random number of periods, [Formula: see text], that is distributed i.i.d. according to some distribution that depends only on j generating a revenue [Formula: see text] for the seller.",
+                "matchedText": "the preference",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The realizations of product choices and usage times beforehand",
+              "source": {
+                "type": "section",
+                "section": "Mathematical Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 17,
+                "quote": "Note that OPT does not know the realizations of product choices and usage times beforehand.",
+                "matchedText": "the realizations of product choices and usage times beforehand",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Product type",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 11,
+                "sectionIndex": 15,
+                "sentence": 11,
+                "quote": "product type",
+                "matchedText": "product type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival types",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 11,
+                "sectionIndex": 20,
+                "sentence": 31,
+                "quote": "arrival types",
+                "matchedText": "arrival types",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Find a policy",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "The goal of the seller is to find a policy that maximizes the expected cumulative revenue over a finite horizon T.",
+                "matchedText": "find a policy",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A product or no purchase according to the user’s choice model φt",
+              "source": {
+                "type": "section",
+                "section": "Mathematical Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 7,
+                "quote": "For any given subset St, a user at time t selects a product or no purchase according to the user’s choice model φt",
+                "matchedText": "a product or no purchase according to the user’s choice model φt",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The DP policy assuming the knowledge of the distribution of arrival types",
+              "source": {
+                "type": "section",
+                "section": "Experimental Setup",
+                "page": 11,
+                "sectionIndex": 20,
+                "sentence": 31,
+                "quote": "Note that we compute the DP policy assuming the knowledge of the distribution of arrival types",
+                "matchedText": "the DP policy assuming the knowledge of the distribution of arrival types",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Whether to allocate a unit of the resource to arrival t",
+              "source": {
+                "type": "section",
+                "section": "User Type-Dependent Usage Times: Family of Bad Examples",
+                "page": 9,
+                "sectionIndex": 13,
+                "sentence": 26,
+                "quote": "whether to allocate a unit of the resource to arrival t",
+                "matchedText": "whether to allocate a unit of the resource to arrival t",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The goal of the seller is to find a policy that maximizes the expected cumulative revenue over a finite horizon T",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "The goal of the seller is to find a policy that maximizes the expected cumulative revenue over a finite horizon T.",
+                "matchedText": "The goal of the seller is to find a policy that maximizes the expected cumulative revenue over a finite horizon T.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Assumptions 1 and 2",
+              "source": {
+                "type": "section",
+                "section": "Mathematical Formulation",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 12,
+                "quote": "We assume Assumptions 1 and 2.",
+                "matchedText": "Assumptions 1 and 2.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper's main contribution is to show that a simple myopic policy (where we offer the myopically optimal assortment from the available products to each user) provides a good approximation for the problem.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "2.5. Tighter Result Using Booking Limits",
+            "equation": "",
+            "quote": "After randomly pruning the discounted products at the start of the planning horizon, to each customer we offer the revenue maximizing assortment."
+          }
+        ],
+        "components": [
+          {
+            "id": "competitive-ratio-of-myopic-policy",
+            "label": "Competitive Ratio of Myopic Policy",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "In this section, we show that the myopic policy is 1/2-competitive for general usage time distributions and general revenue functions (as functions of usage times).",
+            "searchPhrases": [
+              "how competitive ratio of myopic policy is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "competitive ratio of myopic policy modeled objective specification"
+            ],
+            "formal": "Objective relation: In this section, we show that the myopic policy is 1/2-competitive for general usage time distributions and general revenue functions (as functions of usage times).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Before proceeding, we discuss useful notation and introduce an important simplification."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Competitive Ratio of Myopic Policy",
+                "equation": "",
+                "quote": "In this section, we show that the myopic policy is 1/2-competitive for general usage time distributions and general revenue functions (as functions of usage times)."
+              },
+              {
+                "page": 10,
+                "section": "3. User Type-Dependent Usage Times: Family of Bad Examples",
+                "equation": "Corollary 3",
+                "quote": "Given an equitable algorithm with total revenue of at least c 1−pαTt t 1−pt , we have revenue of at least 1−pαTt t 1−pt from an individual unit."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “In this section, we show that the myopic policy is 1/2-competitive for general usage time distributions and general”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "from-arbitrary-to-unit-inventory",
+            "label": "From Arbitrary to Unit Inventory",
+            "role": "algorithm",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "Given an optimal algorithm (OPT) for the original instance, we construct an algorithm for the unit setting with the same expected revenue.",
+            "searchPhrases": [
+              "how from arbitrary to unit inventory is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "from arbitrary to unit inventory solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Given an optimal algorithm (OPT) for the original instance, we construct an algorithm for the unit setting with the same expected revenue.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For every product j, whenever OPT includes j in an assortment for the original instance, we include exactly one available product (j,kj) for an arbitrary kj ∈[cj] in the unit setting.",
+              "For every product j, whenev- er OPT includes j in an assortment for the original in- stance, we include exactly one available product (j,kj) for an arbitrary kj ∈[cj] in the unit setting."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.2. From Arbitrary to Unit Inventory",
+                "equation": "",
+                "quote": "Given an optimal algorithm (OPT) for the original instance, we construct an algorithm for the unit setting with the same expected revenue."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory: “Inventory”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "generalizations-and-extensions",
+            "label": "Generalizations and Extensions",
+            "role": "algorithm",
+            "concepts": [
+              "assortment-optimization"
+            ],
+            "explanation": "The latter term is still bounded as before since Lemma 2 holds even if the static assortment optimization problem at each stage can be solved only approximately.",
+            "searchPhrases": [
+              "how generalizations and extensions is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "generalizations and extensions solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The latter term is still bounded as before since Lemma 2 holds even if the static assortment optimization problem at each stage can be solved only approximately.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This results in a competitive ratio α=(1 + α): w The following corollary addresses situations where the revenue from each product is nonstationary and varies across time.",
+              "The latter term is still bounded as before since Lemma 2 holds even if the static assortment optimization problem at each stage can be solved only approximately."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "2.4. Generalizations and Extensions",
+                "equation": "",
+                "quote": "The latter term is still bounded as before since Lemma 2 holds even if the static assortment optimization problem at each stage can be solved only approximately."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "assortment-optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Assortment optimization: “2 holds even if the static Assortment optimization problem at each stage can be solved only”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "tighter-result-using-booking-limits",
+            "label": "Tighter Result Using Booking Limits",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "After randomly pruning the discounted products at the start of the planning horizon, to each customer we offer the revenue maximizing assortment.",
+            "searchPhrases": [
+              "how tighter result using booking limits is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "tighter result using booking limits modeled objective specification"
+            ],
+            "formal": "Objective relation: After randomly pruning the discounted products at the start of the planning horizon, to each customer we offer the revenue maximizing assortment.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "After randomly pruning the discounted products at the start of the planning horizon, to each customer we offer the revenue maximizing assortment.",
+              "Let St(ω) denote the assortment offered to t in ALG when discounted products are excluded, and let St(ω,d) denote the overall assortment when discounted products are included in ALG.",
+              "Finally, let ALGd denote the expected revenue of ALG given that discounted products are included, and similarly, ALGn denotes the expected revenue given that discounted products are excluded."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "2.5. Tighter Result Using Booking Limits",
+                "equation": "",
+                "quote": "After randomly pruning the discounted products at the start of the planning horizon, to each customer we offer the revenue maximizing assortment."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “After randomly pruning the discounted products at the start of the planning horizon, to each customer we offer”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "user-type-dependent-usage-times-family-of-bad-examples",
+            "label": "User Type-Dependent Usage Times: Family of Bad Examples",
+            "role": "algorithm",
+            "concepts": [
+              "adversarial-arrivals"
+            ],
+            "explanation": "We now consider the case where the product usage time distributions could depend on the user type and show that there is no online algorithm with a constant competitive ratio in the adversarial arrival model.",
+            "searchPhrases": [
+              "how user type-dependent usage times: family of bad examples is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "user type-dependent usage times: family of bad examples solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We now consider the case where the product usage time distributions could depend on the user type and show that there is no online algorithm with a constant competitive ratio in the adversarial arrival model.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose we have an algorithm that computationally maintains a state (s1(t),s2(t)) ∈{0,1}2 and decides whether to allocate a unit of the resource to arrival t based on the state.",
+              "Before we prove the above theorem, consider first the special case of algorithms that always match a user to some available product if such a matching is possible.",
+              "In order to be competitive on sequence A, the algorithm must match the arrival with the only available product."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3. User Type-Dependent Usage Times: Family of Bad Examples",
+                "equation": "",
+                "quote": "We now consider the case where the product usage time distributions could depend on the user type and show that there is no online algorithm with a constant competitive ratio in the adversarial arrival model."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "adversarial-arrivals",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Adversarial arrivals: “Adversarial arrivals”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "a6ce735642712b5da009bdafd74b7e1d35a4f64425614a8e164d8c47456b165e",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "57f9a1bd621554712715cd95bc18d8ce754c8341fed721618f60e0da8b0d1e5b",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2021-4134/57f9a1bd621554712715cd95bc18d8ce754c8341fed721618f60e0da8b0d1e5b.json",
+      "extractionQaDecisionSha256": "b6fc4e3dfcae16d07686b08895400a8a85872d52db441da3f3795ce2e04a5ebd",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1264 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2022-1162",
+  "sourcePdfSha256": "7435fb55d9b4a73dc5fe978ec348938cc6392c59669eb96637f0e3627af8abb5",
+  "extractionPagesSha256": "9be566409ef9a4165482bc350152d2dbbfec3db0ef3c7feae385dbe52d4cbf7b",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "f3d3156f8342e77872191cd8f57a2d0ce44ed2ec634ae188b799d2c9a526f47e",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "2099127243c1d4620acd5ea55df60c239a514aae74c6c56753abc8f48dfcd2b7",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-1162/2099127243c1d4620acd5ea55df60c239a514aae74c6c56753abc8f48dfcd2b7.json",
+  "extractionQaDecisionSha256": "a3e9df733b948ad867fda06ba10965c706f7e1b8291d7721b90de84b1d3bed56",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2022-1162",
+    "question": "How do many firms, hoping to detect efficacy and futility of the candidate drug early to save development costs, plan interim analyses of patient-response data in their clinical trials compare?",
+    "overview": "The cost for developing a new drug ranged from $1 billion to more than $2 billion between 2010 and 2019. In addition to high development costs, the efficacy of the candidate drug, patient enrollment, the market exclusivity period (MEP), and the planning horizon are uncertain. Moreover, slow enrollment leads to increased costs, canceled clinical trials, and lost potential revenue.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "dynamic-program-formulation",
+        "name": "Dynamic Program Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The cost for developing a new drug ranged from $1 billion to more than $2 billion between 2010 and 2019. In addition to high development costs, the efficacy of the candidate drug, patient enrollment, the market exclusivity period (MEP), and the planning horizon are uncertain. Moreover, slow enrollment leads to increased costs, canceled clinical trials, and lost potential revenue.",
+        "objects": [
+          "Patient",
+          "Firms",
+          "Brand",
+          "The firm",
+          "Table"
+        ],
+        "inputs": [
+          "The exogenous information",
+          "Exogenous information",
+          "A stochastic horizon",
+          "Rate r",
+          "The times"
+        ],
+        "decisions": [
+          "The enrollment rate uj in interim period j",
+          "How fast patient enrollment should proceed",
+          "The optimal enrollment rates and assess the value of having IAs in their trials",
+          "Design stage",
+          "Test at each IA to compare drug A’s efficacy with drug B’s"
+        ],
+        "assumptions": [
+          "In this case, we replace the constraint uj ≥0 with 0 ≤uj ≤u in Equation (10).",
+          "Σ2 A is known; or Assumption A.2 (Binary Responses)",
+          "The parameters of the distribution of μB are known",
+          "The parameters of the distribution",
+          "Drug A loses its market exclusivity after the competing drug enters the market"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In addition to high development costs, the efficacy of the candidate drug, patient enrollment, the market exclusivity period (MEP), and the planning horizon are uncertain.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Firms",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "Many firms, hoping to detect efficacy versus futility of the candidate drug early to save development costs, plan interim analyses of patient-response data in their clinical trials.",
+                "matchedText": "firms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Brand",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 13,
+                "quote": "For drugs having low annual revenue or a strong market brand or treating rare diseases, we also established that the optimal enrollment policy is monotonic in the average patient response.",
+                "matchedText": "brand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "sectionIndex": 8,
+                "page": 7,
+                "quote": "the firm",
+                "matchedText": "the firm",
+                "derivation": "literal-actor-control"
+              }
+            },
+            {
+              "value": "Table",
+              "source": {
+                "type": "section",
+                "section": "Simplification of Dynamic Program Optimality",
+                "page": 12,
+                "sectionIndex": 16,
+                "sentence": 47,
+                "quote": "However, because the state variables are random, this lookup table is unlikely to contain the optimal enrollment rate for the actual state Tian, Hazen, and Li: Enrollment with Learning Efficacy for Group Sequential Trial Manufacturing & Service Operations Management, 2023, vol.",
+                "matchedText": "table",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The exogenous information",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Program Formulation",
+                "page": 9,
+                "sectionIndex": 11,
+                "sentence": 66,
+                "quote": "the exogenous information",
+                "matchedText": "the exogenous information",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Exogenous information",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "sectionIndex": 8,
+                "page": 6,
+                "quote": "The responses XA,j and XB,j are exogenous information arriving between Figure 2."
+              }
+            },
+            {
+              "value": "A stochastic horizon",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 45,
+                "quote": "We develop the DP optimality equation for the model with a stochastic horizon.",
+                "matchedText": "a stochastic horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Rate r",
+              "source": {
+                "type": "section",
+                "section": "Clinical Trial and Optimal Enrollment Policy",
+                "page": 14,
+                "sectionIndex": 19,
+                "sentence": 16,
+                "quote": "The annual interest rate r is 12%, which is based on the survey of professionals in the pharmaceuti­ cal industry in the United States for assessment of bio­ technology firm value (Villiger and Nielsen 2010).",
+                "matchedText": "rate r",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The times",
+              "source": {
+                "type": "section",
+                "section": "Clinical Trials and Interim",
+                "sectionIndex": 0,
+                "page": 5,
+                "quote": "The times τ1 < τ2 <⋯< τL when these analyses occur are uncertain."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The enrollment rate uj in interim period j",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 16,
+                "quote": "the enrollment rate uj in interim period j",
+                "matchedText": "the enrollment rate uj in interim period j",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How fast patient enrollment should proceed",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 29,
+                "quote": "Therefore, the problem faced by the firm in the trial is: how to use the clinical results from IAs to maximize drug A’s expected cumulative profit, which is the revenue from drug A minus the costs for recruiting, treating, and following patients, by choosing how fast patient enrollment should proceed",
+                "matchedText": "how fast patient enrollment should proceed",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The optimal enrollment rates and assess the value of having IAs in their trials",
+              "source": {
+                "type": "section",
+                "section": "Influence of Model Parameters on the Value",
+                "page": 13,
+                "sectionIndex": 28,
+                "sentence": 40,
+                "quote": "We thus demonstrate, through a clinical trial for testing an oncological drug, that our model can help firms compute the optimal enrollment rates and assess the value of having IAs in their trials",
+                "matchedText": "the optimal enrollment rates and assess the value of having IAs in their trials",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Design stage",
+              "source": {
+                "type": "section",
+                "section": "Clinical Trials and Interim",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 16,
+                "quote": "Thus, firms need to assess the value of conducting IAs at the trial-design stage",
+                "matchedText": "design stage",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Test at each IA to compare drug A’s efficacy with drug B’s",
+              "source": {
+                "type": "section",
+                "section": "Statistical Tests at Interim Analyses and Clinical Trial Stopping Boundaries",
+                "page": 6,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "The firm conducts a two-sided statistical test at each IA to compare drug A’s efficacy with drug B’s",
+                "matchedText": "test at each IA to compare drug A’s efficacy with drug B’s",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this case, we replace the constraint uj ≥0 with 0 ≤uj ≤u in Equation (10).",
+              "source": {
+                "type": "section",
+                "section": "Simplification of Dynamic Program Optimality",
+                "page": 12,
+                "quote": "In this case, we replace the constraint uj ≥0 with 0 ≤uj ≤u in Equation (10)."
+              }
+            },
+            {
+              "value": "Σ2 A is known; or Assumption A.2 (Binary Responses)",
+              "source": {
+                "type": "section",
+                "section": "Bayesian Updating of Drug A Efficacy",
+                "page": 8,
+                "sectionIndex": 9,
+                "sentence": 13,
+                "quote": "The prior dis­ tribution of efficacy µA is a normal (µ0,σ2 0), and the distri­ bution of the sum of treatment responses XA,j is a normal (∆njµA,∆njσ2 A), where we assume that σ2 A is known; or Assumption A.2 (Binary Responses).",
+                "matchedText": "σ2 A is known; or Assumption A.2 (Binary Responses).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The parameters of the distribution of μB are known",
+              "source": {
+                "type": "section",
+                "section": "Bayesian Updating of Drug A Efficacy",
+                "page": 8,
+                "sectionIndex": 9,
+                "sentence": 19,
+                "quote": "Thus, we assume that the parameters of the distribution of µB are known.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The parameters of the distribution",
+              "source": {
+                "type": "section",
+                "section": "Bayesian Updating of Drug A Efficacy",
+                "page": 8,
+                "sectionIndex": 9,
+                "sentence": 26,
+                "quote": "Thus, we assume that the parameters of the distribution",
+                "matchedText": "the parameters of the distribution",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Drug A loses its market exclusivity after the competing drug enters the market",
+              "source": {
+                "type": "section",
+                "section": "Sensitivity of Value Function and Enrollment",
+                "page": 17,
+                "sectionIndex": 21,
+                "sentence": 35,
+                "quote": "We assume that drug A loses its market exclusivity after the competing drug enters the market.",
+                "matchedText": "drug A loses its market exclusivity after the competing drug enters the market.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper applied our models to the clinical trials testing an HR drug (identified as “A”) for treating relapsed and refractory multiple myeloma recently developed by a leading pharmaceutical firm (identified as firm “A”).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Clinical Trial and Optimal Enrollment Policy",
+          "page": 13,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 12,
+            "section": "5.2.1. Simplification of Dynamic Program Optimality",
+            "equation": "",
+            "quote": "Moreover, to decide when to abandon trials for drugs with low profit or difficult enrollment, firms can use Equation (10) along with Equation (8) to calcu­ late the abandonment threshold dj."
+          }
+        ],
+        "components": [
+          {
+            "id": "clinical-trials-and-interim",
+            "label": "Clinical Trials and Interim",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "If drug A is superior to drug B at IA j and the expected profit from drug A is greater than the revenue from licensing the patents, the firm will terminate the clinical trial to file an NDA with the FDA (depicted by the dashed arrow).",
+            "searchPhrases": [
+              "how clinical trials and interim is represented",
+              "modeled objective in platforms and marketplaces",
+              "clinical trials and interim modeled objective specification"
+            ],
+            "formal": "Objective relation: If drug A is superior to drug B at IA j and the expected profit from drug A is greater than the revenue from licensing the patents, the firm will terminate the clinical trial to file an NDA with the FDA (depicted by the dashed arrow).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Although a group-sequential trial may have a lower expected sample size than a trial without any IA, the costs for trial management, data collection, and analyses of clinical data multiple times before the trial ends may overweigh the benefits of including IAs.",
+              "After the firm secures the approval of its protocol from the regulatory agencies, it will conduct the trial."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Clinical Trials and Interim",
+                "equation": "",
+                "quote": "If drug A is superior to drug B at IA j and the expected profit from drug A is greater than the revenue from licensing the patents, the firm will termi­ nate the clinical trial to file an NDA with the FDA (depicted by the dashed arrow)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "statistical-tests-at-interim-analyses-and-clinical-trial-stoppin",
+            "label": "Statistical Tests at Interim Analyses and Clinical Trial Stopping Boundaries",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Let dj be the threshold of YA,j, below which the profit from drug A is lower than the revenue from licensing the patents.",
+            "searchPhrases": [
+              "how statistical tests at interim analyses and clinical trial stopping boundaries is represented",
+              "modeled objective in platforms and marketplaces",
+              "statistical tests at interim analyses and clinical trial stopping boundaries modeled objective specification"
+            ],
+            "formal": "Objective relation: Let d_{j} be the threshold of YA,j, below which the profit from drug A is lower than the revenue from licensing the patents.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "d_{j}",
+                "meaning": "the threshold of YA,j, below which the profit from drug A is lower than the revenue from licensing the patents"
+              }
+            ],
+            "conditions": [
+              "If Zj < zj or YAj < dj, the firm will abandon the drug development.",
+              "The null hypothesis H0 is μA = μB, and the alternative hypothesis HA is μA ≠μB, where μA is the unknown mean efficacy for drug A and μB is the mean efficacy for drug B."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.3. Statistical Tests at Interim Analyses and Clinical Trial Stopping Boundaries",
+                "equation": "",
+                "quote": "Let dj be the threshold of YA,j, below which the profit from drug A is lower than the revenue from licensing the patents."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "treatment-response-acquisition-time-and-associated-cost-rate",
+            "label": "Treatment Response Acquisition Time and Associated Cost Rate",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Time ∆τj for recruiting, treating, and following 2∆nj patients depends on the uncertain patient-enrollment process.",
+            "searchPhrases": [
+              "how treatment response acquisition time and associated cost rate is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "treatment response acquisition time and associated cost rate information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Time ∆\\tau_{j} for recruiting, treating, and following 2∆nj patients depends on the uncertain patient-enrollment process.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\tau_{j}",
+                "meaning": "the simulation starting time"
+              }
+            ],
+            "conditions": [
+              "we assume that the cumulative enrollment follows a controlled Brownian motion with drift equal to the patient-enrollment rate uj chosen for interim period j and volatility parameter υ2 that is constant across periods.",
+              "Time ∆τj for recruiting, treating, and following 2∆nj patients depends on the uncertain patient-enrollment process.",
+              "Because Brownian motion is a Markov process, the time increment ∆τj is independent of the starting time τj 1 of interim period j."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.6. Treatment Response Acquisition Time and Associated Cost Rate",
+                "equation": "",
+                "quote": "Time ∆τj for recruiting, treating, and following 2∆nj patients depends on the uncertain patient-enrollment process."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Time ∆τj for recruiting, treating, and following 2∆nj patients depends on the uncertain patient-enrollment process.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "dynamic-program-formulation",
+            "label": "Dynamic Program Formulation",
+            "role": "state",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "By the end of interim period j, the clinical trial is in states (Sj,τj), where τj < T.",
+            "searchPhrases": [
+              "how dynamic program formulation is represented",
+              "decision-relevant state in platforms and marketplaces",
+              "dynamic program formulation decision-relevant state specification"
+            ],
+            "formal": "State rule: collect the decision-relevant variables defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "S_{j}",
+                "meaning": "the first two elements of the state variables"
+              }
+            ],
+            "conditions": [
+              "By the end of interim period j, the clinical trial is in states (Sj,τj), where τj < T.",
+              "We denote the first two elements of the state variables by Sj—that is, Sj = (YA,j,YB,j).",
+              "The revenue functions WF(·) and WS(·) are defined in Equation (A.3) in Appendix A.2.2."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Dynamic Program Formulation",
+                "equation": "",
+                "quote": "By the end of interim period j, the clinical trial is in states (Sj,τj), where τj < T."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Dynamic programming as “dynamic program”: “By the end of interim period j, the clinical trial is in states (Sj,τj), where τj < T.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "dynamic-programming-optimality-equation",
+            "label": "Dynamic Programming Optimality Equation",
+            "role": "algorithm",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "We thus develop an algorithm in Online Appendix B.3 to solve the DP Model (7), which we summarize in Algorithm 1.",
+            "searchPhrases": [
+              "how dynamic programming optimality equation is represented",
+              "solution algorithm in platforms and marketplaces",
+              "dynamic programming optimality equation solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We thus develop an algorithm in Online Appendix B.3 to solve the DP Model (7), which we summarize in Algorithm 1.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In Equation (7), the first term inside the brackets represents the enrollment costs, and the second term is the discounted future profit when the trial is in state (Sj,τj) for τj < T."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Dynamic Programming Optimality Equation",
+                "equation": "",
+                "quote": "We thus develop an algorithm in Online Appendix B.3 to solve the DP Model (7), which we summarize in Algorithm 1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic programming: “We thus develop an algorithm in Online Appendix B.3 to solve the DP Model (7), which we summarize”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "probability-distribution-of-meps-for-lrsm-or-rare-disease-drugs",
+            "label": "Probability Distribution of MEPs for LRSM or Rare-Disease Drugs",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "This distribution represents the MEP distributions for a reasonably wide range of brand-name drugs because exponential, erlang, and chi-squared distributions are special cases of gamma distribution.",
+            "searchPhrases": [
+              "how probability distribution of meps for lrsm or rare-disease drugs is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "probability distribution of meps for lrsm or rare-disease drugs information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The MEP for a rare-disease HR drug is constant, which is a special case of the gamma distribution, further elaborated on in Section 5.2.2.",
+              "An LRSM drug typically shares the market with a limited number of generics (fewer than four) after its patents expire (Grabowski and Kyle 2007).",
+              "Rare-Disease Drugs An LRSM drug typically shares the market with a limited number of generics (fewer than four) after its patents expire (Grabowski and Kyle 2007)."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. Probability Distribution of MEPs for LRSM or Rare-Disease Drugs",
+                "equation": "",
+                "quote": "This distribution represents the MEP distributions for a reasonably wide range of brand-name drugs because exponential, erlang, and chi-squared distributions are special cases of gamma distribution."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "simplification-of-dynamic-program-optimality",
+            "label": "Simplification of Dynamic Program Optimality",
+            "role": "objective",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "Moreover, to decide when to abandon trials for drugs with low profit or difficult enrollment, firms can use Equation (10) along with Equation (8) to calculate the abandonment threshold dj.",
+            "searchPhrases": [
+              "how simplification of dynamic program optimality is represented",
+              "modeled objective in platforms and marketplaces",
+              "simplification of dynamic program optimality modeled objective specification"
+            ],
+            "formal": "Objective relation: Moreover, to decide when to abandon trials for drugs with low profit or difficult enrollment, firms can use Equation (10) along with Equation (8) to calculate the abandonment threshold dj.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If generic drugs gradually enter the market after the patents for a brand-name drug expire, the mean and variance of the MEP both are large.",
+              "Firms can use Equation (10) along with the constraint 0 ≤uj ≤u to calculate the optimal enrollment rates in their trials.",
+              "Because late-stage clinical trials are expensive and risky, especially for drugs generating low annual revenue, it is critical that firms reevaluate their enrollment strategies in groupsequential trials using the IA results after each IA."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.2.1. Simplification of Dynamic Program Optimality",
+                "equation": "",
+                "quote": "Moreover, to decide when to abandon trials for drugs with low profit or difficult enrollment, firms can use Equation (10) along with Equation (8) to calcu­ late the abandonment threshold dj."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Dynamic programming as “dynamic program”: “Moreover, to decide when to abandon trials for drugs with low profit or difficult enrollment, firms can use”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "clinical-trial-and-optimal-enrollment-policy",
+            "label": "Clinical Trial and Optimal Enrollment Policy",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "From this number, we estimate that the annual net revenue corresponding to the best efficacy, which is 0.61, is κ0 = $700 million.",
+            "searchPhrases": [
+              "how clinical trial and optimal enrollment policy is represented",
+              "estimation procedure in platforms and marketplaces",
+              "clinical trial and optimal enrollment policy estimation procedure specification"
+            ],
+            "formal": "Estimation rule: fit the stated model to observations under its identifying conditions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "From this number, we estimate that the annual net revenue corresponding to the best efficacy, which is 0.61, is κ0 = $700 million.",
+              "Firm A planned two IAs and one final analysis for the trial and scheduled the first and second IAs when firm A enrolled and treated roughly 55% and 80% of the maximum sample size for the trial (i.e., 2n3 = 792).",
+              "The upper bound of the enrollment rate is u = 8 patients/week.",
+              "We evaluated the optimal enrollment policy in the first trial after each IA."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "6.1. Clinical Trial and Optimal Enrollment Policy",
+                "equation": "",
+                "quote": "From this number, we estimate that the annual net revenue corresponding to the best efficacy, which is 0.61, is κ0 = $700 million."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “Model estimation”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "enrollment-policy",
+            "label": "Enrollment Policy",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "We also observed a similar pattern of the optimal enrollment rate in IP 3 (u∗ 3) when ORR YB,2 is 0.41 and IA 2 is at time τ2 = 205 weeks in Figure 5(b).",
+            "searchPhrases": [
+              "how enrollment policy is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "enrollment policy information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We also observed a similar pattern of the optimal enrollment rate in IP 3 (u∗ 3) when ORR YB,2 is 0.41 and IA 2 is at time τ2 = 205 weeks in Figure 5(b).",
+              "Figure 5(a) displays the optimal enrollment rates in IP 2 (u∗ 2) for different realizations of YA,1 corresponding to YB,1 = 0:41 when IA 1 is at time τ1 = 141 weeks.",
+              "Consider that ORR YA,1 is in region E2 in Figure 4(a), and IA 1 is finished before ̃T2.",
+              "This figure shows that u∗ 2 increases as YA,1 increases and reaches u when YA,1 is greater than 0.47."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "Enrollment Policy",
+                "equation": "",
+                "quote": "We also observed a similar pattern of the optimal enroll­ ment rate in IP 3 (u∗ 3) when ORR YB,2 is 0.41 and IA 2 is at time τ2 = 205 weeks in Figure 5(b)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We also observed a similar pattern of the optimal enrollment rate in IP 3 (u∗ 3) when ORR”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "influence-of-model-parameters-on-the-value",
+        "name": "Influence of Model Parameters on the Value",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Program Formulation.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "dynamic-program-formulation"
+          }
+        ],
+        "summary": "First, we introduce the acquisition of information regarding drug A’s efficacy. We adopt the prior distribution of the unknown parameter of a drug’s efficacy distribution and likelihood function for patient responses from Berry (2004). Because the value of a clinical trial increases as the parameters p0, κ0, and κ0 increase, firms can select which trials to continue by using these model parameters per part (1).",
+        "objects": [
+          "The firm",
+          "Patients"
+        ],
+        "inputs": [
+          "Exogenous information",
+          "The unknown parameter"
+        ],
+        "decisions": [
+          "The enrollment rate uj in interim period j",
+          "How fast patient enrollment should proceed"
+        ],
+        "assumptions": [
+          "Σ2 A is known; or Assumption A.2 (Binary Responses)",
+          "The parameters of the distribution of μB are known",
+          "The parameters of the distribution"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "the firm",
+                "matchedText": "the firm",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 29,
+                "quote": "Therefore, the problem faced by the firm in the trial is: how to use the clinical results from IAs to maximize drug A’s expected cumulative profit, which is the revenue from drug A minus the costs for recruiting, treating, and following patients, by choosing how fast patient enrollment should proceed.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Exogenous information",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 32,
+                "quote": "exogenous information",
+                "matchedText": "exogenous information",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unknown parameter",
+              "source": {
+                "type": "section",
+                "section": "Bayesian Updating of Drug A Efficacy",
+                "page": 8,
+                "sectionIndex": 1,
+                "sentence": 11,
+                "quote": "We adopt the prior distribution of the unknown parameter of a drug’s efficacy distribu­ tion and likelihood function for patient responses from Berry (2004).",
+                "matchedText": "the unknown parameter",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The enrollment rate uj in interim period j",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 16,
+                "quote": "the enrollment rate uj in interim period j",
+                "matchedText": "the enrollment rate uj in interim period j",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How fast patient enrollment should proceed",
+              "source": {
+                "type": "section",
+                "section": "Acquisition of Information on Drug Efficacy",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 29,
+                "quote": "Therefore, the problem faced by the firm in the trial is: how to use the clinical results from IAs to maximize drug A’s expected cumulative profit, which is the revenue from drug A minus the costs for recruiting, treating, and following patients, by choosing how fast patient enrollment should proceed",
+                "matchedText": "how fast patient enrollment should proceed",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Σ2 A is known; or Assumption A.2 (Binary Responses)",
+              "source": {
+                "type": "section",
+                "section": "Bayesian Updating of Drug A Efficacy",
+                "page": 8,
+                "sectionIndex": 1,
+                "sentence": 13,
+                "quote": "The prior dis­ tribution of efficacy µA is a normal (µ0,σ2 0), and the distri­ bution of the sum of treatment responses XA,j is a normal (∆njµA,∆njσ2 A), where we assume that σ2 A is known; or Assumption A.2 (Binary Responses).",
+                "matchedText": "σ2 A is known; or Assumption A.2 (Binary Responses).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The parameters of the distribution of μB are known",
+              "source": {
+                "type": "section",
+                "section": "Bayesian Updating of Drug A Efficacy",
+                "page": 8,
+                "sectionIndex": 1,
+                "sentence": 19,
+                "quote": "Thus, we assume that the parameters of the distribution of µB are known.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The parameters of the distribution",
+              "source": {
+                "type": "section",
+                "section": "Bayesian Updating of Drug A Efficacy",
+                "page": 8,
+                "sectionIndex": 1,
+                "sentence": 26,
+                "quote": "Thus, we assume that the parameters of the distribution",
+                "matchedText": "the parameters of the distribution",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper introduces the probability distribution of MEPs for LRSM drugs and present the properties of the value function and an optimal enrollment policy for LRSM drugs and rare-disease drugs.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Optimal Policy for Drugs with Gamma-Distributed MEPs",
+          "page": 11,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.5. Bayesian Updating of Drug A Efficacy",
+            "equation": "",
+            "quote": "We adopt the prior distribution of the unknown parameter of a drug’s efficacy distribu­ tion and likelihood function for patient responses from Berry (2004)."
+          }
+        ],
+        "components": [
+          {
+            "id": "acquisition-of-information-on-drug-efficacy-and-firms-operationa",
+            "label": "Acquisition of Information on Drug Efficacy and Firms’ Operational Decisions",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "First, we introduce the acquisition of information regarding drug A’s efficacy.",
+            "searchPhrases": [
+              "how acquisition of information on drug efficacy and firms’ operational decisions is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "acquisition of information on drug efficacy and firms’ operational decisions information available to the decision maker specification"
+            ],
+            "formal": "Information structure: First, we introduce the acquisition of information regarding drug A’s efficacy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose the firm has not yet abandoned or terminated the trial by time τj 1.",
+              "At that time, the firm observes cumulative responses YA,j 1 and YB,j 1 (oval 2) and updates the probability distribution of μA to a posterior distribution, given the observations YA,j 1, using Bayes’ rule."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.4. Acquisition of Information on Drug Efficacy and Firms’ Operational Decisions",
+                "equation": "",
+                "quote": "First, we introduce the acquisition of information regarding drug A’s efficacy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “First, we introduce the acquisition of information regarding drug A’s efficacy.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "bayesian-updating-of-drug-a-efficacy",
+            "label": "Bayesian Updating of Drug A Efficacy",
+            "role": "estimation",
+            "concepts": [
+              "bayesian-inference",
+              "bayesian-updating",
+              "uncertainty"
+            ],
+            "explanation": "We adopt the prior distribution of the unknown parameter of a drug’s efficacy distribution and likelihood function for patient responses from Berry (2004).",
+            "searchPhrases": [
+              "how bayesian updating of drug a efficacy is represented",
+              "estimation procedure in platforms and marketplaces",
+              "bayesian updating of drug a efficacy estimation procedure specification"
+            ],
+            "formal": "Estimation relation: We adopt the prior distribution of the unknown parameter of a drug’s efficacy distribution and likelihood function for patient responses from Berry (2004).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Per Assumption A.2, the mean of the prior distribution for the success-probability efficacy is α0=(α0 + β0).",
+              "Moreover, once the firm observes XA,j at τj, the posterior distribution of μA, given YA,j, can be computed via Bayes’ rule, and the formulation repeats in the next interim period.",
+              "The prior distribution of efficacy μA is a normal (μ0,σ2 0), and the distribution of the sum of treatment responses XA,j is a normal (∆njμA,∆njσ2 A), where we assume that σ2 A is known; or Assumption A.2 (Binary Responses)."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.5. Bayesian Updating of Drug A Efficacy",
+                "equation": "",
+                "quote": "We adopt the prior distribution of the unknown parameter of a drug’s efficacy distribu­ tion and likelihood function for patient responses from Berry (2004)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "bayesian-inference",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Bayesian inference as “Bayesian updating”: “Bayesian updating”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "bayesian-updating",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Bayesian updating: “Bayesian updating”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Uncertainty as “unknown parameter”: “adopt the prior distribution of the unknown parameter of a drug’s efficacy distribution and likelihood function”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "influence-of-model-parameters-on-the-value",
+            "label": "Influence of Model Parameters on the Value",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Because the value of a clinical trial increases as the parameters p0, κ0, and κ0 increase, firms can select which trials to continue by using these model parameters per part (1).",
+            "searchPhrases": [
+              "how influence of model parameters on the value is represented",
+              "decision rule in platforms and marketplaces",
+              "influence of model parameters on the value decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The parameters p0, κ0, and κ0 are known before the start of a clinical trial.",
+              "Because the value of a clinical trial increases as the parameters p0, κ0, and κ0 increase, firms can select which trials to continue by using these model parameters per part (1)."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.2.4. Influence of Model Parameters on the Value",
+                "equation": "",
+                "quote": "Because the value of a clinical trial increases as the parameters p0, κ0, and κ0 increase, firms can select which trials to continue by using these model parameters per part (1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Because the value of a clinical trial increases as the parameters p0, κ0, and κ0 increase, firms can”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 4,
+        "transformation": "relation-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "7435fb55d9b4a73dc5fe978ec348938cc6392c59669eb96637f0e3627af8abb5",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "2099127243c1d4620acd5ea55df60c239a514aae74c6c56753abc8f48dfcd2b7",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-1162/2099127243c1d4620acd5ea55df60c239a514aae74c6c56753abc8f48dfcd2b7.json",
+      "extractionQaDecisionSha256": "a3e9df733b948ad867fda06ba10965c706f7e1b8291d7721b90de84b1d3bed56",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

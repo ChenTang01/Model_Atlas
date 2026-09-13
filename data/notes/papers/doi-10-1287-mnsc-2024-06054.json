@@ -1,0 +1,684 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2024-06054",
+  "sourcePdfSha256": "e4d31edb47e1a52156b6564dc1af22f216c29ca2ecf487287afd4898cb0f726d",
+  "extractionPagesSha256": "438311d35519af7deb38932e12d0a3677044f56605f578842b56b16825593111",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "f5994429359edf9adc79ddc010e1d93d48d0d0c89fb303d2a61a17c34e3dbef6",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "056e1696bc06820f11ac794ecd3ea0e8726a33e85b41d513dce2895caaeaf76a",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-06054/056e1696bc06820f11ac794ecd3ea0e8726a33e85b41d513dce2895caaeaf76a.json",
+  "extractionQaDecisionSha256": "d92766c9f55a2af446d9e07b05e75549e5e3dd0be395eaf476e6a3e2951c23c7",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-06054",
+    "question": "Will banning behavioral tracking make ad-funded media choose more extreme content, and how does competition change that response?",
+    "overview": "Media firms strategically choose ideological positions, consumers self-select among content or an outside option, and firms then choose ads using information revealed by tracking or content choice. The paper explicitly analyzes pure-strategy Perfect Bayesian equilibria under behavioral and contextual targeting for monopoly and duopoly markets.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        11,
+        14
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Privacy and Polarization model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Media firms strategically choose ideological positions, consumers self-select among content or an outside option, and firms then choose ads using information revealed by tracking or content choice. The paper explicitly analyzes pure-strategy Perfect Bayesian equilibria under behavioral and contextual targeting for monopoly and duopoly markets.",
+        "objects": [
+          "One monopolist or two competing media firms",
+          "Ideologically heterogeneous consumers"
+        ],
+        "inputs": [
+          "Each consumer observes the relevant firm positions and a firm-specific idiosyncratic utility shock",
+          "Under behavioral targeting the firm's information is {x,theta}; under contextual targeting it is only the chosen content x",
+          "A contextual firm uses Bayes' rule to infer the posterior distribution of types among its audience",
+          "Firm positions and the targeting regime are common knowledge"
+        ],
+        "decisions": [
+          "Choose mainstream or one of two niche ideological positions",
+          "Choose a media firm's content or an outside option",
+          "Choose an impression-level ad location or type",
+          "An ideological positioning strategy x",
+          "Ad a if the consumer generates an impression by choosing the media firm’s content"
+        ],
+        "assumptions": [
+          "Baseline types are discrete and symmetric: mass lambda at each extreme and 1-2lambda at the center, with the focal range lambda in [1/3,1/2]",
+          "Firm positions are restricted to 0, 1/2, or 1 in the baseline",
+          "Each consumer chooses at most one content unit and receives base utility 1/2 minus ideological distance plus an idiosyncratic shock",
+          "Each impression carries one ad; its match value is 1-gamma(a-theta)^2, and a competitive ad market transfers expected match value to the media firm",
+          "Behavioral targeting reveals type perfectly whereas contextual targeting contains no individual tracking in the polar benchmark comparison"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "One monopolist or two competing media firms",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "one monopolist or two competing media firms"
+              }
+            },
+            {
+              "value": "Ideologically heterogeneous consumers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "ideologically heterogeneous consumers"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each consumer observes the relevant firm positions and a firm-specific idiosyncratic utility shock",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each consumer observes the relevant firm positions and a firm-specific idiosyncratic utility shock before choosing content."
+              }
+            },
+            {
+              "value": "Under behavioral targeting the firm's information is {x,theta}; under contextual targeting it is only the chosen content x",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Under behavioral targeting the firm's information is {x,theta}; under contextual targeting it is only the chosen content x."
+              }
+            },
+            {
+              "value": "A contextual firm uses Bayes' rule to infer the posterior distribution of types among its audience",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "A contextual firm uses Bayes' rule to infer the posterior distribution of types among its audience."
+              }
+            },
+            {
+              "value": "Firm positions and the targeting regime are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Firm positions and the targeting regime are common knowledge."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Choose mainstream or one of two niche ideological positions",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "choose mainstream or one of two niche ideological positions"
+              }
+            },
+            {
+              "value": "Choose a media firm's content or an outside option",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "choose a media firm's content or an outside option"
+              }
+            },
+            {
+              "value": "Choose an impression-level ad location or type",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "choose an impression-level ad location or type"
+              }
+            },
+            {
+              "value": "An ideological positioning strategy x",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 28,
+                "quote": "In the second stage, each media firm chooses an ideological positioning strategy x to maximize its expected profits",
+                "matchedText": "an ideological positioning strategy x",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Ad a if the consumer generates an impression by choosing the media firm’s content",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 45,
+                "quote": "In the final stage, the media firm chooses ad a if the consumer generates an impression by choosing the media firm’s content",
+                "matchedText": "ad a if the consumer generates an impression by choosing the media firm’s content",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Baseline types are discrete and symmetric: mass lambda at each extreme and 1-2lambda at the center, with the focal range lambda in [1/3,1/2]",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Baseline types are discrete and symmetric: mass lambda at each extreme and 1-2lambda at the center, with the focal range lambda in [1/3,1/2]."
+              }
+            },
+            {
+              "value": "Firm positions are restricted to 0, 1/2, or 1 in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Firm positions are restricted to 0, 1/2, or 1 in the baseline."
+              }
+            },
+            {
+              "value": "Each consumer chooses at most one content unit and receives base utility 1/2 minus ideological distance plus an idiosyncratic shock",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each consumer chooses at most one content unit and receives base utility 1/2 minus ideological distance plus an idiosyncratic shock."
+              }
+            },
+            {
+              "value": "Each impression carries one ad; its match value is 1-gamma(a-theta)^2, and a competitive ad market transfers expected match value to the media firm",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each impression carries one ad; its match value is 1-gamma(a-theta)^2, and a competitive ad market transfers expected match value to the media firm."
+              }
+            },
+            {
+              "value": "Behavioral targeting reveals type perfectly whereas contextual targeting contains no individual tracking in the polar benchmark comparison",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Behavioral targeting reveals type perfectly whereas contextual targeting contains no individual tracking in the polar benchmark comparison."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors solve the ad stage from posterior quadratic loss, express contextual-targeting profits through audience-type variance, derive audience demand at each position, and compare equilibrium positions under behavioral and contextual information.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          }
+        ],
+        "sources": [
+          {
+            "page": 11,
+            "section": "5.3. Duopoly",
+            "equation": "",
+            "quote": "In particular, when 1=3 < λ < λ1 and γ > max{γd,γd′}, equilibria across the two regimes display opposite properties: Equilibrium under behavioral ad targeting features both firms choosing the mainstream ideological positioning, whereas equilibrium under contextual ad targeting features the two firms pick­ ing opposite niche ideological positions."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Choose mainstream or one of two niche ideological positions choose a media firm's content or an outside option choose an impression-level ad location or type",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in how tracking bans can induce media firms to polarize content to infer consumer types",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Choose mainstream or one of two niche ideological positions choose a media firm's content or an outside option choose an impression-level ad location or type",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\theta in {0, 1/2, 1}",
+                "meaning": "consumer ideological type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x in {0, 1/2, 1}",
+                "meaning": "niche-left, mainstream, or niche-right media position",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a in [0, 1]",
+                "meaning": "advertisement location or target",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Firm positions are restricted to 0, 1/2, or 1 in the baseline.",
+              "Each impression carries one ad; its match value is 1-gamma(a-theta)^2, and a competitive ad market transfers expected match value to the media firm.",
+              "Each consumer chooses at most one content unit and receives base utility 1/2 minus ideological distance plus an idiosyncratic shock."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Model",
+                "equation": "",
+                "quote": "In the second stage, each media firm chooses an ideological positioning strategy x to maximize its expected profits."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “In the second stage, each media firm chooses an ideological positioning strategy x to maximize its expected profits.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "matching"
+            ],
+            "explanation": "Choose ideological position and impression-level ad to maximize audience demand times expected ad match quality, using only the information available under the targeting regime.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in how tracking bans can induce media firms to polarize content to infer consumer types",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\pi(x,a;I)=max_{x,a} D(x) E[1-\\gamma(a-\\theta)^2|I]; a*=E[\\theta|I], and under contextual targeting \\pi_c(x)=max_x D(x)[1-\\gamma Var(\\theta|x)].",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\theta in {0, 1/2, 1}",
+                "meaning": "consumer ideological type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda in [1/3, 1/2]",
+                "meaning": "mass at each extreme type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x in {0, 1/2, 1}",
+                "meaning": "niche-left, mainstream, or niche-right media position",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a in [0, 1]",
+                "meaning": "advertisement location or target",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma",
+                "meaning": "value or penalty intensity of ad-target mismatch",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(x)",
+                "meaning": "consumer demand or impressions generated at position x",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I_b={x, \\theta}, I_c={x}",
+                "meaning": "information under behavioral and contextual targeting",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Privacy(I)=Var(\\theta|I)",
+                "meaning": "posterior uncertainty about consumer type",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "We assume that there is a perfectly competitive ad marketplace, so the revenue-per-impression is the same as the expected match value of the ad for a given impression.11 Let I denote the information available for each impression.",
+              "Each impression carries one ad; its match value is 1-gamma(a-theta)^2, and a competitive ad market transfers expected match value to the media firm.",
+              "Behavioral targeting reveals type perfectly whereas contextual targeting contains no individual tracking in the polar benchmark comparison.",
+              "Each consumer chooses at most one content unit and receives base utility 1/2 minus ideological distance plus an idiosyncratic shock."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "(2)–(3)",
+                "quote": "We assume that there is a perfectly competitive ad marketplace, so the revenue-per-impression is the same as the expected match value of the ad for a given impression.11 Let I denote the information available for each impression."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Matching: “Matching”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "consumer-choice"
+            ],
+            "explanation": "Consumer type theta is one of 0, 1/2, or 1 and is observed by firms under behavioral tracking but remains private under contextual targeting. Each consumer observes the relevant firm positions and a firm-specific idiosyncratic utility shock before choosing content. Under behavioral targeting the firm's information is {x,theta}; under contextual targeting it is only the chosen content x. A contextual firm uses Bayes' rule to infer the posterior distribution of types among its audience.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in how tracking bans can induce media firms to polarize content to infer consumer types",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\theta in {0, 1/2, 1}",
+                "meaning": "consumer ideological type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda in [1/3, 1/2]",
+                "meaning": "mass at each extreme type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x in {0, 1/2, 1}",
+                "meaning": "niche-left, mainstream, or niche-right media position",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a in [0, 1]",
+                "meaning": "advertisement location or target",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(x)",
+                "meaning": "consumer demand or impressions generated at position x",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I_b={x, \\theta}, I_c={x}",
+                "meaning": "information under behavioral and contextual targeting",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Baseline types are discrete and symmetric: mass lambda at each extreme and 1-2lambda at the center, with the focal range lambda in [1/3,1/2].",
+              "Firm positions are restricted to 0, 1/2, or 1 in the baseline.",
+              "Each consumer chooses at most one content unit and receives base utility 1/2 minus ideological distance plus an idiosyncratic shock."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "5.1. Equilibrium Concept",
+                "equation": "",
+                "quote": "Specifically, when the firm chooses the advertising location in the last period, it uses Bayes’ rule to update its belief about consumer type based on the consumer’s equilibrium content choice."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "consumer-choice",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Consumer choice: “Specifically, when the firm chooses the advertising location in the last period, it uses Bayes’ rule to update”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "At stage 1 each consumer's ideological type theta is realized; firms observe it under behavioral targeting but not under contextual targeting. At stage 2 media firms choose ideological positions x. At stage 3 consumers observe positions and idiosyncratic tastes and choose one firm's content or the outside option. At stage 4 each chosen firm selects an ad a using the information allowed by the targeting regime and earns the ad-consumer match value.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in how tracking bans can induce media firms to polarize content to infer consumer types",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\theta in {0, 1/2, 1}",
+                "meaning": "consumer ideological type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda in [1/3, 1/2]",
+                "meaning": "mass at each extreme type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x in {0, 1/2, 1}",
+                "meaning": "niche-left, mainstream, or niche-right media position",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a in [0, 1]",
+                "meaning": "advertisement location or target",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(x)",
+                "meaning": "consumer demand or impressions generated at position x",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I_b={x, \\theta}, I_c={x}",
+                "meaning": "information under behavioral and contextual targeting",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In particular, when 1=3 < λ < λ1 and γ > max{γd,γd′}, equilibria across the two regimes display opposite properties: Equilibrium under behavioral ad targeting features both firms choosing the mainstream ideological positioning, whereas equilibrium under contextual ad targeting features the two firms picking opposite niche ideological positions.",
+              "Baseline types are discrete and symmetric: mass lambda at each extreme and 1-2lambda at the center, with the focal range lambda in [1/3,1/2].",
+              "Firm positions are restricted to 0, 1/2, or 1 in the baseline.",
+              "Each consumer chooses at most one content unit and receives base utility 1/2 minus ideological distance plus an idiosyncratic shock."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.3. Duopoly",
+                "equation": "",
+                "quote": "In particular, when 1=3 < λ < λ1 and γ > max{γd,γd′}, equilibria across the two regimes display opposite properties: Equilibrium under behavioral ad targeting features both firms choosing the mainstream ideological positioning, whereas equilibrium under contextual ad targeting features the two firms pick­ ing opposite niche ideological positions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “In particular, when 1=3 < λ < λ1 and γ > max{γd,γd′}, equilibria across the two regimes display”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "pure-strategy-perfect-bayesian-equilibrium",
+            "label": "Pure-strategy Perfect Bayesian equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "competition"
+            ],
+            "explanation": "The model's equilibrium concept is Pure-strategy Perfect Bayesian equilibrium. Firms' positioning and ad decisions and consumers' content choices are sequentially optimal. In the final advertising stage, contextual firms update beliefs about consumer types by Bayes' rule from equilibrium content choices and choose posterior-mean ads. The paper characterizes the resulting monopoly and duopoly pure-strategy PBE regions.",
+            "searchPhrases": [
+              "how pure-strategy perfect bayesian equilibrium is represented",
+              "strategic response in how tracking bans can induce media firms to polarize content to infer consumer types",
+              "pure-strategy perfect bayesian equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Pure-strategy Perfect Bayesian equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\theta in {0, 1/2, 1}",
+                "meaning": "consumer ideological type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda in [1/3, 1/2]",
+                "meaning": "mass at each extreme type",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(x)",
+                "meaning": "consumer demand or impressions generated at position x",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I_b={x, \\theta}, I_c={x}",
+                "meaning": "information under behavioral and contextual targeting",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Privacy(I)=Var(\\theta|I)",
+                "meaning": "posterior uncertainty about consumer type",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Baseline types are discrete and symmetric: mass lambda at each extreme and 1-2lambda at the center, with the focal range lambda in [1/3,1/2].",
+              "Behavioral targeting reveals type perfectly whereas contextual targeting contains no individual tracking in the polar benchmark comparison.",
+              "Each consumer chooses at most one content unit and receives base utility 1/2 minus ideological distance plus an idiosyncratic shock."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "6.1. General Base Utility",
+                "equation": "",
+                "quote": "It is still the case that the media firm’s ideological positioning has an inference role for the firm under contextual ad targeting, that a media firm will choose more polarized content in equilibrium to increase profit per consumer despite the lower total demand and potentially lower consumer welfare and that competition strengthens firms’ infer­ ence incentive."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "competition",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Competition: “potentially lower consumer welfare and that Competition strengthens firms’ inference incentive.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e4d31edb47e1a52156b6564dc1af22f216c29ca2ecf487287afd4898cb0f726d",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "056e1696bc06820f11ac794ecd3ea0e8726a33e85b41d513dce2895caaeaf76a",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-06054/056e1696bc06820f11ac794ecd3ea0e8726a33e85b41d513dce2895caaeaf76a.json",
+      "extractionQaDecisionSha256": "d92766c9f55a2af446d9e07b05e75549e5e3dd0be395eaf476e6a3e2951c23c7",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

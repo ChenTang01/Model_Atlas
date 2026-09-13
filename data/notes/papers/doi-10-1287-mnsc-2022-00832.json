@@ -1,0 +1,2198 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2022-00832",
+  "sourcePdfSha256": "5c1851a9f59b4da66fe8a7925e5e6e546ac3ff0a1257dd0c2d95b90fe2b6088f",
+  "extractionPagesSha256": "5d032322ae0fe7468ad84e791aa9b3a21f7864ce26ed791e3f78ee99ecb15036",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "a4300241aaded05bcd7729e5dc913256574af91b9a315e134ae65951a49d021c",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "3225634c349e51ad9ade6deb6b39dc0f37faad25df7b43b8a76bc54d614b9abc",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00832/3225634c349e51ad9ade6deb6b39dc0f37faad25df7b43b8a76bc54d614b9abc.json",
+  "extractionQaDecisionSha256": "445b83e85c080b52bde90b423f2388ff50e04dc3993b9532ac57ccca7e37945d",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-00832",
+    "question": "How does the market operator determine the prices dynamically for both clients and vendors?",
+    "overview": "The model considers a two-sided marketplace in which a market operator sells services to clients and buys services from vendors. The market operator determines the prices dynamically for both clients and vendors. Services are transacted in discrete units called jobs, and the jobs are characterized by their types, service deadlines, client prices, and vendor prices.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "dynamic-program-formulation",
+        "name": "Dynamic Program Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers a two-sided marketplace in which a market operator sells services to clients and buys services from vendors. The market operator determines the prices dynamically for both clients and vendors. Services are transacted in discrete units called jobs, and the jobs are characterized by their types, service deadlines, client prices, and vendor prices.",
+        "objects": [
+          "Operator",
+          "Clients",
+          "Vendors",
+          "A customer",
+          "The platform"
+        ],
+        "inputs": [
+          "Initial lead time",
+          "The client prices set by the market operator",
+          "The initial state",
+          "Time t",
+          "Lead times"
+        ],
+        "decisions": [
+          "The prices",
+          "The same price for different jobs with the same lead time",
+          "Whether to submit the shipment",
+          "A vendor price pl",
+          "Pricing decisions"
+        ],
+        "assumptions": [
+          "In this section, we consider a fixed price trajectory policy that applies the prices as a function of lead time obtained from an optimal solution of the DTFM.",
+          "Vendors choose among available jobs in the marketplace according to the following MNL model",
+          "Clients choose lead times according to an MNL model",
+          "The initial state is X(0) = 0",
+          "For any stationary policy φ, let γφ denote the long-run average reward per period under policy φ"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Operator",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We consider a two-sided marketplace in which a market operator sells services to clients and buys services from vendors.",
+                "matchedText": "operator",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Clients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We consider a two-sided marketplace in which a market operator sells services to clients and buys services from vendors.",
+                "matchedText": "clients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Vendors",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We consider a two-sided marketplace in which a market operator sells services to clients and buys services from vendors.",
+                "matchedText": "vendors",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A customer",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 15,
+                "quote": "For example, in grocery delivery marketplaces, a customer may be flexible and consider multiple delivery time slots.",
+                "matchedText": "a customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The platform",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 15,
+                "quote": "We consider this choice model because it seems suitable for two-sided marketplace applications such as freight and crowdsourced deliv­ ery, in which different jobs with the same lead time are listed separately on the platform because they are distinct jobs.",
+                "matchedText": "the platform",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Initial lead time",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 54,
+                "quote": "initial lead time",
+                "matchedText": "initial lead time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The client prices set by the market operator",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 14,
+                "quote": "In the flexible demand model, a client observes the client prices set by the mar­ ket operator and then chooses a lead time for its job."
+              }
+            },
+            {
+              "value": "The initial state",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Program Formulation",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 8,
+                "quote": "A sufficient condition for the long-run aver­ age reward per period γφ to exist and not depend on the initial state is the existence of a special state such that, for all initial states, the special state is recurrent (see, e.g., Bertsekas 2017, proposition 5.5.1).",
+                "matchedText": "the initial state",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 30,
+                "quote": "For example, consider two jobs, one with lead time t and the other with lead time t + 1 under the current partition.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Lead times",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 16,
+                "quote": "In such a setting, we assume that clients choose lead times according to an MNL model.",
+                "matchedText": "lead times",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The prices",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The market operator determines the prices dynamically for both clients and vendors.",
+                "matchedText": "the prices",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The same price for different jobs with the same lead time",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 16,
+                "quote": "Different jobs with the same lead time may have different values of attributes other than lead time, and these attributes may be taken into account by vendors even though the market operator offers the same price for different jobs with the same lead time",
+                "matchedText": "the same price for different jobs with the same lead time",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Whether to submit the shipment",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 7,
+                "quote": "For example, in truckload transportation marketplaces, the pickup time of a shipment often is determined in advance by considerations such as the completion time of the picking and packing of the ship­ ment and loading dock availability, and although the cli­ ent may still choose whether to submit the shipment based on the client price, the client is not likely to change the pickup time of the shipment in response to the prices.",
+                "matchedText": "whether to submit the shipment based on the client price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A vendor price pl",
+              "source": {
+                "type": "section",
+                "section": "Finite Horizon Problem",
+                "page": 19,
+                "sectionIndex": 21,
+                "sentence": 9,
+                "quote": "Also, in each period, the market operator observes the number of remaining jobs xℓ and chooses a vendor price pℓ",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Pricing decisions",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 23,
+                "sentence": 3,
+                "quote": "One major distinction between these papers and our work is that the other papers consider centralized matching decisions, whereas our paper con­ siders pricing decisions by the market operator with matching decisions being made by vendors in a decen­ tralized manner according to their preferences.",
+                "matchedText": "pricing decisions",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we consider a fixed price trajectory policy that applies the prices as a function of lead time obtained from an optimal solution of the DTFM.",
+              "source": {
+                "type": "section",
+                "section": "Fixed Price Trajectory Policy and Asymptotic Optimality",
+                "page": 10,
+                "quote": "In this section, we consider a fixed price trajectory policy that applies the prices as a function of lead time obtained from an optimal solution of the DTFM."
+              }
+            },
+            {
+              "value": "Vendors choose among available jobs in the marketplace according to the following MNL model",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 1,
+                "quote": "We assume that vendors choose among available jobs in the marketplace according to the following MNL model.",
+                "matchedText": "vendors choose among available jobs in the marketplace according to the following MNL model.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Clients choose lead times according to an MNL model",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 16,
+                "quote": "In such a setting, we assume that clients choose lead times according to an MNL model.",
+                "matchedText": "clients choose lead times according to an MNL model.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The initial state is X(0) = 0",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Program Formulation",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "Assume that the initial state is X(0) = 0.",
+                "matchedText": "the initial state is X(0) = 0.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "For any stationary policy φ, let γφ denote the long-run average reward per period under policy φ",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Program Formulation",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 15,
+                "quote": "For any stationary policy φ, let γφ denote the long-run average reward per period under policy φ",
+                "matchedText": "For any stationary policy φ, let γφ denote the long-run average reward per period under policy φ",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper formulates the dynamic pricing problem as a discrete-time, infinite horizon, average reward MDP.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Problem Formulation",
+          "page": 5,
+          "sentence": 35
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "2. Problem Formulation",
+            "equation": "",
+            "quote": "Vendors arrive dynamically to the marketplace and check the available jobs in the mar­ ketplace and their attributes, including prices and deadlines."
+          }
+        ],
+        "components": [
+          {
+            "id": "problem-formulation",
+            "label": "Problem Formulation",
+            "role": "process",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Vendors arrive dynamically to the marketplace and check the available jobs in the marketplace and their attributes, including prices and deadlines.",
+            "searchPhrases": [
+              "how problem formulation is represented",
+              "system process in pricing, consumers, and revenue management",
+              "problem formulation system process specification"
+            ],
+            "formal": "Process relation: Vendors arrive dynamically to the marketplace and check the available jobs in the marketplace and their attributes, including prices and deadlines.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If a job reaches its deadline before being booked by a vendor, it is removed from the marketplace, and the market operator pays a penalty.",
+              "The market operator partitions time into periods with sufficiently small length such that, in each period, at most one vendor arrives to check the available jobs in the marketplace and at most one client arrives to consider submitting a job to the marketplace."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Problem Formulation",
+                "equation": "",
+                "quote": "Vendors arrive dynamically to the marketplace and check the available jobs in the mar­ ketplace and their attributes, including prices and deadlines."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Pricing: “Vendors arrive dynamically to the marketplace and check the available jobs in the marketplace and their attributes, including”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "dynamic-program-formulation",
+            "label": "Dynamic Program Formulation",
+            "role": "process",
+            "concepts": [
+              "dynamic-programming",
+              "dynamic-pricing"
+            ],
+            "explanation": "The model considers the dynamic pricing problem over an infinite horizon.",
+            "searchPhrases": [
+              "how dynamic program formulation is represented",
+              "system process in pricing, consumers, and revenue management",
+              "dynamic program formulation system process specification"
+            ],
+            "formal": "Process relation: The model considers the dynamic pricing problem over an infinite horizon.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let p(t) ∈P and q(t) ∈Q denote the prices set by the market operator to vendors and clients, respectively, in period t."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.1. Dynamic Program Formulation",
+                "equation": "",
+                "quote": "We consider the dynamic pricing problem over an infi­ nite horizon."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Dynamic programming as “dynamic program”: “We consider the dynamic pricing problem over an infinite horizon.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "dynamic-pricing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Dynamic pricing: “We consider the dynamic pricing problem over an infinite horizon.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "fixed-price-trajectory-policy-and-asymptotic-optimality",
+            "label": "Fixed Price Trajectory Policy and Asymptotic Optimality",
+            "role": "interaction",
+            "concepts": [
+              "pricing",
+              "strategic-interaction"
+            ],
+            "explanation": "We provide an analysis of vendors’ strategic behavior in Online Appendix H.",
+            "searchPhrases": [
+              "how fixed price trajectory policy and asymptotic optimality is represented",
+              "strategic response in pricing, consumers, and revenue management",
+              "fixed price trajectory policy and asymptotic optimality strategic response specification"
+            ],
+            "formal": "Strategic response: We provide an analysis of vendors’ strategic behavior in Online Appendix H.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this section, we consider a fixed price trajectory policy that applies the prices as a function of lead time obtained from an optimal solution of the DTFM.",
+              "Asymptotic Optimality In this section, we consider a fixed price trajectory policy that applies the prices as a function of lead time obtained from an optimal solution of the DTFM."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5. Fixed Price Trajectory Policy and Asymptotic Optimality",
+                "equation": "",
+                "quote": "We provide an analysis of vendors’ stra­ tegic behavior in Online Appendix H."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “We provide an analysis of vendors’ strategic behavior in Online Appendix H.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Strategic interaction as “strategic behavior”: “We provide an analysis of vendors’ strategic behavior in Online Appendix H.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "asymptotic-regime",
+            "label": "Asymptotic Regime",
+            "role": "preference",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Otherwise, if the null alternative preference weight is a constant (e.g., one), then the probability of choosing the null alternative converges to zero as θ increases, and the vendor pricing problem becomes trivial.",
+            "searchPhrases": [
+              "how asymptotic regime is represented",
+              "modeled preferences in pricing, consumers, and revenue management",
+              "asymptotic regime modeled preferences specification"
+            ],
+            "formal": "Evaluation rule: compare choices using the payoff or utility specified in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In other words, the length of one period—the length of one lead time interval—is equal to 1=θ in clock time.",
+              "Otherwise, if the null alternative preference weight is a constant (e.g., one), then the probability of choosing the null alternative converges to zero as θ increases, and the vendor pricing problem becomes trivial.",
+              "In the alternative regime, as the market size increases, the range (0,L] of lead times, measured in clock time (as opposed to discrete time periods), remains unchanged."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. Asymptotic Regime",
+                "equation": "",
+                "quote": "Otherwise, if the null alternative prefer­ ence weight is a constant (e.g., one), then the probability of choosing the null alternative converges to zero as θ increases, and the vendor pricing problem becomes triv­ ial."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Pricing: “as θ increases, and the vendor Pricing problem becomes trivial.”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "asymptotic-optimality",
+            "label": "Asymptotic Optimality",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "To establish the asymptotic optimality of policy ˆφθ, we bound the loss of policy ˆφθ relative to the optimal objective value ˆR θ of the θ-scaled DTFM.",
+            "searchPhrases": [
+              "how asymptotic optimality is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "asymptotic optimality modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "It follows from Corollary 1 that the optimal value of the θ-scaled DTFM satisfies ˆR θ = Θ(1), that is, there exists constants K1,K2 > 0 independent of θ such that K1 ≤ˆR θ ≤K2 for all θ.",
+              "The fixed price trajectory policy ˆφθ is asymptotically optimal."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.2. Asymptotic Optimality",
+                "equation": "",
+                "quote": "To establish the asymptotic optimality of policy ˆφθ, we bound the loss of policy ˆφθ relative to the optimal objective value ˆR θ of the θ-scaled DTFM."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "trajectory-policy-and-the-constant-pricing-policy",
+            "label": "Trajectory Policy and the Constant Pricing Policy",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "To analyze the performance of the fixed price trajectory policy produced by the DTFM, we consider an asymptotic regime similar to that in Section 5 in which Figure 8.",
+            "searchPhrases": [
+              "how trajectory policy and the constant pricing policy is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "trajectory policy and the constant pricing policy decision rule specification"
+            ],
+            "formal": "Decision rule: To analyze the performance of the fixed price trajectory policy produced by the DTFM, we consider an asymptotic regime similar to that in Section 5 in which Figure 8.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let vκ,l(p) := exp(βp + β0 κ,l) denote this preference weight, where β denotes the price coefficient and β0 κ,l denotes the mean nonmonetary utility of accepting a job of type κ and lead time l.",
+              "Let ̃vκ,l(q) := exp( ̃βq + ̃β 0 κ,l) denote this preference weight, where ̃β denotes the price coefficient and ̃β 0 κ,l denotes the mean nonmonetary utility of submitting a job of type κ and initial lead time l.",
+              "To analyze the performance of the fixed price trajectory policy produced by the DTFM, we consider an asymptotic regime similar to that in Section 5 in which Figure 8.",
+              "In each period, with probability μ, a vendor checks the offers in the marketplace and chooses from a choice set that includes all available jobs as before."
+            ],
+            "sources": [
+              {
+                "page": 18,
+                "section": "Trajectory Policy and the Constant Pricing Policy",
+                "equation": "",
+                "quote": "To analyze the performance of the fixed price trajec­ tory policy produced by the DTFM, we consider an asymptotic regime similar to that in Section 5 in which Figure 8."
+              },
+              {
+                "page": 12,
+                "section": "5.2. Asymptotic Optimality",
+                "equation": "Theorem 1",
+                "quote": "If the random number of available jobs in the marketplace with a par­ ticular lead time increases, then the probability that a vendor chooses a job with the same lead time also increases and vice versa."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “To analyze the performance of the fixed price trajectory policy produced by the DTFM, we consider an asymptotic”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "proof-outline-of-theorem-1",
+            "label": "Proof Outline of Theorem 1",
+            "role": "objective",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Next, we bound the expected long-run average reward of the fixed price trajectory policy.",
+            "searchPhrases": [
+              "how proof outline of theorem 1 is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "proof outline of theorem 1 modeled objective specification"
+            ],
+            "formal": "Objective relation: Next, we bound the expected long-run average reward of the fixed price trajectory policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The proof of Lemma 2 bounds Var(Pθ l=k alXθ l) directly, using induction over time and the ergodicity of the Markov chain under the fixed price trajectory policy ˆφθ.",
+              "Next, we bound the expected long-run average reward of the fixed price trajectory policy.",
+              "For any θ, let Xθ denote the state vector under the stationary distribution of the fixed price trajectory policy ˆφθ."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.3. Proof Outline of Theorem 1",
+                "equation": "",
+                "quote": "Next, we bound the expected long-run average reward of the fixed price trajectory policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Pricing: “Next, we bound the expected long-run average reward of the fixed price trajectory policy.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "state-dependent-pricing-policy",
+            "label": "State-Dependent Pricing Policy",
+            "role": "state",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The state-dependent pricing policy implements the optimal prices ( ̃pθ ·,1, ̃qθ ·,1) for the initial period.",
+            "searchPhrases": [
+              "how state-dependent pricing policy is represented",
+              "decision-relevant state in pricing, consumers, and revenue management",
+              "state-dependent pricing policy decision-relevant state specification"
+            ],
+            "formal": "State rule: collect the decision-relevant variables defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We compare the performance of the fixed price trajectory policy and the state-dependent pricing policy with values of the meta-parameters γ ∈{1,100} and K ∈{1:2,1:5,2:0}.",
+              "We optimize the transient fluid process starting from the current system state ̄xθ over a time horizon of Tθ = ⌊Kθ⌋periods, where K > 0 is a meta-parameter that we choose.",
+              "After that, clients and vendors arrive, any transactions are settled, and the system state is updated to ̄xθ new."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "6.2. State-Dependent Pricing Policy",
+                "equation": "",
+                "quote": "The state-dependent pricing policy implements the optimal prices (˜pθ ·,1, ˜qθ ·,1) for the initial period."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "multiple-job-types",
+            "label": "Multiple Job Types",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "In the previous sections, we considered pricing problems that treat jobs as homogeneous except for their lead times; from the market operator’s perspective, the jobs are only distinguished by different lead times.",
+            "searchPhrases": [
+              "how multiple job types is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "multiple job types decision rule specification"
+            ],
+            "formal": "Decision rule: In the previous sections, we considered pricing problems that treat jobs as homogeneous except for their lead times; from the market operator’s perspective, the jobs are only distinguished by different lead times.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the market operator classifies the jobs into a finite set of types denoted by K."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "7.1. Multiple Job Types",
+                "equation": "",
+                "quote": "In the previous sections, we considered pricing pro­ blems that treat jobs as homogeneous except for their lead times; from the market operator’s perspective, the jobs are only distinguished by different lead times."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "finite-horizon-problem",
+            "label": "Finite Horizon Problem",
+            "role": "information",
+            "concepts": [
+              "pricing",
+              "optimization"
+            ],
+            "explanation": "We define an associated fluid optimization problem, which provides a fixed price trajectory policy.",
+            "searchPhrases": [
+              "how finite horizon problem is represented",
+              "information available to the decision maker in pricing, consumers, and revenue management",
+              "finite horizon problem information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We define an associated fluid optimization problem, which provides a fixed price trajectory policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We define an associated fluid optimization problem, which provides a fixed price trajectory policy.",
+              "Initially, in period l= L, there are λ jobs with lead time L available in the marketplace.",
+              "Also, in each period, the market operator observes the number of remaining jobs xl and chooses a vendor price pl."
+            ],
+            "sources": [
+              {
+                "page": 19,
+                "section": "7.3. Finite Horizon Problem",
+                "equation": "",
+                "quote": "We define an associated fluid optimiza­ tion problem, which provides a fixed price trajectory pol­ icy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Pricing: “We define an associated fluid optimization problem, which provides a fixed price trajectory policy.”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Optimization: “We define an associated fluid optimization problem, which provides a fixed price trajectory policy.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vendor-choice-model",
+        "name": "Vendor Choice Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Program Formulation.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "dynamic-program-formulation"
+          }
+        ],
+        "summary": "The model considers this choice model because it seems suitable for two-sided marketplace applications such as freight and crowdsourced delivery, in which different jobs with the same lead time are listed separately on the platform because they are distinct jobs.",
+        "objects": [
+          "The platform",
+          "Vendors",
+          "Operator",
+          "Facilities",
+          "The probability that a vendor"
+        ],
+        "inputs": [
+          "Time l",
+          "The lead time",
+          "Time t"
+        ],
+        "decisions": [
+          "The same price for different jobs with the same lead time"
+        ],
+        "assumptions": [
+          "Vendors choose among available jobs in the marketplace according to the following MNL model"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The platform",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "We consider this choice model because it seems suitable for two-sided marketplace applications such as freight and crowdsourced deliv­ ery, in which different jobs with the same lead time are listed separately on the platform because they are distinct jobs.",
+                "matchedText": "the platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Vendors",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We assume that vendors choose among available jobs in the marketplace according to the following MNL model.",
+                "matchedText": "vendors",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Operator",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 16,
+                "quote": "Different jobs with the same lead time may have different values of attributes other than lead time, and these attributes may be taken into account by vendors even though the market operator offers the same price for different jobs with the same lead time.",
+                "matchedText": "operator",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Facilities",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "However, the loads are distinct because they are listed by different shippers with different facilities or they have different cargo types or cargo weights.",
+                "matchedText": "facilities",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The probability that a vendor",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "sectionIndex": 0,
+                "page": 6,
+                "quote": "The probability that a vendor chooses not to book any job in the marketplace"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Time l",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "The setting in which parameter β0,ℓ is allowed to depend on the lead time ℓ is called the heterogeneous preference setting.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The lead time",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "The setting in which parameter β0,ℓ is allowed to depend on the lead time ℓ is called the heterogeneous preference setting.",
+                "matchedText": "the lead time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 30,
+                "quote": "For example, consider two jobs, one with lead time t and the other with lead time t + 1 under the current partition.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The same price for different jobs with the same lead time",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 16,
+                "quote": "Different jobs with the same lead time may have different values of attributes other than lead time, and these attributes may be taken into account by vendors even though the market operator offers the same price for different jobs with the same lead time",
+                "matchedText": "the same price for different jobs with the same lead time",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Vendors choose among available jobs in the marketplace according to the following MNL model",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We assume that vendors choose among available jobs in the marketplace according to the following MNL model.",
+                "matchedText": "vendors choose among available jobs in the marketplace according to the following MNL model.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "Because solving this MDP directly is impractical for large market sizes, we study a discrete-time fluid approximation of the problem.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 8
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.1. Vendor Choice Model",
+            "equation": "",
+            "quote": "We consider this choice model because it seems suitable for two-sided marketplace applications such as freight and crowdsourced deliv­ ery, in which different jobs with the same lead time are listed separately on the platform because they are distinct jobs."
+          }
+        ],
+        "components": [
+          {
+            "id": "vendor-choice-model",
+            "label": "Vendor Choice Model",
+            "role": "preference",
+            "concepts": [
+              "choice-model",
+              "crowdsourcing"
+            ],
+            "explanation": "The model considers this choice model because it seems suitable for two-sided marketplace applications such as freight and crowdsourced delivery, in which different jobs with the same lead time are listed separately on the platform because they are distinct jobs.",
+            "searchPhrases": [
+              "how vendor choice model is represented",
+              "modeled preferences in pricing, consumers, and revenue management",
+              "vendor choice model modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: The model considers this choice model because it seems suitable for two-sided marketplace applications such as freight and crowdsourced delivery, in which different jobs with the same lead time are listed separately on the platform because they are distinct jobs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The linear-weighted MNL model has the property that, if vl(pl) = v is the same for different lead times l, then the vendor’s choice probabilities are invariant to the market operator’s partition of lead time into periods.",
+              "For example, suppose that there are two similar loads on a freight marketplace with the same origin–destination zip codes and the same lead time.",
+              "Because vendors have idiosyncratic preferences for shippers, facilities, or cargo types that are not known to the market operator, the MNL model assumes that the booking probabilities for the two jobs are equal."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. Vendor Choice Model",
+                "equation": "",
+                "quote": "We consider this choice model because it seems suitable for two-sided marketplace applications such as freight and crowdsourced deliv­ ery, in which different jobs with the same lead time are listed separately on the platform because they are distinct jobs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "choice-model",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Discrete choice model as “choice model”: “We consider this choice model because it seems suitable for two-sided marketplace applications”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "crowdsourcing",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Crowdsourcing: “We consider this choice model because it seems suitable for two-sided marketplace applications such as freight and crowdsourced”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "client-choice-model",
+        "name": "Client Choice Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Program Formulation.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "dynamic-program-formulation"
+          }
+        ],
+        "summary": "In the independent demand model, each client arrives with a predetermined job lead time.",
+        "objects": [
+          "A client",
+          "A customer",
+          "Operator",
+          "Vendors"
+        ],
+        "inputs": [
+          "The client prices set by the market operator",
+          "Lead times",
+          "The arrival rates"
+        ],
+        "decisions": [
+          "Whether to submit the shipment",
+          "Whether to submit the job and possibly the lead time of the job"
+        ],
+        "assumptions": [
+          "Clients choose lead times according to an MNL model"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A client",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "When a client enters the marketplace with a job to sub­ mit, the client chooses whether to submit the job and possibly the lead time of the job based on the prices q charged by the market operator.",
+                "matchedText": "a client",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A customer",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "For example, in grocery delivery marketplaces, a customer may be flexible and consider multiple delivery time slots.",
+                "matchedText": "a customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Operator",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "When a client enters the marketplace with a job to sub­ mit, the client chooses whether to submit the job and possibly the lead time of the job based on the prices q charged by the market operator.",
+                "matchedText": "operator",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Vendors",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 20,
+                "quote": "The idea is that, if the input of the optimization prob­ lem, including the arrival rates of clients and vendors and the choice models on both sides, are accurate, then the optimization problem should produce good solutions without additional price constraints.",
+                "matchedText": "vendors",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The client prices set by the market operator",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 14,
+                "quote": "In the flexible demand model, a client observes the client prices set by the mar­ ket operator and then chooses a lead time for its job.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Lead times",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 16,
+                "quote": "In such a setting, we assume that clients choose lead times according to an MNL model.",
+                "matchedText": "lead times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 20,
+                "quote": "The idea is that, if the input of the optimization prob­ lem, including the arrival rates of clients and vendors and the choice models on both sides, are accurate, then the optimization problem should produce good solutions without additional price constraints.",
+                "matchedText": "the arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to submit the shipment",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "For example, in truckload transportation marketplaces, the pickup time of a shipment often is determined in advance by considerations such as the completion time of the picking and packing of the ship­ ment and loading dock availability, and although the cli­ ent may still choose whether to submit the shipment based on the client price, the client is not likely to change the pickup time of the shipment in response to the prices.",
+                "matchedText": "whether to submit the shipment based on the client price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Whether to submit the job and possibly the lead time of the job",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "When a client enters the marketplace with a job to sub­ mit, the client chooses whether to submit the job and possibly the lead time of the job",
+                "matchedText": "whether to submit the job and possibly the lead time of the job",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Clients choose lead times according to an MNL model",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 16,
+                "quote": "In such a setting, we assume that clients choose lead times according to an MNL model.",
+                "matchedText": "clients choose lead times according to an MNL model.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          }
+        ],
+        "method": "Because solving this MDP directly is impractical for large market sizes, we study a discrete-time fluid approximation of the problem.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 8
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.2. Client Choice Model",
+            "equation": "",
+            "quote": "In the independent demand model, each client arrives with a predetermined job lead time."
+          }
+        ],
+        "components": [
+          {
+            "id": "client-choice-model",
+            "label": "Client Choice Model",
+            "role": "preference",
+            "concepts": [
+              "choice-model"
+            ],
+            "explanation": "In the independent demand model, each client arrives with a predetermined job lead time.",
+            "searchPhrases": [
+              "how client choice model is represented",
+              "modeled preferences in pricing, consumers, and revenue management",
+              "client choice model modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: In the independent demand model, each client arrives with a predetermined job lead time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In the independent demand model, each client arrives with a predetermined job lead time."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2. Client Choice Model",
+                "equation": "",
+                "quote": "In the independent demand model, each client arrives with a predetermined job lead time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "choice-model",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Discrete choice model as “choice model”: “In the independent demand model, each client arrives with a predetermined job lead time.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "discrete-time-fluid-approximation",
+        "name": "Discrete-Time Fluid Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Dynamic Program Formulation.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "dynamic-program-formulation"
+          }
+        ],
+        "summary": "In Section 5, we propose a pricing policy for the MDP based on the optimal solution of the fluid optimization problem, and we establish performance guarantees for this pricing policy. For every feasible solution (x,p,q) of the DTFM, there is a feasible solution (x,u,w,s,z,o) of the convex DTFM with the same objective value. The optimal objective value of the DTFM is an upper bound for the long-run average reward per period of the MDP under any stationary policy φ, that is, ˆR ≥ R(φ) for any stationary policy φ.",
+        "objects": [
+          "One client",
+          "One vendor",
+          "State space"
+        ],
+        "inputs": [
+          "Lead time"
+        ],
+        "decisions": [
+          "A pricing policy for the MDP"
+        ],
+        "assumptions": [
+          "Thus, under any stationary policy φ, there exists a unique stationary distribution of the state X",
+          "We show that the optimal objective value of the fluid optimization problem is an upper bound for the long-run average reward per period for the MDP under any stationary policy"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "One client",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Approximation",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "The time periods of the MDP are chosen small enough for the assumption that at most one client arrives and at most one vendor arrives in each time period to be accu­ rate enough in a practical application.",
+                "matchedText": "one client",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "One vendor",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Approximation",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "The time periods of the MDP are chosen small enough for the assumption that at most one client arrives and at most one vendor arrives in each time period to be accu­ rate enough in a practical application.",
+                "matchedText": "one vendor",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "DTFM Gives an Upper Bound of Optimal Reward",
+                "page": 10,
+                "sectionIndex": 2,
+                "sentence": 4,
+                "quote": "This restricted state space is finite because, starting from the empty state, there can be at most L jobs in the system at any time.",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Lead time",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Approximation",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "In this fluid approximation, the number of jobs with a specific lead time can be fractional, and we consider the system in a steady state.",
+                "matchedText": "lead time",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "A pricing policy for the MDP",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Approximation",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "In Section 5, we propose a pricing policy for the MDP",
+                "matchedText": "a pricing policy for the MDP",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Thus, under any stationary policy φ, there exists a unique stationary distribution of the state X",
+              "source": {
+                "type": "section",
+                "section": "DTFM Gives an Upper Bound of Optimal Reward",
+                "page": 10,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "Thus, under any stationary policy φ, there exists a unique stationary dis­ tribution of the state X.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "We show that the optimal objective value of the fluid optimization problem is an upper bound for the long-run average reward per period for the MDP under any stationary policy",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Approximation",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "We show that the optimal objective value of the fluid optimization problem is an upper bound for the long-run average reward per period for the MDP under any stationary policy.",
+                "matchedText": "We show that the optimal objective value of the fluid optimization problem is an upper bound for the long-run average reward per period for the MDP under any stationary policy.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_assumptions_completed_from_source",
+            "message": "Filled assumptions from literal abstract or source-section phrases.",
+            "category": "assumptions",
+            "count": 4
+          }
+        ],
+        "method": "The paper also derives a closed-form expression for the optimal price trajectory for a special case in which vendors are indifferent between different job lead times and all jobs arrive with the same initial lead time (Online Corollary EC.1).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Continuous Time Model",
+          "page": 19,
+          "sentence": 5
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 10,
+            "section": "4.3. DTFM Gives an Upper Bound of Optimal Reward",
+            "equation": "",
+            "quote": "The optimal objective value of the DTFM is an upper bound for the long-run average reward per period of the MDP under any stationary policy φ, that is, ˆR ≥ R(φ) for any stationary policy φ."
+          }
+        ],
+        "components": [
+          {
+            "id": "discrete-time-fluid-approximation",
+            "label": "Discrete-Time Fluid Approximation",
+            "role": "decision",
+            "concepts": [
+              "optimization",
+              "pricing",
+              "markov-decision-process"
+            ],
+            "explanation": "In Section 5, we propose a pricing policy for the MDP based on the optimal solution of the fluid optimization problem, and we establish performance guarantees for this pricing policy.",
+            "searchPhrases": [
+              "how discrete-time fluid approximation is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "discrete-time fluid approximation decision rule specification"
+            ],
+            "formal": "Decision rule: In Section 5, we propose a pricing policy for the MDP based on the optimal solution of the fluid optimization problem, and we establish performance guarantees for this pricing policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We consider the fluid system in steady state; that is, the system state x and the price control (p,q) stay the same in each period."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4. Discrete-Time Fluid Approximation",
+                "equation": "",
+                "quote": "In Section 5, we propose a pricing policy for the MDP based on the optimal solution of the fluid optimization problem, and we establish perfor­ mance guarantees for this pricing policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Optimization as “optimal solution”: “for the MDP based on the optimal solution of the fluid optimization problem, and we establish”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “In Section 5, we propose a Pricing policy for the MDP based on the optimal”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "markov-decision-process",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Markov decision process as “MDP”: “propose a pricing policy for the MDP based on the optimal solution of the fluid”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "convex-reformulation",
+            "label": "Convex Reformulation",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "For every feasible solution (x,p,q) of the DTFM, there is a feasible solution (x,u,w,s,z,o) of the convex DTFM with the same objective value.",
+            "searchPhrases": [
+              "how convex reformulation is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "convex reformulation modeled objective specification"
+            ],
+            "formal": "Objective relation: For every feasible solution (x,p,q) of the DTFM, there is a feasible solution (x,u,w,s,z,o) of the convex DTFM with the same objective value.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Also, it follows from (6c) that, if ˆxl= 0, then ˆul= 0, and any ˆpl obtains the same objective value for the DTFM.",
+              "A potential issue is that the convex DTFM allows ˆxl> 0 and ˆul= 0, but the DTFM does not allow a corresponding solution.",
+              "One of the results of Lemma 1 is that ˆxl> 0 and ˆul= 0 cannot be optimal for the convex DTFM.",
+              "For every feasible solution (x,p,q) of the DTFM, there is a feasible solution (x,u,w,s,z,o) of the convex DTFM with the same objective value."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Convex Reformulation",
+                "equation": "",
+                "quote": "For every feasible solution (x,p,q) of the DTFM, there is a feasible solution (x,u,w,s,z,o) of the convex DTFM with the same objective value."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “For every feasible solution (x,p,q) of the DTFM, there is a feasible solution (x,u,w,s,z,o) of the convex DTFM”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "dtfm-gives-an-upper-bound-of-optimal-reward",
+            "label": "DTFM Gives an Upper Bound of Optimal Reward",
+            "role": "objective",
+            "concepts": [
+              "markov-decision-process"
+            ],
+            "explanation": "The optimal objective value of the DTFM is an upper bound for the long-run average reward per period of the MDP under any stationary policy φ, that is, ˆR ≥ R(φ) for any stationary policy φ.",
+            "searchPhrases": [
+              "how dtfm gives an upper bound of optimal reward is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "dtfm gives an upper bound of optimal reward modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The optimal objective value of the DTFM is an upper bound for the long-run average reward per period of the MDP under any stationary policy φ, that is, ˆR ≥ R(φ) for any stationary policy φ.",
+              "Recall from Remark 1 that, for all policies and for all initial states, the empty state x = 0 is recurrent."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.3. DTFM Gives an Upper Bound of Optimal Reward",
+                "equation": "",
+                "quote": "The optimal objective value of the DTFM is an upper bound for the long-run average reward per period of the MDP under any stationary policy φ, that is, ˆR ≥ R(φ) for any stationary policy φ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "markov-decision-process",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Markov decision process as “MDP”: “average reward per period of the MDP under any stationary policy φ, that is, ˆR”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "discrete-time-fluid-model",
+        "name": "Discrete-Time Fluid Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Program Formulation.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "dynamic-program-formulation"
+          }
+        ],
+        "summary": "First, we present the dynamics of the fluid model.",
+        "objects": [
+          "Vendors",
+          "Clients"
+        ],
+        "inputs": [
+          "The price",
+          "Lead time",
+          "Time L"
+        ],
+        "decisions": [
+          "The prices",
+          "The same price for different jobs with the same lead time",
+          "Whether to submit the shipment",
+          "A vendor price pl",
+          "Pricing decisions"
+        ],
+        "assumptions": [
+          "In this section, we consider a fixed price trajectory policy that applies the prices as a function of lead time obtained from an optimal solution of the DTFM.",
+          "Vendors choose among available jobs in the marketplace according to the following MNL model",
+          "Clients choose lead times according to an MNL model",
+          "The initial state is X(0) = 0",
+          "For any stationary policy φ, let γφ denote the long-run average reward per period under policy φ"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Vendors",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "The change in state during a time period is determined by two oppos­ ing flows: vendors booking available jobs and clients sub­ mitting new jobs to the marketplace.",
+                "matchedText": "vendors",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Clients",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "The change in state during a time period is determined by two oppos­ ing flows: vendors booking available jobs and clients sub­ mitting new jobs to the marketplace.",
+                "matchedText": "clients",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The price",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "We consider the fluid system in steady state; that is, the system state x and the price control (p,q) stay the same in each period.",
+                "matchedText": "the price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Lead time",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 11,
+                "quote": "Constraint (1c) states that the number of vendor book­ ings for any given lead time cannot exceed the number of available jobs with the same lead time.",
+                "matchedText": "lead time",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Time L",
+              "source": {
+                "type": "section",
+                "section": "Discrete-Time Fluid Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "of new jobs entering the marketplace with initial lead time L.",
+                "matchedText": "time L",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The prices",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The market operator determines the prices dynamically for both clients and vendors.",
+                "matchedText": "the prices",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The same price for different jobs with the same lead time",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 16,
+                "quote": "Different jobs with the same lead time may have different values of attributes other than lead time, and these attributes may be taken into account by vendors even though the market operator offers the same price for different jobs with the same lead time",
+                "matchedText": "the same price for different jobs with the same lead time",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Whether to submit the shipment",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 7,
+                "quote": "For example, in truckload transportation marketplaces, the pickup time of a shipment often is determined in advance by considerations such as the completion time of the picking and packing of the ship­ ment and loading dock availability, and although the cli­ ent may still choose whether to submit the shipment based on the client price, the client is not likely to change the pickup time of the shipment in response to the prices.",
+                "matchedText": "whether to submit the shipment based on the client price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A vendor price pl",
+              "source": {
+                "type": "section",
+                "section": "Finite Horizon Problem",
+                "page": 19,
+                "sectionIndex": 21,
+                "sentence": 9,
+                "quote": "Also, in each period, the market operator observes the number of remaining jobs xℓ and chooses a vendor price pℓ",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Pricing decisions",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 23,
+                "sentence": 3,
+                "quote": "One major distinction between these papers and our work is that the other papers consider centralized matching decisions, whereas our paper con­ siders pricing decisions by the market operator with matching decisions being made by vendors in a decen­ tralized manner according to their preferences.",
+                "matchedText": "pricing decisions",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we consider a fixed price trajectory policy that applies the prices as a function of lead time obtained from an optimal solution of the DTFM.",
+              "source": {
+                "type": "section",
+                "section": "Fixed Price Trajectory Policy and Asymptotic Optimality",
+                "page": 10,
+                "quote": "In this section, we consider a fixed price trajectory policy that applies the prices as a function of lead time obtained from an optimal solution of the DTFM."
+              }
+            },
+            {
+              "value": "Vendors choose among available jobs in the marketplace according to the following MNL model",
+              "source": {
+                "type": "section",
+                "section": "Vendor Choice Model",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 1,
+                "quote": "We assume that vendors choose among available jobs in the marketplace according to the following MNL model.",
+                "matchedText": "vendors choose among available jobs in the marketplace according to the following MNL model.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Clients choose lead times according to an MNL model",
+              "source": {
+                "type": "section",
+                "section": "Client Choice Model",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 16,
+                "quote": "In such a setting, we assume that clients choose lead times according to an MNL model.",
+                "matchedText": "clients choose lead times according to an MNL model.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The initial state is X(0) = 0",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Program Formulation",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "Assume that the initial state is X(0) = 0.",
+                "matchedText": "the initial state is X(0) = 0.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "For any stationary policy φ, let γφ denote the long-run average reward per period under policy φ",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Program Formulation",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 15,
+                "quote": "For any stationary policy φ, let γφ denote the long-run average reward per period under policy φ",
+                "matchedText": "For any stationary policy φ, let γφ denote the long-run average reward per period under policy φ",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Because solving this MDP directly is impractical for large market sizes, we study a discrete-time fluid approximation of the problem.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 8
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.1. Discrete-Time Fluid Model",
+            "equation": "",
+            "quote": "First, we present the dynamics of the fluid model."
+          }
+        ],
+        "components": [
+          {
+            "id": "discrete-time-fluid-model",
+            "label": "Discrete-Time Fluid Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "First, we present the dynamics of the fluid model.",
+            "searchPhrases": [
+              "how discrete-time fluid model is represented",
+              "system process in pricing, consumers, and revenue management",
+              "discrete-time fluid model system process specification"
+            ],
+            "formal": "Process relation: First, we present the dynamics of the fluid model.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We consider the fluid system in steady state; that is, the system state x and the price control (p,q) stay the same in each period."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. Discrete-Time Fluid Model",
+                "equation": "",
+                "quote": "First, we present the dynamics of the fluid model."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “First, we present the dynamics of the fluid model.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 2,
+        "transformation": "relation-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "5c1851a9f59b4da66fe8a7925e5e6e546ac3ff0a1257dd0c2d95b90fe2b6088f",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "3225634c349e51ad9ade6deb6b39dc0f37faad25df7b43b8a76bc54d614b9abc",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00832/3225634c349e51ad9ade6deb6b39dc0f37faad25df7b43b8a76bc54d614b9abc.json",
+      "extractionQaDecisionSha256": "445b83e85c080b52bde90b423f2388ff50e04dc3993b9532ac57ccca7e37945d",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

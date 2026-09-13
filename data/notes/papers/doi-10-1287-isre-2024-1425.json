@@ -1,0 +1,1185 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-isre-2024-1425",
+  "sourcePdfSha256": "c70738620c424206ed36aa7242d17c347c2a0fc2d9d8c6be2e55b1e8758a5cf3",
+  "extractionPagesSha256": "cbca15dd5324ebfecc7403e4a2c2c0ebdb21b5ed1b9be6510f20c0ddcc4d761c",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "2ad8623423492e9318e19bcddd9649bb5ae3d1b5ca753a93c5e0d3b529acfa0e",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "7a06c1abf7a1b8af22e206e32560838048dcc3f183124243ea3c9c5d8f0143f2",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2024-1425/7a06c1abf7a1b8af22e206e32560838048dcc3f183124243ea3c9c5d8f0143f2.json",
+  "extractionQaDecisionSha256": "5ad7a7e7690052a9b28d50201c39636a4d13fd90375dd24eb8a5056dd346bed9",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-isre-2024-1425",
+    "question": "When should a physical fashion retailer adopt AR fitting, and how do congestion, match accuracy, complementarity, technology friction, and price flexibility determine retailer revenue and consumer welfare?",
+    "overview": "A monopoly retailer first chooses whether to adopt in-store AR fitting and then, when prices are adjustable, selects price; heterogeneous time-sensitive consumers strategically choose physical fitting, AR only, sequential AR-plus-fitting, or exit. Their aggregate choices determine congestion and fixed-point queueing equilibrium.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Stochastic model",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        8,
+        13,
+        15,
+        17,
+        18
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "To Adopt or Not model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A monopoly retailer first chooses whether to adopt in-store AR fitting and then, when prices are adjustable, selects price; heterogeneous time-sensitive consumers strategically choose physical fitting, AR only, sequential AR-plus-fitting, or exit. Their aggregate choices determine congestion and fixed-point queueing equilibrium.",
+        "objects": [
+          "A monopoly apparel retailer",
+          "A continuum of heterogeneous time-sensitive consumers whose fitting choices create congestion externalities"
+        ],
+        "inputs": [
+          "Consumers observe adoption",
+          "Each consumer knows its own per-unit waiting cost c",
+          "The retailer anticipates the fixed-point joining behavior and resulting effective transaction volume",
+          "A price",
+          "Unit time c"
+        ],
+        "decisions": [
+          "The retailer chooses AR adoption",
+          "The retailer chooses price",
+          "Each consumer selects physical fitting, AR only, sequential AR and physical fitting, or nonparticipation",
+          "Target item",
+          "Whether to adopt AR technology"
+        ],
+        "assumptions": [
+          "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu",
+          "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item",
+          "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta",
+          "AR can substitute for physical fitting and can complement it by filtering items before a physical try-on, improving the later match rate by Delta",
+          "The main comparative analysis imposes Assumption 1, theta/(v-p)<=delta-bar_a<delta-bar_f=delta_f+Delta, to exclude cases in which nobody uses AR or everyone bypasses the fitting room"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A monopoly apparel retailer",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a monopoly apparel retailer"
+              }
+            },
+            {
+              "value": "A continuum of heterogeneous time-sensitive consumers whose fitting choices create congestion externalities",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a continuum of heterogeneous time-sensitive consumers whose fitting choices create congestion externalities"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Consumers observe adoption",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Consumers observe adoption and price and know the expected queueing environment and channel match probabilities."
+              }
+            },
+            {
+              "value": "Each consumer knows its own per-unit waiting cost c",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each consumer knows its own per-unit waiting cost c."
+              }
+            },
+            {
+              "value": "The retailer anticipates the fixed-point joining behavior and resulting effective transaction volume",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The retailer anticipates the fixed-point joining behavior and resulting effective transaction volume."
+              }
+            },
+            {
+              "value": "A price",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 1,
+                "quote": "Consider a monopoly retailer selling clothing at a price p in a physical store,14 where the value of the product, v, represents the consumers’ willingness-to-pay.",
+                "matchedText": "a price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unit time c",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 6,
+                "quote": "Each consumer incurs a waiting cost per unit time c, uniformly distributed over the interval [0, ¯c].",
+                "matchedText": "unit time c",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The retailer chooses AR adoption",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the retailer chooses AR adoption"
+              }
+            },
+            {
+              "value": "The retailer chooses price",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the retailer chooses price when pricing is adjustable"
+              }
+            },
+            {
+              "value": "Each consumer selects physical fitting, AR only, sequential AR and physical fitting, or nonparticipation",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each consumer selects physical fitting, AR only, sequential AR and physical fitting, or nonparticipation"
+              }
+            },
+            {
+              "value": "Target item",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 10,
+                "quote": "We assume that each consumer aims to purchase a single target item",
+                "matchedText": "target item",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Whether to adopt AR technology",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 31,
+                "quote": "The retailer first decides whether to adopt AR technology",
+                "matchedText": "whether to adopt AR technology",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu."
+              }
+            },
+            {
+              "value": "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item."
+              }
+            },
+            {
+              "value": "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta."
+              }
+            },
+            {
+              "value": "AR can substitute for physical fitting and can complement it by filtering items before a physical try-on, improving the later match rate by Delta",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "AR can substitute for physical fitting and can complement it by filtering items before a physical try-on, improving the later match rate by Delta."
+              }
+            },
+            {
+              "value": "The main comparative analysis imposes Assumption 1, theta/(v-p)<=delta-bar_a<delta-bar_f=delta_f+Delta, to exclude cases in which nobody uses AR or everyone bypasses the fitting room",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The main comparative analysis imposes Assumption 1, theta/(v-p)<=delta-bar_a<delta-bar_f=delta_f+Delta, to exclude cases in which nobody uses AR or everyone bypasses the fitting room."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper begins by establishing a benchmark in Section 4.1, where we characterize the equilibrium outcomes and performance metrics without AR adoption.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Equilibrium Analysis",
+          "page": 6,
+          "sentence": 2
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3. Model",
+            "equation": "",
+            "quote": "The retailer can opt to introduce an AR fitting application,16 enabling consumers to instantaneously try on clothes, thereby eliminating the waiting time.17 However, because AR fitting applications require spe­ cific operational procedures, they inevitably involve a constant “technological-friction cost” θ for consumers (Lenfle and Midler 2009, Saldanha et al. 2022), a com­ mon characteristic of emerging, yet immature, IT technologies.18 We assume that each consumer aims to purchase a single target item."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The retailer chooses AR adoption the retailer chooses price when pricing is adjustable each consumer selects physical fitting, AR only, sequential AR and physical fitting, or nonparticipation",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in strategic ar fitting adoption and pricing in a congestion-prone physical retail channel",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The retailer chooses AR adoption the retailer chooses price when pricing is adjustable each consumer selects physical fitting, AR only, sequential AR and physical fitting, or nonparticipation",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Lambda",
+                "meaning": "potential consumer arrival rate and market size · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu",
+                "meaning": "physical fitting-room service rate · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "consumer waiting cost per unit time · uniform on [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_f, \\bar\\delta_a",
+                "meaning": "physical and effective AR matching probabilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "consumer technological-friction cost of using AR · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The retailer can opt to introduce an AR fitting application,16 enabling consumers to instantaneously try on clothes, thereby eliminating the waiting time.17 However, because AR fitting applications require specific operational procedures, they inevitably involve a constant “technological-friction cost” θ for consumers (Lenfle and Midler 2009, Saldanha et al. 2022), a common characteristic of emerging, yet immature, IT technologies.18 We assume that each consumer aims to purchase a single target item.",
+              "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta.",
+              "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu.",
+              "AR can substitute for physical fitting and can complement it by filtering items before a physical try-on, improving the later match rate by Delta."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Model",
+                "equation": "",
+                "quote": "The retailer can opt to introduce an AR fitting application,16 enabling consumers to instantaneously try on clothes, thereby eliminating the waiting time.17 However, because AR fitting applications require spe­ cific operational procedures, they inevitably involve a constant “technological-friction cost” θ for consumers (Lenfle and Midler 2009, Saldanha et al. 2022), a com­ mon characteristic of emerging, yet immature, IT technologies.18 We assume that each consumer aims to purchase a single target item."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “The retailer can opt to introduce an AR fitting application,16 enabling consumers to instantaneously try on clothes, thereby”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The retailer compares equilibrium revenue with and without AR and, in the adjustable-price case, selects price to maximize revenue. With AR, revenue equals price times the effective matched-purchase flow from physical/sequential and AR-only users.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in strategic ar fitting adoption and pricing in a congestion-prone physical retail channel",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\Pi_a(p)=p\\Lambda\\left[(\\delta_f+\\Delta I_2)\\frac{c_a}{\\bar c}+\\bar\\delta_a\\frac{\\bar c-c_a}{\\bar c}\\right].",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\Lambda",
+                "meaning": "potential consumer arrival rate and market size · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu",
+                "meaning": "physical fitting-room service rate · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "consumer waiting cost per unit time · uniform on [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_a",
+                "meaning": "equilibrium threshold below which consumers still use the fitting room when AR exists · [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_f, \\bar\\delta_a",
+                "meaning": "physical and effective AR matching probabilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Delta",
+                "meaning": "improvement in physical-fitting accuracy after AR prescreening · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "consumer technological-friction cost of using AR · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I_2",
+                "meaning": "indicator that both substitution and complementarity effects coexist · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta.",
+              "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu.",
+              "AR can substitute for physical fitting and can complement it by filtering items before a physical try-on, improving the later match rate by Delta."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "Expected-profit objective",
+                "equation": "(1)",
+                "quote": "The ∆CR comprises two compo­ nents: the reduction in waiting time and the additional has­ sle cost incurred by AR usage."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The ∆CR comprises two components: the reduction in waiting time and the additional hassle cost incurred by AR”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The retailer first chooses whether to adopt AR fitting and then sets price in the adjustable-price scenario; the price is fixed in the luxury-style benchmark. Consumers then choose physical fitting, AR only, AR followed by physical fitting, or exit based on expected utilities and the equilibrium fitting-room wait. Aggregate choices determine congestion, so consumer thresholds and waiting time must be mutually consistent. AR provides an immediate but imperfect path, while the physical fitting room is more accurate but congestible.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in strategic ar fitting adoption and pricing in a congestion-prone physical retail channel",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The retailer first chooses whether to adopt AR fitting and then sets price in the adjustable-price scenario; the price is fixed in the luxury-style benchmark.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Lambda",
+                "meaning": "potential consumer arrival rate and market size · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu",
+                "meaning": "physical fitting-room service rate · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "consumer waiting cost per unit time · uniform on [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_a",
+                "meaning": "equilibrium threshold below which consumers still use the fitting room when AR exists · [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_f, \\bar\\delta_a",
+                "meaning": "physical and effective AR matching probabilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "consumer technological-friction cost of using AR · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta.",
+              "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu.",
+              "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "7.1. Competitive Scenario",
+                "equation": "",
+                "quote": "We analyze the equilib­ rium outcomes of four subgames: (i) neither retailer adopts AR (strategy profile FF); (ii) only Retailer 1 adopts AR (AF); (iii) only Retailer 2 adopts AR (FA); and (iv) both retailers adopt AR (AA)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We analyze the equilibrium outcomes of four subgames: (i) neither retailer adopts AR (strategy profile FF); (ii) only”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "rational-expectations-queueing-equilibrium-with-threshold-channe",
+            "label": "Rational-expectations queueing equilibrium with threshold channel choice and retailer adoption/pricing",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Rational-expectations queueing equilibrium with threshold channel choice and retailer adoption/pricing. Lemmas 1 and 2 solve consumer cutoff strategies as fixed points between joining masses and M/M/1 waiting time. The retailer anticipates these equilibrium thresholds when comparing adoption and, under adjustable pricing, choosing price; Theorems 1 and 2 compare the resulting revenue and surplus.",
+            "searchPhrases": [
+              "how rational-expectations queueing equilibrium with threshold channel choice and retailer adoption/pricing is represented",
+              "strategic response in strategic ar fitting adoption and pricing in a congestion-prone physical retail channel",
+              "rational-expectations queueing equilibrium with threshold channel choice and retailer adoption/pricing strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Rational-expectations queueing equilibrium with threshold channel choice and retailer adoption/pricing.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Lambda",
+                "meaning": "potential consumer arrival rate and market size · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "consumer waiting cost per unit time · uniform on [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_a",
+                "meaning": "equilibrium threshold below which consumers still use the fitting room when AR exists · [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "consumer technological-friction cost of using AR · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Building on the theoretical results, Figure 12, (a), (b), and (c) illustrate, respectively, the equilibrium AR-channel demand (denoted by λa), the AR waiting time Wa, and the retailer’s revenue Πa under scenarios without CE (i.e., ∆= 0) and with CE (i.e., ∆= 0:06).",
+              "The main comparative analysis imposes Assumption 1, theta/(v-p)<=delta-bar_a<delta-bar_f=delta_f+Delta, to exclude cases in which nobody uses AR or everyone bypasses the fitting room.",
+              "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu.",
+              "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "7.4. Impact of AR-Induced Delay",
+                "equation": "",
+                "quote": "Building on the theoretical results, Figure 12, (a), (b), and (c) illustrate, respectively, the equilibrium AR-channel demand (denoted by λa), the AR waiting time Wa, and the retailer’s revenue Πa under scenarios without CE (i.e., ∆= 0) and with CE (i.e., ∆= 0:06)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Model interaction”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              },
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The main comparative analysis imposes Assumption 1, theta/(v-p)<=delta-bar_a<delta-bar_f=delta_f+Delta, to exclude cases in which nobody uses AR or everyone bypasses the fitting room",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "The main comparative analysis imposes Assumption 1, theta/(v-p)<=delta-bar_a<delta-bar_f=delta_f+Delta, to exclude cases in which nobody uses AR or everyone bypasses the fitting room."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Consumers observe adoption and price and know the expected queueing environment and channel match probabilities. Each consumer knows its own per-unit waiting cost c. The retailer anticipates the fixed-point joining behavior and resulting effective transaction volume.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in strategic ar fitting adoption and pricing in a congestion-prone physical retail channel",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Consumers observe adoption and price and know the expected queueing environment and channel match probabilities.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Lambda",
+                "meaning": "potential consumer arrival rate and market size · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "consumer waiting cost per unit time · uniform on [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_a",
+                "meaning": "equilibrium threshold below which consumers still use the fitting room when AR exists · [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_f, \\bar\\delta_a",
+                "meaning": "physical and effective AR matching probabilities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "consumer technological-friction cost of using AR · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta.",
+              "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu.",
+              "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item.",
+              "We can observe that consumers with small c (patient) consistently opt for the fitting room, whereas those with large c (impatient) invariably choose the AR channel."
+            ],
+            "sources": [
+              {
+                "page": 18,
+                "section": "7.6. Dynamic Modeling Framework",
+                "equation": "",
+                "quote": "We can observe that consumers with small c (patient) consis­ tently opt for the fitting room, whereas those with large c (impatient) invariably choose the AR channel."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "endogenous-price-extension",
+        "name": "Endogenous price extension",
+        "kind": "extension",
+        "relation": "This extension builds on To Adopt or Not model.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "This section examines the impact of AR fitting application on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of market size. In the adjustable-price scenario, a higher accuracy of AR fitting applications (i.e., ̄δa) may simultaneously lower both retailer revenue and consumer surplus.",
+        "objects": [
+          "Consumers",
+          "Retailers",
+          "Users",
+          "Population",
+          "Platforms"
+        ],
+        "inputs": [
+          "The optimal prices",
+          "Sufficiently high AR accuracy or congestion levels always incentivize retailers to adopt AR technology",
+          "The ratio",
+          "The benefits"
+        ],
+        "decisions": [
+          "Decisions with and without the AR fitting application",
+          "Prices strategically",
+          "To attract more consumers—a volume strategy",
+          "A more conservative pricing strategy to offset consumer disutility from longer waiting times",
+          "Switch to the AR channel"
+        ],
+        "assumptions": [
+          "This section examines the impact of AR fitting application on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of market size.",
+          "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu",
+          "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item",
+          "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta",
+          "AR can substitute for physical fitting and can complement it by filtering items before a physical try-on, improving the later match rate by Delta"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Consumers",
+              "source": {
+                "type": "section",
+                "section": "Fixed-Price Scenario",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "Lemma 3 shows that the adoption of AR technology consistently increases store traffic by attracting impatient consumers who would not have entered the store with­ out AR.",
+                "matchedText": "consumers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Retailers",
+              "source": {
+                "type": "section",
+                "section": "Fixed-Price Scenario",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 13,
+                "quote": "cautions retailers that when adopting AR technology, they should remain vigilant about the adverse effects that may arise from the interplay between the technological limitations and consumer shift.",
+                "matchedText": "retailers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Users",
+              "source": {
+                "type": "section",
+                "section": "Fixed-Price Scenario",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "A larger ¯δa induces more fitting-room users to switch to the AR channel, thereby reducing the average matching rate.",
+                "matchedText": "users",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "section",
+                "section": "Fixed-Price Scenario",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 21,
+                "quote": "Theorem 1 suggests that, as expected, adopting an AR fitting application generally benefits the consumer population by reducing waiting costs and mitigating system negative externalities.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Platforms",
+              "source": {
+                "type": "section",
+                "section": "Adjustable-Price Scenario",
+                "page": 12,
+                "sectionIndex": 1,
+                "sentence": 37,
+                "quote": "This pattern is consistent with the empirical evidence in Jiang et al. (2024), who document that the introduction of online digital platforms can raise selling prices.",
+                "matchedText": "platforms",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The optimal prices",
+              "source": {
+                "type": "section",
+                "section": "Adjustable-Price Scenario",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 2,
+                "quote": "Let pf and pa denote the optimal prices before and after the adoption of the AR system, respectively.",
+                "matchedText": "the optimal prices before and after the adoption of the AR system, respectively",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Sufficiently high AR accuracy or congestion levels always incentivize retailers to adopt AR technology",
+              "source": {
+                "type": "section",
+                "section": "Fixed-Price Scenario",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 42,
+                "quote": "We observe that sufficiently high AR accuracy or conges­ tion levels always incentivize retailers to adopt AR technology.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The ratio",
+              "source": {
+                "type": "section",
+                "section": "Fixed-Price Scenario",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 73,
+                "quote": "Recall that the emergence of the CE depends on the relationship between the strength of complementarity ∆and the ratio",
+                "matchedText": "the ratio",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The benefits",
+              "source": {
+                "type": "section",
+                "section": "Adjustable-Price Scenario",
+                "page": 13,
+                "sectionIndex": 1,
+                "sentence": 53,
+                "quote": "In other words, under adjustable pricing, the benefits of the CE extend beyond the early adop­ tion phase to the stage of user base expansion—unlike in the fixed-price setting.",
+                "matchedText": "the benefits",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Decisions with and without the AR fitting application",
+              "source": {
+                "type": "section",
+                "section": "Adjustable-Price Scenario",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "decisions with and without the AR fitting application",
+                "matchedText": "decisions with and without the AR fitting application",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Prices strategically",
+              "source": {
+                "type": "section",
+                "section": "Adjustable-Price Scenario",
+                "page": 12,
+                "sectionIndex": 1,
+                "sentence": 15,
+                "quote": "This dependency arises because changes in market size incentivize retailers to adjust prices stra­ tegically",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To attract more consumers—a volume strategy",
+              "source": {
+                "type": "section",
+                "section": "Adjustable-Price Scenario",
+                "page": 12,
+                "sectionIndex": 1,
+                "sentence": 23,
+                "quote": "When the market is small and service capacity is underutilized, the retailer tends to lower prices to attract more consumers—a vol­ ume strategy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A more conservative pricing strategy to offset consumer disutility from longer waiting times",
+              "source": {
+                "type": "section",
+                "section": "Adjustable-Price Scenario",
+                "page": 12,
+                "sectionIndex": 1,
+                "sentence": 38,
+                "quote": "When the CE is present, AR adoption may instead lead to lower prices in large markets, as CE can exacerbate congestion at scale, prompting the retailer to adopt a more conservative pricing strategy to offset consumer disutility from longer waiting times",
+                "matchedText": "a more conservative pricing strategy to offset consumer disutility from longer waiting times",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Switch to the AR channel",
+              "source": {
+                "type": "section",
+                "section": "Fixed-Price Scenario",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "A larger ¯δa induces more fitting-room users to switch to the AR channel",
+                "matchedText": "switch to the AR channel",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "This section examines the impact of AR fitting application on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of market size.",
+              "source": {
+                "type": "section",
+                "section": "Fixed-Price Scenario",
+                "page": 8,
+                "quote": "This section examines the impact of AR fitting applica­ tion on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of mar­ ket size."
+              }
+            },
+            {
+              "value": "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Potential consumer arrivals are Poisson with rate Lambda and physical fitting times are exponential with rate mu."
+              }
+            },
+            {
+              "value": "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Waiting cost c is uniformly distributed on [0,c-bar], and consumers seek one target item."
+              }
+            },
+            {
+              "value": "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Physical fitting has base match probability delta_f; repeated AR trials yield effective match probability delta-bar_a and constant friction cost theta."
+              }
+            },
+            {
+              "value": "AR can substitute for physical fitting and can complement it by filtering items before a physical try-on, improving the later match rate by Delta",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "AR can substitute for physical fitting and can complement it by filtering items before a physical try-on, improving the later match rate by Delta."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "Based on the two cases decoupled in Lemma 4, we can identify the corresponding optimal prices under AR adoption separately.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Adjustable-Price Scenario",
+          "page": 12,
+          "sentence": 16
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "5. Fixed-Price Scenario",
+            "equation": "",
+            "quote": "This section examines the impact of AR fitting applica­ tion on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of mar­ ket size."
+          }
+        ],
+        "components": [
+          {
+            "id": "fixed-price-scenario",
+            "label": "Fixed-Price Scenario",
+            "role": "constraint",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "This section examines the impact of AR fitting application on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of market size.",
+            "searchPhrases": [
+              "how fixed-price scenario is represented",
+              "feasibility condition in strategic ar fitting adoption and pricing in a congestion-prone physical retail channel",
+              "fixed-price scenario feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: This section examines the impact of AR fitting application on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of market size.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Lambda",
+                "meaning": "potential consumer arrival rate and market size · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu",
+                "meaning": "physical fitting-room service rate · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "consumer waiting cost per unit time · uniform on [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta_f, \\bar\\delta_a",
+                "meaning": "physical and effective AR matching probabilities",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "This section examines the impact of AR fitting application on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of market size.",
+              "When AR technology is immature (i.e., ̄δa < δf), this channel shift reduces the average matching rate.",
+              "Accordingly, let ζi denote the total effective transaction volume under scenario i ∈{f,a}."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "5. Fixed-Price Scenario",
+                "equation": "",
+                "quote": "This section examines the impact of AR fitting applica­ tion on a physical store with fixed price—that is, the price of clothing remains unchanged regardless of mar­ ket size."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "adjustable-price-scenario",
+            "label": "Adjustable-Price Scenario",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "In the adjustable-price scenario, a higher accuracy of AR fitting applications (i.e., ̄δa) may simultaneously lower both retailer revenue and consumer surplus.",
+            "searchPhrases": [
+              "how adjustable-price scenario is represented",
+              "decision rule in strategic ar fitting adoption and pricing in a congestion-prone physical retail channel",
+              "adjustable-price scenario decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Lambda",
+                "meaning": "potential consumer arrival rate and market size · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "consumer waiting cost per unit time · uniform on [0,c-bar]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Delta",
+                "meaning": "improvement in physical-fitting accuracy after AR prescreening · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "consumer technological-friction cost of using AR · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The intuition is that although a higher price increases the retailer’s per-unit margin, it does not fully eliminate consumers’ incentives to use the AR channel and therefore cannot completely offset the adverse effects induced by AR adoption."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6. Adjustable-Price Scenario",
+                "equation": "",
+                "quote": "In the adjustable-price scenario, a higher accuracy of AR fitting applications (i.e., ¯δa) may simultaneously lower both retailer revenue and consumer surplus."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “In the adjustable-price scenario, a higher accuracy of AR fitting applications (i.e., ̄δa) may simultaneously lower both retailer”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "c70738620c424206ed36aa7242d17c347c2a0fc2d9d8c6be2e55b1e8758a5cf3",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "7a06c1abf7a1b8af22e206e32560838048dcc3f183124243ea3c9c5d8f0143f2",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2024-1425/7a06c1abf7a1b8af22e206e32560838048dcc3f183124243ea3c9c5d8f0143f2.json",
+      "extractionQaDecisionSha256": "5ad7a7e7690052a9b28d50201c39636a4d13fd90375dd24eb8a5056dd346bed9",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

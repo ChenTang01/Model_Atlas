@@ -1,0 +1,804 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "zhang2026reducingtrafficincidents",
+  "sourcePdfSha256": "614680b17d2cf1e5903d1613e6a665f2b94db15cb9ad9d0593699f53a16f2036",
+  "extractionPagesSha256": "511fb7a1d1f3f0a8638fdc6fe6f32d3867bdcaff797ea29f60383cf2e39e4d15",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "7fed42b3aa855b1148451061e6f9c8ee7f9edd3ce52afa53c1a1794bf34cbdab",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "90eaadf3094891520767f1a3d2328922a23abd52cb7603b2fb89a077bf3f62fa",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/zhang2026reducingtrafficincidents/90eaadf3094891520767f1a3d2328922a23abd52cb7603b2fb89a077bf3f62fa.json",
+  "extractionQaDecisionSha256": "59fb7b0893f9f4e21200cb51f12f6a53eedcd1cdd15384f5495ff2ff1a6127b5",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "zhang2026reducingtrafficincidents",
+    "question": "Should traffic-safety penalties target delivery drivers or the platform, given that platform delivery promises and fees affect driver speeding and customer demand?",
+    "overview": "The paper explicitly formulates a multistage Stackelberg game among government, delivery platform and drivers/customers and solves it by backward induction.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        10,
+        11
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Traffic-safety regulation of on-demand delivery",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper explicitly formulates a multistage Stackelberg game among government, delivery platform and drivers/customers and solves it by backward induction.",
+        "objects": [
+          "Government regulator",
+          "Delivery platform",
+          "Drivers",
+          "Customers"
+        ],
+        "inputs": [
+          "Baseline platform observes customer distance and value",
+          "Penalties and platform terms are public",
+          "Incident probability depends on excess speed under the specified technology",
+          "Their net valuation for the meal (factoring in the meal price)",
+          "Time t"
+        ],
+        "decisions": [
+          "Government chooses penalties A and R",
+          "Platform chooses the per-distance driver commission b; the customer delivery-fee rate is linked by k=alpha b; restaurant service revenue gamma is exogenous",
+          "Customers choose whether to order",
+          "Drivers accept"
+        ],
+        "assumptions": [
+          "A single platform and one restaurant serve the modeled market",
+          "Customer distance and value are observed by the platform in the baseline",
+          "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous",
+          "Drivers speed only as needed to meet the promised time in the baseline",
+          "Incident probability is piecewise linear in excess speed"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Government regulator",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "government regulator"
+              }
+            },
+            {
+              "value": "Delivery platform",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "delivery platform"
+              }
+            },
+            {
+              "value": "Drivers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "drivers"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "customers"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Baseline platform observes customer distance and value",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "baseline platform observes customer distance and value"
+              }
+            },
+            {
+              "value": "Penalties and platform terms are public",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "penalties and platform terms are public"
+              }
+            },
+            {
+              "value": "Incident probability depends on excess speed under the specified technology",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "incident probability depends on excess speed under the specified technology"
+              }
+            },
+            {
+              "value": "Their net valuation for the meal (factoring in the meal price)",
+              "source": {
+                "type": "section",
+                "section": "Model Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 6,
+                "quote": "In our model, potential customers are characterized by x, which denotes their distance from the restaurant, and v, which represents their net valuation for the meal (factoring in the meal price).",
+                "matchedText": "their net valuation for the meal (factoring in the meal price)",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Model Preliminaries",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 24,
+                "quote": "Third, based on the delivery fee kx and the delivery time t, customer (x,v) with patience level β would decide whether to place the order or not.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Government chooses penalties A and R",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "government chooses penalties A and R"
+              }
+            },
+            {
+              "value": "Platform chooses the per-distance driver commission b; the customer delivery-fee rate is linked by k=alpha b; restaurant service revenue gamma is exogenous",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "platform chooses the per-distance driver commission b; the customer delivery-fee rate is linked by k=alpha b; restaurant service revenue gamma is exogenous"
+              }
+            },
+            {
+              "value": "Customers choose whether to order",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "customers choose whether to order"
+              }
+            },
+            {
+              "value": "Drivers accept",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "drivers accept and choose delivery behavior/speed"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A single platform and one restaurant serve the modeled market",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A single platform and one restaurant serve the modeled market."
+              }
+            },
+            {
+              "value": "Customer distance and value are observed by the platform in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Customer distance and value are observed by the platform in the baseline."
+              }
+            },
+            {
+              "value": "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous."
+              }
+            },
+            {
+              "value": "Drivers speed only as needed to meet the promised time in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Drivers speed only as needed to meet the promised time in the baseline."
+              }
+            },
+            {
+              "value": "Incident probability is piecewise linear in excess speed",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Incident probability is piecewise linear in excess speed."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "Using the calibrated parameter values, we first examine the influence of public wellness P on the government’s optimal policy (A∗,R∗).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Socially Optimal Policy(A∗,R∗)",
+          "page": 13,
+          "sentence": 1
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "4. Stakeholder Decisions",
+            "equation": "",
+            "quote": "Customer’s Ordering Decision Consider a customer (x,v) opens the platform app, and the platform presents two quotes: (a) a personalized delivery fee kx, where k is the per-unit distance rate set by the platform, and (b) an estimated delivery time t, deter­ mined by the driver but inferred by the platform."
+          }
+        ],
+        "components": [
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "uncertainty"
+            ],
+            "explanation": "Backward induction with heterogeneous customers; derive driver acceptance/speed and platform pricing responses, integrate welfare over the customer distribution, and optimize regulatory penalties.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in platforms and marketplaces",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Backward induction with heterogeneous customers; derive driver acceptance/speed and platform pricing responses, integrate welfare over the customer distribution, and optimize regulatory penalties.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "A, R",
+                "meaning": "government penalties imposed on drivers and the platform · paper-defined nonnegative penalties",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar S(A, R)",
+                "meaning": "expected social welfare induced by the two penalties · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(A)",
+                "meaning": "set of customer locations/types served under driver penalty A · subset of the customer-type space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S(x, v;A, R)",
+                "meaning": "social surplus generated by serving a customer with distance x and value v · real-valued surplus",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi^*(x, v;A, R)",
+                "meaning": "equilibrium platform profit contribution/participation value for customer type (x,v) · real-valued equilibrium payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F_C",
+                "meaning": "joint distribution of customer distance and value · probability distribution",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous.",
+              "To analyze the core dynamics without the added complexity of uncertainty in customer characteristics, we assume that both x and v of a given customer are observable to the platform, either directly or through sophisticated inferential analytics.3 Figure 1 presents the sequence of events.",
+              "A single platform and one restaurant serve the modeled market.",
+              "Customer distance and value are observed by the platform in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Model Preliminaries",
+                "equation": "",
+                "quote": "To analyze the core dynamics without the added complexity of uncer­ tainty in customer characteristics, we assume that both x and v of a given customer are observable to the plat­ form, either directly or through sophisticated inferen­ tial analytics.3 Figure 1 presents the sequence of events."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Uncertainty: “dynamics without the added complexity of Uncertainty in customer characteristics, we assume that both x”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The government sets driver and platform penalties; the platform chooses the per-distance driver commission b and therefore the customer fee rate k=alpha b, then quotes the driver-induced delivery time; customers order; drivers decide acceptance and delivery time/speed; incidents and penalties realize. regulator-led Stackelberg game platform pricing and promise design",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in platforms and marketplaces",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "A, R",
+                "meaning": "government penalties imposed on drivers and the platform · paper-defined nonnegative penalties",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar S(A, R)",
+                "meaning": "expected social welfare induced by the two penalties · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(A)",
+                "meaning": "set of customer locations/types served under driver penalty A · subset of the customer-type space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S(x, v;A, R)",
+                "meaning": "social surplus generated by serving a customer with distance x and value v · real-valued surplus",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi^*(x, v;A, R)",
+                "meaning": "equilibrium platform profit contribution/participation value for customer type (x,v) · real-valued equilibrium payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F_C",
+                "meaning": "joint distribution of customer distance and value · probability distribution",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous.",
+              "A single platform and one restaurant serve the modeled market.",
+              "Customer distance and value are observed by the platform in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Model Preliminaries",
+                "equation": "",
+                "quote": "To explicate our analysis, we first analyze the equilibrium behavior of each stakeholder for a given customer (x,v) in Section 4."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “To explicate our analysis, we first analyze the equilibrium behavior of each stakeholder for a given customer (x,v)”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "commission"
+            ],
+            "explanation": "Baseline platform observes customer distance and value penalties and platform terms are public incident probability depends on excess speed under the specified technology",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Baseline platform observes customer distance and value penalties and platform terms are public incident probability depends on excess speed under the specified technology",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "A, R",
+                "meaning": "government penalties imposed on drivers and the platform · paper-defined nonnegative penalties",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar S(A, R)",
+                "meaning": "expected social welfare induced by the two penalties · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(A)",
+                "meaning": "set of customer locations/types served under driver penalty A · subset of the customer-type space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S(x, v;A, R)",
+                "meaning": "social surplus generated by serving a customer with distance x and value v · real-valued surplus",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi^*(x, v;A, R)",
+                "meaning": "equilibrium platform profit contribution/participation value for customer type (x,v) · real-valued equilibrium payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F_C",
+                "meaning": "joint distribution of customer distance and value · probability distribution",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous.",
+              "A single platform and one restaurant serve the modeled market.",
+              "Customer distance and value are observed by the platform in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "3. Model Preliminaries",
+                "equation": "",
+                "quote": "Second, upon observing the government’s penalty policy (A,R) and a customer’s attributes (x,v), the plat­ form sets a personalized delivery fee, kx to maximize profit while accounting for the penalty R.4 Specifically, the platform collects a fee of kx, of which a portion bx is paid to the driver as commission."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Commission fee as “commission”: “is paid to the driver as commission .”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Government chooses penalties A and R platform chooses the per-distance driver commission b; the customer delivery-fee rate is linked by k=alpha b; restaurant service revenue gamma is exogenous customers choose whether to order drivers accept and choose delivery behavior/speed",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in platforms and marketplaces",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "A, R",
+                "meaning": "government penalties imposed on drivers and the platform · paper-defined nonnegative penalties",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar S(A, R)",
+                "meaning": "expected social welfare induced by the two penalties · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(A)",
+                "meaning": "set of customer locations/types served under driver penalty A · subset of the customer-type space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S(x, v;A, R)",
+                "meaning": "social surplus generated by serving a customer with distance x and value v · real-valued surplus",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi^*(x, v;A, R)",
+                "meaning": "equilibrium platform profit contribution/participation value for customer type (x,v) · real-valued equilibrium payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F_C",
+                "meaning": "joint distribution of customer distance and value · probability distribution",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous.",
+              "A single platform and one restaurant serve the modeled market.",
+              "Customer distance and value are observed by the platform in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "4. Stakeholder Decisions",
+                "equation": "",
+                "quote": "Customer’s Ordering Decision Consider a customer (x,v) opens the platform app, and the platform presents two quotes: (a) a personalized delivery fee kx, where k is the per-unit distance rate set by the platform, and (b) an estimated delivery time t, deter­ mined by the driver but inferred by the platform."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Customer’s Ordering Decision Consider a customer (x,v) opens the platform app, and the platform presents two quotes: (a)”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The government chooses driver and platform penalties to maximize expected social surplus over participating orders after the platform–driver continuation equilibrium.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in platforms and marketplaces",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_{A,R}\\;\\bar S(A,R)=\\int_{D(A)}S(x,v;A,R)\\mathbf{1}_{\\{\\pi^*(x,v;A,R)\\ge0\\}}F_C(dx,dv)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "A, R",
+                "meaning": "government penalties imposed on drivers and the platform · paper-defined nonnegative penalties",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar S(A, R)",
+                "meaning": "expected social welfare induced by the two penalties · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(A)",
+                "meaning": "set of customer locations/types served under driver penalty A · subset of the customer-type space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S(x, v;A, R)",
+                "meaning": "social surplus generated by serving a customer with distance x and value v · real-valued surplus",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi^*(x, v;A, R)",
+                "meaning": "equilibrium platform profit contribution/participation value for customer type (x,v) · real-valued equilibrium payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F_C",
+                "meaning": "joint distribution of customer distance and value · probability distribution",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous.",
+              "Optimization of Total Social Surplus and Market-Level Mechanisms To maximize total social surplus, the government must design a penalty scheme (A,R) that aggregates S(x,v;A,R) over all customers (x,v) located within the feasible zone D(A), noting that the surplus from the infeasible zone is normalized to zero.",
+              "A single platform and one restaurant serve the modeled market.",
+              "Customer distance and value are observed by the platform in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "Expected-profit objective",
+                "equation": "(15)",
+                "quote": "Optimization of Total Social Surplus and Market-Level Mechanisms To maximize total social surplus, the government must design a penalty scheme (A,R) that aggregates S(x,v;A,R) over all customers (x,v) located within the feasible zone D(A), noting that the surplus from the infeasible zone is normalized to zero."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization: “Optimization”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "stackelberg-equilibrium-of-the-government-platform-driver-custom",
+            "label": "Stackelberg equilibrium of the government–platform–driver/customer game",
+            "role": "interaction",
+            "concepts": [
+              "commission",
+              "optimization"
+            ],
+            "explanation": "The model's equilibrium concept is Stackelberg equilibrium of the government–platform–driver/customer game. The downstream driver/customer responses and platform decisions are solved first, then substituted into the government's penalty problem.",
+            "searchPhrases": [
+              "how stackelberg equilibrium of the government–platform–driver/customer game is represented",
+              "strategic response in platforms and marketplaces",
+              "stackelberg equilibrium of the government–platform–driver/customer game strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Stackelberg equilibrium of the government–platform–driver/customer game.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "A, R",
+                "meaning": "government penalties imposed on drivers and the platform · paper-defined nonnegative penalties",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\bar S(A, R)",
+                "meaning": "expected social welfare induced by the two penalties · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D(A)",
+                "meaning": "set of customer locations/types served under driver penalty A · subset of the customer-type space",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "S(x, v;A, R)",
+                "meaning": "social surplus generated by serving a customer with distance x and value v · real-valued surplus",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi^*(x, v;A, R)",
+                "meaning": "equilibrium platform profit contribution/participation value for customer type (x,v) · real-valued equilibrium payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "F_C",
+                "meaning": "joint distribution of customer distance and value · probability distribution",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The customer delivery fee and driver commission are linked by k=alpha b; restaurant service revenue gamma is exogenous.",
+              "A single platform and one restaurant serve the modeled market.",
+              "Customer distance and value are observed by the platform in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.2. Optimization of Total Social Surplus and Market-Level Mechanisms",
+                "equation": "",
+                "quote": "In contrast, a driver penalty A acts as a downstream “cost shock.” In equilibrium, the platform may endogenously offset the driver’s cost shock by increasing the commission b to ensure driver participation."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Commission fee as “commission”: “driver’s cost shock by increasing the commission b to ensure driver participation.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Optimization: “In contrast, a driver penalty A acts as a downstream “cost shock.” In equilibrium, the platform may endogenously”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "614680b17d2cf1e5903d1613e6a665f2b94db15cb9ad9d0593699f53a16f2036",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "90eaadf3094891520767f1a3d2328922a23abd52cb7603b2fb89a077bf3f62fa",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/zhang2026reducingtrafficincidents/90eaadf3094891520767f1a3d2328922a23abd52cb7603b2fb89a077bf3f62fa.json",
+      "extractionQaDecisionSha256": "59fb7b0893f9f4e21200cb51f12f6a53eedcd1cdd15384f5495ff2ff1a6127b5",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

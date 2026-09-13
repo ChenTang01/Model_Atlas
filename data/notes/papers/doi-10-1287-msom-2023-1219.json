@@ -1,0 +1,604 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-1219",
+  "sourcePdfSha256": "6e0667a8ea3a95d22ae61fcf9de0e1d8309a78709f982322f0434e15aa303f23",
+  "extractionPagesSha256": "6992dfb7708cd03e4d9894651521ec23f858f9743f498781ff1fe6cf27a6bb4a",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "981723f002c5b2f13c8d0fc87ca1eab1cc37e587f94e042d6b7d89cd32a090f1",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "498c06582bf2343d5720a7c07fa0fcecdbd3e99f5906f8284909c0718c076711",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1219/498c06582bf2343d5720a7c07fa0fcecdbd3e99f5906f8284909c0718c076711.json",
+  "extractionQaDecisionSha256": "16342d63f6ddb246e5c4326a2f8e41f3744d395d111424dcad98b437201d6639",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-1219",
+    "question": "How can order-optimal correlated rounding support fulfilling multi-item E-commerce orders?",
+    "overview": "This paper studies the dynamic fulfillment problem in e-commerce, in which incoming (multi-item) customer orders must be immediately dispatched to (a combination of) fulfillment centers that have the required inventory. A prevailing approach to this problem, pioneered by Jasin and Sinha in 2015 , has been to write a “deterministic” linear program that dictates, for each item in an incoming multi-item order from a particular region, how frequently it should be dispatched to each fulfillment center (FC). However, dispatching items in a way that satisfies these frequency constraints, without splitting the order across too many FCs, is challenging.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        7,
+        9,
+        10
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Order-Optimal Correlated Rounding for Fulfilling Multi-Item E-Commerce Orders model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This paper studies the dynamic fulfillment problem in e-commerce, in which incoming (multi-item) customer orders must be immediately dispatched to (a combination of) fulfillment centers that have the required inventory. A prevailing approach to this problem, pioneered by Jasin and Sinha in 2015 , has been to write a “deterministic” linear program that dictates, for each item in an incoming multi-item order from a particular region, how frequently it should be dispatched to each fulfillment center (FC).",
+        "objects": [
+          "Customer",
+          "Each element",
+          "Populations",
+          "Suppliers"
+        ],
+        "inputs": [
+          "Them on “dilated” time scales",
+          "Random times",
+          "The horizon",
+          "Unit costs",
+          "The age"
+        ],
+        "decisions": [
+          "Whether to carry each item i independently with probability pcarry",
+          "An FC for each item i according to these probabilities uki"
+        ],
+        "assumptions": [
+          "A granular division of time such that at most one order can arrive during each time step",
+          "All items are shipped from one of these centralized FCs",
+          "Without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given any instance, it uses each FC k with probability at most α · yk"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customer",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We study the dynamic fulfillment problem in e-commerce, in which incoming (multi-item) customer orders must be immediately dispatched to (a combination of) fulfillment centers that have the required inventory.",
+                "matchedText": "customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each element",
+              "source": {
+                "type": "section",
+                "section": "Further Technical Details and Relationship",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 18,
+                "quote": "Nonetheless, we believe that these connections highlight how the cor­ related rounding problem is a harder version of Set Cover, in which a randomized solution that must satisfy constraints on how often each set is used to cover each element is required.",
+                "matchedText": "each element",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Populations",
+              "source": {
+                "type": "section",
+                "section": "Order Types, Demand Rates, Starting",
+                "page": 11,
+                "sectionIndex": 15,
+                "sentence": 7,
+                "quote": "Then, a QJ-dimensional probability vector is constructed by further splitting each order type among the metro­ politan areas according to their populations.",
+                "matchedText": "populations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Suppliers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 2,
+                "quote": "The short-term operations of a typical e-commerce giant involve pulling inventory from sup­ pliers into its fulfillment centers (FCs), including retail stores that can also be used to fulfill online orders; awaiting purchases from online customers, which can be influenced by a powerful search/recommendation engine; and finally, delivering the goods to the custo­ mer’s doorstep through a flexible transportation system that allows different FCs in the network to be used for fulfilling demand from any particular region.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Them on “dilated” time scales",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "Our schemes are simple and fast, based on an intuitive idea; items wait for FCs to “open” at random times but observe them on “dilated” time scales.",
+                "matchedText": "them on “dilated” time scales",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Random times",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "Our schemes are simple and fast, based on an intuitive idea; items wait for FCs to “open” at random times but observe them on “dilated” time scales.",
+                "matchedText": "random times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The horizon",
+              "source": {
+                "type": "section",
+                "section": "Problem Definition",
+                "page": 9,
+                "sectionIndex": 11,
+                "sentence": 2,
+                "quote": "Each item i starts with bki units of inventory at each FC k, with the end of the horizon representing the time at which inventories are replenished again.",
+                "matchedText": "the horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unit costs",
+              "source": {
+                "type": "section",
+                "section": "Problem Definition",
+                "page": 9,
+                "sectionIndex": 21,
+                "sentence": 25,
+                "quote": "unit costs",
+                "matchedText": "unit costs",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The age",
+              "source": {
+                "type": "section",
+                "section": "Further Technical Details and Relationship",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 19,
+                "quote": "Furthermore, it is interesting to us that a modern problem from e-commerce practice, identi­ fied by Jasin and Sinha (2015), can lead us to improve ran­ domized rounding schemes for the age-old Set Cover problem from CS theory.",
+                "matchedText": "the age",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Whether to carry each item i independently with probability pcarry",
+              "source": {
+                "type": "section",
+                "section": "Order Types, Demand Rates, Starting",
+                "page": 12,
+                "sectionIndex": 15,
+                "sentence": 10,
+                "quote": "Finally, to determine starting inventories, each FC k first randomly decides whether to carry each item i independently with probability pcarry",
+                "matchedText": "whether to carry each item i independently with probability pcarry",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "An FC for each item i according to these probabilities uki",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 34,
+                "quote": "We must randomly choose an FC for each item i ac­ cording to these probabilities uki",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A granular division of time such that at most one order can arrive during each time step",
+              "source": {
+                "type": "section",
+                "section": "Problem Definition",
+                "page": 9,
+                "sectionIndex": 11,
+                "sentence": 5,
+                "quote": "As is standard in reve­ nue management, we assume a granular division of time such that at most one order can arrive during each time step.",
+                "matchedText": "a granular division of time such that at most one order can arrive during each time step.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All items are shipped from one of these centralized FCs",
+              "source": {
+                "type": "section",
+                "section": "Numerical Study",
+                "page": 11,
+                "sectionIndex": 14,
+                "sentence": 9,
+                "quote": "Meanwhile, we take the 10 largest Amazon.com, Inc. fulfillment centers that were operational3 as of 2015 and assume that all items are shipped from one of these centralized FCs.",
+                "matchedText": "all items are shipped from one of these centralized FCs.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given any instance, it uses each FC k with probability at most α · yk",
+              "source": {
+                "type": "section",
+                "section": "Formal Specification and Analysis of Rounding Schemes",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 3,
+                "quote": "Assume without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given any instance, it uses each FC k with probability at most α · yk.",
+                "matchedText": "without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given any instance, it uses each FC k with probability at most α · yk.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          }
+        ],
+        "method": "This paper derives a new correlation method that is intuitively simpler and computationally faster and achieves tight performance in two different regimes.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Introduction",
+          "page": 2,
+          "sentence": 29
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "2. Formal Specification and Analysis of Rounding Schemes",
+            "equation": "",
+            "quote": "Assume without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given any instance, it uses each FC k with probability at most α · yk."
+          }
+        ],
+        "components": [
+          {
+            "id": "formal-specification-and-analysis-of-rounding-schemes",
+            "label": "Formal Specification and Analysis of Rounding Schemes",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "Assume without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given any instance, it uses each FC k with probability at most α · yk.",
+            "searchPhrases": [
+              "how formal specification and analysis of rounding schemes is represented",
+              "feasibility condition in operations and supply chains",
+              "formal specification and analysis of rounding schemes feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Assume without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given any instance, it uses each FC k with probability at most α · yk."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Formal Specification and Analysis of Rounding Schemes",
+                "equation": "",
+                "quote": "Assume without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given any instance, it uses each FC k with probability at most α · yk."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Assume without loss that yk > 0 for all k. • A rounding scheme is α-competitive if, given”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "connections-with-set-cover",
+            "label": "Connections with Set Cover",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The objective is to find a collection of FCs to open that covers all the items and minimizes the sum of fixed costs paid for opening FCs.",
+            "searchPhrases": [
+              "how connections with set cover is represented",
+              "modeled objective in operations and supply chains",
+              "connections with set cover modeled objective specification"
+            ],
+            "formal": "Objective relation: The objective is to find a collection of FCs to open that covers all the items and minimizes the sum of fixed costs paid for opening FCs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Our schemes are simple and fast, based on an intuitive idea; items wait for FCs to “open” at random times but observe them on “dilated” time scales."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3. Connections with Set Cover",
+                "equation": "",
+                "quote": "The objective is to find a collection of FCs to open that covers all the items and minimizes the sum of fixed costs paid for opening FCs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The objective is to find a collection of FCs to open that covers all the items and minimizes”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Them on “dilated” time scales",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 8,
+                    "quote": "Our schemes are simple and fast, based on an intuitive idea; items wait for FCs to “open” at random times but observe them on “dilated” time scales.",
+                    "matchedText": "them on “dilated” time scales",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "problem-definition",
+            "label": "Problem Definition",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "We let cunit kij denote the variable cost of fulfilling one unit of item i from FC k to location j and let cfixed kj denote the fixed cost of sending a package (containing one or more items) from FC k to location j.",
+            "searchPhrases": [
+              "how problem definition is represented",
+              "information available to the decision maker in operations and supply chains",
+              "problem definition information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We let cunit kij denote the variable cost of fulfilling one unit of item i from FC k to location j and let cfixed kj denote the fixed cost of sending a package (containing one or more items) from FC k to location j.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume a granular division of time such that at most one order can arrive during each time step.",
+              "During each time step, up to one order arrives, which is from region j and is for subset a with probability λa j , with P a,jλa j ≤1.",
+              "We let cunit kij denote the variable cost of fulfilling one unit of item i from FC k to location j and let cfixed kj denote the fixed cost of sending a package (containing one or more items) from FC k to location j.",
+              "As is standard in revenue management, we assume a granular division of time such that at most one order can arrive during each time step."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.1. Problem Definition",
+                "equation": "",
+                "quote": "We let cunit kij denote the variable cost of fulfilling one unit of item i from FC k to location j and let cfixed kj denote the fixed cost of sending a package (containing one or more items) from FC k to location j."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We let cunit kij denote the variable cost of fulfilling one unit of item i from FC k”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "lp-benchmark",
+            "label": "LP Benchmark",
+            "role": "state",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "Moreover, the first constraint enforces that the expected number of times any FC k fulfills any item i (to any region j, as part of any subset a containing i) does not exceed its starting inventory bki.",
+            "searchPhrases": [
+              "how lp benchmark is represented",
+              "decision-relevant state in operations and supply chains",
+              "lp benchmark decision-relevant state specification"
+            ],
+            "formal": "State definition: Moreover, the first constraint enforces that the expected number of times any FC k fulfills any item i (to any region j, as part of any subset a containing i) does not exceed its starting inventory bki.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Finally, the objective value defining DLP represents the total expected cost of the LP benchmark over the time horizon, accounting for unit costs and fixed costs as well as shortage costs (recalling that there is a null FC k=0).",
+              "For any instance of the problem, the expected cost paid by any dynamic fulfillment policy must be at least the value of DLP for that instance."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.2. LP Benchmark",
+                "equation": "",
+                "quote": "Moreover, the first constraint enforces that the exp­ ected number of times any FC k fulfills any item i (to any region j, as part of any subset a containing i) does not exceed its starting inventory bki."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Inventory: “Inventory”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "randomized-fulfillment-algorithm-and-reduction-result",
+            "label": "Randomized Fulfillment Algorithm and Reduction Result",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In light of the interpretation of the linear program defining DLP above, Jasin and Sinha (2015) also used it to derive the following randomized fulfillment heuristic.",
+            "searchPhrases": [
+              "how randomized fulfillment algorithm and reduction result is represented",
+              "solution algorithm in operations and supply chains",
+              "randomized fulfillment algorithm and reduction result solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In light of the interpretation of the linear program defining DLP above, Jasin and Sinha (2015) also used it to derive the following randomized fulfillment heuristic.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Here, one considers a scaling regime where for any fixed instance and any θ ≥0, the “scaled instance” is defined to the one where the horizon length T has been replaced by θT, whereas each starting inventory bki has also been replaced by θbki.",
+              "In order to achieve this, the randomized fulfillment heuristic must choose for every incoming order a the rounding scheme with the best guarantee among that of Jasin and Sinha (2015) and our two new ones."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5.3. Randomized Fulfillment Algorithm and Reduction Result",
+                "equation": "",
+                "quote": "In light of the interpretation of the linear program defin­ ing DLP above, Jasin and Sinha (2015) also used it to derive the following randomized fulfillment heuristic."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “In light of the interpretation of the linear program defining DLP above, Jasin and Sinha (2015) also used”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "6e0667a8ea3a95d22ae61fcf9de0e1d8309a78709f982322f0434e15aa303f23",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "498c06582bf2343d5720a7c07fa0fcecdbd3e99f5906f8284909c0718c076711",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1219/498c06582bf2343d5720a7c07fa0fcecdbd3e99f5906f8284909c0718c076711.json",
+      "extractionQaDecisionSha256": "16342d63f6ddb246e5c4326a2f8e41f3744d395d111424dcad98b437201d6639",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

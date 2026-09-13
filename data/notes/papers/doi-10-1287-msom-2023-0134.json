@@ -1,0 +1,1132 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-0134",
+  "sourcePdfSha256": "29af5551575671804f534e798dbe6a33859e2d7f0662d36f5338572cae378570",
+  "extractionPagesSha256": "819f8f18828b7a9857770f1f3294992b5c010755a5242140c4cd0ac4c6778472",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "73bc21a37f6c29e0747f623dfbb59403f36a22270acc043777ee91403244daff",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "fc19d88ea5ca025f944b090e94899b241dd5313d7075361e90a878ecfd6adaff",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0134/fc19d88ea5ca025f944b090e94899b241dd5313d7075361e90a878ecfd6adaff.json",
+  "extractionQaDecisionSha256": "de172282f13cf03f4010e2bbdcd48871072e2f79d5af25ae2e00574dc500e64a",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-0134",
+    "question": "How should one design such visit itineraries?",
+    "overview": "One widely adopted approach to manage patient visits in multistage service is to provide patients with visit itineraries that specify personalized appointment time for each patient at each service stage. This paper studies how to design such visit itineraries.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        7,
+        11,
+        18
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "design-of-patient-visit-itineraries-in-tandem-systems-baseline-m",
+        "name": "Design of Patient Visit Itineraries in Tandem Systems baseline model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "One widely adopted approach to manage patient visits in multistage service is to provide patients with visit itineraries that specify personalized appointment time for each patient at each service stage. This paper studies how to design such visit itineraries. The paper develops the first optimization modeling framework to provide each patient with a personalized visit itinerary in a tandem (healthcare) service system.",
+        "objects": [
+          "Patient",
+          "Provider",
+          "Each station",
+          "A random variable",
+          "Customer"
+        ],
+        "inputs": [
+          "The available time",
+          "Arrival time",
+          "The total regular wait time and leisure wait time of patient k, respectively",
+          "Service time",
+          "Service from one stage"
+        ],
+        "decisions": [
+          "Design such visit itineraries",
+          "Model for tandem service systems",
+          "Require that all appointments for station n must be scheduled",
+          "Require that an k be an integer",
+          "Serve patient k"
+        ],
+        "assumptions": [
+          "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+          "All scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7)",
+          "All scheduled patients will show up for their appointments at each station",
+          "The bottleneck station has nB providers",
+          "There are 18 patients to schedule"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "One widely adopted approach to manage patient visits in multistage service is to provide patients with visit itineraries that specify personalized appointment time for each patient at each service stage.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Provider",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 12,
+                "quote": "A well-designed patient visit itinerary that carefully addresses the interdependencies among stages can significantly improve patient experience and provider utilization.",
+                "matchedText": "provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each station",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 3,
+                "quote": "Each station is staffed with a single provider, and we call the provider working at station n as provider n.",
+                "matchedText": "Each station",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A random variable",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 6,
+                "quote": "The service duration of patient k at station n is a random variable δn k for which the support is the set of nonnegative integers.",
+                "matchedText": "a random variable",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customer",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 13,
+                "sentence": 6,
+                "quote": "These admission control studies are typically concerned with whether to accept or reject an arriving customer, taking into account its impact on down­ stream services.",
+                "matchedText": "customer",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The available time",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 28,
+                "quote": "Similarly, we let vn k denote the available time of provider n to serve patient k.",
+                "matchedText": "the available time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival time",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 86,
+                "quote": "arrival time",
+                "matchedText": "arrival time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The total regular wait time and leisure wait time of patient k, respectively",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 2,
+                "sentence": 42,
+                "quote": "Now, let ΓW,k and ΓL,k denote the total regular wait time and leisure wait time of patient k, respectively.",
+                "matchedText": "the total regular wait time and leisure wait time of patient k, respectively",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service time",
+              "source": {
+                "type": "section",
+                "section": "Structural Properties",
+                "sectionIndex": 3,
+                "page": 7,
+                "quote": "service time",
+                "matchedText": "service time",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Service from one stage",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "How­ ever, most, if not all, existing studies only focus on a single-stage system where customers are assumed to receive service from one stage and then leave.",
+                "matchedText": "service from one stage",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design such visit itineraries",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "We study how to design such visit itineraries.",
+                "matchedText": "design such visit itineraries",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Model for tandem service systems",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "model for tandem service systems",
+                "matchedText": "model for tandem service systems",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require that all appointments for station n must be scheduled",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 20,
+                "quote": "We require that all appointments for station n must be scheduled",
+                "matchedText": "require that all appointments for station n must be scheduled",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Require that an k be an integer",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 10,
+                "quote": "We require that an k be an integer",
+                "matchedText": "require that an k be an integer",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Serve patient k",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 28,
+                "quote": "Similarly, we let vn k denote the available time of provider n to serve patient k",
+                "matchedText": "serve patient k",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "quote": "In this section, we assume that all scheduled patients will show up for their appointments at each station."
+              }
+            },
+            {
+              "value": "All scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7)",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 14,
+                "quote": "For now, we assume that all scheduled patients are punctual upon arrival to the clinic (and we will relax this assump­ tion later in Section 7).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All scheduled patients will show up for their appointments at each station",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 22,
+                "quote": "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+                "matchedText": "all scheduled patients will show up for their appointments at each station.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The bottleneck station has nB providers",
+              "source": {
+                "type": "section",
+                "section": "Case Study in an Infusion Center",
+                "page": 15,
+                "sectionIndex": 11,
+                "sentence": 9,
+                "quote": "Suppose that the bottleneck station has nB providers.",
+                "matchedText": "the bottleneck station has nB providers.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There are 18 patients to schedule",
+              "source": {
+                "type": "section",
+                "section": "Case Study in an Infusion Center",
+                "page": 16,
+                "sectionIndex": 11,
+                "sentence": 16,
+                "quote": "Suppose there are 18 patients to schedule.",
+                "matchedText": "there are 18 patients to schedule.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "Inspired by Tuy (2016), we develop an algorithm to solve Problem (CP).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "The Model",
+          "page": 8,
+          "sentence": 143
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3. The Model",
+            "equation": "",
+            "quote": "For now, we assume that all scheduled patients are punctual upon arrival to the clinic (and we will relax this assump­ tion later in Section 7)."
+          }
+        ],
+        "components": [
+          {
+            "id": "the-model",
+            "label": "The Model",
+            "role": "process",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "For now, we assume that all scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7).",
+            "searchPhrases": [
+              "how the model is represented",
+              "system process in innovation, analytics, and technology",
+              "the model system process specification"
+            ],
+            "formal": "Process relation: For now, we assume that all scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that all patients will go to the next station n+1 after finishing the service at station n.",
+              "Without loss of generality, we set a1 1 = 0, which can be viewed as the clinic open time.",
+              "For now, we assume that all scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7).",
+              "This requirement conforms to scheduling practice that usually provides patients with appointment times at the beginning of a slot, rather than some arbitrary time, say 8:17 a.m."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. The Model",
+                "equation": "",
+                "quote": "For now, we assume that all scheduled patients are punctual upon arrival to the clinic (and we will relax this assump­ tion later in Section 7)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Scheduling: “Scheduling”.",
+                "conditionRefs": [
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "structural-properties",
+            "label": "Structural Properties",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "In the next lemma, however, we identify a special case where the discrete convex properties are guaranteed for the objective function of (P).",
+            "searchPhrases": [
+              "how structural properties is represented",
+              "modeled objective in innovation, analytics, and technology",
+              "structural properties modeled objective specification"
+            ],
+            "formal": "Objective relation: In the next lemma, however, we identify a special case where the discrete convex properties are guaranteed for the objective function of (P).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When CL,k < CW,k, the sign of rn k is strictly negative in the objective function.",
+              "Cn R = Cn I for all k and n, Problem (P) does not possess those useful discrete convex properties as the classic single-stage problem.",
+              "After reorganizing the waiting cost and the idling cost, we will have (CW,k CL,k)rn k and (Cn I Cn R)vn k in the objective function."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. Structural Properties",
+                "equation": "",
+                "quote": "In the next lemma, however, we identify a special case where the discrete convex properties are guaranteed for the objective function of (P)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “convex properties are guaranteed for the objective function of (P).”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "approximation-solution-approach",
+        "name": "Approximation Solution Approach",
+        "kind": "approximation",
+        "relation": "This formulation approximates Design of Patient Visit Itineraries in Tandem Systems baseline model.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "design-of-patient-visit-itineraries-in-tandem-systems-baseline-m"
+          }
+        ],
+        "summary": "It is possible that certain patients are assigned the same appointment time at some stages.",
+        "objects": [
+          "A patient",
+          "The provider",
+          "Customer",
+          "Server"
+        ],
+        "inputs": [
+          "The available time",
+          "Arrival time",
+          "The total regular wait time and leisure wait time of patient k, respectively",
+          "Service time",
+          "Service from one stage"
+        ],
+        "decisions": [
+          "Serve the next patient once done with the prior patient"
+        ],
+        "assumptions": [
+          "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+          "All scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7)",
+          "All scheduled patients will show up for their appointments at each station",
+          "The bottleneck station has nB providers",
+          "There are 18 patients to schedule"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A patient",
+              "source": {
+                "type": "section",
+                "section": "Approximation Solution Approach",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "That is, this approximation asserts that a patient is ready for service in the next station once done with the prior station, and the provider is available to serve the next patient once done with the prior patient.",
+                "matchedText": "a patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The provider",
+              "source": {
+                "type": "section",
+                "section": "Approximation Solution Approach",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "That is, this approximation asserts that a patient is ready for service in the next station once done with the prior station, and the provider is available to serve the next patient once done with the prior patient.",
+                "matchedText": "the provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customer",
+              "source": {
+                "type": "section",
+                "section": "Approximation Solution Approach",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 44,
+                "quote": "They focus on customer experience in queueing networks and show that strategic idling can decrease wait time and the probability of long waits in a tandem system with two single-server queues or in an open shop.",
+                "matchedText": "customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "section",
+                "section": "Approximation Solution Approach",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 44,
+                "quote": "They focus on customer experience in queueing networks and show that strategic idling can decrease wait time and the probability of long waits in a tandem system with two single-server queues or in an open shop.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The available time",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 28,
+                "quote": "Similarly, we let vn k denote the available time of provider n to serve patient k.",
+                "matchedText": "the available time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival time",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 86,
+                "quote": "arrival time",
+                "matchedText": "arrival time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The total regular wait time and leisure wait time of patient k, respectively",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 2,
+                "sentence": 42,
+                "quote": "Now, let ΓW,k and ΓL,k denote the total regular wait time and leisure wait time of patient k, respectively.",
+                "matchedText": "the total regular wait time and leisure wait time of patient k, respectively",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service time",
+              "source": {
+                "type": "section",
+                "section": "Structural Properties",
+                "sectionIndex": 3,
+                "page": 7,
+                "quote": "service time",
+                "matchedText": "service time",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Service from one stage",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "How­ ever, most, if not all, existing studies only focus on a single-stage system where customers are assumed to receive service from one stage and then leave.",
+                "matchedText": "service from one stage",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Serve the next patient once done with the prior patient",
+              "source": {
+                "type": "section",
+                "section": "Approximation Solution Approach",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "That is, this approximation asserts that a patient is ready for service in the next station once done with the prior station, and the provider is available to serve the next patient once done with the prior patient",
+                "matchedText": "serve the next patient once done with the prior patient",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "quote": "In this section, we assume that all scheduled patients will show up for their appointments at each station."
+              }
+            },
+            {
+              "value": "All scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7)",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 14,
+                "quote": "For now, we assume that all scheduled patients are punctual upon arrival to the clinic (and we will relax this assump­ tion later in Section 7).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All scheduled patients will show up for their appointments at each station",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 22,
+                "quote": "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+                "matchedText": "all scheduled patients will show up for their appointments at each station.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The bottleneck station has nB providers",
+              "source": {
+                "type": "section",
+                "section": "Case Study in an Infusion Center",
+                "page": 15,
+                "sectionIndex": 11,
+                "sentence": 9,
+                "quote": "Suppose that the bottleneck station has nB providers.",
+                "matchedText": "the bottleneck station has nB providers.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There are 18 patients to schedule",
+              "source": {
+                "type": "section",
+                "section": "Case Study in an Infusion Center",
+                "page": 16,
+                "sectionIndex": 11,
+                "sentence": 16,
+                "quote": "Suppose there are 18 patients to schedule.",
+                "matchedText": "there are 18 patients to schedule.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper develops the first optimization modeling framework to provide each patient with a personalized visit itinerary in a tandem (healthcare) service system.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 4
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 11,
+            "section": "5. Approximation Solution Approach",
+            "equation": "",
+            "quote": "It is possible that certain patients are assigned the same appointment time at some stages."
+          }
+        ],
+        "components": [
+          {
+            "id": "approximation-solution-approach",
+            "label": "Approximation Solution Approach",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "It is possible that certain patients are assigned the same appointment time at some stages.",
+            "searchPhrases": [
+              "how approximation solution approach is represented",
+              "decision rule in innovation, analytics, and technology",
+              "approximation solution approach decision rule specification"
+            ],
+            "formal": "Decision rule: It is possible that certain patients are assigned the same appointment time at some stages.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When CL,k = CW,k and Cn I = Cn R, the optimal schedule will choose to simply minimize total patient waiting and provider idling; thus, an k = max{an 1 k ,an k 1}.",
+              "Let Γ(a) and ΓR(a) be the objective values of (CP) and (APR), respectively, under a given schedule a and its realized service start times and finished times for all patients at all stages in each sample scenario ω ∈Ω."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5. Approximation Solution Approach",
+                "equation": "",
+                "quote": "It is possible that certain patients are assigned the same appointment time at some stages."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “It is possible that certain patients are assigned the same appointment time at some stages.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "model-extension",
+        "name": "Model Extension",
+        "kind": "extension",
+        "relation": "This extension builds on Design of Patient Visit Itineraries in Tandem Systems baseline model.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "design-of-patient-visit-itineraries-in-tandem-systems-baseline-m"
+          }
+        ],
+        "summary": "To use our model, one just needs to set the no-show probability of those patients who do not need to see a cast technician to be one during that stage.",
+        "objects": [
+          "Patients",
+          "Service stations",
+          "Random variable"
+        ],
+        "inputs": [
+          "Both patient and stage"
+        ],
+        "decisions": [
+          "Require effort to arrange"
+        ],
+        "assumptions": [
+          "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+          "All scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7)",
+          "All scheduled patients will show up for their appointments at each station",
+          "The bottleneck station has nB providers",
+          "There are 18 patients to schedule"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Model Extension",
+                "page": 17,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "This requirement means that patients will not receive service in subsequent stations unless they show up in all preceding stations.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service stations",
+              "source": {
+                "type": "section",
+                "section": "Model Extension",
+                "page": 18,
+                "sectionIndex": 0,
+                "sentence": 42,
+                "quote": "We note that, however, this extension does not apply to more complex settings where patients “skip” some stages in the middle and come back at later stages or patients visit service stations in a different order.",
+                "matchedText": "service stations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random variable",
+              "source": {
+                "type": "section",
+                "section": "Model Extension",
+                "page": 17,
+                "sectionIndex": 0,
+                "sentence": 46,
+                "quote": "random variable",
+                "matchedText": "random variable",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Both patient and stage",
+              "source": {
+                "type": "section",
+                "section": "Model Extension",
+                "page": 18,
+                "sectionIndex": 0,
+                "sentence": 33,
+                "quote": "Specifically, it allows patient no-show proba­ bilities to depend on both patient and stage; the nonpunctuality behavior can be patient specific.",
+                "matchedText": "both patient and stage",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require effort to arrange",
+              "source": {
+                "type": "section",
+                "section": "Model Extension",
+                "page": 17,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "Appoint­ ments for such sophisticated care visits usually present high value to patients and also require effort to arrange",
+                "matchedText": "require effort to arrange",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "quote": "In this section, we assume that all scheduled patients will show up for their appointments at each station."
+              }
+            },
+            {
+              "value": "All scheduled patients are punctual upon arrival to the clinic (and we will relax this assumption later in Section 7)",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 14,
+                "quote": "For now, we assume that all scheduled patients are punctual upon arrival to the clinic (and we will relax this assump­ tion later in Section 7).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All scheduled patients will show up for their appointments at each station",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 22,
+                "quote": "In this section, we assume that all scheduled patients will show up for their appointments at each station.",
+                "matchedText": "all scheduled patients will show up for their appointments at each station.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The bottleneck station has nB providers",
+              "source": {
+                "type": "section",
+                "section": "Case Study in an Infusion Center",
+                "page": 15,
+                "sectionIndex": 11,
+                "sentence": 9,
+                "quote": "Suppose that the bottleneck station has nB providers.",
+                "matchedText": "the bottleneck station has nB providers.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There are 18 patients to schedule",
+              "source": {
+                "type": "section",
+                "section": "Case Study in an Infusion Center",
+                "page": 16,
+                "sectionIndex": 11,
+                "sentence": 16,
+                "quote": "Suppose there are 18 patients to schedule.",
+                "matchedText": "there are 18 patients to schedule.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper develops the first optimization modeling framework to provide each patient with a personalized visit itinerary in a tandem (healthcare) service system.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 4
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 18,
+            "section": "7. Model Extension",
+            "equation": "",
+            "quote": "To use our model, one just needs to set the no-show probability of those patients who do not need to see a cast techni­ cian to be one during that stage."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-extension",
+            "label": "Model Extension",
+            "role": "decision",
+            "concepts": [
+              "no-shows"
+            ],
+            "explanation": "To use our model, one just needs to set the no-show probability of those patients who do not need to see a cast technician to be one during that stage.",
+            "searchPhrases": [
+              "how model extension is represented",
+              "decision rule in innovation, analytics, and technology",
+              "model extension decision rule specification"
+            ],
+            "formal": "Decision rule: To use our model, one just needs to set the no-show probability of those patients who do not need to see a cast technician to be one during that stage.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Leveraging this extension, our model can deal with settings where a subset of the patients leave the facility after visiting the first few stations.",
+              "After that, depending on the need for cast adjustment or removal, patients may or may not see a cast technician."
+            ],
+            "sources": [
+              {
+                "page": 18,
+                "section": "7. Model Extension",
+                "equation": "",
+                "quote": "To use our model, one just needs to set the no-show probability of those patients who do not need to see a cast techni­ cian to be one during that stage."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "no-shows",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses No-shows: “To use our model, one just needs to set the no-show probability of those patients who do not”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 3,
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "29af5551575671804f534e798dbe6a33859e2d7f0662d36f5338572cae378570",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "fc19d88ea5ca025f944b090e94899b241dd5313d7075361e90a878ecfd6adaff",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0134/fc19d88ea5ca025f944b090e94899b241dd5313d7075361e90a878ecfd6adaff.json",
+      "extractionQaDecisionSha256": "de172282f13cf03f4010e2bbdcd48871072e2f79d5af25ae2e00574dc500e64a",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

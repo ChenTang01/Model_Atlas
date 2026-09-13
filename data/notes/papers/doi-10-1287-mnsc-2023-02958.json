@@ -1,0 +1,765 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2023-02958",
+  "sourcePdfSha256": "04beca8e78b8f02cb8de7dea7a94fcd88c386f5e87467414482c2e289e3d4003",
+  "extractionPagesSha256": "d78f285de6256981976cf4aea74de2de7283ac1226fdfabfdff16b220f04bd94",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "a83ef74283e66ac52fe1d873a29920728766d98262ebcc6db8c4c4ebafce2315",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "a530a3dcaebe315e44753e123d2423e15bca5cec9b2a21d11ee524f847dc2196",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-02958/a530a3dcaebe315e44753e123d2423e15bca5cec9b2a21d11ee524f847dc2196.json",
+  "extractionQaDecisionSha256": "e35d0d428795c4011f175515c0339b8ec6c9e29e1b2ca6e2bc024fa61084fdc2",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-02958",
+    "question": "How should one schedule arrivals at a mass vaccination center to minimize a tri-objective function of (a) the expected number of infections acquired while waiting, (b) throughput, and (c) overtime?",
+    "overview": "Mass vaccination is essential for epidemic control, but long queues can increase infection risk. This paper studies how to schedule arrivals at a mass vaccination center to minimize a tri-objective function of (a) the expected number of infections acquired while waiting, (b) throughput, and (c) overtime. Leveraging multimodularity results of a related optimization problem, we construct a solution algorithm and apply it to a case study of COVID-19.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Mass Vaccination Scheduling model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Mass vaccination is essential for epidemic control, but long queues can increase infection risk. This paper studies how to schedule arrivals at a mass vaccination center to minimize a tri-objective function of (a) the expected number of infections acquired while waiting, (b) throughput, and (c) overtime. Leveraging multimodularity results of a related optimization problem, we construct a solution algorithm and apply it to a case study of COVID-19.",
+        "objects": [
+          "Providers",
+          "Patient",
+          "Server",
+          "Managers"
+        ],
+        "inputs": [
+          "Service rate",
+          "Empty time slots",
+          "Service times",
+          "The arrival rate",
+          "Arrival time"
+        ],
+        "decisions": [
+          "Require a finite value for z",
+          "Close at 6 p",
+          "Require a model to estimate infection spread among individuals waiting in a queue",
+          "Service rate"
+        ],
+        "assumptions": [
+          "The vaccine providers have already been vaccinated, are frequently tested, and therefore do not have the disease",
+          "All individuals scheduled to arrive at a time slot do so at the start of the time slot",
+          "Both parameters are fixed inputs made in advance and that D=d is an integer",
+          "The MVC’s planned closing time is D + d time units after it opens"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Providers",
+              "source": {
+                "type": "section",
+                "section": "Model of Infection Spread in a Queue",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 9,
+                "quote": "We assume that the vaccine providers have already been vaccinated, are frequently tested, and therefore do not have the disease.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patient",
+              "source": {
+                "type": "section",
+                "section": "Model of Infection Spread in a Queue",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 10,
+                "quote": "We relax the fixed p0 assumption and consider patient heterogeneity in Sec­ tion 5.2.6.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "section",
+                "section": "Model of Infection Spread in a Queue",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 14,
+                "quote": "We also relax the fixed µ assumption and consider server heterogeneity in Sec­ tion 5.2.6.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Managers",
+              "source": {
+                "type": "section",
+                "section": "The Relative Benefit of Being Optimal",
+                "page": 7,
+                "sectionIndex": 10,
+                "sentence": 4,
+                "quote": "Our discus­ sions with MVC managers in our own region indicated that this is how they schedule.",
+                "matchedText": "managers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Service rate",
+              "source": {
+                "type": "section",
+                "section": "Approximation of C(x) Using Overlap Times",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 15,
+                "quote": "How­ ever, as long as there is a queue during a scheduled time slot, then all servers are busy, and the queue’s evo­ lution is stochastically the same as if there were a single server with an exponentially distributed service rate of kµ.",
+                "matchedText": "service rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Empty time slots",
+              "source": {
+                "type": "section",
+                "section": "The Dome-Shaped Pattern",
+                "page": 8,
+                "sectionIndex": 11,
+                "sentence": 8,
+                "quote": "In our setting (here and in the realistic-sized MVC study of Section 5), the number of total arrivals relative to the number of time slots available is too large to observe empty time slots.",
+                "matchedText": "empty time slots",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Service times",
+              "source": {
+                "type": "section",
+                "section": "The Dome-Shaped Pattern",
+                "page": 8,
+                "sectionIndex": 11,
+                "sentence": 17,
+                "quote": "service times",
+                "matchedText": "service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "The Relative Benefit of Being Optimal",
+                "page": 7,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "Moreover, a pandemic vaccination planning tool called “PanVax,” developed by the CDC, assumes that the arrival rate to an MVC is constant throughout the day; users can change the rate, but they cannot enter time-varying rates (Centers for Disease Control and Prevention 2020).",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival time",
+              "source": {
+                "type": "section",
+                "section": "Sensitivity Analysis",
+                "page": 15,
+                "sectionIndex": 17,
+                "sentence": 93,
+                "quote": "arrival time",
+                "matchedText": "arrival time",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Require a finite value for z",
+              "source": {
+                "type": "section",
+                "section": "Model of Infection Spread in a Queue",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 20,
+                "quote": "We note that our theoretical results in Section 4 do not require a finite value for z",
+                "matchedText": "require a finite value for z",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Close at 6 p",
+              "source": {
+                "type": "section",
+                "section": "Tri-Objective Optimization",
+                "page": 9,
+                "sectionIndex": 25,
+                "sentence": 18,
+                "quote": "For example, if the MVC opens at 8 a.m., D = 9 hours and d = 1 hour, then the MVC accepts arrivals until 5 p.m. and plans to close at 6 p.m.",
+                "matchedText": "close at 6 p",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Require a model to estimate infection spread among individuals waiting in a queue",
+              "source": {
+                "type": "section",
+                "section": "Model of Infection Spread in a Queue",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 1,
+                "quote": "Before formulating our optimization problem, we require a model to estimate infection spread among individuals waiting in a queue",
+                "matchedText": "require a model to estimate infection spread among individuals waiting in a queue",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Service rate",
+              "source": {
+                "type": "section",
+                "section": "Approximation of C(x) Using Overlap Times",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 15,
+                "quote": "How­ ever, as long as there is a queue during a scheduled time slot, then all servers are busy, and the queue’s evo­ lution is stochastically the same as if there were a single server with an exponentially distributed service rate of kµ.",
+                "matchedText": "service rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The vaccine providers have already been vaccinated, are frequently tested, and therefore do not have the disease",
+              "source": {
+                "type": "section",
+                "section": "Model of Infection Spread in a Queue",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 9,
+                "quote": "We assume that the vaccine providers have already been vaccinated, are frequently tested, and therefore do not have the disease.",
+                "matchedText": "the vaccine providers have already been vaccinated, are frequently tested, and therefore do not have the disease.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All individuals scheduled to arrive at a time slot do so at the start of the time slot",
+              "source": {
+                "type": "section",
+                "section": "Model of Infection Spread in a Queue",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 29,
+                "quote": "Punctual arrivals: We assume that all individuals scheduled to arrive at a time slot do so at the start of the time slot.",
+                "matchedText": "all individuals scheduled to arrive at a time slot do so at the start of the time slot.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Both parameters are fixed inputs made in advance and that D=d is an integer",
+              "source": {
+                "type": "section",
+                "section": "Scheduling Optimization Problem",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "We assume that both parameters are fixed inputs made in advance and that D=d is an integer.",
+                "matchedText": "both parameters are fixed inputs made in advance and that D=d is an integer.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The MVC’s planned closing time is D + d time units after it opens",
+              "source": {
+                "type": "section",
+                "section": "Tri-Objective Optimization",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 8,
+                "quote": "Based on our discussions with public health plan­ ners, we assume that the MVC’s planned closing time is D + d time units after it opens.",
+                "matchedText": "the MVC’s planned closing time is D + d time units after it opens.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "Leveraging multimodularity results of a related optimization problem, we construct a solution algorithm and apply it to a case study of COVID-19.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 3
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3. Model of Infection Spread in a Queue",
+            "equation": "",
+            "quote": "We consider the queue at an MVC, in which batches of people are scheduled to arrive at different time slots throughout the day."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-of-infection-spread-in-a-queue",
+            "label": "Model of Infection Spread in a Queue",
+            "role": "process",
+            "concepts": [
+              "queueing",
+              "scheduling"
+            ],
+            "explanation": "The model considers the queue at an MVC, in which batches of people are scheduled to arrive at different time slots throughout the day.",
+            "searchPhrases": [
+              "how model of infection spread in a queue is represented",
+              "system process in operations and supply chains",
+              "model of infection spread in a queue system process specification"
+            ],
+            "formal": "Process relation: The model considers the queue at an MVC, in which batches of people are scheduled to arrive at different time slots throughout the day.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Queuing setting: There are k vaccinators, each with independent service times exponentially distributed with rate μ (denoted as Exp(μ)).",
+              "Before formulating our optimization problem, we require a model to estimate infection spread among individuals waiting in a queue.",
+              "Specifically, we assume T time slots, equally spaced at d time units apart (e.g., 1 hour)."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Model of Infection Spread in a Queue",
+                "equation": "",
+                "quote": "We consider the queue at an MVC, in which batches of people are scheduled to arrive at different time slots throughout the day."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing: “We consider the queue at an MVC, in which batches of people are scheduled to arrive at different”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Scheduling: “We consider the queue at an MVC, in which batches of people are scheduled to arrive at different”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "scheduling-optimization-problem-and-analysis",
+            "label": "Scheduling Optimization Problem and Analysis",
+            "role": "process",
+            "concepts": [
+              "scheduling",
+              "optimization"
+            ],
+            "explanation": "Consistent with practice, we assume that people are scheduled to arrive at equally spaced time points with fixed interval length d (e.g., every hour) over a total duration D (e.g., 9 hours).",
+            "searchPhrases": [
+              "how scheduling optimization problem and analysis is represented",
+              "system process in operations and supply chains",
+              "scheduling optimization problem and analysis system process specification"
+            ],
+            "formal": "Process relation: Consistent with practice, we assume that people are scheduled to arrive at equally spaced time points with fixed interval length d (e.g., every hour) over a total duration D (e.g., 9 hours).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that both parameters are fixed inputs made in advance and that D=d is an integer.",
+              "Consistent with practice, we assume that people are scheduled to arrive at equally spaced time points with fixed interval length d (e.g., every hour) over a total duration D (e.g., 9 hours)."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4. Scheduling Optimization Problem and Analysis",
+                "equation": "",
+                "quote": "Consistent with practice, we assume that people are scheduled to arrive at equally spaced time points with fixed interval length d (e.g., every hour) over a total duration D (e.g., 9 hours)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Scheduling: “Consistent with practice, we assume that people are scheduled to arrive at equally spaced time points with fixed”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Optimization: “Consistent with practice, we assume that people are scheduled to arrive at equally spaced time points with fixed”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "minimizing-the-expected-number-of-new-infections",
+            "label": "Minimizing the Expected Number of New Infections",
+            "role": "algorithm",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "This leads to an optimal local search algorithm, which has been used in shift scheduling (Koole and Van Der Sluis 2003) and patient scheduling problems (Kaandorp and Koole 2007).",
+            "searchPhrases": [
+              "how minimizing the expected number of new infections is represented",
+              "solution algorithm in operations and supply chains",
+              "minimizing the expected number of new infections solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: This leads to an optimal local search algorithm, which has been used in shift scheduling (Koole and Van Der Sluis 2003) and patient scheduling problems (Kaandorp and Koole 2007).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For example, if the objective function has the discrete convexity property known as multimodularity (see Definition 1 below), it has been shown that a locally optimal solution is also globally optimal (Murota 2005)."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "4.1. Minimizing the Expected Number of New Infections",
+                "equation": "",
+                "quote": "This leads to an optimal local search algorithm, which has been used in shift schedul­ ing (Koole and Van Der Sluis 2003) and patient schedul­ ing problems (Kaandorp and Koole 2007)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Scheduling: “which has been used in shift Scheduling (Koole and Van Der Sluis 2003) and patient”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "minimizing-the-expected-total-overlap-time",
+            "label": "Minimizing the Expected Total Overlap Time",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "With Proposition 1, we can apply the local search algorithm described in Kaandorp and Koole (2007) to obtain a globally optimal solution for OPT-OVERLAP2.",
+            "searchPhrases": [
+              "how minimizing the expected total overlap time is represented",
+              "solution algorithm in operations and supply chains",
+              "minimizing the expected total overlap time solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: With Proposition 1, we can apply the local search algorithm described in Kaandorp and Koole (2007) to obtain a globally optimal solution for OPT-OVERLAP2.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Note that OPT-OVERLAP is a constrained optimization problem with the constraint PT i=1 xi = m (as well as the nonnegativity constraints).",
+              "The key idea of the algorithm is to start with a feasible schedule, x, and check whether any “neighboring feasible point” (where the neighborhood is determined by the set of vectors used in the multimodularity definition), y, is such that O(y) < O(x)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.3. Minimizing the Expected Total Overlap Time",
+                "equation": "",
+                "quote": "With Proposition 1, we can apply the local search algorithm described in Kaandorp and Koole (2007) to obtain a globally optimal solution for OPT-OVERLAP2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “Koole (2007) to obtain a globally optimal solution for OPT-OVERLAP2.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-relative-benefit-of-being-optimal",
+            "label": "The Relative Benefit of Being Optimal",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We apply the local search algorithm described in Section 4.3 to find xo∗, and we compare its performance to that of ̄x.",
+            "searchPhrases": [
+              "how the relative benefit of being optimal is represented",
+              "solution algorithm in operations and supply chains",
+              "the relative benefit of being optimal solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We apply the local search algorithm described in Section 4.3 to find xo∗, and we compare its performance to that of ̄x.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The relative difference plotted on the y-axis of Figure 1 is [O(x) O(xo∗)]=O(x); that is, the fractional reduction in expected overlap time achieved from an optimal schedule compared with an E-D schedule."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.4. The Relative Benefit of Being Optimal",
+                "equation": "",
+                "quote": "We apply the local search algorithm described in Section 4.3 to find xo∗, and we compare its performance to that of ¯x."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We apply the local search algorithm described in Section 4.3 to find xo∗, and we compare its performance”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-dome-shaped-pattern",
+            "label": "The Dome-Shaped Pattern",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "As D increases, the dome-shaped pattern becomes attenuated, with the E-D schedule being optimal at D = 4 and 5 (consistent with Proposition 2(a)).",
+            "searchPhrases": [
+              "how the dome-shaped pattern is represented",
+              "feasibility condition in operations and supply chains",
+              "the dome-shaped pattern feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "As D increases, the dome-shaped pattern becomes attenuated, with the E-D schedule being optimal at D = 4 and 5 (consistent with Proposition 2(a)).",
+              "Based on the same example from the previous section, Figure 3 visualizes the shape of the optimal overlap schedule, xo∗, for different values of D (again holding m = 30 and T = 6).",
+              "For example, for D = 1, we observe a decrease in the number of arrivals scheduled in going from time period 1 to time period 2, followed by equal quantities of arrivals scheduled for time periods 2–4, followed by increasing batch sizes from time periods 4–6."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.5. The Dome-Shaped Pattern",
+                "equation": "",
+                "quote": "As D increases, the dome-shaped pattern becomes attenuated, with the E-D schedule being optimal at D = 4 and 5 (consistent with Proposition 2(a))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “As D increases, the dome-shaped pattern becomes attenuated, with the E-D schedule being optimal at D = 4”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "tri-objective-optimization",
+            "label": "Tri-Objective Optimization",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Nonetheless, one may want to endogenize this decision, with high throughput being its own desirable objective for evaluation in tradeoff analyses.",
+            "searchPhrases": [
+              "how tri-objective optimization is represented",
+              "modeled objective in operations and supply chains",
+              "tri-objective optimization modeled objective specification"
+            ],
+            "formal": "Objective relation: Nonetheless, one may want to endogenize this decision, with high throughput being its own desirable objective for evaluation in tradeoff analyses.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The model in the previous section assumes that a target throughput, m, has been made in advance (hence, the constraint ‖x‖1 = m)."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.6. Tri-Objective Optimization",
+                "equation": "",
+                "quote": "Nonetheless, one may want to endogenize this decision, with high throughput being its own desirable objective for evaluation in tradeoff analyses."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization: “Nonetheless, one may want to endogenize this decision, with high throughput being its own desirable objective for evaluation”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 2,
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "04beca8e78b8f02cb8de7dea7a94fcd88c386f5e87467414482c2e289e3d4003",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "a530a3dcaebe315e44753e123d2423e15bca5cec9b2a21d11ee524f847dc2196",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-02958/a530a3dcaebe315e44753e123d2423e15bca5cec9b2a21d11ee524f847dc2196.json",
+      "extractionQaDecisionSha256": "e35d0d428795c4011f175515c0339b8ec6c9e29e1b2ca6e2bc024fa61084fdc2",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,688 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2022-03407",
+  "sourcePdfSha256": "ce5d9784b03433ee9ca0ab7b6cd1aac18de1110a2453f20e64e2f7925d88b31c",
+  "extractionPagesSha256": "3adf94e52b40fd841beb652c566055dbb2a5243199dc80281cd3da07a6ba2a1f",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "8961f3435931d754d83a97a29def4cf177e1292ebbd4ed009489ef21678e531b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "1c26ceb86106c7c0c52f0127d6d8f9d5e6ce99032527ecef2f7682a64c3ce054",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-03407/1c26ceb86106c7c0c52f0127d6d8f9d5e6ce99032527ecef2f7682a64c3ce054.json",
+  "extractionQaDecisionSha256": "f39ce5c5cba44bf122c16180141d820af300217ec910b3f0983ae376965d2de0",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-03407",
+    "question": "Does allowing publishers to use both private marketplaces and real-time bidding create adverse selection that harms RTB-only publishers and advertisers?",
+    "overview": "A dual-channel publisher privately observes impression quality and strategically allocates impressions between a private marketplace and real-time bidding, chooses a floor, and faces advertisers bidding in a second-price auction. The three-stage game is solved by backward induction and then tested empirically.",
+    "modelTypes": [
+      "Game theory",
+      "Structural model",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        9
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Three-stage publisher-advertiser auction game with private impression quality and endogenous channel allocation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A dual-channel publisher privately observes impression quality and strategically allocates impressions between a private marketplace and real-time bidding, chooses a floor, and faces advertisers bidding in a second-price auction. The three-stage game is solved by backward induction and then tested empirically.",
+        "objects": [
+          "A dual-channel publisher using PMP and RTB",
+          "A single-channel publisher using only RTB",
+          "Multiple advertisers active across channels"
+        ],
+        "inputs": [
+          "Each publisher privately observes the realized quality of its impression",
+          "Advertisers know equilibrium channel-allocation rules and form rational expectations of quality by publisher type and channel",
+          "Advertisers know their private per-unit value",
+          "The dual-channel publisher can selectively route impressions"
+        ],
+        "decisions": [
+          "The dual-channel publisher chooses the PMP quality threshold",
+          "Publishers choose channel allocation and RTB floor prices",
+          "Advertisers submit bids",
+          "Only high-quality impressions",
+          "A floor price r"
+        ],
+        "assumptions": [
+          "Impression quality and advertiser values are uniform in the baseline",
+          "Advertisers can access both channels without cost in the main model and bid in second-price auctions",
+          "Publisher marginal cost and outside-option payoff are normalized to zero",
+          "Advertisers know channel-level expected quality but not realized quality",
+          "Channel adoption is exogenous in the baseline, with endogenous entry considered in an extension"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A dual-channel publisher using PMP and RTB",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a dual-channel publisher using PMP and RTB"
+              }
+            },
+            {
+              "value": "A single-channel publisher using only RTB",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a single-channel publisher using only RTB"
+              }
+            },
+            {
+              "value": "Multiple advertisers active across channels",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "multiple advertisers active across channels"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each publisher privately observes the realized quality of its impression",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each publisher privately observes the realized quality of its impression."
+              }
+            },
+            {
+              "value": "Advertisers know equilibrium channel-allocation rules and form rational expectations of quality by publisher type and channel",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Advertisers know equilibrium channel-allocation rules and form rational expectations of quality by publisher type and channel."
+              }
+            },
+            {
+              "value": "Advertisers know their private per-unit value",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Advertisers know their private per-unit value before bidding."
+              }
+            },
+            {
+              "value": "The dual-channel publisher can selectively route impressions",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The dual-channel publisher can selectively route impressions after observing quality, whereas the RTB-only publisher cannot."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The dual-channel publisher chooses the PMP quality threshold",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the dual-channel publisher chooses the PMP quality threshold"
+              }
+            },
+            {
+              "value": "Publishers choose channel allocation and RTB floor prices",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "publishers choose channel allocation and RTB floor prices"
+              }
+            },
+            {
+              "value": "Advertisers submit bids",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "advertisers submit bids based on value and expected impression quality"
+              }
+            },
+            {
+              "value": "Only high-quality impressions",
+              "source": {
+                "type": "section",
+                "section": "Impression Allocation",
+                "page": 4,
+                "sectionIndex": 7,
+                "sentence": 10,
+                "quote": "To model the status quo for PMP transactions where publishers and advertisers agree on the qual­ ity of impressions (Newor Media 2022, Publift 2023), we assume that the dual-channel publisher pd com­ mits to allocating only high-quality impressions",
+                "matchedText": "only high-quality impressions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A floor price r",
+              "source": {
+                "type": "section",
+                "section": "Sequence of Events",
+                "page": 5,
+                "sectionIndex": 10,
+                "sentence": 4,
+                "quote": "a floor price r",
+                "matchedText": "a floor price r",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Impression quality and advertiser values are uniform in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Impression quality and advertiser values are uniform in the baseline."
+              }
+            },
+            {
+              "value": "Advertisers can access both channels without cost in the main model and bid in second-price auctions",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Advertisers can access both channels without cost in the main model and bid in second-price auctions."
+              }
+            },
+            {
+              "value": "Publisher marginal cost and outside-option payoff are normalized to zero",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Publisher marginal cost and outside-option payoff are normalized to zero."
+              }
+            },
+            {
+              "value": "Advertisers know channel-level expected quality but not realized quality",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Advertisers know channel-level expected quality but not realized quality."
+              }
+            },
+            {
+              "value": "Channel adoption is exogenous in the baseline, with endogenous entry considered in an extension",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Channel adoption is exogenous in the baseline, with endogenous entry considered in an extension."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper solves the three-stage game by backward induction, derives the quality threshold and cross-publisher externality, and tests the predicted quality difference with 2019 demand-side-platform data using a three-stage sample-selection correction.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3.2. Impression Allocation",
+            "equation": "",
+            "quote": "To balance relevance and parsimony, in our main model, we take publishers’ channel adoption choice as exogenous and assume that one publisher, denoted by pd, offers impressions via both PMP and RTB, whereas the other publisher, denoted by ps, offers impressions solely through RTB."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Each publisher privately observes the realized quality of its impression. Advertisers know equilibrium channel-allocation rules and form rational expectations of quality by publisher type and channel. Advertisers know their private per-unit value before bidding. The dual-channel publisher can selectively route impressions after observing quality, whereas the RTB-only publisher cannot.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in adverse selection across private and open display-ad channels",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Each publisher privately observes the realized quality of its impression.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q",
+                "meaning": "publisher-observed realized impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "quality threshold above which the dual-channel publisher routes impressions to PMP",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_hat",
+                "meaning": "advertisers' rational expectation of impression quality in a channel",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v",
+                "meaning": "an advertiser's private value per unit of impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "publisher's auction floor price",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Impression quality and advertiser values are uniform in the baseline.",
+              "Advertisers can access both channels without cost in the main model and bid in second-price auctions.",
+              "Publisher marginal cost and outside-option payoff are normalized to zero."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.2. Impression Allocation",
+                "equation": "",
+                "quote": "To balance relevance and parsimony, in our main model, we take publishers’ channel adoption choice as exogenous and assume that one publisher, denoted by pd, offers impressions via both PMP and RTB, whereas the other publisher, denoted by ps, offers impressions solely through RTB."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "An advertiser chooses a bid against expected channel quality, while a publisher chooses its floor, channel allocation and—if dual-channel—quality threshold to maximize auction revenue.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in adverse selection across private and open display-ad channels",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\Pi_a(\\beta)=v q_hat-max{r,\\beta_(2)} if \\beta>=max{r,\\beta_(2)}, and 0 otherwise; \\Pi_p(r)=max{r,\\beta_(2)} if \\beta_(1)>=r, and 0 otherwise",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "q",
+                "meaning": "publisher-observed realized impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "quality threshold above which the dual-channel publisher routes impressions to PMP",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_hat",
+                "meaning": "advertisers' rational expectation of impression quality in a channel",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v",
+                "meaning": "an advertiser's private value per unit of impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta, \\beta_(2)",
+                "meaning": "the advertiser's bid and the second-highest competing bid",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "publisher's auction floor price",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertiser’s Payoff In the main model, we assume that all advertisers have free access to both PMP and RTB.",
+              "Impression quality and advertiser values are uniform in the baseline.",
+              "Advertisers can access both channels without cost in the main model and bid in second-price auctions.",
+              "Publisher marginal cost and outside-option payoff are normalized to zero."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "(3)–(4)",
+                "quote": "Advertiser’s Payoff In the main model, we assume that all advertisers have free access to both PMP and RTB."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The dual-channel publisher first commits to a quality threshold for PMP. When an impression arrives, each publisher observes its quality, chooses a channel when relevant and sets a floor price. Advertisers receive a bid request, form rational channel-level quality expectations and simultaneously bid in a second-price auction; the winner's ad is displayed and pays the applicable second-highest bid or floor. The dual-channel publisher screens its own impressions by quality before sending the residual pool to RTB.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in adverse selection across private and open display-ad channels",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The dual-channel publisher first commits to a quality threshold for PMP.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q",
+                "meaning": "publisher-observed realized impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "quality threshold above which the dual-channel publisher routes impressions to PMP",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_hat",
+                "meaning": "advertisers' rational expectation of impression quality in a channel",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v",
+                "meaning": "an advertiser's private value per unit of impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta, \\beta_(2)",
+                "meaning": "the advertiser's bid and the second-highest competing bid",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "publisher's auction floor price",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Impression quality and advertiser values are uniform in the baseline.",
+              "Advertisers can access both channels without cost in the main model and bid in second-price auctions.",
+              "Publisher marginal cost and outside-option payoff are normalized to zero."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.6. Sequence of Events",
+                "equation": "",
+                "quote": "We model the strategic interactions between publish­ ers and advertisers as a three-stage game."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Model interaction: “We model the strategic interactions between publishers and advertisers as a three-stage game.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The dual-channel publisher chooses the PMP quality threshold publishers choose channel allocation and RTB floor prices advertisers submit bids based on value and expected impression quality",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in adverse selection across private and open display-ad channels",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The dual-channel publisher chooses the PMP quality threshold publishers choose channel allocation and RTB floor prices advertisers submit bids based on value and expected impression quality",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q",
+                "meaning": "publisher-observed realized impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "quality threshold above which the dual-channel publisher routes impressions to PMP",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_hat",
+                "meaning": "advertisers' rational expectation of impression quality in a channel",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v",
+                "meaning": "an advertiser's private value per unit of impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "publisher's auction floor price",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Once a consumer arrives at a publisher’s website or app—that is, an impression is available for sale—the publisher observes the impression’s quality q, decides on the market channel m,m ∈{PMP, RTB}, and sets a floor price r, then notifies advertisers by sending a bid request.",
+              "Impression quality and advertiser values are uniform in the baseline.",
+              "Advertisers can access both channels without cost in the main model and bid in second-price auctions.",
+              "Publisher marginal cost and outside-option payoff are normalized to zero."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.6. Sequence of Events",
+                "equation": "",
+                "quote": "Once a consumer arrives at a publisher’s website or app—that is, an impression is available for sale—the publisher observes the impression’s quality q, decides on the market channel m,m ∈{PMP, RTB}, and sets a floor price r, then notifies advertisers by sending a bid request."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Once a consumer arrives at a publisher’s website or app—that is, an impression is available for sale—the publisher”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  4
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "backward-induction-equilibrium-of-the-three-stage-channel-alloca",
+            "label": "Backward-induction equilibrium of the three-stage channel-allocation and second-price auction game",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Backward-induction equilibrium of the three-stage channel-allocation and second-price auction game. The authors solve advertiser bids first, then publisher floor prices and channel allocation, and finally the dual-channel publisher's threshold. In the resulting rational-expectations outcome, beta*=q_hat v and the equilibrium floor is proportional to expected quality, while selective routing creates adverse selection in RTB.",
+            "searchPhrases": [
+              "how backward-induction equilibrium of the three-stage channel-allocation and second-price auction game is represented",
+              "strategic response in adverse selection across private and open display-ad channels",
+              "backward-induction equilibrium of the three-stage channel-allocation and second-price auction game strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Backward-induction equilibrium of the three-stage channel-allocation and second-price auction game.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q",
+                "meaning": "publisher-observed realized impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "quality threshold above which the dual-channel publisher routes impressions to PMP",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_hat",
+                "meaning": "advertisers' rational expectation of impression quality in a channel",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v",
+                "meaning": "an advertiser's private value per unit of impression quality",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta, \\beta_(2)",
+                "meaning": "the advertiser's bid and the second-highest competing bid",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "publisher's auction floor price",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Impression quality and advertiser values are uniform in the baseline.",
+              "Advertisers can access both channels without cost in the main model and bid in second-price auctions.",
+              "Publisher marginal cost and outside-option payoff are normalized to zero."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.2. Welfare Implications",
+                "equation": "",
+                "quote": "To summarize, our analysis of the equilibrium out­ come provides two major insights."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “To summarize, our analysis of the equilibrium outcome provides two major insights.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "ce5d9784b03433ee9ca0ab7b6cd1aac18de1110a2453f20e64e2f7925d88b31c",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "1c26ceb86106c7c0c52f0127d6d8f9d5e6ce99032527ecef2f7682a64c3ce054",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-03407/1c26ceb86106c7c0c52f0127d6d8f9d5e6ce99032527ecef2f7682a64c3ce054.json",
+      "extractionQaDecisionSha256": "f39ce5c5cba44bf122c16180141d820af300217ec910b3f0983ae376965d2de0",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

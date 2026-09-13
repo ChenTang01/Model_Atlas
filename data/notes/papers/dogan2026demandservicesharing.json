@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "dogan2026demandservicesharing",
+  "sourcePdfSha256": "dc4b8f8d884836479bfd2c7c0e78715ac3767291d13a44a8980bb64700e75613",
+  "extractionPagesSha256": "6c84dab823f915d3f383a2541bc371eda8c48c60446bcd1675ddfa425dda0780",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "6e0b79f85e9c10454472b84199ab90ef12d2317534f8e6642717995edf2412ce",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "5122cb97e4fc1e992c040e9d09ff78820ef3d2c777e2624acac8bbf1ef2da9db",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/dogan2026demandservicesharing/5122cb97e4fc1e992c040e9d09ff78820ef3d2c777e2624acac8bbf1ef2da9db.json",
+  "extractionQaDecisionSha256": "ce243cfce2ed73d30b08d2f9148f1b7067796f6978a1e11447242b6dc52dca2b",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "dogan2026demandservicesharing",
+    "question": "How should an on-demand platform delay, pool, or individually serve time-sensitive customers and charge them when sharing saves cost but customer values arrive privately over time?",
+    "overview": "This is a dynamic mechanism-design paper: customers privately report values and the platform optimizes an incentive-compatible, individually rational allocation and payment rule over stochastic arrivals.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        9,
+        17
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "On-demand service sharing and dynamic pricing",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This is a dynamic mechanism-design paper: customers privately report values and the platform optimizes an incentive-compatible, individually rational allocation and payment rule over stochastic arrivals.",
+        "objects": [
+          "On-demand service platform/mechanism designer",
+          "Privately informed time-sensitive customers (two agents in the benchmark and an unlimited arrival stream in the generalization)"
+        ],
+        "inputs": [
+          "Customer 2's arrival time is stochastic and observed",
+          "The platform commits ex ante to a historyand report-contingent direct mechanism",
+          "Each customer's valuation theta_i is private; types are i.i.d. from a publicly known distribution",
+          "By ωj their arrival time",
+          "Time t"
+        ],
+        "decisions": [
+          "Platform chooses service timing, shared versus individual allocation, and type-contingent payments",
+          "In the general model the platform decides whether to provide service",
+          "Customers report private valuations or select the equivalent option from an implemented dynamic menu",
+          "Service options for each one (Myerson 1981)",
+          "Serve agents individually or together"
+        ],
+        "assumptions": [
+          "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0",
+          "Customer values are i.i.d. draws from a publicly known continuous distribution satisfying monotone hazard rate, with each realization privately known",
+          "Customer 2's arrival time is exponential with rate lambda",
+          "In the base model two suppliers are available at time zero, a shared service creates no extra customer disutility, and shared or individual service costs the platform c",
+          "The platform commits to a direct mechanism; expected transfers are used in the derivation, with an equivalent payment rule satisfying ex post individual rationality"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "On-demand service platform/mechanism designer",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "on-demand service platform/mechanism designer"
+              }
+            },
+            {
+              "value": "Privately informed time-sensitive customers (two agents in the benchmark and an unlimited arrival stream in the generalization)",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "privately informed time-sensitive customers (two agents in the benchmark and an unlimited arrival stream in the generalization)"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Customer 2's arrival time is stochastic and observed",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Customer 2's arrival time is stochastic and observed when it occurs."
+              }
+            },
+            {
+              "value": "The platform commits ex ante to a historyand report-contingent direct mechanism",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The platform commits ex ante to a historyand report-contingent direct mechanism."
+              }
+            },
+            {
+              "value": "Each customer's valuation theta_i is private; types are i.i.d. from a publicly known distribution",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each customer's valuation theta_i is private; types are i.i.d. from a publicly known distribution."
+              }
+            },
+            {
+              "value": "By ωj their arrival time",
+              "source": {
+                "type": "section",
+                "section": "Mechanism Description",
+                "page": 14,
+                "sectionIndex": 15,
+                "sentence": 7,
+                "quote": "For each supplier j, we denote by ωj their arrival time.",
+                "matchedText": "by ωj their arrival time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Mechanism Description",
+                "page": 14,
+                "sectionIndex": 15,
+                "sentence": 10,
+                "quote": "Let St denote the state of the system at time t, in a state space S.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Platform chooses service timing, shared versus individual allocation, and type-contingent payments",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "platform chooses service timing, shared versus individual allocation, and type-contingent payments"
+              }
+            },
+            {
+              "value": "In the general model the platform decides whether to provide service",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "in the general model the platform decides whether to provide service as customer and exogenous supplier arrivals change the state"
+              }
+            },
+            {
+              "value": "Customers report private valuations or select the equivalent option from an implemented dynamic menu",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "customers report private valuations or select the equivalent option from an implemented dynamic menu"
+              }
+            },
+            {
+              "value": "Service options for each one (Myerson 1981)",
+              "source": {
+                "type": "section",
+                "section": "Model with Two Customers and Unrestricted Supply Capacity",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "service options for each one (Myerson 1981)",
+                "matchedText": "service options for each one (Myerson 1981)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Serve agents individually or together",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 14,
+                "quote": "The platform can serve agents individually or together",
+                "matchedText": "serve agents individually or together",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0."
+              }
+            },
+            {
+              "value": "Customer values are i.i.d. draws from a publicly known continuous distribution satisfying monotone hazard rate, with each realization privately known",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Customer values are i.i.d. draws from a publicly known continuous distribution satisfying monotone hazard rate, with each realization privately known."
+              }
+            },
+            {
+              "value": "Customer 2's arrival time is exponential with rate lambda",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Customer 2's arrival time is exponential with rate lambda."
+              }
+            },
+            {
+              "value": "In the base model two suppliers are available at time zero, a shared service creates no extra customer disutility, and shared or individual service costs the platform c",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "In the base model two suppliers are available at time zero, a shared service creates no extra customer disutility, and shared or individual service costs the platform c."
+              }
+            },
+            {
+              "value": "The platform commits to a direct mechanism; expected transfers are used in the derivation, with an equivalent payment rule satisfying ex post individual rationality",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The platform commits to a direct mechanism; expected transfers are used in the derivation, with an equivalent payment rule satisfying ex post individual rationality."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected assumptions entry: too_long_for_setup_item.",
+            "category": "assumptions",
+            "field": "assumptions",
+            "reason": "too_long_for_setup_item"
+          }
+        ],
+        "method": "In the two-customer setting, we show it via an explicit case analysis; in the more stationary case, we prove that the optimal mechanism can be decomposed via dynamic programming with a state space comprising the collective virtual value and the number of suppliers.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Introduction",
+          "page": 2,
+          "sentence": 39
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 17,
+            "section": "5.3. Characterization of the Optimal Mechanism",
+            "equation": "",
+            "quote": "For each sequence, the figure reports the collective virtual value Φ(t) and the cutoff Φm (Figure 9(a)), the valuation of the agents (Figure 9(b)), and their expected payments (Figure 9(c))."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "private-information"
+            ],
+            "explanation": "Each customer's valuation theta_i is private; types are i.i.d. from a publicly known distribution. Customer 2's arrival time is stochastic and observed when it occurs. The platform commits ex ante to a historyand report-contingent direct mechanism.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in platforms and marketplaces",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi",
+                "meaning": "platform's expected discounted payoff from the dynamic service-sharing mechanism · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_1(\\theta_1)",
+                "meaning": "expected payment collected from the first customer of reported type theta_1 · paper-defined transfer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "T_1(\\theta_1)",
+                "meaning": "service-time commitment made to the first customer · nonnegative time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "service cost incurred if only the first customer is served before another arrival · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "arrival rate of the second customer · positive rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "continuous-time discount rate · nonnegative rate",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0.",
+              "The distribution is publicly known, but each agent’s type is private information.",
+              "Customer values are i.i.d. draws from a publicly known continuous distribution satisfying monotone hazard rate, with each realization privately known.",
+              "Customer 2's arrival time is exponential with rate lambda."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Model",
+                "equation": "",
+                "quote": "The distribution is publicly known, but each agent’s type is private information."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "private-information",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Private information: “The distribution is publicly known, but each agent’s type is private information.”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "participation-constraint"
+            ],
+            "explanation": "The platform maximizes expected discounted payments net of the discounted cost of individual or shared services, subject to dynamic IC and interim IR.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in platforms and marketplaces",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\Pi=\\int_{\\underline\\theta}^{\\bar\\theta}\\!\\left[p_1(\\theta_1)-ce^{-(r+\\lambda)T_1(\\theta_1)}+\\int_0^\\infty\\lambda e^{-(r+\\lambda)\\tau}\\Pi^\\tau(\\theta_1)d\\tau\\right]f(\\theta_1)d\\theta_1",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\Pi",
+                "meaning": "platform's expected discounted payoff from the dynamic service-sharing mechanism · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_1(\\theta_1)",
+                "meaning": "expected payment collected from the first customer of reported type theta_1 · paper-defined transfer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "T_1(\\theta_1)",
+                "meaning": "service-time commitment made to the first customer · nonnegative time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "service cost incurred if only the first customer is served before another arrival · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "arrival rate of the second customer · positive rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "continuous-time discount rate · nonnegative rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\Pi^\\tau(\\theta_1)",
+                "meaning": "continuation payoff when the second customer arrives at time tau · real-valued continuation value",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0.",
+              "The platform maximizes its expected discounted profit, subject to incentive compatibility and individual rationality constraints.",
+              "In the base model two suppliers are available at time zero, a shared service creates no extra customer disutility, and shared or individual service costs the platform c.",
+              "The platform commits to a direct mechanism; expected transfers are used in the derivation, with an equivalent payment rule satisfying ex post individual rationality."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "(4)",
+                "quote": "The platform maximizes its expected discounted profit, subject to incentive compatibility and individual rationality constraints."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "participation-constraint",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Participation constraint as “individual rationality”: “The platform maximizes its expected discounted profit, subject to incentive compatibility and individual rationality constraints.”.",
+                "conditionRefs": [
+                  1,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Customers report private valuations or select the equivalent option from an implemented dynamic menu platform chooses service timing, shared versus individual allocation, and type-contingent payments in the general model the platform decides whether to provide service as customer and exogenous supplier arrivals change the state",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in platforms and marketplaces",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Customers report private valuations or select the equivalent option from an implemented dynamic menu platform chooses service timing, shared versus individual allocation, and type-contingent payments in the general model the platform decides whether to provide service as customer and exogenous supplier arrivals change the state",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi",
+                "meaning": "platform's expected discounted payoff from the dynamic service-sharing mechanism · real-valued objective",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_1(\\theta_1)",
+                "meaning": "expected payment collected from the first customer of reported type theta_1 · paper-defined transfer",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "T_1(\\theta_1)",
+                "meaning": "service-time commitment made to the first customer · nonnegative time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "service cost incurred if only the first customer is served before another arrival · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda",
+                "meaning": "arrival rate of the second customer · positive rate",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "continuous-time discount rate · nonnegative rate",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0.",
+              "Customer values are i.i.d. draws from a publicly known continuous distribution satisfying monotone hazard rate, with each realization privately known.",
+              "Customer 2's arrival time is exponential with rate lambda."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Performance Assessment",
+                "equation": "",
+                "quote": "Differentiated prices for shared and individual services: the platform charges pI for individual ser­ vices and pS for shared services."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Differentiated prices for shared and individual services: the platform charges pI for individual services and pS for shared”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Dynamic revelation principle, Myerson virtual-value transformation, envelope elimination of payments, continuous-time dynamic programming, threshold/index characterization, and numerical discretization for benchmarks.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in platforms and marketplaces",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Dynamic revelation principle, Myerson virtual-value transformation, envelope elimination of payments, continuous-time dynamic programming, threshold/index characterization, and numerical discretization for benchmarks.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "c",
+                "meaning": "service cost incurred if only the first customer is served before another arrival · nonnegative cost",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "r",
+                "meaning": "continuous-time discount rate · nonnegative rate",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "5.3. Characterization of the Optimal Mechanism",
+                "equation": "",
+                "quote": "For each sequence, the figure reports the collective virtual value Φ(t) and the cutoff Φm (Figure 9(a)), the valuation of the agents (Figure 9(b)), and their expected payments (Figure 9(c))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "Customers and platform are risk neutral; customer service value decays at rate delta and monetary payoffs are discounted at rate r>0."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "dc4b8f8d884836479bfd2c7c0e78715ac3767291d13a44a8980bb64700e75613",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "5122cb97e4fc1e992c040e9d09ff78820ef3d2c777e2624acac8bbf1ef2da9db",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/dogan2026demandservicesharing/5122cb97e4fc1e992c040e9d09ff78820ef3d2c777e2624acac8bbf1ef2da9db.json",
+      "extractionQaDecisionSha256": "ce243cfce2ed73d30b08d2f9148f1b7067796f6978a1e11447242b6dc52dca2b",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

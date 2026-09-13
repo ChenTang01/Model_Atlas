@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-1188",
+  "sourcePdfSha256": "21c9b17f44427ba8b8e040518c8ec6bb6bb28f8705254ecdf23ebfa4875a619b",
+  "extractionPagesSha256": "9506d018ec4d97365f28861bc3842be4f1f419008697d82a069e9c15928da7c9",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "e9aa3e2f4e9c750b9f60f8657fb434b55b82313c19eec3d8e108846271d043fc",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "93c5f7e645b19c9892e99c643c15b1c179559cb622d8225a0288218df456553f",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1188/93c5f7e645b19c9892e99c643c15b1c179559cb622d8225a0288218df456553f.json",
+  "extractionQaDecisionSha256": "063cd20188e5e231a958e28f6c891e7d09fc5669375e6c21334793c741885c50",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-1188",
+    "question": "How can dynamic capacity control support selling high-speed train tickets?",
+    "overview": "The model considers a revenue management problem that arises from the selling of high-speed train tickets in China. Compared with traditional network revenue management problems, the new feature of our problem is the assign-to-seat restriction. That is, each request, if accepted, must be assigned instantly to a single seat throughout the whole journey, and later adjustment is not allowed.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        8,
+        10,
+        11
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Assign-to-Seat model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers a revenue management problem that arises from the selling of high-speed train tickets in China. Compared with traditional network revenue management problems, the new feature of our problem is the assign-to-seat restriction. That is, each request, if accepted, must be assigned instantly to a single seat throughout the whole journey, and later adjustment is not allowed.",
+        "objects": [
+          "The seller",
+          "A decision maker",
+          "The principal",
+          "The state space"
+        ],
+        "inputs": [
+          "A price",
+          "The full demand realization ahead",
+          "Arrival rates",
+          "Each type",
+          "The time"
+        ],
+        "decisions": [
+          "How to track the dynamics of a capacity matrix",
+          "Control policy",
+          "Which itineraries to offer in the current period",
+          "The quantity of each type of request to accept in order",
+          "Such a policy for our problem to circumvent the challenge from the assign-to-seat restriction"
+        ],
+        "assumptions": [
+          "Each time period is sufficiently short; thus, P 1⩽i⩽j⩽Mλt ij ⩽1 for all t",
+          "Any rejected request is lost",
+          "In particular, when the demand process is stationary, the NEE property is automatically satisfied",
+          "In most previous studies, arrival rates are assumed to be stationary, under which one can achieve an O(1) asymptotic loss (Jasin and Kumar 2013, Bumpensanti and Wang 2020)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The seller",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 4,
+                "quote": "The seller can sell itineraries from leg i to leg j for any jPi, which we denote as i →j, at a price pij.",
+                "matchedText": "The seller",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A decision maker",
+              "source": {
+                "type": "section",
+                "section": "The Dynamic Problem",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 24,
+                "quote": "We put “policy” in quotation marks here because a deci­ sion maker can never know the full demand realization ahead.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The principal",
+              "source": {
+                "type": "section",
+                "section": "Research Questions and Contributions",
+                "page": 2,
+                "sectionIndex": 2,
+                "sentence": 22,
+                "quote": "The principal managerial insight is that, regardless of the price structure, the assign-to-seat restriction has no effect if (a) the assignment of requests can be delayed to the end of the time horizon and (b) the capacity matrix reflects a strongly NSE structure.",
+                "matchedText": "The principal",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Re-solving a Dynamic Primal: Tight",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 2,
+                "quote": "The BPC-M policy better captures the dynamic change of the state space and features greater flexibility than the canonical bid-price control policy does.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A price",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 4,
+                "quote": "The seller can sell itineraries from leg i to leg j for any jPi, which we denote as i →j, at a price pij.",
+                "matchedText": "a price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The full demand realization ahead",
+              "source": {
+                "type": "section",
+                "section": "The Dynamic Problem",
+                "page": 8,
+                "sectionIndex": 7,
+                "sentence": 24,
+                "quote": "We put “policy” in quotation marks here because a deci­ sion maker can never know the full demand realization ahead."
+              }
+            },
+            {
+              "value": "Arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Re-solving a Dynamic Primal: Tight",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 65,
+                "quote": "In the online appendix, we further propose a probabilistic allocation policy and prove that it can also achieve an O(1) asymp­ totic loss under NEE arrival rates.",
+                "matchedText": "arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each type",
+              "source": {
+                "type": "section",
+                "section": "Re-solving a Dynamic Primal: Tight",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 96,
+                "quote": "each type deviate much compared with the optimal allocation obtained from the HO, then we still have chances to rectify the total number of requests being accepted for each type to compensate the loss incurred previously, given that each type of request has a positive probability to appear in the final θ time periods.",
+                "matchedText": "each type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The time",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 31,
+                "quote": "In the Chinese high-speed train system (and perhaps many other train systems), each passenger is assigned to a sin­ gle seat for his entire trip, and the corresponding seat number is given to the passenger at the time of ticket booking.",
+                "matchedText": "the time",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "How to track the dynamics of a capacity matrix",
+              "source": {
+                "type": "section",
+                "section": "Research Questions and Contributions",
+                "page": 2,
+                "sectionIndex": 2,
+                "sentence": 25,
+                "quote": "This consider­ ation is closely related to the problem of how to track the dynamics of a capacity matrix.",
+                "matchedText": "how to track the dynamics of a capacity matrix",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Control policy",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "We then introduce a bid-price control policy based on a novel maximal sequence principle.",
+                "matchedText": "control policy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Which itineraries to offer in the current period",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 15,
+                "quote": "At the beginning of each period, based on the remain­ ing seats available on different legs, the seller decides which itineraries to offer in the current period",
+                "matchedText": "which itineraries to offer in the current period",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The quantity of each type of request to accept in order",
+              "source": {
+                "type": "section",
+                "section": "The Static Problem",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 7,
+                "quote": "The seller must determine the quantity of each type of request to accept in order to maximize the revenue",
+                "matchedText": "the quantity of each type of request to accept in order",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Such a policy for our problem to circumvent the challenge from the assign-to-seat restriction",
+              "source": {
+                "type": "section",
+                "section": "The Dynamic Problem",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 9,
+                "quote": "In the online appendix, we discuss in detail how we design such a policy for our problem to circumvent the challenge from the assign-to-seat restriction",
+                "matchedText": "such a policy for our problem to circumvent the challenge from the assign-to-seat restriction",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each time period is sufficiently short; thus, P 1⩽i⩽j⩽Mλt ij ⩽1 for all t",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 11,
+                "quote": "We assume each time period is sufficiently short; thus, P 1⩽i⩽j⩽Mλt ij ⩽1 for all t.",
+                "matchedText": "each time period is sufficiently short; thus, P 1⩽i⩽j⩽Mλt ij ⩽1 for all t.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Any rejected request is lost",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 24,
+                "quote": "Also, we assume that any rejected request is lost.",
+                "matchedText": "any rejected request is lost.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In particular, when the demand process is stationary, the NEE property is automatically satisfied",
+              "source": {
+                "type": "section",
+                "section": "Re-solving a Dynamic Primal: Tight",
+                "page": 11,
+                "sectionIndex": 9,
+                "sentence": 44,
+                "quote": "In particular, when the demand process is stationary, the NEE property is automatically satisfied.",
+                "matchedText": "In particular, when the demand process is stationary, the NEE property is automatically satisfied",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In most previous studies, arrival rates are assumed to be stationary, under which one can achieve an O(1) asymptotic loss (Jasin and Kumar 2013, Bumpensanti and Wang 2020)",
+              "source": {
+                "type": "section",
+                "section": "Re-solving a Dynamic Primal: Tight",
+                "page": 12,
+                "sectionIndex": 9,
+                "sentence": 100,
+                "quote": "In most previ­ ous studies, arrival rates are assumed to be stationary, under which one can achieve an O(1) asymptotic loss (Jasin and Kumar 2013, Bumpensanti and Wang 2020).",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "Although the problem is NP-hard in general, we identify conditions for solvability in polynomial time and propose efficient approximation algorithms for general cases.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 7
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4. The Dynamic Problem",
+            "equation": "",
+            "quote": "Let f t(C) denote the maximal expected value to go at the beginning of period t with capacity matrix C."
+          }
+        ],
+        "components": [
+          {
+            "id": "model",
+            "label": "Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "In each period t, a passenger with request i →j arrives with probability λt ij.",
+            "searchPhrases": [
+              "how model is represented",
+              "system process in pricing, consumers, and revenue management",
+              "model system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume each time period is sufficiently short.",
+              "At the time a passenger purchases a train ticket, he must be assigned to a fixed seat for the entire trip.",
+              "In each period t, a passenger with request i →j arrives with probability λt ij."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Model",
+                "equation": "",
+                "quote": "In each period t, a passenger with request i →j arrives with probability λt ij."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “In each period t, a passenger with request i →j arrives with probability λt ij.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "the-static-problem",
+            "label": "The Static Problem",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Despite the hardness of solving the general problem, the question remains of whether we can efficiently solve (1) under certain conditions.",
+            "searchPhrases": [
+              "how the static problem is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "the static problem solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Despite the hardness of solving the general problem, the question remains of whether we can efficiently solve (1) under certain conditions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the passengers’ requests are as follows: dij = 1 if (i,j) ∈{(1,2),(1,5),(2,4),(3,6),(5,6)} and dij = 0 otherwise.",
+              "We use Ck ∈{0,1}1×M to denote the kth row of the capacity matrix C."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3. The Static Problem",
+                "equation": "",
+                "quote": "Despite the hardness of solving the general problem, the question remains of whether we can efficiently solve (1) under certain con­ ditions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Despite the hardness of solving the general problem, the question remains of whether we can efficiently solve (1)”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-dynamic-problem",
+            "label": "The Dynamic Problem",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "Let f t(C) denote the maximal expected value to go at the beginning of period t with capacity matrix C.",
+            "searchPhrases": [
+              "how the dynamic problem is represented",
+              "feasibility condition in pricing, consumers, and revenue management",
+              "the dynamic problem feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: Let f t(C) denote the maximal expected value to go at the beginning of period t with capacity matrix C.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "t(C)",
+                "meaning": "maximal expected value to go at the beginning of period t with capacity matrix C"
+              }
+            ],
+            "conditions": [
+              "Let f t(C) denote the maximal expected value to go at the beginning of period t with capacity matrix C."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4. The Dynamic Problem",
+                "equation": "",
+                "quote": "Let f t(C) denote the maximal expected value to go at the beginning of period t with capacity matrix C."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Let f t(C) denote the maximal expected value to go at the beginning of period t with capacity”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "bid-price-control-bpc-policies",
+            "label": "Bid-Price Control (BPC) Policies",
+            "role": "algorithm",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The paper proposes two different ways of dynamically computing bid-prices: One is based on the dual formulation of the static model; the other is based on a more delicate formulation of the problem by considering the longest consecutive available segments, or maximal sequence, of the seats.",
+            "searchPhrases": [
+              "how bid-price control (bpc) policies is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "bid-price control (bpc) policies solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper proposes two different ways of dynamically computing bid-prices: One is based on the dual formulation of the static model; the other is based on a more delicate formulation of the problem by considering the longest consecutive available segments, or maximal sequence, of the seats.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We propose two different ways of dynamically computing bid-prices: One is based on the dual formulation of the static model; the other is based on a more delicate formulation of the problem by considering the longest consecutive available segments, or maximal sequence, of the seats.",
+              "Consider the dual problem of (2), where dij is replaced by the expected total demand λij = P tλt ij.",
+              "Bid-price control policies are flexible (one can use different methods to calculate the bid-prices) and easy to implement in practice (after bid-prices are calculated, the allocation is usually simple)."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. Bid-Price Control (BPC) Policies",
+                "equation": "",
+                "quote": "We pro­ pose two different ways of dynamically computing bid-prices: One is based on the dual formulation of the static model; the other is based on a more delicate formula­ tion of the problem by considering the longest consecutive available segments, or maximal sequence, of the seats."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "re-solving-a-dynamic-primal-tight-asymptotic-loss",
+            "label": "Re-solving a Dynamic Primal: Tight Asymptotic Loss",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The policy combines the advantages of re-solving with the maximal sequence approach.",
+            "searchPhrases": [
+              "how re-solving a dynamic primal: tight asymptotic loss is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "re-solving a dynamic primal: tight asymptotic loss solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The policy combines the advantages of re-solving with the maximal sequence approach.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In the online appendix, we further propose a probabilistic allocation policy and prove that it can also achieve an O(1) asymptotic loss under NEE arrival rates."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Re-solving a Dynamic Primal: Tight Asymptotic Loss",
+                "equation": "",
+                "quote": "The policy combines the advantages of re-solving with the maximal sequence approach."
+              },
+              {
+                "page": 11,
+                "section": "4.2. Re-solving a Dynamic Primal: Tight",
+                "equation": "Algorithm 3",
+                "quote": "Such a relation also justi­ fies that (14) is a primal allocation problem under the maximal sequence approach."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “The policy combines the advantages of re-solving with the maximal sequence approach.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Arrival rates",
+                  "source": {
+                    "type": "section",
+                    "section": "Re-solving a Dynamic Primal: Tight",
+                    "page": 12,
+                    "sectionIndex": 9,
+                    "sentence": 65,
+                    "quote": "In the online appendix, we further propose a probabilistic allocation policy and prove that it can also achieve an O(1) asymp­ totic loss under NEE arrival rates.",
+                    "matchedText": "arrival rates",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "21c9b17f44427ba8b8e040518c8ec6bb6bb28f8705254ecdf23ebfa4875a619b",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "93c5f7e645b19c9892e99c643c15b1c179559cb622d8225a0288218df456553f",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1188/93c5f7e645b19c9892e99c643c15b1c179559cb622d8225a0288218df456553f.json",
+      "extractionQaDecisionSha256": "063cd20188e5e231a958e28f6c891e7d09fc5669375e6c21334793c741885c50",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

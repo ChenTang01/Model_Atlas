@@ -1,0 +1,1062 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2020-0903",
+  "sourcePdfSha256": "6dfecefae171d6650065db1756d17cede0ad1194edd47f2edf9cddb239de8517",
+  "extractionPagesSha256": "f06a31413a20c012e43022cc409393016e625c1934beea2ece6264a87b844e0e",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "0f47469996dd92bd28a6bc88baada2314eb858ec18c9797637be8828ba373803",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "bb5cc821d25a4bf28f07456066359bd8f9c50efe38440aa779effe3157ad3125",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0903/bb5cc821d25a4bf28f07456066359bd8f9c50efe38440aa779effe3157ad3125.json",
+  "extractionQaDecisionSha256": "780e31f756e14c6c6c42482cbd670b8074eb4169cb9eb08d0f4cba4dccf78eb0",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2020-0903",
+    "question": "What determines the optimal consolidation policy focusing on the trade-off between economies of scale due to combining orders and expedited shipping costs, in the setting of two warehouses?",
+    "overview": "Shipment consolidation (i.e., shipping multiple orders together instead of shipping them separately) is commonly used to decrease total shipping costs. However, when the delivery of some orders is delayed, so they can be consolidated with future orders, a more expensive expedited shipment may be needed to meet shorter deadlines. In this paper, we study the optimal consolidation policy focusing on the trade-off between economies of scale due to combining orders and expedited shipping costs, in the setting of two warehouses.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "model-specification",
+        "name": "Model Specification",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Shipment consolidation (i.e., shipping multiple orders together instead of shipping them separately) is commonly used to decrease total shipping costs. However, when the delivery of some orders is delayed, so they can be consolidated with future orders, a more expensive expedited shipment may be needed to meet shorter deadlines. In this paper, we study the optimal consolidation policy focusing on the trade-off between economies of scale due to combining orders and expedited shipping costs, in the setting of two warehouses.",
+        "objects": [
+          "Sellers",
+          "Retailers",
+          "Customer",
+          "The state space",
+          "Tables"
+        ],
+        "inputs": [
+          "The holding cost",
+          "Time t"
+        ],
+        "decisions": [
+          "When to ship the orders and from which warehouse to fulfill the orders",
+          "Contains exactly one item",
+          "Contains multiple items",
+          "How to split them into shipments",
+          "Between shipping all orders and shipping no order"
+        ],
+        "assumptions": [
+          "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs.",
+          "Each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders",
+          "There are currently nA, nB, and nC pending orders of type A, B, and C, respectively",
+          "We use a constant threshold τ in all periods"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Sellers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "Sellers have the flexibility to take advantage of consolidation by deciding when to ship the orders and from which warehouse to fulfill the orders, as long as the orders’ deadlines are met.",
+                "matchedText": "Sellers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Retailers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 11,
+                "quote": "Retailers can take advantage of it to effectively improve the standard policies by simply applying the threshold-form heuristics we propose.",
+                "matchedText": "Retailers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customer",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 5,
+                "quote": "Orders arrive from either a single customer or a single region.",
+                "matchedText": "customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "The Optimal Policy: Its Structure and Properties",
+                "page": 7,
+                "sectionIndex": 22,
+                "sentence": 24,
+                "quote": "the state space",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Tables",
+              "source": {
+                "type": "section",
+                "section": "Base Heuristics",
+                "page": 14,
+                "sectionIndex": 7,
+                "sentence": 61,
+                "quote": "The performance of WB++ is tested using the same set of parameters as in Section 7.2 and the results are summarized in Tables 4 and 5.",
+                "matchedText": "Tables",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The holding cost",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 19,
+                "sentence": 5,
+                "quote": "Unlike in the setting considered in the existing literature, where the main trade-off is between the ﬁxed cost and the holding cost, in our setting, orders are held for at most a few hours to a few days, which means that the extra holding cost due to waiting is negligible and the main trade-off is between the ﬁxed cost and the additional speed-up cost, due to expedited shipment.",
+                "matchedText": "the holding cost",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "The Optimal Policy: Its Structure and Properties",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 20,
+                "quote": "Theorem 1 shows the existence of threshold τt for each time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "When to ship the orders and from which warehouse to fulfill the orders",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "Sellers have the flexibility to take advantage of consolidation by deciding when to ship the orders and from which warehouse to fulfill the orders, as long as the orders’ deadlines are met.",
+                "matchedText": "when to ship the orders and from which warehouse to fulfill the orders",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Contains exactly one item",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 14,
+                "quote": "We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order contains exactly one item",
+                "matchedText": "contains exactly one item",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Contains multiple items",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 14,
+                "quote": "We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order contains exactly one item, with one unit of volume; if an order contains multiple items",
+                "matchedText": "contains multiple items",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How to split them into shipments",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming (DP) Formulation",
+                "page": 10,
+                "sectionIndex": 12,
+                "sentence": 1,
+                "quote": "To evaluate the shipping costs of orders, we ﬁrst need to consider how to split them into shipments.",
+                "matchedText": "how to split them into shipments",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Between shipping all orders and shipping no order",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming (DP) Formulation",
+                "page": 11,
+                "sectionIndex": 12,
+                "sentence": 23,
+                "quote": "Per Theorem 4, instead of having to consider how many orders to ship, the retailer only needs to choose between shipping all orders and shipping no order",
+                "matchedText": "between shipping all orders and shipping no order",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs.",
+              "source": {
+                "type": "section",
+                "section": "Two Warehouses with Fixed and Variable Costs",
+                "page": 12,
+                "quote": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both ﬁxed and variable costs."
+              }
+            },
+            {
+              "value": "Each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 14,
+                "quote": "We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders.",
+                "matchedText": "each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There are currently nA, nB, and nC pending orders of type A, B, and C, respectively",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 15,
+                "quote": "Suppose that there are currently nA, nB, and nC pending orders of type A, B, and C, respectively.",
+                "matchedText": "there are currently nA, nB, and nC pending orders of type A, B, and C, respectively.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "We use a constant threshold τ in all periods",
+              "source": {
+                "type": "section",
+                "section": "The Optimal Policy: Its Structure and Properties",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 24,
+                "quote": "Suppose we use a constant threshold τ in all periods.",
+                "matchedText": "we use a constant threshold τ in all periods.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "If more than one threshold is crossed at the same time, orders of type B are the highest priority and then ments, we do this by running a complete search and, for each (τA, τB, τC), we estimate CH using 100 Monte Carlo simulations.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Simple Heuristics",
+          "page": 10,
+          "sentence": 64
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 12,
+            "section": "7. Two Warehouses with Fixed and Variable Costs",
+            "equation": "",
+            "quote": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both ﬁxed and variable costs."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-specification",
+            "label": "Model Specification",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders.",
+            "searchPhrases": [
+              "how model specification is represented",
+              "system process in operations and supply chains",
+              "model specification system process specification"
+            ],
+            "formal": "Process relation: We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the retailer operates up to two warehouses, W1 and W2.",
+              "We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders.",
+              "Reflecting the current practice, where retailers usually ship orders from at most two closest warehouses/stores, we assume that the retailer operates up to two warehouses, W1 and W2.",
+              "We denote the set of pending orders by a vector of their corresponding slack time (we use ∞to denote the case of no pending orders)."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Model Specification",
+                "equation": "",
+                "quote": "We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "single-warehouse-with-only-fixed-cost",
+            "label": "Single Warehouse with Only Fixed Cost",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Although there are 2n −1 different ways of choosing which orders to ship, it is not difficult to show that it is always optimal to either ship all n orders at the same time or none at all.",
+            "searchPhrases": [
+              "how single warehouse with only fixed cost is represented",
+              "decision rule in operations and supply chains",
+              "single warehouse with only fixed cost decision rule specification"
+            ],
+            "formal": "Decision rule: Although there are 2n −1 different ways of choosing which orders to ship, it is not difficult to show that it is always optimal to either ship all n orders at the same time or none at all.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose that there are currently n pending orders.",
+              "The above formulation implies that all orders must be shipped by the end of the horizon."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Single Warehouse with Only Fixed Cost",
+                "equation": "",
+                "quote": "Although there are 2n −1 different ways of choosing which orders to ship, it is not difﬁcult to show that it is always optimal to either ship all n orders at the same time or none at all."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-optimal-policy-its-structure-and-properties",
+            "label": "The Optimal Policy: Its Structure and Properties",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "To calculate the optimal τ∗, we simply need to minimize Gτ(α, d) over the set {1, 2, . . . , d}.",
+            "searchPhrases": [
+              "how the optimal policy: its structure and properties is represented",
+              "modeled objective in operations and supply chains",
+              "the optimal policy: its structure and properties modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If the fixed cost is linear in slack times, then the optimal threshold τ is either 1 or d.",
+              "Suppose we use a constant threshold τ in all periods.",
+              "For any given state (zA, zB, zC), if zX, X ∈{A, B, C}, crosses the boundary, then it is optimal to ship orders of type X, following the policy below."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. The Optimal Policy: Its Structure and Properties",
+                "equation": "",
+                "quote": "To calculate the optimal τ∗, we simply need to minimize Gτ(α, d) over the set {1, 2, . . . , d}."
+              },
+              {
+                "page": 8,
+                "section": "5.1. The Optimal Policy: Its Structure and Properties",
+                "equation": "",
+                "quote": "For any given state (zA, zB, zC), if zX, X ∈{A, B, C}, crosses the boundary, then it is optimal to ship orders of type X, following the policy below."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "two-warehouses-with-only-fixed-cost",
+            "label": "Two Warehouses with Only Fixed Cost",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "We now consider the case where the retailer fulfills orders from two warehouses and orders can be classified into three types as defined in Section 3.",
+            "searchPhrases": [
+              "how two warehouses with only fixed cost is represented",
+              "information available to the decision maker in operations and supply chains",
+              "two warehouses with only fixed cost information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We now consider the case where the retailer fulfills orders from two warehouses and orders can be classified into three types as defined in Section 3.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "By symmetry, if zB, zC < ∞and it is optimal to ship orders of type B from W2 in the current period, then it is also optimal to ship orders of type C from W2 in the same period."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "5. Two Warehouses with Only Fixed Cost",
+                "equation": "",
+                "quote": "We now consider the case where the retailer fulﬁlls orders from two warehouses and orders can be classiﬁed into three types as deﬁned in Section 3."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We now consider the case where the retailer fulfills orders from two warehouses and orders can be classified”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "simple-heuristics",
+            "label": "Simple Heuristics",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We now propose two heuristics: warehouse-based heuristic, which utilizes two fixed thresholds, one for each warehouse, and order-based heuristic, which utilizes three fixed thresholds, one for each order type.",
+            "searchPhrases": [
+              "how simple heuristics is represented",
+              "solution algorithm in operations and supply chains",
+              "simple heuristics solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We now propose two heuristics: warehouse-based heuristic, which utilizes two fixed thresholds, one for each warehouse, and order-based heuristic, which utilizes three fixed thresholds, one for each order type.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If min{zA, zB} ≤τ1, ship orders of types A and B from W1 and update zA zB ∞; 2.",
+              "If min{zB, zC} ≤τ2, ship orders of types B and C from W2 and update zB zC ∞.",
+              "Note that this heuristic is not equivalent to treating the two warehouses independently as it allows orders type B to be fulfilled from either warehouses."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.2. Simple Heuristics",
+                "equation": "",
+                "quote": "We now propose two heuristics: warehouse-based heuristic, which utilizes two ﬁxed thresholds, one for each warehouse, and order-based heuristic, which utilizes three ﬁxed thresholds, one for each order type."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We now propose two heuristics: warehouse-based heuristic, which utilizes two fixed thresholds, one for each warehouse, and order-based”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "two-warehouses-with-fixed-and-variable-costs",
+            "label": "Two Warehouses with Fixed and Variable Costs",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs.",
+            "searchPhrases": [
+              "how two warehouses with fixed and variable costs is represented",
+              "solution algorithm in operations and supply chains",
+              "two warehouses with fixed and variable costs solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "7. Two Warehouses with Fixed and Variable Costs",
+                "equation": "",
+                "quote": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both ﬁxed and variable costs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "base-heuristics",
+            "label": "Base Heuristics",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We discuss our base heuristics: Warehouse-Based One- Package Heuristic (WB) and Order-Based One-Package Heuristic (OB).",
+            "searchPhrases": [
+              "how base heuristics is represented",
+              "solution algorithm in operations and supply chains",
+              "base heuristics solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We discuss our base heuristics: Warehouse-Based One- Package Heuristic (WB) and Order-Based One-Package Heuristic (OB).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "7.1. Base Heuristics",
+                "equation": "",
+                "quote": "We discuss our base heuristics: Warehouse-Based One- Package Heuristic (WB) and Order-Based One-Package Heuristic (OB)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We discuss our base heuristics: Warehouse-Based One- Package Heuristic (WB) and Order-Based One-Package Heuristic (OB).”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs.",
+                  "source": {
+                    "type": "section",
+                    "section": "Two Warehouses with Fixed and Variable Costs",
+                    "page": 12,
+                    "quote": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both ﬁxed and variable costs."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dynamic-programming-dp-formulation",
+        "name": "Dynamic Programming (DP) Formulation",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model Specification.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-specification"
+          }
+        ],
+        "summary": "First, it may no longer be optimal to ship all pending orders in one package (i.e., package splitting is possible), as discussed in Section 3. Although the results of Theorem 4 are only proved for the case where d ≤3 and at most one arrival per period, our numerical tests across different instances where d varies from 6 to 10 and multiple orders can arrive in one period show that these results continue to hold in absolutely all cases.",
+        "objects": [
+          "The retailer"
+        ],
+        "inputs": [
+          "The holding cost",
+          "Time t"
+        ],
+        "decisions": [
+          "How to split them into shipments",
+          "Between shipping all orders and shipping no order"
+        ],
+        "assumptions": [
+          "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs.",
+          "Each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders",
+          "There are currently nA, nB, and nC pending orders of type A, B, and C, respectively",
+          "We use a constant threshold τ in all periods"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The retailer",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming (DP) Formulation",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 23,
+                "quote": "Per Theorem 4, instead of having to consider how many orders to ship, the retailer only needs to choose between shipping all orders and shipping no order.",
+                "matchedText": "the retailer",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The holding cost",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 19,
+                "sentence": 5,
+                "quote": "Unlike in the setting considered in the existing literature, where the main trade-off is between the ﬁxed cost and the holding cost, in our setting, orders are held for at most a few hours to a few days, which means that the extra holding cost due to waiting is negligible and the main trade-off is between the ﬁxed cost and the additional speed-up cost, due to expedited shipment.",
+                "matchedText": "the holding cost",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "The Optimal Policy: Its Structure and Properties",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 20,
+                "quote": "Theorem 1 shows the existence of threshold τt for each time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "How to split them into shipments",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming (DP) Formulation",
+                "page": 10,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "To evaluate the shipping costs of orders, we ﬁrst need to consider how to split them into shipments.",
+                "matchedText": "how to split them into shipments",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Between shipping all orders and shipping no order",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Programming (DP) Formulation",
+                "page": 11,
+                "sectionIndex": 1,
+                "sentence": 23,
+                "quote": "Per Theorem 4, instead of having to consider how many orders to ship, the retailer only needs to choose between shipping all orders and shipping no order",
+                "matchedText": "between shipping all orders and shipping no order",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both fixed and variable costs.",
+              "source": {
+                "type": "section",
+                "section": "Two Warehouses with Fixed and Variable Costs",
+                "page": 12,
+                "quote": "In this section, we consider the general and practical setting introduced in Section 3, where the retailer delivers orders from at most two warehouses/stores and incurs both ﬁxed and variable costs."
+              }
+            },
+            {
+              "value": "Each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 14,
+                "quote": "We allow multiple orders to arrive in one period and, for mathematical convenience, we assume that each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders.",
+                "matchedText": "each order contains exactly one item, with one unit of volume; if an order contains multiple items, we simply treat them as separate orders.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There are currently nA, nB, and nC pending orders of type A, B, and C, respectively",
+              "source": {
+                "type": "section",
+                "section": "Model Specification",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 15,
+                "quote": "Suppose that there are currently nA, nB, and nC pending orders of type A, B, and C, respectively.",
+                "matchedText": "there are currently nA, nB, and nC pending orders of type A, B, and C, respectively.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "We use a constant threshold τ in all periods",
+              "source": {
+                "type": "section",
+                "section": "The Optimal Policy: Its Structure and Properties",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 24,
+                "quote": "Suppose we use a constant threshold τ in all periods.",
+                "matchedText": "we use a constant threshold τ in all periods.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "To further simplify this policy, we approximate the optimal threshold with a constant and show, using numerical experiments, that this approximation incurs a very small additional cost compared with the optimal policy.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "One Warehouse with Fixed and Variable Costs",
+          "page": 10,
+          "sentence": 11
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 11,
+            "section": "6.1. Dynamic Programming (DP) Formulation",
+            "equation": "",
+            "quote": "Although the results of Theorem 4 are only proved for the case where d ≤3 and at most one ar- rival per period, our numerical tests across different instances where d varies from 6 to 10 and multiple orders can arrive in one period show that these results continue to hold in absolutely all cases."
+          }
+        ],
+        "components": [
+          {
+            "id": "one-warehouse-with-fixed-and-variable-costs",
+            "label": "One Warehouse with Fixed and Variable Costs",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "First, it may no longer be optimal to ship all pending orders in one package (i.e., package splitting is possible), as discussed in Section 3.",
+            "searchPhrases": [
+              "how one warehouse with fixed and variable costs is represented",
+              "solution algorithm in operations and supply chains",
+              "one warehouse with fixed and variable costs solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: First, it may no longer be optimal to ship all pending orders in one package (i.e., package splitting is possible), as discussed in Section 3.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Although the optimal policy for the case with only fixed cost is easy to characterize, the optimal policy for the case with both fixed and variable costs is more challenging, even for the setting with only one warehouse."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "6. One Warehouse with Fixed and Variable Costs",
+                "equation": "",
+                "quote": "First, it may no longer be optimal to ship all pending orders in one package (i.e., package splitting is possible), as discussed in Section 3."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "dynamic-programming-dp-formulation",
+            "label": "Dynamic Programming (DP) Formulation",
+            "role": "process",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "Although the results of Theorem 4 are only proved for the case where d ≤3 and at most one arrival per period, our numerical tests across different instances where d varies from 6 to 10 and multiple orders can arrive in one period show that these results continue to hold in absolutely all cases.",
+            "searchPhrases": [
+              "how dynamic programming (dp) formulation is represented",
+              "system process in operations and supply chains",
+              "dynamic programming (dp) formulation system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose that d ≤3 and at most one order arrives in each period.",
+              "Although the results of Theorem 4 are only proved for the case where d ≤3 and at most one ar- rival per period, our numerical tests across different instances where d varies from 6 to 10 and multiple orders can arrive in one period show that these results continue to hold in absolutely all cases.",
+              "That said, we are able to derive some results for the case when d ≤3 and at most one order arrives in each period, that is, αm 0 for m ≥2 and α α1.",
+              "Specifically, if z1 ≤τt(n), it is optimal to ship all pending orders; otherwise, it is optimal not to ship any order."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "6.1. Dynamic Programming (DP) Formulation",
+                "equation": "",
+                "quote": "Although the results of Theorem 4 are only proved for the case where d ≤3 and at most one ar- rival per period, our numerical tests across different instances where d varies from 6 to 10 and multiple orders can arrive in one period show that these results continue to hold in absolutely all cases."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Dynamic programming: “Although the results of Theorem 4 are only proved for the case where d ≤3 and at most”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 3,
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "6dfecefae171d6650065db1756d17cede0ad1194edd47f2edf9cddb239de8517",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "bb5cc821d25a4bf28f07456066359bd8f9c50efe38440aa779effe3157ad3125",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0903/bb5cc821d25a4bf28f07456066359bd8f9c50efe38440aa779effe3157ad3125.json",
+      "extractionQaDecisionSha256": "780e31f756e14c6c6c42482cbd670b8074eb4169cb9eb08d0f4cba4dccf78eb0",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

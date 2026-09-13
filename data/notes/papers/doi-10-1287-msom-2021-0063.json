@@ -1,0 +1,1294 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2021-0063",
+  "sourcePdfSha256": "202aa0c8918b0cebe4dd07a6be2710ce5462e3310f49dad2d3676f7b82e00791",
+  "extractionPagesSha256": "2e4adba3f220297adc11bd9647115b2b08958de725f25a1ea76f0637c8687727",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "d20ac1e2bf1dff9fc5109a0ffe1b6f8c4c8ca85e70e7bd7f35710203cbfa7ac7",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "c25260ce13d3af66e330d9dca36e648694d033c7649c269166ee07d2dee50b80",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0063/c25260ce13d3af66e330d9dca36e648694d033c7649c269166ee07d2dee50b80.json",
+  "extractionQaDecisionSha256": "0678e3d37e3b22d6ede363e9482570f1c7e04e4c9aa1cd9615517aef70dff1f7",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2021-0063",
+    "question": "How do surgical supplies and elective surgeries shape the case?",
+    "overview": "Medical operations require a large volume and variety of consumable supplies that are kept in hospital inventory and replenished on a regular basis. Stringent requirements on the availability of these supplies, together with high variability in their daily usage, contribute to the high inventory costs of the surgical departments in hospitals. We investigate the value of utilizing Advance Booking Information (ABI) on elective surgeries—which are often booked up to months in advance—in reducing inventory costs.",
+    "modelTypes": [
+      "Simulation",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        8,
+        10,
+        15
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "model-description-and-structure-of-the-optimal-policy",
+        "name": "Model Description and Structure of the Optimal Policy",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Medical operations require a large volume and variety of consumable supplies that are kept in hospital inventory and replenished on a regular basis. Stringent requirements on the availability of these supplies, together with high variability in their daily usage, contribute to the high inventory costs of the surgical departments in hospitals. We investigate the value of utilizing Advance Booking Information (ABI) on elective surgeries—which are often booked up to months in advance—in reducing inventory costs.",
+        "objects": [
+          "Hospitals",
+          "Each element",
+          "Random variable",
+          "Customers",
+          "The decision maker"
+        ],
+        "inputs": [
+          "The available information",
+          "Up to 26% reduction in average inventory levels, without violating the service levels",
+          "The number of type i cases performed in period t",
+          "Observed demand",
+          "Cost K"
+        ],
+        "decisions": [
+          "To satisfy backlogs and never hold inventory",
+          "Announce their orders",
+          "To cancel the order altogether with a certain probability",
+          "The optimal policy by solving the DPs",
+          "Policy that minimizes the total expected holding"
+        ],
+        "assumptions": [
+          "Demand in each period is satisfied using the available inventory to the extent possible, with the unsatisfied demand backlogged",
+          "ΓKt+1 ≤Kt for all t, where γ is the discount factor",
+          "Zero ordering cost and lead time and focus on managing the tradeoff between holding and backlogging costs",
+          "The number of cases booked for each type and the usage of the item from that type are independent",
+          "We consider a single-item, discrete-time, periodic review inventory system over a finite horizon of length T"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "Managerial implications: By incorporating readily available elective surgery schedules into replenishment decisions of surgical supplies, hospitals could significantly reduce inventory costs without compromising the availability of the supplies.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each element",
+              "source": {
+                "type": "section",
+                "section": "The Bernoulli Model",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 8,
+                "quote": "each element",
+                "matchedText": "each element",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random variable",
+              "source": {
+                "type": "section",
+                "section": "Model Calibration",
+                "page": 16,
+                "sectionIndex": 20,
+                "sentence": 29,
+                "quote": "random variable",
+                "matchedText": "random variable",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 25,
+                "sentence": 6,
+                "quote": "They are motivated by availability of demand information from customers who place orders in advance of their needs.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "sectionIndex": 6,
+                "page": 5,
+                "quote": "The decision maker can observe (or, equivalently, chooses to utilize) the bookings made over a subset of the booking horizon."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The available information",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "Methodology/results: We study a single-item, periodic-review, stochastic inventory control problem, where the item demand in each period is driven by the number and type of surgeries requiring the item, and with the available information on elective surgeries integrated into the ordering decisions.",
+                "matchedText": "the available information",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Up to 26% reduction in average inventory levels, without violating the service levels",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "In a case study conducted using real data, we observe up to 26% reduction in average inventory levels, without violating the service levels.",
+                "matchedText": "up to 26% reduction in average inventory levels, without violating the service levels",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The number of type i cases performed in period t",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 7,
+                "quote": "the number of type i cases per­ formed in period t",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "Observed demand",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 61,
+                "quote": "In contrast, as ABI does not provide perfect information on observed demand, the information state must keep track of all information over the information horizon.",
+                "matchedText": "observed demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cost K",
+              "source": {
+                "type": "section",
+                "section": "Impact of Setup Cost",
+                "page": 12,
+                "sectionIndex": 16,
+                "sentence": 11,
+                "quote": "Interestingly, we also observe that the marginal value of ABI is nonmonotone in the setup cost K.",
+                "matchedText": "cost K",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "To satisfy backlogs and never hold inventory",
+              "source": {
+                "type": "section",
+                "section": "The Bernoulli Model",
+                "page": 10,
+                "sectionIndex": 12,
+                "sentence": 45,
+                "quote": "to satisfy backlogs and never hold inventory",
+                "matchedText": "to satisfy backlogs and never hold inventory",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Announce their orders",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 25,
+                "sentence": 21,
+                "quote": "Some classes require the product upon arrival, while others announce their orders",
+                "matchedText": "announce their orders",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "To cancel the order altogether with a certain probability",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 25,
+                "sentence": 23,
+                "quote": "Customers may also decide to cancel the order altogether with a certain probability",
+                "matchedText": "to cancel the order altogether with a certain probability",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The optimal policy by solving the DPs",
+              "source": {
+                "type": "section",
+                "section": "The Bernoulli Model",
+                "page": 11,
+                "sectionIndex": 31,
+                "sentence": 19,
+                "quote": "In our experiments, we compute the optimal policy by solving the DPs",
+                "matchedText": "the optimal policy by solving the DPs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Policy that minimizes the total expected holding",
+              "source": {
+                "type": "section",
+                "section": "Methodology and Research Questions",
+                "page": 2,
+                "sectionIndex": 2,
+                "sentence": 2,
+                "quote": "policy that minimizes the total expected holding",
+                "matchedText": "policy that minimizes the total expected holding",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Demand in each period is satisfied using the available inventory to the extent possible, with the unsatisfied demand backlogged",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 38,
+                "quote": "We assume that demand in each period is satisfied using the available inventory to the extent possible, with the unsatisfied demand backlogged.",
+                "matchedText": "demand in each period is satisfied using the available inventory to the extent possible, with the unsatisfied demand backlogged.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "ΓKt+1 ≤Kt for all t, where γ is the discount factor",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 41,
+                "quote": "We assume that γKt+1 ≤Kt for all t, where γ is the discount factor.",
+                "matchedText": "γKt+1 ≤Kt for all t, where γ is the discount factor.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Zero ordering cost and lead time and focus on managing the tradeoff between holding and backlogging costs",
+              "source": {
+                "type": "section",
+                "section": "The Bernoulli Model",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 6,
+                "quote": "Further, we assume zero ordering cost and lead time and focus on managing the tradeoff between holding and backlogging costs.",
+                "matchedText": "zero ordering cost and lead time and focus on managing the tradeoff between holding and backlogging costs.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The number of cases booked for each type and the usage of the item from that type are independent",
+              "source": {
+                "type": "section",
+                "section": "Model Description and Structure of the Optimal Policy",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "Assume that the number of cases booked for each type and the usage of the item from that type are independent.",
+                "matchedText": "the number of cases booked for each type and the usage of the item from that type are independent.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "We consider a single-item, discrete-time, periodic review inventory system over a finite horizon of length T",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "We consider a single-item, discrete-time, periodic re­ view inventory system over a finite horizon of length T.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper proposes an approach for reducing the size of the information state to 1 × n when the usage distributions of the items follow a general family of distributions, which we introduce next.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "State Aggregation",
+          "page": 7,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.1. State Aggregation",
+            "equation": "",
+            "quote": "We propose an approach for reducing the size of the information state to 1 × n when the usage distributions of the items follow a general family of distributions, which we introduce next."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-description-and-structure-of-the-optimal-policy",
+            "label": "Model Description and Structure of the Optimal Policy",
+            "role": "state",
+            "concepts": [
+              "inventory-control"
+            ],
+            "explanation": "In this section, we formally introduce the stochastic inventory control problem with ABI and characterize the structure of the optimal policy.",
+            "searchPhrases": [
+              "how model description and structure of the optimal policy is represented",
+              "decision-relevant state in policy, sustainability, and public services",
+              "model description and structure of the optimal policy decision-relevant state specification"
+            ],
+            "formal": "State definition: In this section, we formally introduce the stochastic inventory control problem with ABI and characterize the structure of the optimal policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Methodology/results: We study a single-item, periodic-review, stochastic inventory control problem, where the item demand in each period is driven by the number and type of surgeries requiring the item, and with the available information on elective surgeries integrated into the ordering decisions."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Model Description and Structure of the Optimal Policy",
+                "equation": "",
+                "quote": "In this section, we formally introduce the stochastic inventory control problem with ABI and characterize the structure of the optimal policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory-control",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Inventory control: “Inventory control”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The available information",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 4,
+                    "quote": "Methodology/results: We study a single-item, periodic-review, stochastic inventory control problem, where the item demand in each period is driven by the number and type of surgeries requiring the item, and with the available information on elective surgeries integrated into the ordering decisions.",
+                    "matchedText": "the available information",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "the-model",
+            "label": "The Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Orders arrive after a constant lead time L ≥0.",
+            "searchPhrases": [
+              "how the model is represented",
+              "system process in policy, sustainability, and public services",
+              "the model system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Orders arrive after a constant lead time L ≥0.",
+              "Denote by At ≥0 the orders placed in period t; then, Xt ≡It + Pt 1 s=t L As.",
+              "to arrive, and by It the net inventory level at the start of period t, which can take on positive values when there are physical items in the inventory or negative values when orders are backlogged."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.1. The Model",
+                "equation": "",
+                "quote": "Orders arrive after a con­ stant lead time L ≥0."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Orders arrive after a constant lead time L ≥0.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "structural-results",
+            "label": "Structural Results",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "We note that these properties also hold in the case of perfect information (see, e.g., ̈Ozer and Wei 2004 for a system with limited capacity and advance information), but the proofs require a different approach in our case, as ABI is not directly on future demand.",
+            "searchPhrases": [
+              "how structural results is represented",
+              "feasibility condition in policy, sustainability, and public services",
+              "structural results feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: We note that these properties also hold in the case of perfect information (see, e.g., ̈Ozer and Wei 2004 for a system with limited capacity and advance information), but the proofs require a different approach in our case, as ABI is not directly on future demand.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Finally, we say b ≥b′ for vectors b and b′ if the inequality holds component-wise."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.2. Structural Results",
+                "equation": "",
+                "quote": "We note that these properties also hold in the case of perfect information (see, e.g., ¨Ozer and Wei 2004 for a system with limited capacity and advance information), but the proofs require a different approach in our case, as ABI is not directly on future demand."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Feasibility constraints”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-approaches",
+            "label": "Solution Approaches",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "In the following, we discuss two solution approaches to address the large state-space when computing optimal policies.",
+            "searchPhrases": [
+              "how solution approaches is represented",
+              "decision-relevant state in policy, sustainability, and public services",
+              "solution approaches decision-relevant state specification"
+            ],
+            "formal": "State definition: In the following, we discuss two solution approaches to address the large state-space when computing optimal policies.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The formulation presented in Section 2 suffers from the curse of dimensionality because the size of the informa the information state is an I× n matrix, and, hence, its dimension grows with the number of cases using the item and the length of the information horizon."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3. Solution Approaches",
+                "equation": "",
+                "quote": "In the following, we discuss two solution approaches to address the large state-space when com­ puting optimal policies."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “In the following, we discuss two solution approaches to address the large state-space when computing optimal policies.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "state-aggregation",
+            "label": "State Aggregation",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "The paper proposes an approach for reducing the size of the information state to 1 × n when the usage distributions of the items follow a general family of distributions, which we introduce next.",
+            "searchPhrases": [
+              "how state aggregation is represented",
+              "decision-relevant state in policy, sustainability, and public services",
+              "state aggregation decision-relevant state specification"
+            ],
+            "formal": "State definition: The paper proposes an approach for reducing the size of the information state to 1 × n when the usage distributions of the items follow a general family of distributions, which we introduce next.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The term φ := 1=(1 μ)2 corresponds to dispersion factor, such that when μ=0, the GPD reduces to Poisson; when μ > 0, it is overdispersed; and when μ < 0, it is underdispersed.",
+              "Recall that ̃Zt defined in (4) represents the new booking information observed in period t."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. State Aggregation",
+                "equation": "",
+                "quote": "We propose an approach for reducing the size of the information state to 1 × n when the usage distributions of the items follow a general family of distributions, which we introduce next."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “System state”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "an-upper-bound-for-the-value-of-abi",
+            "label": "An Upper-Bound for the Value of ABI",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "We obtain an upper-bound on the value of ABI through an imperfect information relaxation approach (see Brown et al. 2010).",
+            "searchPhrases": [
+              "how an upper-bound for the value of abi is represented",
+              "information available to the decision maker in policy, sustainability, and public services",
+              "an upper-bound for the value of abi information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We obtain an upper-bound on the value of ABI through an imperfect information relaxation approach (see Brown et al. 2010).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We obtain an upper-bound on the value of ABI through an imperfect information relaxation approach (see Brown et al. 2010).",
+              "More specifically, for each realization {bt}T t=1, one can solve a much simpler DP to evaluate the corresponding value function Jt(xt,{bt}T t=1).",
+              "Specifically, we partially relax the nonanticipatory condition on the ordering policies and consider a problem where all surgery bookings are realized at the beginning of the horizon."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. An Upper-Bound for the Value of ABI",
+                "equation": "",
+                "quote": "We obtain an upper-bound on the value of ABI through an imperfect information relaxation approach (see Brown et al. 2010)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "the-bernoulli-model",
+            "label": "The Bernoulli Model",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "In region S4, the optimal decision in the absence of ABI is still not to order, but with one or two periods of ABI, ordering Figure 1.",
+            "searchPhrases": [
+              "how the bernoulli model is represented",
+              "decision rule in policy, sustainability, and public services",
+              "the bernoulli model decision rule specification"
+            ],
+            "formal": "Decision rule: In region S4, the optimal decision in the absence of ABI is still not to order, but with one or two periods of ABI, ordering Figure 1.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The table also provides the value of ABI—that is, F(n) for n = 1,2, (clearly, F(0) = 0).",
+              "The next proposition characterizes the regions based on whether the marginal value of ABI is constant, increasing, or decreasing.",
+              "In case (iii), there is a positive marginal value of using an extra period of ABI, whereas in case (iv), the marginal value is equal to zero."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. The Bernoulli Model",
+                "equation": "",
+                "quote": "In region S4, the optimal decision in the absence of ABI is still not to order, but with one or two periods of ABI, ordering Figure 1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "setting-and-data",
+            "label": "Setting and Data",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The first data set includes information on the historical surgery schedules performed at the hospital from 2016–2018 and contains details on the time the booking was made, the date the surgery was performed, and the procedures involved in each case.",
+            "searchPhrases": [
+              "how setting and data is represented",
+              "information available to the decision maker in policy, sustainability, and public services",
+              "setting and data information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The first data set includes information on the historical surgery schedules performed at the hospital from 2016–2018 and contains details on the time the booking was made, the date the surgery was performed, and the procedures involved in each case.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Methodology/results: We study a single-item, periodic-review, stochastic inventory control problem, where the item demand in each period is driven by the number and type of surgeries requiring the item, and with the available information on elective surgeries integrated into the ordering decisions."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "6.1. Setting and Data",
+                "equation": "",
+                "quote": "The first data set includes information on the historical surgery schedules performed at the hospital from 2016–2018 and contains details on the time the booking was made, the date the surgery was performed, and the procedures involved in each case."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The available information",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 4,
+                    "quote": "Methodology/results: We study a single-item, periodic-review, stochastic inventory control problem, where the item demand in each period is driven by the number and type of surgeries requiring the item, and with the available information on elective surgeries integrated into the ordering decisions.",
+                    "matchedText": "the available information",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "approximation-algorithms",
+        "name": "Approximation Algorithms",
+        "kind": "approximation",
+        "relation": "This formulation approximates Model Description and Structure of the Optimal Policy.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "model-description-and-structure-of-the-optimal-policy"
+          }
+        ],
+        "summary": "The algorithms are based on the notion of marginal cost accounting (Levi et al. 2007), which is to account for the expected costs of orders over the entire horizon (independent of future decisions).",
+        "objects": [
+          "Hospitals",
+          "Each element",
+          "Random variable",
+          "Customers",
+          "The decision maker"
+        ],
+        "inputs": [
+          "The available information",
+          "Up to 26% reduction in average inventory levels, without violating the service levels",
+          "The number of type i cases performed in period t",
+          "Observed demand",
+          "Cost K"
+        ],
+        "decisions": [
+          "To satisfy backlogs and never hold inventory",
+          "Announce their orders",
+          "To cancel the order altogether with a certain probability",
+          "The optimal policy by solving the DPs",
+          "Policy that minimizes the total expected holding"
+        ],
+        "assumptions": [
+          "Demand in each period is satisfied using the available inventory to the extent possible, with the unsatisfied demand backlogged",
+          "ΓKt+1 ≤Kt for all t, where γ is the discount factor",
+          "Zero ordering cost and lead time and focus on managing the tradeoff between holding and backlogging costs",
+          "The number of cases booked for each type and the usage of the item from that type are independent",
+          "We consider a single-item, discrete-time, periodic review inventory system over a finite horizon of length T"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "Managerial implications: By incorporating readily available elective surgery schedules into replenishment decisions of surgical supplies, hospitals could significantly reduce inventory costs without compromising the availability of the supplies.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each element",
+              "source": {
+                "type": "section",
+                "section": "The Bernoulli Model",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 8,
+                "quote": "each element",
+                "matchedText": "each element",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random variable",
+              "source": {
+                "type": "section",
+                "section": "Model Calibration",
+                "page": 16,
+                "sectionIndex": 20,
+                "sentence": 29,
+                "quote": "random variable",
+                "matchedText": "random variable",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 25,
+                "sentence": 6,
+                "quote": "They are motivated by availability of demand information from customers who place orders in advance of their needs.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "sectionIndex": 6,
+                "page": 5,
+                "quote": "The decision maker can observe (or, equivalently, chooses to utilize) the bookings made over a subset of the booking horizon."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The available information",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "Methodology/results: We study a single-item, periodic-review, stochastic inventory control problem, where the item demand in each period is driven by the number and type of surgeries requiring the item, and with the available information on elective surgeries integrated into the ordering decisions.",
+                "matchedText": "the available information",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Up to 26% reduction in average inventory levels, without violating the service levels",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "In a case study conducted using real data, we observe up to 26% reduction in average inventory levels, without violating the service levels.",
+                "matchedText": "up to 26% reduction in average inventory levels, without violating the service levels",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The number of type i cases performed in period t",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 6,
+                "sentence": 7,
+                "quote": "the number of type i cases per­ formed in period t",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "Observed demand",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 61,
+                "quote": "In contrast, as ABI does not provide perfect information on observed demand, the information state must keep track of all information over the information horizon.",
+                "matchedText": "observed demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cost K",
+              "source": {
+                "type": "section",
+                "section": "Impact of Setup Cost",
+                "page": 12,
+                "sectionIndex": 16,
+                "sentence": 11,
+                "quote": "Interestingly, we also observe that the marginal value of ABI is nonmonotone in the setup cost K.",
+                "matchedText": "cost K",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "To satisfy backlogs and never hold inventory",
+              "source": {
+                "type": "section",
+                "section": "The Bernoulli Model",
+                "page": 10,
+                "sectionIndex": 12,
+                "sentence": 45,
+                "quote": "to satisfy backlogs and never hold inventory",
+                "matchedText": "to satisfy backlogs and never hold inventory",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Announce their orders",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 25,
+                "sentence": 21,
+                "quote": "Some classes require the product upon arrival, while others announce their orders",
+                "matchedText": "announce their orders",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "To cancel the order altogether with a certain probability",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 25,
+                "sentence": 23,
+                "quote": "Customers may also decide to cancel the order altogether with a certain probability",
+                "matchedText": "to cancel the order altogether with a certain probability",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The optimal policy by solving the DPs",
+              "source": {
+                "type": "section",
+                "section": "The Bernoulli Model",
+                "page": 11,
+                "sectionIndex": 31,
+                "sentence": 19,
+                "quote": "In our experiments, we compute the optimal policy by solving the DPs",
+                "matchedText": "the optimal policy by solving the DPs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Policy that minimizes the total expected holding",
+              "source": {
+                "type": "section",
+                "section": "Methodology and Research Questions",
+                "page": 2,
+                "sectionIndex": 2,
+                "sentence": 2,
+                "quote": "policy that minimizes the total expected holding",
+                "matchedText": "policy that minimizes the total expected holding",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Demand in each period is satisfied using the available inventory to the extent possible, with the unsatisfied demand backlogged",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 38,
+                "quote": "We assume that demand in each period is satisfied using the available inventory to the extent possible, with the unsatisfied demand backlogged.",
+                "matchedText": "demand in each period is satisfied using the available inventory to the extent possible, with the unsatisfied demand backlogged.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "ΓKt+1 ≤Kt for all t, where γ is the discount factor",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 41,
+                "quote": "We assume that γKt+1 ≤Kt for all t, where γ is the discount factor.",
+                "matchedText": "γKt+1 ≤Kt for all t, where γ is the discount factor.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Zero ordering cost and lead time and focus on managing the tradeoff between holding and backlogging costs",
+              "source": {
+                "type": "section",
+                "section": "The Bernoulli Model",
+                "page": 9,
+                "sectionIndex": 12,
+                "sentence": 6,
+                "quote": "Further, we assume zero ordering cost and lead time and focus on managing the tradeoff between holding and backlogging costs.",
+                "matchedText": "zero ordering cost and lead time and focus on managing the tradeoff between holding and backlogging costs.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The number of cases booked for each type and the usage of the item from that type are independent",
+              "source": {
+                "type": "section",
+                "section": "Model Description and Structure of the Optimal Policy",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "Assume that the number of cases booked for each type and the usage of the item from that type are independent.",
+                "matchedText": "the number of cases booked for each type and the usage of the item from that type are independent.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "We consider a single-item, discrete-time, periodic review inventory system over a finite horizon of length T",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "We consider a single-item, discrete-time, periodic re­ view inventory system over a finite horizon of length T.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper identifies a relevant parameter regime—namely, high backlog (relative to holding) costs and when surgeries are booked sufficiently in advance—where the value of using ABI could be significant and the majority of the benefits can be gained through incorporating only one period of ABI beyond the order lead time.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 7
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.2. Approximation Algorithms",
+            "equation": "",
+            "quote": "The algo­ rithms are based on the notion of marginal cost account­ ing (Levi et al. 2007), which is to account for the expected costs of orders over the entire horizon (inde­ pendent of future decisions)."
+          }
+        ],
+        "components": [
+          {
+            "id": "approximation-algorithms",
+            "label": "Approximation Algorithms",
+            "role": "algorithm",
+            "concepts": [
+              "approximation-algorithms"
+            ],
+            "explanation": "The algorithms are based on the notion of marginal cost accounting (Levi et al. 2007), which is to account for the expected costs of orders over the entire horizon (independent of future decisions).",
+            "searchPhrases": [
+              "how approximation algorithms is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "approximation algorithms solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The algorithms are based on the notion of marginal cost accounting (Levi et al. 2007), which is to account for the expected costs of orders over the entire horizon (independent of future decisions).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The algorithms are based on the notion of marginal cost accounting (Levi et al. 2007), which is to account for the expected costs of orders over the entire horizon (independent of future decisions).",
+              "Whereas the ordering decisions under DB are made to equalize the expected ordering and backlog costs, under the LA algorithm, order sizes are set to minimize the sum of expected costs; see Hurley et al. (2007) for details, extensions, and computational studies."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.2. Approximation Algorithms",
+                "equation": "",
+                "quote": "The algo­ rithms are based on the notion of marginal cost account­ ing (Levi et al. 2007), which is to account for the expected costs of orders over the entire horizon (inde­ pendent of future decisions)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "approximation-algorithms",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Approximation algorithms: “Approximation algorithms”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "202aa0c8918b0cebe4dd07a6be2710ce5462e3310f49dad2d3676f7b82e00791",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "c25260ce13d3af66e330d9dca36e648694d033c7649c269166ee07d2dee50b80",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0063/c25260ce13d3af66e330d9dca36e648694d033c7649c269166ee07d2dee50b80.json",
+      "extractionQaDecisionSha256": "0678e3d37e3b22d6ede363e9482570f1c7e04e4c9aa1cd9615517aef70dff1f7",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2021-1039",
+  "sourcePdfSha256": "4a82f50cfe067965a5e09020db4ec7637628535768221fdd9e2db6fd83ae6d06",
+  "extractionPagesSha256": "3271144f5ecc5280cd744facde37195a03c9ffa926372e26e7874d3f4dd43608",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "b1e81344f91533ecc81aaef2a73c16c0ac4cba500babf519fcc08f0fb36795a9",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "37b5aa840ebd3f1fbc70d4857a6f685d90163466b0bc3fe97abc159db4edb196",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-1039/37b5aa840ebd3f1fbc70d4857a6f685d90163466b0bc3fe97abc159db4edb196.json",
+  "extractionQaDecisionSha256": "189e416b8ddec484fcd5dff43669d926a77c972afb800d4df74a0efb08ba43e6",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2021-1039",
+    "question": "How does the plan of one insurer affect the quality competition between two hospitals?",
+    "overview": "The model considers the quality competition between two hospitals under the plan of one insurer. The insurer aims to maximize the overall achievable quality in the system by selecting either the fee-for-service (FFS) or the bundled payment (BP) scheme to compensate each hospital. The demand, the costs, and the probability of successfully treating patients depend on a hospital’s chosen quality.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8,
+        10,
+        13
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Competition Between Hospitals Under Bundled Payments and Fee-for-Service model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers the quality competition between two hospitals under the plan of one insurer. The insurer aims to maximize the overall achievable quality in the system by selecting either the fee-for-service (FFS) or the bundled payment (BP) scheme to compensate each hospital. The demand, the costs, and the probability of successfully treating patients depend on a hospital’s chosen quality.",
+        "objects": [
+          "Two hospitals",
+          "Providers",
+          "Tables"
+        ],
+        "inputs": [
+          "A hospital’s chosen quality",
+          "The chosen quality of the hospital"
+        ],
+        "decisions": [
+          "The hospital reimbursement rates for the Medicaid insurance program (American Hospital Association 2017)",
+          "Share a common payment from the insurer under BP",
+          "A higher quality at equilibrium"
+        ],
+        "assumptions": [
+          "Hospital 1 is under FFS while Hospital 2 under BP",
+          "Both hospitals to be profit maximizers",
+          "All beneficiaries are covered by a single health plan from a single insurer under which both hospital 1 and 2 are listed providers",
+          "Beneficiaries’ deductible/out-of-pocket expenses are identical for the two hospitals"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Two hospitals",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We consider the quality competition between two hospitals under the plan of one insurer.",
+                "matchedText": "two hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Providers",
+              "source": {
+                "type": "section",
+                "section": "Parsimonious Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 11,
+                "quote": "Assume that all beneﬁciaries are covered by a single health plan from a single insurer under which both hospital 1 and 2 are listed providers.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Tables",
+              "source": {
+                "type": "section",
+                "section": "System Benefit: A Numerical Study",
+                "page": 20,
+                "sectionIndex": 14,
+                "sentence": 56,
+                "quote": "Tables 7 and 8 in the online appendix show that similar ﬁndings hold.",
+                "matchedText": "Tables",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A hospital’s chosen quality",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "The demand, the costs, and the probability of successfully treating patients depend on a hospital’s chosen quality.",
+                "matchedText": "a hospital’s chosen quality",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The chosen quality of the hospital",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 36,
+                "quote": "After the payment schemes are assigned by the insurer, each hospital chooses its quality; and that the demand, the costs of a hospital, and the probability of successfully treating a patient depend on the chosen quality of the hospital.",
+                "matchedText": "the chosen quality of the hospital",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The hospital reimbursement rates for the Medicaid insurance program (American Hospital Association 2017)",
+              "source": {
+                "type": "section",
+                "section": "Insurer’s Problem (Stage 1)",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 12,
+                "quote": "Congress sets the hospital reimbursement rates for Medicare insurance in the United States, whereas state governments set the hospital reimbursement rates for the Medicaid insurance program (American Hospital Association 2017)",
+                "matchedText": "the hospital reimbursement rates for the Medicaid insurance program (American Hospital Association 2017)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Share a common payment from the insurer under BP",
+              "source": {
+                "type": "section",
+                "section": "Parsimonious Model",
+                "page": 5,
+                "sectionIndex": 16,
+                "sentence": 19,
+                "quote": "Unlike that under the FFS scheme, a hospital and its physicians share a common payment from the insurer under BP",
+                "matchedText": "share a common payment from the insurer under BP",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "A higher quality at equilibrium",
+              "source": {
+                "type": "section",
+                "section": "System Benefit: A Numerical Study",
+                "page": 20,
+                "sectionIndex": 14,
+                "sentence": 38,
+                "quote": "choose a higher quality at equilibrium",
+                "matchedText": "a higher quality at equilibrium",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Hospital 1 is under FFS while Hospital 2 under BP",
+              "source": {
+                "type": "section",
+                "section": "Parsimonious Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 14,
+                "quote": "For the last scenario, without loss of generality, we assume that Hospital 1 is under FFS while Hospital 2 under BP.",
+                "matchedText": "Hospital 1 is under FFS while Hospital 2 under BP.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Both hospitals to be profit maximizers",
+              "source": {
+                "type": "section",
+                "section": "Parsimonious Model",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 18,
+                "quote": "We assume both hospitals to be proﬁt maximizers.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All beneficiaries are covered by a single health plan from a single insurer under which both hospital 1 and 2 are listed providers",
+              "source": {
+                "type": "section",
+                "section": "Parsimonious Model",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 11,
+                "quote": "Assume that all beneﬁciaries are covered by a single health plan from a single insurer under which both hospital 1 and 2 are listed providers.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Beneficiaries’ deductible/out-of-pocket expenses are identical for the two hospitals",
+              "source": {
+                "type": "section",
+                "section": "Notation",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 8,
+                "quote": "Consistent with our observation in practice, we assume that beneﬁciaries’ deductible/out-of-pocket expenses are identical for the two hospitals.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper characterizes when the insurer might assign the BP to both hospitals, the FFS to both hospitals, or the BP to one and the FFS to the other hospital.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 13
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.3. Insurer’s Problem (Stage 1)",
+            "equation": "",
+            "quote": "The insurer, in Stage 1 of our game, seeks to maximize Q(q1,q2) at equilibrium by choosing the FFS or the BP scheme for each hospital."
+          }
+        ],
+        "components": [
+          {
+            "id": "parsimonious-model",
+            "label": "Parsimonious Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Rather, it is a measure of effectiveness of the process that leads to successful treatment of a patient at a hospital.",
+            "searchPhrases": [
+              "how parsimonious model is represented",
+              "system process in policy, sustainability, and public services",
+              "parsimonious model system process specification"
+            ],
+            "formal": "Process relation: Rather, it is a measure of effectiveness of the process that leads to successful treatment of a patient at a hospital.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that Hospital 1 is under FFS while Hospital 2 under BP.",
+              "For example, both hospitals can be under BP (hereinafter, we denote this game by BP/BP), both hospitals can be under FFS (we denote this game by FFS/FFS), or one hospital can be under FFS while the other is under BP (we denote this game by FFS/BP).",
+              "For the last scenario, without loss of generality, we assume that Hospital 1 is under FFS while Hospital 2 under BP."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Parsimonious Model",
+                "equation": "",
+                "quote": "Rather, it is a measure of effectiveness of the process that leads to successful treatment of a patient at a hospital."
+              },
+              {
+                "page": 5,
+                "section": "3. Parsimonious Model",
+                "equation": "",
+                "quote": "For example, both hospitals can be under BP (hereinafter, we denote this game by BP/BP), both hospitals can be under FFS (we denote this game by FFS/FFS), or one hospital can be under FFS while the other is under BP (we denote this game by FFS/BP)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Rather, it is a measure of effectiveness of the process that leads to successful treatment of a patient”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 1,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "insurer-s-problem-stage-1",
+            "label": "Insurer’s Problem (Stage 1)",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The insurer, in Stage 1 of our game, seeks to maximize Q(q1,q2) at equilibrium by choosing the FFS or the BP scheme for each hospital.",
+            "searchPhrases": [
+              "how insurer’s problem (stage 1) is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "insurer’s problem (stage 1) modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the insurer in our paper seeks to maximize the achievable aggregate quality by deciding the payment scheme for each of the two hospitals in its network.",
+              "America’s Health Insurance Plans (AHIP), a national association of life and health insurers, notes on its website that “Health plans evaluate doctors and hospitals for quality and safety performance before including them in a network.” (AHIP 2018; refers to the response of the interviewee Kate Berry).",
+              "Similarly, public sector insurers such as the Centers for Medicare & Medicaid Services (CMS) are often interested in public health."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.3. Insurer’s Problem (Stage 1)",
+                "equation": "",
+                "quote": "The insurer, in Stage 1 of our game, seeks to maximize Q(q1,q2) at equilibrium by choosing the FFS or the BP scheme for each hospital."
+              },
+              {
+                "page": 10,
+                "section": "3.6. Results: Choice of Insurer",
+                "equation": "Lemma 1",
+                "quote": "In this case, each hospital chooses the same equilibrium quality irrespective of the payment scheme."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The insurer, in Stage 1 of our game, seeks to maximize Q(q1,q2) at equilibrium by choosing the FFS”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "hospitals-problem-stage-2",
+            "label": "Hospitals’ Problem (Stage 2)",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The solution outline for Stage 1 of our game and the resulting insights are discussed in Section 3.6.",
+            "searchPhrases": [
+              "how hospitals’ problem (stage 2) is represented",
+              "strategic response in policy, sustainability, and public services",
+              "hospitals’ problem (stage 2) strategic response specification"
+            ],
+            "formal": "Strategic response: The solution outline for Stage 1 of our game and the resulting insights are discussed in Section 3.6.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Namely, πFFS=BP 1 (q1, q2) γFFS 1 −α11q1 + (1 −a1) γFFS 2 −α12q1 1 2 (1 + τ(q1 −q2)): (3) Hospital 2’s profit is the bundled payment minus the first-time treatment cost and the expected cost of readmission treatment, multiplied by demand.",
+              "The profit of Hospital 1 remains identical to that in Equation (3), whereas the profit of Hospital 2 becomes π2(q2, q1)FFS=FFS γFFS 1 −α21q2 + 1 −a2 ( ) γFFS 2 −α22q2 1 2 (1 + τ(q2 −q1)): (5) Finally consider the BP/BP game."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.4. Hospitals’ Problem (Stage 2)",
+                "equation": "",
+                "quote": "The solution outline for Stage 1 of our game and the resulting insights are discussed in Section 3.6."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “The solution outline for Stage 1 of our game and the resulting insights are discussed in Section 3.6.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "generalization-of-results",
+            "label": "Generalization of Results",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Assume that a patient incurs a high first-time treatment cost cH(q1) with probability λ, and a low first-time treatment cost cL(q1) with probability 1 −λ, where cH(q1) ≥cL(q1) for all q1 ∈[q,q].",
+            "searchPhrases": [
+              "how generalization of results is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "generalization of results modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that 0 ≤ τ ≤(q −q)−1 to ensure that the respective demand for each hospital is nonnegative.",
+              "Assume that a pa- tient incurs a high first-time treatment cost cH(q1) with probability λ, and a low first-time treatment cost cL(q1) with probability 1 −λ, where cH(q1) ≥cL(q1) for all q1 ∈[q,q].",
+              "Assume that all payment parameters satisfy the participation constraints, namely, γFFS 1 ≥max{c11(q),c21(q)}, γFFS 2 ≥max{c12(q),c22(q)}, and γBP ≥max{minq∈[q,q]{c11(q) +(1 −p1(q))c12(q)},minq∈[q,q] {c21(q) + (1 −p2(q))c22(q)}}.",
+              "In addition, in this section we assume that 0 ≤ τ ≤(q −q)−1 to ensure that the respective demand for each hospital is nonnegative."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "4. Generalization of Results",
+                "equation": "",
+                "quote": "Assume that a pa- tient incurs a high ﬁrst-time treatment cost cH(q1) with probability λ, and a low ﬁrst-time treatment cost cL(q1) with probability 1 −λ, where cH(q1) ≥cL(q1) for all q1 ∈[q,q]."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Assume that a pa- tient incurs a high first-time treatment cost cH(q1) with probability λ, and a low”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "business_question",
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "4a82f50cfe067965a5e09020db4ec7637628535768221fdd9e2db6fd83ae6d06",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "37b5aa840ebd3f1fbc70d4857a6f685d90163466b0bc3fe97abc159db4edb196",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-1039/37b5aa840ebd3f1fbc70d4857a6f685d90163466b0bc3fe97abc159db4edb196.json",
+      "extractionQaDecisionSha256": "189e416b8ddec484fcd5dff43669d926a77c972afb800d4df74a0efb08ba43e6",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

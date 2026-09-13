@@ -1,0 +1,814 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-isre-2022-0055",
+  "sourcePdfSha256": "e72a45405f89cfb514c9c34daa16ac35e3e06245d65de0b39e85def2c20347b7",
+  "extractionPagesSha256": "a90b3c21f085e14483390540fd954441c69d6e5690071b5765cf4b936fb89b36",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "8bcd87aa5444588302e2b52fab8f8cfae013a64c97368bb966e2d47f26dd7513",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "dcb90dbddd700d2e03c5082a76b64aaa0dddb5ce64cf71ce97642b054fea06bd",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2022-0055/dcb90dbddd700d2e03c5082a76b64aaa0dddb5ce64cf71ce97642b054fea06bd.json",
+  "extractionQaDecisionSha256": "500c009bc7f972b15ed9fedc2e4dd532073b816d2d0ea817b12e3c4ddbd3fbac",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-isre-2022-0055",
+    "question": "How do alternative fair-ML constraints affect equilibrium effort and hiring-threshold choices?",
+    "overview": "The paper explicitly defines a game G in which a profit-maximizing employer chooses ML hiring thresholds and applicants with privately observed effort costs strategically decide whether to become qualified. Fairness criteria alter the resulting equilibrium qualification rates.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        8
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Equilibrium effort and hiring-threshold choices under alternative fair-ML constraints",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper explicitly defines a game G in which a profit-maximizing employer chooses ML hiring thresholds and applicants with privately observed effort costs strategically decide whether to become qualified. Fairness criteria alter the resulting equilibrium qualification rates.",
+        "objects": [
+          "Job applicants in two ex ante identical subpopulations",
+          "The firm",
+          "Applicant",
+          "Agents",
+          "Users"
+        ],
+        "inputs": [
+          "Each applicant privately observes an idiosyncratic qualification cost",
+          "The trained ML rule, its score distributions, and the firm's hiring rule are common knowledge",
+          "True qualification is latent to the firm",
+          "Historical-data bias can make the conditional score distribution differ across sensitive groups even"
+        ],
+        "decisions": [
+          "The firm chooses threshold gamma_s for each subpopulation",
+          "Each applicant chooses whether to exert effort and become qualified",
+          "The firm hires or rejects mechanically according to whether the observed ML score exceeds the threshold",
+          "Exert effort",
+          "Exert the same amount of effort"
+        ],
+        "assumptions": [
+          "The sensitive attribute is binary in the baseline model, and the two subpopulations are ex ante identical in qualification ability and conditional payoffs",
+          "Qualification cost is privately observed and drawn from the same uniform distribution on [c_lower,c_upper] in both groups",
+          "An applicant chooses binary effort, and effort makes the applicant qualified",
+          "The score satisfies a monotone-likelihood-ratio property with respect to qualification",
+          "The firm pays the same hiring payoff kappa to any hired applicant and earns v_q from hiring a qualified applicant while losing v_u from hiring an unqualified one"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Job applicants in two ex ante identical subpopulations",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "job applicants in two ex ante identical subpopulations who privately observe their costs of becoming qualified"
+              }
+            },
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 8,
+                "quote": "The firm receives a payoff of vq for every qualified applicant hired but loses vu for every unqualified appli­ cant hired."
+              }
+            },
+            {
+              "value": "Applicant",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 8,
+                "quote": "The firm receives a payoff of vq for every qualified applicant hired but loses vu for every unqualified appli­ cant hired.",
+                "matchedText": "applicant",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agents",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 1,
+                "quote": "provides insights on equilibrium behaviors among rational agents in algorithmically mediated markets.",
+                "matchedText": "agents",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Users",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 16,
+                "quote": "Meanwhile, L´opez Vargas et al. (2022) investigated the effects of an algorithmic-driven system that matches new users to existing communities in an assortative manner.",
+                "matchedText": "users",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each applicant privately observes an idiosyncratic qualification cost",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each applicant privately observes an idiosyncratic qualification cost before choosing effort."
+              }
+            },
+            {
+              "value": "The trained ML rule, its score distributions, and the firm's hiring rule are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The trained ML rule, its score distributions, and the firm's hiring rule are common knowledge."
+              }
+            },
+            {
+              "value": "True qualification is latent to the firm",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "True qualification is latent to the firm, which observes features and a score rather than effort or cost directly."
+              }
+            },
+            {
+              "value": "Historical-data bias can make the conditional score distribution differ across sensitive groups even",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Historical-data bias can make the conditional score distribution differ across sensitive groups even when their intrinsic qualification technology is identical."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The firm chooses threshold gamma_s for each subpopulation",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the firm chooses threshold gamma_s for each subpopulation subject to the algorithm's fairness constraints"
+              }
+            },
+            {
+              "value": "Each applicant chooses whether to exert effort and become qualified",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each applicant chooses whether to exert effort and become qualified"
+              }
+            },
+            {
+              "value": "The firm hires or rejects mechanically according to whether the observed ML score exceeds the threshold",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the firm hires or rejects mechanically according to whether the observed ML score exceeds the threshold"
+              }
+            },
+            {
+              "value": "Exert effort",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 16,
+                "quote": "Usually, applicants observe others with charac­ teristics similar to them being subjected to decisions, including that to exert effort",
+                "matchedText": "exert effort",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Exert the same amount of effort",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 25,
+                "quote": "In other words, when applicants from different subpopulations exert the same amount of effort",
+                "matchedText": "exert the same amount of effort",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The sensitive attribute is binary in the baseline model, and the two subpopulations are ex ante identical in qualification ability and conditional payoffs",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The sensitive attribute is binary in the baseline model, and the two subpopulations are ex ante identical in qualification ability and conditional payoffs."
+              }
+            },
+            {
+              "value": "Qualification cost is privately observed and drawn from the same uniform distribution on [c_lower,c_upper] in both groups",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Qualification cost is privately observed and drawn from the same uniform distribution on [c_lower,c_upper] in both groups."
+              }
+            },
+            {
+              "value": "An applicant chooses binary effort, and effort makes the applicant qualified",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "An applicant chooses binary effort, and effort makes the applicant qualified."
+              }
+            },
+            {
+              "value": "The score satisfies a monotone-likelihood-ratio property with respect to qualification",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The score satisfies a monotone-likelihood-ratio property with respect to qualification."
+              }
+            },
+            {
+              "value": "The firm pays the same hiring payoff kappa to any hired applicant and earns v_q from hiring a qualified applicant while losing v_u from hiring an unqualified one",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The firm pays the same hiring payoff kappa to any hired applicant and earns v_q from hiring a qualified applicant while losing v_u from hiring an unqualified one."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The authors build an analytical employer-applicant game, derive the effort-response equation and threshold problem, construct counterexamples for common fairness rules, and prove a sufficient strategic-fairness result for equalized odds.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.1. Model",
+            "equation": "",
+            "quote": "In other words, when applicants from different subpopulations exert the same amount of effort, they will be equally qualified for the job.3 Independent of the sub­ population, any applicant i incurs a cost ci to qualify that is drawn randomly from the same uniform distribution over [c,c] and observed by the applicant before the quali­ fication decision."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Each applicant privately observes an idiosyncratic qualification cost before choosing effort. The trained ML rule, its score distributions, and the firm's hiring rule are common knowledge. True qualification is latent to the firm, which observes features and a score rather than effort or cost directly. Historical-data bias can make the conditional score distribution differ across sensitive groups even when their intrinsic qualification technology is identical.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in strategic behavioral responses to fair machine-learning rules",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Each applicant privately observes an idiosyncratic qualification cost before choosing effort.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s in {0, 1}",
+                "meaning": "applicant's sensitive-group indicator · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "applicant i's qualification-effort choice · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_i",
+                "meaning": "applicant i's private cost of qualifying · uniform on [c_lower,c_upper]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h(x_i, s_i)",
+                "meaning": "trained ML score interpreted as a predicted qualification probability · continuous score",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma_s",
+                "meaning": "hiring threshold applied to group s · score support",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_q, v_u",
+                "meaning": "gain from hiring a qualified applicant and loss from hiring an unqualified applicant · positive magnitudes",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In other words, when applicants from different subpopulations exert the same amount of effort, they will be equally qualified for the job.3 Independent of the subpopulation, any applicant i incurs a cost ci to qualify that is drawn randomly from the same uniform distribution over [c,c] and observed by the applicant before the qualification decision.",
+              "The sensitive attribute is binary in the baseline model, and the two subpopulations are ex ante identical in qualification ability and conditional payoffs.",
+              "Qualification cost is privately observed and drawn from the same uniform distribution on [c_lower,c_upper] in both groups.",
+              "An applicant chooses binary effort, and effort makes the applicant qualified."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Model",
+                "equation": "",
+                "quote": "In other words, when applicants from different subpopulations exert the same amount of effort, they will be equally qualified for the job.3 Independent of the sub­ population, any applicant i incurs a cost ci to qualify that is drawn randomly from the same uniform distribution over [c,c] and observed by the applicant before the quali­ fication decision."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “In other words, when applicants from different subpopulations exert the same amount of effort, they will be equally”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The firm chooses threshold gamma_s for each subpopulation subject to the algorithm's fairness constraints each applicant chooses whether to exert effort and become qualified the firm hires or rejects mechanically according to whether the observed ML score exceeds the threshold",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in strategic behavioral responses to fair machine-learning rules",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The firm chooses threshold \\gamma_s for each subpopulation subject to the algorithm's fairness constraints each applicant chooses whether to exert effort and become qualified the firm hires or rejects mechanically according to whether the observed ML score exceeds the threshold",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s in {0, 1}",
+                "meaning": "applicant's sensitive-group indicator · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "applicant i's qualification-effort choice · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_i",
+                "meaning": "applicant i's private cost of qualifying · uniform on [c_lower,c_upper]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma_s",
+                "meaning": "hiring threshold applied to group s · score support",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_s",
+                "meaning": "fraction of group s that exerts effort and becomes qualified · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_q, v_u",
+                "meaning": "gain from hiring a qualified applicant and loss from hiring an unqualified applicant · positive magnitudes",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Let the firm set a threshold γs such that it hires applicant i of subpopulation s if and only if h(xi,s) > γs.",
+              "Qualification cost is privately observed and drawn from the same uniform distribution on [c_lower,c_upper] in both groups.",
+              "An applicant chooses binary effort, and effort makes the applicant qualified."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Model",
+                "equation": "",
+                "quote": "Let the firm set a threshold γs such that it hires applicant i of subpopulation s if and only if h(xi,s) > γs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The firm chooses group-specific hiring thresholds to maximize expected profit over applicants, constrained by the fairness criterion of the ML rule and by applicants' equilibrium effort response in Equation (1).",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in strategic behavioral responses to fair machine-learning rules",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\Pi^*=\\max_{\\gamma_0,\\gamma_1}\\left\\{\\left.\\sum_i \\Pi_i\\right|\\text{Equation (1), Fairness Criteria}\\right\\}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "s in {0, 1}",
+                "meaning": "applicant's sensitive-group indicator · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "applicant i's qualification-effort choice · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_i",
+                "meaning": "applicant i's private cost of qualifying · uniform on [c_lower,c_upper]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h(x_i, s_i)",
+                "meaning": "trained ML score interpreted as a predicted qualification probability · continuous score",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma_s",
+                "meaning": "hiring threshold applied to group s · score support",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_s",
+                "meaning": "fraction of group s that exerts effort and becomes qualified · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v_q, v_u",
+                "meaning": "gain from hiring a qualified applicant and loss from hiring an unqualified applicant · positive magnitudes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "TP_s, FP_s",
+                "meaning": "true-positive and false-positive rates for group s · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The firm pays the same hiring payoff kappa to any hired applicant and earns v_q from hiring a qualified applicant while losing v_u from hiring an unqualified one.",
+              "An applicant chooses binary effort, and effort makes the applicant qualified."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "(2)",
+                "quote": "Let Πi be the firm profit generated from applicant i."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Let Πi be the firm profit generated from applicant i.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "fairness-constrained-strategic-best-response-equilibrium",
+            "label": "Fairness-constrained strategic best-response equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "equilibrium-analysis"
+            ],
+            "explanation": "The model's equilibrium concept is Fairness-constrained strategic best-response equilibrium. The paper defines equilibrium as a quadruple (gamma_0*,gamma_1*,pi_0*,pi_1*) obtained by solving the firm's Equation (2) together with the applicants' effort response in Equation (1). SBR-fairness requires pi_0*=pi_1* in every equilibrium.",
+            "searchPhrases": [
+              "how fairness-constrained strategic best-response equilibrium is represented",
+              "strategic response in strategic behavioral responses to fair machine-learning rules",
+              "fairness-constrained strategic best-response equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Fairness-constrained strategic best-response equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s in {0, 1}",
+                "meaning": "applicant's sensitive-group indicator · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "applicant i's qualification-effort choice · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma_s",
+                "meaning": "hiring threshold applied to group s · score support",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_s",
+                "meaning": "fraction of group s that exerts effort and becomes qualified · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "TP_s, FP_s",
+                "meaning": "true-positive and false-positive rates for group s · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The firm pays the same hiring payoff kappa to any hired applicant and earns v_q from hiring a qualified applicant while losing v_u from hiring an unqualified one.",
+              "The equilibrium is defined as a set of quadruples (γ∗ 0,γ∗ 1,π∗ 0,π∗ 1) obtained by solving Equation (2).",
+              "An applicant chooses binary effort, and effort makes the applicant qualified."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Equilibrium Analysis and Definition",
+                "equation": "",
+                "quote": "The equilibrium is defined as a set of quadruples (γ∗ 0,γ∗ 1,π∗ 0,π∗ 1) obtained by solving Equation (2)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis: “The equilibrium is defined as a set of quadruples (γ∗ 0,γ∗ 1,π∗ 0,π∗ 1) obtained by solving Equation”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "equilibrium-analysis"
+            ],
+            "explanation": "In the single-period game, the trained scoring rule and the firm's decision rule are common knowledge. The firm sets subpopulation thresholds subject to the selected fairness criterion, each applicant observes a private qualification cost and chooses whether to exert effort, the ML rule produces a score, and the firm hires an applicant exactly when the score exceeds the applicable threshold. Thresholds and effort fractions are jointly pinned down in equilibrium. Applicants respond strategically to a common-knowledge algorithm even though their effort costs remain private.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in strategic behavioral responses to fair machine-learning rules",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: In the single-period game, the trained scoring rule and the firm's decision rule are common knowledge.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s in {0, 1}",
+                "meaning": "applicant's sensitive-group indicator · binary",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "applicant i's qualification-effort choice · {0,1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_i",
+                "meaning": "applicant i's private cost of qualifying · uniform on [c_lower,c_upper]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h(x_i, s_i)",
+                "meaning": "trained ML score interpreted as a predicted qualification probability · continuous score",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma_s",
+                "meaning": "hiring threshold applied to group s · score support",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_s",
+                "meaning": "fraction of group s that exerts effort and becomes qualified · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The sensitive attribute is binary in the baseline model, and the two subpopulations are ex ante identical in qualification ability and conditional payoffs.",
+              "Qualification cost is privately observed and drawn from the same uniform distribution on [c_lower,c_upper] in both groups.",
+              "An applicant chooses binary effort, and effort makes the applicant qualified."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Equilibrium Analysis and Definition",
+                "equation": "",
+                "quote": "In the job market example, when a firm uses an SBR-fair algorithm to support its hiring decisions, male and female applicants would exert the same amount of effort and become equally qualified for the job at equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis: “In the job market example, when a firm uses an SBR-fair algorithm to support its hiring decisions, male”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The authors build an analytical employer-applicant game, derive the effort-response equation and threshold problem, construct counterexamples for common fairness rules, and prove a sufficient strategic-fairness result for equalized odds.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in strategic behavioral responses to fair machine-learning rules",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors build an analytical employer-applicant game, derive the effort-response equation and threshold problem, construct counterexamples for common fairness rules, and prove a sufficient strategic-fairness result for equalized odds.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma_s",
+                "meaning": "hiring threshold applied to group s · score support",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "This algorithm is equivalent to imposing the following criteria in Equation (3): Fairness Criteria : γ0 = γ1 and h(x,s) = h(x): Observation 2."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.2. CB-Based ML Algorithm",
+                "equation": "",
+                "quote": "This algorithm is equivalent to imposing the following criteria in Equation (3): Fairness Criteria : γ0 = γ1 and h(x,s) = h(x): Observation 2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “This algorithm is equivalent to imposing the following criteria in Equation (3): Fairness Criteria : γ0 = γ1”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "model_topic",
+        "transformation": "topic-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e72a45405f89cfb514c9c34daa16ac35e3e06245d65de0b39e85def2c20347b7",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "dcb90dbddd700d2e03c5082a76b64aaa0dddb5ce64cf71ce97642b054fea06bd",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2022-0055/dcb90dbddd700d2e03c5082a76b64aaa0dddb5ce64cf71ce97642b054fea06bd.json",
+      "extractionQaDecisionSha256": "500c009bc7f972b15ed9fedc2e4dd532073b816d2d0ea817b12e3c4ddbd3fbac",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

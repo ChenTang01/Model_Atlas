@@ -1,0 +1,831 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-03108",
+  "sourcePdfSha256": "f6c86d391477459f4918a61aab346f6018624504535c0bdb9fc2eb8ed72b55ad",
+  "extractionPagesSha256": "39aa5fe2b28e9476da4eea2ebf0928f99b449830a8475c7560379fecaa9557eb",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "a1492d01a80a4d40b1a101d15ccd616c4161baf7e364d58fd90854237e05e816",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "0d9a2c3c0d80874a9480ee5681b8f8ede1b2e26c3e14223617dc26f4f9bfd238",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03108/0d9a2c3c0d80874a9480ee5681b8f8ede1b2e26c3e14223617dc26f4f9bfd238.json",
+  "extractionQaDecisionSha256": "1dbdf1bfa414855fa30f12a09c9b1ac8437c14fc1ce2553853b080c1d63f33bb",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-03108",
+    "question": "When can deploying an AI system that learns high performers' codifiable practices reduce rather than increase firm productivity, and how should managers adapt AI efficacy, pay policy, and hiring?",
+    "overview": "A firm chooses compensation and AI-deployment policy anticipating strategic effort by heterogeneous employees who compete for two bonus positions. Employees' effort affects their ranking and their ranking affects the wage rate they expect, so the paper explicitly solves a rational-expectations equilibrium and studies policy choices by the firm.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        12,
+        21
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Backfiring AI? AI Deployment in Workplace model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A firm chooses compensation and AI-deployment policy anticipating strategic effort by heterogeneous employees who compete for two bonus positions. Employees' effort affects their ranking and their ranking affects the wage rate they expect, so the paper explicitly solves a rational-expectations equilibrium and studies policy choices by the firm.",
+        "objects": [
+          "HH employees with high tangible and high intangible ability",
+          "HL employees with high tangible and low intangible ability",
+          "LH employees with low tangible and high intangible ability",
+          "LL employees with low tangible and low intangible ability"
+        ],
+        "inputs": [
+          "Each employee knows their own tangible and intangible ability type",
+          "Employees know the production weights, workforce composition, peer ability levels, announced compensation scheme, and AI deployment",
+          "The firm knows the proportions of the four employee types and the production weights but does not directly observe",
+          "AI observes and transfers codifiable tangible-skill actions from high-tangible employees to low-tangible employees but does not transfer intangible skills",
+          "Employees rationally anticipate both their rank and, in the generalized model, equilibrium AI efficacy generated from employee data"
+        ],
+        "decisions": [
+          "Firm sets base and bonus pay rates",
+          "Firm deploys or withholds AI",
+          "Firm selects AI efficacy in the policy extension",
+          "Firm can guarantee salary rank or alter workforce composition",
+          "Employees choose tangible-skill input w_t"
+        ],
+        "assumptions": [
+          "The unit workforce contains four types formed by independent high/low tangible and intangible abilities with proportions p_t and p_i",
+          "Output is linear in tangible and intangible inputs, while effort costs are quadratic and inversely related to ability",
+          "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies",
+          "The baseline takes wage rates and workforce composition as exogenous, then endogenizes them in later sections",
+          "AI improves only low tangible ability according to a^L_te = a^L_t + f(a^H_t-a^L_t); it neither improves high tangible ability nor any intangible ability"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "HH employees with high tangible and high intangible ability",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "HH employees with high tangible and high intangible ability"
+              }
+            },
+            {
+              "value": "HL employees with high tangible and low intangible ability",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "HL employees with high tangible and low intangible ability"
+              }
+            },
+            {
+              "value": "LH employees with low tangible and high intangible ability",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "LH employees with low tangible and high intangible ability"
+              }
+            },
+            {
+              "value": "LL employees with low tangible and low intangible ability",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "LL employees with low tangible and low intangible ability"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each employee knows their own tangible and intangible ability type",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each employee knows their own tangible and intangible ability type."
+              }
+            },
+            {
+              "value": "Employees know the production weights, workforce composition, peer ability levels, announced compensation scheme, and AI deployment",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Employees know the production weights, workforce composition, peer ability levels, announced compensation scheme, and AI deployment."
+              }
+            },
+            {
+              "value": "The firm knows the proportions of the four employee types and the production weights but does not directly observe",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The firm knows the proportions of the four employee types and the production weights but does not directly observe which individual uses which skill type; rewards depend on observed output."
+              }
+            },
+            {
+              "value": "AI observes and transfers codifiable tangible-skill actions from high-tangible employees to low-tangible employees but does not transfer intangible skills",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "AI observes and transfers codifiable tangible-skill actions from high-tangible employees to low-tangible employees but does not transfer intangible skills."
+              }
+            },
+            {
+              "value": "Employees rationally anticipate both their rank and, in the generalized model, equilibrium AI efficacy generated from employee data",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Employees rationally anticipate both their rank and, in the generalized model, equilibrium AI efficacy generated from employee data."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Firm sets base and bonus pay rates",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "firm sets base and bonus pay rates"
+              }
+            },
+            {
+              "value": "Firm deploys or withholds AI",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "firm deploys or withholds AI"
+              }
+            },
+            {
+              "value": "Firm selects AI efficacy in the policy extension",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "firm selects AI efficacy in the policy extension"
+              }
+            },
+            {
+              "value": "Firm can guarantee salary rank or alter workforce composition",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "firm can guarantee salary rank or alter workforce composition"
+              }
+            },
+            {
+              "value": "Employees choose tangible-skill input w_t",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "employees choose tangible-skill input w_t"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The unit workforce contains four types formed by independent high/low tangible and intangible abilities with proportions p_t and p_i",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The unit workforce contains four types formed by independent high/low tangible and intangible abilities with proportions p_t and p_i."
+              }
+            },
+            {
+              "value": "Output is linear in tangible and intangible inputs, while effort costs are quadratic and inversely related to ability",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Output is linear in tangible and intangible inputs, while effort costs are quadratic and inversely related to ability."
+              }
+            },
+            {
+              "value": "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies."
+              }
+            },
+            {
+              "value": "The baseline takes wage rates and workforce composition as exogenous, then endogenizes them in later sections",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The baseline takes wage rates and workforce composition as exogenous, then endogenizes them in later sections."
+              }
+            },
+            {
+              "value": "AI improves only low tangible ability according to a^L_te = a^L_t + f(a^H_t-a^L_t); it neither improves high tangible ability nor any intangible ability",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "AI improves only low tangible ability according to a^L_te = a^L_t + f(a^H_t-a^L_t); it neither improves high tangible ability nor any intangible ability."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The authors solve individual quadratic effort problems, rank the four types' natural and maximum outputs, impose consistency between anticipated and realized rank, and compare firm output, profit, and employee utility before and after AI.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 21,
+            "section": "6.2. Mixed Strategy",
+            "equation": "",
+            "quote": "To simplify the equilibrium utility values, we rewrite the optimal utility of Lemma 1 for employee type i as function Ui(O,γ), in terms of produc­ tivity level and salary rate.1 Following the mixed strategy equilibrium condition, we know that HL would choose a qHL value to make LH indifferent between the natural output and the chal­ lenge one."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The firm receives employee output as revenue and pays each type its assigned salary rate per unit of output, so it maximizes the output share retained across employee groups.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in ai knowledge transfer and employee incentives under pay for performance",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\pi = sum_k (1-\\gamma_k) o_k p_k, for k in {HH, HL, LH, LL}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "a_t^H, a_t^L",
+                "meaning": "high and low tangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i^H, a_i^L",
+                "meaning": "high and low intangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_t, p_i",
+                "meaning": "population shares with high tangible and high intangible ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_t, w_i",
+                "meaning": "labor inputs using tangible and intangible skills",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta_t, \\beta_i",
+                "meaning": "weights of tangible and intangible inputs in final output",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "o_k",
+                "meaning": "output of employee type k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma, \\gamma_B",
+                "meaning": "base and bonus salary rates per unit of output",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "AI efficacy or knowledge-transfer rate between zero and one",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_te^L",
+                "meaning": "effective tangible ability of a low-tangible employee after AI",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_noAI, \\pi_AI",
+                "meaning": "firm profit before and after AI deployment",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies.",
+              "The unit workforce contains four types formed by independent high/low tangible and intangible abilities with proportions p_t and p_i.",
+              "Output is linear in tangible and intangible inputs, while effort costs are quadratic and inversely related to ability."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "Expected-profit objective",
+                "equation": "(4)",
+                "quote": "Firm The firm’s revenue comes from the final output pro­ duced by its employees."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Firm The firm’s revenue comes from the final output produced by its employees.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Each employee knows their own tangible and intangible ability type. Employees know the production weights, workforce composition, peer ability levels, announced compensation scheme, and AI deployment. The firm knows the proportions of the four employee types and the production weights but does not directly observe which individual uses which skill type; rewards depend on observed output. AI observes and transfers codifiable tangible-skill actions from high-tangible employees to low-tangible employees but does not transfer intangible skills.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in ai knowledge transfer and employee incentives under pay for performance",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Each employee knows their own tangible and intangible ability type.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "a_t^H, a_t^L",
+                "meaning": "high and low tangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i^H, a_i^L",
+                "meaning": "high and low intangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_t, p_i",
+                "meaning": "population shares with high tangible and high intangible ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_t, w_i",
+                "meaning": "labor inputs using tangible and intangible skills",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta_t, \\beta_i",
+                "meaning": "weights of tangible and intangible inputs in final output",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "o_k",
+                "meaning": "output of employee type k",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies.",
+              "The unit workforce contains four types formed by independent high/low tangible and intangible abilities with proportions p_t and p_i.",
+              "The firm knows the proportion of different types of employees it has hired, but it doesn’t directly observe which employees utilize which type of skills Figure 1.",
+              "Output is linear in tangible and intangible inputs, while effort costs are quadratic and inversely related to ability."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.5. Firm",
+                "equation": "",
+                "quote": "The firm knows the proportion of different types of employees it has hired, but it doesn’t directly observe which employees utilize which type of skills Figure 1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The firm knows the proportion of different types of employees it has hired, but it doesn’t directly observe”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "Stage 1: the firm announces base salary rate gamma, bonus salary rate gamma_B, and the rule that the top two output groups receive the bonus; it then chooses whether and, in policy analysis, how effectively to deploy AI. Stage 2: employees know their own type, skill weights, workforce composition, compensation rule, and AI knowledge-transfer capability; they form rational expectations about output ranking and salary rate and simultaneously choose tangible and intangible labor inputs. Realized rankings must match expected rankings in equilibrium. The firm anticipates these responses when choosing AI, compensation, and hiring policies.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in ai knowledge transfer and employee incentives under pay for performance",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_t, p_i",
+                "meaning": "population shares with high tangible and high intangible ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_t, w_i",
+                "meaning": "labor inputs using tangible and intangible skills",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta_t, \\beta_i",
+                "meaning": "weights of tangible and intangible inputs in final output",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "o_k",
+                "meaning": "output of employee type k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma, \\gamma_B",
+                "meaning": "base and bonus salary rates per unit of output",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "AI efficacy or knowledge-transfer rate between zero and one",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies.",
+              "The unit workforce contains four types formed by independent high/low tangible and intangible abilities with proportions p_t and p_i.",
+              "Output is linear in tangible and intangible inputs, while effort costs are quadratic and inversely related to ability."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Analyses and Results",
+                "equation": "",
+                "quote": "Rational Expectations Equilibrium: In the rational expectations equilibrium, the employees “rationally” Table 2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Rational Expectations Equilibrium: In the rational expectations equilibrium, the employees “rationally” Table 2.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The authors solve individual quadratic effort problems, rank the four types' natural and maximum outputs, impose consistency between anticipated and realized rank, and compare firm output, profit, and employee utility before and after AI. They derive threshold conditions for backfiring, optimize salary guarantees, AI efficacy, and hiring, and test robustness when AI efficacy depends on employee-generated training data, compensation is endogenous, and HL-LH competition is mixed rather than deterministic.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in ai knowledge transfer and employee incentives under pay for performance",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors solve individual quadratic effort problems, rank the four types' natural and maximum outputs, impose consistency between anticipated and realized rank, and compare firm output, profit, and employee utility before and after AI.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "a_t^H, a_t^L",
+                "meaning": "high and low tangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i^H, a_i^L",
+                "meaning": "high and low intangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_t, w_i",
+                "meaning": "labor inputs using tangible and intangible skills",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "o_k",
+                "meaning": "output of employee type k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma, \\gamma_B",
+                "meaning": "base and bonus salary rates per unit of output",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "AI efficacy or knowledge-transfer rate between zero and one",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When we solve for the firm’s problem in stage 1, the firm knows the distribution of employee types (HH, HL, LH, and LL) and their input weights (βi and βt).",
+              "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies.",
+              "The unit workforce contains four types formed by independent high/low tangible and intangible abilities with proportions p_t and p_i.",
+              "Output is linear in tangible and intangible inputs, while effort costs are quadratic and inversely related to ability."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Notation",
+                "equation": "",
+                "quote": "When we solve for the firm’s problem in stage 1, the firm knows the distribution of employee types (HH, HL, LH, and LL) and their input weights (βi and βt)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “When we solve for the firm’s problem in stage 1, the firm knows the distribution of employee types”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Firm sets base and bonus pay rates firm deploys or withholds AI firm selects AI efficacy in the policy extension firm can guarantee salary rank or alter workforce composition employees choose tangible-skill input w_t employees choose intangible-skill input w_i HL and LH employees may deter or challenge for the second bonus position",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in ai knowledge transfer and employee incentives under pay for performance",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "a_t^H, a_t^L",
+                "meaning": "high and low tangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i^H, a_i^L",
+                "meaning": "high and low intangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_t, w_i",
+                "meaning": "labor inputs using tangible and intangible skills",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma, \\gamma_B",
+                "meaning": "base and bonus salary rates per unit of output",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "AI efficacy or knowledge-transfer rate between zero and one",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies.",
+              "AI improves only low tangible ability according to a^L_te = a^L_t + f(a^H_t-a^L_t); it neither improves high tangible ability nor any intangible ability.",
+              "The unit workforce contains four types formed by independent high/low tangible and intangible abilities with proportions p_t and p_i."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4. Remedies",
+                "equation": "",
+                "quote": "We model this by allowing the firm to choose the optimal value of AI efficacy, f. • Strategic Hiring: In this policy, the firm actively tries to hire more high-tangible ability employees."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We model this by allowing the firm to choose the optimal value of AI efficacy, f. • Strategic”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "AI improves only low tangible ability according to a^L_te = a^L_t + f(a^H_t-a^L_t); it neither improves high tangible ability nor any intangible ability",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "AI improves only low tangible ability according to a^L_te = a^L_t + f(a^H_t-a^L_t); it neither improves high tangible ability nor any intangible ability."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "rational-expectations-equilibrium-of-employee-effort-output-rank",
+            "label": "Rational-expectations equilibrium of employee effort, output ranking, and bonus assignment",
+            "role": "interaction",
+            "concepts": [
+              "equilibrium-analysis"
+            ],
+            "explanation": "The model's equilibrium concept is Rational-expectations equilibrium of employee effort, output ranking, and bonus assignment. Section 3 defines REE: employees choose effort given their anticipated output rank and associated salary, and the realized rank must coincide with those expectations. Lemmas 1-2 characterize natural and maximum outputs; the before- and after-AI equilibria determine which of HL and LH deters the other and therefore receives the second bonus. Section 6.2 constructs a mixed-strategy version as a robustness check.",
+            "searchPhrases": [
+              "how rational-expectations equilibrium of employee effort, output ranking, and bonus assignment is represented",
+              "strategic response in ai knowledge transfer and employee incentives under pay for performance",
+              "rational-expectations equilibrium of employee effort, output ranking, and bonus assignment strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Rational-expectations equilibrium of employee effort, output ranking, and bonus assignment.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "a_t^H, a_t^L",
+                "meaning": "high and low tangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "a_i^H, a_i^L",
+                "meaning": "high and low intangible-skill ability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "w_t, w_i",
+                "meaning": "labor inputs using tangible and intangible skills",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "o_k",
+                "meaning": "output of employee type k",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma, \\gamma_B",
+                "meaning": "base and bonus salary rates per unit of output",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "AI efficacy or knowledge-transfer rate between zero and one",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The top two employee groups receive gamma_B and the other groups receive gamma, with gamma_B > gamma; employees of the same type use symmetric strategies.",
+              "Output is linear in tangible and intangible inputs, while effort costs are quadratic and inversely related to ability.",
+              "The focal baseline assumes HL natural output exceeds LH before AI, while sufficiently effective AI reverses that ordering.",
+              "To simplify the equilibrium utility values, we rewrite the optimal utility of Lemma 1 for employee type i as function Ui(O,γ), in terms of productivity level and salary rate.1 Following the mixed strategy equilibrium condition, we know that HL would choose a qHL value to make LH indifferent between the natural output and the challenge one."
+            ],
+            "sources": [
+              {
+                "page": 21,
+                "section": "6.2. Mixed Strategy",
+                "equation": "",
+                "quote": "To simplify the equilibrium utility values, we rewrite the optimal utility of Lemma 1 for employee type i as function Ui(O,γ), in terms of produc­ tivity level and salary rate.1 Following the mixed strategy equilibrium condition, we know that HL would choose a qHL value to make LH indifferent between the natural output and the chal­ lenge one."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis as “equilibrium conditions”: “To simplify the equilibrium utility values, we rewrite the optimal utility of Lemma 1 for employee type i”.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "f6c86d391477459f4918a61aab346f6018624504535c0bdb9fc2eb8ed72b55ad",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "0d9a2c3c0d80874a9480ee5681b8f8ede1b2e26c3e14223617dc26f4f9bfd238",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-03108/0d9a2c3c0d80874a9480ee5681b8f8ede1b2e26c3e14223617dc26f4f9bfd238.json",
+      "extractionQaDecisionSha256": "1dbdf1bfa414855fa30f12a09c9b1ac8437c14fc1ce2553853b080c1d63f33bb",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,663 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2024-1053",
+  "sourcePdfSha256": "6bdd039a3196b8439a77bd05bcca764a92e4aa2b715fe93fcf38bf5c60faff12",
+  "extractionPagesSha256": "95e93bc16567e01f12be5e4f7df716896db06b992579c270b306e5bbeb76b125",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "731532ae340649ad748e754db5d389b51cc5b381aae8bee976c1f2ee3bd677b3",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "8af85bddb9349faab77405eb4c0420740bbb3c2d66acdb4be741f7df4fbf5736",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2024-1053/8af85bddb9349faab77405eb4c0420740bbb3c2d66acdb4be741f7df4fbf5736.json",
+  "extractionQaDecisionSha256": "69926079f7a36ebff0b293b1cd9c1141bbd523d4fdd63eb5c09fa865a8bee9aa",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2024-1053",
+    "question": "How can a provably strong matching algorithm support dating platforms?",
+    "overview": "Motivated by online dating platforms, we study the problem of selecting which subset of profiles to display to each user in each period. Users observe the profiles set by the platform and decide which of them to like, and a match occurs if and only if two users mutually like each other, potentially across different periods. The platform aims to maximize the expected number of matches produced over the entire time horizon, and users’ behavior—captured by their like probabilities—may depend on their history.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        8,
+        10,
+        11,
+        12,
+        13
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "The Dating Heuristic model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Motivated by online dating platforms, we study the problem of selecting which subset of profiles to display to each user in each period. Users observe the profiles set by the platform and decide which of them to like, and a match occurs if and only if two users mutually like each other, potentially across different periods. The superior performance of DH-int is driven primarily by its careful balancing of initial and follow-up interactions, which accounts for the two-sided nature of the market.",
+        "objects": [
+          "Each user",
+          "Platforms",
+          "The planner",
+          "Suppliers",
+          "Agents"
+        ],
+        "inputs": [
+          "Uncertain reward",
+          "Their profile information",
+          "Their preferences regarding each of these dimensions",
+          "The time",
+          "The horizon"
+        ],
+        "decisions": [
+          "Which subset of profiles to display to each user in each period",
+          "Which of them to like",
+          "Find a dynamic policy"
+        ],
+        "assumptions": [
+          "The probability that a user likes a profile may depend on their history",
+          "For simplicity that there is no initial backlog—that is, B1 l= ∅",
+          "Nonsequential matches in period t = 2 are forbidden, which means that variables w2 e are set to zero",
+          "Each user starts with the actual backlog they had in February 14, 2020",
+          "For simplicity that there is no initial backlog— that is, B1 l= ∅for all l∈I ∪J"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Each user",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Motivated by online dating platforms, we study the problem of selecting which subset of profiles to display to each user in each period.",
+                "matchedText": "each user",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Platforms",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Motivated by online dating platforms, we study the problem of selecting which subset of profiles to display to each user in each period.",
+                "matchedText": "platforms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The planner",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 18,
+                "sentence": 29,
+                "quote": "Nevertheless, Chen et al. (2009) also study a case closer to ours, where the planner can query a matching in each period.",
+                "matchedText": "the planner",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Suppliers",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 18,
+                "sentence": 2,
+                "quote": "Aouad and Saban (2022) introduce the online version of the model in Ashlagi et al. (2022) and show that when suppliers do not accept/reject requests immediately, then a simple greedy policy achieves a 1/2-factor approxima­ tion.",
+                "matchedText": "suppliers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agents",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 18,
+                "sentence": 3,
+                "quote": "All these papers study sequential two-sided match­ ing markets, where only one side initiates and the other responds, with agents on both sides restricted to match with a single partner.",
+                "matchedText": "agents",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Uncertain reward",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 18,
+                "sentence": 32,
+                "quote": "Our problem is similar in that the edges are of uncer­ tain reward (given that like decisions are stochastic).",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Their profile information",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "their profile information",
+                "matchedText": "their profile information",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Their preferences regarding each of these dimensions",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "their preferences regarding each of these dimensions",
+                "matchedText": "their preferences regarding each of these dimensions",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The time",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 18,
+                "sentence": 17,
+                "quote": "In contrast, we allow agents to like multiple profiles and potentially form sev­ eral matches over the time horizon.",
+                "matchedText": "the time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The horizon",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "sectionIndex": 5,
+                "page": 5,
+                "quote": "At the beginning of the horizon, each user ℓ∈I ∪J reports their profile information (e.g., age, height, race, etc.) and their preferences regarding each of these dimensions (e.g., preferred age and height ranges, pre­ ferred races, etc.), which remain fixed over time."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Which subset of profiles to display to each user in each period",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Motivated by online dating platforms, we study the problem of selecting which subset of profiles to display to each user in each period.",
+                "matchedText": "which subset of profiles to display to each user in each period",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Which of them to like",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Users observe the profiles set by the platform and decide which of them to like, and a match occurs if and only if two users mutually like each other, potentially across different periods.",
+                "matchedText": "which of them to like",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Find a dynamic policy",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 58,
+                "quote": "The platform aims to find a dynamic policy that selects a feasible subset of profiles for each user in each period to maximize the total expected number of matches throughout the entire horizon, as formalized below in Problem 1.",
+                "matchedText": "find a dynamic policy",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The probability that a user likes a profile may depend on their history",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 37,
+                "quote": "To capture this, we assume that the probabil­ ity that a user likes a profile may depend on their his­ tory.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "For simplicity that there is no initial backlog—that is, B1 l= ∅",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 5,
+                "quote": "First, we assume for simplicity that there is no initial backlog—that is, B1 ℓ= ∅.4 This makes the feasible region in (7) not dependent on B1 ℓ and, consequently, on the first-stage decision variables x1 ℓ,ℓ′.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Nonsequential matches in period t = 2 are forbidden, which means that variables w2 e are set to zero",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 10,
+                "quote": "Finally, we assume that nonsequential matches in period t = 2 are forbidden, which means that variables w2 e are set to zero.",
+                "matchedText": "nonsequential matches in period t = 2 are forbidden, which means that variables w2 e are set to zero.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each user starts with the actual backlog they had in February 14, 2020",
+              "source": {
+                "type": "section",
+                "section": "Simulation Setup",
+                "page": 14,
+                "sectionIndex": 15,
+                "sentence": 3,
+                "quote": "In all these simulations, we assume that each user starts with the actual backlog they had in February 14, 2020.",
+                "matchedText": "each user starts with the actual backlog they had in February 14, 2020.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "For simplicity that there is no initial backlog— that is, B1 l= ∅for all l∈I ∪J",
+              "source": {
+                "type": "section",
+                "section": "Analysis of DH-Int",
+                "page": 11,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "Finally, we assume for simplicity that there is no initial backlog— that is, B1 ℓ= ∅for all ℓ∈I ∪J.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper develops a general theoretical model that captures the dynamic, two-sided nature of the problem and the influence of users’ past experiences on their future behavior.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "The Dating Heuristic: A Provably Strong Matching Algorithm",
+          "page": 1,
+          "sentence": 6
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 10,
+            "section": "4.1. Setting",
+            "equation": "",
+            "quote": "Finally, we assume that nonsequential matches in period t = 2 are forbidden, which means that variables w2 e are set to zero."
+          }
+        ],
+        "components": [
+          {
+            "id": "integral-dating-heuristic",
+            "label": "Integral Dating Heuristic",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "This heuristic involves solving a linear program that provides an upper bound for the one-lookahead Problem 2 and then rounds its solution, prioritizing profiles that may produce sequential matches.",
+            "searchPhrases": [
+              "how integral dating heuristic is represented",
+              "solution algorithm in platforms and marketplaces",
+              "integral dating heuristic solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: This heuristic involves solving a linear program that provides an upper bound for the one-lookahead Problem 2 and then rounds its solution, prioritizing profiles that may produce sequential matches.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "From a technical standpoint, for the one-lookahead problem with horizon {t,t + 1}, the probability φt l,l′ = φl,l′(σt l) is a fixed parameter because it depends on the given history σt l, which is part of the input of the problem."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.3. Integral Dating Heuristic",
+                "equation": "",
+                "quote": "This heuristic involves solving a linear program that provides an upper bound for the one-lookahead Prob­ lem 2 and then rounds its solution, prioritizing profiles that may produce sequential matches."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "setting",
+            "label": "Setting",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Finally, we assume that nonsequential matches in period t = 2 are forbidden, which means that variables w2 e are set to zero.",
+            "searchPhrases": [
+              "how setting is represented",
+              "decision rule in platforms and marketplaces",
+              "setting decision rule specification"
+            ],
+            "formal": "Px1 R = R",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "R",
+                "meaning": "the realized subset of arcs in E →1"
+              }
+            ],
+            "conditions": [
+              "we assume for simplicity that there is no initial backlog—that is, B1 l= ∅.",
+              "we assume that they do not depend on the realized history from period t = 1.",
+              "First, we assume for simplicity that there is no initial backlog—that is, B1 l= ∅.4 This makes the feasible region in (7) not dependent on B1 l and, consequently, on the first-stage decision variables x1 l,l′.",
+              "Finally, we assume that nonsequential matches in period t = 2 are forbidden, which means that variables w2 e are set to zero."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.1. Setting",
+                "equation": "",
+                "quote": "Finally, we assume that nonsequential matches in period t = 2 are forbidden, which means that variables w2 e are set to zero."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Finally, we assume that nonsequential matches in period t = 2 are forbidden, which means that variables w2”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "analysis-of-dh-int",
+            "label": "Analysis of DH-Int",
+            "role": "algorithm",
+            "concepts": [
+              "approximation-algorithms"
+            ],
+            "explanation": "Problem 3; consequently, it is unclear whether it can be solved in polynomial time.5 Nevertheless, as we show in Theorem 1, the implementation of DH-int (in Algorithm 2) has a strong approximation guarantee.",
+            "searchPhrases": [
+              "how analysis of dh-int is represented",
+              "solution algorithm in platforms and marketplaces",
+              "analysis of dh-int solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Problem 3; consequently, it is unclear whether it can be solved in polynomial time.5 Nevertheless, as we show in Theorem 1, the implementation of DH-int (in Algorithm 2) has a strong approximation guarantee.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Moreover, variables w2 e are not present because we forbid nonsequential shows in t = 2.",
+              "Finally, we assume for simplicity that there is no initial backlog— that is, B1 l= ∅for all l∈I ∪J.",
+              "4: For each user l∈I ∪J, display subset S2 l= {(l,l′) ∈E →1 : x2 l,l′ = 1}: Theorem 1."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.2. Analysis of DH-Int",
+                "equation": "",
+                "quote": "Problem 3; consequently, it is unclear whether it can be solved in polynomial time.5 Nevertheless, as we show in Theorem 1, the implementation of DH-int (in Algo­ rithm 2) has a strong approximation guarantee."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "approximation-algorithms",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Approximation algorithms as “approximation guarantee”: “(in Algorithm 2) has a strong approximation guarantee .”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "algorithms",
+            "label": "Algorithms",
+            "role": "algorithm",
+            "concepts": [
+              "approximation-algorithms",
+              "submodularity"
+            ],
+            "explanation": "As a tractable alternative, in the electronic companion, we present polynomial-time approximation algorithms based on submodular techniques that provide weaker constant-factor approximation guarantees that depend on (i) the timing of matches (only sequential or adding nonsequential), and (ii) the sequence of interactions (one or two-directional).",
+            "searchPhrases": [
+              "how algorithms is represented",
+              "solution algorithm in platforms and marketplaces",
+              "algorithms solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: As a tractable alternative, in the electronic companion, we present polynomial-time approximation algorithms based on submodular techniques that provide weaker constant-factor approximation guarantees that depend on (i) the timing of matches (only sequential or adding nonsequential), and (ii) the sequence of interactions (one or two-directional).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "A policy is two-directional if any side can initiate—that is, St,π l ⊆Pt l for all l∈I ∪J.",
+              "A key feature of our model is that it can easily accommodate these different platform designs by simply modifying the feasible region in Problem 3."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "Algorithms",
+                "equation": "",
+                "quote": "As a tractable alternative, in the electronic com­ panion, we present polynomial-time approximation algorithms based on submodular techniques that pro­ vide weaker constant-factor approximation guarantees that depend on (i) the timing of matches (only sequen­ tial or adding nonsequential), and (ii) the sequence of interactions (one or two-directional)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "approximation-algorithms",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Approximation algorithms: “the electronic companion, we present polynomial-time Approximation algorithms based on submodular techniques that provide weaker constant-factor”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "submodularity",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Submodularity as “submodular”: “present polynomial-time approximation algorithms based on submodular techniques that provide weaker constant-factor approximation guarantees that”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "analysis-for-the-multiple-periods-model",
+            "label": "Analysis for the Multiple Periods Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Finally, the algorithm updates the potentials and backlogs based on the observed like/dislike decisions (Step 19).",
+            "searchPhrases": [
+              "how analysis for the multiple periods model is represented",
+              "system process in platforms and marketplaces",
+              "analysis for the multiple periods model system process specification"
+            ],
+            "formal": "Process relation: Finally, the algorithm updates the potentials and backlogs based on the observed like/dislike decisions (Step 19).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If there is still space left in St l, the algorithm displays profiles that are part of nonsequential interactions (i.e., w? e = 1) as long as the cardinality constraint is not binding for both users (Steps 9–12).",
+              "The algorithm implements this solution by first exhausting the profiles initiating an interaction—that is, xl,l′ = 1 (Steps 6–8).",
+              "Finally, the algorithm updates the potentials and backlogs based on the observed like/dislike decisions (Step 19)."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5. Analysis for the Multiple Periods Model",
+                "equation": "",
+                "quote": "Finally, the algorithm updates the potentials and backlogs based on the observed like/dislike decisions (Step 19)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Finally, the algorithm updates the potentials and backlogs based on the observed like/dislike decisions (Step 19).”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "6bdd039a3196b8439a77bd05bcca764a92e4aa2b715fe93fcf38bf5c60faff12",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "8af85bddb9349faab77405eb4c0420740bbb3c2d66acdb4be741f7df4fbf5736",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2024-1053/8af85bddb9349faab77405eb4c0420740bbb3c2d66acdb4be741f7df4fbf5736.json",
+      "extractionQaDecisionSha256": "69926079f7a36ebff0b293b1cd9c1141bbd523d4fdd63eb5c09fa865a8bee9aa",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

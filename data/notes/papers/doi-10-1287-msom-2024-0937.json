@@ -1,0 +1,1520 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2024-0937",
+  "sourcePdfSha256": "509b4b9f458b5abd29e5ce2e62dc2c584814104119d5f9420ceab5234732fe31",
+  "extractionPagesSha256": "692eaec9343097706eb0b67c86b68f389d776b76408197d0a467cac4362f68c7",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "4cce32236dedfa0ca6909650c88d466da5a69f493ac28e603d617fa5f0ee6b03",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "94910d56e6fc283ee00121fdddb1b74e63d5a391a514ff0a448b8c367cb5fca5",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2024-0937/94910d56e6fc283ee00121fdddb1b74e63d5a391a514ff0a448b8c367cb5fca5.json",
+  "extractionQaDecisionSha256": "6036fa948282b19c765c41b0a0720a041901c9db39980359e836e6f5fa3fc808",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2024-0937",
+    "question": "How do nonprofit and for-profit nursing homes make bed allocation decisions and how this affect access to care for the economically disadvantaged Medicaid population?",
+    "overview": "U.S. nursing homes allocate federal licensed beds among three categories: Medicare-dedicated beds, Medicaid-dedicated beds, and flexible beds for both populations. This article studies how nonprofit and for-profit nursing homes make bed allocation decisions and how this affects access to care for the economically disadvantaged Medicaid population. Analyzing U.S. nursing home data during 2012–2017, we observe that nonprofit nursing homes on average had a higher Medicare-dedicated bed share than for-profit ones.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        7,
+        8,
+        10,
+        12,
+        13,
+        14
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "allocation-and-altruism",
+        "name": "Allocation and Altruism",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "U.S. nursing homes allocate federal licensed beds among three categories: Medicare-dedicated beds, Medicaid-dedicated beds, and flexible beds for both populations. This article studies how nonprofit and for-profit nursing homes make bed allocation decisions and how this affects access to care for the economically disadvantaged Medicaid population. Analyzing U.S. nursing home data during 2012–2017, we observe that nonprofit nursing homes on average had a higher Medicare-dedicated bed share than for-profit ones.",
+        "objects": [
+          "Populations",
+          "Servers",
+          "Patients",
+          "Several distinctions between for-profit and nonprofit organizations",
+          "Population"
+        ],
+        "inputs": [
+          "A nursing home’s ownership type",
+          "The service rate",
+          "The arrival rate",
+          "Time t",
+          "Arrival rate"
+        ],
+        "decisions": [
+          "How to allocate N",
+          "How to allocate N+ among Nr",
+          "The model to predict the directional change in bed allocation following ownership conversions",
+          "Share than for-profit ones",
+          "How to allocate its beds among Medicare-dedicated"
+        ],
+        "assumptions": [
+          "We develop a queueing network model that captures a nonprofit nursing home optimizing its bed allocation decision under an objective function with altruism.",
+          "Poisson arrival rates λr and λd for prospective Medicare and Medicaid residents, respectively",
+          "Mr and md do not depend on a nursing home’s ownership type",
+          "A cost of denied access (blocking cost) denoted by br",
+          "The service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Populations",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: U.S. nursing homes allocate federal licensed beds among three categories: Medicare-dedicated beds, Medicaid-dedicated beds, and flexible beds for both populations.",
+                "matchedText": "populations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Flexible System with Homogeneous Service",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 4,
+                "quote": "However, flexible systems with heterogeneous service rates for flexible servers are analytically intractable, and they are often handled using approximations.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 13,
+                "quote": "Prospective Medicare residents are those patients seeking postacute care and thus, need to be served right away after they are discharged from hospitals.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Several distinctions between for-profit and nonprofit organizations",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "There are several distinc­ tions between for-profit and nonprofit organizations.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "section",
+                "section": "Panel Regression",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "Following Lu and Lu (2017), we define a nursing home market by county and use Zit to denote a vector of county characteristics including income per capita, elderly population (over 65 years old), and HHI index in year t.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A nursing home’s ownership type",
+              "source": {
+                "type": "section",
+                "section": "Objective Function: Profitability and Altruism",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 8,
+                "quote": "To maintain tractability in our analysis, we assume that mr and md do not depend on a nursing home’s own­ ership type.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service rate",
+              "source": {
+                "type": "section",
+                "section": "Flexible System with Homogeneous Service",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 7,
+                "quote": "Specifically, we assume that the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates.",
+                "matchedText": "the service rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 3,
+                "sectionIndex": 0,
+                "sentence": 52,
+                "quote": "First, when the arrival rate of prospective Medicaid residents is sufficiently high, more altruistic (nonprofit-like) nurs­ ing homes set a higher Medicare-dedicated bed share than less altruistic (for-profit-like) nursing homes, resulting in lower access to care for the Medicaid pop­ ulation.",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Panel Regression",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 32,
+                "quote": "Let Yit(g) denote the potential bed alloca­ tion that would be observed at time t if nursing home i was to convert in year g, and let Yit(0) denote unit i’s untreated potential outcome at time t if the nursing homes remain unconverted at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival rate",
+              "source": {
+                "type": "section",
+                "section": "The Dedicated System",
+                "page": 9,
+                "sectionIndex": 3,
+                "sentence": 19,
+                "quote": "Proposition 1 states that when the Medicaid arrival rate is sufficiently high, it is optimal for more altruistic nursing homes to have a higher Medicare-dedicated bed share than their less altruistic counterparts, thereby providing lower access to care for the Medicaid population.",
+                "matchedText": "arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "How to allocate N",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 6,
+                "quote": "The nursing home makes a long-run decision of how to allocate N+ among Nr, Nd, and Nf.",
+                "matchedText": "how to allocate N",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "How to allocate N+ among Nr",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "sectionIndex": 5,
+                "page": 7,
+                "quote": "The nursing home makes a long-run decision of how to allocate N+ among Nr, Nd, and Nf.",
+                "matchedText": "how to allocate N+ among Nr",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The model to predict the directional change in bed allocation following ownership conversions",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "We further calibrate the model to predict the directional change in bed allocation following ownership conversions.",
+                "matchedText": "the model to predict the directional change in bed allocation following ownership conversions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Share than for-profit ones",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Methodology/results: Analyzing U.S. nursing home data during 2012–2017, we observe that nonprofit nursing homes on average had a higher Medicare-dedicated bed share than for-profit ones.",
+                "matchedText": "share than for-profit ones",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "How to allocate its beds among Medicare-dedicated",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 3,
+                "quote": "Given N+, the nursing home must decide how to allocate its beds among Medicare-dedicated, Medicaid-dedicated, and flexible beds, which are represented by subscripts r, d, and f, respectively.",
+                "matchedText": "how to allocate its beds among Medicare-dedicated",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We develop a queueing network model that captures a nonprofit nursing home optimizing its bed allocation decision under an objective function with altruism.",
+              "source": {
+                "type": "section",
+                "section": "Allocation and Altruism",
+                "page": 7,
+                "quote": "We develop a queueing network model that captures a nonprofit nursing home optimizing its bed alloca­ tion decision under an objective function with altru­ ism."
+              }
+            },
+            {
+              "value": "Poisson arrival rates λr and λd for prospective Medicare and Medicaid residents, respectively",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "page": 8,
+                "sectionIndex": 5,
+                "sentence": 24,
+                "quote": "In this proposed queueing network model, we assume Poisson arrival rates λr and λd for prospective Medicare and Medicaid residents, respectively.",
+                "matchedText": "Poisson arrival rates λr and λd for prospective Medicare and Medicaid residents, respectively.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Mr and md do not depend on a nursing home’s ownership type",
+              "source": {
+                "type": "section",
+                "section": "Objective Function: Profitability and Altruism",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 8,
+                "quote": "To maintain tractability in our analysis, we assume that mr and md do not depend on a nursing home’s own­ ership type.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A cost of denied access (blocking cost) denoted by br",
+              "source": {
+                "type": "section",
+                "section": "Objective Function: Profitability and Altruism",
+                "page": 9,
+                "sectionIndex": 6,
+                "sentence": 21,
+                "quote": "Finally, to capture the disutility incurred by pro­ spective Medicare residents instantly blocked when beds accessible to them are occupied, we assume a cost of denied access (blocking cost) denoted by br.",
+                "matchedText": "a cost of denied access (blocking cost) denoted by br.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates",
+              "source": {
+                "type": "section",
+                "section": "Flexible System with Homogeneous Service",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 7,
+                "quote": "Specifically, we assume that the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates.",
+                "matchedText": "the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper estimates ATT(g,t) using the doubly robust estimator of Callaway and Sant’Anna (2021), controlling for time-varying facility characteristics and local market mix Xit (e.g., facility characteristics, resident composition, and local market factors).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Panel Regression",
+          "page": 6,
+          "sentence": 37
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "Allocation and Altruism",
+            "equation": "",
+            "quote": "We develop a queueing network model that captures a nonprofit nursing home optimizing its bed alloca­ tion decision under an objective function with altru­ ism."
+          }
+        ],
+        "components": [
+          {
+            "id": "panel-regression",
+            "label": "Panel Regression",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "In this regression model, Medicare-DedicatedBedShareit represents nursing home i’s Medicare-dedicated bed share in year t, which we express in percentage terms (i.e., ranging from 0 to 100).",
+            "searchPhrases": [
+              "how panel regression is represented",
+              "estimation procedure in organizations, incentives, and finance",
+              "panel regression estimation procedure specification"
+            ],
+            "formal": "Estimation relation: In this regression model, Medicare-DedicatedBedShareit represents nursing home i’s Medicare-dedicated bed share in year t, which we express in percentage terms (i.e., ranging from 0 to 100).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Define Gi as the first year in which nursing home i converts from nonprofit to forprofit ownership; nursing homes that do not convert during the sample period are coded as never treated (i.e., Gi = 0).",
+              "Following Lu and Lu (2017), we define a nursing home market by county and use Zit to denote a vector of county characteristics including income per capita, elderly population (over 65 years old), and HHI index in year t."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Panel Regression",
+                "equation": "",
+                "quote": "In this regression model, Medicare-DedicatedBedShareit represents nursing home i’s Medicare-dedicated bed share in year t, which we express in percentage terms (i.e., ranging from 0 to 100)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “In this regression model, Medicare-DedicatedBedShareit represents nursing home i’s Medicare-dedicated bed share in year t, which we express”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "allocation-and-altruism",
+            "label": "Allocation and Altruism",
+            "role": "decision",
+            "concepts": [
+              "optimization",
+              "queueing"
+            ],
+            "explanation": "The paper develops a queueing network model that captures a nonprofit nursing home optimizing its bed allocation decision under an objective function with altruism.",
+            "searchPhrases": [
+              "how allocation and altruism is represented",
+              "decision rule in organizations, incentives, and finance",
+              "allocation and altruism decision rule specification"
+            ],
+            "formal": "Decision rule: The paper develops a queueing network model that captures a nonprofit nursing home optimizing its bed allocation decision under an objective function with altruism.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We develop a queueing network model that captures a nonprofit nursing home optimizing its bed allocation decision under an objective function with altruism."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Allocation and Altruism",
+                "equation": "",
+                "quote": "We develop a queueing network model that captures a nonprofit nursing home optimizing its bed alloca­ tion decision under an objective function with altru­ ism."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Optimization as “objective function”: “its bed allocation decision under an objective function with altruism.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Queueing as “queueing model”: “We develop a queueing network model that captures a nonprofit nursing home optimizing its bed allocation decision under”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "objective-function-profitability-and-altruism",
+            "label": "Objective Function: Profitability and Altruism",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "This formulation follows the healthcare economics literature, where altruism is often represented as some form of patient welfare in a hospital’s or doctor’s objective function (Rose-Ackerman 1996), and the degree of altruism is captured by the relative weight that the altruistic entity places on the patient welfare relative to its own utility (Chon ́e and Ma 2011).",
+            "searchPhrases": [
+              "how objective function: profitability and altruism is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "objective function: profitability and altruism modeled objective specification"
+            ],
+            "formal": "Objective relation: This formulation follows the healthcare economics literature, where altruism is often represented as some form of patient welfare in a hospital’s or doctor’s objective function (Rose-Ackerman 1996), and the degree of altruism is captured by the relative weight that the altruistic entity places on the patient welfare relative to its own utility (Chon ́e and Ma 2011).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This formulation follows the healthcare economics literature, where altruism is often represented as some form of patient welfare in a hospital’s or doctor’s objective function (Rose-Ackerman 1996), and the degree of altruism is captured by the relative weight that the altruistic entity places on the patient welfare relative to its own utility (Chon ́e and Ma 2011).",
+              "The weight parameter α ∈[0,1] captures the degree of altruism ranging from not considering the resident welfare to internalizing the entire resident welfare."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.2. Objective Function: Profitability and Altruism",
+                "equation": "",
+                "quote": "This formulation follows the healthcare eco­ nomics literature, where altruism is often represented as some form of patient welfare in a hospital’s or doc­ tor’s objective function (Rose-Ackerman 1996), and the degree of altruism is captured by the relative weight that the altruistic entity places on the patient welfare relative to its own utility (Chon´e and Ma 2011)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “welfare in a hospital’s or doctor’s objective function (Rose-Ackerman 1996), and the degree of altruism is”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "the-dedicated-system",
+            "label": "The Dedicated System",
+            "role": "process",
+            "concepts": [
+              "waiting-cost",
+              "queueing"
+            ],
+            "explanation": "When the Medicaid arrival rate is high, it is more likely for the Medicaid queue to grow and reach the maximum length, leading to a plateaued waiting cost.",
+            "searchPhrases": [
+              "how the dedicated system is represented",
+              "system process in organizations, incentives, and finance",
+              "the dedicated system system process specification"
+            ],
+            "formal": "Process relation: When the Medicaid arrival rate is high, it is more likely for the Medicaid queue to grow and reach the maximum length, leading to a plateaued waiting cost.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Specifically, we assume that the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5.1. The Dedicated System",
+                "equation": "",
+                "quote": "When the Medicaid arrival rate is high, it is more likely for the Medicaid queue to grow and reach the maximum length, leading to a plateaued waiting cost."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "waiting-cost",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Waiting cost: “maximum length, leading to a plateaued Waiting cost .”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates",
+                  "source": {
+                    "type": "section",
+                    "section": "Flexible System with Homogeneous Service",
+                    "page": 10,
+                    "sectionIndex": 9,
+                    "sentence": 7,
+                    "quote": "Specifically, we assume that the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates.",
+                    "matchedText": "the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "flexible-system-with-homogeneous-service",
+            "label": "Flexible System with Homogeneous Service",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "LOS as an approximation to heterogeneous LOS or uses alternative methods, such as diffusion models, to accommodate service-rate differences.",
+            "searchPhrases": [
+              "how flexible system with homogeneous service is represented",
+              "system process in organizations, incentives, and finance",
+              "flexible system with homogeneous service system process specification"
+            ],
+            "formal": "Process relation: LOS as an approximation to heterogeneous LOS or uses alternative methods, such as diffusion models, to accommodate service-rate differences.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates.",
+              "Specifically, we assume that the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates.",
+              "We denote the homogeneous service rate of flexible beds by μf and solve the expected number of flexible beds occupied E[If], the long-run profit, the blocking cost, and the waiting cost (see Lemmas 6–8 in the Online Appendix)."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5.2.1. Flexible System with Homogeneous Service",
+                "equation": "",
+                "quote": "LOS as an approximation to heterogeneous LOS or uses alternative methods, such as diffusion models, to accommodate service-rate differences."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “LOS as an approximation to heterogeneous LOS or uses alternative methods, such as diffusion models, to accommodate service-rate”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "flexible-system-with-heterogeneous-service",
+            "label": "Flexible System with Heterogeneous Service",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Panels (a) and (b) of Figure 4 illustrate how N∗ r changes under different Medicaid arrival rates (λd) ranging from 0.1 to 1 with 0.1 increments for a given Medicare arrival rate (λr).",
+            "searchPhrases": [
+              "how flexible system with heterogeneous service is represented",
+              "system process in organizations, incentives, and finance",
+              "flexible system with heterogeneous service system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The red lines with circles in Figure 4 represent α = 0, the blue lines with crosses in Figure 4 represent α = 0:5, and the black lines in Figure 4 represent α = 1.",
+              "The patterns in panels (a) and (b) of Figure 4 are consistent with Proposition 4; there exists λd > 0 such that for all λd > λd, we have N∗ r(α) increasing in α.",
+              "The patterns in panels (c) and (d) of Figure 4 are consistent with Proposition 5; ∃λr > 0 such that for all λr < λr, we have N∗ r(α) decreasing in α."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.3. Flexible System with Heterogeneous Service",
+                "equation": "",
+                "quote": "Panels (a) and (b) of Figure 4 illustrate how N∗ r changes under different Medicaid arrival rates (λd) ranging from 0.1 to 1 with 0.1 increments for a given Medicare arrival rate (λr)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Panels (a) and (b) of Figure 4 illustrate how N∗ r changes under different Medicaid arrival rates (λd)”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "alternative-hypothesis",
+        "name": "Alternative Hypothesis",
+        "kind": "alternative",
+        "relation": "This is an alternative to Allocation and Altruism.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "allocation-and-altruism"
+          }
+        ],
+        "summary": "Second, the staggered DID analysis finds that a nursing home’s Medicare-dedicated bed share is reduced by about two to three percentage points on average after being converted from a nonprofit to for-profit nursing home.",
+        "objects": [
+          "Populations",
+          "Servers",
+          "Patients",
+          "Several distinctions between for-profit and nonprofit organizations",
+          "Population"
+        ],
+        "inputs": [
+          "A nursing home’s ownership type",
+          "The service rate",
+          "The arrival rate",
+          "Time t",
+          "Arrival rate"
+        ],
+        "decisions": [
+          "How to allocate N",
+          "How to allocate N+ among Nr",
+          "The model to predict the directional change in bed allocation following ownership conversions",
+          "Share than for-profit ones",
+          "How to allocate its beds among Medicare-dedicated"
+        ],
+        "assumptions": [
+          "Medicare demand reduced; converted nursing homes might adjust their bed allocation down accordingly"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Populations",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: U.S. nursing homes allocate federal licensed beds among three categories: Medicare-dedicated beds, Medicaid-dedicated beds, and flexible beds for both populations.",
+                "matchedText": "populations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Flexible System with Homogeneous Service",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 4,
+                "quote": "However, flexible systems with heterogeneous service rates for flexible servers are analytically intractable, and they are often handled using approximations.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 13,
+                "quote": "Prospective Medicare residents are those patients seeking postacute care and thus, need to be served right away after they are discharged from hospitals.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Several distinctions between for-profit and nonprofit organizations",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "There are several distinc­ tions between for-profit and nonprofit organizations.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "section",
+                "section": "Panel Regression",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "Following Lu and Lu (2017), we define a nursing home market by county and use Zit to denote a vector of county characteristics including income per capita, elderly population (over 65 years old), and HHI index in year t.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A nursing home’s ownership type",
+              "source": {
+                "type": "section",
+                "section": "Objective Function: Profitability and Altruism",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 8,
+                "quote": "To maintain tractability in our analysis, we assume that mr and md do not depend on a nursing home’s own­ ership type.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service rate",
+              "source": {
+                "type": "section",
+                "section": "Flexible System with Homogeneous Service",
+                "page": 10,
+                "sectionIndex": 9,
+                "sentence": 7,
+                "quote": "Specifically, we assume that the service rate of a flexible bed is the same regardless of the type of resident occupying it while allowing Medicare-dedicated and Medicaid-dedicated beds to retain different service rates.",
+                "matchedText": "the service rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 3,
+                "sectionIndex": 0,
+                "sentence": 52,
+                "quote": "First, when the arrival rate of prospective Medicaid residents is sufficiently high, more altruistic (nonprofit-like) nurs­ ing homes set a higher Medicare-dedicated bed share than less altruistic (for-profit-like) nursing homes, resulting in lower access to care for the Medicaid pop­ ulation.",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Panel Regression",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 32,
+                "quote": "Let Yit(g) denote the potential bed alloca­ tion that would be observed at time t if nursing home i was to convert in year g, and let Yit(0) denote unit i’s untreated potential outcome at time t if the nursing homes remain unconverted at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival rate",
+              "source": {
+                "type": "section",
+                "section": "The Dedicated System",
+                "page": 9,
+                "sectionIndex": 3,
+                "sentence": 19,
+                "quote": "Proposition 1 states that when the Medicaid arrival rate is sufficiently high, it is optimal for more altruistic nursing homes to have a higher Medicare-dedicated bed share than their less altruistic counterparts, thereby providing lower access to care for the Medicaid population.",
+                "matchedText": "arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "How to allocate N",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 6,
+                "quote": "The nursing home makes a long-run decision of how to allocate N+ among Nr, Nd, and Nf.",
+                "matchedText": "how to allocate N",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "How to allocate N+ among Nr",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "sectionIndex": 5,
+                "page": 7,
+                "quote": "The nursing home makes a long-run decision of how to allocate N+ among Nr, Nd, and Nf.",
+                "matchedText": "how to allocate N+ among Nr",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The model to predict the directional change in bed allocation following ownership conversions",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "We further calibrate the model to predict the directional change in bed allocation following ownership conversions.",
+                "matchedText": "the model to predict the directional change in bed allocation following ownership conversions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Share than for-profit ones",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Methodology/results: Analyzing U.S. nursing home data during 2012–2017, we observe that nonprofit nursing homes on average had a higher Medicare-dedicated bed share than for-profit ones.",
+                "matchedText": "share than for-profit ones",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "How to allocate its beds among Medicare-dedicated",
+              "source": {
+                "type": "section",
+                "section": "Nursing Home Beds: Dedicated vs. Flexible",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 3,
+                "quote": "Given N+, the nursing home must decide how to allocate its beds among Medicare-dedicated, Medicaid-dedicated, and flexible beds, which are represented by subscripts r, d, and f, respectively.",
+                "matchedText": "how to allocate its beds among Medicare-dedicated",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Medicare demand reduced; converted nursing homes might adjust their bed allocation down accordingly",
+              "source": {
+                "type": "section",
+                "section": "Alternative Hypothesis",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "Suppose that Medi­ care demand reduced; converted nursing homes might adjust their bed allocation down accordingly.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Motivated by these empirical observations, we develop a model in the next section to study the effect of nursing homes’ ownership type on their bed allocation decisions.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Alternative Hypothesis",
+          "page": 7,
+          "sentence": 22
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.4. Alternative Hypothesis",
+            "equation": "",
+            "quote": "Sec­ ond, the staggered DID analysis finds that a nursing home’s Medicare-dedicated bed share is reduced by about two to three percentage points on average after being converted from a nonprofit to for-profit nursing home."
+          }
+        ],
+        "components": [
+          {
+            "id": "alternative-hypothesis",
+            "label": "Alternative Hypothesis",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Second, the staggered DID analysis finds that a nursing home’s Medicare-dedicated bed share is reduced by about two to three percentage points on average after being converted from a nonprofit to for-profit nursing home.",
+            "searchPhrases": [
+              "how alternative hypothesis is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "alternative hypothesis modeled objective specification"
+            ],
+            "formal": "Objective relation: Second, the staggered DID analysis finds that a nursing home’s Medicare-dedicated bed share is reduced by about two to three percentage points on average after being converted from a nonprofit to for-profit nursing home.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Second, the staggered DID analysis finds that a nursing home’s Medicare-dedicated bed share is reduced by about two to three percentage points on average after being converted from a nonprofit to for-profit nursing home."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.4. Alternative Hypothesis",
+                "equation": "",
+                "quote": "Sec­ ond, the staggered DID analysis finds that a nursing home’s Medicare-dedicated bed share is reduced by about two to three percentage points on average after being converted from a nonprofit to for-profit nursing home."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Second, the staggered DID analysis finds that a nursing home’s Medicare-dedicated bed share is reduced by about two”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "extensions-and-policy-implications",
+        "name": "Extensions and Policy Implications",
+        "kind": "extension",
+        "relation": "This extension builds on Allocation and Altruism.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "allocation-and-altruism"
+          }
+        ],
+        "summary": "Second, we incorporate a blocking cost for prospective Medicaid residents who are denied admission. Because of the urgency of prospective Medicare residents’ care needs and their more precarious health condition, one may argue that their waiting cost is higher than that of prospective Medicaid residents. When the Medicaid arrival rate exceeds the threshold of 0.5, N∗ r is increasing in α.",
+        "objects": [
+          "Patients",
+          "Hospital",
+          "Facilities"
+        ],
+        "inputs": [
+          "Arrival rate"
+        ],
+        "decisions": [
+          "The directional change of bed allocations following ownership conversions",
+          "Optimal allocation",
+          "Join a fixed waiting list"
+        ],
+        "assumptions": [
+          "In this section, we consider two model extensions and conduct a numerical analysis.",
+          "Prospective Medicaid residents join a fixed waiting list when all flexible beds are occupied"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Extensions and Policy Implications",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "Because Medicare patients need immediate postacute care, they would have to extend their hospital stays, and thus, they would incur additional hospital costs or be discharged home if no nursing home beds are available.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "Extensions and Policy Implications",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "Because Medicare patients need immediate postacute care, they would have to extend their hospital stays, and thus, they would incur additional hospital costs or be discharged home if no nursing home beds are available.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Facilities",
+              "source": {
+                "type": "section",
+                "section": "Extensions and Policy Implications",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 38,
+                "quote": "Excluding facilities with no observed change in bed allocation leaves 127 nursing homes for this exer­ cise.",
+                "matchedText": "facilities",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Extensions and Policy Implications",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 31,
+                "quote": "When the Med­ icaid arrival rate exceeds the threshold of 0.5, N∗ r is increasing in α.",
+                "matchedText": "arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The directional change of bed allocations following ownership conversions",
+              "source": {
+                "type": "section",
+                "section": "Extensions and Policy Implications",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "Third, we calibrate the queueing network model parameters using nursing home data to predict the directional change of bed allocations following ownership conversions",
+                "matchedText": "the directional change of bed allocations following ownership conversions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Optimal allocation",
+              "source": {
+                "type": "section",
+                "section": "A Data-Calibrated Framework with Policy",
+                "page": 14,
+                "sectionIndex": 3,
+                "sentence": 8,
+                "quote": "conversion as a reduction in altruism and compute the implied postconversion optimal allocation.",
+                "matchedText": "optimal allocation",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Join a fixed waiting list",
+              "source": {
+                "type": "section",
+                "section": "Extensions and Policy Implications",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "Blocking Cost of Prospective Medicaid Residents In our base model, we assume that prospective Medic­ aid residents join a fixed waiting list",
+                "matchedText": "join a fixed waiting list",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we consider two model extensions and conduct a numerical analysis.",
+              "source": {
+                "type": "section",
+                "section": "Extensions and Policy Implications",
+                "page": 12,
+                "quote": "In this section, we consider two model extensions and conduct a numerical analysis."
+              }
+            },
+            {
+              "value": "Prospective Medicaid residents join a fixed waiting list when all flexible beds are occupied",
+              "source": {
+                "type": "section",
+                "section": "Extensions and Policy Implications",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "Blocking Cost of Prospective Medicaid Residents In our base model, we assume that prospective Medic­ aid residents join a fixed waiting list when all flexible beds are occupied.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "A Data-Calibrated Framework with Policy Implications To connect the empirical results to the model and generate actionable insights, we calibrate the queueing network using nursing home data to predict the direction of bed allocation changes following ownership conversion.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Extensions and Policy Implications",
+          "page": 13,
+          "sentence": 36
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 13,
+            "section": "6.1. Reneging of Prospective Medicare Residents",
+            "equation": "",
+            "quote": "Because of the urgency of prospective Medicare residents’ care needs and their more precarious health condition, one may argue that their waiting cost is higher than that of prospective Medicaid residents."
+          }
+        ],
+        "components": [
+          {
+            "id": "extensions-and-policy-implications",
+            "label": "Extensions and Policy Implications",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Second, we incorporate a blocking cost for prospective Medicaid residents who are denied admission.",
+            "searchPhrases": [
+              "how extensions and policy implications is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "extensions and policy implications modeled objective specification"
+            ],
+            "formal": "Objective relation: Second, we incorporate a blocking cost for prospective Medicaid residents who are denied admission.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this section, we consider two model extensions and conduct a numerical analysis."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "6. Extensions and Policy Implications",
+                "equation": "",
+                "quote": "Second, we incorpo­ rate a blocking cost for prospective Medicaid residents who are denied admission."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Second, we incorporate a blocking cost for prospective Medicaid residents who are denied admission.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "reneging-of-prospective-medicare-residents",
+            "label": "Reneging of Prospective Medicare Residents",
+            "role": "objective",
+            "concepts": [
+              "waiting-cost"
+            ],
+            "explanation": "Because of the urgency of prospective Medicare residents’ care needs and their more precarious health condition, one may argue that their waiting cost is higher than that of prospective Medicaid residents.",
+            "searchPhrases": [
+              "how reneging of prospective medicare residents is represented",
+              "modeled objective in organizations, incentives, and finance",
+              "reneging of prospective medicare residents modeled objective specification"
+            ],
+            "formal": "Objective relation: Because of the urgency of prospective Medicare residents’ care needs and their more precarious health condition, one may argue that their waiting cost is higher than that of prospective Medicaid residents.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume instant blocking (τr = 0) of prospective Medicare residents when all the beds are occupied, we assume that prospective Medicare residents form an M=M=Nr queue with exponentially distributed reneging time with mean τr > 0.",
+              "Sections 4 and 5 where Medicare residents have no patience for waiting, whereas in this section, they are still impatient but are willing to wait a short period before leaving the queue."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6.1. Reneging of Prospective Medicare Residents",
+                "equation": "",
+                "quote": "Because of the urgency of prospective Medicare residents’ care needs and their more precarious health condition, one may argue that their waiting cost is higher than that of prospective Medicaid residents."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "waiting-cost",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Waiting cost: “condition, one may argue that their Waiting cost is higher than that of prospective Medicaid residents.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "blocking-cost-of-prospective-medicaid-residents",
+            "label": "Blocking Cost of Prospective Medicaid Residents",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "When the Medicaid arrival rate exceeds the threshold of 0.5, N∗ r is increasing in α.",
+            "searchPhrases": [
+              "how blocking cost of prospective medicaid residents is represented",
+              "system process in organizations, incentives, and finance",
+              "blocking cost of prospective medicaid residents system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that prospective Medicaid residents join a fixed waiting list when all flexible beds are occupied.",
+              "Taking a fixed queue length of 50 and a blocking cost of denied prospective Medicaid resident of bd = $10, we simulate the model and find the optimal bed allocation decisions.",
+              "In our base model, we assume that prospective Medicaid residents join a fixed waiting list when all flexible beds are occupied."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6.2. Blocking Cost of Prospective Medicaid Residents",
+                "equation": "",
+                "quote": "When the Med­ icaid arrival rate exceeds the threshold of 0.5, N∗ r is increasing in α."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “When the Medicaid arrival rate exceeds the threshold of 0.5, N∗ r is increasing in α.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "a-data-calibrated-framework-with-policy-implications",
+            "label": "A Data-Calibrated Framework with Policy Implications",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Residual errors are more common among facilities with extreme arrival-rate profiles, consistent with greater measurement error in admissions-based arrival proxies in these settings. (Detailed explanation of the tolerance bands is included in the Online Appendix.) Overall, these results suggest that the calibrated model reflects a meaningful share of bed allocation responses to nonprofit-to-for-profit conversion in terms of the directions of changes.",
+            "searchPhrases": [
+              "how a data-calibrated framework with policy implications is represented",
+              "system process in organizations, incentives, and finance",
+              "a data-calibrated framework with policy implications system process specification"
+            ],
+            "formal": "Process relation: Residual errors are more common among facilities with extreme arrival-rate profiles, consistent with greater measurement error in admissions-based arrival proxies in these settings. (Detailed explanation of the tolerance bands is included in the Online Appendix.) Overall, these results suggest that the calibrated model reflects a meaningful share of bed allocation responses to nonprofit-to-for-profit conversion in terms of the directions of changes.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "At the same time, the exercise should be interpreted with caution because the calibration relies on a small set of observables and annual data that cannot capture within-year fluctuations or facility-specific shocks."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "6.3. A Data-Calibrated Framework with Policy Implications",
+                "equation": "",
+                "quote": "Residual errors are more common among facilities with extreme arrival-rate profiles, consistent with greater measure­ ment error in admissions-based arrival proxies in these settings. (Detailed explanation of the tolerance bands is included in the Online Appendix.) Overall, these results suggest that the calibrated model reflects a meaningful share of bed allocation responses to nonprofit-to-for-profit conversion in terms of the directions of changes."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Residual errors are more common among facilities with extreme arrival-rate profiles, consistent with greater measurement error in admissions-based”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 2,
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "509b4b9f458b5abd29e5ce2e62dc2c584814104119d5f9420ceab5234732fe31",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "94910d56e6fc283ee00121fdddb1b74e63d5a391a514ff0a448b8c367cb5fca5",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2024-0937/94910d56e6fc283ee00121fdddb1b74e63d5a391a514ff0a448b8c367cb5fca5.json",
+      "extractionQaDecisionSha256": "6036fa948282b19c765c41b0a0720a041901c9db39980359e836e6f5fa3fc808",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

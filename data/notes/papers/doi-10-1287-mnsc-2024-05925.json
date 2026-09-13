@@ -1,0 +1,1461 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2024-05925",
+  "sourcePdfSha256": "e40f9b04b43ffd2aa0644a405515303a8bb25e0388cf4e6f6e46801daddd4b17",
+  "extractionPagesSha256": "2f10ea9629d421d3ffba090571f3892196d87304fa0919a146a163d8a21221e3",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "70f6f716a6f37dc5d1a6c96ed6b4cf2efda45dde0f7d72b04387b17969f05b77",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "604f47c3131f17c36230e0e7125f1c48a9417341a6be8a615a839a699f7c0afa",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-05925/604f47c3131f17c36230e0e7125f1c48a9417341a6be8a615a839a699f7c0afa.json",
+  "extractionQaDecisionSha256": "e589f21d05c7906c2730cb2585716fa8d213f86206fcdc6e9a59f3f47f087960",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-05925",
+    "question": "How can a principal use selective feedback, rather than money, to persuade an agent to continue a costly search when only the principal can evaluate the search outcomes?",
+    "overview": "A principal who privately observes realized search outcomes commits to a dynamic stopping and messaging policy, whereas an agent who bears search cost decides whether to continue after each message. The optimal policy is an information-design mechanism satisfying the agent’s sequential best responses.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        7,
+        9,
+        10,
+        11,
+        14,
+        17,
+        19
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "A finite-horizon principal-agent search game with dynamic proprietary information and no transfers",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A principal who privately observes realized search outcomes commits to a dynamic stopping and messaging policy, whereas an agent who bears search cost decides whether to continue after each message. The optimal policy is an information-design mechanism satisfying the agent’s sequential best responses.",
+        "objects": [
+          "Principal privately observing search outcomes and designing information"
+        ],
+        "inputs": [
+          "The principal privately observes all realized search outcomes",
+          "The agent observes public messages and the principal’s continuation actions but not outcome values in the baseline",
+          "Outcome distribution, horizon, search cost and payoff split are common knowledge",
+          "The principal has full ex ante commitment to the dynamic policy"
+        ],
+        "decisions": [
+          "Principal commits to history-dependent stopping and messaging policies",
+          "Principal stops or continues",
+          "Agent stops or conducts the next costly search",
+          "Whether to proceed with the tth opportunity or not",
+          "His optimal stopping decision"
+        ],
+        "assumptions": [
+          "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v",
+          "The agent bears constant search cost c and the principal cannot force continuation",
+          "The termination payoff is either the latest result without recall or the best result with free recall",
+          "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline",
+          "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Principal privately observing search outcomes and designing information",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "principal privately observing search outcomes and designing information"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The principal privately observes all realized search outcomes",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The principal privately observes all realized search outcomes."
+              }
+            },
+            {
+              "value": "The agent observes public messages and the principal’s continuation actions but not outcome values in the baseline",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The agent observes public messages and the principal’s continuation actions but not outcome values in the baseline."
+              }
+            },
+            {
+              "value": "Outcome distribution, horizon, search cost and payoff split are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Outcome distribution, horizon, search cost and payoff split are common knowledge."
+              }
+            },
+            {
+              "value": "The principal has full ex ante commitment to the dynamic policy",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The principal has full ex ante commitment to the dynamic policy."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Principal commits to history-dependent stopping and messaging policies",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "principal commits to history-dependent stopping and messaging policies"
+              }
+            },
+            {
+              "value": "Principal stops or continues",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "principal stops or continues after each private history"
+              }
+            },
+            {
+              "value": "Agent stops or conducts the next costly search",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "agent stops or conducts the next costly search"
+              }
+            },
+            {
+              "value": "Whether to proceed with the tth opportunity or not",
+              "source": {
+                "type": "section",
+                "section": "Agent’s Problem",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 2,
+                "quote": "Here, the principal first decides whether to proceed with the tth opportunity or not",
+                "matchedText": "whether to proceed with the tth opportunity or not",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "His optimal stopping decision",
+              "source": {
+                "type": "section",
+                "section": "Agent’s Problem",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 4,
+                "quote": "his optimal stopping decision",
+                "matchedText": "his optimal stopping decision",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v."
+              }
+            },
+            {
+              "value": "The agent bears constant search cost c and the principal cannot force continuation",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The agent bears constant search cost c and the principal cannot force continuation."
+              }
+            },
+            {
+              "value": "The termination payoff is either the latest result without recall or the best result with free recall",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The termination payoff is either the latest result without recall or the best result with free recall."
+              }
+            },
+            {
+              "value": "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline."
+              }
+            },
+            {
+              "value": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The authors formulate recursive incentive constraints, establish full-, no-information and costless-search benchmarks, reduce the message space to binary recommendations, and use an explicit primal-dual construction to characterize optimal deterministic thresholds for nonrecallable and recallable search, followed by robustness extensions.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "Expected-profit objective",
+            "equation": "(P)",
+            "quote": "Costless Search: Upper Bound When the principal is able to dictate the agent’s search decision (or equivalently make this decision directly without incurring any cost), the principal can simply solve (P) by ignoring the agent’s incentive constraints (1) and (2), thereby setting mt ≡∅and aσ t = 1 so that no messages need to be communicated, and the search is not terminated as long as the principal does not do so."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "principal-agent"
+            ],
+            "explanation": "The principal chooses a committed dynamic information policy to maximize expected payoff subject to the agent’s recursive continuation payoff and sequential search best response.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in dynamic information design for delegated search",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "max_\\sigma \\Phi_1^\\sigma subject to agent recursion (1), best response (2), and principal recursion (3)",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "V_t, v^t",
+                "meaning": "time-t search draw and cumulative realized search history",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_t, a_t",
+                "meaning": "principal and agent continue/stop actions",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m_t",
+                "meaning": "message sent by the principal after continuing",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma=(\\sigma^b, \\sigma^m)",
+                "meaning": "committed stopping and messaging policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, r",
+                "meaning": "agent search cost and principal termination-payoff share",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta_t",
+                "meaning": "time-t acceptance standard",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Costless Search: Upper Bound When the principal is able to dictate the agent’s search decision (or equivalently make this decision directly without incurring any cost), the principal can simply solve (P) by ignoring the agent’s incentive constraints (1) and (2), thereby setting mt ≡∅and aσ t = 1 so that no messages need to be communicated, and the search is not terminated as long as the principal does not do so.",
+              "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search.",
+              "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v.",
+              "The termination payoff is either the latest result without recall or the best result with free recall."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Expected-profit objective",
+                "equation": "(P)",
+                "quote": "Costless Search: Upper Bound When the principal is able to dictate the agent’s search decision (or equivalently make this decision directly without incurring any cost), the principal can simply solve (P) by ignoring the agent’s incentive constraints (1) and (2), thereby setting mt ≡∅and aσ t = 1 so that no messages need to be communicated, and the search is not terminated as long as the principal does not do so."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "principal-agent",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Principal-agent model as “principal agent”: “principal agent”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              },
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "principal-agent"
+            ],
+            "explanation": "Principal commits to history-dependent stopping and messaging policies principal stops or continues after each private history agent stops or conducts the next costly search",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in dynamic information design for delegated search",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Principal commits to history-dependent stopping and messaging policies principal stops or continues after each private history agent stops or conducts the next costly search",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "V_t, v^t",
+                "meaning": "time-t search draw and cumulative realized search history",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_t, a_t",
+                "meaning": "principal and agent continue/stop actions",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m_t",
+                "meaning": "message sent by the principal after continuing",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma=(\\sigma^b, \\sigma^m)",
+                "meaning": "committed stopping and messaging policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, r",
+                "meaning": "agent search cost and principal termination-payoff share",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When the principal is able to dictate the agent’s search decision (or equivalently make this decision directly without incurring any cost), the principal can simply solve (P) by ignoring the agent’s incentive constraints (1) and (2), thereby setting mt ≡∅and aσ t = 1 so that no messages need to be communicated, and the search is not terminated as long as the principal does not do so.",
+              "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search.",
+              "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Costless Search: Upper Bound",
+                "equation": "",
+                "quote": "When the principal is able to dictate the agent’s search decision (or equivalently make this decision directly without incurring any cost), the principal can simply solve (P) by ignoring the agent’s incentive constraints (1) and (2), thereby setting mt ≡∅and aσ t = 1 so that no messages need to be communicated, and the search is not terminated as long as the principal does not do so."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "principal-agent",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Principal-agent model as “principal agent”: “principal agent”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              },
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "optimal-committed-information-policy-with-sequentially-optimal-a",
+            "label": "Optimal committed information policy with sequentially optimal agent response",
+            "role": "interaction",
+            "concepts": [
+              "recommendation",
+              "incentive-compatibility",
+              "optimization"
+            ],
+            "explanation": "The model's equilibrium concept is Optimal committed information policy with sequentially optimal agent response. Equations (1)-(3) recursively define the agent’s continuation value, the agent’s best response and the principal’s value. Problem (P) optimizes over all history-dependent policies subject to those incentive constraints; the main theorems construct the optimal threshold recommendation policy.",
+            "searchPhrases": [
+              "how optimal committed information policy with sequentially optimal agent response is represented",
+              "strategic response in dynamic information design for delegated search",
+              "optimal committed information policy with sequentially optimal agent response strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Optimal committed information policy with sequentially optimal agent response.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "V_t, v^t",
+                "meaning": "time-t search draw and cumulative realized search history",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_t, a_t",
+                "meaning": "principal and agent continue/stop actions",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m_t",
+                "meaning": "message sent by the principal after continuing",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma=(\\sigma^b, \\sigma^m)",
+                "meaning": "committed stopping and messaging policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, r",
+                "meaning": "agent search cost and principal termination-payoff share",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta_t",
+                "meaning": "time-t acceptance standard",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search.",
+              "The termination payoff is either the latest result without recall or the best result with free recall."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.4. Recommendation Policy",
+                "equation": "",
+                "quote": "Because only the on-equilibrium history materializes, the principal only need to estimate the payoff-to-go along this history, simplifying the objective function in (P) under recom­ mendation policy (σ,M), whereas the policy following the off-equilibrium history only appears in the IC con­ straints and affects the agent’s incentives."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "recommendation",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Recommendation systems as “recommendation”: “the objective function in (P) under recommendation policy (σ,M), whereas the policy following the off-equilibrium”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "incentive-compatibility",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Incentive compatibility as “IC constraint”: “off-equilibrium history only appears in the IC constraint s and affects the agent’s incentives.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Optimization as “objective function”: “objective function”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "Before search, the principal commits to stopping and messaging policies. At each opportunity the principal observes past outcomes and chooses stop or continue; if continuing, the principal sends a message; the agent updates beliefs and chooses stop or pay cost c to search once more; the terminal payoff is split r and 1−r. The principal wants more search because the agent pays the cost but shares the terminal return. The principal’s stop/continue action itself conveys information even before an explicit message.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in dynamic information design for delegated search",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: Before search, the principal commits to stopping and messaging policies.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "V_t, v^t",
+                "meaning": "time-t search draw and cumulative realized search history",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_t, a_t",
+                "meaning": "principal and agent continue/stop actions",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m_t",
+                "meaning": "message sent by the principal after continuing",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma=(\\sigma^b, \\sigma^m)",
+                "meaning": "committed stopping and messaging policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, r",
+                "meaning": "agent search cost and principal termination-payoff share",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search.",
+              "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v.",
+              "The termination payoff is either the latest result without recall or the best result with free recall."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5.1. No Recall",
+                "equation": "",
+                "quote": "Namely, this off-equilibrium specification imposes no threat, whereas, in the literature (Ely and Szydlowski 2020, Smolin 2021), the principal typically imposes no further information as a threat on the off-equilibrium path."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Model interaction”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The authors formulate recursive incentive constraints, establish full-, no-information and costless-search benchmarks, reduce the message space to binary recommendations, and use an explicit primal-dual construction to characterize optimal deterministic thresholds for nonrecallable and recallable search, followed by robustness extensions.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in dynamic information design for delegated search",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors formulate recursive incentive constraints, establish full-, no-information and costless-search benchmarks, reduce the message space to binary recommendations, and use an explicit primal-dual construction to characterize optimal deterministic thresholds for nonrecallable and recallable search, followed by robustness extensions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "V_t, v^t",
+                "meaning": "time-t search draw and cumulative realized search history",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, r",
+                "meaning": "agent search cost and principal termination-payoff share",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search.",
+              "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. No Recall",
+                "equation": "",
+                "quote": "However, as will be shown in Section 5.2, this property is no longer valid when the search results become recallable, calling for a completely different approach to solve the principal’s problem."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “However, as will be shown in Section 5.2, this property is no longer valid when the search results”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "principal-agent",
+              "information-asymmetry"
+            ],
+            "explanation": "The principal privately observes all realized search outcomes. The agent observes public messages and the principal’s continuation actions but not outcome values in the baseline. Outcome distribution, horizon, search cost and payoff split are common knowledge. The principal has full ex ante commitment to the dynamic policy.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in dynamic information design for delegated search",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The principal privately observes all realized search outcomes.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "V_t, v^t",
+                "meaning": "time-t search draw and cumulative realized search history",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_t, a_t",
+                "meaning": "principal and agent continue/stop actions",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m_t",
+                "meaning": "message sent by the principal after continuing",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma=(\\sigma^b, \\sigma^m)",
+                "meaning": "committed stopping and messaging policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, r",
+                "meaning": "agent search cost and principal termination-payoff share",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search.",
+              "We can alternatively consider a setting where neither the principal nor the agent observes the realized value of each search outcome, but the principal can design how information about the search results is generated and provided to the agent (e.g., via an independent third party such as a consulting firm).",
+              "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v.",
+              "The termination payoff is either the latest result without recall or the best result with free recall."
+            ],
+            "sources": [
+              {
+                "page": 19,
+                "section": "2. Adding this type of information asymmetry to our current frame",
+                "equation": "",
+                "quote": "We can alternatively consider a setting where neither the principal nor the agent observes the realized value of each search outcome, but the principal can design how information about the search results is generated and provided to the agent (e.g., via an independent third party such as a consulting firm)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "principal-agent",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Principal-agent model as “principal agent”: “principal agent”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              },
+              {
+                "conceptId": "information-asymmetry",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Information asymmetry: “Information asymmetry”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search."
+                  }
+                }
+              },
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "optimal-policy-with-the-principal-s-decision-right",
+        "name": "Optimal Policy with the Principal’s Decision Right",
+        "kind": "alternative",
+        "relation": "This is an alternative to A finite-horizon principal-agent search game with dynamic proprietary information and no transfers.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Furthermore, the principal’s optimal payoff is the same with or without the decision right.",
+        "objects": [
+          "Principal"
+        ],
+        "inputs": [
+          "The principal privately observes all realized search outcomes",
+          "The agent observes public messages and the principal’s continuation actions but not outcome values in the baseline",
+          "Outcome distribution, horizon, search cost and payoff split are common knowledge",
+          "The principal has full ex ante commitment to the dynamic policy"
+        ],
+        "decisions": [
+          "Design problem"
+        ],
+        "assumptions": [
+          "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v",
+          "The agent bears constant search cost c and the principal cannot force continuation",
+          "The termination payoff is either the latest result without recall or the best result with free recall",
+          "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline",
+          "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Principal",
+              "source": {
+                "type": "section",
+                "section": "Optimal Policy with the Principal’s Decision Right",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 22,
+                "quote": "In Online Appendix B, we for­ mally establish the mathematical equivalence of the problem formulation between the design of a pure (informative) stopping policy (without any messages) and the design of a pure messaging policy (without any principal’s right to stop).",
+                "matchedText": "principal",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The principal privately observes all realized search outcomes",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The principal privately observes all realized search outcomes."
+              }
+            },
+            {
+              "value": "The agent observes public messages and the principal’s continuation actions but not outcome values in the baseline",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The agent observes public messages and the principal’s continuation actions but not outcome values in the baseline."
+              }
+            },
+            {
+              "value": "Outcome distribution, horizon, search cost and payoff split are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Outcome distribution, horizon, search cost and payoff split are common knowledge."
+              }
+            },
+            {
+              "value": "The principal has full ex ante commitment to the dynamic policy",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The principal has full ex ante commitment to the dynamic policy."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design problem",
+              "source": {
+                "type": "section",
+                "section": "Optimal Policy with the Principal’s Decision Right",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 23,
+                "quote": "Fundamentally, we face the same information design problem",
+                "matchedText": "design problem",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v."
+              }
+            },
+            {
+              "value": "The agent bears constant search cost c and the principal cannot force continuation",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The agent bears constant search cost c and the principal cannot force continuation."
+              }
+            },
+            {
+              "value": "The termination payoff is either the latest result without recall or the best result with free recall",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The termination payoff is either the latest result without recall or the best result with free recall."
+              }
+            },
+            {
+              "value": "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline."
+              }
+            },
+            {
+              "value": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The authors formulate recursive incentive constraints, establish full-, no-information and costless-search benchmarks, reduce the message space to binary recommendations, and use an explicit primal-dual construction to characterize optimal deterministic thresholds for nonrecallable and recallable search, followed by robustness extensions.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 14,
+            "section": "6. Optimal Policy with the Principal’s Decision Right",
+            "equation": "",
+            "quote": "Furthermore, the prin­ cipal’s optimal payoff is the same with or without the decision right."
+          }
+        ],
+        "components": [
+          {
+            "id": "optimal-policy-with-the-principal-s-decision-right",
+            "label": "Optimal Policy with the Principal’s Decision Right",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Furthermore, the principal’s optimal payoff is the same with or without the decision right.",
+            "searchPhrases": [
+              "how optimal policy with the principal’s decision right is represented",
+              "decision rule in dynamic information design for delegated search",
+              "optimal policy with the principal’s decision right decision rule specification"
+            ],
+            "formal": "Decision rule: Furthermore, the principal’s optimal payoff is the same with or without the decision right.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "V_t, v^t",
+                "meaning": "time-t search draw and cumulative realized search history",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_t, a_t",
+                "meaning": "principal and agent continue/stop actions",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m_t",
+                "meaning": "message sent by the principal after continuing",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma=(\\sigma^b, \\sigma^m)",
+                "meaning": "committed stopping and messaging policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, r",
+                "meaning": "agent search cost and principal termination-payoff share",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta_t",
+                "meaning": "time-t acceptance standard",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When the principal retains the right to stop, the search of opportunity t will continue only if the principal decides to continue (bt = 1) and the agent is also recommended the same (mt = 1), which the agent will indeed follow (at = 1).",
+              "In this section, we return to the original problem (P) where the principal is endowed with the right to terminate the search (i.e., bt ∈{0,1}).",
+              "Then, any information policy (σb,σm) such that σb t(1|vt,mt 1)σm t (1|vt,mt 1) = σ?m t (1|vt,mt 1), for all mt 1 (13) is optimal to the original problem (P)."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "6. Optimal Policy with the Principal’s Decision Right",
+                "equation": "",
+                "quote": "Furthermore, the prin­ cipal’s optimal payoff is the same with or without the decision right."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Furthermore, the principal’s optimal payoff is the same with or without the decision right.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "infinite-horizon-with-discounting",
+        "name": "Infinite Horizon with Discounting",
+        "kind": "alternative",
+        "relation": "This is an alternative to A finite-horizon principal-agent search game with dynamic proprietary information and no transfers.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "The “regime change” featured in our base model still persists: the principal can achieve the constant acceptance standard β◦ δ of the costless search with nonbinding (IC1) only for the first τδ search opportunities, during which the discounted marginal return from an additional search (knowing that the best result so far is below β◦ δ) exceeds the search cost.",
+        "objects": [
+          "The principal",
+          "Agent"
+        ],
+        "inputs": [
+          "Equating the marginal return from an additional search with the search cost"
+        ],
+        "decisions": [
+          "Principal commits to history-dependent stopping and messaging policies",
+          "Principal stops or continues",
+          "Agent stops or conducts the next costly search",
+          "Whether to proceed with the tth opportunity or not",
+          "His optimal stopping decision"
+        ],
+        "assumptions": [
+          "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v",
+          "The agent bears constant search cost c and the principal cannot force continuation",
+          "The termination payoff is either the latest result without recall or the best result with free recall",
+          "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline",
+          "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The principal",
+              "source": {
+                "type": "section",
+                "section": "Infinite Horizon with Discounting",
+                "page": 17,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "the principal",
+                "matchedText": "the principal",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agent",
+              "source": {
+                "type": "section",
+                "section": "Infinite Horizon with Discounting",
+                "page": 17,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "Now we relax these two assumptions by considering unlim­ ited search opportunities and allowing both the princi­ pal and agent to discount their payoff at rate δ ∈(0,1] for each search conducted.",
+                "matchedText": "agent",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Equating the marginal return from an additional search with the search cost",
+              "source": {
+                "type": "section",
+                "section": "Infinite Horizon with Discounting",
+                "page": 17,
+                "sectionIndex": 0,
+                "sentence": 13,
+                "quote": "The acceptance standards for the remaining search opportunities are determined by equating the marginal return from an additional search with the search cost as in (20), which binds (IC1) after the cutoff period.",
+                "matchedText": "equating the marginal return from an additional search with the search cost as in (20)",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Principal commits to history-dependent stopping and messaging policies",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "principal commits to history-dependent stopping and messaging policies"
+              }
+            },
+            {
+              "value": "Principal stops or continues",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "principal stops or continues after each private history"
+              }
+            },
+            {
+              "value": "Agent stops or conducts the next costly search",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "agent stops or conducts the next costly search"
+              }
+            },
+            {
+              "value": "Whether to proceed with the tth opportunity or not",
+              "source": {
+                "type": "section",
+                "section": "Agent’s Problem",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 2,
+                "quote": "Here, the principal first decides whether to proceed with the tth opportunity or not",
+                "matchedText": "whether to proceed with the tth opportunity or not",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "His optimal stopping decision",
+              "source": {
+                "type": "section",
+                "section": "Agent’s Problem",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 4,
+                "quote": "his optimal stopping decision",
+                "matchedText": "his optimal stopping decision",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "There are T finite search opportunities, each generating an IID nonnegative outcome V_t with finite mean v."
+              }
+            },
+            {
+              "value": "The agent bears constant search cost c and the principal cannot force continuation",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The agent bears constant search cost c and the principal cannot force continuation."
+              }
+            },
+            {
+              "value": "The termination payoff is either the latest result without recall or the best result with free recall",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The termination payoff is either the latest result without recall or the best result with free recall."
+              }
+            },
+            {
+              "value": "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The principal and agent split termination payoff at fixed shares r and 1−r in the baseline."
+              }
+            },
+            {
+              "value": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "No direct monetary transfer is available in the main model, and (1−r)E[V]=(1−r)v>c ensures that the agent initially has incentive to conduct at least one search."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The authors formulate recursive incentive constraints, establish full-, no-information and costless-search benchmarks, reduce the message space to binary recommendations, and use an explicit primal-dual construction to characterize optimal deterministic thresholds for nonrecallable and recallable search, followed by robustness extensions.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 17,
+            "section": "7.2. Infinite Horizon with Discounting",
+            "equation": "",
+            "quote": "The “regime change” featured in our base model still persists: the principal can achieve the constant acceptance standard β◦ δ of the costless search with nonbinding (IC1) only for the first τδ search opportunities, during which the discounted marginal return from an additional search (knowing that the best result so far is below β◦ δ) exceeds the search cost."
+          }
+        ],
+        "components": [
+          {
+            "id": "infinite-horizon-with-discounting",
+            "label": "Infinite Horizon with Discounting",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The “regime change” featured in our base model still persists: the principal can achieve the constant acceptance standard β◦ δ of the costless search with nonbinding (IC1) only for the first τδ search opportunities, during which the discounted marginal return from an additional search (knowing that the best result so far is below β◦ δ) exceeds the search cost.",
+            "searchPhrases": [
+              "how infinite horizon with discounting is represented",
+              "modeled objective in dynamic information design for delegated search",
+              "infinite horizon with discounting modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "V_t, v^t",
+                "meaning": "time-t search draw and cumulative realized search history",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_t, a_t",
+                "meaning": "principal and agent continue/stop actions",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "m_t",
+                "meaning": "message sent by the principal after continuing",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\sigma=(\\sigma^b, \\sigma^m)",
+                "meaning": "committed stopping and messaging policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c, r",
+                "meaning": "agent search cost and principal termination-payoff share",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta_t",
+                "meaning": "time-t acceptance standard",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Suppose search opportunities are infinite (T = ∞) with a common discounting factor δ ∈(0,1] for both the principal and agent.",
+              "To capture the deadline effect in most applications, our base model features finitely many search opportunities (T < ∞) and ignores time discounting frictions.",
+              "Now we relax these two assumptions by considering unlimited search opportunities and allowing both the principal and agent to discount their payoff at rate δ ∈(0,1] for each search conducted."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "7.2. Infinite Horizon with Discounting",
+                "equation": "",
+                "quote": "The “regime change” featured in our base model still persists: the principal can achieve the constant acceptance standard β◦ δ of the costless search with nonbinding (IC1) only for the first τδ search opportunities, during which the discounted marginal return from an additional search (knowing that the best result so far is below β◦ δ) exceeds the search cost."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The “regime change” featured in our base model still persists: the principal can achieve the constant acceptance standard”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e40f9b04b43ffd2aa0644a405515303a8bb25e0388cf4e6f6e46801daddd4b17",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "604f47c3131f17c36230e0e7125f1c48a9417341a6be8a615a839a699f7c0afa",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-05925/604f47c3131f17c36230e0e7125f1c48a9417341a6be8a615a839a699f7c0afa.json",
+      "extractionQaDecisionSha256": "e589f21d05c7906c2730cb2585716fa8d213f86206fcdc6e9a59f3f47f087960",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

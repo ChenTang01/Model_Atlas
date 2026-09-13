@@ -1,0 +1,1421 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2024-06127",
+  "sourcePdfSha256": "7c9e44cae57cba68e96f2a99b88b3cee0a3af9c9ca86ccd3f52358df92378563",
+  "extractionPagesSha256": "68633637449e5adacd3693eb9acba233d604507a9a06672daeeef584cd4eb16e",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "6b84b166a62992680f514981adced54182671deec939146ec1a9776faa1a05cc",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "a8c0bbf7c1354a0c0bb04fc19908e3fd9807504df9b7431b99d4f5149799b4a1",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-06127/a8c0bbf7c1354a0c0bb04fc19908e3fd9807504df9b7431b99d4f5149799b4a1.json",
+  "extractionQaDecisionSha256": "6f141ddfcf25b563529f0c26107cc8f9c5b901008404437463843e31a5f750a6",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-06127",
+    "question": "Can LASSO be rationalized as an equilibrium decision rule for strategic traders, and when does its competition-mitigation benefit exceed the bias it introduces?",
+    "overview": "Multiple large traders strategically choose two-round order flows under price impact and ambiguity; symmetric Bayesian Nash equilibria make approximate or exact LASSO forecasts emerge endogenously from max-min trading behavior.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        9,
+        10,
+        17
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Whence LASSO? A Rational Interpretation model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Multiple large traders strategically choose two-round order flows under price impact and ambiguity; symmetric Bayesian Nash equilibria make approximate or exact LASSO forecasts emerge endogenously from max-min trading behavior.",
+        "objects": [
+          "N identical large traders using historical prices"
+        ],
+        "inputs": [
+          "All modeled traders observe the same public price history",
+          "They know pricing and informed-flow coefficients but are ambiguous about the scale of the Laplace asset-value distribution",
+          "Each large trader accounts for its own effect on total order flow",
+          "Noise and informed exogenous order flows are unobserved"
+        ],
+        "decisions": [
+          "Each trader chooses a first-round order",
+          "After observing price history, each trader chooses a state-contingent second-round order",
+          "Each trader robustly evaluates strategies over an ambiguity set",
+          "Flow cannot cause the price to overshoot",
+          "Flows and contrarian behavior in response to intermediate order flows"
+        ],
+        "assumptions": [
+          "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi",
+          "Prices respond linearly to aggregate order flow in two rounds",
+          "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact",
+          "Informed and Gaussian noise flows are exogenous in the baseline; price-impact and information coefficients are taken as given",
+          "Sufficient liquidity and no-overshooting conditions support the proposed symmetric equilibrium"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "N identical large traders using historical prices",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "N identical large traders using historical prices"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "All modeled traders observe the same public price history",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "All modeled traders observe the same public price history."
+              }
+            },
+            {
+              "value": "They know pricing and informed-flow coefficients but are ambiguous about the scale of the Laplace asset-value distribution",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "They know pricing and informed-flow coefficients but are ambiguous about the scale of the Laplace asset-value distribution."
+              }
+            },
+            {
+              "value": "Each large trader accounts for its own effect on total order flow",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each large trader accounts for its own effect on total order flow and price."
+              }
+            },
+            {
+              "value": "Noise and informed exogenous order flows are unobserved",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Noise and informed exogenous order flows are unobserved before trading."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each trader chooses a first-round order",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each trader chooses a first-round order"
+              }
+            },
+            {
+              "value": "After observing price history, each trader chooses a state-contingent second-round order",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "after observing price history, each trader chooses a state-contingent second-round order"
+              }
+            },
+            {
+              "value": "Each trader robustly evaluates strategies over an ambiguity set",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each trader robustly evaluates strategies over an ambiguity set"
+              }
+            },
+            {
+              "value": "Flow cannot cause the price to overshoot",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium Definition and Assumptions",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 24,
+                "quote": "First, we assume that the informed order flow cannot cause the price to overshoot",
+                "matchedText": "flow cannot cause the price to overshoot",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Flows and contrarian behavior in response to intermediate order flows",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading Without Trading Constraints",
+                "page": 7,
+                "sectionIndex": 20,
+                "sentence": 19,
+                "quote": "By contrast, when ξ is low, ZB 2,n(y1;ξ) is monotonically increasing in y1 for extreme values of y1 and decreasing in y1 for interme­ diate values of y1, so that traders’ strategy exhibits momentum in response to extreme order flows and contrarian behavior in response to intermediate order flows",
+                "matchedText": "flows and contrarian behavior in response to intermediate order flows",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi."
+              }
+            },
+            {
+              "value": "Prices respond linearly to aggregate order flow in two rounds",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Prices respond linearly to aggregate order flow in two rounds."
+              }
+            },
+            {
+              "value": "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact."
+              }
+            },
+            {
+              "value": "Informed and Gaussian noise flows are exogenous in the baseline; price-impact and information coefficients are taken as given",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Informed and Gaussian noise flows are exogenous in the baseline; price-impact and information coefficients are taken as given."
+              }
+            },
+            {
+              "value": "Sufficient liquidity and no-overshooting conditions support the proposed symmetric equilibrium",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Sufficient liquidity and no-overshooting conditions support the proposed symmetric equilibrium."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The paper solves a two-round price-impact trading game under benchmark and ambiguous priors, compares MSE and robust equilibrium strategies, imposes linear constraints to recover exact LASSO, and studies aggregate profit and distributional extensions.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.2. Robust Trading",
+            "equation": "",
+            "quote": "Specifically, each trader perceives that the scale parameter ξ admits any value over an ambiguity set [ξ,∞] and is unable to assign a probability on this set.4 The lower bound ξ is an arbitrary nonnegative constant, which captures traders’ prior knowledge about parameter ξ."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "All modeled traders observe the same public price history. They know pricing and informed-flow coefficients but are ambiguous about the scale of the Laplace asset-value distribution. Each large trader accounts for its own effect on total order flow and price. Noise and informed exogenous order flows are unobserved before trading.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in game-theoretic foundation for lasso trading strategies",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: All modeled traders observe the same public price history.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Z_1, n, Z_2, n(y_1)",
+                "meaning": "trader n's first- and second-round order strategies · strategy spaces S_1 and S_2",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi",
+                "meaning": "scale of the asset-value distribution · ambiguity set [xi-underbar,infinity]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N",
+                "meaning": "number of modeled strategic traders · positive integer",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi.",
+              "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Trading Environment",
+                "equation": "",
+                "quote": "In our analysis, we focus on the behavior of those traders who trade on past price information and take as given the parameters βt and λt that govern informed trading and price setting."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Pricing as “price setting”: “λt that govern informed trading and price setting .”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The paper solves a two-round price-impact trading game under benchmark and ambiguous priors, compares MSE and robust equilibrium strategies, imposes linear constraints to recover exact LASSO, and studies aggregate profit and distributional extensions.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in game-theoretic foundation for lasso trading strategies",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper solves a two-round price-impact trading game under benchmark and ambiguous priors, compares MSE and robust equilibrium strategies, imposes linear constraints to recover exact LASSO, and studies aggregate profit and distributional extensions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Z_1, n, Z_2, n(y_1)",
+                "meaning": "trader n's first- and second-round order strategies · strategy spaces S_1 and S_2",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda_1, \\lambda_2",
+                "meaning": "price-impact parameters · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi",
+                "meaning": "scale of the asset-value distribution · ambiguity set [xi-underbar,infinity]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Informed and Gaussian noise flows are exogenous in the baseline; price-impact and information coefficients are taken as given.",
+              "Sufficient liquidity and no-overshooting conditions support the proposed symmetric equilibrium."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Robust Trading",
+                "equation": "",
+                "quote": "Traders submit market orders in both trading rounds."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Traders submit market orders in both trading rounds.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "distributional-ambiguity"
+            ],
+            "explanation": "Each trader chooses a first-round order after observing price history, each trader chooses a state-contingent second-round order each trader robustly evaluates strategies over an ambiguity set",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in game-theoretic foundation for lasso trading strategies",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each trader chooses a first-round order after observing price history, each trader chooses a state-contingent second-round order each trader robustly evaluates strategies over an ambiguity set",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Z_1, n, Z_2, n(y_1)",
+                "meaning": "trader n's first- and second-round order strategies · strategy spaces S_1 and S_2",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Robust Trading",
+                "equation": "",
+                "quote": "Specifically, each trader perceives that the scale parameter ξ admits any value over an ambiguity set [ξ,∞] and is unable to assign a probability on this set.4 The lower bound ξ is an arbitrary nonnegative constant, which captures traders’ prior knowledge about parameter ξ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "distributional-ambiguity",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Distributional ambiguity as “ambiguity set”: “ξ admits any value over an ambiguity set [ξ,∞] and is unable to assign a probability”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "forecasting",
+              "lasso"
+            ],
+            "explanation": "In round 1, traders submit orders before observing informative price history. The first price incorporates informed and noise order flow. In round 2, traders observe the first price or order flow and choose new orders, internalizing price impact and rival strategies. First-round prices create the history used to forecast residual fundamentals in round 2.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in game-theoretic foundation for lasso trading strategies",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: In round 1, traders submit orders before observing informative price history.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Z_1, n, Z_2, n(y_1)",
+                "meaning": "trader n's first- and second-round order strategies · strategy spaces S_1 and S_2",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p-tilde_1, p-tilde_2",
+                "meaning": "prices after the two trading rounds · linear functions of total order flow",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact.",
+              "Informed and Gaussian noise flows are exogenous in the baseline; price-impact and information coefficients are taken as given."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Equilibrium and Properties",
+                "equation": "",
+                "quote": "In this section, we characterize the equilibrium and demonstrate that traders in our setting optimally trade as if they (approximately) use the LASSO esti­ mate to forecast returns."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Forecasting: “In this section, we characterize the equilibrium and demonstrate that traders in our setting optimally trade as if”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "lasso",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses LASSO: “as if they (approximately) use the LASSO estimate to forecast returns.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "symmetric-bayesian-nash-equilibrium-with-max-min-robust-preferen",
+            "label": "Symmetric Bayesian Nash equilibrium with max-min robust preferences",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Symmetric Bayesian Nash equilibrium with max-min robust preferences. Section 4.1 defines a Bayesian Nash equilibrium as a strategy profile resistant to unilateral deviations. Propositions 1-3 establish symmetric benchmark and robust equilibria under the stated parameter and strategy-space conditions.",
+            "searchPhrases": [
+              "how symmetric bayesian nash equilibrium with max-min robust preferences is represented",
+              "strategic response in game-theoretic foundation for lasso trading strategies",
+              "symmetric bayesian nash equilibrium with max-min robust preferences strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Symmetric Bayesian Nash equilibrium with max-min robust preferences.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\xi",
+                "meaning": "scale of the asset-value distribution · ambiguity set [xi-underbar,infinity]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N",
+                "meaning": "number of modeled strategic traders · positive integer",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi.",
+              "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact.",
+              "Sufficient liquidity and no-overshooting conditions support the proposed symmetric equilibrium."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.1. Equilibrium Definition and Assumptions",
+                "equation": "",
+                "quote": "Even when these conditions are violated, the conjectured symmet­ ric equilibrium may still prevail."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Even when these conditions are violated, the conjectured symmetric equilibrium may still prevail.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "lasso"
+            ],
+            "explanation": "Each trader chooses firstand second-round order strategies to maximize worst-case expected trading profit over all asset-value scale parameters in the ambiguity set.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in game-theoretic foundation for lasso trading strategies",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_{Z_{1,n}\\in S_1,Z_{2,n}(y_1)\\in S_2}\\;\\min_{\\xi\\in[\\underline\\xi,\\infty]}\\mathbb E^{\\xi}[(\\tilde v-\\tilde p_1)Z_{1,n}+(\\tilde v-\\tilde p_2)Z_{2,n}(y_1)]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "Z_1, n, Z_2, n(y_1)",
+                "meaning": "trader n's first- and second-round order strategies · strategy spaces S_1 and S_2",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v-tilde",
+                "meaning": "asset liquidation value · Laplace in the baseline",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p-tilde_1, p-tilde_2",
+                "meaning": "prices after the two trading rounds · linear functions of total order flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\lambda_1, \\lambda_2",
+                "meaning": "price-impact parameters · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi",
+                "meaning": "scale of the asset-value distribution · ambiguity set [xi-underbar,infinity]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N",
+                "meaning": "number of modeled strategic traders · positive integer",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi.",
+              "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.4. Robust Trading with Trading Constraints",
+                "equation": "(11)",
+                "quote": "This figure plots the expected aggregate profit of LASSO tra­ ders in a large economy against the implied scale parameter ξb given in Equation (23)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "lasso",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses LASSO: “plots the expected aggregate profit of LASSO traders in a large economy against the implied”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "in-the-benchmark-equilibrium-without-model-uncer",
+        "name": "In the benchmark equilibrium without model uncer",
+        "kind": "alternative",
+        "relation": "This is an alternative to Whence LASSO? A Rational Interpretation model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "In the trading equilibrium discussed in Proposition 3, traders use the same robust LASSO strategy, Zlasso 2,n ( ̃y1;b).",
+        "objects": [
+          "N identical large traders using historical prices"
+        ],
+        "inputs": [
+          "The shape parameter m but face ambiguity about the scale parameter ξ",
+          "An exogenous supply",
+          "Aggregate demand"
+        ],
+        "decisions": [
+          "Price"
+        ],
+        "assumptions": [
+          "Traders know the shape parameter m but face ambiguity about the scale parameter ξ"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "N identical large traders using historical prices",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "N identical large traders using historical prices"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The shape parameter m but face ambiguity about the scale parameter ξ",
+              "source": {
+                "type": "section",
+                "section": "In the benchmark equilibrium without model uncer",
+                "page": 17,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "We assume that traders know the shape parameter m but face ambiguity about the scale parame­ ter ξ.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "An exogenous supply",
+              "source": {
+                "type": "section",
+                "section": "In the benchmark equilibrium without model uncer",
+                "page": 18,
+                "sectionIndex": 0,
+                "sentence": 37,
+                "quote": "an exogenous supply",
+                "matchedText": "an exogenous supply",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Aggregate demand",
+              "source": {
+                "type": "section",
+                "section": "In the benchmark equilibrium without model uncer",
+                "sectionIndex": 0,
+                "page": 18,
+                "quote": "Yang (2019), we can imagine that in period t, a Walrasian auctioneer obtains the traders’ aggregate demand PN n=1 zt,n and an exogenous supply curve Q(˜pt; ˜v, ˜ut) from unmodelled informed traders and noise traders and sets price ˜pt to clear the market."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Price",
+              "source": {
+                "type": "section",
+                "section": "In the benchmark equilibrium without model uncer",
+                "page": 18,
+                "sectionIndex": 0,
+                "sentence": 37,
+                "quote": "Yang (2019), we can imagine that in period t, a Walrasian auctioneer obtains the traders’ aggregate demand PN n=1 zt,n and an exogenous supply curve Q(˜pt; ˜v, ˜ut) from unmodelled informed traders and noise traders and sets price ˜pt to clear the market.",
+                "matchedText": "price",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Traders know the shape parameter m but face ambiguity about the scale parameter ξ",
+              "source": {
+                "type": "section",
+                "section": "In the benchmark equilibrium without model uncer",
+                "page": 17,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "We assume that traders know the shape parameter m but face ambiguity about the scale parame­ ter ξ.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper can apply Bayes’ theorem to show that the benchmark optimal strategy ZB 2,n(y1;ξ) given ξ ∈(0,∞) is tailed signals.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "In the benchmark equilibrium without model uncer",
+          "page": 17,
+          "sentence": 48
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 17,
+            "section": "1. In the benchmark equilibrium without model uncer",
+            "equation": "",
+            "quote": "In the trading equilibrium discussed in Proposition 3, traders use the same robust LASSO strategy, Zlasso 2,n (˜y1;b)."
+          }
+        ],
+        "components": [
+          {
+            "id": "in-the-benchmark-equilibrium-without-model-uncer",
+            "label": "In the benchmark equilibrium without model uncer",
+            "role": "interaction",
+            "concepts": [
+              "lasso"
+            ],
+            "explanation": "In the trading equilibrium discussed in Proposition 3, traders use the same robust LASSO strategy, Zlasso 2,n ( ̃y1;b).",
+            "searchPhrases": [
+              "how in the benchmark equilibrium without model uncer is represented",
+              "strategic response in game-theoretic foundation for lasso trading strategies",
+              "in the benchmark equilibrium without model uncer strategic response specification"
+            ],
+            "formal": "Strategic response: In the trading equilibrium discussed in Proposition 3, traders use the same robust LASSO strategy, Zlasso 2,n ( ̃y1;b).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that traders know the shape parameter m but face ambiguity about the scale parameter ξ.",
+              "We have Eξ[(bθ mse( ̃y1;ξ) bθ lasso( ̃y1;ξb))bθ lasso] = Eξ[(bvmse( ̃y1;ξ) bvlasso( ̃y1;ξb))bθ lasso( ̃y1;ξb)], by observing that bθ lasso = (bvlasso λ1 ̃y1)1| ̃y1 |>b satisfies (bvlasso λ1 ̃y1) · bθ lasso = (bθ lasso)2.",
+              "As mentioned in the main text, we consider the fat-tailed case of m ∈(0,2) and maintain the same assumptions used in Section 4.4 for Proposition 3."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "1. In the benchmark equilibrium without model uncer",
+                "equation": "",
+                "quote": "In the trading equilibrium discussed in Proposition 3, traders use the same robust LASSO strategy, Zlasso 2,n (˜y1;b)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "lasso",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses LASSO: “3, traders use the same robust LASSO strategy, Zlasso 2,n ( ̃y1;b).”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "benchmark-economy-without-model",
+        "name": "Benchmark Economy Without Model Uncertainty",
+        "kind": "alternative",
+        "relation": "This is an alternative to Whence LASSO? A Rational Interpretation model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "We now shut down model uncertainty so that traders know the value of the scale parameter ξ and their preference degenerates to the traditional expected utility without ambiguity aversion.",
+        "objects": [
+          "N identical large traders using historical prices"
+        ],
+        "inputs": [
+          "All modeled traders observe the same public price history",
+          "They know pricing and informed-flow coefficients but are ambiguous about the scale of the Laplace asset-value distribution",
+          "Each large trader accounts for its own effect on total order flow",
+          "Noise and informed exogenous order flows are unobserved"
+        ],
+        "decisions": [
+          "Each trader chooses a first-round order",
+          "After observing price history, each trader chooses a state-contingent second-round order",
+          "Each trader robustly evaluates strategies over an ambiguity set",
+          "Flow cannot cause the price to overshoot",
+          "Flows and contrarian behavior in response to intermediate order flows"
+        ],
+        "assumptions": [
+          "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi",
+          "Prices respond linearly to aggregate order flow in two rounds",
+          "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact",
+          "Informed and Gaussian noise flows are exogenous in the baseline; price-impact and information coefficients are taken as given",
+          "Sufficient liquidity and no-overshooting conditions support the proposed symmetric equilibrium"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "N identical large traders using historical prices",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "N identical large traders using historical prices"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "All modeled traders observe the same public price history",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "All modeled traders observe the same public price history."
+              }
+            },
+            {
+              "value": "They know pricing and informed-flow coefficients but are ambiguous about the scale of the Laplace asset-value distribution",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "They know pricing and informed-flow coefficients but are ambiguous about the scale of the Laplace asset-value distribution."
+              }
+            },
+            {
+              "value": "Each large trader accounts for its own effect on total order flow",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each large trader accounts for its own effect on total order flow and price."
+              }
+            },
+            {
+              "value": "Noise and informed exogenous order flows are unobserved",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Noise and informed exogenous order flows are unobserved before trading."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each trader chooses a first-round order",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each trader chooses a first-round order"
+              }
+            },
+            {
+              "value": "After observing price history, each trader chooses a state-contingent second-round order",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "after observing price history, each trader chooses a state-contingent second-round order"
+              }
+            },
+            {
+              "value": "Each trader robustly evaluates strategies over an ambiguity set",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each trader robustly evaluates strategies over an ambiguity set"
+              }
+            },
+            {
+              "value": "Flow cannot cause the price to overshoot",
+              "source": {
+                "type": "section",
+                "section": "Equilibrium Definition and Assumptions",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 24,
+                "quote": "First, we assume that the informed order flow cannot cause the price to overshoot",
+                "matchedText": "flow cannot cause the price to overshoot",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Flows and contrarian behavior in response to intermediate order flows",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading Without Trading Constraints",
+                "page": 7,
+                "sectionIndex": 20,
+                "sentence": 19,
+                "quote": "By contrast, when ξ is low, ZB 2,n(y1;ξ) is monotonically increasing in y1 for extreme values of y1 and decreasing in y1 for interme­ diate values of y1, so that traders’ strategy exhibits momentum in response to extreme order flows and contrarian behavior in response to intermediate order flows",
+                "matchedText": "flows and contrarian behavior in response to intermediate order flows",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The asset liquidation value is Laplace in the baseline, with uncertain scale parameter xi."
+              }
+            },
+            {
+              "value": "Prices respond linearly to aggregate order flow in two rounds",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Prices respond linearly to aggregate order flow in two rounds."
+              }
+            },
+            {
+              "value": "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Modeled traders are identical, risk neutral conditional on max-min ambiguity preferences, and large enough to internalize price impact."
+              }
+            },
+            {
+              "value": "Informed and Gaussian noise flows are exogenous in the baseline; price-impact and information coefficients are taken as given",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Informed and Gaussian noise flows are exogenous in the baseline; price-impact and information coefficients are taken as given."
+              }
+            },
+            {
+              "value": "Sufficient liquidity and no-overshooting conditions support the proposed symmetric equilibrium",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Sufficient liquidity and no-overshooting conditions support the proposed symmetric equilibrium."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper characterizes the equilibrium benchmark strategy in the following proposition.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Benchmark Economy Without Model",
+          "page": 6,
+          "sentence": 5
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "4.2. Benchmark Economy Without Model Uncertainty",
+            "equation": "",
+            "quote": "We now shut down model uncertainty so that traders know the value of the scale parameter ξ and their pref­ erence degenerates to the traditional expected utility without ambiguity aversion."
+          }
+        ],
+        "components": [
+          {
+            "id": "benchmark-economy-without-model-uncertainty",
+            "label": "Benchmark Economy Without Model Uncertainty",
+            "role": "information",
+            "concepts": [
+              "uncertainty"
+            ],
+            "explanation": "We now shut down model uncertainty so that traders know the value of the scale parameter ξ and their preference degenerates to the traditional expected utility without ambiguity aversion.",
+            "searchPhrases": [
+              "how benchmark economy without model uncertainty is represented",
+              "information available to the decision maker in game-theoretic foundation for lasso trading strategies",
+              "benchmark economy without model uncertainty information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We now shut down model uncertainty so that traders know the value of the scale parameter \\xi and their preference degenerates to the traditional expected utility without ambiguity aversion.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "v-tilde",
+                "meaning": "asset liquidation value · Laplace in the baseline",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\xi",
+                "meaning": "scale of the asset-value distribution · ambiguity set [xi-underbar,infinity]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N",
+                "meaning": "number of modeled strategic traders · positive integer",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "We now shut down model uncertainty so that traders know the value of the scale parameter ξ and their preference degenerates to the traditional expected utility without ambiguity aversion.",
+              "Uncertainty We now shut down model uncertainty so that traders know the value of the scale parameter ξ and their preference degenerates to the traditional expected utility without ambiguity aversion."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.2. Benchmark Economy Without Model Uncertainty",
+                "equation": "",
+                "quote": "We now shut down model uncertainty so that traders know the value of the scale parameter ξ and their pref­ erence degenerates to the traditional expected utility without ambiguity aversion."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Uncertainty as “model uncertainty”: “model uncertainty”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "robust-trading-with-trading-constraints",
+        "name": "Robust Trading with Trading Constraints",
+        "kind": "alternative",
+        "relation": "This is an alternative to Whence LASSO? A Rational Interpretation model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Suppose that traders face ambiguity set ξ ∈(0,∞) and trading constraints given by (20).",
+        "objects": [
+          "The population",
+          "Organization",
+          "Firms",
+          "Consumers"
+        ],
+        "inputs": [
+          "Exogenous demand"
+        ],
+        "decisions": [
+          "Approximation to the LASSO strategy"
+        ],
+        "assumptions": [
+          "In this section, we examine the performance of LASSO traders in our setting.",
+          "Traders face great model uncertainty by specifying the value of ξ to be close to zero"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The population",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading with Trading Constraints",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 65,
+                "quote": "Con­ sider the limit as the population of traders approaches infinity:",
+                "matchedText": "the population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Organization",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading with Trading Constraints",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 25,
+                "quote": "This finding parallels the standard textbook result in an industrial-organization context: Cournot competi­ tion reduces the total profit of firms in a product mar­ ket.",
+                "matchedText": "organization",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Firms",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading with Trading Constraints",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 25,
+                "quote": "This finding parallels the standard textbook result in an industrial-organization context: Cournot competi­ tion reduces the total profit of firms in a product mar­ ket.",
+                "matchedText": "firms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Consumers",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading with Trading Constraints",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 27,
+                "quote": "exogenous demand function from consumers in the product market.",
+                "matchedText": "consumers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Exogenous demand",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading with Trading Constraints",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 27,
+                "quote": "exogenous demand function from consumers in the product market.",
+                "matchedText": "exogenous demand",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Approximation to the LASSO strategy",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading with Trading Constraints",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "We can show that in this extended set­ ting, the equilibrium robust trading strategy with I order flows y1,i is a first-order approximation to the LASSO strategy",
+                "matchedText": "approximation to the LASSO strategy",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we examine the performance of LASSO traders in our setting.",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading with Trading Constraints",
+                "page": 9,
+                "quote": "In this section, we examine the performance of LASSO traders in our setting."
+              }
+            },
+            {
+              "value": "Traders face great model uncertainty by specifying the value of ξ to be close to zero",
+              "source": {
+                "type": "section",
+                "section": "Robust Trading with Trading Constraints",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "To illustrate the point most transparently, we assume that traders face great model uncertainty by specifying the value of ξ to be close to zero.",
+                "matchedText": "traders face great model uncertainty by specifying the value of ξ to be close to zero.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper solves a two-round price-impact trading game under benchmark and ambiguous priors, compares MSE and robust equilibrium strategies, imposes linear constraints to recover exact LASSO, and studies aggregate profit and distributional extensions.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 9,
+            "section": "4.4. Robust Trading with Trading Constraints",
+            "equation": "",
+            "quote": "Suppose that traders face ambiguity set ξ ∈(0,∞) and trad­ ing constraints given by (20)."
+          }
+        ],
+        "components": [
+          {
+            "id": "robust-trading-with-trading-constraints",
+            "label": "Robust Trading with Trading Constraints",
+            "role": "constraint",
+            "concepts": [
+              "distributional-ambiguity"
+            ],
+            "explanation": "Suppose that traders face ambiguity set ξ ∈(0,∞) and trading constraints given by (20).",
+            "searchPhrases": [
+              "how robust trading with trading constraints is represented",
+              "feasibility condition in game-theoretic foundation for lasso trading strategies",
+              "robust trading with trading constraints feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose that traders face ambiguity set ξ ∈(0,∞) and trading constraints given by (20).",
+              "we assume that traders face great model uncertainty by specifying the value of ξ to be close to zero.",
+              "To illustrate the point most transparently, we assume that traders face great model uncertainty by specifying the value of ξ to be close to zero."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.4. Robust Trading with Trading Constraints",
+                "equation": "",
+                "quote": "Suppose that traders face ambiguity set ξ ∈(0,∞) and trad­ ing constraints given by (20)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "distributional-ambiguity",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Distributional ambiguity as “ambiguity set”: “Suppose that traders face ambiguity set ξ ∈(0,∞) and trading constraints given by (20).”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "7c9e44cae57cba68e96f2a99b88b3cee0a3af9c9ca86ccd3f52358df92378563",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "a8c0bbf7c1354a0c0bb04fc19908e3fd9807504df9b7431b99d4f5149799b4a1",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-06127/a8c0bbf7c1354a0c0bb04fc19908e3fd9807504df9b7431b99d4f5149799b4a1.json",
+      "extractionQaDecisionSha256": "6f141ddfcf25b563529f0c26107cc8f9c5b901008404437463843e31a5f750a6",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

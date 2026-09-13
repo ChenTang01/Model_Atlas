@@ -1,0 +1,779 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mksc-2023-0002",
+  "sourcePdfSha256": "2f7b939fcd7c19e821abd319084471c5bb18a7c60ee3495f4648c89e1050abf0",
+  "extractionPagesSha256": "0a5b74ec0d3a24f9392d4c77a663875b4028f7b1988e6e1dda53b2887cbdea7d",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "df3f0ae0a0c5f51752fbfd3a91a531c2077ff5c491e0b26e4c4937a8e958b0b0",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "1553921bc9eb1930b65c8bf5c7a750249372df87789659e4711a858fee5bf36b",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2023-0002/1553921bc9eb1930b65c8bf5c7a750249372df87789659e4711a858fee5bf36b.json",
+  "extractionQaDecisionSha256": "bd014da03f6b68d0723f38d7cc205cbdafe6fe60f539d29fb4f0169442a40d79",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mksc-2023-0002",
+    "question": "How should a publisher set reserve prices in real-time display auctions when advertisers strategically adjust bids to satisfy campaign-level reach constraints?",
+    "overview": "A publisher first sets a reserve price for repeated second-price ad auctions. Advertisers then bid strategically over campaign horizons subject to minimum-impression constraints, and their stationary strategies and the distribution of competing bids form a fluid mean-field equilibrium.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        9,
+        16,
+        23
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Publisher reserve-price leadership in repeated second-price auctions with fluid mean-field bidding",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A publisher first sets a reserve price for repeated second-price ad auctions. Advertisers then bid strategically over campaign horizons subject to minimum-impression constraints, and their stationary strategies and the distribution of competing bids form a fluid mean-field equilibrium.",
+        "objects": [
+          "Many advertisers bidding for impressions over campaign horizons"
+        ],
+        "inputs": [
+          "The publisher knows the distribution of advertiser valuations but not each realized private value",
+          "An advertiser observes its own valuation and can infer the reserve price from repeated auction experience",
+          "Advertisers know the stationary distribution of the maximum competing bid rather than rivals' individual states",
+          "Advertiser conjectures about the competing-bid distribution are correct in fluid mean-field equilibrium"
+        ],
+        "decisions": [
+          "The publisher selects a reserve price",
+          "Each advertiser selects a valuation-contingent bid function",
+          "Advertisers participate across repeated second-price auctions during their campaigns",
+          "Auction mechanism",
+          "How much to bid b"
+        ],
+        "assumptions": [
+          "Each impression is sold by a sealed-bid second-price auction with a publisher reserve",
+          "Impressions and advertisers arrive according to Poisson processes in a continuous-time infinite-horizon environment",
+          "Advertiser values are symmetric independent private values conditional on observed auction characteristics",
+          "The market is large enough that one advertiser does not affect the stationary aggregate distribution of competing bids",
+          "The stochastic-fluid approximation requires the minimum impression constraint to hold ex ante in expectation"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Many advertisers bidding for impressions over campaign horizons",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "many advertisers bidding for impressions over campaign horizons"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The publisher knows the distribution of advertiser valuations but not each realized private value",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The publisher knows the distribution of advertiser valuations but not each realized private value."
+              }
+            },
+            {
+              "value": "An advertiser observes its own valuation and can infer the reserve price from repeated auction experience",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "An advertiser observes its own valuation and can infer the reserve price from repeated auction experience."
+              }
+            },
+            {
+              "value": "Advertisers know the stationary distribution of the maximum competing bid rather than rivals' individual states",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Advertisers know the stationary distribution of the maximum competing bid rather than rivals' individual states."
+              }
+            },
+            {
+              "value": "Advertiser conjectures about the competing-bid distribution are correct in fluid mean-field equilibrium",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Advertiser conjectures about the competing-bid distribution are correct in fluid mean-field equilibrium."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The publisher selects a reserve price",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the publisher selects a reserve price"
+              }
+            },
+            {
+              "value": "Each advertiser selects a valuation-contingent bid function",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each advertiser selects a valuation-contingent bid function"
+              }
+            },
+            {
+              "value": "Advertisers participate across repeated second-price auctions during their campaigns",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "advertisers participate across repeated second-price auctions during their campaigns"
+              }
+            },
+            {
+              "value": "Auction mechanism",
+              "source": {
+                "type": "section",
+                "section": "Model Overview",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 5,
+                "quote": "Hence, we consider a second-price auc­ tion mechanism",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How much to bid b",
+              "source": {
+                "type": "section",
+                "section": "Model Overview",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 12,
+                "quote": "Each advertiser decides how much to bid b",
+                "matchedText": "how much to bid b",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each impression is sold by a sealed-bid second-price auction with a publisher reserve",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Each impression is sold by a sealed-bid second-price auction with a publisher reserve."
+              }
+            },
+            {
+              "value": "Impressions and advertisers arrive according to Poisson processes in a continuous-time infinite-horizon environment",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Impressions and advertisers arrive according to Poisson processes in a continuous-time infinite-horizon environment."
+              }
+            },
+            {
+              "value": "Advertiser values are symmetric independent private values conditional on observed auction characteristics",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Advertiser values are symmetric independent private values conditional on observed auction characteristics."
+              }
+            },
+            {
+              "value": "The market is large enough that one advertiser does not affect the stationary aggregate distribution of competing bids",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The market is large enough that one advertiser does not affect the stationary aggregate distribution of competing bids."
+              }
+            },
+            {
+              "value": "The stochastic-fluid approximation requires the minimum impression constraint to hold ex ante in expectation",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The stochastic-fluid approximation requires the minimum impression constraint to hold ex ante in expectation."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The paper solves the advertiser’s ad buying problem, and then characterize the publisher’s reserve pricing problem using backward induction.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model Overview",
+          "page": 6,
+          "sentence": 15
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 6,
+            "section": "3.1. Model Overview",
+            "equation": "",
+            "quote": "The publisher knows the distri­ bution from which the advertiser’s valuation is drawn, but does not know the advertiser’s realized true value for each particular available impression."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The publisher knows the distribution of advertiser valuations but not each realized private value. An advertiser observes its own valuation and can infer the reserve price from repeated auction experience. Advertisers know the stationary distribution of the maximum competing bid rather than rivals' individual states. Advertiser conjectures about the competing-bid distribution are correct in fluid mean-field equilibrium.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in optimal reserve prices with campaign-constrained strategic advertisers",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The publisher knows the distribution of advertiser valuations but not each realized private value.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r",
+                "meaning": "publisher reserve price · nonnegative monetary value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_{\\theta}(\\boldsymbol\\mu, r)",
+                "meaning": "expected auction payment by an advertiser of type theta under bid-premium profile mu and reserve r · nonnegative expected payment",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu_{\\theta}",
+                "meaning": "bid premium, the dual multiplier on a type-theta advertiser's minimum-impression constraint · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{\\theta}, s_{\\theta}",
+                "meaning": "minimum impressions and campaign duration for advertiser type theta · positive campaign primitives",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D",
+                "meaning": "steady-state maximum of rival bids and the reserve bid · nonnegative random variable",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertiser values are symmetric independent private values conditional on observed auction characteristics.",
+              "The publisher knows the distribution from which the advertiser’s valuation is drawn, but does not know the advertiser’s realized true value for each particular available impression.",
+              "Each impression is sold by a sealed-bid second-price auction with a publisher reserve.",
+              "Impressions and advertisers arrive according to Poisson processes in a continuous-time infinite-horizon environment."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Model Overview",
+                "equation": "",
+                "quote": "The publisher knows the distri­ bution from which the advertiser’s valuation is drawn, but does not know the advertiser’s realized true value for each particular available impression."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The publisher knows the distribution from which the advertiser’s valuation is drawn, but does not know the advertiser’s”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The publisher moves first and chooses a reserve price. For repeated impression arrivals, advertisers observe their private values, the reserve, and a stationary distribution of the maximum competing bid and choose bids subject to minimum-impression and participation constraints. The induced bid distribution must be consistent with advertisers' conjectures, and the publisher anticipates that equilibrium response. A binding minimum-impression target makes an advertiser bid above value by a constant premium across auctions.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in optimal reserve prices with campaign-constrained strategic advertisers",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The publisher moves first and chooses a reserve price.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r",
+                "meaning": "publisher reserve price · nonnegative monetary value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_{\\theta}(\\boldsymbol\\mu, r)",
+                "meaning": "expected auction payment by an advertiser of type theta under bid-premium profile mu and reserve r · nonnegative expected payment",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I(\\boldsymbol\\mu, r)",
+                "meaning": "probability that an impression is not won in the ad exchange · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu_{\\theta}",
+                "meaning": "bid premium, the dual multiplier on a type-theta advertiser's minimum-impression constraint · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{\\theta}, s_{\\theta}",
+                "meaning": "minimum impressions and campaign duration for advertiser type theta · positive campaign primitives",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D",
+                "meaning": "steady-state maximum of rival bids and the reserve bid · nonnegative random variable",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertiser values are symmetric independent private values conditional on observed auction characteristics.",
+              "Each impression is sold by a sealed-bid second-price auction with a publisher reserve.",
+              "Impressions and advertisers arrive according to Poisson processes in a continuous-time infinite-horizon environment."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Equilibrium Concept",
+                "equation": "",
+                "quote": "Applying this equilibrium concept to display adver­ tising markets, an advertiser needs to form some belief about the distribution of competing bids when choosing an amount to bid."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Applying this equilibrium concept to display advertising markets, an advertiser needs to form some belief about the distribution”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "fluid-mean-field-equilibrium-of-repeated-display-ad-auctions",
+            "label": "Fluid mean-field equilibrium of repeated display-ad auctions",
+            "role": "interaction",
+            "concepts": [
+              "participation-constraint"
+            ],
+            "explanation": "The model's equilibrium concept is Fluid mean-field equilibrium of repeated display-ad auctions. Advertisers' stationary bidding strategies must generate the same steady-state maximum-bid distribution they use when optimizing. Proposition 1 derives value plus a constant bid premium, and Proposition 2 characterizes the resulting equilibrium when participation constraints do not bind; the publisher then optimizes its reserve against that profile and checks participation in the counterfactual.",
+            "searchPhrases": [
+              "how fluid mean-field equilibrium of repeated display-ad auctions is represented",
+              "strategic response in optimal reserve prices with campaign-constrained strategic advertisers",
+              "fluid mean-field equilibrium of repeated display-ad auctions strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Fluid mean-field equilibrium of repeated display-ad auctions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r",
+                "meaning": "publisher reserve price · nonnegative monetary value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_{\\theta}(\\boldsymbol\\mu, r)",
+                "meaning": "expected auction payment by an advertiser of type theta under bid-premium profile mu and reserve r · nonnegative expected payment",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu_{\\theta}",
+                "meaning": "bid premium, the dual multiplier on a type-theta advertiser's minimum-impression constraint · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D",
+                "meaning": "steady-state maximum of rival bids and the reserve bid · nonnegative random variable",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each impression is sold by a sealed-bid second-price auction with a publisher reserve.",
+              "Impressions and advertisers arrive according to Poisson processes in a continuous-time infinite-horizon environment.",
+              "The market is large enough that one advertiser does not affect the stationary aggregate distribution of competing bids."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.3. Advertiser Problem",
+                "equation": "",
+                "quote": "Below we characterize advertisers’ optimal bidding strategies, assuming that the participation constraints hold (do not bind) in equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "participation-constraint",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Participation constraint: “optimal bidding strategies, assuming that the Participation constraint s hold (do not bind) in equilibrium.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "pricing",
+              "auctions"
+            ],
+            "explanation": "The publisher chooses the reserve price to maximize the long-run expected revenue rate from advertiser payments plus the outside value of unsold impressions, subject to advertisers' equilibrium complementarity conditions for impression constraints.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in optimal reserve prices with campaign-constrained strategic advertisers",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_r\\;\\eta\\sum_{\\theta}\\lambda p_{\\theta}s_{\\theta}G_{\\theta}(\\boldsymbol\\mu,r)+\\eta cI(\\boldsymbol\\mu,r),\\quad \\text{s.t. }\\mu_{\\theta}\\ge0\\;\\perp\\; y_{\\theta}\\le\\eta s_{\\theta}\\mathbb E_{V,D}[\\mathbf 1\\{V+\\mu_{\\theta}\\ge D\\}],\\;\\forall\\theta\\in\\Theta.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "r",
+                "meaning": "publisher reserve price · nonnegative monetary value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_{\\theta}(\\boldsymbol\\mu, r)",
+                "meaning": "expected auction payment by an advertiser of type theta under bid-premium profile mu and reserve r · nonnegative expected payment",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I(\\boldsymbol\\mu, r)",
+                "meaning": "probability that an impression is not won in the ad exchange · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu_{\\theta}",
+                "meaning": "bid premium, the dual multiplier on a type-theta advertiser's minimum-impression constraint · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{\\theta}, s_{\\theta}",
+                "meaning": "minimum impressions and campaign duration for advertiser type theta · positive campaign primitives",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D",
+                "meaning": "steady-state maximum of rival bids and the reserve bid · nonnegative random variable",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertiser values are symmetric independent private values conditional on observed auction characteristics.",
+              "Each impression is sold by a sealed-bid second-price auction with a publisher reserve.",
+              "Impressions and advertisers arrive according to Poisson processes in a continuous-time infinite-horizon environment."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "Expected-profit objective",
+                "equation": "(3)",
+                "quote": "Publisher Problem The publisher’s objective is to maximize the long-run expected revenues from the auctions given advertiser valuations, and the publisher can maximize its reven­ ues by choosing the reserve price optimally."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              },
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Auctions: “the long-run expected revenues from the Auctions given advertiser valuations, and the publisher can maximize”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "estimation",
+            "concepts": [
+              "estimation",
+              "pricing"
+            ],
+            "explanation": "The authors use randomized reserve-price experiments to diagnose campaign constraints, estimate a structural fluid mean-field bidding model from payment data, solve the publisher's reserve-price problem with participation constraints, and validate recommended reserves in a separate experiment.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "estimation procedure in optimal reserve prices with campaign-constrained strategic advertisers",
+              "solution or estimation method estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The authors use randomized reserve-price experiments to diagnose campaign constraints, estimate a structural fluid mean-field bidding model from payment data, solve the publisher's reserve-price problem with participation constraints, and validate recommended reserves in a separate experiment.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r",
+                "meaning": "publisher reserve price · nonnegative monetary value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_{\\theta}(\\boldsymbol\\mu, r)",
+                "meaning": "expected auction payment by an advertiser of type theta under bid-premium profile mu and reserve r · nonnegative expected payment",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{\\theta}, s_{\\theta}",
+                "meaning": "minimum impressions and campaign duration for advertiser type theta · positive campaign primitives",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertisers have quasi-linear utility and must satisfy a nonnegative participation constraint.",
+              "We estimate these parameters by fitting the empirical distribution of arrival rates observed in the estimation sample and then treat the resulting estimates as plug-in inputs when recovering the advertiser valuation distribution and solving the publisher’s reserve pricing problem.",
+              "Each impression is sold by a sealed-bid second-price auction with a publisher reserve."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "5.3.3. Minimum Impression Level and Campaign",
+                "equation": "",
+                "quote": "We estimate these parameters by fitting the empirical distribution of arrival rates observed in the estimation sample and then treat the resulting estimates as plug-in inputs when recovering the advertiser valuation distribution and solving the pub­ lisher’s reserve pricing problem."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Model estimation as “estimation”: “of arrival rates observed in the estimation sample and then treat the resulting estimates as”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Pricing: “distribution and solving the publisher’s reserve Pricing problem.”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The publisher selects a reserve price each advertiser selects a valuation-contingent bid function advertisers participate across repeated second-price auctions during their campaigns",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in optimal reserve prices with campaign-constrained strategic advertisers",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The publisher selects a reserve price each advertiser selects a valuation-contingent bid function advertisers participate across repeated second-price auctions during their campaigns",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "r",
+                "meaning": "publisher reserve price · nonnegative monetary value",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_{\\theta}(\\boldsymbol\\mu, r)",
+                "meaning": "expected auction payment by an advertiser of type theta under bid-premium profile mu and reserve r · nonnegative expected payment",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu_{\\theta}",
+                "meaning": "bid premium, the dual multiplier on a type-theta advertiser's minimum-impression constraint · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "y_{\\theta}, s_{\\theta}",
+                "meaning": "minimum impressions and campaign duration for advertiser type theta · positive campaign primitives",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "D",
+                "meaning": "steady-state maximum of rival bids and the reserve bid · nonnegative random variable",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Advertiser values are symmetric independent private values conditional on observed auction characteristics.",
+              "Each impression is sold by a sealed-bid second-price auction with a publisher reserve.",
+              "Impressions and advertisers arrive according to Poisson processes in a continuous-time infinite-horizon environment."
+            ],
+            "sources": [
+              {
+                "page": 23,
+                "section": "14. The results from using bid CPMs ($) in lieu of bid CPM z-scores",
+                "equation": "",
+                "quote": "27 Although possible to further vary reserve prices across days, advertisers, and consumers, we do not because of the publisher’s concern for fairness across advertisers and its preference toward a simpler pricing scheme."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “and its preference toward a simpler Pricing scheme.”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "2f7b939fcd7c19e821abd319084471c5bb18a7c60ee3495f4648c89e1050abf0",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "1553921bc9eb1930b65c8bf5c7a750249372df87789659e4711a858fee5bf36b",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2023-0002/1553921bc9eb1930b65c8bf5c7a750249372df87789659e4711a858fee5bf36b.json",
+      "extractionQaDecisionSha256": "bd014da03f6b68d0723f38d7cc205cbdafe6fe60f539d29fb4f0169442a40d79",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

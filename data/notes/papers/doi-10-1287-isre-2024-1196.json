@@ -1,0 +1,1264 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-isre-2024-1196",
+  "sourcePdfSha256": "e09747068724b5fdd507bfec17372ade28a616a1cb0d4362afd594c3866cdf2d",
+  "extractionPagesSha256": "b1ad12c38de0ff61bfbcec306dcb930ddf6ff2a17d26b4e16e021e8d9ac4cbfc",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "7014b524aecad15be85f62fbdc33a9f614be383a16324c19913613384070cc47",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "c5af7653a73a04dc6c6804be75e6f697b99b3304a9f1759a15fc8548d33eff19",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2024-1196/c5af7653a73a04dc6c6804be75e6f697b99b3304a9f1759a15fc8548d33eff19.json",
+  "extractionQaDecisionSha256": "98d896ce8c9a45decc7b70771449d680bbd05b1bd9b949dbe9260812197439d2",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-isre-2024-1196",
+    "question": "Can a marketplace profitably extend member free-shipping benefits to purchases from outside sellers, and can doing so strengthen its core commission business even when the logistics service itself loses money?",
+    "overview": "The model has a marketplace choose a logistics fee, an external seller strategically accept or reject the extended free-shipping program, two differentiated sellers set prices simultaneously, and consumers choose sellers; the outcome is solved as a subgame-perfect equilibrium.",
+    "modelTypes": [
+      "Game theory",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        8,
+        11
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Marketplace logistics-fee design and seller competition under extended membership-based free shipping",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model has a marketplace choose a logistics fee, an external seller strategically accept or reject the extended free-shipping program, two differentiated sellers set prices simultaneously, and consumers choose sellers; the outcome is solved as a subgame-perfect equilibrium.",
+        "objects": [
+          "Marketplace R",
+          "Internal seller I",
+          "Member and nonmember shoppers plus dedicated consumers loyal to the external seller"
+        ],
+        "inputs": [
+          "The baseline is complete information: commission, shipping costs, member fraction, loyalty demand, and consumer distributions are common knowledge",
+          "The marketplace observes the external seller's participation",
+          "Consumers observe relevant prices and shipping charges and know their Hotelling locations or dedicated-segment demand",
+          "The marketplace anticipates seller pricing and consumer demand"
+        ],
+        "decisions": [
+          "The marketplace selects the external-seller logistics fee",
+          "The external seller joins or rejects the extended MFS program",
+          "The two sellers simultaneously choose product prices",
+          "Consumers choose the internal seller, external seller, or no purchase according to segment-specific delivered utility"
+        ],
+        "assumptions": [
+          "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site",
+          "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one",
+          "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c",
+          "The marketplace charges commission rate alpha on internal sales and logistics fee f on fulfilled external-member orders",
+          "The external seller also has linear dedicated-consumer demand gamma-lambda(p_E+s), and those dedicated consumers are nonmembers in the baseline"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Marketplace R",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "marketplace R, which operates MFS, charges the internal seller a commission, and sets a per-unit logistics fee for the external seller"
+              }
+            },
+            {
+              "value": "Internal seller I",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "internal seller I, which sells only through the marketplace"
+              }
+            },
+            {
+              "value": "Member and nonmember shoppers plus dedicated consumers loyal to the external seller",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "member and nonmember shoppers plus dedicated consumers loyal to the external seller"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The baseline is complete information: commission, shipping costs, member fraction, loyalty demand, and consumer distributions are common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The baseline is complete information: commission, shipping costs, member fraction, loyalty demand, and consumer distributions are common knowledge."
+              }
+            },
+            {
+              "value": "The marketplace observes the external seller's participation",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The marketplace observes the external seller's participation before prices are chosen."
+              }
+            },
+            {
+              "value": "Consumers observe relevant prices and shipping charges and know their Hotelling locations or dedicated-segment demand",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Consumers observe relevant prices and shipping charges and know their Hotelling locations or dedicated-segment demand."
+              }
+            },
+            {
+              "value": "The marketplace anticipates seller pricing and consumer demand",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The marketplace anticipates seller pricing and consumer demand when choosing f."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The marketplace selects the external-seller logistics fee",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the marketplace selects the external-seller logistics fee"
+              }
+            },
+            {
+              "value": "The external seller joins or rejects the extended MFS program",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the external seller joins or rejects the extended MFS program"
+              }
+            },
+            {
+              "value": "The two sellers simultaneously choose product prices",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the two sellers simultaneously choose product prices"
+              }
+            },
+            {
+              "value": "Consumers choose the internal seller, external seller, or no purchase according to segment-specific delivered utility",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "consumers choose the internal seller, external seller, or no purchase according to segment-specific delivered utility"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site."
+              }
+            },
+            {
+              "value": "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one."
+              }
+            },
+            {
+              "value": "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c."
+              }
+            },
+            {
+              "value": "The marketplace charges commission rate alpha on internal sales and logistics fee f on fulfilled external-member orders",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The marketplace charges commission rate alpha on internal sales and logistics fee f on fulfilled external-member orders."
+              }
+            },
+            {
+              "value": "The external seller also has linear dedicated-consumer demand gamma-lambda(p_E+s), and those dedicated consumers are nonmembers in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The external seller also has linear dedicated-consumer demand gamma-lambda(p_E+s), and those dedicated consumers are nonmembers in the baseline."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The authors solve a four-stage differentiated-seller marketplace game by backward induction, decompose the marketplace's profit change, compare all major stakeholder payoffs, and test endogenous membership, shipping-fee, dedicated-segment, and generalized-channel extensions.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "4.1. Traditional MFS Program (Benchmark)",
+            "equation": "",
+            "quote": "Model Setup Seller Buyer Price Shipping cost Who pays for shipping Seller pays to marketplace Traditional MFS program Internal seller Member shopper pb I c Marketplace αpb I Nonmember shopper s Buyer External seller Member shopper pb E s Buyer N/A Nonmember shopper Dedicated consumer Extended MFS program Internal seller Member shopper pe I c Marketplace αpe I Nonmember shopper s Buyer External seller Member shopper pe E c Marketplace f Nonmember shopper s Buyer N/A Dedicated consumer Note."
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "commission"
+            ],
+            "explanation": "The baseline is complete information: commission, shipping costs, member fraction, loyalty demand, and consumer distributions are common knowledge. The marketplace observes the external seller's participation before prices are chosen. Consumers observe relevant prices and shipping charges and know their Hotelling locations or dedicated-segment demand. The marketplace anticipates seller pricing and consumer demand when choosing f.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in extending marketplace membership free shipping to outside sellers",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The baseline is complete information: commission, shipping costs, member fraction, loyalty demand, and consumer distributions are common knowledge.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R, I, E",
+                "meaning": "marketplace, internal seller, and external seller · three strategic entities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "per-unit logistics fee charged to the participating external seller · nonnegative and bounded by participation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_I, p_E",
+                "meaning": "prices charged by internal and external sellers · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "marketplace sales-commission rate on internal seller revenue · fraction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "fraction of marketplace shoppers who are MFS members · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, c",
+                "meaning": "seller shipping cost passed to buyers and marketplace fulfillment cost · nonnegative under bounds",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one.",
+              "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site.",
+              "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Model",
+                "equation": "",
+                "quote": "The other seller, referred to as the external seller and denoted using E, sells his product exclusively through his own online store.2 Unlike the internal seller, the external seller does not pay any sales commission to the marketplace as he does not use the marketplace as a sales channel.3 The marketplace has a membership-based free shipping program in place (e.g., Amazon Prime and Walmart+)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "commission",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Commission fee as “commission”: “seller does not pay any sales commission to the marketplace as he does not use”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The marketplace selects the external-seller logistics fee the external seller joins or rejects the extended MFS program the two sellers simultaneously choose product prices consumers choose the internal seller, external seller, or no purchase according to segment-specific delivered utility",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in extending marketplace membership free shipping to outside sellers",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The marketplace selects the external-seller logistics fee the external seller joins or rejects the extended MFS program the two sellers simultaneously choose product prices consumers choose the internal seller, external seller, or no purchase according to segment-specific delivered utility",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R, I, E",
+                "meaning": "marketplace, internal seller, and external seller · three strategic entities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "per-unit logistics fee charged to the participating external seller · nonnegative and bounded by participation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_I, p_E",
+                "meaning": "prices charged by internal and external sellers · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "marketplace sales-commission rate on internal seller revenue · fraction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "fraction of marketplace shoppers who are MFS members · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, c",
+                "meaning": "seller shipping cost passed to buyers and marketplace fulfillment cost · nonnegative under bounds",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one.",
+              "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site.",
+              "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.1. Traditional MFS Program (Benchmark)",
+                "equation": "",
+                "quote": "Model Setup Seller Buyer Price Shipping cost Who pays for shipping Seller pays to marketplace Traditional MFS program Internal seller Member shopper pb I c Marketplace αpb I Nonmember shopper s Buyer External seller Member shopper pb E s Buyer N/A Nonmember shopper Dedicated consumer Extended MFS program Internal seller Member shopper pe I c Marketplace αpe I Nonmember shopper s Buyer External seller Member shopper pe E c Marketplace f Nonmember shopper s Buyer N/A Dedicated consumer Note."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Model Setup Seller Buyer Price Shipping cost Who pays for shipping Seller pays to marketplace Traditional MFS program”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "subgame-perfect-nash-equilibrium-of-fee-setting-participation-pr",
+            "label": "Subgame-perfect Nash equilibrium of fee setting, participation, pricing, and purchase",
+            "role": "interaction",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The model's equilibrium concept is Subgame-perfect Nash equilibrium of fee setting, participation, pricing, and purchase. The paper solves consumer choices, simultaneous seller prices, the external seller's participation constraint, and the marketplace's fee problem in reverse order. Lemmas 1-3 report the equilibrium prices, participation cutoff, and logistics fee under the two regimes.",
+            "searchPhrases": [
+              "how subgame-perfect nash equilibrium of fee setting, participation, pricing, and purchase is represented",
+              "strategic response in extending marketplace membership free shipping to outside sellers",
+              "subgame-perfect nash equilibrium of fee setting, participation, pricing, and purchase strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Subgame-perfect Nash equilibrium of fee setting, participation, pricing, and purchase.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R, I, E",
+                "meaning": "marketplace, internal seller, and external seller · three strategic entities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "per-unit logistics fee charged to the participating external seller · nonnegative and bounded by participation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_I, p_E",
+                "meaning": "prices charged by internal and external sellers · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "marketplace sales-commission rate on internal seller revenue · fraction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "fraction of marketplace shoppers who are MFS members · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, c",
+                "meaning": "seller shipping cost passed to buyers and marketplace fulfillment cost · nonnegative under bounds",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one.",
+              "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site.",
+              "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Traditional MFS Program (Benchmark)",
+                "equation": "",
+                "quote": "Moreover, we can demonstrate that an increase in the sellers’ shipping cost s leads to an increase in the equilibrium price of the internal seller but a decrease in that of the external seller."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Moreover, we can demonstrate that an increase in the sellers’ shipping cost s leads to an increase in”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "logistics"
+            ],
+            "explanation": "The marketplace chooses the logistics fee to maximize commission revenue net of internal-member shipping cost plus external logistics margin, subject to the external seller's participation constraint.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in extending marketplace membership free shipping to outside sellers",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\max_f\\pi_R^e=\\alpha p_I^e[\\theta D_{I,m}^e+(1-\\theta)D_{I,n}^e]-c\\theta D_{I,m}^e+(f-c)\\theta D_{E,m}^e,\\quad\\text{s.t. }f\\le\\bar f",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "R, I, E",
+                "meaning": "marketplace, internal seller, and external seller · three strategic entities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "per-unit logistics fee charged to the participating external seller · nonnegative and bounded by participation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_I, p_E",
+                "meaning": "prices charged by internal and external sellers · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "marketplace sales-commission rate on internal seller revenue · fraction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "fraction of marketplace shoppers who are MFS members · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, c",
+                "meaning": "seller shipping cost passed to buyers and marketplace fulfillment cost · nonnegative under bounds",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "unit Hotelling misfit cost · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma, \\lambda",
+                "meaning": "market potential and price sensitivity of the external seller's dedicated consumers · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b, e",
+                "meaning": "traditional benchmark and extended MFS scenarios · two regimes",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one.",
+              "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site.",
+              "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c.",
+              "Although one might think that the marketplace cannot set a per-unit logistics fee higher than the sellers’ shipping cost, Figure 1 reveals that, in region 3, the logistics fee exceeds this shipping cost, yet the external seller opts to join the program."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "Expected-profit objective",
+                "equation": "(1)",
+                "quote": "Although one might think that the marketplace cannot set a per-unit logistics fee higher than the sellers’ ship­ ping cost, Figure 1 reveals that, in region 3, the logistics fee exceeds this shipping cost, yet the external seller opts to join the program."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "logistics",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Logistics: “the marketplace cannot set a per-unit Logistics fee higher than the sellers’ shipping cost, Figure”.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "logistics",
+              "pricing"
+            ],
+            "explanation": "The authors solve a four-stage differentiated-seller marketplace game by backward induction, decompose the marketplace's profit change, compare all major stakeholder payoffs, and test endogenous membership, shipping-fee, dedicated-segment, and generalized-channel extensions.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in extending marketplace membership free shipping to outside sellers",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors solve a four-stage differentiated-seller marketplace game by backward induction, decompose the marketplace's profit change, compare all major stakeholder payoffs, and test endogenous membership, shipping-fee, dedicated-segment, and generalized-channel extensions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R, I, E",
+                "meaning": "marketplace, internal seller, and external seller · three strategic entities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "per-unit logistics fee charged to the participating external seller · nonnegative and bounded by participation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "marketplace sales-commission rate on internal seller revenue · fraction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "fraction of marketplace shoppers who are MFS members · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, c",
+                "meaning": "seller shipping cost passed to buyers and marketplace fulfillment cost · nonnegative under bounds",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "unit Hotelling misfit cost · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one.",
+              "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site.",
+              "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. Impact on the Marketplace",
+                "equation": "",
+                "quote": "Moreover, the logistics fee that the external seller pays to the marketplace for ful­ filling members’ orders at the external seller provides an additional incentive for the external seller to increase his price."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "logistics",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Logistics: “Logistics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "logistics",
+              "pricing",
+              "price-competition"
+            ],
+            "explanation": "Under extended MFS, stage 1: the marketplace sets logistics fee f. Stage 2: the external seller accepts or rejects participation. Stage 3: internal and external sellers simultaneously choose prices. Stage 4: shoppers and the external seller's dedicated consumers choose whether and where to buy and payoffs realize.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in extending marketplace membership free shipping to outside sellers",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: Under extended MFS, stage 1: the marketplace sets logistics fee f.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R, I, E",
+                "meaning": "marketplace, internal seller, and external seller · three strategic entities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "per-unit logistics fee charged to the participating external seller · nonnegative and bounded by participation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_I, p_E",
+                "meaning": "prices charged by internal and external sellers · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\alpha",
+                "meaning": "marketplace sales-commission rate on internal seller revenue · fraction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta",
+                "meaning": "fraction of marketplace shoppers who are MFS members · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, c",
+                "meaning": "seller shipping cost passed to buyers and marketplace fulfillment cost · nonnegative under bounds",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one.",
+              "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site.",
+              "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.1. Impact on the Marketplace",
+                "equation": "",
+                "quote": "Essentially, by reducing the purchase cost for members buying from the external seller for a logistics fee, the extended MFS program can relax the price com­ petition between the two sellers and shift the overall shopper demand (i.e., members shoppers’ demand plus nonmember shoppers’ demand) toward the market­ place, despite member shoppers diverting some of their demand to the external seller."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "logistics",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Logistics: “Logistics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              },
+              {
+                "conceptId": "price-competition",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Price competition: “extended MFS program can relax the Price competition between the two sellers and shift the overall”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "traditional-mfs-program-benchmark",
+        "name": "Traditional MFS Program (Benchmark)",
+        "kind": "alternative",
+        "relation": "This is an alternative to Marketplace logistics-fee design and seller competition under extended membership-based free shipping.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "The analysis first derives the subgame perfect equilibrium for the traditional MFS program followed by that for the extended MFS program assuming that the external seller chooses to participate. We can verify using Lemma 1 that the equilibrium prices in the traditional MFS program increase with the unit misfit cost t, which aligns with the standard result in Hotelling models of competition.",
+        "objects": [
+          "Seller",
+          "Buyer",
+          "Dedicated consumer"
+        ],
+        "inputs": [
+          "Cost t"
+        ],
+        "decisions": [
+          "The marketplace selects the external-seller logistics fee",
+          "The external seller joins or rejects the extended MFS program",
+          "The two sellers simultaneously choose product prices",
+          "Consumers choose the internal seller, external seller, or no purchase according to segment-specific delivered utility"
+        ],
+        "assumptions": [
+          "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site",
+          "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one",
+          "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c",
+          "The marketplace charges commission rate alpha on internal sales and logistics fee f on fulfilled external-member orders",
+          "The external seller also has linear dedicated-consumer demand gamma-lambda(p_E+s), and those dedicated consumers are nonmembers in the baseline"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Seller",
+              "source": {
+                "type": "section",
+                "section": "Equilibria Under the Traditional and Extended MFS Programs",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We first derive the subgame perfect equilibrium for the traditional MFS program followed by that for the extended MFS program assuming that the external seller chooses to participate.",
+                "matchedText": "seller",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Buyer",
+              "source": {
+                "type": "section",
+                "section": "Traditional MFS Program (Benchmark)",
+                "page": 6,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "Model Setup Seller Buyer Price Shipping cost Who pays for shipping Seller pays to marketplace Traditional MFS program Internal seller Member shopper pb I c Marketplace αpb I Nonmember shopper s Buyer External seller Member shopper pb E s Buyer N/A Nonmember shopper Dedicated consumer Extended MFS program Internal seller Member shopper pe I c Marketplace αpe I Nonmember shopper s Buyer External seller Member shopper pe E c Marketplace f Nonmember shopper s Buyer N/A Dedicated consumer Note.",
+                "matchedText": "Buyer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Dedicated consumer",
+              "source": {
+                "type": "section",
+                "section": "Traditional MFS Program (Benchmark)",
+                "page": 6,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "Model Setup Seller Buyer Price Shipping cost Who pays for shipping Seller pays to marketplace Traditional MFS program Internal seller Member shopper pb I c Marketplace αpb I Nonmember shopper s Buyer External seller Member shopper pb E s Buyer N/A Nonmember shopper Dedicated consumer Extended MFS program Internal seller Member shopper pe I c Marketplace αpe I Nonmember shopper s Buyer External seller Member shopper pe E c Marketplace f Nonmember shopper s Buyer N/A Dedicated consumer Note.",
+                "matchedText": "Dedicated consumer",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Cost t",
+              "source": {
+                "type": "section",
+                "section": "Traditional MFS Program (Benchmark)",
+                "page": 7,
+                "sectionIndex": 1,
+                "sentence": 12,
+                "quote": "We can verify using Lemma 1 that the equilibrium prices in the traditional MFS program increase with the unit misfit cost t, which aligns with the standard result in Hotelling models of competition.",
+                "matchedText": "cost t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The marketplace selects the external-seller logistics fee",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the marketplace selects the external-seller logistics fee"
+              }
+            },
+            {
+              "value": "The external seller joins or rejects the extended MFS program",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the external seller joins or rejects the extended MFS program"
+              }
+            },
+            {
+              "value": "The two sellers simultaneously choose product prices",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the two sellers simultaneously choose product prices"
+              }
+            },
+            {
+              "value": "Consumers choose the internal seller, external seller, or no purchase according to segment-specific delivered utility",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "consumers choose the internal seller, external seller, or no purchase according to segment-specific delivered utility"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site."
+              }
+            },
+            {
+              "value": "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A fixed fraction theta of marketplace shoppers are MFS members, and the shopper mass is normalized to one."
+              }
+            },
+            {
+              "value": "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Sellers pass their per-unit shipping cost s through to consumers without profit or loss, while marketplace fulfillment cost is c."
+              }
+            },
+            {
+              "value": "The marketplace charges commission rate alpha on internal sales and logistics fee f on fulfilled external-member orders",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The marketplace charges commission rate alpha on internal sales and logistics fee f on fulfilled external-member orders."
+              }
+            },
+            {
+              "value": "The external seller also has linear dedicated-consumer demand gamma-lambda(p_E+s), and those dedicated consumers are nonmembers in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The external seller also has linear dedicated-consumer demand gamma-lambda(p_E+s), and those dedicated consumers are nonmembers in the baseline."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper first derives the subgame perfect equilibrium for the traditional MFS program followed by that for the extended MFS program assuming that the external seller chooses to participate.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Equilibria Under the Traditional and Extended MFS Programs",
+          "page": 6,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "4. Equilibria Under the Traditional and Extended MFS Programs",
+            "equation": "",
+            "quote": "We first derive the subgame perfect equilibrium for the traditional MFS program followed by that for the extended MFS program assuming that the external seller chooses to participate."
+          }
+        ],
+        "components": [
+          {
+            "id": "equilibria-under-the-traditional-and-extended-mfs-programs",
+            "label": "Equilibria Under the Traditional and Extended MFS Programs",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The analysis first derives the subgame perfect equilibrium for the traditional MFS program followed by that for the extended MFS program assuming that the external seller chooses to participate.",
+            "searchPhrases": [
+              "how equilibria under the traditional and extended mfs programs is represented",
+              "strategic response in extending marketplace membership free shipping to outside sellers",
+              "equilibria under the traditional and extended mfs programs strategic response specification"
+            ],
+            "formal": "Strategic response: The analysis first derives the subgame perfect equilibrium for the traditional MFS program followed by that for the extended MFS program assuming that the external seller chooses to participate.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R, I, E",
+                "meaning": "marketplace, internal seller, and external seller · three strategic entities",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "f",
+                "meaning": "per-unit logistics fee charged to the participating external seller · nonnegative and bounded by participation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_I, p_E",
+                "meaning": "prices charged by internal and external sellers · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "unit Hotelling misfit cost · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\gamma, \\lambda",
+                "meaning": "market potential and price sensitivity of the external seller's dedicated consumers · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b, e",
+                "meaning": "traditional benchmark and extended MFS scenarios · two regimes",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Equilibria Under the Traditional and Extended MFS Programs",
+                "equation": "",
+                "quote": "We first derive the subgame perfect equilibrium for the traditional MFS program followed by that for the extended MFS program assuming that the external seller chooses to participate."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We first derive the subgame perfect equilibrium for the traditional MFS program followed by that for the extended”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "Two sellers offer imperfect substitutes at opposite endpoints of a Hotelling line; the internal seller uses only the marketplace and the external seller only its own site."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "traditional-mfs-program-benchmark",
+            "label": "Traditional MFS Program (Benchmark)",
+            "role": "interaction",
+            "concepts": [
+              "horizontal-differentiation",
+              "competition",
+              "pricing"
+            ],
+            "explanation": "We can verify using Lemma 1 that the equilibrium prices in the traditional MFS program increase with the unit misfit cost t, which aligns with the standard result in Hotelling models of competition.",
+            "searchPhrases": [
+              "how traditional mfs program (benchmark) is represented",
+              "strategic response in extending marketplace membership free shipping to outside sellers",
+              "traditional mfs program (benchmark) strategic response specification"
+            ],
+            "formal": "Strategic response: We can verify using Lemma 1 that the equilibrium prices in the traditional MFS program increase with the unit misfit cost t, which aligns with the standard result in Hotelling models of competition.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "f",
+                "meaning": "per-unit logistics fee charged to the participating external seller · nonnegative and bounded by participation",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s, c",
+                "meaning": "seller shipping cost passed to buyers and marketplace fulfillment cost · nonnegative under bounds",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "t",
+                "meaning": "unit Hotelling misfit cost · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b, e",
+                "meaning": "traditional benchmark and extended MFS scenarios · two regimes",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Following the same logic, we find that the internal seller’s competitive advantage becomes more pronounced as the proportion of member shoppers increases."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Traditional MFS Program (Benchmark)",
+                "equation": "",
+                "quote": "We can verify using Lemma 1 that the equilibrium prices in the traditional MFS program increase with the unit misfit cost t, which aligns with the standard result in Hotelling models of competition."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "horizontal-differentiation",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Horizontal differentiation as “Hotelling model”: “aligns with the standard result in Hotelling model s of competition.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "competition",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Competition: “standard result in Hotelling models of Competition .”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e09747068724b5fdd507bfec17372ade28a616a1cb0d4362afd594c3866cdf2d",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "c5af7653a73a04dc6c6804be75e6f697b99b3304a9f1759a15fc8548d33eff19",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2024-1196/c5af7653a73a04dc6c6804be75e6f697b99b3304a9f1759a15fc8548d33eff19.json",
+      "extractionQaDecisionSha256": "98d896ce8c9a45decc7b70771449d680bbd05b1bd9b949dbe9260812197439d2",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1243 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-0372",
+  "sourcePdfSha256": "bd9237b481a6e896afd37d67010bba2a1aa2b435c907abc270b10b3895bb142e",
+  "extractionPagesSha256": "804cbd9bdca9b79ddc00259f084cb4a3c96fc09af6923eec032fb39e13d09d88",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "4329b95c002e02bd43ae1f8e2b66f8dff5510a4b59e05655f41d7df15bf27b90",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "cb769a8712d19923dcf8dd8df2c31fd405252d7f24261682a13bf971c2fb5941",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0372/cb769a8712d19923dcf8dd8df2c31fd405252d7f24261682a13bf971c2fb5941.json",
+  "extractionQaDecisionSha256": "2a97027cdb479c99d0fcb9c8af7c2f00a8db7c48aab910535cf46e64c722c8fa",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-0372",
+    "question": "How does demand uncertainty affect efficient cloud server deployment?",
+    "overview": "Cloud computing is a multibillion-dollar business that draws substantial capital investments from large companies such as Amazon, Microsoft, and Google. Large cloud providers need to accommodate the growing demand for computing resources while avoiding unnecessary overprovisioning of hardware and operational costs. The underlying decision processes are challenging, as they involve long-term hardware and infrastructure investments under future demand uncertainty.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        7,
+        8,
+        9,
+        11
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "formulation",
+        "name": "Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Cloud computing is a multibillion-dollar business that draws substantial capital investments from large companies such as Amazon, Microsoft, and Google. Large cloud providers need to accommodate the growing demand for computing resources while avoiding unnecessary overprovisioning of hardware and operational costs. The underlying decision processes are challenging, as they involve long-term hardware and infrastructure investments under future demand uncertainty.",
+        "objects": [
+          "Providers",
+          "Server",
+          "Each supplier",
+          "User",
+          "Customers"
+        ],
+        "inputs": [
+          "The demand data",
+          "Unknown demand",
+          "The unit cost of shipping from supplier s to fulfill demand d",
+          "The corresponding vectors of these state variables",
+          "Available supply"
+        ],
+        "decisions": [
+          "How many new rows to build",
+          "Target region",
+          "Design a simple algorithm that accounts for the stochasticity",
+          "Find a good convex approximation of Q",
+          "Design an algorithm"
+        ],
+        "assumptions": [
+          "The set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T",
+          "Each supplier holds an inventory of a single cluster type",
+          "The extensive literature on stochastic programming has considered both risk-neutral and risk-averse settings, see, for example, Artzner et al. (1999) and Shapiro et al. (2021) and references therein"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Providers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Large cloud providers need to accommodate the growing demand for computing resources while avoiding unnecessary overprovisioning of hardware and operational costs.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "In this paper, we introduce the cloud server deployment problem.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each supplier",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 8,
+                "quote": "Initially, the state of the system is reflected in the currently available rows in each data center ℓ (denoted by ρℓ), the available inventory of each supplier s (denoted by σs), and the throughput in each set p of data centers (denoted by δp,t), which expresses the total number of demands the set p of data centers can deploy at time t.",
+                "matchedText": "each supplier",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "User",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 2,
+                "quote": "A Gartner, Inc. report from April 2021 (Gartner 2021) estimates that worldwide end-user spending on public cloud services reached around 400 billion U.S. dollars in 2022, up 47% from 2020.",
+                "matchedText": "user",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "Cloud customers may reserve cloud capacity ahead of time or rent it on demand, shifting the risks of demand volatility to the cloud providers.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The demand data",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "After carefully examining the demand data and on-the-ground deployment operations, we distill two structural properties on deployment throughput constraints and provide tightness results on a convex relaxation of the second stage.",
+                "matchedText": "the demand data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unknown demand",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 21,
+                "quote": "This implies that new rows would be built before the ideal dock dates of any unknown demand.",
+                "matchedText": "unknown demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unit cost of shipping from supplier s to fulfill demand d",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 50,
+                "quote": "Let hd,s denote the unit cost of shipping from supplier s to fulfill demand d.",
+                "matchedText": "the unit cost of shipping from supplier s to fulfill demand d",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The corresponding vectors of these state variables",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 11,
+                "quote": "Let ρ2, σ2, and δ2 denote the corresponding vectors of these state variables.",
+                "matchedText": "the corresponding vectors of these state variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Available supply",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 12,
+                "sectionIndex": 22,
+                "sentence": 36,
+                "quote": "In this set of experiments, we vary the degree of demand uncertainty and available supply to represent different real-world situations.",
+                "matchedText": "available supply",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "How many new rows to build",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "In the first stage, we make docking decisions for the deter­ ministic demands and decide how many new rows to build",
+                "matchedText": "how many new rows to build",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Target region",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 48,
+                "quote": "Ship­ ping incurs a fixed per-cluster shipping cost that depends on the locations of the supplier and the target region",
+                "matchedText": "target region",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design a simple algorithm that accounts for the stochasticity",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 12,
+                "sectionIndex": 14,
+                "sentence": 18,
+                "quote": "To allow for a more fair comparison with our algorithm, we design a simple algorithm that accounts for the stochasticity",
+                "matchedText": "design a simple algorithm that accounts for the stochasticity",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Find a good convex approximation of Q",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 7,
+                "sectionIndex": 21,
+                "sentence": 13,
+                "quote": "Our path forward is to find a good convex approximation of Q.",
+                "matchedText": "find a good convex approximation of Q",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Design an algorithm",
+              "source": {
+                "type": "section",
+                "section": "Algorithm",
+                "page": 9,
+                "sectionIndex": 10,
+                "sentence": 4,
+                "quote": "Replacing Q with ˜Q converts our problem into a mixed integer convex program (MICP), for which we design an algorithm",
+                "matchedText": "design an algorithm",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 7,
+                "quote": "Therefore, we assume the set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T.",
+                "matchedText": "the set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each supplier holds an inventory of a single cluster type",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 47,
+                "quote": "Without loss of generality, we assume that each supplier holds an inventory of a single cluster type.",
+                "matchedText": "each supplier holds an inventory of a single cluster type.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The extensive literature on stochastic programming has considered both risk-neutral and risk-averse settings, see, for example, Artzner et al. (1999) and Shapiro et al. (2021) and references therein",
+              "source": {
+                "type": "section",
+                "section": "Related Work",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 28,
+                "quote": "The extensive litera­ ture on stochastic programming has considered both risk-neutral and risk-averse settings, see, for example, Artzner et al. (1999) and Shapiro et al. (2021) and refer­ ences therein.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The first step is based on the Level method, hence termed LevelStep; the second step is based on Benders decomposition, hence termed BendersStep.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Hybrid Level-Benders Algorithm",
+          "page": 10,
+          "sentence": 16
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 11,
+            "section": "5.2. Risk Measures",
+            "equation": "",
+            "quote": "We now briefly describe the instantiation of our algo­ rithm to different risk measures; see Online Appendix EC.3.1 for more details and Shapiro et al. (2021) for a broader overview of risk measures and their applica­ tions in stochastic programming."
+          }
+        ],
+        "components": [
+          {
+            "id": "setting",
+            "label": "Setting",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "A demand can be deployed in any data center with sufficient capacity in its target region.",
+            "searchPhrases": [
+              "how setting is represented",
+              "decision rule in operations and supply chains",
+              "setting decision rule specification"
+            ],
+            "formal": "Decision rule: A demand can be deployed in any data center with sufficient capacity in its target region.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume the set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T.",
+              "At time t = 0, the provider is given a set D1 of deterministic demands that need to be satisfied at different times in the horizon and some demand distribution where additional demands are drawn from.",
+              "A demand that needs to be docked in the near future is typically known to the provider."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Setting",
+                "equation": "",
+                "quote": "A demand can be deployed in any data center with sufficient capacity in its target region."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “A demand can be deployed in any data center with sufficient capacity in its target region.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "formulation",
+            "label": "Formulation",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "In the second stage, we make docking decisions for the additional demands that arrive after t = 0.",
+            "searchPhrases": [
+              "how formulation is represented",
+              "system process in operations and supply chains",
+              "formulation system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In the second stage, we make docking decisions for the additional demands that arrive after t = 0.",
+              "For building new rows, each decision variable xl∈ Z+ indicates the number of new rows to build in data center l.",
+              "For assigning demands to clusters, each decision variable zd,l,t ∈{0,1} indicates whether demand d is docked in data center l on day t, and wd,s ∈{0,1} indicates whether demand d is fulfilled using supplier s."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Formulation",
+                "equation": "",
+                "quote": "In the second stage, we make docking decisions for the additional demands that arrive after t = 0."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “In the second stage, we make docking decisions for the additional demands that arrive after t = 0.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "structural-properties-and-hardness-results",
+            "label": "Structural Properties and Hardness Results",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "Toward this end, we use our domain knowledge to identify two structural properties (Section 4.1).",
+            "searchPhrases": [
+              "how structural properties and hardness results is represented",
+              "estimation procedure in operations and supply chains",
+              "structural properties and hardness results estimation procedure specification"
+            ],
+            "formal": "Estimation relation: Toward this end, we use our domain knowledge to identify two structural properties (Section 4.1).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "After carefully examining the demand data and on-the-ground deployment operations, we distill two structural properties on deployment throughput constraints and provide tightness results on a convex relaxation of the second stage."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4. Structural Properties and Hardness Results",
+                "equation": "",
+                "quote": "Toward this end, we use our domain knowledge to identify two structural properties (Section 4.1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “Toward this end, we use our domain knowledge to identify two structural properties (Section 4.1).”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The demand data",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 8,
+                    "quote": "After carefully examining the demand data and on-the-ground deployment operations, we distill two structural properties on deployment throughput constraints and provide tightness results on a convex relaxation of the second stage.",
+                    "matchedText": "the demand data",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "two-structural-properties",
+            "label": "Two Structural Properties",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "Each throughput constraint is associated with a pair (p, t), where p is a set of data centers and t denotes the day for the constraint.",
+            "searchPhrases": [
+              "how two structural properties is represented",
+              "feasibility condition in operations and supply chains",
+              "two structural properties feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: Each throughput constraint is associated with a pair (p, t), where p is a set of data centers and t denotes the day for the constraint.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "t",
+                "meaning": "day for the constraint"
+              },
+              {
+                "symbol": "p",
+                "meaning": "a set of data centers and t denotes the day for the constraint"
+              }
+            ],
+            "conditions": [
+              "For any d ∈D and any (p,t) ∈H, either L(d) ∩p = Ø or p ⊆L(d): An illustration of the first property on an example of five data centers is provided in Figure 3.",
+              "Before we provide theoretical analysis relating to these two properties, we briefly discuss their practical context."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Two Structural Properties",
+                "equation": "",
+                "quote": "Each throughput constraint is associated with a pair (p, t), where p is a set of data centers and t denotes the day for the constraint."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Each throughput constraint is associated with a pair (p, t), where p is a set of data centers”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "hardness-of-generalization",
+            "label": "Hardness of Generalization",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The stochastic optimization setting further aggravates the situation because we need to solve at least one instance of the second-stage problem for each outcome ξ.",
+            "searchPhrases": [
+              "how hardness of generalization is represented",
+              "solution algorithm in operations and supply chains",
+              "hardness of generalization solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "With only Property 2, the second-stage problem is both NP-hard and hard to approximate (i.e., there exists no efficient constant-factor approximation algorithm unless P = NP)."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.3. Hardness of Generalization",
+                "equation": "",
+                "quote": "The stochastic optimization setting further aggravates the situation because we need to solve at least one instance of the second-stage problem for each outcome ξ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “The stochastic Optimization setting further aggravates the situation because we need”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "algorithm",
+            "label": "Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The paper's algorithm is inspired by the analysis of the previous section, which establishes that, when two structural properties hold, the second-stage value function Q(·,ξ) coincides with its convex approximation ̃Q(·,ξ) on integers.",
+            "searchPhrases": [
+              "how algorithm is represented",
+              "solution algorithm in operations and supply chains",
+              "algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We also show that the algorithm obtains a feasible solution in more general settings and hence can be used as a heuristic even when the properties are not satisfied."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5. Algorithm",
+                "equation": "",
+                "quote": "Our algorithm is inspired by the analysis of the previous section, which establishes that, when two structural properties hold, the second-stage value function Q(·,ξ) coincides with its convex approximation ˜Q(·,ξ) on integers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Our algorithm is inspired by the analysis of the previous section, which establishes that, when two structural properties”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "hybrid-level-benders-algorithm",
+            "label": "Hybrid Level-Benders Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "X l∈L blxl+θ (21) s:t: Constraints (2)–(11): (22) Our algorithm is an iterative algorithm that starts with the MASTERIP and proceeds by generating cuts and adding them to the MASTERIP.",
+            "searchPhrases": [
+              "how hybrid level-benders algorithm is represented",
+              "solution algorithm in operations and supply chains",
+              "hybrid level-benders algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "X l∈L blxl+θ (21) s:t: Constraints (2)–(11): (22) Our algorithm is an iterative algorithm that starts with the MASTERIP and proceeds by generating cuts and adding them to the MASTERIP.",
+              "The cuts are additional constraints that reduce the size of the feasible solution set without excluding the optimal solution of the problem."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.1. Hybrid Level-Benders Algorithm",
+                "equation": "",
+                "quote": "X ℓ∈L bℓxℓ+θ (21) s:t: Constraints (2)–(11): (22) Our algorithm is an iterative algorithm that starts with the MASTERIP and proceeds by generating cuts and add­ ing them to the MASTERIP."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "risk-measures",
+            "label": "Risk Measures",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We now briefly describe the instantiation of our algorithm to different risk measures; see Online Appendix EC.3.1 for more details and Shapiro et al. (2021) for a broader overview of risk measures and their applications in stochastic programming.",
+            "searchPhrases": [
+              "how risk measures is represented",
+              "solution algorithm in operations and supply chains",
+              "risk measures solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We now briefly describe the instantiation of our algorithm to different risk measures; see Online Appendix EC.3.1 for more details and Shapiro et al. (2021) for a broader overview of risk measures and their applications in stochastic programming.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this set of experiments, we vary the degree of demand uncertainty and available supply to represent different real-world situations."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.2. Risk Measures",
+                "equation": "",
+                "quote": "We now briefly describe the instantiation of our algo­ rithm to different risk measures; see Online Appendix EC.3.1 for more details and Shapiro et al. (2021) for a broader overview of risk measures and their applica­ tions in stochastic programming."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Available supply",
+                  "source": {
+                    "type": "section",
+                    "section": "Setup",
+                    "page": 12,
+                    "sectionIndex": 22,
+                    "sentence": 36,
+                    "quote": "In this set of experiments, we vary the degree of demand uncertainty and available supply to represent different real-world situations.",
+                    "matchedText": "available supply",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tightness-of-lp-relaxation",
+        "name": "Tightness of LP Relaxation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Formulation.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "formulation"
+          }
+        ],
+        "summary": "For any C, any feasible solution of the LP relaxation of cost C can be mapped to a feasible flow of the same cost C.",
+        "objects": [
+          "Providers",
+          "Server",
+          "Each supplier",
+          "User",
+          "Customers"
+        ],
+        "inputs": [
+          "The demand data",
+          "Unknown demand",
+          "The unit cost of shipping from supplier s to fulfill demand d",
+          "The corresponding vectors of these state variables",
+          "Available supply"
+        ],
+        "decisions": [
+          "How many new rows to build",
+          "Target region",
+          "Design a simple algorithm that accounts for the stochasticity",
+          "Find a good convex approximation of Q",
+          "Design an algorithm"
+        ],
+        "assumptions": [
+          "The set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T",
+          "Each supplier holds an inventory of a single cluster type",
+          "The extensive literature on stochastic programming has considered both risk-neutral and risk-averse settings, see, for example, Artzner et al. (1999) and Shapiro et al. (2021) and references therein"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Providers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Large cloud providers need to accommodate the growing demand for computing resources while avoiding unnecessary overprovisioning of hardware and operational costs.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "In this paper, we introduce the cloud server deployment problem.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Each supplier",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 8,
+                "quote": "Initially, the state of the system is reflected in the currently available rows in each data center ℓ (denoted by ρℓ), the available inventory of each supplier s (denoted by σs), and the throughput in each set p of data centers (denoted by δp,t), which expresses the total number of demands the set p of data centers can deploy at time t.",
+                "matchedText": "each supplier",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "User",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 2,
+                "quote": "A Gartner, Inc. report from April 2021 (Gartner 2021) estimates that worldwide end-user spending on public cloud services reached around 400 billion U.S. dollars in 2022, up 47% from 2020.",
+                "matchedText": "user",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "Cloud customers may reserve cloud capacity ahead of time or rent it on demand, shifting the risks of demand volatility to the cloud providers.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The demand data",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "After carefully examining the demand data and on-the-ground deployment operations, we distill two structural properties on deployment throughput constraints and provide tightness results on a convex relaxation of the second stage.",
+                "matchedText": "the demand data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unknown demand",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 21,
+                "quote": "This implies that new rows would be built before the ideal dock dates of any unknown demand.",
+                "matchedText": "unknown demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The unit cost of shipping from supplier s to fulfill demand d",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 50,
+                "quote": "Let hd,s denote the unit cost of shipping from supplier s to fulfill demand d.",
+                "matchedText": "the unit cost of shipping from supplier s to fulfill demand d",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The corresponding vectors of these state variables",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 11,
+                "quote": "Let ρ2, σ2, and δ2 denote the corresponding vectors of these state variables.",
+                "matchedText": "the corresponding vectors of these state variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Available supply",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 12,
+                "sectionIndex": 22,
+                "sentence": 36,
+                "quote": "In this set of experiments, we vary the degree of demand uncertainty and available supply to represent different real-world situations.",
+                "matchedText": "available supply",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "How many new rows to build",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "In the first stage, we make docking decisions for the deter­ ministic demands and decide how many new rows to build",
+                "matchedText": "how many new rows to build",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Target region",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 48,
+                "quote": "Ship­ ping incurs a fixed per-cluster shipping cost that depends on the locations of the supplier and the target region",
+                "matchedText": "target region",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Design a simple algorithm that accounts for the stochasticity",
+              "source": {
+                "type": "section",
+                "section": "Setup",
+                "page": 12,
+                "sectionIndex": 14,
+                "sentence": 18,
+                "quote": "To allow for a more fair comparison with our algorithm, we design a simple algorithm that accounts for the stochasticity",
+                "matchedText": "design a simple algorithm that accounts for the stochasticity",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Find a good convex approximation of Q",
+              "source": {
+                "type": "section",
+                "section": "Formulation",
+                "page": 7,
+                "sectionIndex": 21,
+                "sentence": 13,
+                "quote": "Our path forward is to find a good convex approximation of Q.",
+                "matchedText": "find a good convex approximation of Q",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Design an algorithm",
+              "source": {
+                "type": "section",
+                "section": "Algorithm",
+                "page": 9,
+                "sectionIndex": 10,
+                "sentence": 4,
+                "quote": "Replacing Q with ˜Q converts our problem into a mixed integer convex program (MICP), for which we design an algorithm",
+                "matchedText": "design an algorithm",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 7,
+                "quote": "Therefore, we assume the set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T.",
+                "matchedText": "the set D2 of unknown demands have ideal dock dates not in the near future but rather after a known time T1 < T.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each supplier holds an inventory of a single cluster type",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 47,
+                "quote": "Without loss of generality, we assume that each supplier holds an inventory of a single cluster type.",
+                "matchedText": "each supplier holds an inventory of a single cluster type.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The extensive literature on stochastic programming has considered both risk-neutral and risk-averse settings, see, for example, Artzner et al. (1999) and Shapiro et al. (2021) and references therein",
+              "source": {
+                "type": "section",
+                "section": "Related Work",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 28,
+                "quote": "The extensive litera­ ture on stochastic programming has considered both risk-neutral and risk-averse settings, see, for example, Artzner et al. (1999) and Shapiro et al. (2021) and refer­ ences therein.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The overall formulation now becomes a mixed integer convex program, which is in general computationally easier and allows us to employ Benders decomposition (Benders 1962) for large-scale problems.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Tightness of LP Relaxation",
+          "page": 9,
+          "sentence": 40
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.2. Tightness of LP Relaxation",
+            "equation": "",
+            "quote": "For any C, any feasible solution of the LP relaxation of cost C can be mapped to a feasible flow of the same cost C."
+          }
+        ],
+        "components": [
+          {
+            "id": "tightness-of-lp-relaxation",
+            "label": "Tightness of LP Relaxation",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "For any C, any feasible solution of the LP relaxation of cost C can be mapped to a feasible flow of the same cost C.",
+            "searchPhrases": [
+              "how tightness of lp relaxation is represented",
+              "system process in operations and supply chains",
+              "tightness of lp relaxation system process specification"
+            ],
+            "formal": "Process relation: For any C, any feasible solution of the LP relaxation of cost C can be mapped to a feasible flow of the same cost C.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given weights c : E(G) →R, the minimum cost flow problem is to find a b-flow f that minimizes P e∈E(G) f(e)c(e) or decides that none exists.",
+              "For any C, any feasible solution of the LP relaxation of cost C can be mapped to a feasible flow of the same cost C.",
+              "Conversely, any feasible flow of cost C can be mapped to a feasible solution of the LP relaxation that has the same cost C."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.2. Tightness of LP Relaxation",
+                "equation": "",
+                "quote": "For any C, any feasible solution of the LP relaxation of cost C can be mapped to a feasible flow of the same cost C."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "bd9237b481a6e896afd37d67010bba2a1aa2b435c907abc270b10b3895bb142e",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "cb769a8712d19923dcf8dd8df2c31fd405252d7f24261682a13bf971c2fb5941",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0372/cb769a8712d19923dcf8dd8df2c31fd405252d7f24261682a13bf971c2fb5941.json",
+      "extractionQaDecisionSha256": "2a97027cdb479c99d0fcb9c8af7c2f00a8db7c48aab910535cf46e64c722c8fa",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1649 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mksc-2024-0930",
+  "sourcePdfSha256": "a9520186474c10b25389f466c93b8d0eb118d3c16f3ad979ee6d587665ceb27c",
+  "extractionPagesSha256": "b5fad45c26dea4761033c673984b49966f59a2ed09425811dcfc901d7e967be5",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "3c3036e71a6f878b0699ec51d89f2894c23d0afd1e44da45e052092fedf327a8",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "41b4dfaa4d5acf5e945a441a4b089e3b812be95e98849a1c60dc032a342259dd",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2024-0930/41b4dfaa4d5acf5e945a441a4b089e3b812be95e98849a1c60dc032a342259dd.json",
+  "extractionQaDecisionSha256": "20fd69359971bbe2f5c6abbe0fad92b8e2ebcf00f34d7c5cddf794852a0a99b9",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mksc-2024-0930",
+    "question": "How does competition change the precision-recall balance of targeting algorithms, especially when rival firms' consumer-level predictions are correlated?",
+    "overview": "Two firms observe correlated algorithmic conversion predictions and simultaneously choose whom to target. Strategic overlap makes the focal symmetric Nash equilibrium mixed and changes firms' precision-recall choices relative to monopoly.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Duopoly targeting game with correlated consumer-level conversion predictions",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Two firms observe correlated algorithmic conversion predictions and simultaneously choose whom to target. Strategic overlap makes the focal symmetric Nash equilibrium mixed and changes firms' precision-recall choices relative to monopoly.",
+        "objects": [
+          "Competing products",
+          "A market with up to two firms and a unit mass of consumers",
+          "The table",
+          "Firms",
+          "Consumers"
+        ],
+        "inputs": [
+          "Each firm's prediction p is a calibrated probability that the consumer is interested",
+          "The unconditional prediction distribution is identical across firms, but predictions coincide with probability rho and otherwise draw from type-consistent conditional distributions",
+          "Firms know model primitives and the joint prediction structure but do not observe true consumer interest",
+          "Targeting makes an interested consumer aware of the product; untargeted consumers do not purchase in the base model"
+        ],
+        "decisions": [
+          "In the data extension, each firm invests in private information",
+          "In the pricing extension, each firm chooses a price and a targeting policy",
+          "Each firm chooses a targeting probability q_i(p) for consumers assigned prediction p",
+          "Target the same consumer",
+          "Which consumers to target"
+        ],
+        "assumptions": [
+          "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]",
+          "The two firms have the same prediction distribution and a positive probability rho of identical predictions",
+          "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v",
+          "Firms can randomize targeting across consumers with the same prediction",
+          "The base model holds prices and targeting returns fixed; separate extensions add endogenous correlation, discrete prices, and asymmetric equilibria"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Competing products",
+              "source": {
+                "type": "section",
+                "section": "Basic Setup",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 16,
+                "quote": "Firms produce competing products and they reach consumers through targeted advertising.",
+                "matchedText": "competing products",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A market with up to two firms and a unit mass of consumers",
+              "source": {
+                "type": "section",
+                "section": "Basic Setup",
+                "sectionIndex": 3,
+                "page": 3,
+                "quote": "There is a market with up to two firms and a unit mass of consumers."
+              }
+            },
+            {
+              "value": "The table",
+              "source": {
+                "type": "section",
+                "section": "Pricing",
+                "page": 9,
+                "sectionIndex": 9,
+                "sentence": 7,
+                "quote": "As shown in the table, both firms charge a high price when ρ is low.",
+                "matchedText": "the table",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Firms",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 2,
+                "quote": "One of the general challenges in targeted marketing is reducing wastage: Firms must focus their marketing budget on con­ sumers who are most likely to be interested in their pro­ ducts, which requires them to make predictions of consumer types based on observable characteristics and behavior.",
+                "matchedText": "Firms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Consumers",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 2,
+                "quote": "One of the general challenges in targeted marketing is reducing wastage: Firms must focus their marketing budget on con­ sumers who are most likely to be interested in their pro­ ducts, which requires them to make predictions of consumer types based on observable characteristics and behavior.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each firm's prediction p is a calibrated probability that the consumer is interested",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each firm's prediction p is a calibrated probability that the consumer is interested."
+              }
+            },
+            {
+              "value": "The unconditional prediction distribution is identical across firms, but predictions coincide with probability rho and otherwise draw from type-consistent conditional distributions",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The unconditional prediction distribution is identical across firms, but predictions coincide with probability rho and otherwise draw from type-consistent conditional distributions."
+              }
+            },
+            {
+              "value": "Firms know model primitives and the joint prediction structure but do not observe true consumer interest",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Firms know model primitives and the joint prediction structure but do not observe true consumer interest when targeting."
+              }
+            },
+            {
+              "value": "Targeting makes an interested consumer aware of the product; untargeted consumers do not purchase in the base model",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Targeting makes an interested consumer aware of the product; untargeted consumers do not purchase in the base model."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "In the data extension, each firm invests in private information",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "in the data extension, each firm invests in private information to reduce prediction correlation"
+              }
+            },
+            {
+              "value": "In the pricing extension, each firm chooses a price and a targeting policy",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "in the pricing extension, each firm chooses a price and a targeting policy"
+              }
+            },
+            {
+              "value": "Each firm chooses a targeting probability q_i(p) for consumers assigned prediction p",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each firm chooses a targeting probability q_i(p) for consumers assigned prediction p"
+              }
+            },
+            {
+              "value": "Target the same consumer",
+              "source": {
+                "type": "section",
+                "section": "Basic Setup",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 18,
+                "quote": "If both firms target the same consumer",
+                "matchedText": "target the same consumer",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Which consumers to target",
+              "source": {
+                "type": "section",
+                "section": "Basic Setup",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 20,
+                "quote": "The firm decides which consumers to target",
+                "matchedText": "which consumers to target",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]."
+              }
+            },
+            {
+              "value": "The two firms have the same prediction distribution and a positive probability rho of identical predictions",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The two firms have the same prediction distribution and a positive probability rho of identical predictions."
+              }
+            },
+            {
+              "value": "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v."
+              }
+            },
+            {
+              "value": "Firms can randomize targeting across consumers with the same prediction",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Firms can randomize targeting across consumers with the same prediction."
+              }
+            },
+            {
+              "value": "The base model holds prices and targeting returns fixed; separate extensions add endogenous correlation, discrete prices, and asymmetric equilibria",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The base model holds prices and targeting returns fixed; separate extensions add endogenous correlation, discrete prices, and asymmetric equilibria."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The authors derive the monopoly targeting threshold, solve the competitive targeting game through a mixed-strategy indifference condition, compare equilibrium precision and recall, and then endogenize prediction correlation, add discrete pricing, and characterize asymmetric equilibria.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.2. Competitive Algorithmic Targeting",
+            "equation": "",
+            "quote": "Either the firm never targets any consumer for sure, or it targets a set of consumers with the highest prediction probabilities for sure, and the consumers with lower prediction probabilities partially."
+          }
+        ],
+        "components": [
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The authors derive the monopoly targeting threshold, solve the competitive targeting game through a mixed-strategy indifference condition, compare equilibrium precision and recall, and then endogenize prediction correlation, add discrete pricing, and characterize asymmetric equilibria.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in competitive algorithmic targeting under a precision-recall tradeoff",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors derive the monopoly targeting threshold, solve the competitive targeting game through a mixed-strategy indifference condition, compare equilibrium precision and recall, and then endogenize prediction correlation, add discrete pricing, and characterize asymmetric equilibria.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v, w, c",
+                "meaning": "payoff when targeting an interested consumer alone, payoff under overlap, and unit targeting cost · 0<=w<c<v",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v.",
+              "The two firms have the same prediction distribution and a positive probability rho of identical predictions.",
+              "Firms can randomize targeting across consumers with the same prediction."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Monopoly Benchmark",
+                "equation": "",
+                "quote": "Given the algo­ rithm, the precision increases while the recall decreases in the targeting threshold pm."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Given the algorithm, the precision increases while the recall decreases in the targeting threshold pm.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "unique-symmetric-mixed-strategy-targeting-equilibrium",
+            "label": "Unique symmetric mixed-strategy targeting equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Unique symmetric mixed-strategy targeting equilibrium. No symmetric pure-strategy equilibrium exists for positive correlation. Lemmas 1 and 2 characterize a threshold structure in which firms do not target low-p consumers, mix over an intermediate range, and may target high-p consumers for sure; the indifference condition pins down q(p).",
+            "searchPhrases": [
+              "how unique symmetric mixed-strategy targeting equilibrium is represented",
+              "strategic response in competitive algorithmic targeting under a precision-recall tradeoff",
+              "unique symmetric mixed-strategy targeting equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Unique symmetric mixed-strategy targeting equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v, w, c",
+                "meaning": "payoff when targeting an interested consumer alone, payoff under overlap, and unit targeting cost · 0<=w<c<v",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v.",
+              "The two firms have the same prediction distribution and a positive probability rho of identical predictions.",
+              "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Competitive Algorithmic Targeting",
+                "equation": "",
+                "quote": "We first note that there does not exist a symmetric pure strategy equilibrium for any positive ρ.7 We thus consider the symmetric mixed-strategy equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “We first note that there does not exist a symmetric pure strategy equilibrium for any positive ρ.7 We”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "Each firm chooses a targeting probability q_i(p) for consumers assigned prediction p in the data extension, each firm invests in private information to reduce prediction correlation in the pricing extension, each firm chooses a price and a targeting policy",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in competitive algorithmic targeting under a precision-recall tradeoff",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v, w, c",
+                "meaning": "payoff when targeting an interested consumer alone, payoff under overlap, and unit targeting cost · 0<=w<c<v",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v.",
+              "The two firms have the same prediction distribution and a positive probability rho of identical predictions.",
+              "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Competitive Algorithmic Targeting",
+                "equation": "",
+                "quote": "Either the firm never targets any consumer for sure, or it targets a set of consumers with the highest prediction probabilities for sure, and the consumers with lower prediction probabilities partially."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Forecasting as “prediction”: “set of consumers with the highest prediction probabilities for sure, and the consumers with lower”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "For a consumer with predicted interest probability p, a firm's expected net payoff from targeting equals the expected joint-target payoff plus the sole-target payoff minus the targeting cost; mixing requires this payoff to equal zero.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in competitive algorithmic targeting under a precision-recall tradeoff",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "[\\rho q(p)+(1-\\rho)R]pw+[1-\\rho q(p)-(1-\\rho)R]pv-c=0.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v, w, c",
+                "meaning": "payoff when targeting an interested consumer alone, payoff under overlap, and unit targeting cost · 0<=w<c<v",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The firm is indifferent between targeting or not and adopts a mixed strategy for p ∈(p,p): The firm’s expected profit for those consumers is zero, which is its payoff from not targeting.",
+              "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v.",
+              "The two firms have the same prediction distribution and a positive probability rho of identical predictions.",
+              "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "The firm is indifferent between targeting or not and adopts a mixed strategy for p ∈(p,p): The firm’s expected profit for those consu­ mers is zero, which is its payoff from not targeting."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “The firm is indifferent between targeting or not and adopts a mixed strategy for p ∈(p,p): The firm’s”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "For each consumer, firms receive possibly correlated predicted conversion probabilities from their algorithms and simultaneously choose whether to target, possibly mixing as a function of the prediction. Payoffs depend on true interest, targeting cost, and whether one or both firms target the consumer. Extensions let firms first invest in lowering correlation and jointly choose prices and targeting. Overlapping targeting lowers the return to reaching the same interested consumer and makes firms randomize.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in competitive algorithmic targeting under a precision-recall tradeoff",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: For each consumer, firms receive possibly correlated predicted conversion probabilities from their algorithms and simultaneously choose whether to target, possibly mixing as a function of the prediction.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v, w, c",
+                "meaning": "payoff when targeting an interested consumer alone, payoff under overlap, and unit targeting cost · 0<=w<c<v",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v.",
+              "The two firms have the same prediction distribution and a positive probability rho of identical predictions.",
+              "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Competitive Algorithmic Targeting",
+                "equation": "",
+                "quote": "Firms therefore strategically respond in equilibrium by con­ centrating their targeting efforts on consumers who are predicted by their algorithms to have a high likelihood of conversion, thereby leading to an increase in the pre­ cision of their targeting."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Firms therefore strategically respond in equilibrium by concentrating their targeting efforts on consumers who are predicted by their”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "signaling"
+            ],
+            "explanation": "Each firm's prediction p is a calibrated probability that the consumer is interested. The unconditional prediction distribution is identical across firms, but predictions coincide with probability rho and otherwise draw from type-consistent conditional distributions. Firms know model primitives and the joint prediction structure but do not observe true consumer interest when targeting. Targeting makes an interested consumer aware of the product; untargeted consumers do not purchase in the base model.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in competitive algorithmic targeting under a precision-recall tradeoff",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Each firm's prediction p is a calibrated probability that the consumer is interested.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v, w, c",
+                "meaning": "payoff when targeting an interested consumer alone, payoff under overlap, and unit targeting cost · 0<=w<c<v",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v.",
+              "The two firms have the same prediction distribution and a positive probability rho of identical predictions.",
+              "The difference between this paper and the traditional targeting contexts, such as Chen et al. (2001), is that firms face a distribution of probabilities instead of only having a separate signal at the level of a consumer segment and cannot further distinguish individual consumers within the segment.",
+              "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2.1. Comparative Statics with Regard to the Correla",
+                "equation": "",
+                "quote": "The difference between this paper and the traditional targeting contexts, such as Chen et al. (2001), is that firms face a distribution of probabilities instead of only having a separate signal at the level of a consumer segment and cannot further dis­ tinguish individual consumers within the segment."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Signaling: “The difference between this paper and the traditional targeting contexts, such as Chen et al. (2001), is that”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "monopoly-benchmark",
+        "name": "Monopoly Benchmark",
+        "kind": "alternative",
+        "relation": "This is an alternative to Duopoly targeting game with correlated consumer-level conversion predictions.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "R 1 p m pf(p)dp μ0 : (2) Both the precision and recall depend on the firm’s targeting policy pm and the informativeness of the algorithm, as characterized by the distribution of the predictions f(·).",
+        "objects": [
+          "The firm",
+          "Consumers"
+        ],
+        "inputs": [
+          "The profits and cost of targeting",
+          "Cost c"
+        ],
+        "decisions": [
+          "Target a larger set of consumers"
+        ],
+        "assumptions": [
+          "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]",
+          "The two firms have the same prediction distribution and a positive probability rho of identical predictions",
+          "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v",
+          "Firms can randomize targeting across consumers with the same prediction",
+          "The base model holds prices and targeting returns fixed; separate extensions add endogenous correlation, discrete prices, and asymmetric equilibria"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Monopoly Benchmark",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "the firm",
+                "matchedText": "the firm",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Consumers",
+              "source": {
+                "type": "section",
+                "section": "Monopoly Benchmark",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "For example, Shi et al. (2024) note that Alibaba targets consumers whose aggregated algorithmic scores, which combine both benefits and costs of targeting, are above a threshold.",
+                "matchedText": "consumers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The profits and cost of targeting",
+              "source": {
+                "type": "section",
+                "section": "Monopoly Benchmark",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "To what extent the firm’s optimal targeting policy prioritizes precision versus recall depends on the prof­ its and cost of targeting.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cost c",
+              "source": {
+                "type": "section",
+                "section": "Monopoly Benchmark",
+                "sectionIndex": 0,
+                "page": 4,
+                "quote": "At the thresh­ old pm, the marginal revenue of targeting pmv equals the targeting cost c, thus pm = c=v.",
+                "matchedText": "cost c",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Target a larger set of consumers",
+              "source": {
+                "type": "section",
+                "section": "Monopoly Benchmark",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "However, the firm sacrifices recall because it does not target a larger set of consu­ mers who are likely to be interested",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]."
+              }
+            },
+            {
+              "value": "The two firms have the same prediction distribution and a positive probability rho of identical predictions",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The two firms have the same prediction distribution and a positive probability rho of identical predictions."
+              }
+            },
+            {
+              "value": "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v."
+              }
+            },
+            {
+              "value": "Firms can randomize targeting across consumers with the same prediction",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Firms can randomize targeting across consumers with the same prediction."
+              }
+            },
+            {
+              "value": "The base model holds prices and targeting returns fixed; separate extensions add endogenous correlation, discrete prices, and asymmetric equilibria",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The base model holds prices and targeting returns fixed; separate extensions add endogenous correlation, discrete prices, and asymmetric equilibria."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The authors derive the monopoly targeting threshold, solve the competitive targeting game through a mixed-strategy indifference condition, compare equilibrium precision and recall, and then endogenize prediction correlation, add discrete pricing, and characterize asymmetric equilibria.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3.1. Monopoly Benchmark",
+            "equation": "",
+            "quote": "R 1 p m pf(p)dp µ0 : (2) Both the precision and recall depend on the firm’s targeting policy pm and the informativeness of the algorithm, as characterized by the distribution of the predictions f(·)."
+          }
+        ],
+        "components": [
+          {
+            "id": "monopoly-benchmark",
+            "label": "Monopoly Benchmark",
+            "role": "algorithm",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "R 1 p m pf(p)dp μ0 : (2) Both the precision and recall depend on the firm’s targeting policy pm and the informativeness of the algorithm, as characterized by the distribution of the predictions f(·).",
+            "searchPhrases": [
+              "how monopoly benchmark is represented",
+              "solution algorithm in competitive algorithmic targeting under a precision-recall tradeoff",
+              "monopoly benchmark solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v, w, c",
+                "meaning": "payoff when targeting an interested consumer alone, payoff under overlap, and unit targeting cost · 0<=w<c<v",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "At the threshold pm, the marginal revenue of targeting pmv equals the targeting cost c, thus pm = c=v.",
+              "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v.",
+              "The monopoly firm’s targeting strategy will be to choose a threshold policy pm ∈(0,1), such that it targets all consumers with p ≥pm: q(p) = 1p≥pm."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.1. Monopoly Benchmark",
+                "equation": "",
+                "quote": "R 1 p m pf(p)dp µ0 : (2) Both the precision and recall depend on the firm’s targeting policy pm and the informativeness of the algorithm, as characterized by the distribution of the predictions f(·)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Forecasting as “prediction”: “characterized by the distribution of the prediction s f(·).”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "endogenous-information-investment-extension",
+        "name": "Endogenous-information investment extension",
+        "kind": "extension",
+        "relation": "This extension builds on Duopoly targeting game with correlated consumer-level conversion predictions.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "For example, for a fixed size of the training sample and thus the probability distribution f, a firm may use more private data as opposed to publicly available data in order to differentiate their prediction models.",
+        "objects": [
+          "A firm",
+          "Firms",
+          "Providers",
+          "Organization",
+          "Consumer"
+        ],
+        "inputs": [
+          "Public data",
+          "Market data",
+          "The private data",
+          "Available data",
+          "Additional data"
+        ],
+        "decisions": [
+          "The targeting policy exactly"
+        ],
+        "assumptions": [
+          "The same accuracy to separate the effect of correlation"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A firm",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "sectionIndex": 0,
+                "page": 8,
+                "quote": "a firm",
+                "matchedText": "a firm",
+                "derivation": "literal-actor-control"
+              }
+            },
+            {
+              "value": "Firms",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We now examine the implications when firms are able to endogenously choose the correlations in their predic­ tions.",
+                "matchedText": "firms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Providers",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "When firms rely on public data (such as synthetic data) or common data analytics providers, their target­ ing predictions are likely to be more correlated.",
+                "matchedText": "providers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Organization",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "Con­ versely, a firm may also invest in internal analytics organization and in acquiring private consumer and market data, which may lead to a decrease in the pre­ diction correlations between the firms.",
+                "matchedText": "organization",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Consumer",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "Con­ versely, a firm may also invest in internal analytics organization and in acquiring private consumer and market data, which may lead to a decrease in the pre­ diction correlations between the firms.",
+                "matchedText": "consumer",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Public data",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "When firms rely on public data (such as synthetic data) or common data analytics providers, their target­ ing predictions are likely to be more correlated.",
+                "matchedText": "public data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Market data",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "Con­ versely, a firm may also invest in internal analytics organization and in acquiring private consumer and market data, which may lead to a decrease in the pre­ diction correlations between the firms.",
+                "matchedText": "market data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The private data",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 35,
+                "quote": "purchasing “public” demographic data from a broker, the contractual license can restrict how the firm can merge it with the private data, especially if it becomes personally identifiable.",
+                "matchedText": "the private data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Available data",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "For example, for a fixed size of the training sample and thus the proba­ bility distribution f, a firm may use more private data as opposed to publicly available data in order to differ­ entiate their prediction models.",
+                "matchedText": "available data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Additional data",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 32,
+                "quote": "It may also risk reidentifying individuals who may be subject to additional data protection rules.",
+                "matchedText": "additional data",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The targeting policy exactly",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 37,
+                "quote": "In the second period, both firms simultaneously choose the targeting policy exactly as in the main model",
+                "matchedText": "the targeting policy exactly",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The same accuracy to separate the effect of correlation",
+              "source": {
+                "type": "section",
+                "section": "Endogenous Prediction Correlations",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 67,
+                "quote": "In our analysis, we assume the same accu­ racy to separate the effect of correlation.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper proves that the benefit of investing a little bit is roughly linear in the investment cost, which outweighs the investment cost.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Endogenous Prediction Correlations",
+          "page": 9,
+          "sentence": 56
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.1. Endogenous Prediction Correlations",
+            "equation": "",
+            "quote": "For example, for a fixed size of the training sample and thus the proba­ bility distribution f, a firm may use more private data as opposed to publicly available data in order to differ­ entiate their prediction models."
+          }
+        ],
+        "components": [
+          {
+            "id": "endogenous-prediction-correlations",
+            "label": "Endogenous Prediction Correlations",
+            "role": "algorithm",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "For example, for a fixed size of the training sample and thus the probability distribution f, a firm may use more private data as opposed to publicly available data in order to differentiate their prediction models.",
+            "searchPhrases": [
+              "how endogenous prediction correlations is represented",
+              "solution algorithm in competitive algorithmic targeting under a precision-recall tradeoff",
+              "endogenous prediction correlations solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: For example, for a fixed size of the training sample and thus the probability distribution f, a firm may use more private data as opposed to publicly available data in order to differentiate their prediction models.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When firms rely on public data (such as synthetic data) or common data analytics providers, their targeting predictions are likely to be more correlated.",
+              "For example, for a fixed size of the training sample and thus the probability distribution f, a firm may use more private data as opposed to publicly available data in order to differentiate their prediction models.",
+              "Conversely, a firm may also invest in internal analytics organization and in acquiring private consumer and market data, which may lead to a decrease in the prediction correlations between the firms."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. Endogenous Prediction Correlations",
+                "equation": "",
+                "quote": "For example, for a fixed size of the training sample and thus the proba­ bility distribution f, a firm may use more private data as opposed to publicly available data in order to differ­ entiate their prediction models."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Forecasting as “prediction”: “data in order to differentiate their prediction models.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  3
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "joint-price-targeting-extension",
+        "name": "Joint price-targeting extension",
+        "kind": "extension",
+        "relation": "This extension builds on Duopoly targeting game with correlated consumer-level conversion predictions.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "In the main analysis that follows, we derive the implications of the symmetric equilibrium. We first note that there does not exist a symmetric pure strategy equilibrium for any positive ρ.7 We thus consider the symmetric mixed-strategy equilibrium. Suppose each firm targets probability p consumers with probability q(p).",
+        "objects": [
+          "The competing firms",
+          "Consumers",
+          "The firm"
+        ],
+        "inputs": [
+          "Ρ, we use the notation p(ρ), a(ρ), and R(ρ)"
+        ],
+        "decisions": [
+          "Target for strictly positive probability"
+        ],
+        "assumptions": [
+          "In this section, we consider the case of the competing firms choosing their targeting policies qi(p) simultaneously.",
+          "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]",
+          "The two firms have the same prediction distribution and a positive probability rho of identical predictions",
+          "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v",
+          "Firms can randomize targeting across consumers with the same prediction"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The competing firms",
+              "source": {
+                "type": "section",
+                "section": "Competitive Algorithmic Targeting",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "the competing firms",
+                "matchedText": "the competing firms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Consumers",
+              "source": {
+                "type": "section",
+                "section": "Competitive Algorithmic Targeting",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "Sup­ pose each firm targets probability p consumers with probability q(p).",
+                "matchedText": "consumers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Competitive Algorithmic Targeting",
+                "sectionIndex": 0,
+                "page": 6,
+                "quote": "The firm targets some consumers with a posi­ tive probability in equilibrium."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Ρ, we use the notation p(ρ), a(ρ), and R(ρ)",
+              "source": {
+                "type": "section",
+                "section": "Competitive Algorithmic Targeting",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 26,
+                "quote": "To emphasize that p, a, and R depend on ρ, we use the notation p(ρ), a(ρ), and R(ρ) when necessary to avoid confusion.",
+                "matchedText": "ρ, we use the notation p(ρ), a(ρ), and R(ρ) when necessary to avoid confusion",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Target for strictly positive probability",
+              "source": {
+                "type": "section",
+                "section": "Competitive Algorithmic Targeting",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "target for strictly positive probability",
+                "matchedText": "target for strictly positive probability",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In this section, we consider the case of the competing firms choosing their targeting policies qi(p) simultaneously.",
+              "source": {
+                "type": "section",
+                "section": "Competitive Algorithmic Targeting",
+                "page": 5,
+                "quote": "In this section, we consider the case of the competing firms choosing their targeting policies qi(p) simulta­ neously."
+              }
+            },
+            {
+              "value": "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Consumers are binary types: interested or uninterested, with calibrated predicted probabilities distributed continuously on [0,1]."
+              }
+            },
+            {
+              "value": "The two firms have the same prediction distribution and a positive probability rho of identical predictions",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The two firms have the same prediction distribution and a positive probability rho of identical predictions."
+              }
+            },
+            {
+              "value": "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "A firm earns v when it alone targets an interested consumer, w when both firms do, and pays targeting cost c, with 0<=w<c<v."
+              }
+            },
+            {
+              "value": "Firms can randomize targeting across consumers with the same prediction",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Firms can randomize targeting across consumers with the same prediction."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "In the main analysis that follows, we derive the implications of the symmetric equilibrium.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Competitive Algorithmic Targeting",
+          "page": 5,
+          "sentence": 2
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.2. Competitive Algorithmic Targeting",
+            "equation": "",
+            "quote": "In this section, we consider the case of the competing firms choosing their targeting policies qi(p) simulta­ neously."
+          }
+        ],
+        "components": [
+          {
+            "id": "competitive-algorithmic-targeting",
+            "label": "Competitive Algorithmic Targeting",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "In this section, we consider the case of the competing firms choosing their targeting policies qi(p) simultaneously.",
+            "searchPhrases": [
+              "how competitive algorithmic targeting is represented",
+              "decision rule in competitive algorithmic targeting under a precision-recall tradeoff",
+              "competitive algorithmic targeting decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "a firm's calibrated predicted probability that a consumer is interested · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q(p)",
+                "meaning": "symmetric probability of targeting a consumer with prediction p · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R",
+                "meaning": "recall of the symmetric targeting policy · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "probability that the firms' predictions for a consumer coincide exactly · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "v, w, c",
+                "meaning": "payoff when targeting an interested consumer alone, payoff under overlap, and unit targeting cost · 0<=w<c<v",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In this section, we consider the case of the competing firms choosing their targeting policies qi(p) simultaneously.",
+              "Suppose each firm targets probability p consumers with probability q(p).",
+              "Let p = inf{p : q(p) > 0}, that is, the lowest probability consumer that firms target for strictly positive probability."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Competitive Algorithmic Targeting",
+                "equation": "",
+                "quote": "In this section, we consider the case of the competing firms choosing their targeting policies qi(p) simulta­ neously."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “In this section, we consider the case of the competing firms choosing their targeting policies qi(p) simultaneously.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "a9520186474c10b25389f466c93b8d0eb118d3c16f3ad979ee6d587665ceb27c",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "41b4dfaa4d5acf5e945a441a4b089e3b812be95e98849a1c60dc032a342259dd",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2024-0930/41b4dfaa4d5acf5e945a441a4b089e3b812be95e98849a1c60dc032a342259dd.json",
+      "extractionQaDecisionSha256": "20fd69359971bbe2f5c6abbe0fad92b8e2ebcf00f34d7c5cddf794852a0a99b9",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

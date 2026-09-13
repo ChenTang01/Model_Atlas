@@ -1,0 +1,1091 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-1190",
+  "sourcePdfSha256": "ad44c7f6869f70aed3a0bdfeabeb2b173bc713cad74164a64ed0326e007cea33",
+  "extractionPagesSha256": "2ce8ea3b4e5802eb1e8de9d3ecc1a674a2ee53cd3111410531aee88a89ebb875",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "937359e287d448a8f2df1efe4eb69cab6b3df596e91e3a6763610fc99971e061",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "81de6700c6a58160d8975cf6932c2e7dcfafaf2d0196ecac7c8faeb50639337d",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1190/81de6700c6a58160d8975cf6932c2e7dcfafaf2d0196ecac7c8faeb50639337d.json",
+  "extractionQaDecisionSha256": "64ac2efaabdce7dbed005b6c9c9fa8536e6fae4c2b2021d2e8b8471e75073a5c",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-1190",
+    "question": "What determines easy-to-implement policies that perform well relative to reasonable benchmarks?",
+    "overview": "This paper studies scheduling multi-class impatient customers in parallel server queueing systems. At the time of arrival, customers are identified as being one of many classes, and the class represents the service and patience time distributions as well as cost characteristics. From the system’s perspective, customers of the same class at time of arrival get differentiated on their residual patience time as they wait in queue.",
+    "modelTypes": [
+      "Queueing",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "fluid-model",
+        "name": "Fluid Model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This paper studies scheduling multi-class impatient customers in parallel server queueing systems. At the time of arrival, customers are identified as being one of many classes, and the class represents the service and patience time distributions as well as cost characteristics. From the system’s perspective, customers of the same class at time of arrival get differentiated on their residual patience time as they wait in queue.",
+        "objects": [
+          "Customers",
+          "Server",
+          "Managers",
+          "The random variable",
+          "Agents"
+        ],
+        "inputs": [
+          "Mean service time",
+          "The cost experienced by a class i customer",
+          "Service time x",
+          "Time y",
+          "Unit time"
+        ],
+        "decisions": [
+          "How to allocate servers within a class in the fluid model",
+          "(FCFS) policy is suboptimal",
+          "A multi-class time-in-queue policy that prioritizes both across customer classes and within each class",
+          "Capacity to a class",
+          "Find a scheduling policy"
+        ],
+        "assumptions": [
+          "We formulate our fluid optimization problem in two stages: the first stage focuses on allocating capacity across classes and, then, the second stage optimizes the capacity allocated to each subclass within a class following the first stage allocation.",
+          "Customers of each class have independent and identically distributed (i.i.d.) service times with the cumulative distribution function denoted by Gi(·) and mean service time denoted by 1=μi"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We study scheduling multi-class impatient customers in parallel server queueing systems.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We study scheduling multi-class impatient customers in parallel server queueing systems.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Managers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 13,
+                "quote": "Managerial implications: Our work provides managers ways of improving quality of service to manage parallel server queueing systems.",
+                "matchedText": "managers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The random variable",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 11,
+                "quote": "the random variable",
+                "matchedText": "the random variable",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agents",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 1,
+                "quote": "We consider a multi-class parallel queueing system, in which m classes of customers are processed by a single pool of N agents, each processing work deterministi­ cally at a unit rate.",
+                "matchedText": "agents",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Mean service time",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 3,
+                "quote": "mean service time",
+                "matchedText": "mean service time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The cost experienced by a class i customer",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 9,
+                "quote": "Specifically, let ξi(x, y,w) denote the cost experienced by a class i customer who has service time x, patience time y, and offered waited w (which is the amount of time the customer would wait before entering service if the customer were infinitely patient).",
+                "matchedText": "the cost experienced by a class i customer who has service time x, patience time y, and offered waited w (which is the amount of time the customer would wait before entering service if the customer were infinitely patient)",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service time x",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 9,
+                "quote": "Specifically, let ξi(x, y,w) denote the cost experienced by a class i customer who has service time x, patience time y, and offered waited w (which is the amount of time the customer would wait before entering service if the customer were infinitely patient).",
+                "matchedText": "service time x",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time y",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 9,
+                "quote": "Specifically, let ξi(x, y,w) denote the cost experienced by a class i customer who has service time x, patience time y, and offered waited w (which is the amount of time the customer would wait before entering service if the customer were infinitely patient).",
+                "matchedText": "time y",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Unit time",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 15,
+                "quote": "unit time",
+                "matchedText": "unit time",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "How to allocate servers within a class in the fluid model",
+              "source": {
+                "type": "section",
+                "section": "Fluid Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "Bassamboo and Randhawa (2015) show that the decision of how to allocate servers within a class in the fluid model can be solved by splitting the class into at most two subclasses and processing each subclass under FCFS.",
+                "matchedText": "how to allocate servers within a class in the fluid model",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "(FCFS) policy is suboptimal",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "In these contexts, even for customers of the same class, processing them under the first-come, first-served (FCFS) policy is suboptimal.",
+                "matchedText": "(FCFS) policy is suboptimal",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A multi-class time-in-queue policy that prioritizes both across customer classes and within each class",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 11,
+                "quote": "Results: We propose a multi-class time-in-queue policy that prioritizes both across customer classes and within each class using a simple rule and further show that most of the gains of such a policy can be achieved by deviating from within-class FCFS for at most one customer class.",
+                "matchedText": "a multi-class time-in-queue policy that prioritizes both across customer classes and within each class",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Capacity to a class",
+              "source": {
+                "type": "section",
+                "section": "Optimizing the Fluid Model",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 3,
+                "quote": "To this end, we introduce an index that measures the marginal value of allocating capacity to a class",
+                "matchedText": "capacity to a class",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Find a scheduling policy",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 8,
+                "quote": "The system manager’s goal is to find a scheduling pol­ icy that routes idle agents to customers in order to mini­ mize the long-run average costs.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We formulate our fluid optimization problem in two stages: the first stage focuses on allocating capacity across classes and, then, the second stage optimizes the capacity allocated to each subclass within a class following the first stage allocation.",
+              "source": {
+                "type": "section",
+                "section": "Fluid Model",
+                "page": 5,
+                "quote": "We formulate our fluid optimization problem in two stages: the first stage focuses on allocating capacity across classes and, then, the second stage optimizes the capacity allocated to each subclass within a class follow­ ing the first stage allocation."
+              }
+            },
+            {
+              "value": "Customers of each class have independent and identically distributed (i.i.d.) service times with the cumulative distribution function denoted by Gi(·) and mean service time denoted by 1=μi",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 3,
+                "quote": "Customers of each class have independent and identically distributed (i.i.d.) ser­ vice times with the cumulative distribution function denoted by Gi(·) and mean service time denoted by 1=µi.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_assumptions_completed_from_source",
+            "message": "Filled assumptions from literal abstract or source-section phrases.",
+            "category": "assumptions",
+            "count": 1
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper formulates our fluid optimization problem in two stages: the first stage focuses on allocating capacity across classes and, then, the second stage optimizes the capacity allocated to each subclass within a class following the first stage allocation.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Fluid Model",
+          "page": 5,
+          "sentence": 13
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "2.1. Queueing System",
+            "equation": "",
+            "quote": "Each customer is associated with a patience time and abandons the system if service does not start within this time upon the customer’s arrival."
+          }
+        ],
+        "components": [
+          {
+            "id": "queueing-system",
+            "label": "Queueing System",
+            "role": "process",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "Each customer is associated with a patience time and abandons the system if service does not start within this time upon the customer’s arrival.",
+            "searchPhrases": [
+              "how queueing system is represented",
+              "system process in operations and supply chains",
+              "queueing system system process specification"
+            ],
+            "formal": "Process relation: Each customer is associated with a patience time and abandons the system if service does not start within this time upon the customer’s arrival.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Customers of each class have independent and identically distributed (i.i.d.) service times with the cumulative distribution function denoted by Gi(·) and mean service time denoted by 1=μi.",
+              "We denote the cumulative distribution function of class i customers’ patience times by Fi(·), the probability density function by fi(·), and the reciprocal of the mean patience time by γi."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.1. Queueing System",
+                "equation": "",
+                "quote": "Each customer is associated with a patience time and abandons the system if service does not start within this time upon the customer’s arrival."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing as “queueing system”: “Each customer is associated with a patience time and abandons the system if service does not start within”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "fluid-model",
+            "label": "Fluid Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "In the fluid model, customers arrive to the system in the form of a fluid both deterministically and continuously at the corresponding arrival rate.",
+            "searchPhrases": [
+              "how fluid model is represented",
+              "system process in operations and supply chains",
+              "fluid model system process specification"
+            ],
+            "formal": "Process relation: In the fluid model, customers arrive to the system in the form of a fluid both deterministically and continuously at the corresponding arrival rate.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We formulate our fluid optimization problem in two stages: the first stage focuses on allocating capacity across classes and, then, the second stage optimizes the capacity allocated to each subclass within a class following the first stage allocation.",
+              "Because the mean service time of a class i customer is 1=μi, it follows that, in the fluid model, customers of subclass j can be processed deterministically at rate ni,jμi.",
+              "Further, the capacity is considered in a fluid manner too and can be allocated fractionally to different classes."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.2. Fluid Model",
+                "equation": "",
+                "quote": "In the fluid model, customers arrive to the system in the form of a fluid both deterministically and continu­ ously at the corresponding arrival rate."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "single-class-analysis",
+            "label": "Single-Class Analysis",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Also note that, in our formulation, the LCFS policy can be represented by an offered wait vector (0,∞); that is, one subclass has zero offered wait and is served immediately, whereas the other subclass is never served and abandons after waiting out its patience time.",
+            "searchPhrases": [
+              "how single-class analysis is represented",
+              "decision rule in operations and supply chains",
+              "single-class analysis decision rule specification"
+            ],
+            "formal": "Decision rule: Also note that, in our formulation, the LCFS policy can be represented by an offered wait vector (0,∞); that is, one subclass has zero offered wait and is served immediately, whereas the other subclass is never served and abandons after waiting out its patience time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If Λi < niμi, then the offered wait under FCFS equals zero, and the cost for this class Ci(ni) trivially equals zero too.",
+              "The optimal number of subclasses in the optimization problem (6) satisfies J∗(i) ≤2.",
+              "Otherwise, if Λi ≥niμi, then the offered wait ̄wi(ni) under FCFS solves λi ̄Fi( ̄wi(ni)) = niμi: (7) In this case, it is easy to see that the optimal allocation utilizes the entire capacity.",
+              "Also note that, in our formulation, the LCFS policy can be represented by an offered wait vector (0,∞); that is, one subclass has zero offered wait and is served immediately, whereas the other subclass is never served and abandons after waiting out its patience time."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.3. Single-Class Analysis",
+                "equation": "",
+                "quote": "Also note that, in our formulation, the LCFS policy can be represented by an offered wait vector (0,∞); that is, one subclass has zero offered wait and is served immediately, whereas the other subclass is never served and abandons after wait­ ing out its patience time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "mostly-fcfs-policy",
+            "label": "Mostly-FCFS Policy",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "However, because the marginal value of allocating capacity can vary across classes, we propose prioritizing these classes based on their marginal values of increasing capacity.",
+            "searchPhrases": [
+              "how mostly-fcfs policy is represented",
+              "feasibility condition in operations and supply chains",
+              "mostly-fcfs policy feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: However, because the marginal value of allocating capacity can vary across classes, we propose prioritizing these classes based on their marginal values of increasing capacity.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In fact, if there does not exist is such that J∗(is) = 2, then all classes would be processed under FCFS.",
+              "First, consider customers of class i ∈P such that i ≠is (i.e., those with J(i) = 1).",
+              "Then, if there exists a class with J∗(is) = 2 with (w∗ is,1,w∗ is,2) being the solution to the fluid optimization problem (8), then process this class using the TIQ policy as follows (Bassamboo and Randhawa 2015): i."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.1. Mostly-FCFS Policy",
+                "equation": "",
+                "quote": "However, because the marginal value of allocating capacity can vary across classes, we propose prioritizing these classes based on their marginal values of increasing capacity."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “However, because the marginal value of allocating capacity can vary across classes, we propose prioritizing these classes based”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "multi-class-tiq-policy",
+            "label": "Multi-class TIQ Policy",
+            "role": "objective",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "It allocates an idle server to a target class so as to minimize the instantaneous fluid cost rate (defined in (16) for the abandonment metric and in (18) for the queue-length metric using the current server allocation).",
+            "searchPhrases": [
+              "how multi-class tiq policy is represented",
+              "modeled objective in operations and supply chains",
+              "multi-class tiq policy modeled objective specification"
+            ],
+            "formal": "Objective relation: It allocates an idle server to a target class so as to minimize the instantaneous fluid cost rate (defined in (16) for the abandonment metric and in (18) for the queue-length metric using the current server allocation).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Further, if we have J∗(i) = 1 for all classes, then the mostly-FCFS policy reduces to an all-FCFS policy.",
+              "In particular, The mTIQ policy allocates an idle server to a class in the set arg max i βi(min{ni, (Λi=μi)}), (23) where ni represents the current number of servers allocated to class i.",
+              "The mTIQ policy allocates an idle server to a class in the set arg max i βi(min{ni, (Λi=μi)}), (23) where ni represents the current number of servers allocated to class i."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Multi-class TIQ Policy",
+                "equation": "",
+                "quote": "It allocates an idle server to a target class so as to minimize the instan­ taneous fluid cost rate (defined in (16) for the abandon­ ment metric and in (18) for the queue-length metric using the current server allocation)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Queueing: “It allocates an idle server to a target class so as to minimize the instantaneous fluid cost rate”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "optimizing-the-fluid-model",
+        "name": "Optimizing the Fluid Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Fluid Model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "fluid-model"
+          }
+        ],
+        "summary": "Yet it does not answer how to allocate capacity across classes, a decision that must be made before one can further allocate capacity within a class. However, using a general formulation of this index, we are able to solve the multi-class fluid optimization problems (2) and (6). Proposition 2 implies that the solution to (2) and (6) has a “bang-bang” structure based on the penalty cost rate piμi, in which classes are processed up to the available capacity in descending order of their penalty cost rates, and once the capacity is exhausted, the remaining classes are not processed at all.",
+        "objects": [
+          "Customer"
+        ],
+        "inputs": [
+          "The marginal benefit",
+          "Additional capacity"
+        ],
+        "decisions": [
+          "Capacity to a class",
+          "The marginal value of allocating capacity to class i"
+        ],
+        "assumptions": [
+          "We formulate our fluid optimization problem in two stages: the first stage focuses on allocating capacity across classes and, then, the second stage optimizes the capacity allocated to each subclass within a class following the first stage allocation.",
+          "Customers of each class have independent and identically distributed (i.i.d.) service times with the cumulative distribution function denoted by Gi(·) and mean service time denoted by 1=μi"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customer",
+              "source": {
+                "type": "section",
+                "section": "Optimizing the Fluid Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 57,
+                "quote": "Queue-Length Metric We next consider the queue-length metric aggregated over customer-level holding costs.",
+                "matchedText": "customer",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The marginal benefit",
+              "source": {
+                "type": "section",
+                "section": "Optimizing the Fluid Model",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "the marginal benefit",
+                "matchedText": "the marginal benefit",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Additional capacity",
+              "source": {
+                "type": "section",
+                "section": "Optimizing the Fluid Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 70,
+                "quote": "In this case, the queue-length cost hiΛi R ¯wi(ni) 0 ¯Fi(y)dy is captured by the area under the curve hiΛi ¯Fi(y) over [0, ¯wi(ni)] so that the marginal value of additional capacity is calculated as the product of the height of the curve, which is hiΛi ¯Fi( ¯wi(ni)), and the marginal change in the interval length, which equals µi=(Λifi( ¯wi(ni))).",
+                "matchedText": "additional capacity",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Capacity to a class",
+              "source": {
+                "type": "section",
+                "section": "Optimizing the Fluid Model",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "To this end, we introduce an index that measures the marginal value of allocating capacity to a class",
+                "matchedText": "capacity to a class",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The marginal value of allocating capacity to class i",
+              "source": {
+                "type": "section",
+                "section": "Optimizing the Fluid Model",
+                "sectionIndex": 0,
+                "page": 8,
+                "quote": "We next compute the marginal value of allocating capacity to class i"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We formulate our fluid optimization problem in two stages: the first stage focuses on allocating capacity across classes and, then, the second stage optimizes the capacity allocated to each subclass within a class following the first stage allocation.",
+              "source": {
+                "type": "section",
+                "section": "Fluid Model",
+                "page": 5,
+                "quote": "We formulate our fluid optimization problem in two stages: the first stage focuses on allocating capacity across classes and, then, the second stage optimizes the capacity allocated to each subclass within a class follow­ ing the first stage allocation."
+              }
+            },
+            {
+              "value": "Customers of each class have independent and identically distributed (i.i.d.) service times with the cumulative distribution function denoted by Gi(·) and mean service time denoted by 1=μi",
+              "source": {
+                "type": "section",
+                "section": "Queueing System",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 3,
+                "quote": "Customers of each class have independent and identically distributed (i.i.d.) ser­ vice times with the cumulative distribution function denoted by Gi(·) and mean service time denoted by 1=µi.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 2
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Now, using Proposition 1 and the index β, we characterize the optimal solution to the fluid optimization problems (2) and (6) under general cost functions.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Characterizing the Optimal Solution",
+          "page": 7,
+          "sentence": 25
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "3.2. Abandonment Metric",
+            "equation": "",
+            "quote": "Proposition 2 implies that the solution to (2) and (6) has a “bang-bang” structure based on the penalty cost rate piµi, in which classes are processed up to the available capacity in descending order of their penalty cost rates, and once the capacity is exhausted, the remaining classes are not processed at all."
+          }
+        ],
+        "components": [
+          {
+            "id": "optimizing-the-fluid-model",
+            "label": "Optimizing the Fluid Model",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Yet it does not answer how to allocate capacity across classes, a decision that must be made before one can further allocate capacity within a class.",
+            "searchPhrases": [
+              "how optimizing the fluid model is represented",
+              "decision rule in operations and supply chains",
+              "optimizing the fluid model decision rule specification"
+            ],
+            "formal": "Decision rule: Yet it does not answer how to allocate capacity across classes, a decision that must be made before one can further allocate capacity within a class.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Yet it does not answer how to allocate capacity across classes, a decision that must be made before one can further allocate capacity within a class."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3. Optimizing the Fluid Model",
+                "equation": "",
+                "quote": "Yet it does not answer how to allocate capacity across classes, a decision that must be made before one can further allocate capacity within a class."
+              },
+              {
+                "page": 6,
+                "section": "3. Optimizing the Fluid Model",
+                "equation": "",
+                "quote": "To this end, we introduce an index that measures the marginal value of allocating capacity to a class, taking into account the optimal within-class allo­ cation (6)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Yet it does not answer how to allocate capacity across classes, a decision that must be made before”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "characterizing-the-optimal-solution",
+            "label": "Characterizing the Optimal Solution",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "However, using a general formulation of this index, we are able to solve the multi-class fluid optimization problems (2) and (6).",
+            "searchPhrases": [
+              "how characterizing the optimal solution is represented",
+              "solution algorithm in operations and supply chains",
+              "characterizing the optimal solution solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: However, using a general formulation of this index, we are able to solve the multi-class fluid optimization problems (2) and (6).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We denote the negative of the derivative of the cost function by βi(n) := Ci ′(n) for n < Λi=μi: In other words, βi(n) is the marginal decrease in cost when capacity allocated to this class is increased, in other words, the marginal benefit of capacity.",
+              "In particular, J(i) > 1 for at most one class i, and further, for this class, we have J(i) = 2.",
+              "Finally, βp(n∗ p) ≤βf(n∗ f) must hold because it states that the marginal value of allocating capacity to any class p in P should be less than the marginal cost of decreasing capacity from any class f in F."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. Characterizing the Optimal Solution",
+                "equation": "",
+                "quote": "However, using a general formulation of this index, we are able to solve the multi-class fluid optimization problems (2) and (6)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization as “optimal solution”: “However, using a general formulation of this index, we are able to solve the multi-class fluid optimization problems”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "abandonment-metric",
+            "label": "Abandonment Metric",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Proposition 2 implies that the solution to (2) and (6) has a “bang-bang” structure based on the penalty cost rate piμi, in which classes are processed up to the available capacity in descending order of their penalty cost rates, and once the capacity is exhausted, the remaining classes are not processed at all.",
+            "searchPhrases": [
+              "how abandonment metric is represented",
+              "modeled objective in operations and supply chains",
+              "abandonment metric modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this case, the queue-length cost hiΛi R ̄wi(ni) 0 ̄Fi(y)dy is captured by the area under the curve hiΛi ̄Fi(y) over [0, ̄wi(ni)] so that the marginal value of additional capacity is calculated as the product of the height of the curve, which is hiΛi ̄Fi( ̄wi(ni)), and the marginal change in the interval length, which equals μi=(Λifi( ̄wi(ni)))."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.2. Abandonment Metric",
+                "equation": "",
+                "quote": "Proposition 2 implies that the solution to (2) and (6) has a “bang-bang” structure based on the penalty cost rate piµi, in which classes are processed up to the available capacity in descending order of their penalty cost rates, and once the capacity is exhausted, the remaining classes are not processed at all."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Proposition 2 implies that the solution to (2) and (6) has a “bang-bang” structure based on the penalty”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Additional capacity",
+                  "source": {
+                    "type": "section",
+                    "section": "Optimizing the Fluid Model",
+                    "page": 8,
+                    "sectionIndex": 0,
+                    "sentence": 70,
+                    "quote": "In this case, the queue-length cost hiΛi R ¯wi(ni) 0 ¯Fi(y)dy is captured by the area under the curve hiΛi ¯Fi(y) over [0, ¯wi(ni)] so that the marginal value of additional capacity is calculated as the product of the height of the curve, which is hiΛi ¯Fi( ¯wi(ni)), and the marginal change in the interval length, which equals µi=(Λifi( ¯wi(ni))).",
+                    "matchedText": "additional capacity",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "queue-length-metric",
+            "label": "Queue-Length Metric",
+            "role": "objective",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "In this case, the queue-length cost hiΛi R ̄wi(ni) 0 ̄Fi(y)dy is captured by the area under the curve hiΛi ̄Fi(y) over [0, ̄wi(ni)] so that the marginal value of additional capacity is calculated as the product of the height of the curve, which is hiΛi ̄Fi( ̄wi(ni)), and the marginal change in the interval length, which equals μi=(Λifi( ̄wi(ni))).",
+            "searchPhrases": [
+              "how queue-length metric is represented",
+              "modeled objective in operations and supply chains",
+              "queue-length metric modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In this case, the queue-length cost hiΛi R ̄wi(ni) 0 ̄Fi(y)dy is captured by the area under the curve hiΛi ̄Fi(y) over [0, ̄wi(ni)] so that the marginal value of additional capacity is calculated as the product of the height of the curve, which is hiΛi ̄Fi( ̄wi(ni)), and the marginal change in the interval length, which equals μi=(Λifi( ̄wi(ni))).",
+              "Because the customers who are never processed wait on average 1=γi time units before abandoning, the corresponding decrease in cost because of the increased capacity is βi(ni) = hiμi=γi.",
+              "Next, consider the case in which FCFS is optimal for this class so that w∗ i,1 = ̄wi(n) and w∗ i,2 > ̄wi(ni).",
+              "The marginal value is computed by noting that, within class i, the capacity is utilized and allocated to subclasses optimally."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.3. Queue-Length Metric",
+                "equation": "",
+                "quote": "In this case, the queue-length cost hiΛi R ¯wi(ni) 0 ¯Fi(y)dy is captured by the area under the curve hiΛi ¯Fi(y) over [0, ¯wi(ni)] so that the marginal value of additional capacity is calculated as the product of the height of the curve, which is hiΛi ¯Fi( ¯wi(ni)), and the marginal change in the interval length, which equals µi=(Λifi( ¯wi(ni)))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "exponential-patience-time-constant-hazard",
+            "label": "Exponential Patience Time: Constant Hazard",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "To explain this cost function (that ignores holding cost for abandoned customers), note that the holding cost is only incurred for a ̄Fi(w) fraction of class i customers who eventually get served, and each of them waits w time units in the fluid system before getting served.",
+            "searchPhrases": [
+              "how exponential patience time: constant hazard is represented",
+              "modeled objective in operations and supply chains",
+              "exponential patience time: constant hazard modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Further, no class is split into two subclasses, that is, J(i) = 1 for all i.",
+              "Specifically, this new cost function would be a sum of abandonment and queue-length costs, that is, ̄ci(w) = piFi(w) + hi Z w 0 ̄Fi(y)dy: (19) Plugging this cost function into (8), we obtain the corresponding fluid-optimization problem.",
+              "To explain this cost function (that ignores holding cost for abandoned customers), note that the holding cost is only incurred for a ̄Fi(w) fraction of class i customers who eventually get served, and each of them waits w time units in the fluid system before getting served.",
+              "As before, Proposition 2 provides a structural property of the optimal solution to this optimization problem with the marginal value of allocating capacity to class i given as follows."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.3.1. Exponential Patience Time: Constant Hazard",
+                "equation": "",
+                "quote": "To explain this cost function (that ignores holding cost for abandoned customers), note that the holding cost is only incurred for a ¯Fi(w) fraction of class i customers who eventually get served, and each of them waits w time units in the fluid system before getting served."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “To explain this cost function (that ignores holding cost for abandoned customers), note that the holding cost is”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 14,
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "ad44c7f6869f70aed3a0bdfeabeb2b173bc713cad74164a64ed0326e007cea33",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "81de6700c6a58160d8975cf6932c2e7dcfafaf2d0196ecac7c8faeb50639337d",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1190/81de6700c6a58160d8975cf6932c2e7dcfafaf2d0196ecac7c8faeb50639337d.json",
+      "extractionQaDecisionSha256": "64ac2efaabdce7dbed005b6c9c9fa8536e6fae4c2b2021d2e8b8471e75073a5c",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,957 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2016-0577",
+  "sourcePdfSha256": "b90a940601c06b10715993b3b63acd990fe222d0705a069102843217bdd1c0bd",
+  "extractionPagesSha256": "b625fe7de7e31d89a704b702388b2389f31ad915e9d1038c56ed64261015b339",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "f8289b7f3b9bd65f3bfee1f77af20130d54cbe3044568c45c10cc327c7dfc453",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "cdc14856645aa7caff30c16297ff6b5ecf037e00d9a8ef10f242eca9cd203c28",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2016-0577/cdc14856645aa7caff30c16297ff6b5ecf037e00d9a8ef10f242eca9cd203c28.json",
+  "extractionQaDecisionSha256": "fb923d4af46f3e24533d44370129db8b80511e61c9b745e2be990e0c5994f0dc",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2016-0577",
+    "question": "How do capacity constraints affect strategic safety-stock placement in supply chains?",
+    "overview": "We generalize the guaranteed-service (GS) model for safety-stock placement in supply chains to include capacity constraints. We first examine the guaranteed-service model for a capacitated single-stage system with bounded demand. We characterize the optimal inventory policy, which depends on the entire demand history.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        5,
+        9,
+        10
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "single-stage-model",
+        "name": "Single-Stage Model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "We generalize the guaranteed-service (GS) model for safety-stock placement in supply chains to include capacity constraints. We first examine the guaranteed-service model for a capacitated single-stage system with bounded demand. We characterize the optimal inventory policy, which depends on the entire demand history.",
+        "objects": [
+          "The customer",
+          "Nodes",
+          "Operator",
+          "Supplier"
+        ],
+        "inputs": [
+          "The entire demand history",
+          "Output",
+          "Available to serve demand",
+          "Lead time",
+          "The supply"
+        ],
+        "decisions": [
+          "To determine average inventory levels and costs",
+          "The bound on the censored order",
+          "How to combine bounds",
+          "Costs and stochastic service",
+          "The capacity to be one of five values"
+        ],
+        "assumptions": [
+          "Demand is bounded",
+          "As long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The customer",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 2,
+                "quote": "To simplify the presentation, we consider a serial system where we number the stages or nodes from downstream to upstream: node 1 is the customer-facing node, and N is the most upstream node.",
+                "matchedText": "the customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Nodes",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 2,
+                "quote": "To simplify the presentation, we consider a serial system where we number the stages or nodes from downstream to upstream: node 1 is the customer-facing node, and N is the most upstream node.",
+                "matchedText": "nodes",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Operator",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 24,
+                "quote": "To facilitate the explanation for how we determine the base stock from the capacity constraint and the demand bound, we introduce operator notation (e.g., Griffel 1985).",
+                "matchedText": "operator",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Supplier",
+              "source": {
+                "type": "section",
+                "section": "Processing Inventory",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 4,
+                "quote": "(Otherwise, guaranteed service is infeasible.) To simplify the presentation we assume that the stage has a single supplier that provides a single input.",
+                "matchedText": "supplier",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The entire demand history",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "We characterize the optimal inventory policy, which depends on the entire demand history.",
+                "matchedText": "the entire demand history",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Output",
+              "source": {
+                "type": "section",
+                "section": "Single-Stage Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "A stage represents a processing activity that requires one or more inputs and that converts these inputs into a single output product or ﬁnal good.",
+                "matchedText": "output",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Available to serve demand",
+              "source": {
+                "type": "section",
+                "section": "Single-Stage Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "available to serve demand",
+                "matchedText": "available to serve demand",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "Lead time",
+              "source": {
+                "type": "section",
+                "section": "Single-Stage Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 5,
+                "quote": "lead time",
+                "matchedText": "lead time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The supply",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 42,
+                "quote": "the supply",
+                "matchedText": "the supply",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "To determine average inventory levels and costs",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 28,
+                "quote": "to determine average inventory levels and costs",
+                "matchedText": "to determine average inventory levels and costs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The bound on the censored order",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 35,
+                "quote": "We describe next how to determine the bound on the censored order",
+                "matchedText": "the bound on the censored order",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How to combine bounds",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 11,
+                "sectionIndex": 7,
+                "sentence": 69,
+                "quote": "For unconstrained supply chains, Graves and Willems (2000) propose how to combine bounds when the demand streams are assumed to be independent and each bound is set as in (11).",
+                "matchedText": "how to combine bounds when the demand streams are assumed to",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Costs and stochastic service",
+              "source": {
+                "type": "section",
+                "section": "Single-Stage Model",
+                "page": 3,
+                "sectionIndex": 10,
+                "sentence": 12,
+                "quote": "However, our work differs from all of the aforementioned work in that we consider local base-stock ordering policies and, as mentioned, guaranteed-service constraints rather than back-order costs and stochastic service",
+                "matchedText": "costs and stochastic service",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The capacity to be one of five values",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 11,
+                "sectionIndex": 18,
+                "sentence": 27,
+                "quote": "We allow the constraint to be at any of the ﬁve stages, and we set the capacity to be one of ﬁve values",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Demand is bounded",
+              "source": {
+                "type": "section",
+                "section": "Single-Stage Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 12,
+                "quote": "Furthermore, as in Kimball (1988) and Simpson (1958), for the purposes of setting safety-stock levels, we assume that demand is bounded.",
+                "matchedText": "demand is bounded.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "As long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time",
+              "source": {
+                "type": "section",
+                "section": "Single-Stage Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 15,
+                "quote": "Simply put, we assume that as long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time.",
+                "matchedText": "as long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "For each test case, we simulated each policy on a randomly generated demand series over 50,000 periods, divided into 10 batches.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Single-Stage Model",
+          "page": 8,
+          "sentence": 120
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "2.1. Optimal Policy for a Single-Stage System",
+            "equation": "",
+            "quote": "In this section we characterize the optimal inventory policy for the single-stage GS model."
+          }
+        ],
+        "components": [
+          {
+            "id": "single-stage-model",
+            "label": "Single-Stage Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "The process lead time represents any fixed processing time at the stage and does not include any time waiting for input or for capacity.",
+            "searchPhrases": [
+              "how single-stage model is represented",
+              "system process in operations and supply chains",
+              "single-stage model system process specification"
+            ],
+            "formal": "Process relation: The process lead time represents any fixed processing time at the stage and does not include any time waiting for input or for capacity.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume a deterministic process lead time T , a nonnegative integer, equal to the time between when the process starts and when the process is complete and the inventory is available to serve demand.",
+              "we assume that as long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time.",
+              "The stage has a capacity limit c: each period the stage can release into its process any amount up to the capacity limit of c, assuming that sufficient inputs are on hand."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2. Single-Stage Model",
+                "equation": "",
+                "quote": "The process lead time represents any ﬁxed processing time at the stage and does not include any time waiting for input or for capacity."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “The process lead time represents any fixed processing time at the stage and does not include any time”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "processing-inventory-internal",
+            "label": "Processing Inventory Internal",
+            "role": "constraint",
+            "concepts": [
+              "inventory",
+              "resource-capacity"
+            ],
+            "explanation": "Demand bounds and capacity constraints that arise in practice are likely to be valid.",
+            "searchPhrases": [
+              "how processing inventory internal is represented",
+              "feasibility condition in operations and supply chains",
+              "processing inventory internal feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: Demand bounds and capacity constraints that arise in practice are likely to be valid.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Simply put, we assume that as long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "Processing Inventory Internal",
+                "equation": "",
+                "quote": "Demand bounds and capacity constraints that arise in practice are likely to be valid."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Inventory: “Demand bounds and capacity constraints that arise in practice are likely to be valid.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "resource-capacity",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Resource capacity as “capacity constraint”: “Demand bounds and capacity constraints that arise in practice are likely to be valid.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "As long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time",
+                  "source": {
+                    "type": "section",
+                    "section": "Single-Stage Model",
+                    "page": 3,
+                    "sectionIndex": 2,
+                    "sentence": 15,
+                    "quote": "Simply put, we assume that as long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time.",
+                    "matchedText": "as long as demand stays within certain bounds, there should always be enough safety stock to meet that demand within the service time.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "optimal-policy-for-a-single-stage-system",
+            "label": "Optimal Policy for a Single-Stage System",
+            "role": "state",
+            "concepts": [
+              "inventory-control"
+            ],
+            "explanation": "In this section we characterize the optimal inventory policy for the single-stage GS model.",
+            "searchPhrases": [
+              "how optimal policy for a single-stage system is represented",
+              "decision-relevant state in operations and supply chains",
+              "optimal policy for a single-stage system decision-relevant state specification"
+            ],
+            "formal": "State definition: In this section we characterize the optimal inventory policy for the single-stage GS model.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Without loss of the arguments can easily be extended by translation placed at period t, which is delivered into inventory at ≥ 01 ∀ k ≥ 01 where I 4t5 denotes the on-hand inventory at the end of period t."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.1. Optimal Policy for a Single-Stage System",
+                "equation": "",
+                "quote": "In this section we characterize the optimal inventory policy for the single-stage GS model."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory-control",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Inventory control as “inventory policy”: “In this section we characterize the optimal inventory policy for the single-stage GS model.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "modified-constant-base-stock-policy",
+            "label": "Modified Constant Base-Stock Policy",
+            "role": "algorithm",
+            "concepts": [
+              "inventory"
+            ],
+            "explanation": "We term this policy with censored ordering the modified constant base-stock (MCBS) policy.",
+            "searchPhrases": [
+              "how modified constant base-stock policy is represented",
+              "solution algorithm in operations and supply chains",
+              "modified constant base-stock policy solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We term this policy with censored ordering the modified constant base-stock (MCBS) policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The operating policy is to order in each period an amount that raises the inventory position (defined as the on-hand inventory plus inventory in process and inventory on order) as close to the base stock as possible.",
+              "Given the assumption of guaranteed service and no lost sales, this ordering policy maintains the inventory position at B in each period.",
+              "However, when there is a capacity constraint, we can observe inefficiency with this ordering policy."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.2. Modified Constant Base-Stock Policy",
+                "equation": "",
+                "quote": "We term this policy with censored ordering the modiﬁed constant base-stock (MCBS) policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Inventory as “stock”: “We term this policy with censored ordering the modified constant base-stock (MCBS) policy.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "comparison-between-optimal-policy-and-mcbs-policy",
+            "label": "Comparison Between Optimal Policy and MCBS Policy",
+            "role": "algorithm",
+            "concepts": [
+              "resource-capacity"
+            ],
+            "explanation": "The capacity constraint acts as damper on the optimal policy, limiting its ability to flex its orders in response to the demand history.",
+            "searchPhrases": [
+              "how comparison between optimal policy and mcbs policy is represented",
+              "solution algorithm in operations and supply chains",
+              "comparison between optimal policy and mcbs policy solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The capacity constraint acts as damper on the optimal policy, limiting its ability to flex its orders in response to the demand history.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When demand is high, the optimal policy (and MCBS policy) can only replenish up to the capacity limit; the replenishment of demand beyond the capacity must be postponed until a future period.",
+              "One implication from this observation is that, for the GS model with bounded demand, imposing a capacity constraint can improve the performance of an MCBS policy.",
+              "The resulting orders for both policies will be less variable as the capacity limit becomes tighter; as a consequence, a tighter capacity constraint reduces the advantage that the optimal policy has in terms of using the demand history."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "2.3. Comparison Between Optimal Policy and MCBS Policy",
+                "equation": "",
+                "quote": "The capacity constraint acts as damper on the optimal policy, limiting its ability to ﬂex its orders in response to the demand history."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "resource-capacity",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Resource capacity as “capacity constraint”: “The capacity constraint acts as damper on the optimal policy, limiting”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "multistage-model",
+        "name": "Multistage Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Single-Stage Model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "single-stage-model"
+          }
+        ],
+        "summary": "First, in comparison to the base-stock policy without censoring, the average inventory will be less (for a fixed base-stock level), because orders never exceed capacity and there is no internal queue.",
+        "objects": [
+          "The customer",
+          "Nodes",
+          "Operator"
+        ],
+        "inputs": [
+          "The backlog at any stage does not depend on the service times",
+          "The demand",
+          "Inventory level",
+          "The supply",
+          "Time t"
+        ],
+        "decisions": [
+          "To determine average inventory levels and costs",
+          "The bound on the censored order",
+          "How to combine bounds",
+          "BLk is for calculating the average inventory level",
+          "How to combine multiple demand bounds"
+        ],
+        "assumptions": [
+          "Each stage operates with guaranteed service and with an MCBS policy"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The customer",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "To simplify the presentation, we consider a serial system where we number the stages or nodes from downstream to upstream: node 1 is the customer-facing node, and N is the most upstream node.",
+                "matchedText": "the customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Nodes",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "To simplify the presentation, we consider a serial system where we number the stages or nodes from downstream to upstream: node 1 is the customer-facing node, and N is the most upstream node.",
+                "matchedText": "nodes",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Operator",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "To facilitate the explanation for how we determine the base stock from the capacity constraint and the demand bound, we introduce operator notation (e.g., Griffel 1985).",
+                "matchedText": "operator",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The backlog at any stage does not depend on the service times",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 30,
+                "quote": "the backlog at any stage does not depend on the service times",
+                "matchedText": "the backlog at any stage does not depend on the service times",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The demand",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "To facilitate the explanation for how we determine the base stock from the capacity constraint and the demand bound, we introduce operator notation (e.g., Griffel 1985).",
+                "matchedText": "the demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Inventory level",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 31,
+                "quote": "inventory level",
+                "matchedText": "inventory level",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The supply",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 42,
+                "quote": "the supply",
+                "matchedText": "the supply",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 80,
+                "quote": "node k at the end of time t − SIk − Tk cannot reach the inventory by time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "To determine average inventory levels and costs",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 28,
+                "quote": "to determine average inventory levels and costs",
+                "matchedText": "to determine average inventory levels and costs",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The bound on the censored order",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 35,
+                "quote": "We describe next how to determine the bound on the censored order",
+                "matchedText": "the bound on the censored order",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How to combine bounds",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 69,
+                "quote": "For unconstrained supply chains, Graves and Willems (2000) propose how to combine bounds when the demand streams are assumed to be independent and each bound is set as in (11).",
+                "matchedText": "how to combine bounds when the demand streams are assumed to",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "BLk is for calculating the average inventory level",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 31,
+                "quote": "BLk is for calculating the average inventory level",
+                "matchedText": "BLk is for calculating the average inventory level",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How to combine multiple demand bounds",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 68,
+                "quote": "The primary challenge is to determine how to combine multiple demand bounds, each of which may be censored.",
+                "matchedText": "how to combine multiple demand bounds",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Each stage operates with guaranteed service and with an MCBS policy",
+              "source": {
+                "type": "section",
+                "section": "Multistage Model",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "Hence, in this section we will assume that each stage operates with guaranteed service and with an MCBS policy.",
+                "matchedText": "each stage operates with guaranteed service and with an MCBS policy.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          }
+        ],
+        "method": "To facilitate the explanation for how we determine the base stock from the capacity constraint and the demand bound, we introduce operator notation (e.g., Griffel 1985).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Multistage Model",
+          "page": 10,
+          "sentence": 24
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 10,
+            "section": "3. Multistage Model",
+            "equation": "",
+            "quote": "First, in comparison to the base-stock policy without censoring, the average inventory will be less (for a ﬁxed base-stock level), because orders never exceed capacity and there is no internal queue."
+          }
+        ],
+        "components": [
+          {
+            "id": "multistage-model",
+            "label": "Multistage Model",
+            "role": "state",
+            "concepts": [
+              "inventory",
+              "queueing"
+            ],
+            "explanation": "First, in comparison to the base-stock policy without censoring, the average inventory will be less (for a fixed base-stock level), because orders never exceed capacity and there is no internal queue.",
+            "searchPhrases": [
+              "how multistage model is represented",
+              "decision-relevant state in operations and supply chains",
+              "multistage model decision-relevant state specification"
+            ],
+            "formal": "State definition: First, in comparison to the base-stock policy without censoring, the average inventory will be less (for a fixed base-stock level), because orders never exceed capacity and there is no internal queue.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "A second implication of the MCBS policy is that the censored order is bounded by the capacity at stage k, i.e., 4dk+14t5 ≤ ck5; thus, a looser capacity constraint at stage k + 1 4ck+1 > ck5 is irrelevant.",
+              "However, from (14) and (15) we observe that the backlog at any stage does not depend on the service times, which are the decision variables in our safety-stock optimization.",
+              "Indeed, we can ignore any upstream capacity constraint that is greater than a downstream capacity limit."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3. Multistage Model",
+                "equation": "",
+                "quote": "First, in comparison to the base-stock policy without censoring, the average inventory will be less (for a ﬁxed base-stock level), because orders never exceed capacity and there is no internal queue."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Inventory as “stock”: “stock”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "b90a940601c06b10715993b3b63acd990fe222d0705a069102843217bdd1c0bd",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "cdc14856645aa7caff30c16297ff6b5ecf037e00d9a8ef10f242eca9cd203c28",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2016-0577/cdc14856645aa7caff30c16297ff6b5ecf037e00d9a8ef10f242eca9cd203c28.json",
+      "extractionQaDecisionSha256": "fb923d4af46f3e24533d44370129db8b80511e61c9b745e2be990e0c5994f0dc",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

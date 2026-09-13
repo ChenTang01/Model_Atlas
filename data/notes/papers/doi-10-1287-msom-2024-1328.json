@@ -1,0 +1,1429 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2024-1328",
+  "sourcePdfSha256": "e6f18e4109b22e36f0ec955c319fd5a6d5a4c835ec322c6b251674f8d4f50144",
+  "extractionPagesSha256": "076c1a4ec6ad449420553900579da562f59653e90d0bb80a97ebbf011dd071ce",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "df679417beb2547ad8252db8977c42a37f285a6fc599af9bf4d36e8ea25a518b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "8988758b3d02f654fd9dbf6b15d4d5a6537c10e6287e67307fe092d3bda2d11c",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2024-1328/8988758b3d02f654fd9dbf6b15d4d5a6537c10e6287e67307fe092d3bda2d11c.json",
+  "extractionQaDecisionSha256": "621a63123b56959ac90849f2f2afc434413f4b4844444b395f8cd2367fa40400",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2024-1328",
+    "question": "How does delivery time uncertainty affect contextual stochastic optimization for omnichannel multicourier order fulfillment?",
+    "overview": "The paper studies a large-scale order fulfillment problem for a leading e-commerce company in the United States. The challenge involves selecting fulfillment centers and shipping carriers with observational data only to efficiently process orders from a vast network of physical stores and warehouses. The company’s current practice relies on heuristic rules that choose the cheapest fulfillment and shipping options for each unit without considering opportunities for batching items or the reliability of carriers in meeting expected delivery dates.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        15,
+        17,
+        21
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "the-nominal-optimization-problem",
+        "name": "The Nominal Optimization Problem",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper studies a large-scale order fulfillment problem for a leading e-commerce company in the United States. The challenge involves selecting fulfillment centers and shipping carriers with observational data only to efficiently process orders from a vast network of physical stores and warehouses. The company’s current practice relies on heuristic rules that choose the cheapest fulfillment and shipping options for each unit without considering opportunities for batching items or the reliability of carriers in meeting expected delivery dates.",
+        "objects": [
+          "Customer",
+          "Retailers",
+          "A server",
+          "Table",
+          "Element"
+        ],
+        "inputs": [
+          "Demand",
+          "The random cost",
+          "The observed data",
+          "The time",
+          "The unknown cost"
+        ],
+        "decisions": [
+          "Minimize the overall fulfillment costs",
+          "Release hour",
+          "Release day",
+          "The speed and reliability of fulfilling orders"
+        ],
+        "assumptions": [
+          "This section introduces the nominal MILP model developed for optimizing the omnichannel multicourier order fulfillment problem.",
+          "To address these challenges, this paper proposes a contextual stochastic optimization framework, encompassing both risk-neutral and robust approaches"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customer",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Validated on a real-world data set containing tens of thousands of products, each with hundreds to thousands of fulfillment options, the proposed CSO framework significantly enhances the accuracy of meeting customer-expected delivery dates compared with current practices.",
+                "matchedText": "customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Retailers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "The results offer actionable guidance for retailers to enhance service quality and customer satisfaction while balancing cost efficiency and risk, supporting higher retention and profitability.",
+                "matchedText": "retailers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A server",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 14,
+                "sectionIndex": 21,
+                "sentence": 8,
+                "quote": "All experiments were conducted on a server equipped with dual-socket Intel Xeon Gold 6226 CPUs, each featuring 24 cores running at 2.",
+                "matchedText": "a server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Table",
+              "source": {
+                "type": "section",
+                "section": "High-Level Problem Description",
+                "page": 5,
+                "sectionIndex": 7,
+                "sentence": 14,
+                "quote": "In addition, each carrier provides an estimated table for shipping costs and planned time in transit.",
+                "matchedText": "table",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Element",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 4,
+                "quote": "Amid intense com­ petition in pricing, service, and marketing driven by the lucrative e-commerce market, logistical perfor­ mance has become a key element to success.",
+                "matchedText": "element",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Optimization Problem",
+                "page": 7,
+                "sectionIndex": 10,
+                "sentence": 3,
+                "quote": "Each request arrives with known demand quantities {qi : i ∈I} at decision time.",
+                "matchedText": "demand",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The random cost",
+              "source": {
+                "type": "section",
+                "section": "Optimization Problem",
+                "page": 7,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "the random cost",
+                "matchedText": "the random cost",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The observed data",
+              "source": {
+                "type": "section",
+                "section": "Contextual Robust Optimization",
+                "page": 9,
+                "sectionIndex": 13,
+                "sentence": 9,
+                "quote": "In principle, a discrete distribution can be generated as mentioned before by combining all combinations of the observed data points.",
+                "matchedText": "the observed data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The time",
+              "source": {
+                "type": "section",
+                "section": "The Nominal Optimization Problem",
+                "sectionIndex": 8,
+                "page": 6,
+                "quote": "In an ideal setting where all carrier-location devia­ tions are known at the time of fulfillment, let the vec­ tor d = (dkℓ)k∈K,ℓ∈L represent the realized uncertain delivery deviations, where each dkℓ denotes the num­ ber of days that the carrier-location pair (k,ℓ) deviates from desired delivery date."
+              }
+            },
+            {
+              "value": "The unknown cost",
+              "source": {
+                "type": "section",
+                "section": "Performance Guarantees on C-SAA and C-RO",
+                "page": 9,
+                "sectionIndex": 14,
+                "sentence": 1,
+                "quote": "C-SAA replaces the unknown cost distribution with Monte Carlo samples generated by a learned contex­ tual oracle and minimizes the resulting empirical objective.",
+                "matchedText": "the unknown cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Minimize the overall fulfillment costs",
+              "source": {
+                "type": "section",
+                "section": "The Nominal Optimization Problem",
+                "page": 5,
+                "sectionIndex": 8,
+                "sentence": 11,
+                "quote": "The objective of the optimi­ zation problem for an order is to minimize the overall fulfillment costs while ensuring timely delivery.",
+                "matchedText": "minimize the overall fulfillment costs while ensuring timely delivery",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Release hour",
+              "source": {
+                "type": "section",
+                "section": "Application to the Omnichannel Multicourier",
+                "page": 10,
+                "sectionIndex": 39,
+                "sentence": 22,
+                "quote": "This includes customer location, SKU weight and dimensions, SKU type, quantities, release hour",
+                "matchedText": "release hour",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Release day",
+              "source": {
+                "type": "section",
+                "section": "Application to the Omnichannel Multicourier",
+                "page": 10,
+                "sectionIndex": 39,
+                "sentence": 22,
+                "quote": "This includes customer location, SKU weight and dimensions, SKU type, quantities, release hour, release day",
+                "matchedText": "release day",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The speed and reliability of fulfilling orders",
+              "source": {
+                "type": "section",
+                "section": "Application to the Omnichannel Multicourier",
+                "page": 10,
+                "sectionIndex": 39,
+                "sentence": 27,
+                "quote": "The geographical location and type of fulfillment center can affect the efficiency of order processing, whereas capacity and inventory levels determine the speed and reliability of fulfilling orders",
+                "matchedText": "the speed and reliability of fulfilling orders",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "This section introduces the nominal MILP model developed for optimizing the omnichannel multicourier order fulfillment problem.",
+              "source": {
+                "type": "section",
+                "section": "The Nominal Optimization Problem",
+                "page": 5,
+                "quote": "This section introduces the nominal MILP model developed for optimizing the omnichannel multicour­ ier order fulfillment problem."
+              }
+            },
+            {
+              "value": "To address these challenges, this paper proposes a contextual stochastic optimization framework, encompassing both risk-neutral and robust approaches",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 51,
+                "quote": "To address these challenges, this paper proposes a con­ textual stochastic optimization framework, encompassing both risk-neutral and robust approaches.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          },
+          {
+            "code": "setup_assumptions_completed_from_source",
+            "message": "Filled assumptions from literal abstract or source-section phrases.",
+            "category": "assumptions",
+            "count": 1
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "In this paper, a k-fold crossvalidation procedure is employed; for each fold i, the classifier is trained on out calibration split, and an isotonic regression model g(i) is fit to those scores.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Probabilistic Multiclass Classification",
+          "page": 11,
+          "sentence": 31
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.2. The Nominal Optimization Problem",
+            "equation": "",
+            "quote": "The objective of the optimi­ zation problem for an order is to minimize the overall fulfillment costs while ensuring timely delivery."
+          }
+        ],
+        "components": [
+          {
+            "id": "high-level-problem-description",
+            "label": "High-Level Problem Description",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Currently, the industrial partner uses a fulfillment optimization engine that employs a straightforward greedy algorithm.",
+            "searchPhrases": [
+              "how high-level problem description is represented",
+              "solution algorithm in operations and supply chains",
+              "high-level problem description solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Currently, the industrial partner uses a fulfillment optimization engine that employs a straightforward greedy algorithm.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Before making an order fulfillment decision, the company has access to both the transactional details of the order and the real-time status of the fulfillment network.",
+              "Let I be the set of SKUs and V be the set of fulfillment options."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. High-Level Problem Description",
+                "equation": "",
+                "quote": "Currently, the industrial partner uses a fulfillment optimization engine that employs a straightforward greedy algorithm."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “Currently, the industrial partner uses a fulfillment optimization engine that employs a straightforward greedy algorithm.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-nominal-optimization-problem",
+            "label": "The Nominal Optimization Problem",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The objective of the optimization problem for an order is to minimize the overall fulfillment costs while ensuring timely delivery.",
+            "searchPhrases": [
+              "how the nominal optimization problem is represented",
+              "modeled objective in operations and supply chains",
+              "the nominal optimization problem modeled objective specification"
+            ],
+            "formal": "Objective relation: The objective of the optimization problem for an order is to minimize the overall fulfillment costs while ensuring timely delivery.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This section introduces the nominal MILP model developed for optimizing the omnichannel multicourier order fulfillment problem.",
+              "Each order needs to solve an independent optimization problem to decide the selection of carrier-location pairs for each SKU.",
+              "Let I be the set of SKUs and V be the set of fulfillment options."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. The Nominal Optimization Problem",
+                "equation": "",
+                "quote": "The objective of the optimi­ zation problem for an order is to minimize the overall fulfillment costs while ensuring timely delivery."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization: “Optimization”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-contextual-stochastic-order-fulfillment-problem",
+            "label": "The Contextual Stochastic Order Fulfillment Problem",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The contextual distribution of the deviation vector, upon observing s, is denoted by P(d|s), and the individual deviation contextual distribution is Pkl(dkl|skl) for each k ∈K and l∈L.",
+            "searchPhrases": [
+              "how the contextual stochastic order fulfillment problem is represented",
+              "information available to the decision maker in operations and supply chains",
+              "the contextual stochastic order fulfillment problem information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To account for this uncertainty for each order, this section models the vector of uncertain delivery deviations ̃d = ( ̃dkl)k∈K,l∈L ~ P as a (|K‖L|)-dimensional random vector governed by a joint probability distribution P.",
+              "The contextual distribution of the deviation vector, upon observing s, is denoted by P(d|s), and the individual deviation contextual distribution is Pkl(dkl|skl) for each k ∈K and l∈L.",
+              "In practice, the delivery deviations of each carrierlocation pair cannot be perfectly estimated in advance.",
+              "Because deviations measured in days only take on discrete values in the data set, each ̃dkl inherently follows a discrete probability distribution."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.3. The Contextual Stochastic Order Fulfillment Problem",
+                "equation": "",
+                "quote": "The contextual distribution of the deviation vector, upon observing s, is denoted by P(d|s), and the individual deviation contextual distribution is Pkℓ(dkℓ|skℓ) for each k ∈K and ℓ∈L."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The contextual distribution of the deviation vector, upon observing s, is denoted by P(d|s), and the individual deviation”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "optimization-problem",
+            "label": "Optimization Problem",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Assume that ̃c is element-wise positive and that the cost function g(z, ̃c) is piecewise linear in z.",
+            "searchPhrases": [
+              "how optimization problem is represented",
+              "modeled objective in operations and supply chains",
+              "optimization problem modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let ̃c = ( ̃civ)i∈I, v∈V ~ P denote the random cost vector.",
+              "Let I be the set of products, V be the set of selection options (e.g., fulfillment or transport modes), and Z ⊆Z|I |×|V | + be the feasible assignment set.",
+              "The decision variable z = (ziv)i∈I, v∈V ∈Z assigns quantity ziv of product i to option v."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Optimization Problem",
+                "equation": "",
+                "quote": "Assume that ˜c is element-wise positive and that the cost function g(z, ˜c) is piecewise linear in z."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization: “Assume that ̃c is element-wise positive and that the cost function g(z, ̃c) is piecewise linear in z.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "constructing-a-contextual-distribution",
+            "label": "Constructing a Contextual Distribution",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "By reducing the high-dimensional joint learning task to |V | manageable subproblems, this decomposition turns observational data into a black-box contextual distribution oracle M(s), which will serve as the input for the solution methods developed in Section 4.3 (C-SAA) and Section 4.4 (C-RO).",
+            "searchPhrases": [
+              "how constructing a contextual distribution is represented",
+              "solution algorithm in operations and supply chains",
+              "constructing a contextual distribution solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Assemble the oracle as the product M(s) = (Mv(sv))v∈V, which generates joint forecasts by treating each component independently.",
+              "Note that if every sv shares the same structure and dimension, a single learning architecture can serve as Mv for all v ∈V, trained on the union ∪v∈VDv.",
+              "Oracle from Observational Data The contextual distribution P(c|s) is also generally unknown but can often be inferred from historical observations."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.2. Constructing a Contextual Distribution",
+                "equation": "",
+                "quote": "By reducing the high-dimensional joint learning task to |V | manageable subproblems, this decomposi­ tion turns observational data into a black-box contex­ tual distribution oracle M(s), which will serve as the input for the solution methods developed in Section 4.3 (C-SAA) and Section 4.4 (C-RO)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “By reducing the high-dimensional joint learning task to |V | manageable subproblems, this decomposition turns observational data into”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "contextual-robust-optimization",
+            "label": "Contextual Robust Optimization",
+            "role": "constraint",
+            "concepts": [
+              "robust-optimization"
+            ],
+            "explanation": "An alternative uncertainty set is the budgeted interval set Ub(s,B) (Bertsimas and Sim 2004), which is defined by a robust budget B.",
+            "searchPhrases": [
+              "how contextual robust optimization is represented",
+              "feasibility condition in operations and supply chains",
+              "contextual robust optimization feasibility condition specification"
+            ],
+            "formal": "Feasibility rule: retain only decisions satisfying the stated resource and system restrictions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This budget limits how many components of the uncertain parameter ̃c can simultaneously deviate to their upper bounds.",
+              "An alternative uncertainty set is the budgeted interval set Ub(s,B) (Bertsimas and Sim 2004), which is defined by a robust budget B."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.4. Contextual Robust Optimization",
+                "equation": "",
+                "quote": "An alternative uncertainty set is the budgeted interval set Ub(s,B) (Bertsimas and Sim 2004), which is defined by a robust budget B."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "robust-optimization",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Robust optimization: “An alternative uncertainty set is the budgeted interval set Ub(s,B) (Bertsimas and Sim 2004), which is defined by”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "performance-guarantees-on-c-saa-and-c-ro",
+            "label": "Performance Guarantees on C-SAA and C-RO",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "C-SAA replaces the unknown cost distribution with Monte Carlo samples generated by a learned contextual oracle and minimizes the resulting empirical objective.",
+            "searchPhrases": [
+              "how performance guarantees on c-saa and c-ro is represented",
+              "information available to the decision maker in operations and supply chains",
+              "performance guarantees on c-saa and c-ro information available to the decision maker specification"
+            ],
+            "formal": "Information structure: C-SAA replaces the unknown cost distribution with Monte Carlo samples generated by a learned contextual oracle and minimizes the resulting empirical objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Under a budgeted interval uncertainty set (C-RO-B), the violation probability instead satisfies Pr(g(z, ̃c) > t) ≤exp B2 2|V ‖I | so that the budget parameter B directly controls the trade-off between average-case performance and robustness (Bertsimas and Sim 2004).",
+              "C-SAA replaces the unknown cost distribution with Monte Carlo samples generated by a learned contextual oracle and minimizes the resulting empirical objective."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.5. Performance Guarantees on C-SAA and C-RO",
+                "equation": "",
+                "quote": "C-SAA replaces the unknown cost distribution with Monte Carlo samples generated by a learned contex­ tual oracle and minimizes the resulting empirical objective."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “C-SAA replaces the unknown cost distribution with Monte Carlo samples generated by a learned contextual oracle and minimizes”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "probabilistic-multiclass-classification",
+            "label": "Probabilistic Multiclass Classification",
+            "role": "estimation",
+            "concepts": [
+              "logistics"
+            ],
+            "explanation": "Multinomial logistic regression (MLR) and classification tree-based models are considered to solve MC-CLF.",
+            "searchPhrases": [
+              "how probabilistic multiclass classification is represented",
+              "estimation procedure in operations and supply chains",
+              "probabilistic multiclass classification estimation procedure specification"
+            ],
+            "formal": "Estimation relation: Multinomial logistic regression (MLR) and classification tree-based models are considered to solve MC-CLF.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The log loss is defined as PM m=1 PC c=1 1{dm = ξc}log( ˆpc(sm)): On the other hand, classification trees use a nonparametric approach that recursively partitions the data into subsets based on feature values in a top-down manner, resulting in a tree-like model of decisions.",
+              "The vector of calibrated class probabilities ( ̃pc(s))C c=1 is divided by its sum to yield a valid multiclass probability distribution.",
+              "Isotonic regression (Zadrozny and Elkan 2002) learns a nondecreasing mapping g : [0,1] →[0,1] that best aligns raw scores to observed frequencies, preserving the rank order of ˆpc."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.2. Probabilistic Multiclass Classification",
+                "equation": "",
+                "quote": "Multinomial logistic regression (MLR) and classifi­ cation tree-based models are considered to solve MC-CLF."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "logistics",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Logistics: “Multinomial logistic regression (MLR) and classification tree-based models are considered to solve MC-CLF.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "tree-based-quantile-regression",
+            "label": "Tree-Based Quantile Regression",
+            "role": "estimation",
+            "concepts": [
+              "versioning",
+              "estimation"
+            ],
+            "explanation": "Tree-based QR methods—namely regression trees extended to CDF estimation and their ensemble version quantile random forests (QRFs) (Meinshausen and Ridgeway 2006)—avoid this “quantile crossing” problem by extracting quantiles from the empirical distribution of training samples in each leaf region.",
+            "searchPhrases": [
+              "how tree-based quantile regression is represented",
+              "estimation procedure in operations and supply chains",
+              "tree-based quantile regression estimation procedure specification"
+            ],
+            "formal": "Estimation relation: Tree-based QR methods—namely regression trees extended to CDF estimation and their ensemble version quantile random forests (QRFs) (Meinshausen and Ridgeway 2006)—avoid this “quantile crossing” problem by extracting quantiles from the empirical distribution of training samples in each leaf region.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "However, estimating each quantile independently can violate the ordering ˆd(q1) ≤ˆd(q2) for q1 < q2, resulting in a nonmonotonic— and thus, invalid—CDF.",
+              "Unlike multiclass classification methods that treat each deviation value as an unordered category, quantile regression exploits the inherent ordering of deviations by framing the task as ordinal regression and directly estimating the conditional cumulative distribution function F(u|s) = P(d ≤u|s).",
+              "Standard QR models minimize, for each quantile level q, the pinball loss ρq(d, ˆd) = qmax(d ˆd,0) + (1 q)max( ˆd d,0), (19) where ˆd denotes the model’s predicted qth quantile."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.3. Tree-Based Quantile Regression",
+                "equation": "",
+                "quote": "Tree-based QR methods—namely regression trees extended to CDF estimation and their ensemble ver­ sion quantile random forests (QRFs) (Meinshausen and Ridgeway 2006)—avoid this “quantile crossing” problem by extracting quantiles from the empirical distribution of training samples in each leaf region."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "versioning",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Versioning: “Versioning”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Model estimation as “estimation”: “methods—namely regression trees extended to CDF estimation and their ensemble version quantile random forests (QRFs)”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "data-overview",
+            "label": "Data Overview",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The industrial partner provides a month-long data set in 2023, covering more than 1 million online orders for home delivery and over 20,000 unique SKUs.",
+            "searchPhrases": [
+              "how data overview is represented",
+              "solution algorithm in operations and supply chains",
+              "data overview solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The industrial partner provides a month-long data set in 2023, covering more than 1 million online orders for home delivery and over 20,000 unique SKUs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The target variable in the machine learning problem, delivery deviation, is defined as the difference between the actual delivered date and the promised delivery date."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "6.1. Data Overview",
+                "equation": "",
+                "quote": "The industrial partner provides a month-long data set in 2023, covering more than 1 million online orders for home delivery and over 20,000 unique SKUs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "effectiveness-of-c-saa",
+            "label": "Effectiveness of C-SAA",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "This improvement is particularly evident in their enhanced effectiveness at avoiding cumulative lateness, defined as the total number of late delivery days across all units in the orders.",
+            "searchPhrases": [
+              "how effectiveness of c-saa is represented",
+              "solution algorithm in operations and supply chains",
+              "effectiveness of c-saa solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: This improvement is particularly evident in their enhanced effectiveness at avoiding cumulative lateness, defined as the total number of late delivery days across all units in the orders.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In contrast, both Empirical-SAA and C-Empirical- SAA struggle to improve their performances in both the average realized objective value and the cumulative lateness as the sample size grows.",
+              "In fact, the performance differences become more pronounced as the late delivery penalty (γ+) increases.",
+              "SAA struggle to improve their performances in both the average realized objective value and the cumulative lateness as the sample size grows."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "6.6. Effectiveness of C-SAA",
+                "equation": "",
+                "quote": "This improvement is particularly evident in their enhanced effectiveness at avoiding cumulative lateness, defined as the total number of late delivery days across all units in the orders."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “This improvement is particularly evident in their enhanced effectiveness at avoiding cumulative lateness, defined as the total number”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "cost-of-robustness",
+            "label": "Cost of Robustness",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "C-RO-D-CLF’s average cost increases from 1.07 to 1.20, C-RO-B-CLF’s average cost increases from 1.01 to 1.05, and C-SAA-CLF’s average cost increases from 0.96 to 1.05.",
+            "searchPhrases": [
+              "how cost of robustness is represented",
+              "modeled objective in operations and supply chains",
+              "cost of robustness modeled objective specification"
+            ],
+            "formal": "Objective relation: C-RO-D-CLF’s average cost increases from 1.07 to 1.20, C-RO-B-CLF’s average cost increases from 1.01 to 1.05, and C-SAA-CLF’s average cost increases from 0.96 to 1.05.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Worst-case objectives (Figure 7(b)) underscore the robustness of the C-RO methods; C-RO-D-CLF consistently yields the strongest tail protection, dropping from 0.88 at γ+ = 2.5 to 0.72 at γ+ = 40.",
+              "Notably, at γ+ = 40, C-SAA-CLF nearly matches C-RO-D-CLF, demonstrating that C-SAA can approach robust performance under extreme penalty scenarios.",
+              "Both C-RO variants tightly control lateness with minimal sensitivity to γ+, whereas C-SAA- CLF’s lateness drops substantially from 0.67 at γ+ = 2.5 to 0.46 at γ+ = 40."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "6.7. Cost of Robustness",
+                "equation": "",
+                "quote": "C-RO-D-CLF’s average cost increases from 1.07 to 1.20, C-RO-B-CLF’s average cost increases from 1.01 to 1.05, and C-SAA-CLF’s average cost increases from 0.96 to 1.05."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “C-RO-D-CLF’s average cost increases from 1.07 to 1.20, C-RO-B-CLF’s average cost increases from 1.01 to 1.05, and C-SAA-CLF’s”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "managerial-and-operational-implications",
+            "label": "Managerial and Operational Implications",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "When demand is stable and the goal is to minimize average fulfillment cost, C-SAA-CLF provides the most cost-effective solution.",
+            "searchPhrases": [
+              "how managerial and operational implications is represented",
+              "modeled objective in operations and supply chains",
+              "managerial and operational implications modeled objective specification"
+            ],
+            "formal": "Objective relation: When demand is stable and the goal is to minimize average fulfillment cost, C-SAA-CLF provides the most cost-effective solution.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "As retailers increasingly face variable demand patterns and rising customer expectations, the ability to flexibly match fulfillment strategy to context becomes a key operational advantage."
+            ],
+            "sources": [
+              {
+                "page": 21,
+                "section": "6.11. Managerial and Operational Implications",
+                "equation": "",
+                "quote": "When demand is stable and the goal is to minimize average fulfillment cost, C-SAA-CLF provides the most cost-effective solution."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “When demand is stable and the goal is to minimize average fulfillment cost, C-SAA-CLF provides the most cost-effective”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "contextual-sample-average-approximation",
+        "name": "Contextual Sample Average Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates The Nominal Optimization Problem.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "the-nominal-optimization-problem"
+          }
+        ],
+        "summary": "The paper adapts calibrated probabilistic multiclass classification and tree-based quantile regression (QR) to exploit the discrete, ordinal nature of delivery time deviations, yielding well-calibrated contextual distributions for the CSO framework. Unlike the reweighting approach of Bertsimas and Kallus (2020), which leverages complete historical samples for each fully observed cost vector, C-SAA relies solely on observational data (i.e., only the costs of the selected options are available). For simplicity, the carrier index k is omitted in the notation, and the data set for training the per-carrier model is written as D = {(sm,dm)}m∈[M].",
+        "objects": [
+          "Retailer",
+          "Customer",
+          "Elements"
+        ],
+        "inputs": [
+          "Observed cost"
+        ],
+        "decisions": [
+          "Release hour",
+          "Release day",
+          "The speed and reliability of fulfilling orders"
+        ],
+        "assumptions": [
+          "This section introduces the nominal MILP model developed for optimizing the omnichannel multicourier order fulfillment problem.",
+          "To address these challenges, this paper proposes a contextual stochastic optimization framework, encompassing both risk-neutral and robust approaches"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Retailer",
+              "source": {
+                "type": "section",
+                "section": "Tailored contextual distribution learning for e-commerce",
+                "page": 3,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "The paper includes an extensive case study at a major e-commerce retailer to (1) validate the efficacy of the proposed approaches in reducing expected fulfillment costs and (2) show sig­ nificant improvements in on-time delivery rates com­ pared with standard heuristics and baseline models.",
+                "matchedText": "retailer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customer",
+              "source": {
+                "type": "section",
+                "section": "Contextual Feature Selection",
+                "page": 10,
+                "sectionIndex": 3,
+                "sentence": 5,
+                "quote": "This includes customer location, SKU weight and dimensions, SKU type, quantities, release hour, release day, and planned lead time (i.e., the dif­ ference between the promised delivery date and the order release time).",
+                "matchedText": "customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Elements",
+              "source": {
+                "type": "section",
+                "section": "Contextual Feature Selection",
+                "page": 10,
+                "sectionIndex": 3,
+                "sentence": 6,
+                "quote": "These factors can influence devia­ tions through logistical complexity, handling require­ ments, and time-sensitive elements affecting the order’s processing and delivery schedule.",
+                "matchedText": "elements",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Observed cost",
+              "source": {
+                "type": "section",
+                "section": "Contextual Sample Average Approximation",
+                "page": 8,
+                "sectionIndex": 1,
+                "sentence": 17,
+                "quote": "Unlike the reweighting approach of Bertsimas and Kallus (2020), which leverages com­ plete historical samples for each fully observed cost vector, C-SAA relies solely on observational data (i.e., only the costs of the selected options are available).",
+                "matchedText": "observed cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Release hour",
+              "source": {
+                "type": "section",
+                "section": "Contextual Feature Selection",
+                "page": 10,
+                "sectionIndex": 3,
+                "sentence": 5,
+                "quote": "This includes customer location, SKU weight and dimensions, SKU type, quantities, release hour",
+                "matchedText": "release hour",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Release day",
+              "source": {
+                "type": "section",
+                "section": "Contextual Feature Selection",
+                "page": 10,
+                "sectionIndex": 3,
+                "sentence": 5,
+                "quote": "This includes customer location, SKU weight and dimensions, SKU type, quantities, release hour, release day",
+                "matchedText": "release day",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The speed and reliability of fulfilling orders",
+              "source": {
+                "type": "section",
+                "section": "Contextual Feature Selection",
+                "page": 10,
+                "sectionIndex": 3,
+                "sentence": 10,
+                "quote": "The geographical location and type of fulfillment center can affect the efficiency of order processing, whereas capacity and inventory levels determine the speed and reliability of fulfilling orders",
+                "matchedText": "the speed and reliability of fulfilling orders",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "This section introduces the nominal MILP model developed for optimizing the omnichannel multicourier order fulfillment problem.",
+              "source": {
+                "type": "section",
+                "section": "The Nominal Optimization Problem",
+                "page": 5,
+                "quote": "This section introduces the nominal MILP model developed for optimizing the omnichannel multicour­ ier order fulfillment problem."
+              }
+            },
+            {
+              "value": "To address these challenges, this paper proposes a contextual stochastic optimization framework, encompassing both risk-neutral and robust approaches",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 51,
+                "quote": "To address these challenges, this paper proposes a con­ textual stochastic optimization framework, encompassing both risk-neutral and robust approaches.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper proposes the first data-driven MILP that jointly selects fulfillment centers and carriers and captures item-consolidation discounts while embedding learned contextual deviation distributions in a tractable way.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Tailored contextual distribution learning for e-commerce",
+          "page": 3,
+          "sentence": 5
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 3,
+            "section": "2. Tailored contextual distribution learning for e-commerce",
+            "equation": "",
+            "quote": "The paper adapts calibrated prob­ abilistic multiclass classification and tree-based quantile regression (QR) to exploit the discrete, ordinal nature of delivery time deviations, yielding well-calibrated contex­ tual distributions for the CSO framework."
+          }
+        ],
+        "components": [
+          {
+            "id": "tailored-contextual-distribution-learning-for-e-commerce",
+            "label": "Tailored contextual distribution learning for e-commerce",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "The paper adapts calibrated probabilistic multiclass classification and tree-based quantile regression (QR) to exploit the discrete, ordinal nature of delivery time deviations, yielding well-calibrated contextual distributions for the CSO framework.",
+            "searchPhrases": [
+              "how tailored contextual distribution learning for e-commerce is represented",
+              "estimation procedure in operations and supply chains",
+              "tailored contextual distribution learning for e-commerce estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The paper adapts calibrated probabilistic multiclass classification and tree-based quantile regression (QR) to exploit the discrete, ordinal nature of delivery time deviations, yielding well-calibrated contextual distributions for the CSO framework.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To address these challenges, this paper proposes a contextual stochastic optimization framework, encompassing both risk-neutral and robust approaches."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2. Tailored contextual distribution learning for e-commerce",
+                "equation": "",
+                "quote": "The paper adapts calibrated prob­ abilistic multiclass classification and tree-based quantile regression (QR) to exploit the discrete, ordinal nature of delivery time deviations, yielding well-calibrated contex­ tual distributions for the CSO framework."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “The paper adapts calibrated probabilistic multiclass classification and tree-based quantile regression (QR) to exploit the discrete, ordinal nature”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "To address these challenges, this paper proposes a contextual stochastic optimization framework, encompassing both risk-neutral and robust approaches",
+                  "source": {
+                    "type": "section",
+                    "section": "Introduction",
+                    "page": 2,
+                    "sectionIndex": 1,
+                    "sentence": 51,
+                    "quote": "To address these challenges, this paper proposes a con­ textual stochastic optimization framework, encompassing both risk-neutral and robust approaches.",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "contextual-sample-average-approximation",
+            "label": "Contextual Sample Average Approximation",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Unlike the reweighting approach of Bertsimas and Kallus (2020), which leverages complete historical samples for each fully observed cost vector, C-SAA relies solely on observational data (i.e., only the costs of the selected options are available).",
+            "searchPhrases": [
+              "how contextual sample average approximation is represented",
+              "decision rule in operations and supply chains",
+              "contextual sample average approximation decision rule specification"
+            ],
+            "formal": "Decision rule: Unlike the reweighting approach of Bertsimas and Kallus (2020), which leverages complete historical samples for each fully observed cost vector, C-SAA relies solely on observational data (i.e., only the costs of the selected options are available).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Compute the average objective f = 1 Q PQ i=1 fi, which is a statistical lower bound on the true optimal value f ∗because f is an unbiased estimator of E ̃c~P(c|s)[f ] and E ̃c~P(c|s)[f ] ≤f ∗.",
+              "For each zi, draw a larger set of evaluation samples {jn}N2 n=1 ~ M(s), with N2 ≫N1. b.",
+              "Unlike the reweighting approach of Bertsimas and Kallus (2020), which leverages complete historical samples for each fully observed cost vector, C-SAA relies solely on observational data (i.e., only the costs of the selected options are available)."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.3. Contextual Sample Average Approximation",
+                "equation": "",
+                "quote": "Unlike the reweighting approach of Bertsimas and Kallus (2020), which leverages com­ plete historical samples for each fully observed cost vector, C-SAA relies solely on observational data (i.e., only the costs of the selected options are available)."
+              },
+              {
+                "page": 8,
+                "section": "4.3. Contextual Sample Average Approximation",
+                "equation": "",
+                "quote": "Select the candidate z∗with the smallest esti­ mated gap."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Unlike the reweighting approach of Bertsimas and Kallus (2020), which leverages complete historical samples for each fully observed”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "learning-the-contextual-distribution-of-delivery-deviations-for-",
+            "label": "Learning the Contextual Distribution of Delivery Deviations for CSOFP",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "For simplicity, the carrier index k is omitted in the notation, and the data set for training the per-carrier model is written as D = {(sm,dm)}m∈[M].",
+            "searchPhrases": [
+              "how learning the contextual distribution of delivery deviations for csofp is represented",
+              "solution algorithm in operations and supply chains",
+              "learning the contextual distribution of delivery deviations for csofp solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For simplicity, the carrier index k is omitted in the notation, and the data set for training the per-carrier model is written as D = {(sm,dm)}m∈[M]."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5. Learning the Contextual Distribution of Delivery Deviations for CSOFP",
+                "equation": "",
+                "quote": "For simplicity, the carrier index k is omitted in the notation, and the data set for training the per-carrier model is written as D = {(sm,dm)}m∈[M]."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e6f18e4109b22e36f0ec955c319fd5a6d5a4c835ec322c6b251674f8d4f50144",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "8988758b3d02f654fd9dbf6b15d4d5a6537c10e6287e67307fe092d3bda2d11c",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2024-1328/8988758b3d02f654fd9dbf6b15d4d5a6537c10e6287e67307fe092d3bda2d11c.json",
+      "extractionQaDecisionSha256": "621a63123b56959ac90849f2f2afc434413f4b4844444b395f8cd2367fa40400",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1638 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mksc-2022-1403",
+  "sourcePdfSha256": "2535e9a5b5abfdd11f28f41c33f10624e1ac3101968b87bb65f260910092ad19",
+  "extractionPagesSha256": "e6af74cd3b1a97cf343c54c997b6377fbf80a35d6e3b6ac342ea3a16a0349806",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "861d96148101537c70a4caf8cf3f5ba4dbe4737295d37ab8cf91bf4b3267d3e9",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "4d4399ae3e6aaa676db6a9764fd01a347ebdd5e21a6bff1217cbe2ff0f9cc8ea",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2022-1403/4d4399ae3e6aaa676db6a9764fd01a347ebdd5e21a6bff1217cbe2ff0f9cc8ea.json",
+  "extractionQaDecisionSha256": "9153b148b6471e51402d2e87ebf9376e5fbf0f876be57066ca5fc99c8befb6c2",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mksc-2022-1403",
+    "question": "How can batch deep reinforcement learning support dynamic coupon targeting?",
+    "overview": "We present an empirical framework for creating dynamic coupon targeting strategies using deep reinforcement learning.",
+    "modelTypes": [
+      "Structural model",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "model-free-evidence",
+        "name": "Model-Free Evidence",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "We present an empirical framework for creating dynamic coupon targeting strategies using deep reinforcement learning.",
+        "objects": [
+          "The decision maker",
+          "Customer",
+          "Seller",
+          "User",
+          "The typical consumer"
+        ],
+        "inputs": [
+          "A total of Ti coupons within a window of time",
+          "The consumer utility",
+          "Only the reward value and not the functional form of the reward",
+          "The discount"
+        ],
+        "decisions": [
+          "The price",
+          "The product price on her own web page",
+          "The price for the consumer",
+          "Which action to take",
+          "An action A (line 6)"
+        ],
+        "assumptions": [
+          "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+          "Static states have two types of transition processes: fixed and stationary",
+          "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+          "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "Decision 2: Search",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 6,
+                "quote": "We note several assumptions behind our deﬁnition of the dynamic targeting problem. • The decision maker (of coupon allocation) is the platform, not the sellers.",
+                "matchedText": "The decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customer",
+              "source": {
+                "type": "section",
+                "section": "Model-Free Evidence",
+                "page": 7,
+                "sectionIndex": 6,
+                "sentence": 57,
+                "quote": "We speculate that this setting might lack of state dependence10 because the most popular categories in livestream shopping are apparel and cosmetics, which are often associated with low customer loyalty.11 3.4.2.3.",
+                "matchedText": "customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Seller",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 13,
+                "quote": "The consumer can browse the thumbnails of many livestream channels, each accompanied by a topic, seller name, average price, number of viewers, and number of likes for the livestream session.",
+                "matchedText": "seller",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "User",
+              "source": {
+                "type": "section",
+                "section": "Model-Free Evidence",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "Data Overview Category Variable Definition User ID User ID The user’s unique identiﬁer Time ID Time ID The coupon reception incidence, that is, the number of times that the consumer has received a coupon during the sample period Targeting variables Consumer A vector of static and dynamic consumer characteristics, to be introduced in Section 4.2.",
+                "matchedText": "User",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The typical consumer",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "The typical consumer performs the following sequence of actions.",
+                "matchedText": "The typical consumer",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A total of Ti coupons within a window of time",
+              "source": {
+                "type": "section",
+                "section": "Problem Definition",
+                "page": 9,
+                "sectionIndex": 9,
+                "sentence": 14,
+                "quote": "platform15 could visit many sellers’ product pages and receive a total of Ti coupons within a window of time.",
+                "matchedText": "a total of Ti coupons within a window of time",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The consumer utility",
+              "source": {
+                "type": "section",
+                "section": "Reinforcement Learning",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 7,
+                "quote": "the consumer utility",
+                "matchedText": "the consumer utility",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Only the reward value and not the functional form of the reward",
+              "source": {
+                "type": "section",
+                "section": "Algorithm parameters: learning rate α ∈0,1",
+                "page": 12,
+                "sectionIndex": 5,
+                "sentence": 15,
+                "quote": "The sampled values (i.e., R and S′ in step 8 of Algorithm 1)30 enable the Q-function to update even though we know only the reward value and not the functional form of the reward as a function of the state and action.",
+                "matchedText": "only the reward value and not the functional form of the reward",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The discount",
+              "source": {
+                "type": "section",
+                "section": "Algorithm parameters: learning rate α ∈0,1",
+                "page": 12,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "Given the new reward R and new state S′, Q is updated to Qnew using a weighted average of the Q value from the previous iteration and the new information (R + δmaxAQ S′,A ( )); the weight α is the learning rate (a hyperparameter), and δ is the discount factor (line 8).",
+                "matchedText": "the discount",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The price",
+              "source": {
+                "type": "section",
+                "section": "Generalizability of the Setting",
+                "page": 9,
+                "sectionIndex": 8,
+                "sentence": 7,
+                "quote": "In Stage 2, the platform decides which coupon to send to the consumer or, more generally, determines the price for the consumer.",
+                "matchedText": "the price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The product price on her own web page",
+              "source": {
+                "type": "section",
+                "section": "Decision 2: Search",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 7,
+                "quote": "Although each seller can determine the product price on her own web page",
+                "matchedText": "the product price on her own web page",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The price for the consumer",
+              "source": {
+                "type": "section",
+                "section": "Generalizability of the Setting",
+                "page": 9,
+                "sectionIndex": 8,
+                "sentence": 7,
+                "quote": "In Stage 2, the platform decides which coupon to send to the consumer or, more generally, determines the price for the consumer",
+                "matchedText": "the price for the consumer",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Which action to take",
+              "source": {
+                "type": "section",
+                "section": "Treatments: Structural Model",
+                "page": 15,
+                "sectionIndex": 14,
+                "sentence": 7,
+                "quote": "In Stage 2, the platform decides which action to take",
+                "matchedText": "which action to take",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "An action A (line 6)",
+              "source": {
+                "type": "section",
+                "section": "Algorithm parameters: learning rate α ∈0,1",
+                "page": 12,
+                "sectionIndex": 5,
+                "sentence": 11,
+                "quote": "Then, at each time t (line 5), the agent (the platform, in our case) selects an action A (line 6)",
+                "matchedText": "an action A (line 6)",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+              "source": {
+                "type": "section",
+                "section": "Decision 2: Search",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 13,
+                "quote": "We assume that the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                "matchedText": "the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Static states have two types of transition processes: fixed and stationary",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 11,
+                "sectionIndex": 3,
+                "sentence": 23,
+                "quote": "Static states have two types of transition processes: ﬁxed and stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 11,
+                "sectionIndex": 3,
+                "sentence": 25,
+                "quote": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions.",
+                "matchedText": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 12,
+                "sectionIndex": 3,
+                "sentence": 35,
+                "quote": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary.",
+                "matchedText": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "Following the literature, we evaluate state dependence by comparing the purchase likelihoods between consumers who did and did not make a purchase in the previous period after receiving a coupon of a given discount level.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model-Free Evidence",
+          "page": 7,
+          "sentence": 51
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.4. Model-Free Evidence",
+            "equation": "",
+            "quote": "A vector of static and dynamic characteristics for each host of the livestream videos watched by the consumer, to be introduced in Section 4.2.1 Livestream channel A vector of static and dynamic video characteristics for each livestream channel watched by the consumer, to be introduced in Section 4.2.1 Coupon information Coupon type A vector of indicator variables that specify the type of coupon received in the incidence."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-free-evidence",
+            "label": "Model-Free Evidence",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "A vector of static and dynamic characteristics for each host of the livestream videos watched by the consumer, to be introduced in Section 4.2.1 Livestream channel A vector of static and dynamic video characteristics for each livestream channel watched by the consumer, to be introduced in Section 4.2.1 Coupon information Coupon type A vector of indicator variables that specify the type of coupon received in the incidence.",
+            "searchPhrases": [
+              "how model-free evidence is represented",
+              "system process in pricing, consumers, and revenue management",
+              "model-free evidence system process specification"
+            ],
+            "formal": "Process relation: A vector of static and dynamic characteristics for each host of the livestream videos watched by the consumer, to be introduced in Section 4.2.1 Livestream channel A vector of static and dynamic video characteristics for each livestream channel watched by the consumer, to be introduced in Section 4.2.1 Coupon information Coupon type A vector of indicator variables that specify the type of coupon received in the incidence.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The coupon types are defined by the discount and threshold ratios introduced in Section 3.3 Revenue Revenue The revenue generated from the coupon reception incidence."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.4. Model-Free Evidence",
+                "equation": "",
+                "quote": "A vector of static and dynamic characteristics for each host of the livestream videos watched by the consumer, to be introduced in Section 4.2.1 Livestream channel A vector of static and dynamic video characteristics for each livestream channel watched by the consumer, to be introduced in Section 4.2.1 Coupon information Coupon type A vector of indicator variables that specify the type of coupon received in the incidence."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "problem-definition",
+            "label": "Problem Definition",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The reward of the platform is defined as the GMV, which is the total revenue generated by consumers’ purchases.19 Intuitively",
+            "searchPhrases": [
+              "how problem definition is represented",
+              "information available to the decision maker in pricing, consumers, and revenue management",
+              "problem definition information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The reward of the platform is defined as the GMV, which is the total revenue generated by consumers’ purchases.19 Intuitively",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The reward of the platform is defined as the GMV, which is the total revenue generated by consumers’ purchases.19 Intuitively, revenue is equal to the after-coupon price if the consumer stays on the platform and makes a purchase and zero otherwise."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Problem Definition",
+                "equation": "",
+                "quote": "The reward of the platform is deﬁned as the GMV, which is the total revenue generated by consumers’ purchases.19 Intuitively"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “The reward of the platform is defined as the GMV, which is the total revenue generated by consumers’”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decision-2-search",
+            "label": "Decision 2: Search",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "We note several assumptions behind our definition of the dynamic targeting problem. • The decision maker (of coupon allocation) is the platform, not the sellers.",
+            "searchPhrases": [
+              "how decision 2: search is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "decision 2: search decision rule specification"
+            ],
+            "formal": "Decision rule: We note several assumptions behind our definition of the dynamic targeting problem. • The decision maker (of coupon allocation) is the platform, not the sellers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To solve the optimization problem, we collect historical data in batch mode, meaning that all the data become available to the econometrician at the same time; the econometrician cannot collect new data on the go.",
+              "The data are in a panel format where, for each consumer, we observe the {state, action, reward} tuple repeating multiple times.",
+              "This assumption might seem restrictive, but it applies to most e-commerce platforms and offline retailers that sell many products, where the coupon allocation decision is made by a centralized system. • The action set is fixed, and there is no capacity constraint for products or coupons."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "Decision 2: Search",
+                "equation": "",
+                "quote": "We note several assumptions behind our deﬁnition of the dynamic targeting problem. • The decision maker (of coupon allocation) is the platform, not the sellers."
+              },
+              {
+                "page": 10,
+                "section": "Decision 2: Search",
+                "equation": "",
+                "quote": "This assumption might seem restrictive, but it applies to most e-commerce platforms and ofﬂine retailers that sell many products, where the coupon allocation decision is made by a centralized system. • The action set is ﬁxed"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "bdrl-framework",
+            "label": "BDRL Framework",
+            "role": "process",
+            "concepts": [
+              "reinforcement-learning"
+            ],
+            "explanation": "Within the reinforcement learning framework, the “environment” is the process that generates the reward and state changes based on the agent’s action and current state values.",
+            "searchPhrases": [
+              "how bdrl framework is represented",
+              "system process in pricing, consumers, and revenue management",
+              "bdrl framework system process specification"
+            ],
+            "formal": "Process relation: Within the reinforcement learning framework, the “environment” is the process that generates the reward and state changes based on the agent’s action and current state values.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. BDRL Framework",
+                "equation": "",
+                "quote": "Within the reinforcement learning framework, the “environment” is the process that generates the reward and state changes based on the agent’s action and current state values."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "reinforcement-learning",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Reinforcement learning: “Within the Reinforcement learning framework, the “environment” is the process that generates”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+                  "source": {
+                    "type": "section",
+                    "section": "Decision 2: Search",
+                    "page": 10,
+                    "sectionIndex": 7,
+                    "sentence": 13,
+                    "quote": "We assume that the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                    "matchedText": "the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "webpage-action",
+            "label": "Webpage Action",
+            "role": "decision",
+            "concepts": [
+              "procurement",
+              "pricing"
+            ],
+            "explanation": "State variables Consumer Demographics (e.g., gender), behavioral variables (e.g., purchasing power), product category preference, the consumer’s preference for specific sellers Seller Demographics, the seller’s popularity (e.g., monthly revenue, quality rating) Product Product category, price, market share, rating, etc.",
+            "searchPhrases": [
+              "how webpage action is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "webpage action decision rule specification"
+            ],
+            "formal": "Decision rule: State variables Consumer Demographics (e.g., gender), behavioral variables (e.g., purchasing power), product category preference, the consumer’s preference for specific sellers Seller Demographics, the seller’s popularity (e.g., monthly revenue, quality rating) Product Product category, price, market share, rating, etc.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the coupon a consumer receives in the current period does not affect her web page choice in the next period.",
+              "The distribution of a dynamic state changes after an action is performed, whereas the distribution of a static state variable is independent of actions.",
+              "The values of some static states (e.g., the consumer’s gender) are fixed throughout the sample period."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4. Webpage Action",
+                "equation": "",
+                "quote": "State variables Consumer Demographics (e.g., gender), behavioral variables (e.g., purchasing power), product category preference, the consumer’s preference for speciﬁc sellers Seller Demographics, the seller’s popularity (e.g., monthly revenue, quality rating) Product Product category, price, market share, rating, etc."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "procurement",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Procurement as “purchasing”: “purchasing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "algorithm-parameters-learning-rate-0-1",
+            "label": "Algorithm parameters: learning rate α ∈0,1",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "To understand how this algorithm works, we first introduce the concept of Q-learning (Algorithm 1).",
+            "searchPhrases": [
+              "how algorithm parameters: learning rate α ∈0,1 is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "algorithm parameters: learning rate α ∈0,1 solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: To understand how this algorithm works, we first introduce the concept of Q-learning (Algorithm 1).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Initialize Q S,A ( ), for all S ∈S,A ∈A s( ), arbitrarily except Q terminal,· ( ) 0 3.",
+              "Rather, Q-learning uses samples collected from the environment (in the historical data, in our case) to directly observe the reward and the next state."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "1. Algorithm parameters: learning rate α ∈0,1",
+                "equation": "",
+                "quote": "To understand how this algorithm works, we ﬁrst introduce the concept of Q-learning (Algorithm 1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “To understand how this algorithm works, we first introduce the concept of Q-learning (Algorithm 1).”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "generalizability-of-the-setting",
+        "name": "Generalizability of the Setting",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model-Free Evidence.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-free-evidence"
+          }
+        ],
+        "summary": "The churn and search decisions jointly determine the shopping context, which is defined by the features of the consumer, seller (i.e., host), product, and web page (in our context, the livestream channel).",
+        "objects": [
+          "The consumer",
+          "The platform",
+          "Seller"
+        ],
+        "inputs": [
+          "A total of Ti coupons within a window of time",
+          "The consumer utility",
+          "Only the reward value and not the functional form of the reward",
+          "The discount"
+        ],
+        "decisions": [
+          "The price"
+        ],
+        "assumptions": [
+          "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+          "Static states have two types of transition processes: fixed and stationary",
+          "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+          "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The consumer",
+              "source": {
+                "type": "section",
+                "section": "Generalizability of the Setting",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "Our BDRL approach analyzes the livestream shopping decision process in terms of the consumer’s decisions about churn, search, and purchase, which is a framework that applies to most e-commerce settings.",
+                "matchedText": "the consumer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The platform",
+              "source": {
+                "type": "section",
+                "section": "Generalizability of the Setting",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "In Stage 2, the platform decides which coupon to send to the consumer or, more generally, determines the price for the consumer.",
+                "matchedText": "the platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Seller",
+              "source": {
+                "type": "section",
+                "section": "Generalizability of the Setting",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "The churn and search decisions jointly determine the shopping context, which is deﬁned by the features of the consumer, seller (i.e., host), product, and web page (in our context, the livestream channel).",
+                "matchedText": "seller",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A total of Ti coupons within a window of time",
+              "source": {
+                "type": "section",
+                "section": "Problem Definition",
+                "page": 9,
+                "sectionIndex": 9,
+                "sentence": 14,
+                "quote": "platform15 could visit many sellers’ product pages and receive a total of Ti coupons within a window of time.",
+                "matchedText": "a total of Ti coupons within a window of time",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The consumer utility",
+              "source": {
+                "type": "section",
+                "section": "Reinforcement Learning",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 7,
+                "quote": "the consumer utility",
+                "matchedText": "the consumer utility",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Only the reward value and not the functional form of the reward",
+              "source": {
+                "type": "section",
+                "section": "Algorithm parameters: learning rate α ∈0,1",
+                "page": 12,
+                "sectionIndex": 5,
+                "sentence": 15,
+                "quote": "The sampled values (i.e., R and S′ in step 8 of Algorithm 1)30 enable the Q-function to update even though we know only the reward value and not the functional form of the reward as a function of the state and action.",
+                "matchedText": "only the reward value and not the functional form of the reward",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The discount",
+              "source": {
+                "type": "section",
+                "section": "Algorithm parameters: learning rate α ∈0,1",
+                "page": 12,
+                "sectionIndex": 5,
+                "sentence": 12,
+                "quote": "Given the new reward R and new state S′, Q is updated to Qnew using a weighted average of the Q value from the previous iteration and the new information (R + δmaxAQ S′,A ( )); the weight α is the learning rate (a hyperparameter), and δ is the discount factor (line 8).",
+                "matchedText": "the discount",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The price",
+              "source": {
+                "type": "section",
+                "section": "Generalizability of the Setting",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "In Stage 2, the platform decides which coupon to send to the consumer or, more generally, determines the price for the consumer.",
+                "matchedText": "the price",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+              "source": {
+                "type": "section",
+                "section": "Decision 2: Search",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 13,
+                "quote": "We assume that the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                "matchedText": "the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Static states have two types of transition processes: fixed and stationary",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 11,
+                "sectionIndex": 3,
+                "sentence": 23,
+                "quote": "Static states have two types of transition processes: ﬁxed and stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 11,
+                "sectionIndex": 3,
+                "sentence": 25,
+                "quote": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions.",
+                "matchedText": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 12,
+                "sectionIndex": 3,
+                "sentence": 35,
+                "quote": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary.",
+                "matchedText": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The analysis first formulates the dynamic coupon targeting problem as a Markov decision process (MDP) and builds on the dynamic pricing literature (see Seetharaman 2009 for a review) to incorporate consumer intertemporal tradeoffs.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Introduction",
+          "page": 2,
+          "sentence": 24
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 9,
+            "section": "3.5. Generalizability of the Setting",
+            "equation": "",
+            "quote": "The churn and search decisions jointly determine the shopping context, which is deﬁned by the features of the consumer, seller (i.e., host), product, and web page (in our context, the livestream channel)."
+          }
+        ],
+        "components": [
+          {
+            "id": "generalizability-of-the-setting",
+            "label": "Generalizability of the Setting",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The churn and search decisions jointly determine the shopping context, which is defined by the features of the consumer, seller (i.e., host), product, and web page (in our context, the livestream channel).",
+            "searchPhrases": [
+              "how generalizability of the setting is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "generalizability of the setting decision rule specification"
+            ],
+            "formal": "Decision rule: The churn and search decisions jointly determine the shopping context, which is defined by the features of the consumer, seller (i.e., host), product, and web page (in our context, the livestream channel).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The churn and search decisions jointly determine the shopping context, which is defined by the features of the consumer, seller (i.e., host), product, and web page (in our context, the livestream channel)."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.5. Generalizability of the Setting",
+                "equation": "",
+                "quote": "The churn and search decisions jointly determine the shopping context, which is deﬁned by the features of the consumer, seller (i.e., host), product, and web page (in our context, the livestream channel)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "benchmark-policies",
+        "name": "Benchmark Policies",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model-Free Evidence.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-free-evidence"
+          }
+        ],
+        "summary": "Although states are used to estimate the model coefficients, states do not affect the choice of the optimal action because there is no interaction between states and actions in Equation (4). The direct methods32 were developed more recently in the causal inference literature.",
+        "objects": [
+          "The consumer",
+          "The platform"
+        ],
+        "inputs": [
+          "The reward",
+          "Output"
+        ],
+        "decisions": [
+          "Which action to take",
+          "Set contains 80% of the consumers",
+          "The optimal action"
+        ],
+        "assumptions": [
+          "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simplified version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more flexible than the full structural model.",
+          "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+          "Static states have two types of transition processes: fixed and stationary",
+          "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+          "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The consumer",
+              "source": {
+                "type": "section",
+                "section": "Benchmark Policies",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 13,
+                "quote": "In Stage 1, the consumer makes a churn decision (i.e., whether to continue using the platform or to leave permanently); if the consumer chooses to continue using the platform, she starts the search process.",
+                "matchedText": "the consumer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The platform",
+              "source": {
+                "type": "section",
+                "section": "Benchmark Policies",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 13,
+                "quote": "In Stage 1, the consumer makes a churn decision (i.e., whether to continue using the platform or to leave permanently); if the consumer chooses to continue using the platform, she starts the search process.",
+                "matchedText": "the platform",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "Benchmark Policies",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 11,
+                "quote": "Both the reward function and the state transition function depend on the consumer decision process.",
+                "matchedText": "the reward",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Output",
+              "source": {
+                "type": "section",
+                "section": "Static Policy with Heterogeneous Treatments",
+                "page": 14,
+                "sectionIndex": 2,
+                "sentence": 4,
+                "quote": "Most indirect methods are machine learning algorithms that use the state variables and actions as inputs to predict the reward output.",
+                "matchedText": "output",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Which action to take",
+              "source": {
+                "type": "section",
+                "section": "Benchmark Policies",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "In Stage 2, the platform decides which action to take",
+                "matchedText": "which action to take",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Set contains 80% of the consumers",
+              "source": {
+                "type": "section",
+                "section": "Benchmark Policies",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 45,
+                "quote": "set contains 80% of the consumers",
+                "matchedText": "set contains 80% of the consumers",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The optimal action",
+              "source": {
+                "type": "section",
+                "section": "Static Policy with Homogeneous Treatment",
+                "page": 14,
+                "sectionIndex": 1,
+                "sentence": 5,
+                "quote": "Although states are used to estimate the model coefﬁcients, states do not affect the choice of the optimal action because there is no interaction between states and actions in Equation (4).",
+                "matchedText": "the optimal action",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simplified version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more flexible than the full structural model.",
+              "source": {
+                "type": "section",
+                "section": "Benchmark Policies",
+                "page": 15,
+                "quote": "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simpliﬁed version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more ﬂexible than the full structural model."
+              }
+            },
+            {
+              "value": "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+              "source": {
+                "type": "section",
+                "section": "Decision 2: Search",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 13,
+                "quote": "We assume that the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                "matchedText": "the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Static states have two types of transition processes: fixed and stationary",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 11,
+                "sectionIndex": 3,
+                "sentence": 23,
+                "quote": "Static states have two types of transition processes: ﬁxed and stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 11,
+                "sectionIndex": 3,
+                "sentence": 25,
+                "quote": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions.",
+                "matchedText": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 12,
+                "sectionIndex": 3,
+                "sentence": 35,
+                "quote": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary.",
+                "matchedText": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 3
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "Once we fit the reward function ( f S,A ( )) and the state transition function (g S,A ( )), we use backward induction to calculate the Q function (i.e., the policy-specific value function; Equation (8)).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Benchmark Policies",
+          "page": 15,
+          "sentence": 24
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 14,
+            "section": "5.1. Static Policy with Homogeneous Treatment",
+            "equation": "",
+            "quote": "Although states are used to estimate the model coefﬁcients, states do not affect the choice of the optimal action because there is no interaction between states and actions in Equation (4)."
+          }
+        ],
+        "components": [
+          {
+            "id": "static-policy-with-homogeneous-treatment",
+            "label": "Static Policy with Homogeneous Treatment",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "Although states are used to estimate the model coefficients, states do not affect the choice of the optimal action because there is no interaction between states and actions in Equation (4).",
+            "searchPhrases": [
+              "how static policy with homogeneous treatment is represented",
+              "estimation procedure in pricing, consumers, and revenue management",
+              "static policy with homogeneous treatment estimation procedure specification"
+            ],
+            "formal": "Estimation relation: Although states are used to estimate the model coefficients, states do not affect the choice of the optimal action because there is no interaction between states and actions in Equation (4).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The model estimates the average treatment effect of each coupon (action A) and chooses the optimal coupon, that is, the coupon that generates the highest predicted reward, ˆR S,A ( ) (Equation (5)).",
+              "The dependent variable is the revenue from one coupon reception incidence, and the independent variables are states and actions."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "5.1. Static Policy with Homogeneous Treatment",
+                "equation": "",
+                "quote": "Although states are used to estimate the model coefﬁcients, states do not affect the choice of the optimal action because there is no interaction between states and actions in Equation (4)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “Although states are used to estimate the model coefficients, states do not affect the choice of the optimal”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "static-policy-with-heterogeneous-treatments",
+            "label": "Static Policy with Heterogeneous Treatments",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "The direct methods32 were developed more recently in the causal inference literature.",
+            "searchPhrases": [
+              "how static policy with heterogeneous treatments is represented",
+              "estimation procedure in pricing, consumers, and revenue management",
+              "static policy with heterogeneous treatments estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The direct methods32 were developed more recently in the causal inference literature.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simplified version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more flexible than the full structural model."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "5.2. Static Policy with Heterogeneous Treatments",
+                "equation": "",
+                "quote": "The direct methods32 were developed more recently in the causal inference literature."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “The direct methods32 were developed more recently in the causal inference literature.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simplified version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more flexible than the full structural model.",
+                  "source": {
+                    "type": "section",
+                    "section": "Benchmark Policies",
+                    "page": 15,
+                    "quote": "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simpliﬁed version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more ﬂexible than the full structural model."
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "treatments-structural-model",
+        "name": "Treatments: Structural Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model-Free Evidence.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-free-evidence"
+          }
+        ],
+        "summary": "In Stage 3, the consumer makes the purchase decision based on the state and action she observes.",
+        "objects": [
+          "The consumer",
+          "The platform"
+        ],
+        "inputs": [
+          "The reward"
+        ],
+        "decisions": [
+          "Which action to take"
+        ],
+        "assumptions": [
+          "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simplified version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more flexible than the full structural model.",
+          "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+          "Static states have two types of transition processes: fixed and stationary",
+          "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+          "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The consumer",
+              "source": {
+                "type": "section",
+                "section": "Treatments: Structural Model",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "In Stage 1, the consumer makes a churn decision (i.e., whether to continue using the platform or to leave permanently); if the consumer chooses to continue using the platform, she starts the search process.",
+                "matchedText": "the consumer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The platform",
+              "source": {
+                "type": "section",
+                "section": "Treatments: Structural Model",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "In Stage 1, the consumer makes a churn decision (i.e., whether to continue using the platform or to leave permanently); if the consumer chooses to continue using the platform, she starts the search process.",
+                "matchedText": "the platform",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "Treatments: Structural Model",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "Both the reward function and the state transition function depend on the consumer decision process.",
+                "matchedText": "the reward",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Which action to take",
+              "source": {
+                "type": "section",
+                "section": "Treatments: Structural Model",
+                "page": 15,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "In Stage 2, the platform decides which action to take",
+                "matchedText": "which action to take",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simplified version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more flexible than the full structural model.",
+              "source": {
+                "type": "section",
+                "section": "Treatments: Structural Model",
+                "page": 15,
+                "quote": "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simpliﬁed version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more ﬂexible than the full structural model."
+              }
+            },
+            {
+              "value": "The coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon",
+              "source": {
+                "type": "section",
+                "section": "Decision 2: Search",
+                "page": 10,
+                "sectionIndex": 7,
+                "sentence": 13,
+                "quote": "We assume that the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                "matchedText": "the coupon supply process is exogenously given and, thus, is not affected by the coupon targeting policy. • We do not model the consumer’s choice of when to use the coupon.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Static states have two types of transition processes: fixed and stationary",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 11,
+                "sectionIndex": 3,
+                "sentence": 23,
+                "quote": "Static states have two types of transition processes: ﬁxed and stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 11,
+                "sectionIndex": 3,
+                "sentence": 25,
+                "quote": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions.",
+                "matchedText": "The values of other static variables change from time to time, but their distributions are stationary, not affected by the platform’s actions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary",
+              "source": {
+                "type": "section",
+                "section": "Webpage",
+                "page": 12,
+                "sectionIndex": 3,
+                "sentence": 35,
+                "quote": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary.",
+                "matchedText": "Under this assumption, we allow the state transition process for the seller, product, and web page characteristics to be stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "Once we fit the reward function ( f S,A ( )) and the state transition function (g S,A ( )), we use backward induction to calculate the Q function (i.e., the policy-specific value function; Equation (8)).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Treatments: Structural Model",
+          "page": 15,
+          "sentence": 16
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 15,
+            "section": "Treatments: Structural Model",
+            "equation": "",
+            "quote": "In Stage 3, the consumer makes the purchase decision based on the state and action she observes."
+          }
+        ],
+        "components": [
+          {
+            "id": "treatments-structural-model",
+            "label": "Treatments: Structural Model",
+            "role": "decision",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "In Stage 3, the consumer makes the purchase decision based on the state and action she observes.",
+            "searchPhrases": [
+              "how treatments: structural model is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "treatments: structural model decision rule specification"
+            ],
+            "formal": "Decision rule: In Stage 3, the consumer makes the purchase decision based on the state and action she observes.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In Online Appendix G, we present the sequential search model in a full structural fashion.33 We also consider a simplified version in which both the f and g functions are formulated as GBDT models (Equations (6) and (7)), which are more flexible than the full structural model.",
+              "In Stage 3, the consumer makes the purchase decision based on the state and action she observes."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "Treatments: Structural Model",
+                "equation": "",
+                "quote": "In Stage 3, the consumer makes the purchase decision based on the state and action she observes."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses System state as “decision state”: “In Stage 3, the consumer makes the purchase decision based on the state and action she observes.”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "2535e9a5b5abfdd11f28f41c33f10624e1ac3101968b87bb65f260910092ad19",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "4d4399ae3e6aaa676db6a9764fd01a347ebdd5e21a6bff1217cbe2ff0f9cc8ea",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mksc-2022-1403/4d4399ae3e6aaa676db6a9764fd01a347ebdd5e21a6bff1217cbe2ff0f9cc8ea.json",
+      "extractionQaDecisionSha256": "9153b148b6471e51402d2e87ebf9376e5fbf0f876be57066ca5fc99c8befb6c2",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1052 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2021-0106",
+  "sourcePdfSha256": "e0d787ca93a480f5d5d0ffa7f79b5712a608eed37e55db5070da22a0f3b8155d",
+  "extractionPagesSha256": "6a1a654668a8f656d8570da8fa528651b165200d90c1357b334e03429d314c42",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "0c1a0595677a3a285c78a4e157d4981ac9892796dfa02f58a81fb73060ff6ed5",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "ba6f54f966932275102b4799af0b23a18b7b04afe5e7d8f634cf8b45623f5afd",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0106/ba6f54f966932275102b4799af0b23a18b7b04afe5e7d8f634cf8b45623f5afd.json",
+  "extractionQaDecisionSha256": "5c4b92f84d7195aac68949f282f362b6d1cd27c25313417b63e758ae7b2fb0b1",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2021-0106",
+    "question": "What role does capacity rationing play in multiserver, nonpreemptive priority queues?",
+    "overview": "Many service and manufacturing systems use both capacity rationing (CR) and priority to differentiate among their customers. We model these as a two-class nonpreemptive priority [Formula: see text] queueing model and the practice of CR; an arriving low-priority customer can directly enter service only when the number of idle servers is higher than the CR level, k. For these systems, we separately discuss two important features that are common in practice but ignored in the literature; supply is narrowly matched with demand, and service rates are heterogeneous, reflecting different customer types.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        8,
+        9,
+        10,
+        12,
+        13,
+        18
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "homogeneous-service-model",
+        "name": "Homogeneous Service Model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Many service and manufacturing systems use both capacity rationing (CR) and priority to differentiate among their customers. We model these as a two-class nonpreemptive priority [Formula: see text] queueing model and the practice of CR; an arriving low-priority customer can directly enter service only when the number of idle servers is higher than the CR level, k. When the service times of classes differ, we derive exact solutions for different performance measures of interest using queueing and Markov chain decomposition.",
+        "objects": [
+          "Customers",
+          "Servers",
+          "Manager",
+          "Patients",
+          "No fewer than kc idle servers"
+        ],
+        "inputs": [
+          "The service times",
+          "Class i customers’ probability of delay in the j system",
+          "Service upon arrival",
+          "Probability f",
+          "The rewards"
+        ],
+        "decisions": [
+          "Serve customers",
+          "With rates μ1 and μ2",
+          "Require CR",
+          "Accept all customers and analyze how to serve them under a specific priority rule"
+        ],
+        "assumptions": [
+          "The system is stable",
+          "All random variables are independent of each other",
+          "Common mathematical operations have higher precedence",
+          "The customers are nonstrategic",
+          "Class i customers arrive according to a Poisson process"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Many service and manufacturing systems use both capacity rationing (CR) and priority to differentiate among their customers.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "We model these as a two-class nonpreemptive priority [Formula: see text] queueing model and the practice of CR; an arriving low-priority customer can directly enter service only when the number of idle servers is higher than the CR level, k.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Manager",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 30,
+                "quote": "They assume that the system manager controls admission by rejecting some customers.",
+                "matchedText": "manager",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patients",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 1,
+                "quote": "a high volume of acute patients (e.g., during the flu sea­ son), nonacute patients are hardly ever assigned to acute zones.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "No fewer than kc idle servers",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "sectionIndex": 3,
+                "page": 5,
+                "quote": "In the cth system, class 1 and class 2 customers’ arrival rates are λc 1 and λc 2, respectively, and the CR level is kc; so, class 2 customers can access service only when there are no fewer than kc idle servers."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The service times",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "When the service times of classes differ, we derive exact solutions for different performance measures of interest using queueing and Markov chain decomposition.",
+                "matchedText": "the service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Class i customers’ probability of delay in the j system",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "sectionIndex": 3,
+                "page": 5,
+                "quote": "We denote class i customers’ probability of delay in the j system as Pj Wi for i = 1, 2 and j = H,B.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service upon arrival",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 40,
+                "quote": "Under priority and CR policies, class 1 customers can receive service upon arrival when there are idle servers; class 2 customers can receive service upon arrival when more than kc servers are idle.",
+                "matchedText": "service upon arrival",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Probability f",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 24,
+                "quote": "That involves marking all low-priority custo­ mers with a probability f",
+                "matchedText": "probability f",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The rewards",
+              "source": {
+                "type": "section",
+                "section": "Renewal Reward Theorem and QMCD",
+                "page": 11,
+                "sectionIndex": 7,
+                "sentence": 52,
+                "quote": "Let R· FN and R· IH denote the column vectors of the expected reward collected for a particular performance measure in an FN and an IH, respectively (i.e., RL1 FN and RL1 IH denote the rewards related to the number of class 1 customers in the system during an FN and an IH, respectively).",
+                "matchedText": "the rewards",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Serve customers",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 3,
+                "sentence": 117,
+                "quote": "serve customers as in a nonpreemptive priority queue",
+                "matchedText": "serve customers as in a nonpreemptive priority queue",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "With rates μ1 and μ2",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 4,
+                "sentence": 3,
+                "quote": "Recall that class 1 and class 2 customers arrive according to Poisson processes with parameters λ1 and λ2, respectively, and that their service times are exponentially distributed with rates µ1 and µ2",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require CR",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 8,
+                "quote": "Therefore, providing immediate access to service for high-priority customers may require CR",
+                "matchedText": "require CR",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Accept all customers and analyze how to serve them under a specific priority rule",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 31,
+                "quote": "However, we accept all customers and ana­ lyze how to serve them under a specific priority rule",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The system is stable",
+              "source": {
+                "type": "section",
+                "section": "Homogeneous Service Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 6,
+                "quote": "In this section, we assume that the system is stable.",
+                "matchedText": "the system is stable.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All random variables are independent of each other",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "We assume that all random vari­ ables are independent of each other.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Common mathematical operations have higher precedence",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 4,
+                "sentence": 23,
+                "quote": "We assume that com­ mon mathematical operations have higher precedence",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The customers are nonstrategic",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 47,
+                "quote": "We assume that the customers are nonstra­ tegic.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Class i customers arrive according to a Poisson process",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 45,
+                "quote": "Class i customers arrive according to a Poisson pro­ cess",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper can then approximate customers’ probabilities of delay, PB W1 and PB W2, using Yc(∞).",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Homogeneous Service Model",
+          "page": 6,
+          "sentence": 39
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 18,
+            "section": "Pekoz's Marked Policy",
+            "equation": "",
+            "quote": "The CR pol­ icy extends the priority policy by granting priority not only to existing high-priority customers but also, to future arrivals of such customers while also benefiting from capacity pooling."
+          }
+        ],
+        "components": [
+          {
+            "id": "homogeneous-service-model",
+            "label": "Homogeneous Service Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "In addition, we consider a B system, where class 2 customers balk if they cannot access service upon arrival (see, e.g., Figure 3(b)).",
+            "searchPhrases": [
+              "how homogeneous service model is represented",
+              "system process in operations and supply chains",
+              "homogeneous service model system process specification"
+            ],
+            "formal": "Process relation: In addition, we consider a B system, where class 2 customers balk if they cannot access service upon arrival (see, e.g., Figure 3(b)).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When δ1<0, the system is dominated by class 1 arrivals (i.e., limc→∞αc = limc→∞1 κ1cδ1 = 1).",
+              "For example, when δ1 = 0, the proportion of class 1 arrivals is fixed (i.e., αc = 1 κ1).",
+              "Note that the scaling (2) does not include the case where the system is dominated by class 2 arrivals (i.e., limc→∞αc = 0), where the same level of CR generates less benefit than when limc→∞αc = 1."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Homogeneous Service Model",
+                "equation": "",
+                "quote": "In addition, we consider a B system, where class 2 custo­ mers balk if they cannot access service upon arrival (see, e.g., Figure 3(b))."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “In addition, we consider a B system, where class 2 customers balk if they cannot access service upon”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "notation-description",
+            "label": "Notation Description",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "This is the main result of our paper and is akin to the renewal reward theorem.",
+            "searchPhrases": [
+              "how notation description is represented",
+              "modeled objective in operations and supply chains",
+              "notation description modeled objective specification"
+            ],
+            "formal": "Objective relation: This is the main result of our paper and is akin to the renewal reward theorem.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "IH RT , (9) of which the denominator RT is RT = vFNRT FN + vIHRT IH: (10) The results in Theorem 2 allow for the exact evaluation of any performance measures of interest (such as the ones in Table 1) in the system.",
+              "We denote R −→ q2 as the reward collected in an excursion {0, · s,q2} before the system’s first passage to column q2 + 1.",
+              "That is, [R −→ q2] (q′ 1,q2+1,n′) (q1,q2,n) denotes the reward collected in an excursion starting from state (q1,q2,n) before it first enters into column q2 + 1 through state (q′ 1,q2 + 1,n′)."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "Notation Description",
+                "equation": "",
+                "quote": "This is the main result of our paper and is akin to the renewal reward theorem."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “This is the main result of our paper and is akin to the renewal reward theorem.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "insights-from-numerical-results",
+            "label": "Insights from Numerical Results",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "We observe that ignoring service heterogeneity results in an underestimation of waiting.",
+            "searchPhrases": [
+              "how insights from numerical results is represented",
+              "information available to the decision maker in operations and supply chains",
+              "insights from numerical results information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We observe that ignoring service heterogeneity results in an underestimation of waiting.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When the service times of classes differ, we derive exact solutions for different performance measures of interest using queueing and Markov chain decomposition."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4. Insights from Numerical Results",
+                "equation": "",
+                "quote": "We observe that ignoring service heterogeneity results in an underestimation of waiting."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We observe that ignoring service heterogeneity results in an underestimation of waiting.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "The service times",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 5,
+                    "quote": "When the service times of classes differ, we derive exact solutions for different performance measures of interest using queueing and Markov chain decomposition.",
+                    "matchedText": "the service times",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "square-root-cr-rule",
+            "label": "Square Root CR Rule",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We validate the square root result using the numerical algorithm provided in Schaack and Larson (1986) and consider two homogeneous priority classes.",
+            "searchPhrases": [
+              "how square root cr rule is represented",
+              "solution algorithm in operations and supply chains",
+              "square root cr rule solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We validate the square root result using the numerical algorithm provided in Schaack and Larson (1986) and consider two homogeneous priority classes.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Here, we numerically test the applicability of the square root CR rule when the scaling parameter δ1 = 1.",
+              "More specifically, waiting probabilities of both classes of customers are one when δ2 > 1=2 and are constants when δ2 = 1=2.",
+              "In the following numerical experiments, we keep μ1 = 1, increasing c and arrival rates λc 1 and λc 2."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "4.2. Square Root CR Rule",
+                "equation": "",
+                "quote": "We validate the square root result using the numerical algorithm provided in Schaack and Larson (1986) and con­ sider two homogeneous priority classes."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We validate the square root result using the numerical algorithm provided in Schaack and Larson (1986) and consider”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "pekoz-s-marked-policy",
+            "label": "Pekoz's Marked Policy",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "The CR policy extends the priority policy by granting priority not only to existing high-priority customers but also, to future arrivals of such customers while also benefiting from capacity pooling.",
+            "searchPhrases": [
+              "how pekoz's marked policy is represented",
+              "feasibility condition in operations and supply chains",
+              "pekoz's marked policy feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: The CR policy extends the priority policy by granting priority not only to existing high-priority customers but also, to future arrivals of such customers while also benefiting from capacity pooling.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "These advantages underlie the observed performance difference between the CR and DS policies."
+            ],
+            "sources": [
+              {
+                "page": 18,
+                "section": "Pekoz's Marked Policy",
+                "equation": "",
+                "quote": "The CR pol­ icy extends the priority policy by granting priority not only to existing high-priority customers but also, to future arrivals of such customers while also benefiting from capacity pooling."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Feasibility constraints”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "heterogeneous-service-model",
+        "name": "Heterogeneous Service Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Homogeneous Service Model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "homogeneous-service-model"
+          }
+        ],
+        "summary": "Recall that class 1 and class 2 customers arrive according to Poisson processes with parameters λ1 and λ2, respectively, and that their service times are exponentially distributed with rates μ1 and μ2, respectively. Let πq1,q2,n denote the steady-state probability that this MC is in state (q1,q2,n). Specifically, if all class 1 customers arrive with an ambulance, this model represents an ED that goes into ambulance diversion (not accepting additional class 1 customers) whenever the number of class 1 customers is M or more.",
+        "objects": [
+          "Customers",
+          "Servers"
+        ],
+        "inputs": [
+          "The rewards",
+          "Time t",
+          "The left and right first column passage probability matrices by G ←− · and G −→ ·, respectively",
+          "Service rate",
+          "The arrival rate"
+        ],
+        "decisions": [
+          "With rates μ1 and μ2"
+        ],
+        "assumptions": [
+          "All random variables are independent of each other",
+          "Common mathematical operations have higher precedence"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "Recall that class 1 and class 2 customers arrive according to Poisson processes with parameters λ1 and λ2, respectively, and that their service times are exponentially distributed with rates µ1 and µ2, respectively.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "Under the CR, class 2 customers can access service only if no fewer than k servers are idle.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The rewards",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 87,
+                "quote": "Let R· FN and R· IH denote the column vectors of the expected reward collected for a particular performance measure in an FN and an IH, respectively (i.e., RL1 FN and RL1 IH denote the rewards related to the number of class 1 customers in the system during an FN and an IH, respectively).",
+                "matchedText": "the rewards",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Markov Chain",
+                "page": 9,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "Let random variables Q1(t), Q2(t), and N(t) denote the total number of class 1 customers, the total number of class 2 customers, and the number of class 2 customers in ser­ vice at time t, respectively.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The left and right first column passage probability matrices by G ←− · and G −→ ·, respectively",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 75,
+                "quote": "the left and right first column passage probability matrices by G ←− · and G −→ ·, respectively",
+                "matchedText": "the left and right first column passage probability matrices by G ←− · and G −→ ·, respectively",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service rate",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "In the model with homogeneous service, the total service rate depends only on the number of customers (either class 1 or class 2) in service.",
+                "matchedText": "service rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 10,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "In practice, the arrival rate of class 1 customers is relatively low compared with the system capacity, so the value of M need not be very large.",
+                "matchedText": "the arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "With rates μ1 and μ2",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 3,
+                "quote": "Recall that class 1 and class 2 customers arrive according to Poisson processes with parameters λ1 and λ2, respectively, and that their service times are exponentially distributed with rates µ1 and µ2",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "All random variables are independent of each other",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "We assume that all random vari­ ables are independent of each other.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Common mathematical operations have higher precedence",
+              "source": {
+                "type": "section",
+                "section": "Heterogeneous Service Model",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 100,
+                "quote": "We assume that com­ mon mathematical operations have higher precedence",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper first decompose the system into two subsystems.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Heterogeneous Service Model",
+          "page": 10,
+          "sentence": 50
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 10,
+            "section": "3.2. Quasibirth-Death Process",
+            "equation": "",
+            "quote": "Specifically, if all class 1 customers arrive with an ambulance, this model represents an ED that goes into ambulance diversion (not accepting additional class 1 customers) whenever the number of class 1 customers is M or more."
+          }
+        ],
+        "components": [
+          {
+            "id": "heterogeneous-service-model",
+            "label": "Heterogeneous Service Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Recall that class 1 and class 2 customers arrive according to Poisson processes with parameters λ1 and λ2, respectively, and that their service times are exponentially distributed with rates μ1 and μ2, respectively.",
+            "searchPhrases": [
+              "how heterogeneous service model is represented",
+              "system process in operations and supply chains",
+              "heterogeneous service model system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The multiserver two-class nonpreemptive queue with CR level k is stable if λ1=μ1 + λ2=μ2 < c k: (stable condition) The stability condition in Proposition 2 is sufficient but not necessary."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3. Heterogeneous Service Model",
+                "equation": "",
+                "quote": "Recall that class 1 and class 2 customers arrive according to Poisson processes with parameters λ1 and λ2, respectively, and that their service times are exponentially distributed with rates µ1 and µ2, respectively."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "markov-chain",
+            "label": "Markov Chain",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "Let πq1,q2,n denote the steady-state probability that this MC is in state (q1,q2,n).",
+            "searchPhrases": [
+              "how markov chain is represented",
+              "decision-relevant state in operations and supply chains",
+              "markov chain decision-relevant state specification"
+            ],
+            "formal": "State rule: collect the decision-relevant variables defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For example, |(·,q2,·)| is the total number of states at level q2, and the number of states in block (q1,q2) is |(q1,q2,·)| = n(q1,q2) n(q1,q2) +1.",
+              "Let πq1,q2,n denote the steady-state probability that this MC is in state (q1,q2,n)."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.1. Markov Chain",
+                "equation": "",
+                "quote": "Let πq1,q2,n denote the steady-state probability that this MC is in state (q1,q2,n)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “Let πq1,q2,n denote the steady-state probability that this MC is in state (q1,q2,n).”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "quasibirth-death-process",
+            "label": "Quasibirth-Death Process",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Specifically, if all class 1 customers arrive with an ambulance, this model represents an ED that goes into ambulance diversion (not accepting additional class 1 customers) whenever the number of class 1 customers is M or more.",
+            "searchPhrases": [
+              "how quasibirth-death process is represented",
+              "system process in operations and supply chains",
+              "quasibirth-death process system process specification"
+            ],
+            "formal": "Process relation: Specifically, if all class 1 customers arrive with an ambulance, this model represents an ED that goes into ambulance diversion (not accepting additional class 1 customers) whenever the number of class 1 customers is M or more.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let random variables Q1(t), Q2(t), and N(t) denote the total number of class 1 customers, the total number of class 2 customers, and the number of class 2 customers in service at time t, respectively."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3.2. Quasibirth-Death Process",
+                "equation": "",
+                "quote": "Specifically, if all class 1 customers arrive with an ambulance, this model represents an ED that goes into ambulance diversion (not accepting additional class 1 customers) whenever the number of class 1 customers is M or more."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Specifically, if all class 1 customers arrive with an ambulance, this model represents an ED that goes into”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Time t",
+                  "source": {
+                    "type": "section",
+                    "section": "Markov Chain",
+                    "page": 9,
+                    "sectionIndex": 1,
+                    "sentence": 1,
+                    "quote": "Let random variables Q1(t), Q2(t), and N(t) denote the total number of class 1 customers, the total number of class 2 customers, and the number of class 2 customers in ser­ vice at time t, respectively.",
+                    "matchedText": "time t",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "renewal-reward-theorem-and-qmcd",
+            "label": "Renewal Reward Theorem and QMCD",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The algorithm combines QMCD with an extension of the RRR method.",
+            "searchPhrases": [
+              "how renewal reward theorem and qmcd is represented",
+              "solution algorithm in operations and supply chains",
+              "renewal reward theorem and qmcd solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The algorithm combines QMCD with an extension of the RRR method.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Instead of using a specific state as the starting of transition cycles, we apply the framework of QMCD (see Abouee-Mehrizi and Baron 2016 and Baron et al. 2018) and use a new definition of transition cycles to enable the generalization of RRR."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3.3. Renewal Reward Theorem and QMCD",
+                "equation": "",
+                "quote": "The algo­ rithm combines QMCD with an extension of the RRR method."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “The algorithm combines QMCD with an extension of the RRR method.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e0d787ca93a480f5d5d0ffa7f79b5712a608eed37e55db5070da22a0f3b8155d",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "ba6f54f966932275102b4799af0b23a18b7b04afe5e7d8f634cf8b45623f5afd",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0106/ba6f54f966932275102b4799af0b23a18b7b04afe5e7d8f634cf8b45623f5afd.json",
+      "extractionQaDecisionSha256": "5c4b92f84d7195aac68949f282f362b6d1cd27c25313417b63e758ae7b2fb0b1",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

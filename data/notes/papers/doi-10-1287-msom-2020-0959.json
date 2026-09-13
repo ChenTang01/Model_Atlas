@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2020-0959",
+  "sourcePdfSha256": "9f8d444e6bf5b2f555b8a6f83a10d2608445f9bf0b5b06daab17b15a69eb0344",
+  "extractionPagesSha256": "effdf542573acacf259f0cfc7393211d8b87225c4f03d34f7c27d8c1d0be8022",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "0b8fd9681af7208e098a95e8a81b58d5ec17cbe8f46f8d126613771db4cc23a8",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "c9588f0779e9278b0a5b025ba507f0db57cc0ade117d2aeebe4a87026b5b92bb",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0959/c9588f0779e9278b0a5b025ba507f0db57cc0ade117d2aeebe4a87026b5b92bb.json",
+  "extractionQaDecisionSha256": "b68f755281988b2a0951fe917861e0c5298119b1c43ed4af3dd213c423d9c9a8",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2020-0959",
+    "question": "How does the model reduce to a sequence of mixed-integer linear-optimization problems?",
+    "overview": "The model considers the intraday scheduling problem in a group of orthopaedic clinics where the planner schedules appointment times, given a sequence of appointments. The model considers patient re-entry—where patients may be required to go for an x-ray examination, returning to the same doctor they have seen—and variability in patient behaviours such as walk-ins, earliness, and no-shows, which leads to inefficiency such as long patient waiting time and physician overtime. In our data set, 25% of the patients are required to go for x-ray examination.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        8,
+        10,
+        11
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Intraday Scheduling with Patient Re-entries and Variability in Behaviours model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers the intraday scheduling problem in a group of orthopaedic clinics where the planner schedules appointment times, given a sequence of appointments. The model considers patient re-entry—where patients may be required to go for an x-ray examination, returning to the same doctor they have seen—and variability in patient behaviours such as walk-ins, earliness, and no-shows, which leads to inefficiency such as long patient waiting time and physician overtime. We also found significant variability in patient behaviours.",
+        "objects": [
+          "The planner",
+          "Patient",
+          "Physician",
+          "Server",
+          "Tables"
+        ],
+        "inputs": [
+          "The types",
+          "A yet-defined second-stage queueing cost of making scheduling decisions x",
+          "Patient service times",
+          "The stochastic service time"
+        ],
+        "decisions": [
+          "Decisions are made in the first stage",
+          "Policies and use the same routing policy for all",
+          "The interarrival timings",
+          "Require the server to be free at T with high probability",
+          "Decisions for each queue"
+        ],
+        "assumptions": [
+          "The distribution need not be stationary"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The planner",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We consider the intraday scheduling problem in a group of orthopaedic clinics where the planner schedules appointment times, given a sequence of appointments.",
+                "matchedText": "the planner",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "We consider patient re-entry—where patients may be required to go for an x-ray examination, returning to the same doctor they have seen—and variability in patient behaviours such as walk-ins, earliness, and no-shows, which leads to inefficiency such as long patient waiting time and physician overtime.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Physician",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "We consider patient re-entry—where patients may be required to go for an x-ray examination, returning to the same doctor they have seen—and variability in patient behaviours such as walk-ins, earliness, and no-shows, which leads to inefficiency such as long patient waiting time and physician overtime.",
+                "matchedText": "physician",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 9,
+                "quote": "Results: Our model achieves significant reductions, in comparative studies against a sample average approximation (SAA) model, on patient waiting times, while keeping server overtime constant.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Tables",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 16,
+                "sectionIndex": 17,
+                "sentence": 22,
+                "quote": "These are tabulated in Tables 6–9 in Online Appendix B, summarizing the performance metrics of our model against the two benchmarks.",
+                "matchedText": "Tables",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The types",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 10,
+                "quote": "Our simulations further characterize the types of uncertainties under which SAA performs poorly.",
+                "matchedText": "the types",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A yet-defined second-stage queueing cost of making scheduling decisions x",
+              "source": {
+                "type": "section",
+                "section": "Optimization Problem",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "where Q(x) represents a yet-deﬁned second-stage queueing cost of making scheduling decisions x.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patient service times",
+              "source": {
+                "type": "section",
+                "section": "Key Approaches in the Literature",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 6,
+                "quote": "patient service times",
+                "matchedText": "patient service times",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The stochastic service time",
+              "source": {
+                "type": "section",
+                "section": "Key Approaches in the Literature",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 7,
+                "quote": "the stochastic service time",
+                "matchedText": "the stochastic service time",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Decisions are made in the first stage",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Methodology: We formulate the problem as a two-stage optimization problem, where scheduling decisions are made in the first stage.",
+                "matchedText": "decisions are made in the first stage",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Policies and use the same routing policy for all",
+              "source": {
+                "type": "section",
+                "section": "Limitations of the SAA Approach in Our Problem",
+                "page": 14,
+                "sectionIndex": 16,
+                "sentence": 22,
+                "quote": "Under each simulation, we implement the three scheduling policies and use the same routing policy for all",
+                "matchedText": "policies and use the same routing policy for all",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The interarrival timings",
+              "source": {
+                "type": "section",
+                "section": "Setting",
+                "page": 16,
+                "sectionIndex": 17,
+                "sentence": 15,
+                "quote": "The SAA model retains the freedom to de- cide on the interarrival timings.",
+                "matchedText": "the interarrival timings",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require the server to be free at T with high probability",
+              "source": {
+                "type": "section",
+                "section": "Optimization Problem",
+                "page": 7,
+                "sectionIndex": 5,
+                "sentence": 43,
+                "quote": "Similarly, we can also impose a constraint to control the server utilization at the end of horizon—that is, we require the server to be free at T with high probability",
+                "matchedText": "require the server to be free at T with high probability",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Decisions for each queue",
+              "source": {
+                "type": "section",
+                "section": "General Setting with Re-entries",
+                "page": 9,
+                "sectionIndex": 8,
+                "sentence": 16,
+                "quote": "In our model, we shall house these patients in two separate queues and denote separate routing decisions for each queue",
+                "matchedText": "decisions for each queue",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The distribution need not be stationary",
+              "source": {
+                "type": "section",
+                "section": "Optimization Problem",
+                "page": 5,
+                "sectionIndex": 24,
+                "sentence": 22,
+                "quote": "The distribution need not be stationary.",
+                "matchedText": "The distribution need not be stationary.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper formulates the problem as a two-stage optimization problem, where scheduling decisions are made in the first stage.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 6
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "2.2. Reformulation",
+            "equation": "",
+            "quote": "It turns out that these constraints can be evaluated into a form afﬁne in decisions x, and, hence, the op- timization model (8) can be tractably solved under the following assumption: Assumption 2."
+          }
+        ],
+        "components": [
+          {
+            "id": "the-single-server-intraday-scheduling-problem",
+            "label": "The Single-Server Intraday Scheduling Problem",
+            "role": "constraint",
+            "concepts": [
+              "scheduling"
+            ],
+            "explanation": "Specifically, this refers to having good probabilistic guarantees against violations of the waiting-time constraint.",
+            "searchPhrases": [
+              "how the single-server intraday scheduling problem is represented",
+              "feasibility condition in operations and supply chains",
+              "the single-server intraday scheduling problem feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: Specifically, this refers to having good probabilistic guarantees against violations of the waiting-time constraint.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When patients arrive at their scheduled time—for example, t—they join the queue, along with walk-in patients at some known arrival rate.",
+              "Following the notation in Bandi and Loke (2018), consider two time dimensions—model time t ∈T up to time horizon T and node time s ∈T describing how long a patient has spent in a node (queue or server).",
+              "This uncertainty is modeled by ht,s, the hazard rate of completing service after being served for s periods at time t, and, too, materializes at this point."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. The Single-Server Intraday Scheduling Problem",
+                "equation": "",
+                "quote": "Speciﬁcally, this refers to having good probabilistic guarantees against violations of the waiting-time constraint."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Scheduling: “Specifically, this refers to having good probabilistic guarantees against violations of the waiting-time constraint.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "optimization-problem",
+            "label": "Optimization Problem",
+            "role": "objective",
+            "concepts": [
+              "optimization",
+              "chance-constraint"
+            ],
+            "explanation": "The other interpretation of this is that we want to minimize the chance fk(δ) of constraint violation by minimizing k.",
+            "searchPhrases": [
+              "how optimization problem is represented",
+              "modeled objective in operations and supply chains",
+              "optimization problem modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose there is a decreasing convex function f : R+ →R+, such that f(1) ≤ε and f(δ) →0 as δ →∞.",
+              "The second constraint states that the total waiting time of all patients in the queue at any time must be bounded by Cw."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.1. Optimization Problem",
+                "equation": "",
+                "quote": "The other interpretation of this is that we want to minimize the chance fk(δ) of constraint violation by minimizing k."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization: “The other interpretation of this is that we want to minimize the chance fk(δ) of constraint violation by”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "chance-constraint",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Chance constraint: “The other interpretation of this is that we want to minimize the chance fk(δ) of constraint violation by”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "reformulation",
+            "label": "Reformulation",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "It turns out that these constraints can be evaluated into a form affine in decisions x, and, hence, the optimization model (8) can be tractably solved under the following assumption: Assumption 2.",
+            "searchPhrases": [
+              "how reformulation is represented",
+              "solution algorithm in operations and supply chains",
+              "reformulation solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: It turns out that these constraints can be evaluated into a form affine in decisions x, and, hence, the optimization model (8) can be tractably solved under the following assumption: Assumption 2.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For any t ∈T and a given cost function r(s), the expression k log E exp r s( ) xt−s − pt−τ,s−τ k log E exp λt−sr s( )/k (14) is affine in decision variables x, p."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.2. Reformulation",
+                "equation": "",
+                "quote": "It turns out that these constraints can be evaluated into a form afﬁne in decisions x, and, hence, the op- timization model (8) can be tractably solved under the following assumption: Assumption 2."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Algorithm design”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "risk-constraint-constitutes-a-risk-adjustment",
+            "label": "Risk Constraint Constitutes a Risk Adjustment",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "In the above discussion, we have used C to represent the capacity of the server.",
+            "searchPhrases": [
+              "how risk constraint constitutes a risk adjustment is represented",
+              "feasibility condition in operations and supply chains",
+              "risk constraint constitutes a risk adjustment feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: In the above discussion, we have used C to represent the capacity of the server.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Under the Pipeline Queues framework, extending from the single-server case to the multiple-server case requires nothing more than removing the requirement that C 1, as long as servers are assumed to be independent and homogeneous.",
+              "This means that all service times, no matter which servers the patients are in, are independent and identically distributed.",
+              "The queue decides when patients are pushed into the servers, as capacity is freed up."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "Risk Constraint Constitutes a Risk Adjustment",
+                "equation": "",
+                "quote": "In the above discussion, we have used C to represent the capacity of the server."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “In the above discussion, we have used C to represent the capacity of the server.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "general-setting-with-re-entries",
+            "label": "General Setting with Re-entries",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "In our model, we shall introduce a virtual network that represents the service dynamics accurately.",
+            "searchPhrases": [
+              "how general setting with re-entries is represented",
+              "system process in operations and supply chains",
+              "general setting with re-entries system process specification"
+            ],
+            "formal": "Process relation: In our model, we shall introduce a virtual network that represents the service dynamics accurately.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Consider the general setting where the planner is required to schedule all N appointments by T, the last allowed slot on the schedule.",
+              "In our context, a portion of patients are required to undertake an x-ray examination, before returning to consult with the doctor again."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3. General Setting with Re-entries",
+                "equation": "",
+                "quote": "In our model, we shall introduce a virtual network that represents the service dynamics accurately."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “In our model, we shall introduce a virtual network that represents the service dynamics accurately.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "dynamics",
+            "label": "Dynamics",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "It turns out, for the server in the first-consultation block, zt,s 1 , the dynamics can be written in the same form, except where ˆht,s 1 is defined slightly differently: Consider this definition on zt,s 1 .",
+            "searchPhrases": [
+              "how dynamics is represented",
+              "system process in operations and supply chains",
+              "dynamics system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For fixed t, zt,s 1 are independent across all s ∈T because different patients are independent of each other—that is, the right-hand side of (19) is in- dependent across s ∈T .",
+              "It turns out, for the server in the first-consultation block, zt,s 1 , the dynamics can be written in the same form, except where ˆht,s 1 is defined slightly differently: Consider this definition on zt,s 1 .",
+              "Server variables obey zt,s 1 ∼Bin(zt−s,0 1 , ˆht,s 1 ), with cumulative survival probability after s periods for cohort (t −s) given by ˆht,s 1 ≜q∏s τ 1(1 −ht−τ,s−τ 1 ) + (1 −q)∏s τ 1(1− ht−τ,s−τ 0 ), ˆht,0 1 1."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "3.2. Dynamics",
+                "equation": "",
+                "quote": "It turns out, for the server in the ﬁrst-consultation block, zt,s 1 , the dynamics can be written in the same form, except where ˆht,s 1 is deﬁned slightly differently: Consider this deﬁnition on zt,s 1 ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “It turns out, for the server in the first-consultation block, zt,s 1 , the dynamics can be written”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "constraints-and-reformulation",
+            "label": "Constraints and Reformulation",
+            "role": "constraint",
+            "concepts": [
+              "resource-capacity",
+              "queueing"
+            ],
+            "explanation": "The constraints we apply on the model are similar as before, where (23) and (24) are capacity constraints on the servers, (25) is the queue waiting-time constraints, and (26) is the push constraints.",
+            "searchPhrases": [
+              "how constraints and reformulation is represented",
+              "feasibility condition in operations and supply chains",
+              "constraints and reformulation feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: The constraints we apply on the model are similar as before, where (23) and (24) are capacity constraints on the servers, (25) is the queue waiting-time constraints, and (26) is the push constraints.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The constraints we apply on the model are similar as before, where (23) and (24) are capacity constraints on the servers, (25) is the queue waiting-time constraints, and (26) is the push constraints.",
+              "Specifically, (23) indicates that capacity is shared between first and return consultations, because the same server (doctor) is used for them.",
+              "Because of Proposition 6, we are able to express zt,s 1 in the same form as before, so Proposition 3 applies as per usual.",
+              "As before, we have the result: Practically, these subproblems, although posed as mixed-integer linear optimization problems, can be solved quickly."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "3.3. Constraints and Reformulation",
+                "equation": "",
+                "quote": "The constraints we apply on the model are similar as before, where (23) and (24) are capacity constraints on the servers, (25) is the queue waiting-time constraints, and (26) is the push constraints."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "resource-capacity",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Resource capacity as “capacity constraint”: “before, where (23) and (24) are capacity constraint s on the servers, (25) is the queue”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Queueing: “The constraints we apply on the model are similar as before, where (23) and (24) are capacity constraints”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 8,
+        "transformation": "relation-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "9f8d444e6bf5b2f555b8a6f83a10d2608445f9bf0b5b06daab17b15a69eb0344",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "c9588f0779e9278b0a5b025ba507f0db57cc0ade117d2aeebe4a87026b5b92bb",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0959/c9588f0779e9278b0a5b025ba507f0db57cc0ade117d2aeebe4a87026b5b92bb.json",
+      "extractionQaDecisionSha256": "b68f755281988b2a0951fe917861e0c5298119b1c43ed4af3dd213c423d9c9a8",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

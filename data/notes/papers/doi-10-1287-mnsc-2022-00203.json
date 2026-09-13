@@ -1,0 +1,1628 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2022-00203",
+  "sourcePdfSha256": "b4247caf9506dfd6ee58c1b0e880fc21eb0c624636a1696d8c0d98929ca41063",
+  "extractionPagesSha256": "e421a9f4311b6592cb70e08efbcf996758c88913ca75342c273de1fe4f28f6d5",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "ec2d249495d8eb5c8c64abe5319b63c9f298b642b31b996837cef3f249f75c03",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "b20408c4910cc323e8bad51841e3c0cead0eea70d5d53001a94295e9b45f9e7f",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00203/b20408c4910cc323e8bad51841e3c0cead0eea70d5d53001a94295e9b45f9e7f.json",
+  "extractionQaDecisionSha256": "5f7c6257fcbc1cde4f756399632db15086973657c8e9c5781fa8b5ab54fa1271",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-00203",
+    "question": "How does acquisition uncertainty affect sequential search?",
+    "overview": "This paper studies a variation of the classical Pandora’s problem in which a decision maker (DM) sequentially explores alternatives from a given set and learns their values while trying to acquire the best alternative. The variations in the model we study are (i) alternatives randomly become unavailable during exploration and (ii) the DM’s ability to acquire a remaining alternative is uncertain and depends on a chosen offer price. The paper's central insight is that despite the complexity that these acquisition uncertainties create, simple greedy policies based on static sequencing and a single threshold value enjoy strong performance guarantees.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "model-and-problem-formulation",
+        "name": "Model and Problem Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This paper studies a variation of the classical Pandora’s problem in which a decision maker (DM) sequentially explores alternatives from a given set and learns their values while trying to acquire the best alternative. The variations in the model we study are (i) alternatives randomly become unavailable during exploration and (ii) the DM’s ability to acquire a remaining alternative is uncertain and depends on a chosen offer price. In these examples, our policies significantly outperform policies based on Pandora’s rule.",
+        "objects": [
+          "A decision maker",
+          "State space",
+          "Strategic customers",
+          "Organizations",
+          "Firms"
+        ],
+        "inputs": [
+          "A chosen offer price",
+          "The DM’s subjective valuation for the alternative",
+          "A type",
+          "The mean of the Exponential distribution",
+          "A search cost"
+        ],
+        "decisions": [
+          "Price",
+          "Acquisition probabilities a instead of offer prices p",
+          "Which alternative to make an offer on and how much to offer",
+          "Admit a simple characterization then analyze the performance of these policies"
+        ],
+        "assumptions": [
+          "This occurs independently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt",
+          "Offers are instantaneously accepted or rejected",
+          "Each alternative has a search cost of c=1",
+          "Type 1 is dominant without loss of generality",
+          "The generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A decision maker",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We study a variation of the classical Pandora’s problem in which a decision maker (DM) sequentially explores alternatives from a given set and learns their values while trying to acquire the best alternative.",
+                "matchedText": "a decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 36,
+                "quote": "state space",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Strategic customers",
+              "source": {
+                "type": "section",
+                "section": "Examples",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 7,
+                "quote": "strategic customers",
+                "matchedText": "strategic customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Organizations",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "Models of sequential search arise in a wide variety of problems, such as organizations hiring new employees, firms exploring new technologies, marketers studying the behavior of consumers, and individuals searching for housing or other investment opportunities.",
+                "matchedText": "organizations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Firms",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "Models of sequential search arise in a wide variety of problems, such as organizations hiring new employees, firms exploring new technologies, marketers studying the behavior of consumers, and individuals searching for housing or other investment opportunities.",
+                "matchedText": "firms",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A chosen offer price",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The variations in the model we study are (i) alternatives randomly become unavailable during exploration and (ii) the DM’s ability to acquire a remaining alternative is uncertain and depends on a chosen offer price.",
+                "matchedText": "a chosen offer price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The DM’s subjective valuation for the alternative",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 4,
+                "quote": "Each alternative has an unknown value, which represents the DM’s subjective valuation for the alternative.",
+                "matchedText": "the DM’s subjective valuation for the alternative",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A type",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.",
+                "matchedText": "a type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The mean of the Exponential distribution",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 6,
+                "quote": "We then study examples where alternative values follow an Expon­ ential(µ) distribution, where µ denotes the mean of the Exponential distribution.",
+                "matchedText": "the mean of the Exponential distribution",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A search cost",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "a search cost",
+                "matchedText": "a search cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Price",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The variations in the model we study are (i) alternatives randomly become unavailable during exploration and (ii) the DM’s ability to acquire a remaining alternative is uncertain and depends on a chosen offer price.",
+                "matchedText": "price",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Acquisition probabilities a instead of offer prices p",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 19,
+                "quote": "The DM can equivalently select acquisition probabilities a instead of offer prices p",
+                "matchedText": "acquisition probabilities a instead of offer prices p",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Which alternative to make an offer on and how much to offer",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 17,
+                "quote": "In problems with the offer feature, the DM also has to choose which alternative to make an offer on and how much to offer",
+                "matchedText": "which alternative to make an offer on and how much to offer",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Admit a simple characterization then analyze the performance of these policies",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 16,
+                "sentence": 16,
+                "quote": "We first show that optimal policies in the infinite alternative relaxation admit a simple characterization then analyze the performance of these policies",
+                "matchedText": "admit a simple characterization then analyze the performance of these policies",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "This occurs independently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Offers are instantaneously accepted or rejected",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "We assume offers are instantaneously accepted or re­ jected.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each alternative has a search cost of c=1",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "In these examples, we assume that each alternative has a search cost of c=1.",
+                "matchedText": "each alternative has a search cost of c=1.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Type 1 is dominant without loss of generality",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 16,
+                "sentence": 27,
+                "quote": "In the proof of Proposition 1, we assume that type 1 is dominant without loss of generality.",
+                "matchedText": "type 1 is dominant without loss of generality.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list",
+              "source": {
+                "type": "section",
+                "section": "Examples",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 12,
+                "quote": "We assume the generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list.",
+                "matchedText": "the generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper calibrates survival probabilities based on the median number of days homes stay on the market.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model and Problem Formulation",
+          "page": 5,
+          "sentence": 29
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "2. Model and Problem Formulation",
+            "equation": "",
+            "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.3 After an exploration attempt, the DM may explore again or make a nonnegative offer p on the explored alternative or any other feasible—that is, previously ex­ plored and still available—alternative."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-and-problem-formulation",
+            "label": "Model and Problem Formulation",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "We assume that this occurs independently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.3 After an exploration attempt, the DM may explore again or make a nonnegative offer p on the explored alternative or any other feasible—that is, previously explored and still available—alternative.",
+            "searchPhrases": [
+              "how model and problem formulation is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "model and problem formulation decision rule specification"
+            ],
+            "formal": "Decision rule: We assume that this occurs independently across alternatives and let q_{i} denote the probability that a type i alternative remains available after an exploration attempt.3 After an exploration attempt, the DM may explore again or make a nonnegative offer p on the explored alternative or any other feasible—that is, previously explored and still available—alternative.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_{i}",
+                "meaning": "probability that a type i alternative remains available after an exploration attempt"
+              }
+            ],
+            "conditions": [
+              "We assume that this occurs independently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.3 After an exploration attempt, the DM may explore again or make a nonnegative offer p on the explored alternative or any other feasible—that is, previously explored and still available—alternative.",
+              "Each alternative belongs to one of T types, with T= N corresponding to heterogeneous alternatives.",
+              "Each alternative has an unknown value, which represents the DM’s subjective valuation for the alternative.",
+              "Alternative values are independent and follow a known, type-dependent probability distribution."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Model and Problem Formulation",
+                "equation": "",
+                "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.3 After an exploration attempt, the DM may explore again or make a nonnegative offer p on the explored alternative or any other feasible—that is, previously ex­ plored and still available—alternative."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We assume that this occurs independently across alternatives and let qi denote the probability that a type i”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "examples",
+            "label": "Examples",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "In our numerical examples in Section 5.2, we associate types with homes in different zip codes in a given region and assume that values follow uniform distributions centered around median list prices for homes within each zip code.",
+            "searchPhrases": [
+              "how examples is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "examples decision rule specification"
+            ],
+            "formal": "Decision rule: In our numerical examples in Section 5.2, we associate types with homes in different zip codes in a given region and assume that values follow uniform distributions centered around median list prices for homes within each zip code.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume the generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.1. Examples",
+                "equation": "",
+                "quote": "In our numerical examples in Section 5.2, we associate types with homes in different zip codes in a given region and assume that values follow uniform distributions centered around median list prices for homes within each zip code."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "overview-of-the-proof-of-theorem-1",
+            "label": "Overview of the Proof of Theorem 1",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "In search problems in which alternative values have long right tails or exploration costs are low, γi will tend to be high; this can also occur in problems in which acquisition is costly (e.g., gi increases rapidly).",
+            "searchPhrases": [
+              "how overview of the proof of theorem 1 is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "overview of the proof of theorem 1 modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The quantity αi = log γi=log qi drives the convergence rate in Theorem 1."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.3. Overview of the Proof of Theorem 1",
+                "equation": "",
+                "quote": "In search problems in which alternative values have long right tails or exploration costs are low, γi will tend to be high; this can also occur in problems in which acquisition is costly (e.g., gi increases rapidly)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “In search problems in which alternative values have long right tails or exploration costs are low, γi will”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "formulation-and-structural-properties",
+        "name": "Formulation and Structural Properties",
+        "kind": "alternative",
+        "relation": "This is an alternative to Model and Problem Formulation.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "model-and-problem-formulation"
+          }
+        ],
+        "summary": "If in a given state the DM makes an offer, then the DM chooses a feasible alternative (v,i) ∈w and an acquisition probability a ∈[0,1].",
+        "objects": [
+          "State space"
+        ],
+        "inputs": [
+          "A chosen offer price",
+          "The DM’s subjective valuation for the alternative",
+          "A type",
+          "The mean of the Exponential distribution",
+          "A search cost"
+        ],
+        "decisions": [
+          "Which alternative to make an offer on and how much to offer"
+        ],
+        "assumptions": [
+          "This occurs independently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt",
+          "Offers are instantaneously accepted or rejected",
+          "Each alternative has a search cost of c=1",
+          "Type 1 is dominant without loss of generality",
+          "The generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 36,
+                "quote": "state space",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A chosen offer price",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The variations in the model we study are (i) alternatives randomly become unavailable during exploration and (ii) the DM’s ability to acquire a remaining alternative is uncertain and depends on a chosen offer price.",
+                "matchedText": "a chosen offer price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The DM’s subjective valuation for the alternative",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 4,
+                "quote": "Each alternative has an unknown value, which represents the DM’s subjective valuation for the alternative.",
+                "matchedText": "the DM’s subjective valuation for the alternative",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A type",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.",
+                "matchedText": "a type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The mean of the Exponential distribution",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 6,
+                "quote": "We then study examples where alternative values follow an Expon­ ential(µ) distribution, where µ denotes the mean of the Exponential distribution.",
+                "matchedText": "the mean of the Exponential distribution",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A search cost",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "a search cost",
+                "matchedText": "a search cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Which alternative to make an offer on and how much to offer",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 17,
+                "quote": "In problems with the offer feature, the DM also has to choose which alternative to make an offer on and how much to offer",
+                "matchedText": "which alternative to make an offer on and how much to offer",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "This occurs independently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Offers are instantaneously accepted or rejected",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "We assume offers are instantaneously accepted or re­ jected.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each alternative has a search cost of c=1",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "In these examples, we assume that each alternative has a search cost of c=1.",
+                "matchedText": "each alternative has a search cost of c=1.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Type 1 is dominant without loss of generality",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 16,
+                "sentence": 27,
+                "quote": "In the proof of Proposition 1, we assume that type 1 is dominant without loss of generality.",
+                "matchedText": "type 1 is dominant without loss of generality.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list",
+              "source": {
+                "type": "section",
+                "section": "Examples",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 12,
+                "quote": "We assume the generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list.",
+                "matchedText": "the generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper formulates this problem as a stochastic DP.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Formulation and Structural Properties",
+          "page": 5,
+          "sentence": 1
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "Formulation and Structural Properties",
+            "equation": "",
+            "quote": "If in a given state the DM makes an offer, then the DM chooses a feasible alternative (v,i) ∈w and an acquisition probability a ∈[0,1]."
+          }
+        ],
+        "components": [
+          {
+            "id": "formulation-and-structural-properties",
+            "label": "Formulation and Structural Properties",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "If in a given state the DM makes an offer, then the DM chooses a feasible alternative (v,i) ∈w and an acquisition probability a ∈[0,1].",
+            "searchPhrases": [
+              "how formulation and structural properties is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "formulation and structural properties decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If in a given state the DM makes an offer, then the DM chooses a feasible alternative (v,i) ∈w and an acquisition probability a ∈[0,1].",
+              "Representing the remaining available explored alternatives, ̃w ⊆w consists of the pairs (vj, ij) corresponding to each previously explored alternative j that remains available, which occurs with probability qij.",
+              "Given state (n,w) and a feasible alternative (v,i) ∈w, the optimal acquisition probability depends on the value function through the net value μ(n,w,(v,i)) = defv V(n, w (v,i)); we use the shorthand notation μ(v,i) for μ(n,w,(v,i)) in what follows."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Formulation and Structural Properties",
+                "equation": "",
+                "quote": "If in a given state the DM makes an offer, then the DM chooses a feasible alternative (v,i) ∈w and an acquisition probability a ∈[0,1]."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “If in a given state the DM makes an offer, then the DM chooses a feasible alternative (v,i)”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "infinite-alternative-relaxations",
+        "name": "Infinite Alternative Relaxations",
+        "kind": "approximation",
+        "relation": "This formulation approximates Model and Problem Formulation.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "model-and-problem-formulation"
+          }
+        ],
+        "summary": "We assume without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant.",
+        "objects": [
+          "A decision maker",
+          "State space",
+          "Strategic customers",
+          "Organizations",
+          "Firms"
+        ],
+        "inputs": [
+          "A chosen offer price",
+          "The DM’s subjective valuation for the alternative",
+          "A type",
+          "The mean of the Exponential distribution",
+          "A search cost"
+        ],
+        "decisions": [
+          "Types in nonincreasing order of V∞"
+        ],
+        "assumptions": [
+          "Type 1 is dominant without loss of generality",
+          "Without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A decision maker",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We study a variation of the classical Pandora’s problem in which a decision maker (DM) sequentially explores alternatives from a given set and learns their values while trying to acquire the best alternative.",
+                "matchedText": "a decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 36,
+                "quote": "state space",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Strategic customers",
+              "source": {
+                "type": "section",
+                "section": "Examples",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 7,
+                "quote": "strategic customers",
+                "matchedText": "strategic customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Organizations",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "Models of sequential search arise in a wide variety of problems, such as organizations hiring new employees, firms exploring new technologies, marketers studying the behavior of consumers, and individuals searching for housing or other investment opportunities.",
+                "matchedText": "organizations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Firms",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "Models of sequential search arise in a wide variety of problems, such as organizations hiring new employees, firms exploring new technologies, marketers studying the behavior of consumers, and individuals searching for housing or other investment opportunities.",
+                "matchedText": "firms",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A chosen offer price",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The variations in the model we study are (i) alternatives randomly become unavailable during exploration and (ii) the DM’s ability to acquire a remaining alternative is uncertain and depends on a chosen offer price.",
+                "matchedText": "a chosen offer price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The DM’s subjective valuation for the alternative",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 4,
+                "quote": "Each alternative has an unknown value, which represents the DM’s subjective valuation for the alternative.",
+                "matchedText": "the DM’s subjective valuation for the alternative",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A type",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.",
+                "matchedText": "a type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The mean of the Exponential distribution",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 6,
+                "quote": "We then study examples where alternative values follow an Expon­ ential(µ) distribution, where µ denotes the mean of the Exponential distribution.",
+                "matchedText": "the mean of the Exponential distribution",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A search cost",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "a search cost",
+                "matchedText": "a search cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Types in nonincreasing order of V∞",
+              "source": {
+                "type": "section",
+                "section": "Infinite Alternative Relaxations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 30,
+                "quote": "We assume without loss of generality that the DM orders types in nonincreasing order of V∞",
+                "matchedText": "types in nonincreasing order of V∞",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Type 1 is dominant without loss of generality",
+              "source": {
+                "type": "section",
+                "section": "Infinite Alternative Relaxations",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 10,
+                "quote": "In the proof of Proposition 1, we assume that type 1 is dominant without loss of generality.",
+                "matchedText": "type 1 is dominant without loss of generality.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant",
+              "source": {
+                "type": "section",
+                "section": "Infinite Alternative Relaxations",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 30,
+                "quote": "We assume without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant.",
+                "matchedText": "without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper develops such a class of policies and shows how to compute them using a greedy algorithm whose worst-case run-time scales linearly (up to logarithmic factors) in the number of alternative types.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.1. Infinite Alternative Relaxations",
+            "equation": "",
+            "quote": "We assume without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant."
+          }
+        ],
+        "components": [
+          {
+            "id": "infinite-alternative-relaxations",
+            "label": "Infinite Alternative Relaxations",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We assume without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant.",
+            "searchPhrases": [
+              "how infinite alternative relaxations is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "infinite alternative relaxations solution algorithm specification"
+            ],
+            "formal": "V∞= V\\pi∞,i",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "V",
+                "meaning": "the product price"
+              }
+            ],
+            "conditions": [
+              "We assume without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant.",
+              "In particular, the dominant types i ∈D share the common reservation price V∞.",
+              "More generally, we can calculate V∞and π∞,i by solving Ri(V∞) = ci efficiently using a root-finding method such as bisection search."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. Infinite Alternative Relaxations",
+                "equation": "",
+                "quote": "We assume without loss of generality that the DM orders types in nonincreasing order of V∞,i so that the first |D| types are dominant."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We assume without loss of generality that the DM orders types in nonincreasing order of V∞,i so that”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lagrangian-relaxations",
+        "name": "Lagrangian Relaxations",
+        "kind": "approximation",
+        "relation": "This formulation approximates Model and Problem Formulation.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "model-and-problem-formulation"
+          }
+        ],
+        "summary": "The key idea behind this algorithm is to optimize not over the Lagrange multipliers directly, but instead optimize over the value Vl ∞of the Lagrangian system.",
+        "objects": [
+          "A decision maker",
+          "State space",
+          "Strategic customers",
+          "Organizations",
+          "Firms"
+        ],
+        "inputs": [
+          "A chosen offer price",
+          "The DM’s subjective valuation for the alternative",
+          "A type",
+          "The mean of the Exponential distribution",
+          "A search cost"
+        ],
+        "decisions": [
+          "Price",
+          "Acquisition probabilities a instead of offer prices p",
+          "Which alternative to make an offer on and how much to offer",
+          "Admit a simple characterization then analyze the performance of these policies"
+        ],
+        "assumptions": [
+          "This occurs independently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt",
+          "Offers are instantaneously accepted or rejected",
+          "Each alternative has a search cost of c=1",
+          "Type 1 is dominant without loss of generality",
+          "The generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A decision maker",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "We study a variation of the classical Pandora’s problem in which a decision maker (DM) sequentially explores alternatives from a given set and learns their values while trying to acquire the best alternative.",
+                "matchedText": "a decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 5,
+                "sentence": 36,
+                "quote": "state space",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Strategic customers",
+              "source": {
+                "type": "section",
+                "section": "Examples",
+                "page": 4,
+                "sectionIndex": 14,
+                "sentence": 7,
+                "quote": "strategic customers",
+                "matchedText": "strategic customers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Organizations",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "Models of sequential search arise in a wide variety of problems, such as organizations hiring new employees, firms exploring new technologies, marketers studying the behavior of consumers, and individuals searching for housing or other investment opportunities.",
+                "matchedText": "organizations",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Firms",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 1,
+                "quote": "Models of sequential search arise in a wide variety of problems, such as organizations hiring new employees, firms exploring new technologies, marketers studying the behavior of consumers, and individuals searching for housing or other investment opportunities.",
+                "matchedText": "firms",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "A chosen offer price",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The variations in the model we study are (i) alternatives randomly become unavailable during exploration and (ii) the DM’s ability to acquire a remaining alternative is uncertain and depends on a chosen offer price.",
+                "matchedText": "a chosen offer price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The DM’s subjective valuation for the alternative",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 4,
+                "quote": "Each alternative has an unknown value, which represents the DM’s subjective valuation for the alternative.",
+                "matchedText": "the DM’s subjective valuation for the alternative",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A type",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.",
+                "matchedText": "a type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The mean of the Exponential distribution",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 6,
+                "quote": "We then study examples where alternative values follow an Expon­ ential(µ) distribution, where µ denotes the mean of the Exponential distribution.",
+                "matchedText": "the mean of the Exponential distribution",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A search cost",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "a search cost",
+                "matchedText": "a search cost",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Price",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "The variations in the model we study are (i) alternatives randomly become unavailable during exploration and (ii) the DM’s ability to acquire a remaining alternative is uncertain and depends on a chosen offer price.",
+                "matchedText": "price",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Acquisition probabilities a instead of offer prices p",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 19,
+                "quote": "The DM can equivalently select acquisition probabilities a instead of offer prices p",
+                "matchedText": "acquisition probabilities a instead of offer prices p",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Which alternative to make an offer on and how much to offer",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 17,
+                "quote": "In problems with the offer feature, the DM also has to choose which alternative to make an offer on and how much to offer",
+                "matchedText": "which alternative to make an offer on and how much to offer",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Admit a simple characterization then analyze the performance of these policies",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 16,
+                "sentence": 16,
+                "quote": "We first show that optimal policies in the infinite alternative relaxation admit a simple characterization then analyze the performance of these policies",
+                "matchedText": "admit a simple characterization then analyze the performance of these policies",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "This occurs independently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 9,
+                "quote": "We assume that this occurs inde­ pendently across alternatives and let qi denote the probability that a type i alternative remains available after an exploration attempt.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Offers are instantaneously accepted or rejected",
+              "source": {
+                "type": "section",
+                "section": "Model and Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 12,
+                "quote": "We assume offers are instantaneously accepted or re­ jected.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each alternative has a search cost of c=1",
+              "source": {
+                "type": "section",
+                "section": "Pandora’s Problem with Disappearing",
+                "page": 13,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "In these examples, we assume that each alternative has a search cost of c=1.",
+                "matchedText": "each alternative has a search cost of c=1.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Type 1 is dominant without loss of generality",
+              "source": {
+                "type": "section",
+                "section": "Formulation and Structural Properties",
+                "page": 6,
+                "sectionIndex": 16,
+                "sentence": 27,
+                "quote": "In the proof of Proposition 1, we assume that type 1 is dominant without loss of generality.",
+                "matchedText": "type 1 is dominant without loss of generality.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list",
+              "source": {
+                "type": "section",
+                "section": "Examples",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 12,
+                "quote": "We assume the generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list.",
+                "matchedText": "the generalized inverse supply functions Qi are affine and calibrate these using data on sale-to-list prices and percentages of homes sold above list.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper's computational experience confirms the efficiency of this algorithm: For example, in our examples in Section 5.1, we solve the Lagrangian dual on instances with T=1,000 types in under two seconds on a laptop computer.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Lagrangian Relaxations",
+          "page": 9,
+          "sentence": 34
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 9,
+            "section": "4.1. Lagrangian Relaxations",
+            "equation": "",
+            "quote": "The key idea behind this algorithm is to optimize not over the Lagrange multipliers directly, but instead optimize over the value Vl ∞of the Lagrangian system."
+          }
+        ],
+        "components": [
+          {
+            "id": "lagrangian-relaxations",
+            "label": "Lagrangian Relaxations",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The key idea behind this algorithm is to optimize not over the Lagrange multipliers directly, but instead optimize over the value Vl ∞of the Lagrangian system.",
+            "searchPhrases": [
+              "how lagrangian relaxations is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "lagrangian relaxations solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The key idea behind this algorithm is to optimize not over the Lagrange multipliers directly, but instead optimize over the value Vl ∞of the Lagrangian system.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When q< 1, however, the expected number of exploration attempts for alternatives within a subset S ⊆[T] of types grows sublinearly with the number of alternatives within S, and we can improve the approximation by including Lagrange multipliers on subsets of types.",
+              "Our performance result in general requires the use of Lagrange multipliers λS for all subsets of types S ⊆[T].",
+              "Intuitively, expanding to Lagrange multipliers for all subsets of types allows us to more effectively “price” excessive exploration for different sequences of types, which is important in problems with heterogeneous types; at the end of Section 4.2, we provide an example that illustrates this."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Lagrangian Relaxations",
+                "equation": "",
+                "quote": "The key idea behind this algorithm is to optimize not over the Lagrange multipliers directly, but instead optimize over the value Vl ∞of the Lagrangian system."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “The key idea behind this algorithm is to optimize not over the Lagrange multipliers directly, but instead optimize”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "b4247caf9506dfd6ee58c1b0e880fc21eb0c624636a1696d8c0d98929ca41063",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "b20408c4910cc323e8bad51841e3c0cead0eea70d5d53001a94295e9b45f9e7f",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00203/b20408c4910cc323e8bad51841e3c0cead0eea70d5d53001a94295e9b45f9e7f.json",
+      "extractionQaDecisionSha256": "5f7c6257fcbc1cde4f756399632db15086973657c8e9c5781fa8b5ab54fa1271",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

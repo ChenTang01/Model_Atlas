@@ -1,0 +1,684 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-1207",
+  "sourcePdfSha256": "79722d39d6f20da1a6d14201f99af18650b2de8ea447fea94f4cb3539c3ae2ef",
+  "extractionPagesSha256": "7a62f61b384b19fa48d180543d5a74011fd5745cdcc80adca46acddcc8f91100",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "0081ef5e23fa8e55883499739bcb143acc613b138237ea364487f352890cf4b4",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "21fab74f714ea9873a990977cf071f1ff6566d7cdfb78c2675779444f3a7e2b8",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1207/21fab74f714ea9873a990977cf071f1ff6566d7cdfb78c2675779444f3a7e2b8.json",
+  "extractionQaDecisionSha256": "4a78c0ca32543756892dc33389aeb1d62aa16089ff41aa58ee5b214b0775e35a",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-1207",
+    "question": "How does primary care first initiative affect care delivery and outcomes?",
+    "overview": "The Centers for Medicare & Medicaid Services launched the Primary Care First (PCF) initiative in January 2021. The initiative builds upon prior innovative payment models and aims at incentivizing a redesign of primary care delivery, including new modes of delivery, such as remote care. To achieve this goal, the initiative blends capitation and fee-for-service (FFS) payments and includes performance-based adjustments linked to service quality and health outcomes.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        11,
+        12,
+        13,
+        19,
+        20
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Primary Care First Initiative model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The Centers for Medicare & Medicaid Services launched the Primary Care First (PCF) initiative in January 2021. The initiative builds upon prior innovative payment models and aims at incentivizing a redesign of primary care delivery, including new modes of delivery, such as remote care. To achieve this goal, the initiative blends capitation and fee-for-service (FFS) payments and includes performance-based adjustments linked to service quality and health outcomes.",
+        "objects": [
+          "Patient",
+          "Provider",
+          "The physician",
+          "Population",
+          "Drivers"
+        ],
+        "inputs": [
+          "̄W the maximum wait time to pass the Quality Gateway",
+          "Service type",
+          "Arrival rate",
+          "Cost t",
+          "The patient’s complexity and on the type of care delivery"
+        ],
+        "decisions": [
+          "Design it to reach the best possible outcome",
+          "Admit new patients",
+          "The provider’s optimal delivery mode decision for each visit",
+          "How the population-based payment should be spent",
+          "Require keeping track of the practice performance over time"
+        ],
+        "assumptions": [
+          "New patients are always seen face-to-face, thus the choice of care delivery mode only affects existing Medicare patients",
+          "The margin mF is the same for all face-to-face visits, regardless of whether it is for a new or an existing patient",
+          "The specialist provides standard care to referred patients, making no decision affecting either the payments or the health outcome",
+          "Remote care has a shorter service time than face-to-face care",
+          "The service rate of face-to-face care is the same for a new patient as for an existing patient"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "Methodology/results: We propose an analytical model that captures patient heterogeneity in terms of health complexity, provider choice of care-delivery mode (referral to a specialist, in-person visit, or remote care), and quality of service (health outcomes and wait time).",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Provider",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "Methodology/results: We propose an analytical model that captures patient heterogeneity in terms of health complexity, provider choice of care-delivery mode (referral to a specialist, in-person visit, or remote care), and quality of service (health outcomes and wait time).",
+                "matchedText": "provider",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The physician",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 8,
+                "sectionIndex": 2,
+                "sentence": 35,
+                "quote": "the physician",
+                "matchedText": "the physician",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 10,
+                "sectionIndex": 2,
+                "sentence": 83,
+                "quote": "Under PCF, the practice receives a ﬁxed amount R per year. (In practice, the provider is paid per beneﬁciary and per month; the quantity R corresponds to the aggregate amount for the attributed patient population per year.) The ﬁxed amount of R is meant to help the physician cover upfront ﬁxed costs and invest in activities to improve care delivery and patient experience, e.g., hiring new staﬀ, training employees, etc.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Drivers",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 7,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "Our model is primarily motivated by PCF and aims to capture the main drivers of the payment system while making some simpliﬁcations for the sake of maintaining tractability.",
+                "matchedText": "drivers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "̄W the maximum wait time to pass the Quality Gateway",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 11,
+                "sectionIndex": 2,
+                "sentence": 103,
+                "quote": "We denote ¯W the maximum wait time to pass the Quality Gateway.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service type",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 7,
+                "sectionIndex": 2,
+                "sentence": 3,
+                "quote": "The provider can also admit new patients, who are not under PCF and whose care is covered under a fee-for-service type of agreement with a diﬀerent payer ( e.g., a private insurer).",
+                "matchedText": "service type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 7,
+                "sectionIndex": 2,
+                "sentence": 7,
+                "quote": "arrival rate",
+                "matchedText": "arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cost t",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 8,
+                "sectionIndex": 2,
+                "sentence": 34,
+                "quote": "Indeed, a cost t is perceived per referred patient as reﬂecting the loss of the personal relationship, and additional communication and coordination eﬀort in order to maintain continuity of care.",
+                "matchedText": "cost t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient’s complexity and on the type of care delivery",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 9,
+                "sectionIndex": 2,
+                "sentence": 43,
+                "quote": "The chance of failure depends on the patient’s complexity and on the type of care delivery.",
+                "matchedText": "the patient’s complexity and on the type of care delivery",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design it to reach the best possible outcome",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "We analyze a model motivated by this new payment system, and its impact on the different stakeholders, and derive insights on how to design it to reach the best possible outcome.",
+                "matchedText": "design it to reach the best possible outcome",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Admit new patients",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 7,
+                "sectionIndex": 2,
+                "sentence": 3,
+                "quote": "The provider can also admit new patients",
+                "matchedText": "admit new patients",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "The provider’s optimal delivery mode decision for each visit",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 8,
+                "sectionIndex": 2,
+                "sentence": 18,
+                "quote": "We determine the provider’s optimal delivery mode decision for each visit",
+                "matchedText": "the provider’s optimal delivery mode decision for each visit",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How the population-based payment should be spent",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 10,
+                "sectionIndex": 2,
+                "sentence": 84,
+                "quote": "Indeed, CMS does not prescribe how the population-based payment should be spent",
+                "matchedText": "how the population-based payment should be spent",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Require keeping track of the practice performance over time",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 11,
+                "sectionIndex": 2,
+                "sentence": 108,
+                "quote": "Studying the impact of this bonus is beyond the scope of this manuscript because it would require keeping track of the practice performance over time",
+                "matchedText": "require keeping track of the practice performance over time",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "New patients are always seen face-to-face, thus the choice of care delivery mode only affects existing Medicare patients",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 8,
+                "sectionIndex": 2,
+                "sentence": 20,
+                "quote": "We assume that new patients are always seen face-to-face, thus the choice of care delivery mode only aﬀects existing Medicare patients.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The margin mF is the same for all face-to-face visits, regardless of whether it is for a new or an existing patient",
+              "source": {
+                "type": "section",
+                "section": "Model setup",
+                "page": 10,
+                "sectionIndex": 2,
+                "sentence": 79,
+                "quote": "As an approximation, we assume that the margin mF is the same for all face-to-face visits, regardless of whether it is for a new or an existing patient.",
+                "matchedText": "the margin mF is the same for all face-to-face visits, regardless of whether it is for a new or an existing patient.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The specialist provides standard care to referred patients, making no decision affecting either the payments or the health outcome",
+              "source": {
+                "type": "section",
+                "section": "Social Welfare Formulation",
+                "page": 19,
+                "sectionIndex": 6,
+                "sentence": 10,
+                "quote": "We assume the specialist provides standard care to referred patients, making no decision aﬀecting either the payments or the health outcome.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Remote care has a shorter service time than face-to-face care",
+              "source": {
+                "type": "section",
+                "section": "Service Dynamics",
+                "page": 12,
+                "sectionIndex": 3,
+                "sentence": 6,
+                "quote": "Thus we assume that remote care has a shorter service time than face-to-face care.",
+                "matchedText": "remote care has a shorter service time than face-to-face care.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The service rate of face-to-face care is the same for a new patient as for an existing patient",
+              "source": {
+                "type": "section",
+                "section": "Service Dynamics",
+                "page": 13,
+                "sectionIndex": 3,
+                "sentence": 24,
+                "quote": "This is because we assume the service rate of face-to-face care is the same for a new patient as for an existing patient.",
+                "matchedText": "the service rate of face-to-face care is the same for a new patient as for an existing patient.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper analyzes a model motivated by this new payment system, and its impact on the different stakeholders, and derives insights on how to design it to reach the best possible outcome.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 4
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 19,
+            "section": "5.1. Social Welfare Formulation",
+            "equation": "",
+            "quote": "Note that the specialist does not incur a reputation cost in case of failure because the specialist did not make any decision that may be seen as responsible for the failure in our model."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-setup",
+            "label": "Model setup",
+            "role": "process",
+            "concepts": [
+              "strategic-interaction"
+            ],
+            "explanation": "The dynamic nature of the problem would bring tractability issues, due both to the dynamic evolution of the performance and the possible strategic behavior of practices optimizing over time.",
+            "searchPhrases": [
+              "how model setup is represented",
+              "system process in policy, sustainability, and public services",
+              "model setup system process specification"
+            ],
+            "formal": "Process relation: The dynamic nature of the problem would bring tractability issues, due both to the dynamic evolution of the performance and the possible strategic behavior of practices optimizing over time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The service quality must exceed a minimum threshold to pass a “Quality Gateway.” If a practice does not pass the Quality Gateway, the performance adjustment is −10% regardless of health outcomes.",
+              "While in the practical implementation of PCF the performance-based adjustment may take the form of either a bonus or a penalty, it can equivalently be seen as a penalty-based incentive after re-scaling upwards the payments to the provider.",
+              "We denote ̄W the maximum wait time to pass the Quality Gateway."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "3.1. Model setup",
+                "equation": "",
+                "quote": "The dynamic nature of the problem would bring tractability issues, due both to the dynamic evolution of the performance and the possible strategic behavior of practices optimizing over time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "strategic-interaction",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Strategic interaction as “strategic behavior”: “of the performance and the possible strategic behavior of practices optimizing over time.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "service-dynamics",
+            "label": "Service Dynamics",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "The model denotes the resulting new patient arrival rate as λN(e0,e 1).",
+            "searchPhrases": [
+              "how service dynamics is represented",
+              "system process in policy, sustainability, and public services",
+              "service dynamics system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that remote care has a shorter service time than face-to-face care.",
+              "We assume the new patients are non-Medicare, and thus are not part of the PCF program ( i.e., are reimbursed under FFS), because the physician accepts other insurers, and recent evidence shows that physician practices receive more than 70% of their revenue through FFS (Sokol 2020).",
+              "For remote care the service rate is ̄ μ and for face-to-face care, the service rate is μ (< ̄μ) (whether for new or existing patients).",
+              "We denote the resulting new patient arrival rate as λN(e0,e 1)."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "3.2. Service Dynamics",
+                "equation": "",
+                "quote": "We denote the resulting new patient arrival rate as λN(e0,e 1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “We denote the resulting new patient arrival rate as λN(e0,e 1).”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "analysis-under-ffs",
+            "label": "Analysis under FFS",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Under FFS, the yearly expected profit for the provider is given by ΠFFS provider =mFλ(e1−e0)−λ ∫ e0 0 ̄c(x)dx−tλ(1−e1)−zλ(βQ(e0) +Q(e1)) + (mF−zQ(1))λN(e0,e 1).",
+            "searchPhrases": [
+              "how analysis under ffs is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "analysis under ffs modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If t/z +Q(1)≥q(1), referrals are too costly for the provider, and thus eF 1 = 1, which would imply that under FFS the physician sees all patients faceto-face without any referral to a specialist.",
+              "If t/z +Q(1)≥q(1), referrals are too costly for the provider, and thus eF 1 = 1, which would imply that under FFS the physician sees all patients face- to-face without any referral to a specialist.",
+              "Under FFS, the yearly expected profit for the provider is given by ΠFFS provider =mFλ(e1−e0)−λ ∫ e0 0 ̄c(x)dx−tλ(1−e1)−zλ(βQ(e0) +Q(e1)) + (mF−zQ(1))λN(e0,e 1).",
+              "Under FFS, the provider chooses complexity thresholds: (eF 0,eF 1 ) = ( 0,q −1 (t z +Q(1) )) . (4) Intuitively, FFS does not provide incentives to deliver care remotely to any patient for two reasons."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "3.3. Analysis under FFS",
+                "equation": "",
+                "quote": "Under FFS, the yearly expected proﬁt for the provider is given by ΠFFS provider =mFλ(e1−e0)−λ ∫ e0 0 ¯c(x)dx−tλ(1−e1)−zλ(βQ(e0) +Q(e1)) + (mF−zQ(1))λN(e0,e 1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Under FFS, the yearly expected profit for the provider is given by ΠFFS provider =mFλ(e1−e0)−λ ∫ e0 0”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "social-welfare-formulation",
+            "label": "Social Welfare Formulation",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Note that the specialist does not incur a reputation cost in case of failure because the specialist did not make any decision that may be seen as responsible for the failure in our model.",
+            "searchPhrases": [
+              "how social welfare formulation is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "social welfare formulation modeled objective specification"
+            ],
+            "formal": "Objective relation: Note that the specialist does not incur a reputation cost in case of failure because the specialist did not make any decision that may be seen as responsible for the failure in our model.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume the specialist provides standard care to referred patients, making no decision affecting either the payments or the health outcome.",
+              "After establishing this benchmark, it will be possible to determine whether or not PCF can be designed to yield decisions that coincide with the social optimum."
+            ],
+            "sources": [
+              {
+                "page": 19,
+                "section": "5.1. Social Welfare Formulation",
+                "equation": "",
+                "quote": "Note that the specialist does not incur a reputation cost in case of failure because the specialist did not make any decision that may be seen as responsible for the failure in our model."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Note that the specialist does not incur a reputation cost in case of failure because the specialist did”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "pcf-coordination",
+            "label": "PCF Coordination",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "When designing a payment system such as PCF, CMS, as a public insurer, is generally modeled as aiming to maximize social welfare.",
+            "searchPhrases": [
+              "how pcf coordination is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "pcf coordination modeled objective specification"
+            ],
+            "formal": "Objective relation: When designing a payment system such as PCF, CMS, as a public insurer, is generally modeled as aiming to maximize social welfare.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When designing a payment system such as PCF, CMS, as a public insurer, is generally modeled as aiming to maximize social welfare.",
+              "Ifr<f (0), there exists a family of PCF contracts, characterized byrq∈ [r,f (0)],pq H given as a function of rq and ̄W =W (eS 0 ), that coordinates the provider care decisions to the socially optimal ones.",
+              "Since having three modes of care is the most practical scenario, we study coordination in the case where the socially optimal solution results in three modes of care offered — that is, regionRS."
+            ],
+            "sources": [
+              {
+                "page": 20,
+                "section": "5.3. PCF Coordination",
+                "equation": "",
+                "quote": "When designing a payment system such as PCF, CMS, as a public insurer, is generally modeled as aiming to maximize social welfare."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “When designing a payment system such as PCF, CMS, as a public insurer, is generally modeled as aiming”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "79722d39d6f20da1a6d14201f99af18650b2de8ea447fea94f4cb3539c3ae2ef",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "21fab74f714ea9873a990977cf071f1ff6566d7cdfb78c2675779444f3a7e2b8",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-1207/21fab74f714ea9873a990977cf071f1ff6566d7cdfb78c2675779444f3a7e2b8.json",
+      "extractionQaDecisionSha256": "4a78c0ca32543756892dc33389aeb1d62aa16089ff41aa58ee5b214b0775e35a",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

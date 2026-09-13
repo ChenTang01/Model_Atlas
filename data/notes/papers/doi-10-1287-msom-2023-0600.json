@@ -1,0 +1,783 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2023-0600",
+  "sourcePdfSha256": "b1031ac044f6a3dd22483d4f7c92c32df2cf6f0a56963fdb656a8678334e2177",
+  "extractionPagesSha256": "90f071aa718b54f3829b1c5810aa0ce3dbe6f0efadd32b4b20cc23bda5b0d01f",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "e28b081b86a7922f521a241d9ae23db5c1069a390533706def59894e920c79a0",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "25c0f6bdac5c6c0bbb217a6e8f86c8a86d4f8ec0a997a66428ed4016c56a337a",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0600/25c0f6bdac5c6c0bbb217a6e8f86c8a86d4f8ec0a997a66428ed4016c56a337a.json",
+  "extractionQaDecisionSha256": "49d843e432740a972e61369a8bf2ff52b90cf91173e698a11b6a20f814b5bd91",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2023-0600",
+    "question": "How do dynamic pricing and bidding interact for display advertising campaigns?",
+    "overview": "Managers in digital ad agencies face the complex problem of setting prices for new ad campaigns, bidding for viewers on ad exchanges, and allocating them appropriately to campaigns. We have developed an analytical methodology for optimizing the agency’s profits, with uncertainties in the arrival of potential viewers and new ad campaigns and in winning bids and obtaining viewer actions on ad exchanges. The ad agency manages a series of contracts with advertisers who wish to display their ads to randomly arriving targeted viewers.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        10
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Dynamic Pricing and Bidding for Display Advertising Campaigns model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Managers in digital ad agencies face the complex problem of setting prices for new ad campaigns, bidding for viewers on ad exchanges, and allocating them appropriately to campaigns. We have developed an analytical methodology for optimizing the agency’s profits, with uncertainties in the arrival of potential viewers and new ad campaigns and in winning bids and obtaining viewer actions on ad exchanges. Advertisers differ in their delay costs and willingness to pay for obtaining various actions by these viewers.",
+        "objects": [
+          "Managers",
+          "Agencies",
+          "Advertisers",
+          "Clients"
+        ],
+        "inputs": [
+          "The supply",
+          "The prices",
+          "Observed data",
+          "The actual price paid per outcome",
+          "The remaining time"
+        ],
+        "decisions": [
+          "Prices for new ad campaigns",
+          "Per viewer action (CPC/CPA campaigns)",
+          "How to allocate each new viewer among the various campaign types",
+          "The optimal allocation",
+          "Pricing"
+        ],
+        "assumptions": [
+          "The sets of distinct viewer types are nonoverlapping and independent, allowing the decisions for each viewer type to be optimized separately",
+          "All three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case",
+          "The price sensitivity and probability of winning functions are time invariant, but this assumption can be relaxed in the dynamic program",
+          "The supply of viewers is random and must be accessed by deploying appropriate bidding strategies"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Managers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Managers in digital ad agencies face the complex problem of setting prices for new ad campaigns, bidding for viewers on ad exchanges, and allocating them appropriately to campaigns.",
+                "matchedText": "Managers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agencies",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Managers in digital ad agencies face the complex problem of setting prices for new ad campaigns, bidding for viewers on ad exchanges, and allocating them appropriately to campaigns.",
+                "matchedText": "agencies",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Advertisers",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Methodology/results: The ad agency manages a series of contracts with advertisers who wish to display their ads to randomly arriving targeted viewers.",
+                "matchedText": "advertisers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Clients",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 4,
+                "quote": "In contrast to these papers, to the best of our knowl­ edge, Agrawal et al. (2023) is the only paper that focuses on the problem faced by an ad agency acting on behalf of its clients, the advertisers.",
+                "matchedText": "clients",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The supply",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 17,
+                "quote": "However, whereas most papers on revenue management assume that supply is fixed (e.g., seats on a plane or hotel rooms), we assume that the supply of viewers is random and must be accessed by deploying appropriate bidding strategies.",
+                "matchedText": "the supply",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The prices",
+              "source": {
+                "type": "section",
+                "section": "Model Notation",
+                "page": 5,
+                "sectionIndex": 8,
+                "sentence": 5,
+                "quote": "We denote the prices for each t and a by Rit(a).",
+                "matchedText": "the prices",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Observed data",
+              "source": {
+                "type": "section",
+                "section": "Model Notation",
+                "page": 5,
+                "sectionIndex": 28,
+                "sentence": 20,
+                "quote": "For example, the probability θi that an ad impression converts into a click, known as the click-through rate, can be estimated from observed data.",
+                "matchedText": "observed data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The actual price paid per outcome",
+              "source": {
+                "type": "section",
+                "section": "Model Notation",
+                "page": 5,
+                "sectionIndex": 28,
+                "sentence": 27,
+                "quote": "Moreover, if ri were a dynamic decision variable, then the advertiser would not know the actual price paid per outcome before committing to the ad agency, which seems unrealistic.",
+                "matchedText": "the actual price paid per outcome",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The remaining time",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 7,
+                "sentence": 11,
+                "quote": "We assume that all three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case.",
+                "matchedText": "the remaining time",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Prices for new ad campaigns",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Managers in digital ad agencies face the complex problem of setting prices for new ad campaigns, bidding for viewers on ad exchanges, and allocating them appropriately to campaigns.",
+                "matchedText": "prices for new ad campaigns",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Per viewer action (CPC/CPA campaigns)",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 7,
+                "sentence": 13,
+                "quote": "The prices specified in an advertiser’s contract can correspond to price per impres­ sion displayed (CPM campaign) or price per viewer action (CPC/CPA campaigns)",
+                "matchedText": "per viewer action (CPC/CPA campaigns)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "How to allocate each new viewer among the various campaign types",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 5,
+                "sectionIndex": 7,
+                "sentence": 21,
+                "quote": "Finally, the ad agency also decides how to allocate each new viewer among the various campaign types in queue.",
+                "matchedText": "how to allocate each new viewer among the various campaign types",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The optimal allocation",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 7,
+                "quote": "They also determine the optimal allocation strategy jointly with the bidding strategy, rather than assuming a prespecified allocation rule or using a deter­ ministic approach to the allocation decision.",
+                "matchedText": "the optimal allocation",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Pricing",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 15,
+                "quote": "Finally, we note that the literature on revenue man­ agement also considers pricing issues extensively (see, e.g., Talluri and Van Ryzin 2004, ¨Ozer and Phillips 2012, and Gallego and Topaloglu 2019 for reviews), but our problem setting differs from this literature in two important ways.",
+                "matchedText": "pricing",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The sets of distinct viewer types are nonoverlapping and independent, allowing the decisions for each viewer type to be optimized separately",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 7,
+                "sentence": 6,
+                "quote": "We assume that the sets of distinct viewer types are nonoverlapping and independent, allowing the deci­ sions for each viewer type to be optimized separately.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 7,
+                "sentence": 11,
+                "quote": "We assume that all three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case.",
+                "matchedText": "all three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The price sensitivity and probability of winning functions are time invariant, but this assumption can be relaxed in the dynamic program",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 11,
+                "quote": "In our formulation, we assume that the price sensitivity and probability of winning functions are time invariant, but this assumption can be relaxed in the dynamic program.",
+                "matchedText": "the price sensitivity and probability of winning functions are time invariant, but this assumption can be relaxed in the dynamic program.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The supply of viewers is random and must be accessed by deploying appropriate bidding strategies",
+              "source": {
+                "type": "section",
+                "section": "The Model",
+                "page": 4,
+                "sectionIndex": 27,
+                "sentence": 17,
+                "quote": "However, whereas most papers on revenue management assume that supply is fixed (e.g., seats on a plane or hotel rooms), we assume that the supply of viewers is random and must be accessed by deploying appropriate bidding strategies.",
+                "matchedText": "the supply of viewers is random and must be accessed by deploying appropriate bidding strategies.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper formulates the ad agency’s sequential decision problem as a Markov decision process and develops exact solutions for both finite-horizon and steady-state cases.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 5
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3. The Model",
+            "equation": "",
+            "quote": "We assume that all three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case."
+          }
+        ],
+        "components": [
+          {
+            "id": "the-model",
+            "label": "The Model",
+            "role": "process",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "We assume that all three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case.",
+            "searchPhrases": [
+              "how the model is represented",
+              "system process in pricing, consumers, and revenue management",
+              "the model system process specification"
+            ],
+            "formal": "Process relation: We assume that all three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the sets of distinct viewer types are nonoverlapping and independent, allowing the decisions for each viewer type to be optimized separately.",
+              "We assume that all three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. The Model",
+                "equation": "",
+                "quote": "We assume that all three decisions are dynamic, varying with the current queue length of outcomes and the remaining time in the finite-horizon case."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-notation",
+            "label": "Model Notation",
+            "role": "process",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "The paper develops both a finite-horizon dynamic programming model and a steady-state infinite-horizon model for determining the decision variables.",
+            "searchPhrases": [
+              "how model notation is represented",
+              "system process in pricing, consumers, and revenue management",
+              "model notation system process specification"
+            ],
+            "formal": "Process relation: The paper develops both a finite-horizon dynamic programming model and a steady-state infinite-horizon model for determining the decision variables.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We develop both a finite-horizon dynamic programming model and a steady-state infinite-horizon model for determining the decision variables."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Model Notation",
+                "equation": "",
+                "quote": "We develop both a finite-horizon dynamic programming model and a steady-state infinite-horizon model for determining the decision variables."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Dynamic programming: “We develop both a finite-horizon Dynamic programming model and a steady-state infinite-horizon model for determining”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "the-transition-probabilities",
+            "label": "The Transition Probabilities",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "A transition from state a to a new state e occurs when a new campaign or a new viewer arrives.",
+            "searchPhrases": [
+              "how the transition probabilities is represented",
+              "system process in pricing, consumers, and revenue management",
+              "the transition probabilities system process specification"
+            ],
+            "formal": "Process relation: A transition from state a to a new state e occurs when a new campaign or a new viewer arrives.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The system changes from state a to the new state e = a uI, where uI is an N-dimensional unit vector with one in the Ith position and zero elsewhere.",
+              "The vector a specifies the state of the system immediately after a transition takes place.",
+              "In the data set described in Online Appendix C, we observed that these transition times are on the order of milliseconds."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.3. The Transition Probabilities",
+                "equation": "",
+                "quote": "A transition from state a to a new state e occurs when a new campaign or a new viewer arrives."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “A transition from state a to a new state e occurs when a new campaign or a new”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "expected-profit-for-the-ad-agency",
+            "label": "Expected Profit for the Ad Agency",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "We now specify the expected profit for the ad agency for one transition.",
+            "searchPhrases": [
+              "how expected profit for the ad agency is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "expected profit for the ad agency modeled objective specification"
+            ],
+            "formal": "Objective relation: We now specify the expected profit for the ad agency for one transition.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Our formulation can accommodate nonlinear delay costs, but we will use a linear form ci(ai) = ciai for convenience."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.4. Expected Profit for the Ad Agency",
+                "equation": "",
+                "quote": "We now specify the expected profit for the ad agency for one transition."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “We now specify the expected profit for the ad agency for one transition.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "programming-problem",
+            "label": "Programming Problem",
+            "role": "algorithm",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "To formulate and solve the general dynamic programming problem, it is more convenient analytically to treat the winning probability w as the decision variable and use the inverse function b(w) to obtain the bid b.",
+            "searchPhrases": [
+              "how programming problem is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "programming problem solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that w(b) is concave, indicating decreasing marginal improvements in the probability of winning as the bids increase.",
+              "The terminal condition for the dynamic program is W0(a) = X i Ciai: (6) The terminal cost Ci might include the approximate refund to campaign type i for each outcome that was not achieved by the end of the horizon.",
+              "X N i=1 ciai λ + μ, (2) where si(ai) = P spisSi(s,ai) is the expected number of new outcomes if a campaign of type i joins the queue."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Programming Problem",
+                "equation": "",
+                "quote": "To formulate and solve the general dynamic program­ ming problem, it is more convenient analytically to treat the winning probability w as the decision variable and use the inverse function b(w) to obtain the bid b."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic programming: “To formulate and solve the general Dynamic programming problem, it is more convenient analytically to treat”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-of-the-dynamic-programming-model",
+            "label": "Solution of the Dynamic Programming Model",
+            "role": "process",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "The solution method for the Dynamic Programming Problem (3) is described by the following three-part theorem: Theorem 1.",
+            "searchPhrases": [
+              "how solution of the dynamic programming model is represented",
+              "system process in pricing, consumers, and revenue management",
+              "solution of the dynamic programming model system process specification"
+            ],
+            "formal": "Process relation: The solution method for the Dynamic Programming Problem (3) is described by the following three-part theorem: Theorem 1.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The optimal price Rit(a) for an arriving campaign of type i is the solution of the following equation: Rit + gi(Rit) g′ i(Rit) = Ei,t 1(a) si(ai) : (9) See proof in Online Appendix B."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. Solution of the Dynamic Programming Model",
+                "equation": "",
+                "quote": "The solution method for the Dynamic Programming Problem (3) is described by the following three-part theorem: Theorem 1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Dynamic programming: “The solution method for the Dynamic programming Problem (3) is described by the following three-part”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "heuristic-solution",
+            "label": "Heuristic Solution",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "To obtain an approximate solution to the multiple campaign problem, we apply the following heuristic method.",
+            "searchPhrases": [
+              "how heuristic solution is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "heuristic solution solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: To obtain an approximate solution to the multiple campaign problem, we apply the following heuristic method.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose that the ad agency optimizes the pricing and bidding for each campaign type i separately and independently.",
+              "For example, if Ai = 15 for all i and there are five different campaign types, then a has 165 or over one million possible states."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "5. Heuristic Solution",
+                "equation": "",
+                "quote": "To obtain an approximate solution to the multiple campaign problem, we apply the following heuristic method."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “To obtain an approximate solution to the multiple campaign problem, we apply the following heuristic method.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "steady-state-optimization-for-a-single-campaign-type",
+            "label": "Steady-State Optimization for a Single Campaign Type",
+            "role": "state",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The optimal steady-state solution of the ad agency’s problem for one campaign type can be determined as follows.",
+            "searchPhrases": [
+              "how steady-state optimization for a single campaign type is represented",
+              "decision-relevant state in pricing, consumers, and revenue management",
+              "steady-state optimization for a single campaign type decision-relevant state specification"
+            ],
+            "formal": "State definition: The optimal steady-state solution of the ad agency’s problem for one campaign type can be determined as follows.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We used MATLAB to optimize (21) and obtained the optimal solution very quickly for all the problems we tested with A = 15.",
+              "The form of the steady-state profit function implies that the total expected profit is independent of how these revenues are split, as shown by the following lemma."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "6. Steady-State Optimization for a Single Campaign Type",
+                "equation": "",
+                "quote": "The optimal steady-state solution of the ad agency’s problem for one campaign type can be determined as follows."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Optimization as “optimal solution”: “The optimal steady-state solution of the ad agency’s problem for one campaign type can be determined as follows.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "b1031ac044f6a3dd22483d4f7c92c32df2cf6f0a56963fdb656a8678334e2177",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "25c0f6bdac5c6c0bbb217a6e8f86c8a86d4f8ec0a997a66428ed4016c56a337a",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2023-0600/25c0f6bdac5c6c0bbb217a6e8f86c8a86d4f8ec0a997a66428ed4016c56a337a.json",
+      "extractionQaDecisionSha256": "49d843e432740a972e61369a8bf2ff52b90cf91173e698a11b6a20f814b5bd91",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

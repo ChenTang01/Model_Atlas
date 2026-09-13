@@ -1,0 +1,1641 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2022-01169",
+  "sourcePdfSha256": "10fec1c3091ddcbb6d92479d0183b4030ac80e35b6b6d5a62c1172f904a03e01",
+  "extractionPagesSha256": "004262aa5671a1b8b6534bc2014f625aba32ac2a69ee1fd1c0e26e387a79b971",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "430a02a60883c69d06dc3c5fa74c163f98245c26fe5ea42c6a39369ac3c16e4e",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "adc7aaa32e50ac184012c572715539c4041b137a31f837b2538954d9758a2229",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-01169/adc7aaa32e50ac184012c572715539c4041b137a31f837b2538954d9758a2229.json",
+  "extractionQaDecisionSha256": "1374322f8518c7779b24c8e453dfb903c7319bc9cc7214055115599f057b7334",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-01169",
+    "question": "How should a franchisor or service principal combine pay, termination, prices, and monitoring when an agent can both underreport offline sales and secretly reduce effort?",
+    "overview": "This is a dynamic principal-agent mechanism-design problem with two hidden actions: effort and truthful reporting of offline arrivals. The principal commits to compensation and termination, and extensions add dynamic pricing or monitoring; the paper derives incentive-compatible optimal contracts.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        8,
+        9,
+        10,
+        12,
+        13,
+        17
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Dynamic Contract Design in the Presence of Double Moral Hazard model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This is a dynamic principal-agent mechanism-design problem with two hidden actions: effort and truthful reporting of offline arrivals. The principal commits to compensation and termination, and extensions add dynamic pricing or monitoring; the paper derives incentive-compatible optimal contracts.",
+        "objects": [
+          "Principal owning the service business",
+          "Agent operating the business and serving customers"
+        ],
+        "inputs": [
+          "Observable-channel arrivals are public to principal and agent",
+          "Only the agent observes unobservable-channel arrivals",
+          "The agent's effort is hidden from the principal",
+          "The contract conditions on public and reported arrival histories",
+          "Monitoring"
+        ],
+        "decisions": [
+          "Principal chooses compensation and termination rules",
+          "Agent chooses effort or shirking",
+          "Agent reports or conceals unobservable-channel arrivals",
+          "Principal dynamically changes prices in an extension",
+          "Principal dynamically monitors one or both hidden activities in extensions"
+        ],
+        "assumptions": [
+          "Customer arrivals are Poisson and effort changes the arrival rate between zero and mu in the baseline",
+          "Both parties are risk neutral and share discount rate r",
+          "The agent has limited liability and can quit when promised utility would be negative",
+          "The principal can commit to a long-term contract and earns no revenue after termination in the baseline",
+          "The agent cannot save diverted cash; service costs are normalized except for effort cost c"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Principal owning the service business",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "principal owning the service business"
+              }
+            },
+            {
+              "value": "Agent operating the business and serving customers",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "agent operating the business and serving customers"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Observable-channel arrivals are public to principal and agent",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Observable-channel arrivals are public to principal and agent."
+              }
+            },
+            {
+              "value": "Only the agent observes unobservable-channel arrivals",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Only the agent observes unobservable-channel arrivals before reporting them."
+              }
+            },
+            {
+              "value": "The agent's effort is hidden from the principal",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The agent's effort is hidden from the principal."
+              }
+            },
+            {
+              "value": "The contract conditions on public and reported arrival histories",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The contract conditions on public and reported arrival histories."
+              }
+            },
+            {
+              "value": "Monitoring",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Monitoring, when activated, reveals specified private information at a flow cost."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Principal chooses compensation and termination rules",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "principal chooses compensation and termination rules"
+              }
+            },
+            {
+              "value": "Agent chooses effort or shirking",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "agent chooses effort or shirking"
+              }
+            },
+            {
+              "value": "Agent reports or conceals unobservable-channel arrivals",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "agent reports or conceals unobservable-channel arrivals"
+              }
+            },
+            {
+              "value": "Principal dynamically changes prices in an extension",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "principal dynamically changes prices in an extension"
+              }
+            },
+            {
+              "value": "Principal dynamically monitors one or both hidden activities in extensions",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "principal dynamically monitors one or both hidden activities in extensions"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Customer arrivals are Poisson and effort changes the arrival rate between zero and mu in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Customer arrivals are Poisson and effort changes the arrival rate between zero and mu in the baseline."
+              }
+            },
+            {
+              "value": "Both parties are risk neutral and share discount rate r",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Both parties are risk neutral and share discount rate r."
+              }
+            },
+            {
+              "value": "The agent has limited liability and can quit when promised utility would be negative",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The agent has limited liability and can quit when promised utility would be negative."
+              }
+            },
+            {
+              "value": "The principal can commit to a long-term contract and earns no revenue after termination in the baseline",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The principal can commit to a long-term contract and earns no revenue after termination in the baseline."
+              }
+            },
+            {
+              "value": "The agent cannot save diverted cash; service costs are normalized except for effort cost c",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The agent cannot save diverted cash; service costs are normalized except for effort cost c."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-authored",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors formulate a constrained continuous-time stochastic control problem in promised utility, derive nonseparable truth-telling and effort constraints, solve HJB equations for the baseline and added control instruments, and compare dynamic pricing with full and partial monitoring analytically and numerically.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 13,
+            "section": "5.1. Full Monitoring",
+            "equation": "",
+            "quote": "In the optimal contract with full monitoring option, the principal only monitors the agent when the agent’s promised utility reaches the full monitoring threshold equal to zero, and, once full monitoring is initiated, it continues indefinitely and the agent’s promised utility is kept at zero."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "The principal chooses an incentive-compatible payment process and termination time to maximize expected discounted reported channel revenue net of compensation and reimbursed effort cost.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in dynamic contracting under cash diversion and shirking",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "U(\\gamma,\\nu,Nhat^u) = E[integral_0^\\tau exp(-rt) (R^u dNhat_t^u + R^o dN_t^o - dL_t - c dt)]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_t",
+                "meaning": "agent effort process, zero or mu in the baseline",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_t^u, N_t^o",
+                "meaning": "unobservable- and observable-channel customer counting processes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Nhat_t^u",
+                "meaning": "agent's reported unobservable-channel arrival process",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "W_t",
+                "meaning": "agent's continuation promised utility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "H_t^u, H_t^o",
+                "meaning": "jumps in promised utility on unobservable and observable arrivals",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta=c/\\mu",
+                "meaning": "effort cost adjusted by arrival intensity",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "That is, the contract is incentive compatible if u(γ,ν,Nu)Pu(γ,ν, ˆN u), for any effort process ν and any reported arrival process ˆN: (IC) The contract design problem of the principal is to find a contract γ = (L,τ) ∈ΓIC that maximizes her utility U(γ, ν, ˆN u) under the incentive compatibility constraint (IC).",
+              "Customer arrivals are Poisson and effort changes the arrival rate between zero and mu in the baseline.",
+              "The principal can commit to a long-term contract and earns no revenue after termination in the baseline.",
+              "The agent cannot save diverted cash; service costs are normalized except for effort cost c."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "(2)",
+                "quote": "That is, the contract is incentive compatible if u(γ,ν,Nu)Pu(γ,ν, ˆN u), for any effort process ν and any reported arrival process ˆN: (IC) The contract design problem of the principal is to find a contract γ = (L,τ) ∈ΓIC that maximizes her utility U(γ, ν, ˆN u) under the incentive compatibility constraint (IC)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Contract design: “Contract design”.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "pricing",
+              "contract-design"
+            ],
+            "explanation": "The authors formulate a constrained continuous-time stochastic control problem in promised utility, derive nonseparable truth-telling and effort constraints, solve HJB equations for the baseline and added control instruments, and compare dynamic pricing with full and partial monitoring analytically and numerically.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in dynamic contracting under cash diversion and shirking",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors formulate a constrained continuous-time stochastic control problem in promised utility, derive nonseparable truth-telling and effort constraints, solve HJB equations for the baseline and added control instruments, and compare dynamic pricing with full and partial monitoring analytically and numerically.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_t",
+                "meaning": "agent effort process, zero or mu in the baseline",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_t^u, N_t^o",
+                "meaning": "unobservable- and observable-channel customer counting processes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "W_t",
+                "meaning": "agent's continuation promised utility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "H_t^u, H_t^o",
+                "meaning": "jumps in promised utility on unobservable and observable arrivals",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Property 4 implies that, as the agent’s promised utility increases, the principal sets a higher price for ordering through the observable channel.",
+              "Customer arrivals are Poisson and effort changes the arrival rate between zero and mu in the baseline.",
+              "The agent has limited liability and can quit when promised utility would be negative.",
+              "The principal can commit to a long-term contract and earns no revenue after termination in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Properties of the Optimal Contract",
+                "equation": "",
+                "quote": "Property 4 implies that, as the agent’s promised utility increases, the principal sets a higher price for ordering through the observable channel."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Property 4 implies that, as the agent’s promised utility increases, the principal sets a higher price for ordering”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Contract design as “contracting”: “Property 4 implies that, as the agent’s promised utility increases, the principal sets a higher price for ordering”.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "dynamic-pricing"
+            ],
+            "explanation": "Principal chooses compensation and termination rules agent chooses effort or shirking agent reports or conceals unobservable-channel arrivals principal dynamically changes prices in an extension principal dynamically monitors one or both hidden activities in extensions",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in dynamic contracting under cash diversion and shirking",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Principal chooses compensation and termination rules agent chooses effort or shirking agent reports or conceals unobservable-channel arrivals principal dynamically changes prices in an extension principal dynamically monitors one or both hidden activities in extensions",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_t",
+                "meaning": "agent effort process, zero or mu in the baseline",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Nhat_t^u",
+                "meaning": "agent's reported unobservable-channel arrival process",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "H_t^u, H_t^o",
+                "meaning": "jumps in promised utility on unobservable and observable arrivals",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Customer arrivals are Poisson and effort changes the arrival rate between zero and mu in the baseline.",
+              "Both parties are risk neutral and share discount rate r.",
+              "The agent has limited liability and can quit when promised utility would be negative."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5. Monitoring",
+                "equation": "",
+                "quote": "Section 4 focused on how the principal, in addition to the base pair of controls (payments to the agent and the threat of termination), could use a third control (dynamic pricing) to incentivize the agent to exert effort and report arrivals truthfully—which lowered rent paid to the agent."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Dynamic pricing: “could use a third control ( Dynamic pricing ) to incentivize the agent to exert effort”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "principal-agent"
+            ],
+            "explanation": "At time zero the principal commits to a history-dependent contract. Over an infinite horizon the agent privately chooses effort and observes both arrival streams, reports the unobservable stream, and receives payments contingent on public and reported histories. The principal can terminate at a stopping time; extensions let the principal also change channel prices or activate monitoring dynamically. Which IC constraint binds depends on the relative severity of cash diversion and shirking.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in dynamic contracting under cash diversion and shirking",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: At time zero the principal commits to a history-dependent contract.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_t",
+                "meaning": "agent effort process, zero or mu in the baseline",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Nhat_t^u",
+                "meaning": "agent's reported unobservable-channel arrival process",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "W_t",
+                "meaning": "agent's continuation promised utility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "H_t^u, H_t^o",
+                "meaning": "jumps in promised utility on unobservable and observable arrivals",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta=c/\\mu",
+                "meaning": "effort cost adjusted by arrival intensity",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Customer arrivals are Poisson and effort changes the arrival rate between zero and mu in the baseline.",
+              "Both parties are risk neutral and share discount rate r.",
+              "The agent has limited liability and can quit when promised utility would be negative."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.1. Full Monitoring",
+                "equation": "",
+                "quote": "In the optimal contract with full monitoring option, the principal only monitors the agent when the agent’s promised utility reaches the full monitoring threshold equal to zero, and, once full monitoring is initiated, it continues indefinitely and the agent’s promised utility is kept at zero."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "principal-agent",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Principal-agent model as “principal agent”: “In the optimal contract with full monitoring option, the principal only monitors the agent when the agent’s promised”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "Observable-channel arrivals are public to principal and agent. Only the agent observes unobservable-channel arrivals before reporting them. The agent's effort is hidden from the principal. The contract conditions on public and reported arrival histories.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in dynamic contracting under cash diversion and shirking",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Observable-channel arrivals are public to principal and agent.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_t",
+                "meaning": "agent effort process, zero or mu in the baseline",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N_t^u, N_t^o",
+                "meaning": "unobservable- and observable-channel customer counting processes",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Nhat_t^u",
+                "meaning": "agent's reported unobservable-channel arrival process",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "W_t",
+                "meaning": "agent's continuation promised utility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "H_t^u, H_t^o",
+                "meaning": "jumps in promised utility on unobservable and observable arrivals",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In effect, the optimal contract with full monitoring allows the principal to avoid inefficient termination.34 In practice, conducting full monitoring could be fairly expensive, requiring the principal (or someone the principal hires) to be at the place of business and observe the agent to guarantee that the agent always exerts effort and reports arrivals truthfully.",
+              "Customer arrivals are Poisson and effort changes the arrival rate between zero and mu in the baseline.",
+              "The agent has limited liability and can quit when promised utility would be negative.",
+              "The principal can commit to a long-term contract and earns no revenue after termination in the baseline."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.1. Full Monitoring",
+                "equation": "",
+                "quote": "In effect, the optimal contract with full monitoring allows the principal to avoid inefficient termination.34 In practice, conducting full monitoring could be fairly expensive, requiring the principal (or someone the principal hires) to be at the place of business and observe the agent to guarantee that the agent always exerts effort and reports arrivals truthfully."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design as “contracting”: “In effect, the optimal contract with full monitoring allows the principal to avoid inefficient termination.34 In practice, conducting”.",
+                "conditionRefs": [
+                  0,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Contract Design in the Presence of Double Moral Hazard model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "In our case, the principal could potentially either monitor the agent fully as a protection against both moral hazard issues (shirking and cash diversion), or monitor partially, which technically would only protect her against one of the two moral hazard issues.31 In particular, in this section, we consider the setting where the principal could pay a flow cost to monitor the agent. Denote the flow cost of full monitoring by m. Finally, we present the intuition behind the optimality of such a contract structure and highlight the key differences it has with the optimal contract that allows full monitoring.",
+        "objects": [
+          "The principal",
+          "The agent",
+          "A customer",
+          "The firm",
+          "Cell"
+        ],
+        "inputs": [
+          "All the arrivals and agent’s effort choices during this time",
+          "Time t",
+          "All the arrivals during this time interval",
+          "The agent to guarantee that the agent always exerts effort and reports arrivals truthfully",
+          "Private information"
+        ],
+        "decisions": [
+          "Where the principal could pay a flow cost to monitor the agent",
+          "Exert effort and report arrivals truthfully—which lowered rent paid to the agent",
+          "Monitor the agent fully"
+        ],
+        "assumptions": [
+          "A unique switching point"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The principal",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Section 4 focused on how the principal, in addition to the base pair of controls (payments to the agent and the threat of termination), could use a third control (dynamic pricing) to incentivize the agent to exert effort and report arrivals truthfully—which lowered rent paid to the agent.",
+                "matchedText": "the principal",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The agent",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Section 4 focused on how the principal, in addition to the base pair of controls (payments to the agent and the threat of termination), could use a third control (dynamic pricing) to incentivize the agent to exert effort and report arrivals truthfully—which lowered rent paid to the agent.",
+                "matchedText": "the agent",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A customer",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "To serve a customer, the agent has to be on the premises of the business unit.",
+                "matchedText": "a customer",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The firm",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 27,
+                "quote": "In such scenarios, the principal may require the agent to carry his work cell phone at all times during work hours, so that the firm can record the GPS coordinates of the agent and listen to the conversations the agent has dur­ ing the work hours (effectively, tapping his work phone), and then analyze the geo-location and audio feed to find instances of under-reported activities and/or absence of exertion of effort.",
+                "matchedText": "the firm",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cell",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 13,
+                "sectionIndex": 0,
+                "sentence": 27,
+                "quote": "In such scenarios, the principal may require the agent to carry his work cell phone at all times during work hours, so that the firm can record the GPS coordinates of the agent and listen to the conversations the agent has dur­ ing the work hours (effectively, tapping his work phone), and then analyze the geo-location and audio feed to find instances of under-reported activities and/or absence of exertion of effort.",
+                "matchedText": "cell",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "All the arrivals and agent’s effort choices during this time",
+              "source": {
+                "type": "section",
+                "section": "Full Monitoring",
+                "page": 13,
+                "sectionIndex": 1,
+                "sentence": 3,
+                "quote": "During the time interval [t,t + δ], the principal could pay a monitoring cost mδ to observe all the arrivals and agent’s effort choices during this time.",
+                "matchedText": "all the arrivals and agent’s effort choices during this time",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Full Monitoring",
+                "page": 13,
+                "sectionIndex": 1,
+                "sentence": 4,
+                "quote": "Let a process {Mt}tP0 represent the full monitoring schedule under the contract, where Mt ∈{0,m} cap­ tures the monitoring cost at time t.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "All the arrivals during this time interval",
+              "source": {
+                "type": "section",
+                "section": "Partial Monitoring That Reveals Arrivals",
+                "page": 13,
+                "sectionIndex": 2,
+                "sentence": 4,
+                "quote": "During the time interval [t,t + δ], the principal could pay a monitoring cost maδ to observe all the arrivals during this time interval.",
+                "matchedText": "all the arrivals during this time interval",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The agent to guarantee that the agent always exerts effort and reports arrivals truthfully",
+              "source": {
+                "type": "section",
+                "section": "Full Monitoring",
+                "page": 13,
+                "sectionIndex": 1,
+                "sentence": 18,
+                "quote": "In practice, conducting full monitoring could be fairly expensive, requiring the principal (or someone the principal hires) to be at the place of business and observe the agent to guarantee that the agent always exerts effort and reports arrivals truthfully.",
+                "matchedText": "the agent to guarantee that the agent always exerts effort and reports arrivals truthfully",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Private information",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "Section 5.1 focuses on deriving the optimal contract with the full monitoring option, which reveals both types of agent’s private information to the principal— unobservable arrivals and effort.",
+                "matchedText": "private information",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Where the principal could pay a flow cost to monitor the agent",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "In particular, in this section, we consider the setting where the principal could pay a flow cost to monitor the agent",
+                "matchedText": "where the principal could pay a flow cost to monitor the agent",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Exert effort and report arrivals truthfully—which lowered rent paid to the agent",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Section 4 focused on how the principal, in addition to the base pair of controls (payments to the agent and the threat of termination), could use a third control (dynamic pricing) to incentivize the agent to exert effort and report arrivals truthfully—which lowered rent paid to the agent",
+                "matchedText": "exert effort and report arrivals truthfully—which lowered rent paid to the agent",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Monitor the agent fully",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 12,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "In our case, the principal could potentially either monitor the agent fully as a protection against both moral hazard issues (shirking and cash diversion)",
+                "matchedText": "monitor the agent fully as a protection against both moral hazard issues (shirking and cash diversion)",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A unique switching point",
+              "source": {
+                "type": "section",
+                "section": "Monitoring",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 29,
+                "quote": "a unique switching point.",
+                "matchedText": "a unique switching point.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The paper proves the optimality of such a contract structure and provides an illustrative example.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Partial Monitoring That Reveals Arrivals",
+          "page": 13,
+          "sentence": 10
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 12,
+            "section": "5. Monitoring",
+            "equation": "",
+            "quote": "In our case, the principal could potentially either monitor the agent fully as a protection against both moral hazard issues (shirking and cash diversion), or monitor partially, which technically would only pro­ tect her against one of the two moral hazard issues.31 In particular, in this section, we consider the setting where the principal could pay a flow cost to monitor the agent."
+          }
+        ],
+        "components": [
+          {
+            "id": "monitoring",
+            "label": "Monitoring",
+            "role": "information",
+            "concepts": [
+              "moral-hazard"
+            ],
+            "explanation": "In our case, the principal could potentially either monitor the agent fully as a protection against both moral hazard issues (shirking and cash diversion), or monitor partially, which technically would only protect her against one of the two moral hazard issues.31 In particular, in this section, we consider the setting where the principal could pay a flow cost to monitor the agent.",
+            "searchPhrases": [
+              "how monitoring is represented",
+              "information available to the decision maker in dynamic contracting under cash diversion and shirking",
+              "monitoring information available to the decision maker specification"
+            ],
+            "formal": "Information structure: In our case, the principal could potentially either monitor the agent fully as a protection against both moral hazard issues (shirking and cash diversion), or monitor partially, which technically would only protect her against one of the two moral hazard issues.31 In particular, in this section, we consider the setting where the principal could pay a flow cost to monitor the agent.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Section 5.1 focuses on deriving the optimal contract with the full monitoring option, which reveals both types of agent’s private information to the principal— unobservable arrivals and effort."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5. Monitoring",
+                "equation": "",
+                "quote": "In our case, the principal could potentially either monitor the agent fully as a protection against both moral hazard issues (shirking and cash diversion), or monitor partially, which technically would only pro­ tect her against one of the two moral hazard issues.31 In particular, in this section, we consider the setting where the principal could pay a flow cost to monitor the agent."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "moral-hazard",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Moral hazard: “Moral hazard”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "full-monitoring",
+            "label": "Full Monitoring",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Denote the flow cost of full monitoring by m.",
+            "searchPhrases": [
+              "how full monitoring is represented",
+              "information available to the decision maker in dynamic contracting under cash diversion and shirking",
+              "full monitoring information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Denote the flow cost of full monitoring by m.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let a process {Mt}tP0 represent the full monitoring schedule under the contract, where Mt ∈{0,m} captures the monitoring cost at time t.",
+              "We expand the definition of a contract to include the monitoring schedule as follows: γ = (L,τ,M) ∈Γm.33 The resulting optimal contract under full monitoring is presented next.",
+              "During the time interval [t,t + δ], the principal could pay a monitoring cost mδ to observe all the arrivals and agent’s effort choices during this time."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.1. Full Monitoring",
+                "equation": "",
+                "quote": "Denote the flow cost of full monitoring by m."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Denote the flow cost of full monitoring by m.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "partial-monitoring-that-reveals-arrivals",
+            "label": "Partial Monitoring That Reveals Arrivals",
+            "role": "information",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "Finally, we present the intuition behind the optimality of such a contract structure and highlight the key differences it has with the optimal contract that allows full monitoring.",
+            "searchPhrases": [
+              "how partial monitoring that reveals arrivals is represented",
+              "information available to the decision maker in dynamic contracting under cash diversion and shirking",
+              "partial monitoring that reveals arrivals information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Finally, we present the intuition behind the optimality of such a contract structure and highlight the key differences it has with the optimal contract that allows full monitoring.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "W_t",
+                "meaning": "agent's continuation promised utility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "H_t^u, H_t^o",
+                "meaning": "jumps in promised utility on unobservable and observable arrivals",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "When the principal conducts monitoring, it is optimal to set Hu t = Ho t = β.",
+              "Similar to the setting in Section 5.1, the contract is denoted as γ = (L,τ,Ma) ∈Γma with the partial monitoring schedule Ma = {Mat}tP0, where Mat ∈{0,ma}.",
+              "During the time interval [t,t + δ], the principal could pay a monitoring cost maδ to observe all the arrivals during this time interval."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.2. Partial Monitoring That Reveals Arrivals",
+                "equation": "",
+                "quote": "Finally, we present the intuition behind the opti­ mality of such a contract structure and highlight the key differences it has with the optimal contract that allows full monitoring."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design as “contracting”: “Finally, we present the intuition behind the optimality of such a contract structure and highlight the key differences”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "baseline-contract-vs-dynamic-pricing",
+        "name": "Baseline Contract vs. Dynamic Pricing",
+        "kind": "alternative",
+        "relation": "This is an alternative to Dynamic Contract Design in the Presence of Double Moral Hazard model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "One alternative to charging higher prices would be lowering the price charged in the observable channel compared with the price charged in the unobservable channel. Then we prove that a contract that follows these properties is an optimal contract in the space Γp. In what follows, we formally define the optimal contract under dynamic pricing.",
+        "objects": [
+          "The principal",
+          "The agent",
+          "Customers"
+        ],
+        "inputs": [
+          "The price",
+          "The benefits",
+          "Customer arrival rate",
+          "Probability p",
+          "Cost m"
+        ],
+        "decisions": [
+          "The prices",
+          "A higher price for ordering through the observable channel",
+          "Dominate the baseline contract"
+        ],
+        "assumptions": [
+          "The solution of HJB Equation (13) has a unique switching point"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The principal",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Pricing",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "In this section, we empower the principal with the third (and novel to the contract literature) control—the dynamic adjust­ ment of prices charged to customers—which has the potential to reduce the size of the aforementioned rent.",
+                "matchedText": "the principal",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The agent",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Pricing",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "In our setup, “dynamic pricing” is a powerful tool that not only (i) alters customers’ behavior but also (ii) influences the agent’s incentives to exert effort and truthfully report and concurrently (iii) has implications on the amount of the revenues col­ lected.",
+                "matchedText": "the agent",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Pricing",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "In this section, we empower the principal with the third (and novel to the contract literature) control—the dynamic adjust­ ment of prices charged to customers—which has the potential to reduce the size of the aforementioned rent.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The price",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Pricing",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 9,
+                "quote": "One alternative to charging higher prices would be lower­ ing the price charged in the observable channel com­ pared with the price charged in the unobservable channel.",
+                "matchedText": "the price",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The benefits",
+              "source": {
+                "type": "section",
+                "section": "Baseline Contract vs. Dynamic Pricing",
+                "page": 17,
+                "sectionIndex": 3,
+                "sentence": 25,
+                "quote": "Hence, when p is large, the benefit of pushing customers to the observable channel is larger, which increases the benefits of using dynamic pricing.",
+                "matchedText": "the benefits",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customer arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Pricing",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "The chosen prices affect the overall customer arrival rate, as well as the number of customers that prefer one channel over the other.",
+                "matchedText": "customer arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Probability p",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Pricing",
+                "page": 9,
+                "sectionIndex": 0,
+                "sentence": 13,
+                "quote": "In the previous section, we assumed that the overall customer arrival rate is µ if the agent exerts effort and that a customer chooses the unobservable channel with probability p.",
+                "matchedText": "probability p",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Cost m",
+              "source": {
+                "type": "section",
+                "section": "Baseline Contract vs. Dynamic Pricing",
+                "page": 17,
+                "sectionIndex": 3,
+                "sentence": 11,
+                "quote": "In case (iii), the principal can employ the full monitor­ ing at a flow cost m.",
+                "matchedText": "cost m",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The prices",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Pricing",
+                "page": 8,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "We let the principal dynamically adjust the prices on offer.",
+                "matchedText": "the prices",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A higher price for ordering through the observable channel",
+              "source": {
+                "type": "section",
+                "section": "Properties of the Optimal Contract",
+                "page": 10,
+                "sectionIndex": 1,
+                "sentence": 34,
+                "quote": "Property 4 implies that, as the agent’s promised utility increases, the principal sets a higher price for ordering through the observable channel",
+                "matchedText": "a higher price for ordering through the observable channel",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Dominate the baseline contract",
+              "source": {
+                "type": "section",
+                "section": "Baseline Contract vs. Dynamic Pricing",
+                "page": 17,
+                "sectionIndex": 3,
+                "sentence": 42,
+                "quote": "dominate the baseline contract",
+                "matchedText": "dominate the baseline contract",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The solution of HJB Equation (13) has a unique switching point",
+              "source": {
+                "type": "section",
+                "section": "Properties of the Optimal Contract",
+                "page": 10,
+                "sectionIndex": 1,
+                "sentence": 28,
+                "quote": "For simplicity, we assume that the solution of HJB Equation (13) has a unique switching point.",
+                "matchedText": "the solution of HJB Equation (13) has a unique switching point.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          }
+        ],
+        "method": "The paper proves that a contract that follows these properties is an optimal contract in the space Γp.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Properties of the Optimal Contract",
+          "page": 9,
+          "sentence": 2
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4. Dynamic Pricing",
+            "equation": "",
+            "quote": "One alternative to charging higher prices would be lower­ ing the price charged in the observable channel com­ pared with the price charged in the unobservable channel."
+          }
+        ],
+        "components": [
+          {
+            "id": "dynamic-pricing",
+            "label": "Dynamic Pricing",
+            "role": "information",
+            "concepts": [
+              "dynamic-pricing"
+            ],
+            "explanation": "One alternative to charging higher prices would be lowering the price charged in the observable channel compared with the price charged in the unobservable channel.",
+            "searchPhrases": [
+              "how dynamic pricing is represented",
+              "information available to the decision maker in dynamic contracting under cash diversion and shirking",
+              "dynamic pricing information available to the decision maker specification"
+            ],
+            "formal": "Information structure: One alternative to charging higher prices would be lowering the price charged in the observable channel compared with the price charged in the unobservable channel.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "H_t^u, H_t^o",
+                "meaning": "jumps in promised utility on unobservable and observable arrivals",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "One alternative to charging higher prices would be lowering the price charged in the observable channel compared with the price charged in the unobservable channel."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4. Dynamic Pricing",
+                "equation": "",
+                "quote": "One alternative to charging higher prices would be lower­ ing the price charged in the observable channel com­ pared with the price charged in the unobservable channel."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Dynamic pricing: “Dynamic pricing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "properties-of-the-optimal-contract",
+            "label": "Properties of the Optimal Contract",
+            "role": "interaction",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "Then we prove that a contract that follows these properties is an optimal contract in the space Γp.",
+            "searchPhrases": [
+              "how properties of the optimal contract is represented",
+              "strategic response in dynamic contracting under cash diversion and shirking",
+              "properties of the optimal contract strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "W_t",
+                "meaning": "agent's continuation promised utility",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "We define the system’s value function as the sum of the principal’s utility and agent’s promised utility: Vp(w) := Fp(w) + w."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.2. Properties of the Optimal Contract",
+                "equation": "",
+                "quote": "Then we prove that a contract that follows these properties is an optimal contract in the space Γp."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design as “contracting”: “Then we prove that a contract that follows these properties is an optimal contract in the space Γp.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "optimal-contract-under-dynamic-pricing",
+            "label": "Optimal Contract Under Dynamic Pricing",
+            "role": "interaction",
+            "concepts": [
+              "dynamic-pricing",
+              "contract-design"
+            ],
+            "explanation": "In what follows, we formally define the optimal contract under dynamic pricing.",
+            "searchPhrases": [
+              "how optimal contract under dynamic pricing is represented",
+              "strategic response in dynamic contracting under cash diversion and shirking",
+              "optimal contract under dynamic pricing strategic response specification"
+            ],
+            "formal": "Strategic response: In what follows, we formally define the optimal contract under dynamic pricing.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "W_t",
+                "meaning": "agent's continuation promised utility",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "For any w ∈[0,wp], define the contract γp(w) = (Lp,τp,Rpu,Rpo) as follows: 1."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.3. Optimal Contract Under Dynamic Pricing",
+                "equation": "",
+                "quote": "In what follows, we formally define the optimal con­ tract under dynamic pricing."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Dynamic pricing: “In what follows, we formally define the optimal contract under dynamic pricing.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Contract design as “contracting”: “In what follows, we formally define the optimal contract under dynamic pricing.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "baseline-contract-vs-dynamic-pricing-vs-monitoring",
+            "label": "Baseline Contract vs. Dynamic Pricing vs. Monitoring",
+            "role": "information",
+            "concepts": [
+              "dynamic-pricing",
+              "contract-design"
+            ],
+            "explanation": "The above result establishes the existence of a threshold on the flow cost of monitoring such that, if the monitoring cost exceeds this threshold, the optimal contract with dynamic pricing performs better than the optimal contract with full monitoring; otherwise, the reverse holds true.",
+            "searchPhrases": [
+              "how baseline contract vs. dynamic pricing vs. monitoring is represented",
+              "information available to the decision maker in dynamic contracting under cash diversion and shirking",
+              "baseline contract vs. dynamic pricing vs. monitoring information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The above result establishes the existence of a threshold on the flow cost of monitoring such that, if the monitoring cost exceeds this threshold, the optimal contract with dynamic pricing performs better than the optimal contract with full monitoring; otherwise, the reverse holds true.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\gamma=(L, \\tau)",
+                "meaning": "history-dependent payment process and termination time",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\nu_t",
+                "meaning": "agent effort process, zero or mu in the baseline",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "W_t",
+                "meaning": "agent's continuation promised utility",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\beta=c/\\mu",
+                "meaning": "effort cost adjusted by arrival intensity",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "In case (iii), the principal can employ the full monitoring at a flow cost m."
+            ],
+            "sources": [
+              {
+                "page": 17,
+                "section": "6. Baseline Contract vs. Dynamic Pricing vs. Monitoring",
+                "equation": "",
+                "quote": "The above result establishes the existence of a thresh­ old on the flow cost of monitoring such that, if the mon­ itoring cost exceeds this threshold, the optimal contract with dynamic pricing performs better than the optimal contract with full monitoring; otherwise, the reverse holds true."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Dynamic pricing: “this threshold, the optimal contract with Dynamic pricing performs better than the optimal contract with full”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design as “contracting”: “The above result establishes the existence of a threshold on the flow cost of monitoring such that, if”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Cost m",
+                  "source": {
+                    "type": "section",
+                    "section": "Baseline Contract vs. Dynamic Pricing",
+                    "page": 17,
+                    "sectionIndex": 3,
+                    "sentence": 11,
+                    "quote": "In case (iii), the principal can employ the full monitor­ ing at a flow cost m.",
+                    "matchedText": "cost m",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "10fec1c3091ddcbb6d92479d0183b4030ac80e35b6b6d5a62c1172f904a03e01",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "adc7aaa32e50ac184012c572715539c4041b137a31f837b2538954d9758a2229",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-01169/adc7aaa32e50ac184012c572715539c4041b137a31f837b2538954d9758a2229.json",
+      "extractionQaDecisionSha256": "1374322f8518c7779b24c8e453dfb903c7319bc9cc7214055115599f057b7334",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

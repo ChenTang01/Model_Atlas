@@ -1,0 +1,835 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2022-01652",
+  "sourcePdfSha256": "9d3c0a9b3e16c671ecb8835781e1aca4a4013882acf30dac450458570ab34579",
+  "extractionPagesSha256": "2d54737a07b317994ce4eb89f04a27206ecd92f84463908d30957a39b59a130e",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "19544a13229bd3eb2ff8db80289be467fd4bd6c0027de47d6029cb5948a8dbf8",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "4e4a1b37d2c377463678590d4e11ba7f878060207cade509764bf4d7e0d65748",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-01652/4e4a1b37d2c377463678590d4e11ba7f878060207cade509764bf4d7e0d65748.json",
+  "extractionQaDecisionSha256": "7fad7bd08d58a2d5fd4f9b62502205f1194d1d7e9e6c95ba62fe2ab8de6cf16c",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-01652",
+    "question": "How should the minimal representation of a continuous state-space markov decision process from transition data be learned?",
+    "overview": "This paper proposes a framework for learning the most concise Markov decision process (MDP) model of a continuous state-space dynamic system from observed transition data. This setting is encountered in numerous important applications, such as patient treatment, online advertising, recommender systems, and estimation of treatment effects in econometrics. Most existing methods in offline reinforcement learning construct functional approximations of the value or the transition and reward functions, requiring complex and often not interpretable function approximators.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        9,
+        11,
+        13
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Learning the Minimal Representation of a Continuous State-Space Markov Decision Process from Transition Data model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This paper proposes a framework for learning the most concise Markov decision process (MDP) model of a continuous state-space dynamic system from observed transition data. This setting is encountered in numerous important applications, such as patient treatment, online advertising, recommender systems, and estimation of treatment effects in econometrics. Most existing methods in offline reinforcement learning construct functional approximations of the value or the transition and reward functions, requiring complex and often not interpretable function approximators.",
+        "objects": [
+          "Patient",
+          "Agents",
+          "The agent",
+          "A state space",
+          "The decision maker"
+        ],
+        "inputs": [
+          "The least observable state in the data",
+          "An observation Xi h and takes an action Ai h with an unknown probability",
+          "State s in our system given how the agent explored the states",
+          "The true mapping from transition data",
+          "The reward of state s"
+        ],
+        "decisions": [
+          "The value for K that minimizes the testing value error",
+          "MDP with accurate value estimation and optimal policy estimation with provable bounds",
+          "Values and deriving the optimal policy of the Maze"
+        ],
+        "assumptions": [
+          "The observations conditional on the state they belong to are independent",
+          "Assumptions 3.1 and 3.2 are both satisfied",
+          "The trajectories end in known last states",
+          "Although the decision maker can take advantage of new information and learn as data are collected, it cannot purposefully explore the system to learn",
+          "Finite representations exist"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "This setting is encountered in numerous important applications, such as patient treatment, online advertising, recommender systems, and estimation of treatment effects in econometrics.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agents",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "agents with an unknown behavior policy.",
+                "matchedText": "agents",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The agent",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement",
+                "sectionIndex": 6,
+                "page": 6,
+                "quote": "The agent then observes a new observation Xi h+1 in a state f(φ(Xi h),Ai h) distributed fol­ lowing pAi h(φ(Xi h),·)."
+              }
+            },
+            {
+              "value": "A state space",
+              "source": {
+                "type": "section",
+                "section": "Minimal Representation of a Dynamic System",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "a state space",
+                "matchedText": "a state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "section",
+                "section": "Minimal Representation of a Dynamic System",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "The decision maker then observes a reward R(xh), and the system’s new observation becomes xh+1 = F(xh,ah), where F(xh,ah) is a random observation following distribution Pah(xh,·)."
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The least observable state in the data",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 23,
+                "quote": "NHνm is the expected number of times we observe the least observable state in the data.",
+                "matchedText": "the least observable state in the data",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "An observation Xi h and takes an action Ai h with an unknown probability",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "At each step h of the ith run, the agent observes an observation Xi h and takes an action Ai h with an unknown probability.",
+                "matchedText": "an observation Xi h and takes an action Ai h with an unknown probability",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "State s in our system given how the agent explored the states",
+              "source": {
+                "type": "section",
+                "section": "Main Assumptions",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 3,
+                "quote": "If ν(s) = 0 for a given state s, then we never observe state s in our system given how the agent explored the states."
+              }
+            },
+            {
+              "value": "The true mapping from transition data",
+              "source": {
+                "type": "section",
+                "section": "Main Assumptions",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 17,
+                "quote": "We will show in this paper that this con­ dition is also sufficient; if the true mapping belongs to a hypothesis class of finite VC dimension, then it is possi­ ble to learn the true mapping from transition data.",
+                "matchedText": "the true mapping from transition data",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The reward of state s",
+              "source": {
+                "type": "section",
+                "section": "Minimal Representation of a Dynamic System",
+                "page": 4,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "the reward of state s",
+                "matchedText": "the reward of state s",
+                "derivation": "literal-parameter-gloss"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The value for K that minimizes the testing value error",
+              "source": {
+                "type": "section",
+                "section": "Finding the Optimal Number of Metastates",
+                "page": 15,
+                "sectionIndex": 18,
+                "sentence": 13,
+                "quote": "The curves of testing value errors (17), (18), and (19) will typically have an overall U shape, and we would select the value for K that minimizes the testing value error",
+                "matchedText": "the value for K that minimizes the testing value error",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "MDP with accurate value estimation and optimal policy estimation with provable bounds",
+              "source": {
+                "type": "section",
+                "section": "Value Estimation and Optimal Policy",
+                "page": 12,
+                "sectionIndex": 12,
+                "sentence": 66,
+                "quote": "MDP with accurate value estimation and opti­ mal policy estimation with provable bounds",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Values and deriving the optimal policy of the Maze",
+              "source": {
+                "type": "section",
+                "section": "The Maze Environment",
+                "page": 17,
+                "sectionIndex": 21,
+                "sentence": 28,
+                "quote": "We then evaluate the performance of the constructed MDP representation ˆM by MRL in estimating values and deriving the optimal policy of the Maze",
+                "matchedText": "values and deriving the optimal policy of the Maze",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The observations conditional on the state they belong to are independent",
+              "source": {
+                "type": "section",
+                "section": "Problem Statement",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 7,
+                "quote": "We assume that the observations conditional on the state they belong to are independent.",
+                "matchedText": "the observations conditional on the state they belong to are independent.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Assumptions 3.1 and 3.2 are both satisfied",
+              "source": {
+                "type": "section",
+                "section": "Main Assumptions",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 19,
+                "quote": "Assumptions 3.1 and 3.2 are both satisfied.",
+                "matchedText": "Assumptions 3.1 and 3.2 are both satisfied.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The trajectories end in known last states",
+              "source": {
+                "type": "section",
+                "section": "Learning Deterministic Representations",
+                "page": 8,
+                "sectionIndex": 10,
+                "sentence": 41,
+                "quote": "We assume that the trajectories end in known last states.",
+                "matchedText": "the trajectories end in known last states.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Although the decision maker can take advantage of new information and learn as data are collected, it cannot purposefully explore the system to learn",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 1,
+                "sectionIndex": 1,
+                "sentence": 14,
+                "quote": "First, we assume that although the decision maker can take advantage of new information and learn as data are collected, it cannot purposefully explore the system to learn.",
+                "matchedText": "although the decision maker can take advantage of new information and learn as data are collected, it cannot purposefully explore the system to learn.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Finite representations exist",
+              "source": {
+                "type": "section",
+                "section": "Minimal Representation of a Dynamic System",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 43,
+                "quote": "Assuming that finite representations exist, we will refer to a valid repre­ sentation as “minimal” if it has the smallest number of states among the set of the valid representations.",
+                "matchedText": "that finite representations exist",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "With the previously described procedures, we can construct our MDP model by iterating the Split procedure until there are K metastates and then using the Model procedure to construct the MDP representation.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Finding the Optimal Number of Metastates",
+          "page": 15,
+          "sentence": 2
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 11,
+            "section": "5. Value Estimation and Optimal Policy",
+            "equation": "",
+            "quote": "Although recovering the states of the minimal representation MDP is informative in itself, an important objective is to derive the optimal policy and estimate the value of a given policy or a sequence of actions."
+          }
+        ],
+        "components": [
+          {
+            "id": "minimal-representation-of-a-dynamic-system",
+            "label": "Minimal Representation of a Dynamic System",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Let (X,A,P,R) be a Markovian stochastic dynamic system, where X ⊂Rn is an observation space, A is a finite set of actions, P : A × X × A →X is a transitions distribution function, and R : X →R is a reward function.",
+            "searchPhrases": [
+              "how minimal representation of a dynamic system is represented",
+              "system process in organizations, incentives, and finance",
+              "minimal representation of a dynamic system system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The decision maker then observes a reward R(xh), and the system’s new observation becomes xh+1 = F(xh,ah), where F(xh,ah) is a random observation following distribution Pah(xh,·).",
+              "A (stochastic) MDP is a tuple M = (S, A,p,r), where S is a state space, A is an action space, pa(s,s′) ∈[0,1] is the probability of transition from state s to s′ taking an action a, and r(s) ∈R is the reward of state s.",
+              "Let M = (S,A,p,r) be an MDP and φ : X →S be a mapping from the observation space X to the MDP’s state space S.",
+              "Let (X,A,P,R) be a Markovian stochastic dynamic system, where X ⊂Rn is an observation space, A is a finite set of actions, P : A × X × A →X is a transitions distribution function, and R : X →R is a reward function."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Minimal Representation of a Dynamic System",
+                "equation": "",
+                "quote": "Let (X,A,P,R) be a Markovian stochastic dynamic sys­ tem, where X ⊂Rn is an observation space, A is a finite set of actions, P : A × X × A →X is a transitions distri­ bution function, and R : X →R is a reward function."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "problem-statement",
+            "label": "Problem Statement",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Action observability. μ encodes the unknown stochastic decision rule of the agent that generated the data; μi(a|s) is the probability that the agent selects action a when observing an observation in state s in run i.",
+            "searchPhrases": [
+              "how problem statement is represented",
+              "decision rule in organizations, incentives, and finance",
+              "problem statement decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that we are provided with randomly generated data of n > 0 runs of the dynamic system of horizon H > 1, (Xi h,Ai h,Ri h)i∈[N 1], h∈[H 1] ∈X NH × ANH × RNH, generated from external agents with an unknown behavior policy.",
+              "At each step h of the ith run, the agent observes an observation Xi h and takes an action Ai h with an unknown probability.",
+              "Action observability. μ encodes the unknown stochastic decision rule of the agent that generated the data; μi(a|s) is the probability that the agent selects action a when observing an observation in state s in run i.",
+              "The agent then observes a new observation Xi h+1 in a state f(φ(Xi h),Ai h) distributed following pAi h(φ(Xi h),·)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.1. Problem Statement",
+                "equation": "",
+                "quote": "Action observability. µ encodes the unknown sto­ chastic decision rule of the agent that generated the data; µi(a|s) is the probability that the agent selects action a when observing an observation in state s in run i."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Decision making as “decision rule”: “observability. μ encodes the unknown stochastic decision rule of the agent that generated the data; μi(a|s)”.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "main-assumptions",
+            "label": "Main Assumptions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "For example, the class of arbitrary sets as classifiers is of infinite VC dimension, and decisions trees have a VC dimension that scales with their depth.",
+            "searchPhrases": [
+              "how main assumptions is represented",
+              "decision rule in organizations, incentives, and finance",
+              "main assumptions decision rule specification"
+            ],
+            "formal": "Decision rule: For example, the class of arbitrary sets as classifiers is of infinite VC dimension, and decisions trees have a VC dimension that scales with their depth.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "To be able to learn the true mapping φ ∈SX, we need to assume that the true state mapping φ (of the minimal representation) belongs to a hypothesis class H ⊂SX of restricted complexity.",
+              "Assumption 3.2 (Structure). φ ∈H, where H is a hypothesis class of finite one-versus-all2 VC dimension d ≥2.",
+              "It is well known in statistical theory that even for a binary supervised classification problem, it is impossible to learn the true classifier with a finite sample if the hypothesis class is unrestricted (Vapnik 1998)."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.2. Main Assumptions",
+                "equation": "",
+                "quote": "For example, the class of arbitrary sets as classifiers is of infinite VC dimension, and decisions trees have a VC dimension that scales with their depth."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “For example, the class of arbitrary sets as classifiers is of infinite VC dimension, and decisions trees have”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "representations-from-transition-data",
+            "label": "Representations from Transition Data",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "The paper's problem cannot be categorized as supervised learning; however, it is not completely unsupervised as we observe sample paths encoding the dynamics of the system.",
+            "searchPhrases": [
+              "how representations from transition data is represented",
+              "system process in organizations, incentives, and finance",
+              "representations from transition data system process specification"
+            ],
+            "formal": "Process relation: The paper's problem cannot be categorized as supervised learning; however, it is not completely unsupervised as we observe sample paths encoding the dynamics of the system.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Our problem cannot be categorized as supervised learning; however, it is not completely unsupervised as we observe sample paths encoding the dynamics of the system.",
+              "Because the state of each data point is not observed in our setting, ERM cannot be applied as no empirical error can be computed.",
+              "We design an approach directly adapted to the setting of learning dynamic systems, which will use only the observed paths without any further assumptions."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Representations from Transition Data",
+                "equation": "",
+                "quote": "Our problem cannot be catego­ rized as supervised learning; however, it is not completely unsupervised as we observe sample paths encoding the dynamics of the system."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Our problem cannot be categorized as supervised learning; however, it is not completely unsupervised as we observe sample”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "learning-deterministic-representations",
+            "label": "Learning Deterministic Representations",
+            "role": "state",
+            "concepts": [
+              "system-state"
+            ],
+            "explanation": "The constants involved in the exact bound characterize the difficulty of learning the state s: the frequency ν(s) of observing state s in the data and its separability λs from the other states.",
+            "searchPhrases": [
+              "how learning deterministic representations is represented",
+              "decision-relevant state in organizations, incentives, and finance",
+              "learning deterministic representations decision-relevant state specification"
+            ],
+            "formal": "State rule: collect the decision-relevant variables defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Intuitively, λs is a separability constant that characterizes the probability of observing a different behavior between s and the other states of the MDP in the data, and λ = mins∈Sλs is the minimum separability.",
+              "The constant D ≤|S| is the number of steps needed to observe a different behavior between states of the MDP.",
+              "The reason for this is that learning the states of the minimal representation is fundamentally a classification problem using the observed dynamics."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Learning Deterministic Representations",
+                "equation": "",
+                "quote": "The constants involved in the exact bound characterize the difficulty of learning the state s: the frequency ν(s) of observing state s in the data and its separability λs from the other states."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models System state through this state description: “The constants involved in the exact bound characterize the difficulty of learning the state s: the frequency ν(s)”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "value-estimation-and-optimal-policy",
+            "label": "Value Estimation and Optimal Policy",
+            "role": "estimation",
+            "concepts": [
+              "estimation",
+              "system-state",
+              "markov-decision-process"
+            ],
+            "explanation": "Although recovering the states of the minimal representation MDP is informative in itself, an important objective is to derive the optimal policy and estimate the value of a given policy or a sequence of actions.",
+            "searchPhrases": [
+              "how value estimation and optimal policy is represented",
+              "estimation procedure in organizations, incentives, and finance",
+              "value estimation and optimal policy estimation procedure specification"
+            ],
+            "formal": "Estimation relation: Although recovering the states of the minimal representation MDP is informative in itself, an important objective is to derive the optimal policy and estimate the value of a given policy or a sequence of actions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In the training data set, a coherent MDP estimate preserves the observed values (i.e., the in-sample value estimation error is zero)."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5. Value Estimation and Optimal Policy",
+                "equation": "",
+                "quote": "Although recovering the states of the minimal representation MDP is informative in itself, an important objective is to derive the optimal policy and estimate the value of a given policy or a sequence of actions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Model estimation as “estimation”: “estimation”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "system-state",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses System state as “state representation”: “state representation”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "markov-decision-process",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Markov decision process as “MDP”: “the states of the minimal representation MDP is informative in itself, an important objective is”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "learning-algorithm",
+            "label": "Learning Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "markov-decision-process"
+            ],
+            "explanation": "This section introduces the minimal representation learning algorithm, a practical algorithm that approximates a coherent mapping given transition data and constructs a reduced MDP representation of the system.",
+            "searchPhrases": [
+              "how learning algorithm is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "learning algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: This section introduces the minimal representation learning algorithm, a practical algorithm that approximates a coherent mapping given transition data and constructs a reduced MDP representation of the system.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We describe the algorithm with transition data set (xi h,ai h,ri h)i∈[N 1],h∈[H 1] of fixed horizon H for presentation simplicity only."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "Learning Algorithm",
+                "equation": "",
+                "quote": "This section introduces the minimal representation learn­ ing algorithm, a practical algorithm that approximates a coherent mapping given transition data and constructs a reduced MDP representation of the system."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "markov-decision-process",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Markov decision process as “MDP”: “transition data and constructs a reduced MDP representation of the system.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "deterministic-mrl",
+            "label": "Deterministic MRL",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Instead of learning a coherent mapping exactly, the MRL algorithm seeks to approximate a coherent mapping by minimizing the number of incoherences.",
+            "searchPhrases": [
+              "how deterministic mrl is represented",
+              "solution algorithm in organizations, incentives, and finance",
+              "deterministic mrl solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Instead of learning a coherent mapping exactly, the MRL algorithm seeks to approximate a coherent mapping by minimizing the number of incoherences.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Instead of learning a coherent mapping exactly, the MRL algorithm seeks to approximate a coherent mapping by minimizing the number of incoherences.",
+              "If a valid MDP representation of the system (Definition 3.2) is perfectly learned, an incoherence would not be observed.",
+              "Let (xi h,ai h,ri h)i∈[N 1],h∈[H 1] be transition data and ˆφ : X →ˆS be a mapping of the observation space into metastates."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6.1. Deterministic MRL",
+                "equation": "",
+                "quote": "Instead of learning a coherent mapping exactly, the MRL algorithm seeks to approximate a coherent map­ ping by minimizing the number of incoherences."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Instead of learning a coherent mapping exactly, the MRL algorithm seeks to approximate a coherent mapping by minimizing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "9d3c0a9b3e16c671ecb8835781e1aca4a4013882acf30dac450458570ab34579",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "4e4a1b37d2c377463678590d4e11ba7f878060207cade509764bf4d7e0d65748",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-01652/4e4a1b37d2c377463678590d4e11ba7f878060207cade509764bf4d7e0d65748.json",
+      "extractionQaDecisionSha256": "7fad7bd08d58a2d5fd4f9b62502205f1194d1d7e9e6c95ba62fe2ab8de6cf16c",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2023-00350",
+  "sourcePdfSha256": "6057725f7b632b26c5f02379fb563b99ddfdc4f156c379d6d0bcca78df8b1c0f",
+  "extractionPagesSha256": "c6a1e0d47381a9b6460d5a104cbac222985f5101012a403f718973aec6e52455",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "4211ae7be4b3b92a2ef8b329dfe7305d148f783c3844c3735651bbd4446adfec",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "ae3bb724ac33b07f35cc0c735fe103fba0e76c4a0019f9f170a0b940b2bedbda",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00350/ae3bb724ac33b07f35cc0c735fe103fba0e76c4a0019f9f170a0b940b2bedbda.json",
+  "extractionQaDecisionSha256": "372296c1e1b205512af18a0a05d8368a0f8a7ff4668a1248936dfd8e10dd4a0c",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2023-00350",
+    "question": "How should a divider allocate multiple assets between two offers when the chooser's preferences are uncertain, and when is it advantageous to be the divider rather than the chooser?",
+    "overview": "A self-interested divider chooses two bundles while uncertain about a self-interested chooser's additive values; the chooser observes the division and selects the preferred bundle. The paper solves the divider's Bayesian optimization and the induced subgame-perfect Bayes-Nash outcome.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        6,
+        9,
+        12,
+        14
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Playing Divide-and-Choose Given Uncertain Preferences model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A self-interested divider chooses two bundles while uncertain about a self-interested chooser's additive values; the chooser observes the division and selects the preferred bundle. The paper solves the divider's Bayesian optimization and the induced subgame-perfect Bayes-Nash outcome.",
+        "objects": [
+          "A divider",
+          "A chooser"
+        ],
+        "inputs": [
+          "Each player knows own realized additive values",
+          "The joint prior over values is common knowledge",
+          "The divider generally does not know the chooser's realized values",
+          "The chooser observes the completed division"
+        ],
+        "decisions": [
+          "The chooser selects the preferred pile",
+          "For indivisible goods, the divider may use lotteries to implement fractional allocations",
+          "The divider chooses the share of each good placed in pile 1 versus pile 2",
+          "Require independence across goods",
+          "Require that values be nonnegative"
+        ],
+        "assumptions": [
+          "There are two rational, self-interested players and n goods",
+          "Values are additive across goods; the model permits negative values, while results using critical ratios or nonnegative approximation guarantees impose positivity or nonnegativity as stated",
+          "Goods are divisible or fractional allocations can be implemented with lotteries",
+          "The chooser selects the higher-value pile according to realized preferences, with an explicit tie convention",
+          "Distribution-specific algorithms impose Gaussian, uniform, symmetric log-concave, or finite-support structure as stated"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A divider",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a divider who knows own additive values and a prior over the chooser's values"
+              }
+            },
+            {
+              "value": "A chooser",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a chooser who observes the proposed division and knows own realized values"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each player knows own realized additive values",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each player knows own realized additive values."
+              }
+            },
+            {
+              "value": "The joint prior over values is common knowledge",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The joint prior over values is common knowledge."
+              }
+            },
+            {
+              "value": "The divider generally does not know the chooser's realized values",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The divider generally does not know the chooser's realized values when constructing the piles."
+              }
+            },
+            {
+              "value": "The chooser observes the completed division",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The chooser observes the completed division before choosing."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The chooser selects the preferred pile",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the chooser selects the preferred pile after observing the division"
+              }
+            },
+            {
+              "value": "For indivisible goods, the divider may use lotteries to implement fractional allocations",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "for indivisible goods, the divider may use lotteries to implement fractional allocations"
+              }
+            },
+            {
+              "value": "The divider chooses the share of each good placed in pile 1 versus pile 2",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the divider chooses the share of each good placed in pile 1 versus pile 2"
+              }
+            },
+            {
+              "value": "Require independence across goods",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 3,
+                "sectionIndex": 2,
+                "sentence": 9,
+                "quote": "Thus, we allow for values of the two players for any individual good to be correlated but require inde­ pendence across goods",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Require that values be nonnegative",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 31,
+                "quote": "For some of our results we also require that values be nonnegative",
+                "matchedText": "require that values be nonnegative",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are two rational, self-interested players and n goods",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "There are two rational, self-interested players and n goods."
+              }
+            },
+            {
+              "value": "Values are additive across goods; the model permits negative values, while results using critical ratios or nonnegative approximation guarantees impose positivity or nonnegativity as stated",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Values are additive across goods; the model permits negative values, while results using critical ratios or nonnegative approximation guarantees impose positivity or nonnegativity as stated."
+              }
+            },
+            {
+              "value": "Goods are divisible or fractional allocations can be implemented with lotteries",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Goods are divisible or fractional allocations can be implemented with lotteries."
+              }
+            },
+            {
+              "value": "The chooser selects the higher-value pile according to realized preferences, with an explicit tie convention",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The chooser selects the higher-value pile according to realized preferences, with an explicit tie convention."
+              }
+            },
+            {
+              "value": "Distribution-specific algorithms impose Gaussian, uniform, symmetric log-concave, or finite-support structure as stated",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Distribution-specific algorithms impose Gaussian, uniform, symmetric log-concave, or finite-support structure as stated."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The paper implemented this algorithm using Gurobi3 to solve CP as a convex quadratic program and used it to verify many of the examples in this paper.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Normal Priors",
+          "page": 6,
+          "sentence": 25
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 14,
+            "section": "5.1. Number of Goods",
+            "equation": "",
+            "quote": "In this case, had the chooser been the divider, the divider would have opted for the chooser’s preferred pile 1 because we know the divider would have weakly preferred a pD-fraction of his favorite good to everything else, so he must have strictly preferred a pC-fraction of his favorite good."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The divider chooses the share of each good placed in pile 1 versus pile 2 the chooser selects the preferred pile after observing the division for indivisible goods, the divider may use lotteries to implement fractional allocations",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in bayesian divide-and-choose under uncertain preferences",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The divider chooses the share of each good placed in pile 1 versus pile 2 the chooser selects the preferred pile after observing the division for indivisible goods, the divider may use lotteries to implement fractional allocations",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "g_i^D, g_i^C",
+                "meaning": "divider's and chooser's additive values for good i · nonnegative in the principal algorithmic results",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "share of good i placed in pile 1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "probability that the chooser selects pile 1 under the prior and proposed division · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_i^C",
+                "meaning": "prior distribution of the chooser's value for good i",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Values are additive across goods; the model permits negative values, while results using critical ratios or nonnegative approximation guarantees impose positivity or nonnegativity as stated.",
+              "There are two rational, self-interested players and n goods.",
+              "Goods are divisible or fractional allocations can be implemented with lotteries.",
+              "We may also think of the goods as indivisible, in which case we allow the divider to fractionally allocate goods between the piles via lotteries that are resolved after the chooser has chosen her pile."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2. Model",
+                "equation": "",
+                "quote": "We may also think of the goods as indivisible, in which case we allow the divider to fractionally allocate goods between the piles via lotteries that are resolved after the chooser has chosen her pile."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We may also think of the goods as indivisible, in which case we allow the divider to fractionally”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "equilibrium-or-solution-concept",
+            "label": "Equilibrium or solution concept",
+            "role": "interaction",
+            "concepts": [
+              "equilibrium-analysis"
+            ],
+            "explanation": "The model's equilibrium concept is Subgame-perfect Bayes-Nash outcome of divide-and-choose. The chooser's continuation action is to select the higher-value pile. Anticipating that best response, the divider chooses an optimal division under the common prior. The paper proves equilibrium structural properties and computes exact or approximate optimal divisions for several distribution classes.",
+            "searchPhrases": [
+              "how equilibrium or solution concept is represented",
+              "strategic response in bayesian divide-and-choose under uncertain preferences",
+              "equilibrium or solution concept strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Subgame-perfect Bayes-Nash outcome of divide-and-choose.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "g_i^D, g_i^C",
+                "meaning": "divider's and chooser's additive values for good i · nonnegative in the principal algorithmic results",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "share of good i placed in pile 1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "probability that the chooser selects pile 1 under the prior and proposed division · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_i^C",
+                "meaning": "prior distribution of the chooser's value for good i",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The chooser selects the higher-value pile according to realized preferences, with an explicit tie convention."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Model",
+                "equation": "",
+                "quote": "Our solution concept is that of a subgame-perfect Bayes-Nash equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis as “nash equilibrium”: “Our solution concept is that of a subgame-perfect Bayes-Nash equilibrium.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The divider chooses signed pile imbalances q_i to maximize expected utility, trading off the value of the preferred pile against the probability P that the chooser takes it.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in bayesian divide-and-choose under uncertain preferences",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "E[u_D]=\\Sigma_i (g_i^D/2)[P(1-q_i)+(1-P)(1+q_i)]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "g_i^D, g_i^C",
+                "meaning": "divider's and chooser's additive values for good i · nonnegative in the principal algorithmic results",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "share of good i placed in pile 1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i",
+                "meaning": "signed imbalance transformation of p_i between the two piles · [-1,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "probability that the chooser selects pile 1 under the prior and proposed division · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_i^C",
+                "meaning": "prior distribution of the chooser's value for good i",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The chooser selects the higher-value pile according to realized preferences, with an explicit tie convention."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "To see this, note that the objective function is clearly linear in the qi variables, and all constraints except for the final one are linear as well."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “objective function”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "Nature draws the chooser's valuation vector from a common-knowledge prior, possibly correlated with the divider's values. The divider observes own information and selects a fractional allocation of every good between two piles. The chooser observes the division and chooses the pile that gives higher realized utility; the divider receives the other pile. The divider commits to both options before learning the chooser's realized choice.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in bayesian divide-and-choose under uncertain preferences",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: Nature draws the chooser's valuation vector from a common-knowledge prior, possibly correlated with the divider's values.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "g_i^D, g_i^C",
+                "meaning": "divider's and chooser's additive values for good i · nonnegative in the principal algorithmic results",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p_i",
+                "meaning": "share of good i placed in pile 1 · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i",
+                "meaning": "signed imbalance transformation of p_i between the two piles · [-1,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "probability that the chooser selects pile 1 under the prior and proposed division · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_i^C",
+                "meaning": "prior distribution of the chooser's value for good i",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Values are additive across goods; the model permits negative values, while results using critical ratios or nonnegative approximation guarantees impose positivity or nonnegativity as stated.",
+              "There are two rational, self-interested players and n goods.",
+              "Goods are divisible or fractional allocations can be implemented with lotteries."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4. Diversification: Why and How",
+                "equation": "",
+                "quote": "However, another strategic factor—diversification— can reduce the risk to the divider that the chooser will pick pile 1 and thus enable the divider to do better."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “However, another strategic factor—diversification— can reduce the risk to the divider that the chooser will pick pile 1”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The analysis converts the divider's Bayesian expected payoff into a family of constrained optimization problems, proves geometric and structural properties of feasible choice probabilities, develops distribution-specific approximation schemes, and uses simulation to study diversification, role payoffs, and risk aversion.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in bayesian divide-and-choose under uncertain preferences",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The analysis converts the divider's Bayesian expected payoff into a family of constrained optimization problems, proves geometric and structural properties of feasible choice probabilities, develops distribution-specific approximation schemes, and uses simulation to study diversification, role payoffs, and risk aversion.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "q_i",
+                "meaning": "signed imbalance transformation of p_i between the two piles · [-1,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Values are additive across goods; the model permits negative values, while results using critical ratios or nonnegative approximation guarantees impose positivity or nonnegativity as stated.",
+              "Distribution-specific algorithms impose Gaussian, uniform, symmetric log-concave, or finite-support structure as stated."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.3. Effects of Risk Aversion",
+                "equation": "",
+                "quote": "However, it can be written with only two nonconvex constraints, so it is still practically feasible to solve it exactly."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “However, it can be written with only two nonconvex constraints, so it is still practically feasible to solve”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Each player knows own realized additive values. The joint prior over values is common knowledge. The divider generally does not know the chooser's realized values when constructing the piles. The chooser observes the completed division before choosing.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in bayesian divide-and-choose under uncertain preferences",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Each player knows own realized additive values.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "g_i^D, g_i^C",
+                "meaning": "divider's and chooser's additive values for good i · nonnegative in the principal algorithmic results",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "P",
+                "meaning": "probability that the chooser selects pile 1 under the prior and proposed division · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "G_i^C",
+                "meaning": "prior distribution of the chooser's value for good i",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Values are additive across goods; the model permits negative values, while results using critical ratios or nonnegative approximation guarantees impose positivity or nonnegativity as stated.",
+              "In this case, had the chooser been the divider, the divider would have opted for the chooser’s preferred pile 1 because we know the divider would have weakly preferred a pD-fraction of his favorite good to everything else, so he must have strictly preferred a pC-fraction of his favorite good.",
+              "Distribution-specific algorithms impose Gaussian, uniform, symmetric log-concave, or finite-support structure as stated.",
+              "The chooser selects the higher-value pile according to realized preferences, with an explicit tie convention."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "5.1. Number of Goods",
+                "equation": "",
+                "quote": "In this case, had the chooser been the divider, the divider would have opted for the chooser’s preferred pile 1 because we know the divider would have weakly preferred a pD-fraction of his favorite good to everything else, so he must have strictly preferred a pC-fraction of his favorite good."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “In this case, had the chooser been the divider, the divider would have opted for the chooser’s preferred”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "6057725f7b632b26c5f02379fb563b99ddfdc4f156c379d6d0bcca78df8b1c0f",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "ae3bb724ac33b07f35cc0c735fe103fba0e76c4a0019f9f170a0b940b2bedbda",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2023-00350/ae3bb724ac33b07f35cc0c735fe103fba0e76c4a0019f9f170a0b940b2bedbda.json",
+      "extractionQaDecisionSha256": "372296c1e1b205512af18a0a05d8368a0f8a7ff4668a1248936dfd8e10dd4a0c",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,759 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-isre-2024-1493",
+  "sourcePdfSha256": "49224690bcb4f14aa0689870f2e00996e28e9f87e22295e4af03ce4456a76397",
+  "extractionPagesSha256": "5bc4bd5703dca2d6a62258c453779a10c0c898f859ed33f1299259bfc183dd82",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "9f2d46451af1c8a617ea25d8981644d62414885aacbc805e79fd1687fe9e87da",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "91f5082f4fea3e19bbd4befb603c780ec7f2c36c94e0db036c3f486097733b5b",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2024-1493/91f5082f4fea3e19bbd4befb603c780ec7f2c36c94e0db036c3f486097733b5b.json",
+  "extractionQaDecisionSha256": "c15bde6faea591c4095d4bd2f79d4c8c83125254e3308bcbf881e3402b6692d6",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-isre-2024-1493",
+    "question": "When should a short-video platform sell promotion at a fixed fee rather than auction priority, and how does that choice affect participation, engagement, creator welfare, and platform revenue?",
+    "overview": "A short-video platform chooses a fixed promotion price or priority auction while heterogeneous creators strategically decide whether to promote and, under auction, how much to bid for recommendation priority.",
+    "modelTypes": [
+      "Queueing",
+      "Game theory",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        8,
+        10
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Are Auction-Based Promotions More Profitable for Short Video Platforms than Fixed Pricing model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "A short-video platform chooses a fixed promotion price or priority auction while heterogeneous creators strategically decide whether to promote and, under auction, how much to bid for recommendation priority.",
+        "objects": [
+          "A short-video platform",
+          "A continuum of heterogeneous content creators",
+          "Viewers whose attention capacity determines exposure"
+        ],
+        "inputs": [
+          "The platform and creators know arrival, service, click-through, and queue primitives",
+          "A creator's expected position depends on the equilibrium distribution of all other bids",
+          "Creator appeal theta is a heterogeneous creator characteristic uniformly distributed on [0,1] in the baseline",
+          "Unit time",
+          "The content load ratio"
+        ],
+        "decisions": [
+          "The platform selects the promotion policy and, under fixed pricing, the fee",
+          "Each creator chooses whether to promote",
+          "Auction participants choose a bid or priority payment",
+          "An optimal price b",
+          "Whether to promote their content in order to maximize their individual"
+        ],
+        "assumptions": [
+          "Creators arrive at rate Lambda and promoted-video duration is exponentially distributed with service rate mu",
+          "The creator-to-viewer load is rho=Lambda/mu and the baseline imposes stability conditions for the priority queue",
+          "Creator appeal theta is uniform on [0,1]",
+          "Click-through probability declines linearly with expected recommendation position through parameter h",
+          "Creators have quasilinear promotion utility equal to subscriber value minus the fixed fee or auction payment"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A short-video platform",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a short-video platform"
+              }
+            },
+            {
+              "value": "A continuum of heterogeneous content creators",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a continuum of heterogeneous content creators"
+              }
+            },
+            {
+              "value": "Viewers whose attention capacity determines exposure",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "viewers whose attention capacity determines exposure"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The platform and creators know arrival, service, click-through, and queue primitives",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The platform and creators know arrival, service, click-through, and queue primitives."
+              }
+            },
+            {
+              "value": "A creator's expected position depends on the equilibrium distribution of all other bids",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "A creator's expected position depends on the equilibrium distribution of all other bids."
+              }
+            },
+            {
+              "value": "Creator appeal theta is a heterogeneous creator characteristic uniformly distributed on [0,1] in the baseline",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Creator appeal theta is a heterogeneous creator characteristic uniformly distributed on [0,1] in the baseline."
+              }
+            },
+            {
+              "value": "Unit time",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 9,
+                "quote": "The duration of videos varies, and for analytical tractability, we assume that it follows an exponential distribution with rate µ, implying that viewers can watch, on average, µ videos per unit time.",
+                "matchedText": "unit time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The content load ratio",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 11,
+                "quote": "We refer to ρ as the content load ratio.",
+                "matchedText": "the content load ratio",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The platform selects the promotion policy and, under fixed pricing, the fee",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the platform selects the promotion policy and, under fixed pricing, the fee"
+              }
+            },
+            {
+              "value": "Each creator chooses whether to promote",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each creator chooses whether to promote"
+              }
+            },
+            {
+              "value": "Auction participants choose a bid or priority payment",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "auction participants choose a bid or priority payment"
+              }
+            },
+            {
+              "value": "An optimal price b",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 25,
+                "quote": "In the case of the fixed-price pol­ icy, the platform sets an optimal price b",
+                "matchedText": "an optimal price b",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Whether to promote their content in order to maximize their individual",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 25,
+                "quote": "In the case of the fixed-price pol­ icy, the platform sets an optimal price b, after which content creators decide whether to promote their con­ tent in order to maximize their individual utility πf.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Creators arrive at rate Lambda and promoted-video duration is exponentially distributed with service rate mu",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Creators arrive at rate Lambda and promoted-video duration is exponentially distributed with service rate mu."
+              }
+            },
+            {
+              "value": "The creator-to-viewer load is rho=Lambda/mu and the baseline imposes stability conditions for the priority queue",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The creator-to-viewer load is rho=Lambda/mu and the baseline imposes stability conditions for the priority queue."
+              }
+            },
+            {
+              "value": "Creator appeal theta is uniform on [0,1]",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Creator appeal theta is uniform on [0,1]."
+              }
+            },
+            {
+              "value": "Click-through probability declines linearly with expected recommendation position through parameter h",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Click-through probability declines linearly with expected recommendation position through parameter h."
+              }
+            },
+            {
+              "value": "Creators have quasilinear promotion utility equal to subscriber value minus the fixed fee or auction payment",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Creators have quasilinear promotion utility equal to subscriber value minus the fixed fee or auction payment."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The utility πa(θ,p) for a content creator of video appeal θ who chooses to promote by making a payment p is given by By optimizing Equation (5) over p for each creator θ ∈[0,1], we can derive the following proposition that characterizes the comprehensive equilibrium outcome.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Auction-Based Promotion Policy",
+          "page": 8,
+          "sentence": 37
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 6,
+            "section": "4. Fixed-Price Promotion Policy",
+            "equation": "",
+            "quote": "Bid of a content creator under the auction-based promotion policy λj Number of content creators choosing to pay to promote content under promotion policy j sj Number of subscribers gained by a content creator under promotion policy j πj(θ) Utility of a content creator with video appeal θ under promotion policy j ˜πj Total utility of all content creators under promotion policy j Πj Revenue of the platform under promotion policy j Wang, Cui, and Jiang: Are Auction-Based Promotions More Profitable?"
+          }
+        ],
+        "components": [
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Creator appeal theta is a heterogeneous creator characteristic uniformly distributed on [0,1] in the baseline. The platform and creators know arrival, service, click-through, and queue primitives. A creator's expected position depends on the equilibrium distribution of all other bids.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in fixed pricing versus priority auctions for creator promotion",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Creator appeal \\theta is a heterogeneous creator characteristic uniformly distributed on [0,1] in the baseline.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\theta",
+                "meaning": "intrinsic appeal of a creator's video · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "priority payment or auction bid · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "B(p)",
+                "meaning": "cumulative distribution of equilibrium priority payments · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "loss in click-through rate from a lower recommendation position · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta_a",
+                "meaning": "auction participation cutoff · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The creator-to-viewer load is rho=Lambda/mu and the baseline imposes stability conditions for the priority queue.",
+              "For analytical tractability, our base model assumes that content appeal, which is denoted by the random variable θ, is uniformly distributed on [0, 1] across creators, with higher values indicating higher-appeal content.2 However, our main insights remain robust under more general distributions (see Section 7.1).",
+              "Creators arrive at rate Lambda and promoted-video duration is exponentially distributed with service rate mu.",
+              "Creator appeal theta is uniform on [0,1]."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Model",
+                "equation": "",
+                "quote": "For analytical tractability, our base model assumes that content appeal, which is denoted by the random variable θ, is uniformly distributed on [0, 1] across creators, with higher values indicating higher-appeal content.2 However, our main insights remain robust under more general distributions (see Section 7.1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "auctions",
+              "pricing"
+            ],
+            "explanation": "The platform selects the promotion policy and, under fixed pricing, the fee each creator chooses whether to promote auction participants choose a bid or priority payment",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in fixed pricing versus priority auctions for creator promotion",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The platform selects the promotion policy and, under fixed pricing, the fee each creator chooses whether to promote auction participants choose a bid or priority payment",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\theta",
+                "meaning": "intrinsic appeal of a creator's video · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "priority payment or auction bid · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "B(p)",
+                "meaning": "cumulative distribution of equilibrium priority payments · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "loss in click-through rate from a lower recommendation position · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The creator-to-viewer load is rho=Lambda/mu and the baseline imposes stability conditions for the priority queue.",
+              "Creators have quasilinear promotion utility equal to subscriber value minus the fixed fee or auction payment.",
+              "Creator appeal theta is uniform on [0,1]."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Fixed-Price Promotion Policy",
+                "equation": "",
+                "quote": "Bid of a content creator under the auction-based promotion policy λj Number of content creators choosing to pay to promote content under promotion policy j sj Number of subscribers gained by a content creator under promotion policy j πj(θ) Utility of a content creator with video appeal θ under promotion policy j ˜πj Total utility of all content creators under promotion policy j Πj Revenue of the platform under promotion policy j Wang, Cui, and Jiang: Are Auction-Based Promotions More Profitable?"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Auctions: “Bid of a content creator under the auction-based promotion policy λj Number of content creators choosing to pay”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “Bid of a content creator under the auction-based promotion policy λj Number of content creators choosing to pay”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "unique-monotone-priority-auction-equilibrium-and-fixed-price-cut",
+            "label": "Unique monotone priority-auction equilibrium and fixed-price cutoff equilibrium",
+            "role": "interaction",
+            "concepts": [
+              "auctions",
+              "pricing",
+              "equilibrium-analysis"
+            ],
+            "explanation": "The model's equilibrium concept is Unique monotone priority-auction equilibrium and fixed-price cutoff equilibrium. The fixed-price model has a unique creator participation cutoff. In the auction, higher-appeal creators bid strictly more, and Proposition 2 gives the equilibrium cutoff and bid function, which together characterize the equilibrium outcome.",
+            "searchPhrases": [
+              "how unique monotone priority-auction equilibrium and fixed-price cutoff equilibrium is represented",
+              "strategic response in fixed pricing versus priority auctions for creator promotion",
+              "unique monotone priority-auction equilibrium and fixed-price cutoff equilibrium strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Unique monotone priority-auction equilibrium and fixed-price cutoff equilibrium.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\theta",
+                "meaning": "intrinsic appeal of a creator's video · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "priority payment or auction bid · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "B(p)",
+                "meaning": "cumulative distribution of equilibrium priority payments · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "loss in click-through rate from a lower recommendation position · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta_a",
+                "meaning": "auction participation cutoff · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Creators have quasilinear promotion utility equal to subscriber value minus the fixed fee or auction payment.",
+              "Creators arrive at rate Lambda and promoted-video duration is exponentially distributed with service rate mu.",
+              "Creator appeal theta is uniform on [0,1]."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "5. Auction-Based Promotion Policy",
+                "equation": "",
+                "quote": "Because the expected position Na(θ) depends not only on the bid of type θ content creators but also, on the bids of all other content creators, an equilibrium anal­ ysis is necessary to study the auction scenario, similar to the fixed-price promotion scenario."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Auctions: “Auctions”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  4
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis: “of all other content creators, an Equilibrium analysis is necessary to study the auction scenario, similar”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "An auction participant of appeal theta chooses its payment to maximize expected viewership value net of the payment, taking the equilibrium bid distribution and resulting queue position as given.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in fixed pricing versus priority auctions for creator promotion",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\pi_a(\\theta,p)=\\theta\\left(1-\\frac{h}{[1-\\rho(1-B(p))]^2}\\right)-p",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\theta",
+                "meaning": "intrinsic appeal of a creator's video · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "priority payment or auction bid · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "B(p)",
+                "meaning": "cumulative distribution of equilibrium priority payments · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "creator-to-viewer load Lambda/mu · queue-load parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "loss in click-through rate from a lower recommendation position · positive",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\theta_a",
+                "meaning": "auction participation cutoff · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The creator-to-viewer load is rho=Lambda/mu and the baseline imposes stability conditions for the priority queue.",
+              "Creator appeal theta is uniform on [0,1].",
+              "Click-through probability declines linearly with expected recommendation position through parameter h."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "Expected-profit objective",
+                "equation": "(5)",
+                "quote": "Proposition 2 also provides the equilibrium bids for all content creators, which allows us to derive the platform’s revenue and the total util­ ity of all content creators as follows."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Proposition 2 also provides the equilibrium bids for all content creators, which allows us to derive the platform’s”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "auctions",
+              "pricing"
+            ],
+            "explanation": "The platform commits to fixed-price or auction-based promotion. Under fixed pricing it sets a fee and creators decide whether to promote. Under the auction, creators simultaneously submit payments, higher bids receive earlier recommendation positions, and nonparticipants remain outside the promoted queue. A higher bid buys an earlier expected recommendation position rather than a deterministic quantity of impressions.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in fixed pricing versus priority auctions for creator promotion",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The platform commits to fixed-price or auction-based promotion.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p",
+                "meaning": "priority payment or auction bid · nonnegative",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "B(p)",
+                "meaning": "cumulative distribution of equilibrium priority payments · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "h",
+                "meaning": "loss in click-through rate from a lower recommendation position · positive",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The creator-to-viewer load is rho=Lambda/mu and the baseline imposes stability conditions for the priority queue.",
+              "Creators arrive at rate Lambda and promoted-video duration is exponentially distributed with service rate mu.",
+              "Click-through probability declines linearly with expected recommendation position through parameter h."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "6.2. Impacts on Content Creators",
+                "equation": "",
+                "quote": "This is because with fewer content creators, all promoted videos receive significant visibility from reviewers, allowing these creators to submit lower bids for promotion under the auction scenario and making them better off under the auction scenario than the fixed-price scenario."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Auctions: “This is because with fewer content creators, all promoted videos receive significant visibility from reviewers, allowing these creators”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Pricing: “This is because with fewer content creators, all promoted videos receive significant visibility from reviewers, allowing these creators”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "49224690bcb4f14aa0689870f2e00996e28e9f87e22295e4af03ce4456a76397",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "91f5082f4fea3e19bbd4befb603c780ec7f2c36c94e0db036c3f486097733b5b",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2024-1493/91f5082f4fea3e19bbd4befb603c780ec7f2c36c94e0db036c3f486097733b5b.json",
+      "extractionQaDecisionSha256": "c15bde6faea591c4095d4bd2f79d4c8c83125254e3308bcbf881e3402b6692d6",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

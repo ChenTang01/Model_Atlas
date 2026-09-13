@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2020-0963",
+  "sourcePdfSha256": "8a516e5fd50c41cbe0ec883953c9d2c5a8f0b791f99f00b01a9373e16dfa8d18",
+  "extractionPagesSha256": "a706664325c303ab572857388d73f1bf1a11a5e4d011fc8c4e30fa62f90c8261",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "2d0a0420c5cda2207b3cadd32229fd5b94e2d0a2450a561952fdfe47d964dc45",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "5289d69b9d853a394f9de759bb407bff83a55d2a95cd5d4bf71f652557d3159e",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0963/5289d69b9d853a394f9de759bb407bff83a55d2a95cd5d4bf71f652557d3159e.json",
+  "extractionQaDecisionSha256": "05a21c1a2f4c6be8f8ee63ef219f33646f076bcab8a13b3516d43441d7ab0dec",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2020-0963",
+    "question": "How could tailoring approval standards to individual diseases improve treatment options for patients with few alternatives and further incentivize pharmaceutical companies to invest in neglected diseases?",
+    "overview": "To approve a novel drug therapy, the U.S. Food and Drug Administration (FDA) requires clinical trial evidence demonstrating efficacy with 2.5% statistical significance, although the agency often uses regulatory discretion when interpreting these standards. Factors including disease severity, prevalence, and availability of existing therapies are qualitatively considered; yet, current guidelines fail to systematically consider such characteristics in approval decisions.",
+    "modelTypes": [
+      "Queueing",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        8,
+        9
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "queueing-network-model",
+        "name": "Queueing Network Model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "To approve a novel drug therapy, the U.S. Food and Drug Administration (FDA) requires clinical trial evidence demonstrating efficacy with 2.5% statistical significance, although the agency often uses regulatory discretion when interpreting these standards. Factors including disease severity, prevalence, and availability of existing therapies are qualitatively considered; yet, current guidelines fail to systematically consider such characteristics in approval decisions.",
+        "objects": [
+          "Patients",
+          "Population",
+          "Random variable"
+        ],
+        "inputs": [
+          "Public data",
+          "A type",
+          "Arrival rate"
+        ],
+        "decisions": [
+          "The approval policy",
+          "Adjust the FDA’s approval threshold"
+        ],
+        "assumptions": [
+          "We extend the model to allow an endogenous clinical trial initiation rate, in response to a changing FDA approval policy.",
+          "The FDA’s decision is instantaneous, although in reality, review lasts between six months and two years",
+          "Candidate drugs begin clinical trials according to a Poisson process with arrival rate λ",
+          "The FDA is the sole decision maker",
+          "One quantitative primary endpoint needed to establish efficacy is monitored"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "Tailoring approval standards to individual diseases could improve treatment options for patients with few alternatives and further incentivize pharmaceutical companies to invest in neglected diseases.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 40,
+                "quote": "Consistent with population-wide health beneﬁts increasing as additional effective treatments become available—or decreasing if ineffective drugs reach the market—we assign an average health beneﬁt QE per effective drug class available and an average health cost QI per ineffective drug on the market.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random variable",
+              "source": {
+                "type": "section",
+                "section": "Drug Effectiveness",
+                "page": 6,
+                "sectionIndex": 2,
+                "sentence": 31,
+                "quote": "random variable",
+                "matchedText": "random variable",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Public data",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Based on public data encompassing all registered U.S. clinical trials and FDA-approved drugs, we estimate model parameters for three high-burden diseases (breast cancer, human immunodeficiency virus (HIV), and hypertension) and solve for the optimal policy to maximize net life-years gained following FDA approval.",
+                "matchedText": "public data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A type",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 42,
+                "quote": "The cost of an approved ineffectivedrug—a type I error—is similarly measured 548",
+                "matchedText": "a type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 1,
+                "quote": "Assume that candidate drugs begin clinical trials according to a Poisson process with arrival rate λ.",
+                "matchedText": "arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The approval policy",
+              "source": {
+                "type": "section",
+                "section": "FDA Decision Making",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 11,
+                "quote": "the approval policy",
+                "matchedText": "the approval policy",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Adjust the FDA’s approval threshold",
+              "source": {
+                "type": "section",
+                "section": "FDA Programs",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 13,
+                "quote": "In this paper, we explore an alternative regulatory policy: adjust the FDA’s approval threshold based on disease-speciﬁc characteristics of the drug pipeline and postapproval market.",
+                "matchedText": "adjust the FDA’s approval threshold",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We extend the model to allow an endogenous clinical trial initiation rate, in response to a changing FDA approval policy.",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "quote": "We extend the model to allow an endogenous clinical trial initiation rate, in response to a changing FDA approval policy."
+              }
+            },
+            {
+              "value": "The FDA’s decision is instantaneous, although in reality, review lasts between six months and two years",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 16,
+                "quote": "We assume the FDA’s decision is instantaneous, although in reality, review lasts between six months and two years.",
+                "matchedText": "the FDA’s decision is instantaneous, although in reality, review lasts between six months and two years.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Candidate drugs begin clinical trials according to a Poisson process with arrival rate λ",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 1,
+                "quote": "Assume that candidate drugs begin clinical trials according to a Poisson process with arrival rate λ.",
+                "matchedText": "candidate drugs begin clinical trials according to a Poisson process with arrival rate λ.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The FDA is the sole decision maker",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 35,
+                "quote": "Assuming the FDA is the sole decision maker, we focus on their choice of signiﬁcance level α given a ﬁxed trial sample size n.",
+                "matchedText": "the FDA is the sole decision maker",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "One quantitative primary endpoint needed to establish efficacy is monitored",
+              "source": {
+                "type": "section",
+                "section": "Drug Effectiveness",
+                "page": 6,
+                "sectionIndex": 2,
+                "sentence": 23,
+                "quote": "We assume that one quantitative primary endpoint needed to establish efﬁcacy is monitored.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "Because we model the market as a collection of pre-emptive M/M/1/1 queues, this condition is not needed for stability; rather it serves to identify crowding in the market.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model Analysis",
+          "page": 8,
+          "sentence": 14
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "4.1. Drug Effectiveness",
+            "equation": "",
+            "quote": "We assume that one quantitative primary endpoint needed to establish efﬁcacy is monitored."
+          }
+        ],
+        "components": [
+          {
+            "id": "fda-programs",
+            "label": "FDA Programs",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Over the past four decades, the FDA has introduced programs to provide more regulatory discretion and address shortcomings of the approval process.",
+            "searchPhrases": [
+              "how fda programs is represented",
+              "system process in policy, sustainability, and public services",
+              "fda programs system process specification"
+            ],
+            "formal": "Process relation: Over the past four decades, the FDA has introduced programs to provide more regulatory discretion and address shortcomings of the approval process.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Based on public data encompassing all registered U.S. clinical trials and FDA-approved drugs, we estimate model parameters for three high-burden diseases (breast cancer, human immunodeficiency virus (HIV), and hypertension) and solve for the optimal policy to maximize net life-years gained following FDA approval."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3.2. FDA Programs",
+                "equation": "",
+                "quote": "Over the past four decades, the FDA has introduced programs to provide more regulatory discretion and address shortcomings of the approval process."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Over the past four decades, the FDA has introduced programs to provide more regulatory discretion and address shortcomings”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "inputs",
+                "setupEvidence": {
+                  "value": "Public data",
+                  "source": {
+                    "type": "abstract",
+                    "field": "abstract",
+                    "sentence": 7,
+                    "quote": "Based on public data encompassing all registered U.S. clinical trials and FDA-approved drugs, we estimate model parameters for three high-burden diseases (breast cancer, human immunodeficiency virus (HIV), and hypertension) and solve for the optimal policy to maximize net life-years gained following FDA approval.",
+                    "matchedText": "public data",
+                    "derivation": "literal-source-phrase"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "drug-effectiveness",
+            "label": "Drug Effectiveness",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "We assume that one quantitative primary endpoint needed to establish efficacy is monitored.",
+            "searchPhrases": [
+              "how drug effectiveness is represented",
+              "information available to the decision maker in policy, sustainability, and public services",
+              "drug effectiveness information available to the decision maker specification"
+            ],
+            "formal": "Information structure: We assume that one quantitative primary endpoint needed to establish efficacy is monitored.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that one quantitative primary endpoint needed to establish efficacy is monitored.",
+              "We define an approval policy corresponding to significance level α as follows: candidate drugs that complete clinical trials and undergo FDA review are approved if the p-value associated with the observed test statistic is less than α, and rejected otherwise.",
+              "Let p be the probability that a candidate drug is actually effective, conditional on undergoing FDA review.",
+              "As the theoretical treatment effect size of the candidate drug improves (δ increases) or the clinical trial enrollment n increases, the term δ̅̅̅ In √ increases, resulting in a higher probability of approving an effective drug πAE(α), and thus a lower probability of rejecting an effective drug πRE(α)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.1. Drug Effectiveness",
+                "equation": "",
+                "quote": "We assume that one quantitative primary endpoint needed to establish efﬁcacy is monitored."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “We assume that one quantitative primary endpoint needed to establish efficacy is monitored.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "queueing-network-model",
+            "label": "Queueing Network Model",
+            "role": "process",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "Assume that candidate drugs begin clinical trials according to a Poisson process with arrival rate λ.",
+            "searchPhrases": [
+              "how queueing network model is represented",
+              "system process in policy, sustainability, and public services",
+              "queueing network model system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For simplicity, we assume trial completion Table 2."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4.2. Queueing Network Model",
+                "equation": "",
+                "quote": "Assume that candidate drugs begin clinical trials according to a Poisson process with arrival rate λ."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the process dynamics, the source expresses Queueing as “queueing model”: “Assume that candidate drugs begin clinical trials according to a Poisson process with arrival rate λ.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-analysis",
+            "label": "Model Analysis",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The paper examines the structure of the optimal policy to gain insights into how the preand postreview characteristics affect the FDA’s ultimate approval decision.",
+            "searchPhrases": [
+              "how model analysis is represented",
+              "decision rule in policy, sustainability, and public services",
+              "model analysis decision rule specification"
+            ],
+            "formal": "Decision rule: The paper examines the structure of the optimal policy to gain insights into how the preand postreview characteristics affect the FDA’s ultimate approval decision.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "However, this intuition only holds if λAE(α∗)/KμE < 1; in other words, if the per-class new drug approval rate λAE(α∗)/K is less than the market exit rate μE.",
+              "As the probability p of effectiveness increases, or as the average time spent on the market 1/μE increases, one might expect that approving more drugs is optimal.",
+              "Here, as the effectiveness probability p increases, the optimal policy approves more drugs given the limited availability of effective drugs on the market."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.3. Model Analysis",
+                "equation": "",
+                "quote": "We examine the structure of the optimal policy to gain insights into how the pre- and postreview characteristics affect the FDA’s ultimate approval decision."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We examine the structure of the optimal policy to gain insights into how the pre- and postreview characteristics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "endogenous-queueing-model",
+        "name": "Endogenous Queueing Model",
+        "kind": "alternative",
+        "relation": "This is an alternative to Queueing Network Model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "queueing-network-model"
+          }
+        ],
+        "summary": "A more stringent approval policy ̃α∗ensures that, as more drugs go up for review, the FDA continues to weigh the costs and benefits of approving ineffective and effective drugs.",
+        "objects": [
+          "Patients",
+          "Population",
+          "Random variable"
+        ],
+        "inputs": [
+          "Public data",
+          "A type",
+          "Arrival rate"
+        ],
+        "decisions": [
+          "The approval policy",
+          "Adjust the FDA’s approval threshold"
+        ],
+        "assumptions": [
+          "We extend the model to allow an endogenous clinical trial initiation rate, in response to a changing FDA approval policy.",
+          "The FDA’s decision is instantaneous, although in reality, review lasts between six months and two years",
+          "Candidate drugs begin clinical trials according to a Poisson process with arrival rate λ",
+          "The FDA is the sole decision maker",
+          "One quantitative primary endpoint needed to establish efficacy is monitored"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "Tailoring approval standards to individual diseases could improve treatment options for patients with few alternatives and further incentivize pharmaceutical companies to invest in neglected diseases.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 40,
+                "quote": "Consistent with population-wide health beneﬁts increasing as additional effective treatments become available—or decreasing if ineffective drugs reach the market—we assign an average health beneﬁt QE per effective drug class available and an average health cost QI per ineffective drug on the market.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random variable",
+              "source": {
+                "type": "section",
+                "section": "Drug Effectiveness",
+                "page": 6,
+                "sectionIndex": 2,
+                "sentence": 31,
+                "quote": "random variable",
+                "matchedText": "random variable",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Public data",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Based on public data encompassing all registered U.S. clinical trials and FDA-approved drugs, we estimate model parameters for three high-burden diseases (breast cancer, human immunodeficiency virus (HIV), and hypertension) and solve for the optimal policy to maximize net life-years gained following FDA approval.",
+                "matchedText": "public data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A type",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 42,
+                "quote": "The cost of an approved ineffectivedrug—a type I error—is similarly measured 548",
+                "matchedText": "a type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 1,
+                "quote": "Assume that candidate drugs begin clinical trials according to a Poisson process with arrival rate λ.",
+                "matchedText": "arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The approval policy",
+              "source": {
+                "type": "section",
+                "section": "FDA Decision Making",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 11,
+                "quote": "the approval policy",
+                "matchedText": "the approval policy",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Adjust the FDA’s approval threshold",
+              "source": {
+                "type": "section",
+                "section": "FDA Programs",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 13,
+                "quote": "In this paper, we explore an alternative regulatory policy: adjust the FDA’s approval threshold based on disease-speciﬁc characteristics of the drug pipeline and postapproval market.",
+                "matchedText": "adjust the FDA’s approval threshold",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "We extend the model to allow an endogenous clinical trial initiation rate, in response to a changing FDA approval policy.",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 5,
+                "quote": "We extend the model to allow an endogenous clinical trial initiation rate, in response to a changing FDA approval policy."
+              }
+            },
+            {
+              "value": "The FDA’s decision is instantaneous, although in reality, review lasts between six months and two years",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 16,
+                "quote": "We assume the FDA’s decision is instantaneous, although in reality, review lasts between six months and two years.",
+                "matchedText": "the FDA’s decision is instantaneous, although in reality, review lasts between six months and two years.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Candidate drugs begin clinical trials according to a Poisson process with arrival rate λ",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 6,
+                "sectionIndex": 8,
+                "sentence": 1,
+                "quote": "Assume that candidate drugs begin clinical trials according to a Poisson process with arrival rate λ.",
+                "matchedText": "candidate drugs begin clinical trials according to a Poisson process with arrival rate λ.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The FDA is the sole decision maker",
+              "source": {
+                "type": "section",
+                "section": "Queueing Network Model",
+                "page": 7,
+                "sectionIndex": 8,
+                "sentence": 35,
+                "quote": "Assuming the FDA is the sole decision maker, we focus on their choice of signiﬁcance level α given a ﬁxed trial sample size n.",
+                "matchedText": "the FDA is the sole decision maker",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "One quantitative primary endpoint needed to establish efficacy is monitored",
+              "source": {
+                "type": "section",
+                "section": "Drug Effectiveness",
+                "page": 6,
+                "sectionIndex": 2,
+                "sentence": 23,
+                "quote": "We assume that one quantitative primary endpoint needed to establish efﬁcacy is monitored.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "Based on public data encompassing all registered U.S. clinical trials and FDA-approved drugs, we estimate model parameters for three high-burden diseases (breast cancer, human immunodeficiency virus (HIV), and hypertension) and solve for the optimal policy to maximize net life-years gained following FDA approval.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 7
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 9,
+            "section": "4.4. Endogenous Queueing Model",
+            "equation": "",
+            "quote": "A more stringent approval policy ˜α∗ensures that, as more drugs go up for review, the FDA continues to weigh the costs and beneﬁts of approving ineffective and effective drugs."
+          }
+        ],
+        "components": [
+          {
+            "id": "endogenous-queueing-model",
+            "label": "Endogenous Queueing Model",
+            "role": "objective",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "A more stringent approval policy ̃α∗ensures that, as more drugs go up for review, the FDA continues to weigh the costs and benefits of approving ineffective and effective drugs.",
+            "searchPhrases": [
+              "how endogenous queueing model is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "endogenous queueing model modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We extend the base model to account for potentially endogenous effects of varying FDA approval standards on the volume and efficacy of new drugs under development.",
+              "We assume that more relaxed approval standards will increase the volume of drugs starting clinical trials, but this increase is accompanied by a reduction in quality, so that the net NDA submission rate of effective drugs is unchanged, that is, ̃p(α) ̃λNDA(α) pλNDA."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.4. Endogenous Queueing Model",
+                "equation": "",
+                "quote": "A more stringent approval policy ˜α∗ensures that, as more drugs go up for review, the FDA continues to weigh the costs and beneﬁts of approving ineffective and effective drugs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Queueing as “queueing model”: “queueing model”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 5,
+        "transformation": "relation-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "8a516e5fd50c41cbe0ec883953c9d2c5a8f0b791f99f00b01a9373e16dfa8d18",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "5289d69b9d853a394f9de759bb407bff83a55d2a95cd5d4bf71f652557d3159e",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2020-0963/5289d69b9d853a394f9de759bb407bff83a55d2a95cd5d4bf71f652557d3159e.json",
+      "extractionQaDecisionSha256": "05a21c1a2f4c6be8f8ee63ef219f33646f076bcab8a13b3516d43441d7ab0dec",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,1266 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2022-0271",
+  "sourcePdfSha256": "def085213fe2ad06583bc7b14e6b68622421909880876c18a3ec9428f8861a02",
+  "extractionPagesSha256": "595b2ab9771cf78d25e91850410d063bd8337261e5eb334466acb373e55bd9e7",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "714df2e0b3c4e5e50f5dc0757936dabb228527e6b6ecdafdbb420b510ad8e924",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "25be8ccdf25e616fc150e07b223f02862f0093209803864e91d627dd8514d5e6",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-0271/25be8ccdf25e616fc150e07b223f02862f0093209803864e91d627dd8514d5e6.json",
+  "extractionQaDecisionSha256": "1c383add9eb748cdf0ec69aa94a2e289e57dd8db32cc240f3d282e74cb241856",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2022-0271",
+    "question": "How should flexible capacity in service systems with worker shortages be managed?",
+    "overview": "This paper studies innovative capacity-planning strategies for service systems that encounter significant challenges in maintaining service quality because of worker shortages, a prevalent and growing issue across healthcare, retail, customer service, and other labor-intensive sectors. Using a stylized queueing model representing a centralized service system, we propose a multistage staffing strategy utilizing capacities of various flexibility. Accounting for demand uncertainty and limited worker supply, our model prescribes dynamic staffing decisions, including long-term base staffing, short-term agency staffing, and the allocation of agency staffing in real time.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "managing-flexible-capacity-in-service-systems-with-worker-shorta",
+        "name": "Managing Flexible Capacity in Service Systems with Worker Shortages baseline model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "This paper studies innovative capacity-planning strategies for service systems that encounter significant challenges in maintaining service quality because of worker shortages, a prevalent and growing issue across healthcare, retail, customer service, and other labor-intensive sectors. Using a stylized queueing model representing a centralized service system, we propose a multistage staffing strategy utilizing capacities of various flexibility. We establish the convexity of the exact cost functions under a reasonable assumption of customer patience.",
+        "objects": [
+          "Worker",
+          "Agency",
+          "Server",
+          "Hospital",
+          "Manager"
+        ],
+        "inputs": [
+          "The random arrival rates",
+          "The historical data",
+          "Random parameters",
+          "The demand information available at various stages",
+          "Capacity N"
+        ],
+        "decisions": [
+          "Dynamic staffing decisions",
+          "A multistage staffing strategy utilizing capacities of various flexibility",
+          "One of two contracts that utilize agency staffing differently",
+          "The pooled agency staffing (if available) among service units",
+          "The amount of flexible capacity"
+        ],
+        "assumptions": [
+          "Φk,[i] > 0 and that F[i] is continuous and twice differentiable",
+          "In particular, we study the capacity planning and allocation of servers by a risk-neutral decision maker in an environment with random arrival rates of multiple classes",
+          "The three hospitals share the aforementioned parameters and differ only in arrival rates. • Because of a lack of prepandemic demand data, the multistage model is not feasible for optimizing base staffing",
+          "Although the number of non-COVID-19 arrivals is relatively stationary, the COVID-19 arrivals are more volatile, with several surges over time"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Worker",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We study innovative capacity-planning strategies for service systems that encounter significant challenges in maintaining service quality because of worker shortages, a prevalent and growing issue across healthcare, retail, customer service, and other labor-intensive sectors.",
+                "matchedText": "worker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agency",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Accounting for demand uncertainty and limited worker supply, our model prescribes dynamic staffing decisions, including long-term base staffing, short-term agency staffing, and the allocation of agency staffing in real time.",
+                "matchedText": "agency",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Server",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "We then leverage these approximate solutions to quantify the benefits of flexible capacity in mitigating worker shortages, specifically by analyzing server utilization and cost reduction.",
+                "matchedText": "server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "A case study using hospital data validates the effectiveness of our staffing solutions; the annual cost reduction can reach at least half a million dollars by switching from independent agency staffing to pooled agency staffing if their unit staffing costs are comparable.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Manager",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 5,
+                "quote": "The system manager makes centralized staffing decisions regarding two types of workers with different flexibility.",
+                "matchedText": "manager",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The random arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 11,
+                "quote": "The random arrival rates",
+                "matchedText": "The random arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The historical data",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 27,
+                "quote": "the historical data",
+                "matchedText": "the historical data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random parameters",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 17,
+                "sentence": 20,
+                "quote": "Moreover, most previous studies on queueing systems with random parameters focus on the uncertainty in arrival rates and its implications for staffing (Maman 2009, Aktekin and Soyer 2012, Chen and Hasenbein 2017) or admission con­ trol (Cohen 2019).",
+                "matchedText": "random parameters",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The demand information available at various stages",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 26,
+                "quote": "Optimizing the above staffing decisions depends on the demand information available at various stages.",
+                "matchedText": "the demand information available at various stages",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Capacity N",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 38,
+                "quote": "Let EQk,t(N) be the steady-state queue length of unit k in period t given a total capacity N.",
+                "matchedText": "capacity N",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Dynamic staffing decisions",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Accounting for demand uncertainty and limited worker supply, our model prescribes dynamic staffing decisions, including long-term base staffing, short-term agency staffing, and the allocation of agency staffing in real time.",
+                "matchedText": "dynamic staffing decisions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "A multistage staffing strategy utilizing capacities of various flexibility",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "Methodology/results: Using a stylized queueing model representing a centralized service system, we propose a multistage staffing strategy utilizing capacities of various flexibility.",
+                "matchedText": "a multistage staffing strategy utilizing capacities of various flexibility",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "One of two contracts that utilize agency staffing differently",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 12,
+                "quote": "At the beginning of each episode, the manager chooses one of two contracts that utilize agency staffing differently",
+                "matchedText": "one of two contracts that utilize agency staffing differently",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The pooled agency staffing (if available) among service units",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 28,
+                "quote": "As time advances to period t, the manager observes the realized demand of all units, {λk,t}k∈K, and allocates the pooled agency staff­ ing (if available) among service units",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The amount of flexible capacity",
+              "source": {
+                "type": "section",
+                "section": "Exact Analysis",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 22,
+                "quote": "In PB+IA, each downstream unit independently decides the amount of flexible capacity",
+                "matchedText": "the amount of flexible capacity",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Φk,[i] > 0 and that F[i] is continuous and twice differentiable",
+              "source": {
+                "type": "section",
+                "section": "Given the optimal allocation policy above, the optimal",
+                "page": 7,
+                "sectionIndex": 20,
+                "sentence": 12,
+                "quote": "We assume that φk,[i] > 0 and that F[i] is continuous and twice differentiable.",
+                "matchedText": "φk,[i] > 0 and that F[i] is continuous and twice differentiable.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "In particular, we study the capacity planning and allocation of servers by a risk-neutral decision maker in an environment with random arrival rates of multiple classes",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 3,
+                "sectionIndex": 17,
+                "sentence": 13,
+                "quote": "In particular, we study the capacity planning and allocation of servers by a risk-neutral decision maker in an environ­ ment with random arrival rates of multiple classes.",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The three hospitals share the aforementioned parameters and differ only in arrival rates. • Because of a lack of prepandemic demand data, the multistage model is not feasible for optimizing base staffing",
+              "source": {
+                "type": "section",
+                "section": "Estimate Staffing Rules",
+                "page": 15,
+                "sectionIndex": 13,
+                "sentence": 8,
+                "quote": "We assume that the three hospitals share the aforementioned para­ meters and differ only in arrival rates. • Because of a lack of prepandemic demand data, the multistage model is not feasible for optimizing base staffing.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Although the number of non-COVID-19 arrivals is relatively stationary, the COVID-19 arrivals are more volatile, with several surges over time",
+              "source": {
+                "type": "section",
+                "section": "Application to the Hospital Hub",
+                "page": 14,
+                "sectionIndex": 7,
+                "sentence": 7,
+                "quote": "Although the number of non-COVID-19 arrivals is relatively stationary, the COVID-19 arrivals are more volatile, with several surges over time.",
+                "matchedText": "Although the number of non-COVID-19 arrivals is relatively stationary, the COVID-19 arrivals are more volatile, with several surges over time.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "To this end, we first estimate staffing rules using the first 50 weeks and then, compute their costs given the arrivals of the remaining 31 weeks.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Application to the Hospital Hub",
+          "page": 14,
+          "sentence": 10
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 15,
+            "section": "7.1. Estimate Staffing Rules",
+            "equation": "",
+            "quote": "Note that we only optimize agency staffing once as in the single-episode subproblem, and we rely on the randomness of arrivals in the remaining data to evaluate the performance of these staffing decisions."
+          }
+        ],
+        "components": [
+          {
+            "id": "model-description",
+            "label": "Model Description",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "The random arrival rates to unit k in periods of episode [i], {Λk,t}t∈e(i), are independent and identically distributed with an episode-specific cumulative distribution function (cdf) FΛ k,[i].",
+            "searchPhrases": [
+              "how model description is represented",
+              "system process in pricing, consumers, and revenue management",
+              "model description system process specification"
+            ],
+            "formal": "Transition rule: update the modeled system using the current state and realized inputs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The random arrival rates to unit k in periods of episode [i], {Λk,t}t∈e(i), are independent and identically distributed with an episode-specific cumulative distribution function (cdf) FΛ k,[i].",
+              "Base staffing of a service unit k, denoted by NB k , is the long-term capacity that serves the demand of unit k in all T periods and hence, is decided only once at the beginning of the planning horizon.",
+              "At the beginning of each episode, the manager chooses one of two contracts that utilize agency staffing differently."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Model Description",
+                "equation": "",
+                "quote": "The random arrival rates to unit k in periods of episode [i], {Λk,t}t∈e(i), are independent and identically distributed with an episode-specific cumulative distribution function (cdf) FΛ k,[i]."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “The random arrival rates to unit k in periods of episode [i], {Λk,t}t∈e(i), are independent and identically distributed”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "base-and-independent-agency-staffing",
+            "label": "Base and Independent Agency Staffing",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "We first discuss the case when each service unit k independently decides base and agency staffing.",
+            "searchPhrases": [
+              "how base and independent agency staffing is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "base and independent agency staffing decision rule specification"
+            ],
+            "formal": "Decision rule: We first discuss the case when each service unit k independently decides base and agency staffing.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "X t∈e(i) EΛk,t(E[Qk,t(NB k + NIA k,[i])|Λk,t]), (1) where the two parts refer to staffing and delay costs, respectively, and the summation enumerates all periods of episode [i].",
+              "In each period t, conditional on a realized demand, the steady-state queue length is determined by the total capacity, a sum of base and independent agency staffing (B + IA).",
+              "We first discuss the case when each service unit k independently decides base and agency staffing."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. Base and Independent Agency Staffing",
+                "equation": "",
+                "quote": "We first discuss the case when each service unit k inde­ pendently decides base and agency staffing."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “We first discuss the case when each service unit k independently decides base and agency staffing.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "base-and-pooled-agency-staffing",
+            "label": "Base and Pooled Agency Staffing",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Given realized demands in each period t ∈e(i), the manager assigns the pooled agency staffing to K units.",
+            "searchPhrases": [
+              "how base and pooled agency staffing is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "base and pooled agency staffing decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given realized demands in each period t ∈e(i), the manager assigns the pooled agency staffing to K units.",
+              "We refer to this optimization problem (Equation (2)) as PB+IA, and we let NB(IA),OPT k be the optimal base staffing and NIA,OPT k,[i] be the optimal independent agency staffing in episode [i]."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.2. Base and Pooled Agency Staffing",
+                "equation": "",
+                "quote": "Given realized demands in each period t ∈e(i), the manager assigns the pooled agency staffing to K units."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Given realized demands in each period t ∈e(i), the manager assigns the pooled agency staffing to K units.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "exact-analysis",
+            "label": "Exact Analysis",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "It is reasonable to assume that flexible capacity costs more, and pooling incurs additional training and travel costs for reallocating workers.",
+            "searchPhrases": [
+              "how exact analysis is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "exact analysis solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: It is reasonable to assume that flexible capacity costs more, and pooling incurs additional training and travel costs for reallocating workers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "With an independent staffing strategy, any service unit with a small threshold, (hk + pkγk) μk γk < cIA, does not benefit from flexible capacity.",
+              "Moreover, when cB ≥ cIA (the left dark areas in Figure 2), we can substitute all of the base staffing with flexible agency staffing in each episode to reduce the staffing cost while maintaining the same delay cost.",
+              "Another notable advantage of pooling agency staffing is the exploitation of real-time information, implying that pooled agency staffing is superior to independent agency staffing if the former has a lower unit cost (Lemma 1)."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. Exact Analysis",
+                "equation": "",
+                "quote": "It is reasonable to assume that flexible capac­ ity costs more, and pooling incurs additional training and travel costs for reallocating workers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “It is reasonable to assume that flexible capacity costs more, and pooling incurs additional training and travel costs”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "given-the-optimal-allocation-policy-above-the-optimal",
+            "label": "Given the optimal allocation policy above, the optimal",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Given base staffing and realized demand, Proposition 4(1) prioritizes service units with large delay penalty β when allocating agency staffing to serve unsatisfied demand {φ+ k,[i]}k∈K.",
+            "searchPhrases": [
+              "how given the optimal allocation policy above, the optimal is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "given the optimal allocation policy above, the optimal decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given base staffing and realized demand, Proposition 4(1) prioritizes service units with large delay penalty β when allocating agency staffing to serve unsatisfied demand {φ+ k,[i]}k∈K.",
+              "In case 2 in Figure 4, h = K as the demand of unit K is partially fulfilled, and it is prioritized over the others.",
+              "Otherwise, we define the threshold unit h as the unit to which an additional infinitesimal amount of agency staffing will be allocated."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "2. Given the optimal allocation policy above, the optimal",
+                "equation": "",
+                "quote": "Given base staffing and realized demand, Proposition 4(1) prioritizes service units with large delay penalty β when allocating agency staffing to serve unsatisfied demand {φ+ k,[i]}k∈K."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Given base staffing and realized demand, Proposition 4(1) prioritizes service units with large delay penalty β when allocating”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "implications-of-flexible-capacities-on-worker-shortages",
+            "label": "Implications of Flexible Capacities on Worker Shortages",
+            "role": "information",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "Even when congestion periods are anticipated, practitioners often adjust agency contracts after recalibrating model parameters according to real-time information.",
+            "searchPhrases": [
+              "how implications of flexible capacities on worker shortages is represented",
+              "information available to the decision maker in pricing, consumers, and revenue management",
+              "implications of flexible capacities on worker shortages information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Even when congestion periods are anticipated, practitioners often adjust agency contracts after recalibrating model parameters according to real-time information.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Even when congestion periods are anticipated, practitioners often adjust agency contracts after recalibrating model parameters according to real-time information."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "6. Implications of Flexible Capacities on Worker Shortages",
+                "equation": "",
+                "quote": "Even when con­ gestion periods are anticipated, practitioners often adjust agency contracts after recalibrating model para­ meters according to real-time information."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Contract design as “contracting”: “Even when congestion periods are anticipated, practitioners often adjust agency contracts after recalibrating model parameters according to real-time”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "server-utilization",
+            "label": "Server Utilization",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "We first aim to understand the impact of agency staffing on server utilization, defined as the fraction of total capacity being used to process jobs.",
+            "searchPhrases": [
+              "how server utilization is represented",
+              "feasibility condition in pricing, consumers, and revenue management",
+              "server utilization feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: We first aim to understand the impact of agency staffing on server utilization, defined as the fraction of total capacity being used to process jobs.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When demand is uncertain (i.e., arrival rate Λ is random), the average server utilization is u(N) = EΛ( Λ Nμ γ NμE(Q,Λ)).",
+              "For an M=M=N + M queue with arrival rate λ, service rate μ, and abandonment rate γ, the average server utilization is λ Nμ(1 P(Abandonment)) = λ Nμ γ NμEQ, (8) where the equality is because of the balance equation: γ · EQ = λ · P(Abandonment).",
+              "Applying stochastic fluid approximation to u(N), the approximate utilization is ̃u(N) = EΛ Nμ 1 N E(Λ=μ N)+ = EΦ N 1 N E(Φ N)+: (9) Consider a system with three possible staffing strategies: base staffing only (B), B + IA, and B + PA."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "6.1. Server Utilization",
+                "equation": "",
+                "quote": "We first aim to understand the impact of agency staffing on server utilization, defined as the fraction of total capacity being used to process jobs."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “Feasibility constraints”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "cost-reduction",
+            "label": "Cost Reduction",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Although policies that allow agency staffing are at most as costly as the benchmark, this section examines how various factors affect the amount of cost reduction.",
+            "searchPhrases": [
+              "how cost reduction is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "cost reduction modeled objective specification"
+            ],
+            "formal": "Objective relation: Although policies that allow agency staffing are at most as costly as the benchmark, this section examines how various factors affect the amount of cost reduction.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Consider a benchmark case with only base staffing, and its total cost in episode [i] is ̃C B [i] = τ · PK k=1 βk · EΦ+ k,[i] (excluding the prepaid cost of base staffing).",
+              "With the same base staffing level as the benchmark, we minimize PK k=1 ̃C IA k,[i] and ̃C PA [i] .",
+              "B [i] = τ · PK k=1 βk · EΦ+ k,[i] (excluding the prepaid cost of base staffing)."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "6.2. Cost Reduction",
+                "equation": "",
+                "quote": "Although policies that allow agency staffing are at most as costly as the benchmark, this section examines how various factors affect the amount of cost reduction."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Although policies that allow agency staffing are at most as costly as the benchmark, this section examines how”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "application-to-the-hospital-hub",
+            "label": "Application to the Hospital Hub",
+            "role": "constraint",
+            "concepts": [
+              "contract-design"
+            ],
+            "explanation": "These centers are within a two-hour driving distance, so the cost of reallocating capacity (nurses) is insignificant and can be internalized in the contract.",
+            "searchPhrases": [
+              "how application to the hospital hub is represented",
+              "feasibility condition in pricing, consumers, and revenue management",
+              "application to the hospital hub feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: These centers are within a two-hour driving distance, so the cost of reallocating capacity (nurses) is insignificant and can be internalized in the contract.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Because the nursing shortage during the studied period is because of the exogenous demand shock from COVID-19 arrivals, we calibrate base staffing of each hospital using non-COVID-19 patient data, which are assumed to reflect the arrival pattern prior to the pandemic."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "7. Application to the Hospital Hub",
+                "equation": "",
+                "quote": "These centers are within a two-hour driving distance, so the cost of reallo­ cating capacity (nurses) is insignificant and can be inter­ nalized in the contract."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contract-design",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Contract design as “contracting”: “contracting”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "estimate-staffing-rules",
+            "label": "Estimate Staffing Rules",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Note that we only optimize agency staffing once as in the single-episode subproblem, and we rely on the randomness of arrivals in the remaining data to evaluate the performance of these staffing decisions.",
+            "searchPhrases": [
+              "how estimate staffing rules is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "estimate staffing rules decision rule specification"
+            ],
+            "formal": "Decision rule: Note that we only optimize agency staffing once as in the single-episode subproblem, and we rely on the randomness of arrivals in the remaining data to evaluate the performance of these staffing decisions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that the three hospitals share the aforementioned parameters and differ only in arrival rates.",
+              "We assume that the three hospitals share the aforementioned parameters and differ only in arrival rates. • Because of a lack of prepandemic demand data, the multistage model is not feasible for optimizing base staffing.",
+              "For the cost parameters, we set cB = 45 dollars per hour, the holding cost h = 3cB, and the abandonment cost p = 2cB."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "7.1. Estimate Staffing Rules",
+                "equation": "",
+                "quote": "Note that we only optimize agency staffing once as in the single-episode subproblem, and we rely on the randomness of arrivals in the remaining data to evaluate the performance of these staffing decisions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "evaluate-policy-performance",
+            "label": "Evaluate Policy Performance",
+            "role": "constraint",
+            "concepts": [
+              "feasibility-constraints"
+            ],
+            "explanation": "For the simulator of B + PA, in addition to base staffing, each hospital will be assigned agency staffing at the beginning of each week according to the optimal reallocation policy, a function of real-time arrival rates and total capacity NPA∗.",
+            "searchPhrases": [
+              "how evaluate policy performance is represented",
+              "feasibility condition in pricing, consumers, and revenue management",
+              "evaluate policy performance feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: For the simulator of B + PA, in addition to base staffing, each hospital will be assigned agency staffing at the beginning of each week according to the optimal reallocation policy, a function of real-time arrival rates and total capacity NPA∗.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In the simulation of B + IA, the number of servers in each hospital is fixed to be the number of base staffing plus the number of agency staffing.",
+              "For the simulator of B + PA, in addition to base staffing, each hospital will be assigned agency staffing at the beginning of each week according to the optimal reallocation policy, a function of real-time arrival rates and total capacity NPA∗.",
+              "At the beginning of each week, the hourly arrival rate to each hospital is approximated by the weekly total arrivals averaged over the number of hours in a week."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "7.2. Evaluate Policy Performance",
+                "equation": "",
+                "quote": "For the sim­ ulator of B + PA, in addition to base staffing, each hospi­ tal will be assigned agency staffing at the beginning of each week according to the optimal reallocation policy, a function of real-time arrival rates and total capacity NPA∗."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "feasibility-constraints",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Feasibility constraints through this feasibility conditions: “For the simulator of B + PA, in addition to base staffing, each hospital will be assigned agency”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stochastic-fluid-approximation",
+        "name": "Stochastic Fluid Approximation",
+        "kind": "approximation",
+        "relation": "This formulation approximates Managing Flexible Capacity in Service Systems with Worker Shortages baseline model.",
+        "relationships": [
+          {
+            "type": "approximates",
+            "targetModelId": "managing-flexible-capacity-in-service-systems-with-worker-shorta"
+          }
+        ],
+        "summary": "Given the optimal agency staffing decision, the equation in Proposition 3(2) evaluates the marginal cost increment by hiring additional base staffing, accounting for extra staffing cost and potential reduction in delay cost if demand exceeds the current total capacity.",
+        "objects": [
+          "A random variable",
+          "Subject"
+        ],
+        "inputs": [
+          "Arrival rates",
+          "Random arrival rate",
+          "Demand",
+          "Service rates"
+        ],
+        "decisions": [
+          "Load Λk"
+        ],
+        "assumptions": [
+          "Φk,[i] > 0 and that F[i] is continuous and twice differentiable"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A random variable",
+              "source": {
+                "type": "section",
+                "section": "Stochastic Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 30,
+                "quote": "a random variable",
+                "matchedText": "a random variable",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Subject",
+              "source": {
+                "type": "section",
+                "section": "Optimality Gap",
+                "page": 9,
+                "sectionIndex": 1,
+                "sentence": 19,
+                "quote": "This tremendous computational advantage of the approximate formula­ tion is especially valuable in quickly assessing counter­ factual scenarios when the base model parameters (such as staffing cost, arrival rates, etc.) are subject to change in the rapidly evolving healthcare environment.",
+                "matchedText": "subject",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Arrival rates",
+              "source": {
+                "type": "section",
+                "section": "Stochastic Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "length, we apply stochastic fluid approximation (Harrison and Zeevi 2005), which focuses on the uncertainty in arrival rates while ignoring other stochasticity in the queueing dynamics.",
+                "matchedText": "arrival rates",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Random arrival rate",
+              "source": {
+                "type": "section",
+                "section": "Stochastic Fluid Approximation",
+                "sectionIndex": 0,
+                "page": 7,
+                "quote": "random arrival rate Λ, service rate µ"
+              }
+            },
+            {
+              "value": "Demand",
+              "source": {
+                "type": "section",
+                "section": "Stochastic Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 11,
+                "quote": "Given that service rates are fixed, we also refer to Φk,[i] as demand.",
+                "matchedText": "demand",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Service rates",
+              "source": {
+                "type": "section",
+                "section": "Stochastic Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 11,
+                "quote": "Given that service rates are fixed, we also refer to Φk,[i] as demand.",
+                "matchedText": "service rates",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Load Λk",
+              "source": {
+                "type": "section",
+                "section": "Stochastic Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 7,
+                "quote": "For a period t ∈e(i), we consider its random offered load Λk",
+                "matchedText": "load Λk",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Φk,[i] > 0 and that F[i] is continuous and twice differentiable",
+              "source": {
+                "type": "section",
+                "section": "Stochastic Fluid Approximation",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 15,
+                "quote": "We assume that φk,[i] > 0 and that F[i] is continuous and twice differentiable.",
+                "matchedText": "φk,[i] > 0 and that F[i] is continuous and twice differentiable.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 2
+          }
+        ],
+        "method": "Overall, solutions under stochastic fluid approximamums in all metrics that we evaluate, suggesting that despite its simplicity, the approximate formulation captures the fundamental dynamics of the staffing problem.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Optimality Gap",
+          "page": 9,
+          "sentence": 28
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "5. Stochastic Fluid Approximation",
+            "equation": "",
+            "quote": "Given the optimal agency staffing decision, the equation in Propo­ sition 3(2) evaluates the marginal cost increment by hir­ ing additional base staffing, accounting for extra staffing cost and potential reduction in delay cost if demand exceeds the current total capacity."
+          }
+        ],
+        "components": [
+          {
+            "id": "stochastic-fluid-approximation",
+            "label": "Stochastic Fluid Approximation",
+            "role": "decision",
+            "concepts": [
+              "waiting-cost"
+            ],
+            "explanation": "Given the optimal agency staffing decision, the equation in Proposition 3(2) evaluates the marginal cost increment by hiring additional base staffing, accounting for extra staffing cost and potential reduction in delay cost if demand exceeds the current total capacity.",
+            "searchPhrases": [
+              "how stochastic fluid approximation is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "stochastic fluid approximation decision rule specification"
+            ],
+            "formal": "Decision rule: Given the optimal agency staffing decision, the equation in Proposition 3(2) evaluates the marginal cost increment by hiring additional base staffing, accounting for extra staffing cost and potential reduction in delay cost if demand exceeds the current total capacity.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given that service rates are fixed, we also refer to Φk,[i] as demand.",
+              "Specifically, for an M=M=N + M model with random arrival rate Λ, service rate μ, and abandonment rate γ, EQ(N,Λ) ≈1 γEΛ(Λ Nμ)+, (5) which is applied to PB+IA and PB+PA to formulate the corresponding staffing problems under fluid approximation."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "5. Stochastic Fluid Approximation",
+                "equation": "",
+                "quote": "Given the optimal agency staffing decision, the equation in Propo­ sition 3(2) evaluates the marginal cost increment by hir­ ing additional base staffing, accounting for extra staffing cost and potential reduction in delay cost if demand exceeds the current total capacity."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "waiting-cost",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Waiting cost as “delay cost”: “staffing cost and potential reduction in delay cost if demand exceeds the current total capacity.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "optimality-gap",
+            "label": "Optimality Gap",
+            "role": "algorithm",
+            "concepts": [
+              "queueing",
+              "optimization"
+            ],
+            "explanation": "Based on demand realizations, we optimize PB+IA and ̃P B+IA, where the exact steady-state queue length is evaluated via a numerical formula (Mandelbaum and Zeltyn 2009a) and the optimization routine is performed using the Nelder–Mead algorithm with random initial parameters (Varadhan et al. 2023).",
+            "searchPhrases": [
+              "how optimality gap is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "optimality gap solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Based on demand realizations, we optimize PB+IA and ̃P B+IA, where the exact steady-state queue length is evaluated via a numerical formula (Mandelbaum and Zeltyn 2009a) and the optimization routine is performed using the Nelder–Mead algorithm with random initial parameters (Varadhan et al. 2023).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We first consider the independent staffing rule of service unit 1, where r[1] ranges from 20 to 40 and r[2] = 3 2r[1].",
+              "In the case of pooled agency strategy, we fix congestion levels r1,[1] = r2,[1] = 20 and r1,[2] = r2,[2] = 30, and we vary the correlation ρ of two units’ demands (Φ1,[1],Φ2,[1] or Φ1,[2],Φ2,[2]) between 0.9 and 0.9.",
+              "This tremendous computational advantage of the approximate formulation is especially valuable in quickly assessing counterfactual scenarios when the base model parameters (such as staffing cost, arrival rates, etc.) are subject to change in the rapidly evolving healthcare environment."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5.1. Optimality Gap",
+                "equation": "",
+                "quote": "Based on demand realizations, we optimize PB+IA and ˜P B+IA, where the exact steady-state queue length is evaluated via a numerical formula (Mandelbaum and Zeltyn 2009a) and the optimization routine is per­ formed using the Nelder–Mead algorithm with ran­ dom initial parameters (Varadhan et al. 2023)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Queueing: “Based on demand realizations, we optimize PB+IA and ̃P B+IA, where the exact steady-state queue length is evaluated”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “Optimization”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "def085213fe2ad06583bc7b14e6b68622421909880876c18a3ec9428f8861a02",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "25be8ccdf25e616fc150e07b223f02862f0093209803864e91d627dd8514d5e6",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2022-0271/25be8ccdf25e616fc150e07b223f02862f0093209803864e91d627dd8514d5e6.json",
+      "extractionQaDecisionSha256": "1c383add9eb748cdf0ec69aa94a2e289e57dd8db32cc240f3d282e74cb241856",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

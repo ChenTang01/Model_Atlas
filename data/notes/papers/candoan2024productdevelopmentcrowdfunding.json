@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "candoan2024productdevelopmentcrowdfunding",
+  "sourcePdfSha256": "e77a59081bdf4477cff6fabdf5a6889ecb0a5b0eb745fdb5e5ba9fde690d0795",
+  "extractionPagesSha256": "63400b3225528f989a317c2a2c022e42e9d19ceb01e28cc8283597535d0efb3c",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "95b540518b246f620a9ce570f17032af84f51b87a4eb2ccb0cb58192f3e36b25",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "50f47a8d52c235338eedabc33298f5c1d088229d8fed12e4761779e6a892a11b",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/candoan2024productdevelopmentcrowdfunding/50f47a8d52c235338eedabc33298f5c1d088229d8fed12e4761779e6a892a11b.json",
+  "extractionQaDecisionSha256": "f36a73d86a81764efe61d5211208a833716ce420f576f271cf8c0990b14f10d8",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "candoan2024productdevelopmentcrowdfunding",
+    "question": "How does the number of features present at campaign launch affect customer pledging and comments, the creator's later product-improvement decision, and campaign success?",
+    "overview": "The theoretical core is a four-stage creator–customer crowdfunding game solved for subgame-perfect equilibrium; the paper then tests model predictions empirically.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        16,
+        19
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Product Development in Crowdfunding model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The theoretical core is a four-stage creator–customer crowdfunding game solved for subgame-perfect equilibrium; the paper then tests model predictions empirically.",
+        "objects": [
+          "Crowdfunding creator",
+          "Early customer/backer 1",
+          "Later customer/backer 2",
+          "A server",
+          "Customers"
+        ],
+        "inputs": [
+          "Comments inform/reduce the creator's improvement cost rather than directly revealing valuation",
+          "Each customer's valuation v_j is privately realized and independent uniform on [0,1]",
+          "The pledge price and feature counts are observed; customer 1 anticipates later improvement and customer 2 observes final features",
+          "The final number of features qf along with the pledge price p",
+          "A reward"
+        ],
+        "decisions": [
+          "Creator chooses whether/how much",
+          "Customer 1 chooses pledge and commenting",
+          "Customer 2 chooses pledge",
+          "Launch of a new product",
+          "Whether to pledge or not"
+        ],
+        "assumptions": [
+          "The all-or-nothing goal requires both of two customers to pledge, with p=G/2",
+          "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3",
+          "Customer effective value is v_j(q_f-bq_f^2), allowing too many features to create complexity disutility",
+          "Initial feature cost is linear C_i q_i and improvement cost C_u q_u/(N+1), decreasing in comments N",
+          "Per-unit production cost is c q_f^2 in the base model"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Crowdfunding creator",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "crowdfunding creator"
+              }
+            },
+            {
+              "value": "Early customer/backer 1",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "early customer/backer 1"
+              }
+            },
+            {
+              "value": "Later customer/backer 2",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "later customer/backer 2"
+              }
+            },
+            {
+              "value": "A server",
+              "source": {
+                "type": "section",
+                "section": "To verify that the LDA model works well, we randomly select 20",
+                "page": 19,
+                "sectionIndex": 13,
+                "sentence": 5,
+                "quote": "On December 19, 2013, the number of new customers is zero in both categories due to a server error, so we replace the number of new customers on this day with the average number of customers in each category.",
+                "matchedText": "a server",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "Theoretical Model and Analysis",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "We consider a reward-based crowdfunding campaign in which a creator elicits funds from customers to finance the launch of a new product, and each customer pledges to receive the product as a reward.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Comments inform/reduce the creator's improvement cost rather than directly revealing valuation",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Comments inform/reduce the creator's improvement cost rather than directly revealing valuation."
+              }
+            },
+            {
+              "value": "Each customer's valuation v_j is privately realized and independent uniform on [0,1]",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Each customer's valuation v_j is privately realized and independent uniform on [0,1]."
+              }
+            },
+            {
+              "value": "The pledge price and feature counts are observed; customer 1 anticipates later improvement and customer 2 observes final features",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The pledge price and feature counts are observed; customer 1 anticipates later improvement and customer 2 observes final features."
+              }
+            },
+            {
+              "value": "The final number of features qf along with the pledge price p",
+              "source": {
+                "type": "section",
+                "section": "Theoretical Model and Analysis",
+                "page": 5,
+                "sectionIndex": 2,
+                "sentence": 41,
+                "quote": "Customer 2 with valuation v2 arrives at the campaign, observes the final number of features qf along with the pledge price p, and decides whether to pledge or not."
+              }
+            },
+            {
+              "value": "A reward",
+              "source": {
+                "type": "section",
+                "section": "Theoretical Model and Analysis",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "We consider a reward-based crowdfunding campaign in which a creator elicits funds from customers to finance the launch of a new product, and each customer pledges to receive the product as a reward.",
+                "matchedText": "a reward",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Creator chooses whether/how much",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "creator chooses whether/how much to improve the product during the campaign; initial features are a conditioning parameter in the analyzed SPE"
+              }
+            },
+            {
+              "value": "Customer 1 chooses pledge and commenting",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "customer 1 chooses pledge and commenting"
+              }
+            },
+            {
+              "value": "Customer 2 chooses pledge",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "customer 2 chooses pledge"
+              }
+            },
+            {
+              "value": "Launch of a new product",
+              "source": {
+                "type": "section",
+                "section": "Theoretical Model and Analysis",
+                "page": 4,
+                "sectionIndex": 2,
+                "sentence": 1,
+                "quote": "We consider a reward-based crowdfunding campaign in which a creator elicits funds from customers to finance the launch of a new product",
+                "matchedText": "launch of a new product",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Whether to pledge or not",
+              "source": {
+                "type": "section",
+                "section": "Theoretical Model and Analysis",
+                "page": 5,
+                "sectionIndex": 2,
+                "sentence": 30,
+                "quote": "Given this infor­ mation, customer 1 decides whether to pledge or not",
+                "matchedText": "whether to pledge or not",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The all-or-nothing goal requires both of two customers to pledge, with p=G/2",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The all-or-nothing goal requires both of two customers to pledge, with p=G/2."
+              }
+            },
+            {
+              "value": "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3."
+              }
+            },
+            {
+              "value": "Customer effective value is v_j(q_f-bq_f^2), allowing too many features to create complexity disutility",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Customer effective value is v_j(q_f-bq_f^2), allowing too many features to create complexity disutility."
+              }
+            },
+            {
+              "value": "Initial feature cost is linear C_i q_i and improvement cost C_u q_u/(N+1), decreasing in comments N",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Initial feature cost is linear C_i q_i and improvement cost C_u q_u/(N+1), decreasing in comments N."
+              }
+            },
+            {
+              "value": "Per-unit production cost is c q_f^2 in the base model",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Per-unit production cost is c q_f^2 in the base model."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "Instead, we implement a control function approach, which was developed as a solution to the forbidden regression problem (Petrin and Train 2010; Wooldridge 2010, 2015), and hence we use predicted residuals ˆuk.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "To verify that the LDA model works well, we randomly select 20",
+          "page": 19,
+          "sentence": 26
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: probable_merged_sentences.",
+            "field": "method",
+            "reason": "probable_merged_sentences"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "2. Theoretical Model and Analysis",
+            "equation": "",
+            "quote": "Customer 1 decides whether to make comments, and the number of comments made may depend on the initial number of features qi.10 Specifically, the number of comments may increase with the initial number of features qi because more features can stimulate more ideas, or the number of comments may decrease with qi as more features can restrict the improvement potential of the product."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Creator chooses whether/how much to improve the product during the campaign; initial features are a conditioning parameter in the analyzed SPE customer 1 chooses pledge and commenting customer 2 chooses pledge",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in finance and crowdfunding",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Creator chooses whether/how much to improve the product during the campaign; initial features are a conditioning parameter in the analyzed SPE customer 1 chooses pledge and commenting customer 2 chooses pledge",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi^I",
+                "meaning": "creator's expected campaign profit when product improvement is undertaken · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i",
+                "meaning": "number/level of product features present at campaign launch · paper-defined nonnegative feature level",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_u",
+                "meaning": "feature improvement undertaken during the campaign · nonnegative improvement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b",
+                "meaning": "consumer complexity-disutility coefficient for excessive features · positive parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "pledge price charged to each customer · paper-defined positive price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "coefficient of the quadratic per-unit production cost · nonnegative cost parameter",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The all-or-nothing goal requires both of two customers to pledge, with p=G/2.",
+              "Customer effective value is v_j(q_f-bq_f^2), allowing too many features to create complexity disutility.",
+              "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Theoretical Model and Analysis",
+                "equation": "",
+                "quote": "Customer 1 decides whether to make comments, and the number of comments made may depend on the initial number of features qi.10 Specifically, the number of comments may increase with the initial number of features qi because more features can stimulate more ideas, or the number of comments may decrease with qi as more features can restrict the improvement potential of the product."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Customer 1 decides whether to make comments, and the number of comments made may depend on the initial”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Each customer's valuation v_j is privately realized and independent uniform on [0,1]. The pledge price and feature counts are observed; customer 1 anticipates later improvement and customer 2 observes final features. Comments inform/reduce the creator's improvement cost rather than directly revealing valuation.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in finance and crowdfunding",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information rule: decisions use the observations available at the stated decision time.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi^I",
+                "meaning": "creator's expected campaign profit when product improvement is undertaken · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i",
+                "meaning": "number/level of product features present at campaign launch · paper-defined nonnegative feature level",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_u",
+                "meaning": "feature improvement undertaken during the campaign · nonnegative improvement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b",
+                "meaning": "consumer complexity-disutility coefficient for excessive features · positive parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "pledge price charged to each customer · paper-defined positive price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "coefficient of the quadratic per-unit production cost · nonnegative cost parameter",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The all-or-nothing goal requires both of two customers to pledge, with p=G/2.",
+              "Customer effective value is v_j(q_f-bq_f^2), allowing too many features to create complexity disutility.",
+              "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Theoretical Model and Analysis",
+                "equation": "",
+                "quote": "If customer 1 pledges in Stage 1 and makes N comments in Stage 2, then the creator decides whether to improve the product by adding qu new features by consider­ ing the additional investment cost.11 (Throughout the paper, subscript “u” stands for “upgrade”; i.e., im­ provement.) When more comments are made, the crea­ tor may require less research about qu or concept generation can be easier for the creator because of the higher level of information provided through the custo­ mer’s comments."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “If customer 1 pledges in Stage 1 and makes N comments in Stage 2, then the creator decides”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "After customer 1 pledges/comments, the creator compares expected campaign profit with product improvement against no-improvement profit, incorporating customer 2's pledge probability and feature costs.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in finance and crowdfunding",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\Pi^I=\\frac{(q_i+q_u)-b(q_i+q_u)^2-p}{(q_i+q_u)-b(q_i+q_u)^2}\\left[2p-2c(q_i+q_u)^2\\right]-C_iq_i-\\frac{C_uq_u}{N+1}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\Pi^I",
+                "meaning": "creator's expected campaign profit when product improvement is undertaken · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i",
+                "meaning": "number/level of product features present at campaign launch · paper-defined nonnegative feature level",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_u",
+                "meaning": "feature improvement undertaken during the campaign · nonnegative improvement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b",
+                "meaning": "consumer complexity-disutility coefficient for excessive features · positive parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "pledge price charged to each customer · paper-defined positive price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "coefficient of the quadratic per-unit production cost · nonnegative cost parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "C_i, C_u",
+                "meaning": "unit cost coefficients for initial features and within-campaign improvement · nonnegative costs",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "N",
+                "meaning": "number of customer comments, which lowers improvement cost · nonnegative integer",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The all-or-nothing goal requires both of two customers to pledge, with p=G/2.",
+              "Customer effective value is v_j(q_f-bq_f^2), allowing too many features to create complexity disutility.",
+              "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "(1)",
+                "quote": "In Stage 3, if customer 1 pledged and made comments in Stages 1 and 2, the creator decides whether to improve the product during the campaign by comparing the crea­ tor’s expected profit ΠI with improvement and expected profit ΠNI with no improvement."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “In Stage 3, if customer 1 pledged and made comments in Stages 1 and 2, the creator decides”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "subgame-perfect-equilibrium-of-the-four-stage-crowdfunding-game",
+            "label": "subgame-perfect equilibrium of the four-stage crowdfunding game",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is subgame-perfect equilibrium of the four-stage crowdfunding game. The authors solve customer 2's pledge cutoff, the creator's improvement comparison, customer 1's comment choice, and customer 1's initial pledge decision in reverse order. When comments cannot induce improvement, commenting and no commenting are both equilibria because customer 1 is indifferent; the main analysis selects commenting even without anticipated improvement, whereas no commenting arises in the positive-commenting-cost robustness extension.",
+            "searchPhrases": [
+              "how subgame-perfect equilibrium of the four-stage crowdfunding game is represented",
+              "strategic response in finance and crowdfunding",
+              "subgame-perfect equilibrium of the four-stage crowdfunding game strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is subgame-perfect equilibrium of the four-stage crowdfunding game.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi^I",
+                "meaning": "creator's expected campaign profit when product improvement is undertaken · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_u",
+                "meaning": "feature improvement undertaken during the campaign · nonnegative improvement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b",
+                "meaning": "consumer complexity-disutility coefficient for excessive features · positive parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "pledge price charged to each customer · paper-defined positive price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "coefficient of the quadratic per-unit production cost · nonnegative cost parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "C_i, C_u",
+                "meaning": "unit cost coefficients for initial features and within-campaign improvement · nonnegative costs",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The all-or-nothing goal requires both of two customers to pledge, with p=G/2.",
+              "Customer effective value is v_j(q_f-bq_f^2), allowing too many features to create complexity disutility.",
+              "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.1. Analysis of Subgame Perfect Equilibrium",
+                "equation": "",
+                "quote": "For ease of illustra­ tion, we focus on the equilibrium where customer 1 makes comments even if the customer anticipates that the product will not be improved, consistent with our observations on Kickstarter."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “For ease of illustration, we focus on the equilibrium where customer 1 makes comments even if the customer”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "estimation",
+            "concepts": [
+              "estimation"
+            ],
+            "explanation": "Backward induction and valuation cutoffs yield the analytical SPE. The empirical analysis uses 21,380 Kickstarter campaigns, LDA/text-derived feature proxies, probit and OLS regressions, control-function instrumental variables, recursive bivariate probit, and the June 3, 2014 Kickstarter rule relaxation as an instrument/policy shock.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "estimation procedure in finance and crowdfunding",
+              "solution or estimation method estimation procedure specification"
+            ],
+            "formal": "Estimation relation: Backward induction and valuation cutoffs yield the analytical SPE.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "b",
+                "meaning": "consumer complexity-disutility coefficient for excessive features · positive parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "pledge price charged to each customer · paper-defined positive price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "coefficient of the quadratic per-unit production cost · nonnegative cost parameter",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The all-or-nothing goal requires both of two customers to pledge, with p=G/2.",
+              "Initial feature cost is linear C_i q_i and improvement cost C_u q_u/(N+1), decreasing in comments N.",
+              "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "3.6. Additional Analysis with Biprobit Models",
+                "equation": "",
+                "quote": "To test the impact of product improvement Ik on campaign success Sk, we also include Ik on the right-hand side of equation (R13), and we estimate Models (R12) and (R13) simulta­ neously in a recursive bivariate probit model (biprobit) (Greene 2018, Liu et al. 2019, Freeman et al. 2021)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "estimation",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model estimation through this estimation procedure: “Model estimation”.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The all-or-nothing goal requires both of two customers to pledge, with p=G/2",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "The all-or-nothing goal requires both of two customers to pledge, with p=G/2."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "competition"
+            ],
+            "explanation": "Stage 0: the creator launches with a given initial feature count q_i and pledge price p=G/2; the paper derives the continuation SPE conditional on (p,q_i). Stage 3: after comments the creator decides whether/how much to improve. Stage 4: customer 2 observes final features and decides whether to pledge; both pledges are needed for funding. four-stage sequential game crowdfunding threshold game",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in finance and crowdfunding",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\Pi^I",
+                "meaning": "creator's expected campaign profit when product improvement is undertaken · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_i",
+                "meaning": "number/level of product features present at campaign launch · paper-defined nonnegative feature level",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q_u",
+                "meaning": "feature improvement undertaken during the campaign · nonnegative improvement",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b",
+                "meaning": "consumer complexity-disutility coefficient for excessive features · positive parameter",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "p",
+                "meaning": "pledge price charged to each customer · paper-defined positive price",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c",
+                "meaning": "coefficient of the quadratic per-unit production cost · nonnegative cost parameter",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The all-or-nothing goal requires both of two customers to pledge, with p=G/2.",
+              "The instrument is then independent of campaign success, conditional on the explanatory variable and the level of competition.",
+              "Customer effective value is v_j(q_f-bq_f^2), allowing too many features to create complexity disutility.",
+              "The initial feature count q_i is exogenous in the theoretical game; the creator chooses only the in-campaign improvement q_u at Stage 3."
+            ],
+            "sources": [
+              {
+                "page": 19,
+                "section": "18. To verify that the LDA model works well, we randomly select 20",
+                "equation": "",
+                "quote": "The instrument is then indepen­ dent of campaign success, conditional on the explanatory variable and the level of competition."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "competition",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Competition: “explanatory variable and the level of Competition .”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e77a59081bdf4477cff6fabdf5a6889ecb0a5b0eb745fdb5e5ba9fde690d0795",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "50f47a8d52c235338eedabc33298f5c1d088229d8fed12e4761779e6a892a11b",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/candoan2024productdevelopmentcrowdfunding/50f47a8d52c235338eedabc33298f5c1d088229d8fed12e4761779e6a892a11b.json",
+      "extractionQaDecisionSha256": "f36a73d86a81764efe61d5211208a833716ce420f576f271cf8c0990b14f10d8",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

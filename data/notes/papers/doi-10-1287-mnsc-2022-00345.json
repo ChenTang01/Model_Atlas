@@ -1,0 +1,759 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2022-00345",
+  "sourcePdfSha256": "c03c5610842c60b399d4b39feab350c6110006534022f2a34fe0d1c2ff8af8f9",
+  "extractionPagesSha256": "fa40ee54a3d50ba8d8eaaa6b3528244865bde6040940047003480070252d148a",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "daa8bdb2ddccbb3791060fdcbbd0ddccd0e7d69ab3ed7d921a29727b76ff9c3f",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "e948c3941f85bee31a22c454a3ccc55e90060e7e4089d14f851e5bfa9a764b5f",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00345/e948c3941f85bee31a22c454a3ccc55e90060e7e4089d14f851e5bfa9a764b5f.json",
+  "extractionQaDecisionSha256": "f7f6f113f2f731c29f0b5b308dd8c8b2064d638aa28a98edfecadf1cbdb02e52",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-00345",
+    "question": "How can equitable decision making be represented using consequentialist?",
+    "overview": "In an attempt to make algorithms fair, the machine learning literature has largely focused on equalizing decisions, outcomes, or error rates across race or gender groups. To illustrate, consider a hypothetical government rideshare program that provides transportation assistance to low-income people with upcoming court dates. Following this literature, one might allocate rides to those with the highest estimated treatment effect per dollar while constraining spending to be equal across race groups.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        6,
+        7,
+        8,
+        9,
+        11,
+        12
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Learning to Be Fair model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "In an attempt to make algorithms fair, the machine learning literature has largely focused on equalizing decisions, outcomes, or error rates across race or gender groups. To illustrate, consider a hypothetical government rideshare program that provides transportation assistance to low-income people with upcoming court dates. Following this literature, one might allocate rides to those with the highest estimated treatment effect per dollar while constraining spending to be equal across race groups.",
+        "objects": [
+          "Clients",
+          "Platform",
+          "Population",
+          "The state space"
+        ],
+        "inputs": [
+          "Probability x",
+          "Preferences",
+          "Observed data",
+          "How choices about representing these individuals impact the amount of data required",
+          "The observed rewards"
+        ],
+        "decisions": [
+          "Equitable algorithms that foregrounds the consequences of decisions",
+          "The best policy",
+          "Find a policy π∗that maximizes utility",
+          "How to learn optimal policies",
+          "An optimal decision"
+        ],
+        "assumptions": [
+          "Rides cost $5 per mile in each direction, in line with current rideshare prices",
+          "Black clients live farther from court on average",
+          "R(x,k)= d f(x,k) + η, where η ~ σ2 is sub-Gaussian, and η is independent across draws of the reward function",
+          "Each client has a 75% chance of appearing at court in the absence of rideshare assistance and is guaranteed to appear if provided a ride"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Clients",
+              "source": {
+                "type": "section",
+                "section": "Population Model Showing the Trade-Off Between Appear",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 3,
+                "quote": "The vertical axis shows expected additional appearances relative to a policy that does not provide rideshare assistance to any clients.",
+                "matchedText": "clients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Platform",
+              "source": {
+                "type": "section",
+                "section": "Population Model Showing the Trade-Off Between Appear",
+                "page": 5,
+                "sectionIndex": 17,
+                "sentence": 8,
+                "quote": "We ran our survey on the Prolific platform, selecting the platform’s “U.S. representative sample” option to recruit respondents, where respondents’ self-identified sex, age, and ethnicity are comparable to a random population of U.S. adults, as determined by the U.S.",
+                "matchedText": "platform",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Population",
+              "source": {
+                "type": "section",
+                "section": "Population Model Showing the Trade-Off Between Appear",
+                "page": 5,
+                "sectionIndex": 17,
+                "sentence": 8,
+                "quote": "We ran our survey on the Prolific platform, selecting the platform’s “U.S. representative sample” option to recruit respondents, where respondents’ self-identified sex, age, and ethnicity are comparable to a random population of U.S. adults, as determined by the U.S.",
+                "matchedText": "population",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "section",
+                "section": "Sample Complexity Bounds",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 29,
+                "quote": "As in Sections 4 and 4.1, we further assume throughout this sec­ tion that the state space X is finite and that the costs and distribution of X are known.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Probability x",
+              "source": {
+                "type": "section",
+                "section": "Computing Optimal Decision Policies",
+                "page": 8,
+                "sectionIndex": 8,
+                "sentence": 2,
+                "quote": "To construct the LP, first observe that any policy π cor­ responds to a matrix v ∈RX + × RK +, where vx,k denotes the probability x is assigned to action k.",
+                "matchedText": "probability x",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Preferences",
+              "source": {
+                "type": "section",
+                "section": "Population Model Showing the Trade-Off Between Appear",
+                "page": 7,
+                "sectionIndex": 19,
+                "sentence": 4,
+                "quote": "As a result, given preferences over various outcomes (e.g., trading off appearances with spending parity), one can effi­ ciently determine the utility-maximizing allocation strategy.",
+                "matchedText": "preferences",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Observed data",
+              "source": {
+                "type": "section",
+                "section": "Sample Complexity Bounds on Learning Optimal Policies",
+                "page": 9,
+                "sectionIndex": 9,
+                "sentence": 2,
+                "quote": "In real­ ity, however, this distribution must typically be learned from observed data.",
+                "matchedText": "observed data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "How choices about representing these individuals impact the amount of data required",
+              "source": {
+                "type": "section",
+                "section": "Sample Complexity Bounds",
+                "page": 9,
+                "sectionIndex": 10,
+                "sentence": 2,
+                "quote": "Further, in most domains of practical interest, individuals are described by a set of features, and it is beneficial to know how choices about representing these individuals impact the amount of data required.",
+                "matchedText": "how choices about representing these individuals impact the amount of data required",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The observed rewards",
+              "source": {
+                "type": "section",
+                "section": "Sample Complexity Bounds",
+                "page": 11,
+                "sectionIndex": 10,
+                "sentence": 76,
+                "quote": "Their sample complexity results is minimax (in the dominant term, up to constants and log terms) optimal for linear contextual bandits (for both static data collection strategies that do not update based on the observed rewards and for adaptive ones that do update as rewards are observed).",
+                "matchedText": "the observed rewards",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Equitable algorithms that foregrounds the consequences of decisions",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "Here we present an alternative framework for designing equitable algorithms that foregrounds the consequences of decisions.",
+                "matchedText": "equitable algorithms that foregrounds the consequences of decisions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The best policy",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 10,
+                "quote": "In particular, we use a contextual bandit algorithm to explore the space of policies while solving a convex optimization problem at each step to estimate the best policy based on the available information.",
+                "matchedText": "the best policy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Find a policy π∗that maximizes utility",
+              "source": {
+                "type": "section",
+                "section": "Computing Optimal Decision Policies",
+                "page": 8,
+                "sectionIndex": 20,
+                "sentence": 9,
+                "quote": "Given this setup, our goal is to find a policy π∗that maximizes utility while staying within budget.",
+                "matchedText": "find a policy π∗that maximizes utility while staying within budget",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "How to learn optimal policies",
+              "source": {
+                "type": "section",
+                "section": "Computing Optimal Decision Policies",
+                "page": 8,
+                "sectionIndex": 8,
+                "sentence": 1,
+                "quote": "To compute optimal policies, we assume in this section that one knows the distribution of X and the conditional distribution of the potential outcomes Y(ak) given X— that is, D(X) and D(Y(ak)|X). (In Section 6, we consider how to learn optimal policies when historical data on treatment effects are not known.) Given this informa­ tion, we show the optimization problem in Equation (3) can be expressed as a linear program, yielding an effi­ cient method for computing an optimal decision policy.",
+                "matchedText": "how to learn optimal policies when historical data on treatment effects",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An optimal decision",
+              "source": {
+                "type": "section",
+                "section": "Computing Optimal Decision Policies",
+                "page": 8,
+                "sectionIndex": 8,
+                "sentence": 1,
+                "quote": "To compute optimal policies, we assume in this section that one knows the distribution of X and the conditional distribution of the potential outcomes Y(ak) given X— that is, D(X) and D(Y(ak)|X). (In Section 6, we consider how to learn optimal policies when historical data on treatment effects are not known.) Given this informa­ tion, we show the optimization problem in Equation (3) can be expressed as a linear program, yielding an effi­ cient method for computing an optimal decision policy.",
+                "matchedText": "an optimal decision",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Rides cost $5 per mile in each direction, in line with current rideshare prices",
+              "source": {
+                "type": "section",
+                "section": "Motivating Example",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 30,
+                "quote": "Finally, we assume rides cost $5 per mile in each direction, in line with current rideshare prices.",
+                "matchedText": "rides cost $5 per mile in each direction, in line with current rideshare prices.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Black clients live farther from court on average",
+              "source": {
+                "type": "section",
+                "section": "Exploring Inherent Trade-Offs",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 4,
+                "quote": "Finally, we assume that Black clients live farther from court on average.",
+                "matchedText": "Black clients live farther from court on average.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "R(x,k)= d f(x,k) + η, where η ~ σ2 is sub-Gaussian, and η is independent across draws of the reward function",
+              "source": {
+                "type": "section",
+                "section": "Sample Complexity Bounds",
+                "page": 10,
+                "sectionIndex": 10,
+                "sentence": 44,
+                "quote": "We prove these bounds under three different common distributional assumptions on the reward model, the tabular, linear, and logistic reward models: 1. (Tabular rewards) We assume r(x,k)= d f(x,k) + η, where η ~ σ2 is sub-Gaussian, and η is independent across draws of the reward function.",
+                "matchedText": "r(x,k)= d f(x,k) + η, where η ~ σ2 is sub-Gaussian, and η is independent across draws of the reward function.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Each client has a 75% chance of appearing at court in the absence of rideshare assistance and is guaranteed to appear if provided a ride",
+              "source": {
+                "type": "section",
+                "section": "Exploring Inherent Trade-Offs",
+                "page": 4,
+                "sectionIndex": 4,
+                "sentence": 2,
+                "quote": "For simplicity, we assume that each client has a 75% chance of appearing at court in the absence of ride­ share assistance and is guaranteed to appear if provided a ride.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          }
+        ],
+        "method": "The analysis then optimizes over the space of decision policies, making trade-offs in a way that maximizes the elicited utility.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 8
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 8,
+            "section": "4.1. Computing Optimal Decision Policies",
+            "equation": "",
+            "quote": "To compute optimal policies, we assume in this section that one knows the distribution of X and the conditional distribution of the potential outcomes Y(ak) given X— that is, D(X) and D(Y(ak)|X). (In Section 6, we consider how to learn optimal policies when historical data on treatment effects are not known.) Given this informa­ tion, we show the optimization problem in Equation (3) can be expressed as a linear program, yielding an effi­ cient method for computing an optimal decision policy."
+          }
+        ],
+        "components": [
+          {
+            "id": "population-model-showing-the-trade-off-between-appear",
+            "label": "Population Model Showing the Trade-Off Between Appear",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The graphic in (a) was shown to survey participants to help them select their preferred ride allocation policy.",
+            "searchPhrases": [
+              "how population model showing the trade-off between appear is represented",
+              "decision rule in innovation, analytics, and technology",
+              "population model showing the trade-off between appear decision rule specification"
+            ],
+            "formal": "Decision rule: The graphic in (a) was shown to survey participants to help them select their preferred ride allocation policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Mean preferred allocations are represented by the vertical dashed line."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Population Model Showing the Trade-Off Between Appear",
+                "equation": "",
+                "quote": "The graphic in (a) was shown to survey participants to help them select their preferred ride allocation policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “The graphic in (a) was shown to survey participants to help them select their preferred ride allocation policy.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "computing-equitable-policies",
+            "label": "Computing Equitable Policies",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "For the rideshare example in the previous section, it is computationally straightforward to trace out the Pareto frontier: for any fixed budget allocated to each group, one can maximize appearances by offering rides to those clients with the largest (estimated) gain in appearance rate per dollar while constraining spending to the allotted per-group budget.",
+            "searchPhrases": [
+              "how computing equitable policies is represented",
+              "modeled objective in innovation, analytics, and technology",
+              "computing equitable policies modeled objective specification"
+            ],
+            "formal": "Objective relation: For the rideshare example in the previous section, it is computationally straightforward to trace out the Pareto frontier: for any fixed budget allocated to each group, one can maximize appearances by offering rides to those clients with the largest (estimated) gain in appearance rate per dollar while constraining spending to the allotted per-group budget.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For the rideshare example in the previous section, it is computationally straightforward to trace out the Pareto frontier: for any fixed budget allocated to each group, one can maximize appearances by offering rides to those clients with the largest (estimated) gain in appearance rate per dollar while constraining spending to the allotted per-group budget.",
+              "For example, in our motivating application, Xi might encode an individual’s demographics, history of appearance, alleged charges, and distance from court, and the set of actions might specify whether rideshare assistance is offered (in which case, K = 2).",
+              "For example, budget limitations might mean that only a certain amount of money can be spent on average per client, with varying known costs per context and action c(x,ak)."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4. Computing Equitable Policies",
+                "equation": "",
+                "quote": "For the rideshare example in the previous section, it is computationally straightforward to trace out the Pareto frontier: for any fixed budget allocated to each group, one can maximize appearances by offering rides to those clients with the largest (estimated) gain in appearance rate per dollar while constraining spending to the allot­ ted per-group budget."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "computing-optimal-decision-policies",
+            "label": "Computing Optimal Decision Policies",
+            "role": "decision",
+            "concepts": [
+              "policy-learning",
+              "optimization"
+            ],
+            "explanation": "To compute optimal policies, we assume in this section that one knows the distribution of X and the conditional distribution of the potential outcomes Y(ak) given X— that is, D(X) and D(Y(ak)|X). (In Section 6, we consider how to learn optimal policies when historical data on treatment effects are not known.) Given this information, we show the optimization problem in Equation (3) can be expressed as a linear program, yielding an efficient method for computing an optimal decision policy.",
+            "searchPhrases": [
+              "how computing optimal decision policies is represented",
+              "decision rule in innovation, analytics, and technology",
+              "computing optimal decision policies decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume in this section that one knows the distribution of X and the conditional distribution of the potential outcomes Y(ak) given X— that is, D(X) and D(Y(ak)|X).",
+              "To construct the LP, first observe that any policy π corresponds to a matrix v ∈RX + × RK +, where vx,k denotes the probability x is assigned to action k.",
+              "In general, suppose we aim to maximize an objective function of the form αTv X g, l λg, l|βT g, lv|, (4) where α and β are constant vectors.",
+              "To compute optimal policies, we assume in this section that one knows the distribution of X and the conditional distribution of the potential outcomes Y(ak) given X— that is, D(X) and D(Y(ak)|X). (In Section 6, we consider how to learn optimal policies when historical data on treatment effects are not known.) Given this information, we show the optimization problem in Equation (3) can be expressed as a linear program, yielding an efficient method for computing an optimal decision policy."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4.1. Computing Optimal Decision Policies",
+                "equation": "",
+                "quote": "To compute optimal policies, we assume in this section that one knows the distribution of X and the conditional distribution of the potential outcomes Y(ak) given X— that is, D(X) and D(Y(ak)|X). (In Section 6, we consider how to learn optimal policies when historical data on treatment effects are not known.) Given this informa­ tion, we show the optimization problem in Equation (3) can be expressed as a linear program, yielding an effi­ cient method for computing an optimal decision policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "policy-learning",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Policy learning as “learning a policy”: “learning a policy”.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Optimization: “Given this information, we show the Optimization problem in Equation (3) can be expressed as”.",
+                "conditionRefs": [
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 3,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "sample-complexity-bounds-on-learning-optimal-policies",
+            "label": "Sample Complexity Bounds on Learning Optimal Policies",
+            "role": "estimation",
+            "concepts": [
+              "policy-learning"
+            ],
+            "explanation": "The other benefit of this first analysis is that it involves creating an experimental design for data collection in advance, which makes the resulting data easily suitable for standard statistical inference.",
+            "searchPhrases": [
+              "how sample complexity bounds on learning optimal policies is represented",
+              "estimation procedure in innovation, analytics, and technology",
+              "sample complexity bounds on learning optimal policies estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The other benefit of this first analysis is that it involves creating an experimental design for data collection in advance, which makes the resulting data easily suitable for standard statistical inference.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In reality, however, this distribution must typically be learned from observed data.",
+              "Note that such data collection strategies do not adapt in response to observed outcomes of actions (such as some actions yielding higher appearance rates partway through data collection)."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "5. Sample Complexity Bounds on Learning Optimal Policies",
+                "equation": "",
+                "quote": "The other benefit of this first analysis is that it involves creating an experimental design for data collec­ tion in advance, which makes the resulting data easily suitable for standard statistical inference."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "policy-learning",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Policy learning as “learning a policy”: “The other benefit of this first analysis is that it involves creating an experimental design for data collection”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "cost-aware-sample-complexity",
+            "label": "Cost-Aware Sample Complexity",
+            "role": "decision",
+            "concepts": [
+              "budget-constraints",
+              "policy-learning"
+            ],
+            "explanation": "Note that by this, we mean a bound on the cost required to learn a near-optimal policy, not the budget constraint on the learned decision policy.",
+            "searchPhrases": [
+              "how cost-aware sample complexity is represented",
+              "decision rule in innovation, analytics, and technology",
+              "cost-aware sample complexity decision rule specification"
+            ],
+            "formal": "Decision rule: Note that by this, we mean a bound on the cost required to learn a near-optimal policy, not the budget constraint on the learned decision policy.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In the tabular case, we can prove that an experimental budget of O(P x,kc(x,ak)log(1=δ)=ɛ2) is sufficient (see Corollary EC.1 in the e-companion).",
+              "Note that by this, we mean a bound on the cost required to learn a near-optimal policy, not the budget constraint on the learned decision policy."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.2. Cost-Aware Sample Complexity",
+                "equation": "",
+                "quote": "Note that by this, we mean a bound on the cost required to learn a near-optimal policy, not the budget constraint on the learned decision policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "budget-constraints",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Budget constraints: “Note that by this, we mean a bound on the cost required to learn a near-optimal policy, not”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "policy-learning",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Policy learning as “learning a policy”: “Note that by this, we mean a bound on the cost required to learn a near-optimal policy, not”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "adaptively-learning-optimal-policies",
+            "label": "Adaptively Learning Optimal Policies",
+            "role": "estimation",
+            "concepts": [
+              "policy-learning",
+              "optimization"
+            ],
+            "explanation": "The results from Section 5 suggest the feasibility of solving our desired optimization problem even when the distribution of potential outcomes must be estimated from data.",
+            "searchPhrases": [
+              "how adaptively learning optimal policies is represented",
+              "estimation procedure in innovation, analytics, and technology",
+              "adaptively learning optimal policies estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The results from Section 5 suggest the feasibility of solving our desired optimization problem even when the distribution of potential outcomes must be estimated from data.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume knowledge of the covariate distribution D(X), which is often easily obtained from historical data, even in the absence of past interventions.",
+              "The results from Section 5 suggest the feasibility of solving our desired optimization problem even when the distribution of potential outcomes must be estimated from data.",
+              "For instance, in our running example of providing rideshare assistance to public defender clients, if there turns out to be a group of clients with very small need and benefit from assistance, a nonadaptive learning strategy will still allocate a proportional amount of limited resources to such individuals."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "6. Adaptively Learning Optimal Policies",
+                "equation": "",
+                "quote": "The results from Section 5 suggest the feasibility of solv­ ing our desired optimization problem even when the distribution of potential outcomes must be estimated from data."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "policy-learning",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Policy learning as “learning a policy”: “The results from Section 5 suggest the feasibility of solving our desired optimization problem even when the distribution”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Optimization: “the feasibility of solving our desired Optimization problem even when the distribution of potential outcomes”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "c03c5610842c60b399d4b39feab350c6110006534022f2a34fe0d1c2ff8af8f9",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "e948c3941f85bee31a22c454a3ccc55e90060e7e4089d14f851e5bfa9a764b5f",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-00345/e948c3941f85bee31a22c454a3ccc55e90060e7e4089d14f851e5bfa9a764b5f.json",
+      "extractionQaDecisionSha256": "f7f6f113f2f731c29f0b5b308dd8c8b2064d638aa28a98edfecadf1cbdb02e52",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

@@ -1,0 +1,779 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2019-0781",
+  "sourcePdfSha256": "4de8ac42022b6d1c40dd5e288f532be606a955671baca691336d256a3649fb79",
+  "extractionPagesSha256": "c4c803d8eeee21804290f60d336aec56656e71be74b98bcc0713d94744797694",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "e8c0c0776679096b9e2b49c465d1ec92a1f2c98504a649a76e77a0958543749a",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "a23938a5b2a4830a3d58d7ef7cbf0deb21f3513fe887da6c1654c4bae4dd1ef3",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2019-0781/a23938a5b2a4830a3d58d7ef7cbf0deb21f3513fe887da6c1654c4bae4dd1ef3.json",
+  "extractionQaDecisionSha256": "3d4435ca447cc7a68d635159c74c49a4d93c0b185b33309719e74f9578a596e0",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2019-0781",
+    "question": "How should operating room staffing and scheduling be coordinated?",
+    "overview": "The model considers two problems faced by an operating room (OR) manager: (1) how many baseline (core) staff to hire for OR suites, and (2) how to schedule surgery requests that arrive one by one. The OR manager has access to historical case count and case length data, and needs to balance the fixed cost of baseline staff and variable cost of overtime, while satisfying surgeons’ preferences. ORs are costly to operate and generate about 70% of hospitals’ revenues from surgical operations and subsequent hospitalizations.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        6,
+        7,
+        8
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "robust-optimization-formulation",
+        "name": "Robust Optimization Formulation",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The model considers two problems faced by an operating room (OR) manager: (1) how many baseline (core) staff to hire for OR suites, and (2) how to schedule surgery requests that arrive one by one. The OR manager has access to historical case count and case length data, and needs to balance the fixed cost of baseline staff and variable cost of overtime, while satisfying surgeons’ preferences. The paper proposes a new criterion called the robust competitive ratio for designing online algorithms.",
+        "objects": [
+          "Manager",
+          "Hospitals"
+        ],
+        "inputs": [
+          "The historical data",
+          "The benefit"
+        ],
+        "decisions": [
+          "Decisions in an optimal manner",
+          "Perform a variable transformation",
+          "Binary decision variables",
+          "There are no guaranteed allocations and cases are booked on a first-come",
+          "Post overtime"
+        ],
+        "assumptions": [
+          "There are only three types of surgeries and each type has nr requests",
+          "Type 1 surgeries arrive first, followed by Type 2 surgeries, and finally Type 3",
+          "There is a nonzero minimum length of any surgery request"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Manager",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: We consider two problems faced by an operating room (OR) manager: (1) how many baseline (core) staff to hire for OR suites, and (2) how to schedule surgery requests that arrive one by one.",
+                "matchedText": "manager",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Academic/practical relevance: ORs are costly to operate and generate about 70% of hospitals’ revenues from surgical operations and subsequent hospitalizations.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The historical data",
+              "source": {
+                "type": "section",
+                "section": "Contribution",
+                "page": 3,
+                "sectionIndex": 3,
+                "sentence": 17,
+                "quote": "the historical data",
+                "matchedText": "the historical data",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The benefit",
+              "source": {
+                "type": "section",
+                "section": "−Cost of Our Algorithm",
+                "page": 15,
+                "sectionIndex": 24,
+                "sentence": 27,
+                "quote": "The greater the uncertainty, the greater the beneﬁt of using a higher Γ.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Decisions in an optimal manner",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "Because hospitals are increasingly under pressure to reduce costs, it is important to make staffing and scheduling decisions in an optimal manner.",
+                "matchedText": "decisions in an optimal manner",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Perform a variable transformation",
+              "source": {
+                "type": "section",
+                "section": "Robust Optimization Formulation",
+                "page": 7,
+                "sectionIndex": 12,
+                "sentence": 14,
+                "quote": "Atthispoint, we perform a variable transformation",
+                "matchedText": "perform a variable transformation",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Binary decision variables",
+              "source": {
+                "type": "section",
+                "section": "Robust Optimization Formulation",
+                "page": 7,
+                "sectionIndex": 12,
+                "sentence": 21,
+                "quote": "This result is presented in Theorem 3, where we use the binary decision variables xijs to determine the optimal harmonic breakpoints.",
+                "matchedText": "binary decision variables",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "There are no guaranteed allocations and cases are booked on a first-come",
+              "source": {
+                "type": "section",
+                "section": "Institutional Background",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 8,
+                "quote": "In a block schedule, surgeons are guaranteed blocks of speciﬁc OR times on speciﬁc days of the week, whereas in open scheduling there are no guaranteed allocations and cases are booked on a ﬁrst-come",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Post overtime",
+              "source": {
+                "type": "section",
+                "section": "Phase II: Surgical Case Scheduling",
+                "page": 8,
+                "sectionIndex": 1,
+                "sentence": 16,
+                "quote": "After implementing the surgery schedule generated by our approach, and observing the realized case lengths, we calculate the ex post overtime",
+                "matchedText": "post overtime",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are only three types of surgeries and each type has nr requests",
+              "source": {
+                "type": "section",
+                "section": "Robust Interval Classification Algorithms",
+                "page": 6,
+                "sectionIndex": 11,
+                "sentence": 17,
+                "quote": "Suppose there are only three types of surgeries and each type has nr requests.",
+                "matchedText": "there are only three types of surgeries and each type has nr requests.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Type 1 surgeries arrive first, followed by Type 2 surgeries, and finally Type 3",
+              "source": {
+                "type": "section",
+                "section": "Robust Interval Classification Algorithms",
+                "page": 6,
+                "sectionIndex": 11,
+                "sentence": 22,
+                "quote": "Suppose Type 1 surgeries arrive ﬁrst, followed by Type 2 surgeries, and ﬁnally Type 3.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There is a nonzero minimum length of any surgery request",
+              "source": {
+                "type": "section",
+                "section": "Uncertainty Set Characterization",
+                "page": 5,
+                "sectionIndex": 8,
+                "sentence": 12,
+                "quote": "there is a nonzero minimum length of any surgery request.",
+                "matchedText": "there is a nonzero minimum length of any surgery request.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "To overcome that problem, we prove that the optimization problem (5) is equivalent to a computationally tractable binary optimization problem when we use uncertainty sets of the form in Equation (1) discussed in Section 2.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Robust Optimization Formulation",
+          "page": 7,
+          "sentence": 20
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 7,
+            "section": "3.4. Robust Optimization Formulation",
+            "equation": "",
+            "quote": "Additional decision variables used in this formulation are (1) yi,r,s { }—binary variables similar to xijs, and (2) a and b."
+          }
+        ],
+        "components": [
+          {
+            "id": "robust-optimization-formulation",
+            "label": "Robust Optimization Formulation",
+            "role": "decision",
+            "concepts": [
+              "robust-optimization"
+            ],
+            "explanation": "Additional decision variables used in this formulation are (1) yi,r,s { }—binary variables similar to xijs, and (2) a and b.",
+            "searchPhrases": [
+              "how robust optimization formulation is represented",
+              "decision rule in policy, sustainability, and public services",
+              "robust optimization formulation decision rule specification"
+            ],
+            "formal": "Decision rule: Additional decision variables used in this formulation are (1) yi,r,s { }—binary variables similar to xijs, and (2) a and b.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This formulation is difficult to solve because ˆz, the vector of unknown fraction of cases that lie in each interval depends on the interval breakpoints τi { }K i 2."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.4. Robust Optimization Formulation",
+                "equation": "",
+                "quote": "Additional decision variables used in this formulation are (1) yi,r,s { }—binary variables similar to xijs, and (2) a and b."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "robust-optimization",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Robust optimization: “Additional decision variables used in this formulation are (1) yi,r,s { }—binary variables similar to xijs, and (2)”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "phase-ii-surgical-case-scheduling",
+            "label": "Phase II: Surgical Case Scheduling",
+            "role": "algorithm",
+            "concepts": [
+              "scheduling",
+              "optimization"
+            ],
+            "explanation": "We argue later in this section that the optimization problem is relatively easy to solve using commercial solvers.",
+            "searchPhrases": [
+              "how phase ii: surgical case scheduling is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "phase ii: surgical case scheduling solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We argue later in this section that the optimization problem is relatively easy to solve using commercial solvers.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We present a formulation based on an arbitrary 8p in Section 4.1 and three specific choices in the online supplement.",
+              "Given 8p, Phase II utilizes known case counts and planned surgery lengths to produce robust surgery schedules.",
+              "After implementing the surgery schedule generated by our approach, and observing the realized case lengths, we calculate the ex post overtime, delay, and idle time statistics over a set of test data in Section 5."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4. Phase II: Surgical Case Scheduling",
+                "equation": "",
+                "quote": "We argue later in this section that the optimization problem is relatively easy to solve using commercial solvers."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "scheduling",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Scheduling: “We argue later in this section that the optimization problem is relatively easy to solve using commercial solvers.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “later in this section that the Optimization problem is relatively easy to solve using commercial”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "phase-i-baseline-staffing",
+        "name": "Phase I: Baseline Staffing",
+        "kind": "alternative",
+        "relation": "This is an alternative to Robust Optimization Formulation.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "robust-optimization-formulation"
+          }
+        ],
+        "summary": "This new performance criterion generalizes the standard CR, which is defined for problems without any uncertainty set information. Let ! be an arbitrary algorithm that requires !(L) ORs to place an arbitrary sequence of cases L. In the best case, the algorithm !∗could have had mo open bins, each of which could accommodate at most three Type 2 cases.",
+        "objects": [
+          "Managers",
+          "Random variables"
+        ],
+        "inputs": [
+          "Historical data"
+        ],
+        "decisions": [
+          "Perform a variable transformation",
+          "Binary decision variables"
+        ],
+        "assumptions": [
+          "There are only three types of surgeries and each type has nr requests",
+          "Type 1 surgeries arrive first, followed by Type 2 surgeries, and finally Type 3",
+          "There is a nonzero minimum length of any surgery request"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Managers",
+              "source": {
+                "type": "section",
+                "section": "Phase I: Baseline Staffing",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 5,
+                "quote": "intuition behind how OR managers may select Γ1.",
+                "matchedText": "managers",
+                "derivation": "literal-actor-control"
+              }
+            },
+            {
+              "value": "Random variables",
+              "source": {
+                "type": "section",
+                "section": "Phase I: Baseline Staffing",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 24,
+                "quote": "These theorems express the fact that the limiting sums of many independent random variables tend to be distributed according to one of a small set of stable distributions.",
+                "matchedText": "random variables",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Historical data",
+              "source": {
+                "type": "section",
+                "section": "Phase I: Baseline Staffing",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "We show how to determine the uncertainty set from historical data, and propose a new performance criterion called the robust competitive ratio (RCR).",
+                "matchedText": "historical data",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Perform a variable transformation",
+              "source": {
+                "type": "section",
+                "section": "Phase I: Baseline Staffing",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 105,
+                "quote": "Atthispoint, we perform a variable transformation",
+                "matchedText": "perform a variable transformation",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Binary decision variables",
+              "source": {
+                "type": "section",
+                "section": "Phase I: Baseline Staffing",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 112,
+                "quote": "This result is presented in Theorem 3, where we use the binary decision variables xijs to determine the optimal harmonic breakpoints.",
+                "matchedText": "binary decision variables",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "There are only three types of surgeries and each type has nr requests",
+              "source": {
+                "type": "section",
+                "section": "Phase I: Baseline Staffing",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 72,
+                "quote": "Suppose there are only three types of surgeries and each type has nr requests.",
+                "matchedText": "there are only three types of surgeries and each type has nr requests.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Type 1 surgeries arrive first, followed by Type 2 surgeries, and finally Type 3",
+              "source": {
+                "type": "section",
+                "section": "Phase I: Baseline Staffing",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 77,
+                "quote": "Suppose Type 1 surgeries arrive ﬁrst, followed by Type 2 surgeries, and ﬁnally Type 3.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There is a nonzero minimum length of any surgery request",
+              "source": {
+                "type": "section",
+                "section": "Phase I: Baseline Staffing",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 12,
+                "quote": "there is a nonzero minimum length of any surgery request.",
+                "matchedText": "there is a nonzero minimum length of any surgery request.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          }
+        ],
+        "method": "The paper proposes an online algorithm for placing surgical cases into ORs and proves that no other algorithm can achieve a better CR so long as the case mix uncertainty belongs to an uncertainty set, which is determined from the data.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Phase I: Baseline Staffing",
+          "page": 4,
+          "sentence": 4
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "3. Phase I: Baseline Staffing",
+            "equation": "",
+            "quote": "This new performance criterion generalizes the standard CR, which is deﬁned for problems without any uncertainty set information."
+          }
+        ],
+        "components": [
+          {
+            "id": "phase-i-baseline-staffing",
+            "label": "Phase I: Baseline Staffing",
+            "role": "information",
+            "concepts": [
+              "uncertainty"
+            ],
+            "explanation": "This new performance criterion generalizes the standard CR, which is defined for problems without any uncertainty set information.",
+            "searchPhrases": [
+              "how phase i: baseline staffing is represented",
+              "information available to the decision maker in policy, sustainability, and public services",
+              "phase i: baseline staffing information available to the decision maker specification"
+            ],
+            "formal": "Information structure: This new performance criterion generalizes the standard CR, which is defined for problems without any uncertainty set information.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "This new performance criterion generalizes the standard CR, which is defined for problems without any uncertainty set information."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "3. Phase I: Baseline Staffing",
+                "equation": "",
+                "quote": "This new performance criterion generalizes the standard CR, which is deﬁned for problems without any uncertainty set information."
+              },
+              {
+                "page": 4,
+                "section": "3. Phase I: Baseline Staffing",
+                "equation": "",
+                "quote": "We propose an online algorithm for placing surgical cases into ORs and prove that no other algorithm can achieve a better CR so long as the case mix uncertainty belongs to an uncertainty set, which is determined from the data."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "uncertainty",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Uncertainty: “is defined for problems without any Uncertainty set information.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "robust-competitive-ratio",
+            "label": "Robust Competitive Ratio",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Let ! be an arbitrary algorithm that requires !(L) ORs to place an arbitrary sequence of cases L.",
+            "searchPhrases": [
+              "how robust competitive ratio is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "robust competitive ratio solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Let ! be an arbitrary algorithm that requires !(L) ORs to place an arbitrary sequence of cases L.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose an optimal offline algorithm requires OPT(L) n ORs for the same sequence.",
+              "The performance of ! is measured by the asymptotic performance ratio, which is also known as the CR and given by CR(!) lim sup n→∞ sup L !(L) OPT(L) |OPT(L) n { } . (2) The CR guarantees performance for any input for large n."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Robust Competitive Ratio",
+                "equation": "",
+                "quote": "Let ! be an arbitrary algorithm that requires !(L) ORs to place an arbitrary sequence of cases L."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Let ! be an arbitrary algorithm that requires !(L) ORs to place an arbitrary sequence of cases L.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "robust-interval-classification-algorithms",
+            "label": "Robust Interval Classification Algorithms",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In the best case, the algorithm !∗could have had mo open bins, each of which could accommodate at most three Type 2 cases.",
+            "searchPhrases": [
+              "how robust interval classification algorithms is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "robust interval classification algorithms solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In the best case, the algorithm !∗could have had mo open bins, each of which could accommodate at most three Type 2 cases.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Suppose there are only three types of surgeries and each type has nr requests.",
+              "Suppose Type 1 surgeries are of length 0.55 −2ε, Type 2 are of length 0.3+ε, and Type 3 are of length 0.15 + ε each.",
+              "Seiden (2002) showed that the online algorithm that achieved the best known CR, known as the Harmonic++ algorithm, belonged to this class of algorithms."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.3. Robust Interval Classification Algorithms",
+                "equation": "",
+                "quote": "In the best case, the algorithm !∗could have had mo open bins, each of which could accommodate at most three Type 2 cases."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “In the best case, the algorithm !∗could have had mo open bins, each of which could accommodate at”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "4de8ac42022b6d1c40dd5e288f532be606a955671baca691336d256a3649fb79",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "a23938a5b2a4830a3d58d7ef7cbf0deb21f3513fe887da6c1654c4bae4dd1ef3",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2019-0781/a23938a5b2a4830a3d58d7ef7cbf0deb21f3513fe887da6c1654c4bae4dd1ef3.json",
+      "extractionQaDecisionSha256": "3d4435ca447cc7a68d635159c74c49a4d93c0b185b33309719e74f9578a596e0",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

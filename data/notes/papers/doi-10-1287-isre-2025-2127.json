@@ -1,0 +1,719 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-isre-2025-2127",
+  "sourcePdfSha256": "3c5a357e41a4f199be8bca1b0b58cc94b3863136283ad01269b067c59e20b964",
+  "extractionPagesSha256": "6fa3e8c1160372214eeb46fd832ba3bf2f8a1b7a07e4c06b5476220dfd8bf876",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "ca379ca928b687e017b9c724a5120d391bf1a07e2449f0f619260a40d9da20e7",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "12d25b34f63a155148b26711530b18412f1804fd484f193b016a9c5dd0289264",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2025-2127/12d25b34f63a155148b26711530b18412f1804fd484f193b016a9c5dd0289264.json",
+  "extractionQaDecisionSha256": "37888fd2e13fd47ca17f43c41b2827de28551873586f9f2766a5b9b1d18b4f3a",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-isre-2025-2127",
+    "question": "How should a bidder with limited information about rivals bid in a large, algorithmically cleared market when truthful reporting is not incentive compatible and no reliable distribution of rival bids is available?",
+    "overview": "The focal bidder chooses a report strategically in non-incentive-compatible auction mechanisms while treating rival bids as an ambiguity set rather than a known distribution. The paper derives maximin-optimal bidding policies and profitable deviations from truthful reporting, which are equivalent strategic solution concepts even though it deliberately does not solve a market-wide equilibrium.",
+    "modelTypes": [
+      "Game theory",
+      "Simulation",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        8,
+        10
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Beyond Truthful Reporting model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The focal bidder chooses a report strategically in non-incentive-compatible auction mechanisms while treating rival bids as an ambiguity set rather than a known distribution. The paper derives maximin-optimal bidding policies and profitable deviations from truthful reporting, which are equivalent strategic solution concepts even though it deliberately does not solve a market-wide equilibrium.",
+        "objects": [
+          "Rival bidders whose possible bids form the focal bidder's ambiguity set"
+        ],
+        "inputs": [
+          "The focal bidder knows its own valuation but lacks a probability distribution for rivals' types or strategies",
+          "Possible rival bids are summarized by a convex-polyhedral or box uncertainty set",
+          "The auction format, allocation rule, and payment rule are known to the focal bidder",
+          "The model evaluates the focal bidder's policy against every rival-bid realization in the ambiguity set rather than imposing equilibrium beliefs"
+        ],
+        "decisions": [
+          "Rival bidders submit bid profiles lying in the specified ambiguity set",
+          "The focal bidder reports scalar bids for ranked slots or bundle bids in a combinatorial auction",
+          "The focal bidder may shade bids on its target bundle instead of reporting its valuation truthfully",
+          "To analyze the decision problem of bidder 1",
+          "Robust policies mainly requires evaluating worst-case bid ranks within the uncertainty set"
+        ],
+        "assumptions": [
+          "The analysis selects bidder 1 as the focal bidder without loss of generality and treats rival bids as exogenous elements of an uncertainty set",
+          "The ambiguity set is a convex polytope; box uncertainty is used as an interpretable special case",
+          "Generalized first-price and generalized second-price models use scalar bids and rank bidders across ordered slots",
+          "The combinatorial model permits XOR bundle bids and uses a core-selecting allocation with the quadratic VCG-nearest payment rule for the main exposition",
+          "Closed-form combinatorial results focus on single-minded, double-minded, and local-global valuation structures"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Rival bidders whose possible bids form the focal bidder's ambiguity set",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "rival bidders whose possible bids form the focal bidder's ambiguity set"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The focal bidder knows its own valuation but lacks a probability distribution for rivals' types or strategies",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The focal bidder knows its own valuation but lacks a probability distribution for rivals' types or strategies."
+              }
+            },
+            {
+              "value": "Possible rival bids are summarized by a convex-polyhedral or box uncertainty set",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Possible rival bids are summarized by a convex-polyhedral or box uncertainty set, which can be formed from historical ranges or expert restrictions."
+              }
+            },
+            {
+              "value": "The auction format, allocation rule, and payment rule are known to the focal bidder",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The auction format, allocation rule, and payment rule are known to the focal bidder."
+              }
+            },
+            {
+              "value": "The model evaluates the focal bidder's policy against every rival-bid realization in the ambiguity set rather than imposing equilibrium beliefs",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The model evaluates the focal bidder's policy against every rival-bid realization in the ambiguity set rather than imposing equilibrium beliefs."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Rival bidders submit bid profiles lying in the specified ambiguity set",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "rival bidders submit bid profiles lying in the specified ambiguity set"
+              }
+            },
+            {
+              "value": "The focal bidder reports scalar bids for ranked slots or bundle bids in a combinatorial auction",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the focal bidder reports scalar bids for ranked slots or bundle bids in a combinatorial auction"
+              }
+            },
+            {
+              "value": "The focal bidder may shade bids on its target bundle instead of reporting its valuation truthfully",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the focal bidder may shade bids on its target bundle instead of reporting its valuation truthfully"
+              }
+            },
+            {
+              "value": "To analyze the decision problem of bidder 1",
+              "source": {
+                "type": "section",
+                "section": "Model",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 14,
+                "quote": "We choose to analyze the decision problem of bidder 1",
+                "matchedText": "to analyze the decision problem of bidder 1",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Robust policies mainly requires evaluating worst-case bid ranks within the uncertainty set",
+              "source": {
+                "type": "section",
+                "section": "Robust Optimization Formulation",
+                "page": 6,
+                "sectionIndex": 7,
+                "sentence": 17,
+                "quote": "Because bidders submit scalar bids and allocations reduce to order statistics, computing robust policies mainly requires evaluating worst-case bid ranks within the uncertainty set",
+                "matchedText": "robust policies mainly requires evaluating worst-case bid ranks within the uncertainty set",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The analysis selects bidder 1 as the focal bidder without loss of generality and treats rival bids as exogenous elements of an uncertainty set",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The analysis selects bidder 1 as the focal bidder without loss of generality and treats rival bids as exogenous elements of an uncertainty set."
+              }
+            },
+            {
+              "value": "The ambiguity set is a convex polytope; box uncertainty is used as an interpretable special case",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The ambiguity set is a convex polytope; box uncertainty is used as an interpretable special case."
+              }
+            },
+            {
+              "value": "Generalized first-price and generalized second-price models use scalar bids and rank bidders across ordered slots",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Generalized first-price and generalized second-price models use scalar bids and rank bidders across ordered slots."
+              }
+            },
+            {
+              "value": "The combinatorial model permits XOR bundle bids and uses a core-selecting allocation with the quadratic VCG-nearest payment rule for the main exposition",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The combinatorial model permits XOR bundle bids and uses a core-selecting allocation with the quadratic VCG-nearest payment rule for the main exposition."
+              }
+            },
+            {
+              "value": "Closed-form combinatorial results focus on single-minded, double-minded, and local-global valuation structures",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Closed-form combinatorial results focus on single-minded, double-minded, and local-global valuation structures."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_record_value_rejected",
+            "message": "Rejected players entry: entity_sentence_fragment.",
+            "category": "entities",
+            "field": "players",
+            "reason": "entity_sentence_fragment"
+          }
+        ],
+        "method": "The authors formulate a distribution-free maximin problem, exploit bid ranks and lower envelopes in generalized position auctions, use minimax and core-payment structure to derive combinatorial-auction policies, and run simulations against truth-telling, expected-payoff, and misspecified-information benchmarks.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 6,
+            "section": "2.4. Robust Optimization Formulation",
+            "equation": "",
+            "quote": "Although the exact dimensionality and structure of the uncertainty set differ across auction formats (e.g., GFP and GSP auctions involve scalar bids rather than bundle bids), the same robust optimization framework applies in all cases."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "auctions"
+            ],
+            "explanation": "The focal bidder reports scalar bids for ranked slots or bundle bids in a combinatorial auction rival bidders submit bid profiles lying in the specified ambiguity set the focal bidder may shade bids on its target bundle instead of reporting its valuation truthfully",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in distribution-free robust bidding in non-incentive-compatible auctions",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The focal bidder reports scalar bids for ranked slots or bundle bids in a combinatorial auction rival bidders submit bid profiles lying in the specified ambiguity set the focal bidder may shade bids on its target bundle instead of reporting its valuation truthfully",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "b_1",
+                "meaning": "bidder 1's chosen scalar or bundle-bid policy · feasible nonnegative bid vector in U_1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_{-1}",
+                "meaning": "profile of all rival bidders' bids · the uncertainty set U_{-1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_1(b_1, b_{-1})",
+                "meaning": "bidder 1's auction payoff under its own bid and the rival-bid profile · real-valued quasi-linear payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Generalized first-price and generalized second-price models use scalar bids and rank bidders across ordered slots.",
+              "The analysis selects bidder 1 as the focal bidder without loss of generality and treats rival bids as exogenous elements of an uncertainty set.",
+              "The ambiguity set is a convex polytope; box uncertainty is used as an interpretable special case."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.2. GSP Auctions",
+                "equation": "",
+                "quote": "GFP auctions, bidders submit scalar bids, and the m highest bidders are allocated the m items in descending order of quality, represented by click-through rates αk."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Auctions: “GFP Auctions , bidders submit scalar bids, and the m”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "auctions",
+              "robust-optimization"
+            ],
+            "explanation": "The auction format and the focal bidder's valuation and ambiguity set are given. Before rivals' bids are known, the focal bidder selects a feasible bidding policy to maximize its minimum payoff over all rival-bid profiles in the ambiguity set. Bids are then submitted, the mechanism selects an allocation, and the applicable first-price, next-bid, or core-selecting payment rule determines transfers and payoffs. The focal bidder protects against the worst rival bids in a specified set rather than forming a Bayesian prior over them.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in distribution-free robust bidding in non-incentive-compatible auctions",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: The auction format and the focal bidder's valuation and ambiguity set are given.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi_1^{\\mathrm{MAXMIN}}",
+                "meaning": "bidder 1's maximum guaranteed payoff · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_1",
+                "meaning": "bidder 1's chosen scalar or bundle-bid policy · feasible nonnegative bid vector in U_1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_{-1}",
+                "meaning": "profile of all rival bidders' bids · the uncertainty set U_{-1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1",
+                "meaning": "bidder 1's feasible policy space · nonnegative scalar or vector reports appropriate to the auction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{-1}",
+                "meaning": "uncertainty set containing every rival-bid profile considered possible · convex polytope, with a box as a special case",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_1(b_1, b_{-1})",
+                "meaning": "bidder 1's auction payoff under its own bid and the rival-bid profile · real-valued quasi-linear payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Generalized first-price and generalized second-price models use scalar bids and rank bidders across ordered slots.",
+              "The analysis selects bidder 1 as the focal bidder without loss of generality and treats rival bids as exogenous elements of an uncertainty set.",
+              "The ambiguity set is a convex polytope; box uncertainty is used as an interpretable special case."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.4. Robust Optimization Formulation",
+                "equation": "",
+                "quote": "Although the exact dimensionality and structure of the uncertainty set differ across auction formats (e.g., GFP and GSP auctions involve scalar bids rather than bundle bids), the same robust optimization framework applies in all cases."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Auctions: “Auctions”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  3,
+                  5
+                ]
+              },
+              {
+                "conceptId": "robust-optimization",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Robust optimization: “Robust optimization”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Bidder 1 chooses a feasible bid to maximize the minimum payoff it can receive over every rival-bid profile in its uncertainty set.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in distribution-free robust bidding in non-incentive-compatible auctions",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "\\pi_1^{\\mathrm{MAXMIN}}=\\sup_{b_1\\in U_1}\\inf_{b_{-1}\\in U_{-1}}\\pi_1(b_1,b_{-1}).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\pi_1^{\\mathrm{MAXMIN}}",
+                "meaning": "bidder 1's maximum guaranteed payoff · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_1",
+                "meaning": "bidder 1's chosen scalar or bundle-bid policy · feasible nonnegative bid vector in U_1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_{-1}",
+                "meaning": "profile of all rival bidders' bids · the uncertainty set U_{-1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1",
+                "meaning": "bidder 1's feasible policy space · nonnegative scalar or vector reports appropriate to the auction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{-1}",
+                "meaning": "uncertainty set containing every rival-bid profile considered possible · convex polytope, with a box as a special case",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_1(b_1, b_{-1})",
+                "meaning": "bidder 1's auction payoff under its own bid and the rival-bid profile · real-valued quasi-linear payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The bidder is risk neutral and evaluates a policy by its worst attainable quasi-linear payoff.",
+              "The analysis selects bidder 1 as the focal bidder without loss of generality and treats rival bids as exogenous elements of an uncertainty set.",
+              "The ambiguity set is a convex polytope; box uncertainty is used as an interpretable special case."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "Expected-profit objective",
+                "equation": "(P)",
+                "quote": "By exploiting the struc­ ture of the worst-case payoff and applying the minimax inequality (see Appendix EC.2), as we demonstrate for single- and double-minded bidders, we can derive easy-to-implement policies that consistently outper­ form truthful reporting."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “By exploiting the structure of the worst-case payoff and applying the minimax inequality (see Appendix EC.2), as we”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "auctions"
+            ],
+            "explanation": "The authors formulate a distribution-free maximin problem, exploit bid ranks and lower envelopes in generalized position auctions, use minimax and core-payment structure to derive combinatorial-auction policies, and run simulations against truth-telling, expected-payoff, and misspecified-information benchmarks.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in distribution-free robust bidding in non-incentive-compatible auctions",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors formulate a distribution-free maximin problem, exploit bid ranks and lower envelopes in generalized position auctions, use minimax and core-payment structure to derive combinatorial-auction policies, and run simulations against truth-telling, expected-payoff, and misspecified-information benchmarks.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi_1(b_1, b_{-1})",
+                "meaning": "bidder 1's auction payoff under its own bid and the rival-bid profile · real-valued quasi-linear payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Generalized first-price and generalized second-price models use scalar bids and rank bidders across ordered slots."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.2. GSP Auction",
+                "equation": "",
+                "quote": "This procedure is computationally efficient, as each fk(x) is piecewise-defined over a bounded interval, allowing the overall worst-case payoff to be optimized via a simple one-dimensional search."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "auctions",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Auctions: “This procedure is computationally efficient, as each fk(x) is piecewise-defined over a bounded interval, allowing the overall worst-case”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "The focal bidder knows its own valuation but lacks a probability distribution for rivals' types or strategies. Possible rival bids are summarized by a convex-polyhedral or box uncertainty set, which can be formed from historical ranges or expert restrictions. The auction format, allocation rule, and payment rule are known to the focal bidder. The model evaluates the focal bidder's policy against every rival-bid realization in the ambiguity set rather than imposing equilibrium beliefs.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in distribution-free robust bidding in non-incentive-compatible auctions",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The focal bidder knows its own valuation but lacks a probability distribution for rivals' types or strategies.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "b_1",
+                "meaning": "bidder 1's chosen scalar or bundle-bid policy · feasible nonnegative bid vector in U_1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_{-1}",
+                "meaning": "profile of all rival bidders' bids · the uncertainty set U_{-1}",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1",
+                "meaning": "bidder 1's feasible policy space · nonnegative scalar or vector reports appropriate to the auction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_{-1}",
+                "meaning": "uncertainty set containing every rival-bid profile considered possible · convex polytope, with a box as a special case",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_1(b_1, b_{-1})",
+                "meaning": "bidder 1's auction payoff under its own bid and the rival-bid profile · real-valued quasi-linear payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Generalized first-price and generalized second-price models use scalar bids and rank bidders across ordered slots.",
+              "The analysis selects bidder 1 as the focal bidder without loss of generality and treats rival bids as exogenous elements of an uncertainty set.",
+              "The ambiguity set is a convex polytope; box uncertainty is used as an interpretable special case."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Single-Minded Bidder",
+                "equation": "",
+                "quote": "Importantly, the robust policy requires substantially less information, as it does not depend on others’ val­ uation distributions or their equilibrium bidding strat­ egies."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "maximin-robust-bidding-policy-for-an-individual-bidder",
+            "label": "Maximin robust bidding policy for an individual bidder",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is Maximin robust bidding policy for an individual bidder. The paper defines a robust policy as an optimizer of problem (P), derives such policies in Propositions 1, 2, 4, 5, and 6, and benchmarks them against truth-telling and expected-payoff maximization. It explicitly studies an individual decision problem rather than a market-level equilibrium in which every bidder is robust.",
+            "searchPhrases": [
+              "how maximin robust bidding policy for an individual bidder is represented",
+              "strategic response in distribution-free robust bidding in non-incentive-compatible auctions",
+              "maximin robust bidding policy for an individual bidder strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Maximin robust bidding policy for an individual bidder.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\pi_1^{\\mathrm{MAXMIN}}",
+                "meaning": "bidder 1's maximum guaranteed payoff · real-valued payoff",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "b_1",
+                "meaning": "bidder 1's chosen scalar or bundle-bid policy · feasible nonnegative bid vector in U_1",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "U_1",
+                "meaning": "bidder 1's feasible policy space · nonnegative scalar or vector reports appropriate to the auction",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\pi_1(b_1, b_{-1})",
+                "meaning": "bidder 1's auction payoff under its own bid and the rival-bid profile · real-valued quasi-linear payoff",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The bidder is risk neutral and evaluates a policy by its worst attainable quasi-linear payoff.",
+              "The analysis selects bidder 1 as the focal bidder without loss of generality and treats rival bids as exogenous elements of an uncertainty set."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Single-Minded Bidder",
+                "equation": "",
+                "quote": "This illustrates that, although equilibrium bidding strategies may be difficult to characterize for bidder 1 in a two-dimensional bidding space, robust bidding provides a simple and tractable alternative."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “This illustrates that, although equilibrium bidding strategies may be difficult to characterize for bidder 1 in a two-dimensional”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "3c5a357e41a4f199be8bca1b0b58cc94b3863136283ad01269b067c59e20b964",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "12d25b34f63a155148b26711530b18412f1804fd484f193b016a9c5dd0289264",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-isre-2025-2127/12d25b34f63a155148b26711530b18412f1804fd484f193b016a9c5dd0289264.json",
+      "extractionQaDecisionSha256": "37888fd2e13fd47ca17f43c41b2827de28551873586f9f2766a5b9b1d18b4f3a",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

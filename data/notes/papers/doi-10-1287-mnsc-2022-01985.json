@@ -1,0 +1,1212 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2022-01985",
+  "sourcePdfSha256": "51b9dea7137976d58d60bc78c52e7d428786a80c50bb05e58fc20e6cee319160",
+  "extractionPagesSha256": "1559715fed5f747a94f848f5d43c37b21f8a379b29efa529815dffdc00e475e7",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "c6ac1713b680a4ee9d981164f16510724d2857a21d1b5ed32d6381525790a0c6",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "9b762f82e31fd5484d4f7853ecc05b5de79797b4363ad4987ed6e14b7f512f67",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-01985/9b762f82e31fd5484d4f7853ecc05b5de79797b4363ad4987ed6e14b7f512f67.json",
+  "extractionQaDecisionSha256": "97daea4bf286efbf9be3a3806511a9ceaab07ee7d01efcaed1b300799466be0f",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-01985",
+    "question": "How can an online-learning system divide the cost of experimentation fairly across demographic or customer groups without giving up too much total performance?",
+    "overview": "The paper formulates groups as bargaining agents, defines each group's surplus relative to operating alone, and applies the axiomatic Nash bargaining solution to allocate the burden of exploration. It is a cooperative-game-theoretic solution embedded in online learning.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Axiomatic bargaining over group-level regret reductions created by shared online exploration",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "The paper formulates groups as bargaining agents, defines each group's surplus relative to operating alone, and applies the axiomatic Nash bargaining solution to allocate the burden of exploration. It is a cooperative-game-theoretic solution embedded in online learning.",
+        "objects": [
+          "Groups treated",
+          "A central online-learning decision maker that implements the negotiated exploration policy"
+        ],
+        "inputs": [
+          "Reward means or the linear reward parameter are initially unknown and learned from observations",
+          "Groups have different action sets or context distributions but share information from common actions",
+          "The group identity or context of the current arrival is observed",
+          "The Nash solution is defined for each true problem instance; algorithms estimate the instance online"
+        ],
+        "decisions": [
+          "The policy chooses an arm for each arriving group",
+          "PF-OAM analogously allocates exploration across group-context pairs in the linear contextual model",
+          "PF-UCB allocates underexplored arms according to the estimated Nash-welfare program and otherwise exploits",
+          "Share that implies the desired result",
+          "Arm in a regret-optimal policy"
+        ],
+        "assumptions": [
+          "Policies are consistent and evaluated by logarithmically scaled asymptotic regret",
+          "The disagreement point is each group's optimal single-group learning outcome",
+          "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness",
+          "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM",
+          "The principal theoretical metric is asymptotic, with finite-horizon behavior illustrated numerically"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Groups treated",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "groups treated as bargaining agents whose members arrive over time"
+              }
+            },
+            {
+              "value": "A central online-learning decision maker that implements the negotiated exploration policy",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "a central online-learning decision maker that implements the negotiated exploration policy"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Reward means or the linear reward parameter are initially unknown and learned from observations",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Reward means or the linear reward parameter are initially unknown and learned from observations."
+              }
+            },
+            {
+              "value": "Groups have different action sets or context distributions but share information from common actions",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Groups have different action sets or context distributions but share information from common actions."
+              }
+            },
+            {
+              "value": "The group identity or context of the current arrival is observed",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The group identity or context of the current arrival is observed before action selection."
+              }
+            },
+            {
+              "value": "The Nash solution is defined for each true problem instance; algorithms estimate the instance online",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The Nash solution is defined for each true problem instance; algorithms estimate the instance online."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The policy chooses an arm for each arriving group",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the policy chooses an arm for each arriving group"
+              }
+            },
+            {
+              "value": "PF-OAM analogously allocates exploration across group-context pairs in the linear contextual model",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "PF-OAM analogously allocates exploration across group-context pairs in the linear contextual model"
+              }
+            },
+            {
+              "value": "PF-UCB allocates underexplored arms according to the estimated Nash-welfare program and otherwise exploits",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "PF-UCB allocates underexplored arms according to the estimated Nash-welfare program and otherwise exploits"
+              }
+            },
+            {
+              "value": "Share that implies the desired result",
+              "source": {
+                "type": "section",
+                "section": "Unfairness of Regret-Optimal Policies",
+                "page": 6,
+                "sectionIndex": 12,
+                "sentence": 8,
+                "quote": "share that implies the desired result",
+                "matchedText": "share that implies the desired result",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Arm in a regret-optimal policy",
+              "source": {
+                "type": "section",
+                "section": "Unfairness of Regret-Optimal Policies",
+                "page": 7,
+                "sectionIndex": 12,
+                "sentence": 27,
+                "quote": "arm in a regret-optimal policy",
+                "matchedText": "arm in a regret-optimal policy",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Policies are consistent and evaluated by logarithmically scaled asymptotic regret",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Policies are consistent and evaluated by logarithmically scaled asymptotic regret."
+              }
+            },
+            {
+              "value": "The disagreement point is each group's optimal single-group learning outcome",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The disagreement point is each group's optimal single-group learning outcome."
+              }
+            },
+            {
+              "value": "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness."
+              }
+            },
+            {
+              "value": "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM."
+              }
+            },
+            {
+              "value": "The principal theoretical metric is asymptotic, with finite-horizon behavior illustrated numerically",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The principal theoretical metric is asymptotic, with finite-horizon behavior illustrated numerically."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "At each time step, we solve the optimization problem L( ˆ∆t) using the empirical estimate ˆ∆t, and the policy “follows” the solution.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "PF-OAM: Nash Solution for Grouped Linear",
+          "page": 11,
+          "sentence": 3
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 13,
+            "section": "6.3. Case Study: Warfarin Dosing",
+            "equation": "",
+            "quote": "The con­ text at each time step corresponds to a patient’s covari­ ates, arms correspond to different dosages, and the reward is the observed efficacy of the assigned dose."
+          }
+        ],
+        "components": [
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "The fair policy maximizes the sum of logarithms of each group's asymptotic regret reduction relative to learning alone—the Nash social-welfare objective.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in fair allocation of exploration costs",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "SW(\\pi,I)=\\Sigma_{g∈G(I)} log(UtilGain_g(\\pi,I))",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "\\pi",
+                "meaning": "online-learning policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "I",
+                "meaning": "grouped bandit instance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_T^g(\\pi, I)",
+                "meaning": "regret incurred by group g through horizon T under policy π",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "UtilGain_g(\\pi, I)",
+                "meaning": "asymptotic log-scaled reduction in Group g's regret relative to its stand-alone policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "PoF(I)",
+                "meaning": "fraction of the system-optimal aggregate regret reduction lost by imposing Nash fairness · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Policies are consistent and evaluated by logarithmically scaled asymptotic regret.",
+              "The disagreement point is each group's optimal single-group learning outcome.",
+              "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "(5)",
+                "quote": "Then, we need to appropriately define the utility gain for each group under any policy."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Then, we need to appropriately define the utility gain for each group under any policy.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The policy chooses an arm for each arriving group PF-UCB allocates underexplored arms according to the estimated Nash-welfare program and otherwise exploits PF-OAM analogously allocates exploration across group-context pairs in the linear contextual model",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in fair allocation of exploration costs",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: The policy chooses an arm for each arriving group PF-UCB allocates underexplored arms according to the estimated Nash-welfare program and otherwise exploits PF-OAM analogously allocates exploration across group-context pairs in the linear contextual model",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R_T^g(\\pi, I)",
+                "meaning": "regret incurred by group g through horizon T under policy π",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "UtilGain_g(\\pi, I)",
+                "meaning": "asymptotic log-scaled reduction in Group g's regret relative to its stand-alone policy",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The disagreement point is each group's optimal single-group learning outcome.",
+              "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. Unfairness of Regret-Optimal Policies",
+                "equation": "",
+                "quote": "The unfairness resulting from Theorem 1 is fueled by the fact that exploration is costly, which leads to con­ tention across groups on how exploration is allocated."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The paper defines group surplus through regret reductions, proves an instance-dependent Nash-welfare upper bound, constructs learning policies that attain it, bounds their price of fairness relative to regret-optimal learning, and illustrates finite-time consequences computationally.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in fair allocation of exploration costs",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The paper defines group surplus through regret reductions, proves an instance-dependent Nash-welfare upper bound, constructs learning policies that attain it, bounds their price of fairness relative to regret-optimal learning, and illustrates finite-time consequences computationally.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "R_T^g(\\pi, I)",
+                "meaning": "regret incurred by group g through horizon T under policy π",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "UtilGain_g(\\pi, I)",
+                "meaning": "asymptotic log-scaled reduction in Group g's regret relative to its stand-alone policy",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "PoF(I)",
+                "meaning": "fraction of the system-optimal aggregate regret reduction lost by imposing Nash fairness · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Policies are consistent and evaluated by logarithmically scaled asymptotic regret.",
+              "The disagreement point is each group's optimal single-group learning outcome.",
+              "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "4. Nash Solution and Price of Fairness",
+                "equation": "",
+                "quote": "We turn our attention in this section to constructive issues: we first develop an algorithm that achieves the Nash SW upper bound of Theorem 2 and thus establish that this is the Nash solution for the grouped K-armed bandit."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “Pricing”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Reward means or the linear reward parameter are initially unknown and learned from observations. Groups have different action sets or context distributions but share information from common actions. The group identity or context of the current arrival is observed before action selection. The Nash solution is defined for each true problem instance; algorithms estimate the instance online.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in fair allocation of exploration costs",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Reward means or the linear reward parameter are initially unknown and learned from observations.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "I",
+                "meaning": "grouped bandit instance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_T^g(\\pi, I)",
+                "meaning": "regret incurred by group g through horizon T under policy π",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The context at each time step corresponds to a patient’s covariates, arms correspond to different dosages, and the reward is the observed efficacy of the assigned dose.",
+              "The disagreement point is each group's optimal single-group learning outcome.",
+              "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness.",
+              "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "6.3. Case Study: Warfarin Dosing",
+                "equation": "",
+                "quote": "The con­ text at each time step corresponds to a patient’s covari­ ates, arms correspond to different dosages, and the reward is the observed efficacy of the assigned dose."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Information structure”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "extension-to-grouped-linear",
+        "name": "Extension to Grouped Linear",
+        "kind": "extension",
+        "relation": "This extension builds on Axiomatic bargaining over group-level regret reductions created by shared online exploration.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Each group g ∈ G is associated with a probability distribution Pg over 2A and a probability of arrival pg > 0; P gpg = 1. We now describe two examples of the grouped bandit model that impose additional assumptions on the rewards and group structure. We also bound the price of fairness and, lastly, discuss the unfairness of regret-optimal policies.",
+        "objects": [
+          "Decision maker"
+        ],
+        "inputs": [
+          "An unknown parameter",
+          "The reward",
+          "Time t",
+          "The utility"
+        ],
+        "decisions": [
+          "The policy chooses an arm for each arriving group",
+          "PF-OAM analogously allocates exploration across group-context pairs in the linear contextual model",
+          "PF-UCB allocates underexplored arms according to the estimated Nash-welfare program and otherwise exploits",
+          "Share that implies the desired result",
+          "Arm in a regret-optimal policy"
+        ],
+        "assumptions": [
+          "Policies are consistent and evaluated by logarithmically scaled asymptotic regret",
+          "The disagreement point is each group's optimal single-group learning outcome",
+          "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness",
+          "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM",
+          "The principal theoretical metric is asymptotic, with finite-horizon behavior illustrated numerically"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Decision maker",
+              "source": {
+                "type": "section",
+                "section": "Grouped Bandit Model",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "decision maker",
+                "matchedText": "decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "An unknown parameter",
+              "source": {
+                "type": "section",
+                "section": "Grouped Bandit Model",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "an unknown parameter",
+                "matchedText": "an unknown parameter",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "Grouped Bandit Model",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 8,
+                "quote": "the reward",
+                "matchedText": "the reward",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "Grouped Bandit Model",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "The group arriving at time t, gt, is chosen independently according to this latter distribution; At is then drawn according to Pgt.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The utility",
+              "source": {
+                "type": "section",
+                "section": "Price of Fairness",
+                "page": 12,
+                "sectionIndex": 4,
+                "sentence": 5,
+                "quote": "In the K-arm setting (Theorem 4), it can be shown that the utility gains of all groups are nonnegative under the regret-optimal policy, and hence, such an assumption is unnecessary.",
+                "matchedText": "the utility",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "The policy chooses an arm for each arriving group",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "the policy chooses an arm for each arriving group"
+              }
+            },
+            {
+              "value": "PF-OAM analogously allocates exploration across group-context pairs in the linear contextual model",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "PF-OAM analogously allocates exploration across group-context pairs in the linear contextual model"
+              }
+            },
+            {
+              "value": "PF-UCB allocates underexplored arms according to the estimated Nash-welfare program and otherwise exploits",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "PF-UCB allocates underexplored arms according to the estimated Nash-welfare program and otherwise exploits"
+              }
+            },
+            {
+              "value": "Share that implies the desired result",
+              "source": {
+                "type": "section",
+                "section": "Unfairness of Regret-Optimal Policies",
+                "page": 6,
+                "sectionIndex": 12,
+                "sentence": 8,
+                "quote": "share that implies the desired result",
+                "matchedText": "share that implies the desired result",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Arm in a regret-optimal policy",
+              "source": {
+                "type": "section",
+                "section": "Unfairness of Regret-Optimal Policies",
+                "page": 7,
+                "sectionIndex": 12,
+                "sentence": 27,
+                "quote": "arm in a regret-optimal policy",
+                "matchedText": "arm in a regret-optimal policy",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Policies are consistent and evaluated by logarithmically scaled asymptotic regret",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Policies are consistent and evaluated by logarithmically scaled asymptotic regret."
+              }
+            },
+            {
+              "value": "The disagreement point is each group's optimal single-group learning outcome",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The disagreement point is each group's optimal single-group learning outcome."
+              }
+            },
+            {
+              "value": "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Nash's Pareto, symmetry, affine-invariance, and independence axioms define proportional fairness."
+              }
+            },
+            {
+              "value": "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM."
+              }
+            },
+            {
+              "value": "The principal theoretical metric is asymptotic, with finite-horizon behavior illustrated numerically",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The principal theoretical metric is asymptotic, with finite-horizon behavior illustrated numerically."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 1
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "At each time step, we solve the optimization problem L( ˆ∆t) using the empirical estimate ˆ∆t, and the policy “follows” the solution.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "PF-OAM: Nash Solution for Grouped Linear",
+          "page": 11,
+          "sentence": 3
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "2.4. Examples of Grouped Bandit Models",
+            "equation": "",
+            "quote": "We now describe two examples of the grouped bandit model that impose additional assumptions on the rewards and group structure."
+          }
+        ],
+        "components": [
+          {
+            "id": "grouped-bandit-model",
+            "label": "Grouped Bandit Model",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Each group g ∈ G is associated with a probability distribution Pg over 2A and a probability of arrival pg > 0; P gpg = 1.",
+            "searchPhrases": [
+              "how grouped bandit model is represented",
+              "system process in fair allocation of exploration costs",
+              "grouped bandit model system process specification"
+            ],
+            "formal": "RT(\\pi,I) = E",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "I",
+                "meaning": "grouped bandit instance",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Each group g ∈ G is associated with a probability distribution Pg over 2A and a probability of arrival pg > 0; P gpg = 1.",
+              "An instance of the grouped bandit problem is specified by I = (A,G,p,P,F,θ), where all quantities except for θ are known.",
+              "The group arriving at time t, gt, is chosen independently according to this latter distribution; At is then drawn according to Pgt."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2.1. Grouped Bandit Model",
+                "equation": "",
+                "quote": "Each group g ∈ G is associated with a probability distribution Pg over 2A and a probability of arrival pg > 0; P gpg = 1."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Process dynamics”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "examples-of-grouped-bandit-models",
+            "label": "Examples of Grouped Bandit Models",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "We now describe two examples of the grouped bandit model that impose additional assumptions on the rewards and group structure.",
+            "searchPhrases": [
+              "how examples of grouped bandit models is represented",
+              "modeled objective in fair allocation of exploration costs",
+              "examples of grouped bandit models modeled objective specification"
+            ],
+            "formal": "Objective relation: We now describe two examples of the grouped bandit model that impose additional assumptions on the rewards and group structure.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "I",
+                "meaning": "grouped bandit instance",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "R_T^g(\\pi, I)",
+                "meaning": "regret incurred by group g through horizon T under policy π",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.4. Examples of Grouped Bandit Models",
+                "equation": "",
+                "quote": "We now describe two examples of the grouped bandit model that impose additional assumptions on the rewards and group structure."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Model objective”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "extension-to-grouped-linear-contextual-bandits",
+            "label": "Extension to Grouped Linear Contextual Bandits",
+            "role": "decision",
+            "concepts": [
+              "contextual-bandit",
+              "pricing"
+            ],
+            "explanation": "We also bound the price of fairness and, lastly, discuss the unfairness of regret-optimal policies.",
+            "searchPhrases": [
+              "how extension to grouped linear contextual bandits is represented",
+              "decision rule in fair allocation of exploration costs",
+              "extension to grouped linear contextual bandits decision rule specification"
+            ],
+            "formal": "Decision rule: We also bound the price of fairness and, lastly, discuss the unfairness of regret-optimal policies.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "PoF(I)",
+                "meaning": "fraction of the system-optimal aggregate regret reduction lost by imposing Nash fairness · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5. Extension to Grouped Linear Contextual Bandits",
+                "equation": "",
+                "quote": "We also bound the price of fairness and, lastly, discuss the unfairness of regret-optimal policies."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contextual-bandit",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Contextual bandit: “We also bound the price of fairness and, lastly, discuss the unfairness of regret-optimal policies.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “We also bound the price of fairness and, lastly, discuss the unfairness of regret-optimal policies.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "The K-armed model uses structured group action sets; the contextual extension assumes a grouped linear reward model and additional regularity for PF-OAM."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "pf-oam-nash-solution-for-grouped-linear-contextual-bandits",
+            "label": "PF-OAM: Nash Solution for Grouped Linear Contextual Bandits",
+            "role": "algorithm",
+            "concepts": [
+              "contextual-bandit",
+              "optimization"
+            ],
+            "explanation": "At each time step, we solve the optimization problem L( ˆ∆t) using the empirical estimate ˆ∆t, and the policy “follows” the solution.",
+            "searchPhrases": [
+              "how pf-oam: nash solution for grouped linear contextual bandits is represented",
+              "solution algorithm in fair allocation of exploration costs",
+              "pf-oam: nash solution for grouped linear contextual bandits solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Let εT = 1=log log T. gt and mt are the group and context, respectively, corresponding to time t, which are both observed.",
+              "Let S(t) = Pt s=1 1(Dc s) be the number of times that the algorithm did not exploit in the past.",
+              "After this, the algorithm runs the following steps at each time: 1."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.2. PF-OAM: Nash Solution for Grouped Linear Contextual Bandits",
+                "equation": "",
+                "quote": "At each time step, we solve the optimization problem L( ˆ∆t) using the empirical esti­ mate ˆ∆t, and the policy “follows” the solution."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contextual-bandit",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Contextual bandit: “Contextual bandit”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “Optimization”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "price-of-fairness",
+            "label": "Price of Fairness",
+            "role": "preference",
+            "concepts": [
+              "pricing",
+              "contextual-bandit"
+            ],
+            "explanation": "The PoF result of Theorem 4 extends to the contextual linear bandit setting, with an additional technical assumption that all utility gains are nonnegative under the efficient outcome.",
+            "searchPhrases": [
+              "how price of fairness is represented",
+              "modeled preferences in fair allocation of exploration costs",
+              "price of fairness modeled preferences specification"
+            ],
+            "formal": "Evaluation relation: The PoF result of Theorem 4 extends to the contextual linear bandit setting, with an additional technical assumption that all utility gains are nonnegative under the efficient outcome.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "PoF(I)",
+                "meaning": "fraction of the system-optimal aggregate regret reduction lost by imposing Nash fairness · [0,1]",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Let I be an instance of grouped linear contextual bandits, where UtilGaing(πOAM,I) ≥0 for all groups g.",
+              "The PoF result of Theorem 4 extends to the contextual linear bandit setting, with an additional technical assumption that all utility gains are nonnegative under the efficient outcome.",
+              "In the K-arm setting (Theorem 4), it can be shown that the utility gains of all groups are nonnegative under the regret-optimal policy, and hence, such an assumption is unnecessary."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.3. Price of Fairness",
+                "equation": "",
+                "quote": "The PoF result of Theorem 4 extends to the contextual linear bandit setting, with an additional technical assumption that all utility gains are nonnegative under the efficient outcome."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Pricing: “The PoF result of Theorem 4 extends to the contextual linear bandit setting, with an additional technical assumption”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "contextual-bandit",
+                "status": "modeled",
+                "representation": "In the preference specification, the source expresses Contextual bandit: “The PoF result of Theorem 4 extends to the contextual linear bandit setting, with an additional technical assumption”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "unfairness-of-regret-optimal-policies",
+            "label": "Unfairness of Regret-Optimal Policies",
+            "role": "decision",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Note that the solution to the optimization problem (L(M,∆)) assigns which contexts should explore and hence incur regret.",
+            "searchPhrases": [
+              "how unfairness of regret-optimal policies is represented",
+              "decision rule in fair allocation of exploration costs",
+              "unfairness of regret-optimal policies decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Because a group g is composed of a subset of contexts, Mg ⊆M, the group will be worse off if Mg contains contexts that are assigned to explore."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.4. Unfairness of Regret-Optimal Policies",
+                "equation": "",
+                "quote": "Note that the solution to the optimization problem (L(M,∆)) assigns which contexts should explore and hence incur regret."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Optimization as “optimal solution”: “Note that the solution to the optimization problem (L(M,∆)) assigns which contexts should explore and hence incur regret.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "51b9dea7137976d58d60bc78c52e7d428786a80c50bb05e58fc20e6cee319160",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "9b762f82e31fd5484d4f7853ecc05b5de79797b4363ad4987ed6e14b7f512f67",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-01985/9b762f82e31fd5484d4f7853ecc05b5de79797b4363ad4987ed6e14b7f512f67.json",
+      "extractionQaDecisionSha256": "97daea4bf286efbf9be3a3806511a9ceaab07ee7d01efcaed1b300799466be0f",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

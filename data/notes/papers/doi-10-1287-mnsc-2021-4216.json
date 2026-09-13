@@ -1,0 +1,2114 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "curated-source-v1",
+  "authoringMode": "curated",
+  "paperId": "doi-10-1287-mnsc-2021-4216",
+  "sourcePdfSha256": "8612d3516477dc9a15db85304353e0b596c8a3a47e0af72189c6019ff4e3c83a",
+  "extractionPagesSha256": "f8b9f46bdcf5e0d546b8974b3e4cbe5425c00dfa0802f5e445b36e7268e10853",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "261cb76bf18bec9a76c8adc9d9fbf4f8d6a181a6e754fc438727b02142e596a6",
+  "note": {
+    "id": "doi-10-1287-mnsc-2021-4216",
+    "question": "How can a platform reserve finite resources effectively when customer contexts arrive adversarially and context-action consumption probabilities must be learned online?",
+    "overview": "A platform allocates finite, nonreplenishable resources to sequential customers whose contexts can vary arbitrarily, while stationary context-action outcome laws must be learned from chosen-action feedback. IBOL combines a depletion-sensitive inventory-balancing potential with a bandit oracle, separating competitive loss from adversarial arrivals and regret from learning. The paper derives matching and segmented-recommendation variants plus a multiple-price assortment extension, with UCB, lazyUCB, and Thompson-sampling instantiations.",
+    "modelTypes": [
+      "Optimization",
+      "Stochastic model",
+      "Learning & algorithms"
+    ],
+    "coverage": {
+      "pages": [
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19,
+        29,
+        30
+      ],
+      "note": "Core formulation, IBOL construction, parameter tuning, UCB and lazyUCB variants, performance guarantees, segmented recommendation, and the multiple-price hotel extension are mapped. Equations are Atlas-normalized restatements; proofs and ancillary literature are not reconstructed exhaustively."
+    },
+    "models": [
+      {
+        "id": "general-ibol",
+        "name": "General online resource allocation with IBOL",
+        "kind": "baseline",
+        "relation": "Parent framework for the paper's matching and recommendation variants and its multiple-price extension.",
+        "relationships": [],
+        "summary": "Observe a customer context, choose an allocation action, receive bandit feedback about stochastic resource consumption, and protect scarce inventory by discounting the reward of heavily depleted resources.",
+        "objects": [
+          "n nonreplenishable resources with integer capacities",
+          "T sequential customers",
+          "A finite known context set and an allocation action set",
+          "Binary vector resource-consumption outcomes"
+        ],
+        "inputs": [
+          "Initial capacities b_i and unit rewards r_i",
+          "Unknown stationary outcome laws ρ_(x,a)",
+          "An adversarially ordered context sequence",
+          "Exploitation parameter ε, potential Ψ, and a bandit oracle"
+        ],
+        "decisions": [
+          "Choose action a_t after observing x_t and prior chosen-action feedback",
+          "Tune ε to trade inventory protection against learning exploration"
+        ],
+        "assumptions": [
+          "Resources are not replenished within the allocation horizon.",
+          "The context sequence is fixed by an oblivious adversary.",
+          "Each context-action outcome law is stationary but initially unknown.",
+          "Only the outcome of the chosen action is observed; components of its outcome vector may be correlated."
+        ],
+        "method": "Use a depletion-dependent potential to form discounted rewards, solve the resulting auxiliary contextual bandit with an oracle, and connect its relaxed regret to an LP upper bound through competitive analysis.",
+        "sources": [
+          {
+            "page": 5,
+            "section": "2. Model Formulation",
+            "equation": "",
+            "quote": "We consider the following class of online resource allocation problems."
+          },
+          {
+            "page": 6,
+            "section": "2. Model Formulation",
+            "equation": "",
+            "quote": "It is worth noting that the feedback yt at each time t is partial feedback"
+          }
+        ],
+        "components": [
+          {
+            "id": "resource-allocation-environment",
+            "label": "Adversarial-context resource allocation",
+            "role": "process",
+            "concepts": [
+              "inventory",
+              "resource-capacity",
+              "resource-assignment",
+              "stochastic-resource-consumption",
+              "adversarial-arrivals",
+              "bandit-feedback",
+              "demand-learning"
+            ],
+            "explanation": "At time t the platform observes context x_t, chooses a_t using past observations, and sees y_t drawn from ρ_(x_t,a_t). Resource i is consumed and earns r_i only when y_(t,i)=1 and its cumulative use remains below b_i.",
+            "searchPhrases": [
+              "online allocation with adversarial customer contexts",
+              "learn stochastic resource consumption under finite inventory",
+              "bandit feedback without a customer arrival forecast"
+            ],
+            "formal": "p_(x,a,i) = E_[y∼ρ_(x,a)][y_i]; maximize E[Σ_i r_i min{b_i, Σ_t y_(t,i)}].",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "b_i",
+                "meaning": "Initial capacity of resource i"
+              },
+              {
+                "symbol": "ρ_(x,a)",
+                "meaning": "Unknown outcome distribution for context x and action a"
+              },
+              {
+                "symbol": "p_(x,a,i)",
+                "meaning": "Marginal probability that action a consumes resource i under context x"
+              },
+              {
+                "symbol": "N_i^t",
+                "meaning": "Cumulative consumption of resource i through time t"
+              },
+              {
+                "symbol": "n",
+                "meaning": "Number of nonreplenishable resources"
+              },
+              {
+                "symbol": "T",
+                "meaning": "Allocation horizon in customer arrivals"
+              },
+              {
+                "symbol": "r_i",
+                "meaning": "Reward earned by a feasible consumption of resource i"
+              },
+              {
+                "symbol": "x_t,a_t,y_t",
+                "meaning": "Observed context, chosen action, and realized binary outcome at time t"
+              }
+            ],
+            "conditions": [
+              "Inventory is nonreplenishable during the horizon.",
+              "Contexts may vary arbitrarily but are chosen by an oblivious adversary.",
+              "Each context-action outcome law is stationary but unknown.",
+              "Only the outcome of the chosen action is observed.",
+              "Coordinates of the binary outcome vector may be correlated.",
+              "No fitted customer-arrival forecast is required by the framework."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Model Formulation",
+                "equation": "",
+                "quote": "We consider the following class of online resource allocation problems."
+              },
+              {
+                "page": 6,
+                "section": "2. Model Formulation",
+                "equation": "",
+                "quote": "It is worth noting that the feedback yt at each time t is partial feedback"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "Finite resource inventories b_i cap the number of successful consumptions that can earn reward.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  3
+                ]
+              },
+              {
+                "conceptId": "resource-capacity",
+                "status": "modeled",
+                "representation": "Each resource has an explicit integer capacity and successful allocations stop earning reward after depletion.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  3
+                ]
+              },
+              {
+                "conceptId": "resource-assignment",
+                "status": "modeled",
+                "representation": "The online action selects an allocation for the current customer; depleted-resource outcomes are suppressed by the inventory rule.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  7
+                ]
+              },
+              {
+                "conceptId": "stochastic-resource-consumption",
+                "status": "modeled",
+                "representation": "A context-action pair induces a binary random vector that can consume several resources with correlated coordinates.",
+                "conditionRefs": [
+                  2,
+                  4
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2,
+                  7
+                ]
+              },
+              {
+                "conceptId": "adversarial-arrivals",
+                "status": "modeled",
+                "representation": "The customer-context sequence may vary arbitrarily and is fixed by an oblivious adversary.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial"
+              },
+              {
+                "conceptId": "bandit-feedback",
+                "status": "modeled",
+                "representation": "The platform observes the outcome of its selected action but not the counterfactual outcomes of other actions.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "symbolRefs": [
+                  7
+                ]
+              },
+              {
+                "conceptId": "demand-learning",
+                "status": "modeled",
+                "representation": "The learned objects are stationary context-action consumption probabilities rather than the arrival sequence.",
+                "conditionRefs": [
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "replenishment",
+                "status": "explicitlyExcluded",
+                "representation": "Resources cannot be replenished during the modeled allocation horizon.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial"
+              }
+            ]
+          },
+          {
+            "id": "inventory-balancing-potential",
+            "label": "Depletion-sensitive inventory potential",
+            "role": "algorithm",
+            "concepts": [
+              "inventory-balancing",
+              "inventory",
+              "resource-capacity",
+              "exploration-exploitation"
+            ],
+            "explanation": "IBOL discounts resource i's reward according to its depleted fraction. Larger ε makes the potential steeper near depletion, reserving scarce stock more aggressively while allowing the learning oracle to explore less.",
+            "searchPhrases": [
+              "epsilon-perturbed inventory balancing potential",
+              "discount rewards for nearly depleted resources",
+              "coordinate inventory protection with bandit exploration"
+            ],
+            "formal": "r_i^t = r_i[1 − Ψ(N_i^(t−1)/b_i)],  Ψ(x) = [e^((1+ε)x) − 1]/[e^(1+ε) − 1].",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "r_i^t",
+                "meaning": "Discounted reward used by the oracle at time t"
+              },
+              {
+                "symbol": "Ψ",
+                "meaning": "Nondecreasing depletion potential from zero to one"
+              },
+              {
+                "symbol": "ε",
+                "meaning": "Exploitation parameter in [0,1]"
+              },
+              {
+                "symbol": "N_i^(t−1)/b_i",
+                "meaning": "Fraction of resource i depleted before time t"
+              }
+            ],
+            "conditions": [
+              "Ψ maps [0,1] to [0,1], with Ψ(0)=0 and Ψ(1)=1.",
+              "A depleted resource receives zero discounted reward.",
+              "ε=0 recovers the classical inventory-balancing potential.",
+              "Increasing ε makes the inventory penalty steeper and directs the learning oracle to explore less."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.1. Definition of ε-Perturbed Potential Function Ψ",
+                "equation": "(5), (7)",
+                "quote": "A potential function is a standard tool used in online resource allocation to generate discounted rewards"
+              },
+              {
+                "page": 11,
+                "section": "4.4. Tuning the ε Parameter",
+                "equation": "(16)",
+                "quote": "When ϵ increases, IBOL focuses on maximizing a more stringent competitive ratio but minimizing a (1 + ϵ)-relaxed regret"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory-balancing",
+                "status": "modeled",
+                "representation": "The potential reduces the working reward of a resource as its inventory is depleted.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  3
+                ]
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "Current inventory consumption enters each action score through the depleted fraction N_i^(t−1)/b_i.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  3
+                ]
+              },
+              {
+                "conceptId": "resource-capacity",
+                "status": "modeled",
+                "representation": "Capacity b_i normalizes depletion so the same potential operates across differently sized resources.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  3
+                ]
+              },
+              {
+                "conceptId": "exploration-exploitation",
+                "status": "modeled",
+                "representation": "ε jointly changes the inventory penalty and the amount of exploration delegated to the bandit oracle.",
+                "conditionRefs": [
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "id": "auxiliary-relaxed-regret",
+            "label": "Auxiliary bandit and relaxed regret",
+            "role": "objective",
+            "concepts": [
+              "contextual-bandit",
+              "online-learning",
+              "regret-analysis",
+              "exploration-exploitation"
+            ],
+            "explanation": "The auxiliary problem retains contexts, actions, and unknown outcome laws but abstracts explicit inventory feasibility into adaptive discounted rewards. Its oracle is evaluated by (1+ε)-relaxed regret, so it may identify an ε-optimal action without learning the exact best action.",
+            "searchPhrases": [
+              "contextual bandit with inventory abstracted into rewards",
+              "relaxed regret for adaptive discounted rewards",
+              "learn an approximately optimal action with less exploration"
+            ],
+            "formal": "Reg_ε = E[Σ_t {R^t(a_t*) − (1+ε)R^t(a_t)}], where a_t* ∈ arg max_(a∈A) R^t(a).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "R^t(a)",
+                "meaning": "Expected discounted reward of action a at time t"
+              },
+              {
+                "symbol": "Reg_ε",
+                "meaning": "(1+ε)-relaxed regret of the bandit oracle"
+              },
+              {
+                "symbol": "a_t*",
+                "meaning": "Action maximizing the current discounted reward"
+              }
+            ],
+            "conditions": [
+              "Discounted rewards may adapt to earlier allocation decisions.",
+              "Outcome laws remain stationary while discounted rewards are nonstationary.",
+              "ε=0 gives ordinary regret.",
+              "Inventory is not a direct feasibility constraint inside the auxiliary bandit."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "3.2–3.4. Auxiliary Problem and Relaxed Regret",
+                "equation": "(8)",
+                "quote": "Our auxiliary problem can be seen as a way of “abstracting” the inventory constraints away from a typical contextual bandit problem"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "contextual-bandit",
+                "status": "modeled",
+                "representation": "The auxiliary learner observes a context, chooses an action, and receives only that action's stochastic outcome.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal"
+              },
+              {
+                "conceptId": "online-learning",
+                "status": "modeled",
+                "representation": "The oracle updates its estimates sequentially and is judged against the best current discounted-reward action.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "conceptId": "regret-analysis",
+                "status": "modeled",
+                "representation": "Performance is measured by relaxed regret Reg_ε rather than ordinary unconstrained bandit regret.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1
+                ]
+              },
+              {
+                "conceptId": "exploration-exploitation",
+                "status": "modeled",
+                "representation": "Positive ε lowers the accuracy required of the learner and permits a more exploitative oracle.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "backgroundOnly",
+                "representation": "Inventory affects the auxiliary rewards through the potential, but explicit capacity feasibility is abstracted away in this component.",
+                "conditionRefs": [
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial"
+              }
+            ]
+          },
+          {
+            "id": "lp-performance-bridge",
+            "label": "LP benchmark and two-part guarantee",
+            "role": "objective",
+            "concepts": [
+              "competitive-analysis",
+              "regret-analysis",
+              "resource-capacity"
+            ],
+            "explanation": "A fluid LP upper-bounds even a clairvoyant feasible allocation policy. The IBOL guarantee multiplies the LP value minus relaxed regret by a capacity-dependent competitive factor, exposing separate losses from adversarial arrivals and learning.",
+            "searchPhrases": [
+              "LP benchmark for online resource allocation",
+              "competitive ratio plus online learning regret",
+              "tune exploitation using a worst-case performance bound"
+            ],
+            "formal": "E[ALG] ≥ f_Ψ({b_i},ε)[OPT − Reg_ε], where f_Ψ({b_i},ε)=min_i {(1−e^(−(1+ε)))/[(b_i+1+ε)(1−e^(−(1+ε)/b_i))]}.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "OPT",
+                "meaning": "Optimal value of the fluid LP upper bound"
+              },
+              {
+                "symbol": "ALG",
+                "meaning": "Total reward earned by IBOL"
+              },
+              {
+                "symbol": "f_Ψ",
+                "meaning": "Capacity- and ε-dependent competitive factor"
+              },
+              {
+                "symbol": "Reg_ε",
+                "meaning": "Relaxed regret contributed by the learning oracle"
+              }
+            ],
+            "conditions": [
+              "LP resource constraints hold in expectation and therefore relax the online problem.",
+              "The theorem accepts any oracle for which relaxed regret can be bounded.",
+              "Increasing ε can reduce regret while weakening the competitive factor."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.1–4.2. LP Upper Bound and Performance Guarantee",
+                "equation": "(9)–(15)",
+                "quote": "The LP Primal serves as a ﬂuid relaxation"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "competitive-analysis",
+                "status": "modeled",
+                "representation": "The factor f_Ψ measures the fraction of the clairvoyant LP benchmark protected against adversarial arrival order.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "regret-analysis",
+                "status": "modeled",
+                "representation": "Relaxed regret is the additive learning loss inside the competitive performance bound.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  3
+                ]
+              },
+              {
+                "conceptId": "resource-capacity",
+                "status": "modeled",
+                "representation": "The competitive factor depends on individual capacities and approaches its large-inventory limit through b_min.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unknown-stochastic-matching",
+        "name": "Online matching with unknown stochastic rewards",
+        "kind": "variant",
+        "relation": "Internet advertising and crowdsourcing share this context-action specialization of the general IBOL framework.",
+        "relationships": [],
+        "summary": "Each arriving context reveals which resource-arm pairs are compatible. The platform learns stationary click or completion probabilities while capacity limits and adversarial context order make myopic exploration costly.",
+        "objects": [
+          "Advertisers or task owners as resources",
+          "Arriving web surfers or workers",
+          "K advertisements or tasks per resource"
+        ],
+        "inputs": [
+          "Binary compatibility vector x",
+          "Unknown success probabilities q_(i,k)",
+          "Discounted resource rewards r_i^t"
+        ],
+        "decisions": [
+          "Select a compatible resource-arm pair (i,k)",
+          "Choose ordinary UCB at ε=0 or lazyUCB at ε>0"
+        ],
+        "assumptions": [
+          "X={0,1}^n and A={(i,k): i∈[n], k∈[K]}.",
+          "q_(i,k) is stationary and initially unknown.",
+          "An incompatible resource cannot be consumed by the arriving context."
+        ],
+        "method": "Estimate each arm's success probability from chosen-action outcomes. Rank compatible arms by discounted reward times an ordinary or reduced-radius upper confidence estimate, then use the general IBOL potential and performance bridge.",
+        "sources": [
+          {
+            "page": 6,
+            "section": "2.1. Application 1: Internet Advertising / Crowd Sourcing",
+            "equation": "",
+            "quote": "The advertisers are modeled as the resources [n], and the web surfers are modeled as the customers [T]"
+          },
+          {
+            "page": 7,
+            "section": "2.1. Application 1: Internet Advertising / Crowd Sourcing",
+            "equation": "(4)",
+            "quote": "The resulting click probability is"
+          }
+        ],
+        "components": [
+          {
+            "id": "compatible-arm-outcomes",
+            "label": "Compatible-arm outcome law",
+            "role": "process",
+            "concepts": [
+              "matching",
+              "advertising-allocation",
+              "crowdsourcing",
+              "demand-learning"
+            ],
+            "explanation": "Action (i,k) offers arm k of resource i. A compatible context consumes resource i with unknown probability q_(i,k); otherwise the outcome is zero. Advertising interprets this as a click, while crowdsourcing interprets it as task completion.",
+            "searchPhrases": [
+              "online matching with unknown success probabilities",
+              "advertising allocation with learned click rates",
+              "crowdsourcing assignment under uncertain completion"
+            ],
+            "formal": "ρ_(x,(i,k))(e_i)=1{x_i=1}q_(i,k); ρ_(x,(i,k))(0)=1−ρ_(x,(i,k))(e_i); ρ_(x,(i,k))(y)=0 for every other y∈{0,1}^n.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "x_i",
+                "meaning": "Indicator that resource i is compatible with the arriving context"
+              },
+              {
+                "symbol": "q_(i,k)",
+                "meaning": "Unknown click or completion probability for arm (i,k)"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "Outcome consuming one unit of resource i"
+              }
+            ],
+            "conditions": [
+              "Only compatible pairs with x_i=1 can produce a successful outcome.",
+              "Each resource has K arms with separate latent success probabilities.",
+              "Advertising and crowdsourcing are interpretations of the same mathematical model."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.1. Application 1: Internet Advertising / Crowd Sourcing",
+                "equation": "",
+                "quote": "The advertisers are modeled as the resources [n], and the web surfers are modeled as the customers [T]"
+              },
+              {
+                "page": 7,
+                "section": "2.1. Application 1: Internet Advertising / Crowd Sourcing",
+                "equation": "(4)",
+                "quote": "The resulting click probability is"
+              },
+              {
+                "page": 7,
+                "section": "2.1.2. Crowd Sourcing",
+                "equation": "(4)",
+                "quote": "The same mathematical mod- el on [n],[T],X,A,ρ captures"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "matching",
+                "status": "modeled",
+                "representation": "The chosen arm matches one compatible arriving customer to one resource.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal"
+              },
+              {
+                "conceptId": "advertising-allocation",
+                "status": "modeled",
+                "representation": "Advertisers supply capacity and a successful stochastic match is a paid click.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "crowdsourcing",
+                "status": "modeled",
+                "representation": "Task owners supply task capacity and success means the matched worker completes the assigned task.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 2
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "demand-learning",
+                "status": "modeled",
+                "representation": "Chosen-action feedback estimates the arm-specific q_(i,k) probabilities during allocation.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ucb-lazyucb-oracles",
+            "label": "UCB and lazyUCB oracles",
+            "role": "algorithm",
+            "concepts": [
+              "upper-confidence-bound",
+              "online-learning",
+              "exploration-exploitation"
+            ],
+            "explanation": "Ordinary UCB adds an empirical-Bernstein confidence radius to each learned arm probability. lazyUCB uses the smaller of that radius and an ε-dependent radius of order 1/(εM), preserving optimism approximately while shifting effort toward exploitation.",
+            "searchPhrases": [
+              "lazy UCB with less exploration",
+              "upper confidence bounds under inventory scarcity",
+              "epsilon-relaxed regret bandit oracle"
+            ],
+            "formal": "LazyRad_t(i,k)=min{lad(ε,M_t(i,k);δ_t), rad(q̄_t(i,k),M_t(i,k);δ_t)}, where lad(ε,M;δ)=[(2+ε)/ε]log(1/δ)/max{M,1}.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "M_t(i,k)",
+                "meaning": "Number of earlier selections of arm (i,k)"
+              },
+              {
+                "symbol": "q̄_t(i,k)",
+                "meaning": "Empirical success probability for arm (i,k)"
+              },
+              {
+                "symbol": "δ_t",
+                "meaning": "Time-dependent confidence parameter 1/(1+t)^2"
+              },
+              {
+                "symbol": "LazyRad_t",
+                "meaning": "Reduced confidence radius used by lazyUCB"
+              }
+            ],
+            "conditions": [
+              "Ordinary UCB is used when ε=0.",
+              "lazyUCB uses ε∈(0,1] and retains a positive exploration bonus.",
+              "The smaller radius supports relaxed rather than ordinary regret."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "5.1. UCB Oracles for Application 1",
+                "equation": "(18)–(20); Algorithm 2",
+                "quote": "The UCB oracle at time t is provided in Algorithm 2."
+              },
+              {
+                "page": 13,
+                "section": "5.2. LazyUCB Oracles for Application 1",
+                "equation": "(22); Algorithm 3",
+                "quote": "Different from the UCB oracle, however, the lazyUCB oracle employs a smaller conﬁdence radius."
+              },
+              {
+                "page": 14,
+                "section": "5.2. LazyUCB Performance Guarantee",
+                "equation": "(23)–(26); Theorem 3; Corollary 2",
+                "quote": "We provide the following performance guarantee on the lazyUCB oracle for the auxiliary problem"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "upper-confidence-bound",
+                "status": "modeled",
+                "representation": "The oracle scores each compatible arm with an optimistic estimate of its discounted expected reward.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  },
+                  {
+                    "scope": "component",
+                    "index": 2
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "conceptId": "online-learning",
+                "status": "modeled",
+                "representation": "Empirical arm outcomes update confidence bounds throughout the allocation horizon.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "exploration-exploitation",
+                "status": "modeled",
+                "representation": "ε shrinks the lazy confidence radius and therefore trades exact arm identification for additional exploitation.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  },
+                  {
+                    "scope": "component",
+                    "index": 2
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "id": "matching-performance-envelope",
+            "label": "Matching regret and tightness",
+            "role": "objective",
+            "concepts": [
+              "regret-analysis",
+              "competitive-analysis"
+            ],
+            "explanation": "The UCB and lazyUCB guarantees combine the inventory-balancing competitive factor with a learning term that scales with nK and OPT. A constructed lower bound shows that adversarial matching loss and probability-learning loss cannot both be removed.",
+            "searchPhrases": [
+              "tight lower bound for unknown stochastic matching",
+              "competitive and learning losses accumulate",
+              "square-root OPT regret with adversarial arrivals"
+            ],
+            "formal": "Reg_0 = Õ(√(nK·OPT)); E[ALG_UCB] ≥ f_Ψ({b_i},0)·OPT − Õ(√(nK·OPT)); E[ALG_lazy] ≥ f_Ψ({b_i},ε)·OPT − min{Õ(√(nK·OPT)), Õ((1+1/ε)nK)}; for the Theorem 4 family, E[ALG] ≤ (1−1/e)OPT − Ω(√(K·OPT)).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "nK",
+                "meaning": "Number of resource-arm combinations"
+              },
+              {
+                "symbol": "OPT",
+                "meaning": "Fluid LP benchmark"
+              },
+              {
+                "symbol": "Reg_0",
+                "meaning": "Ordinary UCB regret"
+              },
+              {
+                "symbol": "ALG_UCB, ALG_lazy",
+                "meaning": "IBOL reward with the ordinary and lazy UCB oracles"
+              },
+              {
+                "symbol": "f_Ψ",
+                "meaning": "Capacity- and ε-dependent inventory-balancing factor"
+              },
+              {
+                "symbol": "ε",
+                "meaning": "LazyUCB exploitation parameter"
+              }
+            ],
+            "conditions": [
+              "Theorem 3 bounds normalized relaxed regret, not ordinary regret.",
+              "The lower bound establishes the main asymptotic loss structure for the constructed family.",
+              "Theorem 4's lower-bound construction assumes positive integers b≥K≥3.",
+              "Logarithmic factors are suppressed by Õ notation."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "5.1. UCB Performance Guarantee",
+                "equation": "Theorem 2; Corollary 1; (21)",
+                "quote": "Theorem 2. Consider the UCB oracle (Algorithm 2) for application 1."
+              },
+              {
+                "page": 14,
+                "section": "5.2. LazyUCB Performance Guarantee",
+                "equation": "Theorem 3; Corollary 2; (26)",
+                "quote": "We provide the following performance guarantee on the lazyUCB oracle for the auxiliary problem"
+              },
+              {
+                "page": 15,
+                "section": "5.3. Tightness of Our Guarantee for Application 1",
+                "equation": "Theorem 4",
+                "quote": "Theorem 4. Let n, b, K be any positive integers satisfying"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "regret-analysis",
+                "status": "modeled",
+                "representation": "The matching oracle's learning loss is quantified by ordinary or relaxed regret bounds in nK and OPT.",
+                "conditionRefs": [
+                  0,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2,
+                  5
+                ]
+              },
+              {
+                "conceptId": "competitive-analysis",
+                "status": "modeled",
+                "representation": "The online reward guarantee retains the inventory-balancing factor and adds the unavoidable learning loss; the lower bound shows both losses are intrinsic to the constructed family.",
+                "conditionRefs": [
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  },
+                  {
+                    "scope": "component",
+                    "index": 2
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  3,
+                  4
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "personalized-product-recommendation",
+        "name": "Personalized recommendation with customer segmentation",
+        "kind": "variant",
+        "relation": "The context identifies a customer segment and the action recommends one inventory-constrained product.",
+        "relationships": [],
+        "summary": "A seller observes a customer's segment, recommends a single product, and learns segment-product purchase probabilities from repeat segment arrivals while preserving stock for later customers.",
+        "objects": [
+          "Products as inventory resources",
+          "Customers grouped into finitely many observable segments"
+        ],
+        "inputs": [
+          "Segment x",
+          "Unknown segment-product purchase probabilities p_(x,i)",
+          "Product capacities and unit revenues"
+        ],
+        "decisions": [
+          "Recommend one product i after observing the customer's segment",
+          "Choose an ordinary or lazy UCB score for each product"
+        ],
+        "assumptions": [
+          "A=[n], so each action recommends one product.",
+          "A purchase consumes one unit of the recommended product; no purchase consumes none.",
+          "Segment-product probabilities are stationary but unknown.",
+          "Repeated observations from the same segment permit learning."
+        ],
+        "method": "Apply product-level UCB or lazyUCB statistics indexed by customer segment, then pass their optimistic purchase estimates through the general IBOL discounted-reward rule.",
+        "sources": [
+          {
+            "page": 7,
+            "section": "2.2. Application 2: Personalized Product Recommendation with Customer Segmentation",
+            "equation": "",
+            "quote": "Our model also applies when an inventory-constrained seller conducts sales"
+          }
+        ],
+        "components": [
+          {
+            "id": "segment-product-learning",
+            "label": "Segment-product purchase learning",
+            "role": "information",
+            "concepts": [
+              "recommendation",
+              "market-segmentation",
+              "consumer-heterogeneity",
+              "demand-learning"
+            ],
+            "explanation": "The observed segment x indexes an unknown purchase probability p_(x,i) for each product i. A recommendation produces either a purchase outcome e_i or no purchase, and repeated segment visits make those probabilities learnable.",
+            "searchPhrases": [
+              "personalized recommendation by customer segment",
+              "learn segment-product purchase probabilities",
+              "inventory-constrained contextual recommendation"
+            ],
+            "formal": "ρ_(x,i)(e_i)=p_(x,i)=1−ρ_(x,i)(0); expected revenue from recommendation i is r_i p_(x,i).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "Observed customer segment"
+              },
+              {
+                "symbol": "p_(x,i)",
+                "meaning": "Unknown purchase probability for segment x and product i"
+              },
+              {
+                "symbol": "e_i",
+                "meaning": "Purchase outcome consuming product i"
+              }
+            ],
+            "conditions": [
+              "The context set contains finitely many customer segments.",
+              "The action set contains one action for each product.",
+              "Purchase probabilities repeat across customers in the same segment."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "2.2. Application 2: Personalized Product Recommendation with Customer Segmentation",
+                "equation": "",
+                "quote": "Our model also applies when an inventory-constrained seller conducts sales"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "recommendation",
+                "status": "modeled",
+                "representation": "The action recommends one product after the customer's segment is observed.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal"
+              },
+              {
+                "conceptId": "market-segmentation",
+                "status": "modeled",
+                "representation": "Customer characteristics are compressed into the finite context x that indexes purchase behavior.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "consumer-heterogeneity",
+                "status": "modeled",
+                "representation": "Different observable segments can have different probabilities of purchasing the same product.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1
+                ]
+              },
+              {
+                "conceptId": "demand-learning",
+                "status": "modeled",
+                "representation": "Purchase outcomes update the unknown p_(x,i) values during the selling horizon.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          {
+            "id": "segmented-ucb-oracles",
+            "label": "Segmented UCB and lazyUCB",
+            "role": "algorithm",
+            "concepts": [
+              "upper-confidence-bound",
+              "contextual-bandit",
+              "online-learning"
+            ],
+            "explanation": "For the current segment, each product's empirical purchase rate receives an ordinary or lazy confidence bonus. The chosen product maximizes its inventory-discounted optimistic revenue, and the resulting guarantees mirror the matching specialization after redefining K as the number of segments.",
+            "searchPhrases": [
+              "UCB recommendation by customer segment",
+              "lazy confidence bounds for product purchase rates",
+              "contextual bandit recommendation with inventory"
+            ],
+            "formal": "UCB_t(x_t,i)=r_i^t[p̄_t(x_t,i)+rad(p̄_t(x_t,i),L_t(x_t,i),δ_t)]; lazyUCB replaces rad with LazyRad.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "L_t(x,i)",
+                "meaning": "Earlier recommendations of product i to segment x"
+              },
+              {
+                "symbol": "p̄_t(x,i)",
+                "meaning": "Empirical purchase probability for segment-product pair (x,i)"
+              },
+              {
+                "symbol": "K=|X|",
+                "meaning": "Number of customer segments in this specialization"
+              }
+            ],
+            "conditions": [
+              "K denotes customer segments here, not arms per resource as in Application 1.",
+              "Only observations from the same segment-product pair update p̄_t(x,i).",
+              "The product score is multiplied by IBOL's discounted reward."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "5.4. UCB and LazyUCB Oracles for Application 2",
+                "equation": "Algorithms 4–5",
+                "quote": "Note that Algorithms 4 and 5 are analogous"
+              },
+              {
+                "page": 16,
+                "section": "5.4. UCB and LazyUCB Oracles for Application 2",
+                "equation": "Corollaries 3–4",
+                "quote": "The proofs for these corollaries hinges on proving bounds"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "upper-confidence-bound",
+                "status": "modeled",
+                "representation": "Each segment-product probability receives an optimistic confidence adjustment before recommendation.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "conceptId": "contextual-bandit",
+                "status": "modeled",
+                "representation": "The current segment is the context and a recommended product is the bandit action.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  2
+                ]
+              },
+              {
+                "conceptId": "online-learning",
+                "status": "modeled",
+                "representation": "Purchase feedback progressively refines the optimistic score for each segment-product pair.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": "segmented-performance",
+            "label": "Recommendation performance guarantee",
+            "role": "objective",
+            "concepts": [
+              "competitive-analysis",
+              "regret-analysis"
+            ],
+            "explanation": "Corollaries 3 and 4 carry the UCB and lazyUCB reward guarantees to the segmented-recommendation model. The matching-arm count is replaced by the number of segment-product pairs while the inventory-balancing factor remains unchanged.",
+            "searchPhrases": [
+              "performance guarantee for contextual recommendation",
+              "regret bound with customer segments and products",
+              "competitive inventory guarantee for personalized offers"
+            ],
+            "formal": "E[ALG_UCB] ≥ [(1−1/e)/((1+b_min)(1−e^(−1/b_min)))]·OPT − Õ(√(n|X|·OPT)); E[ALG_lazy] ≥ f_Ψ({b_i},ε)·OPT − min{Õ(√(n|X|·OPT)), Õ((1+1/ε)n|X|)}.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "|X|",
+                "meaning": "Number of customer segments"
+              },
+              {
+                "symbol": "n|X|",
+                "meaning": "Number of segment-product probability terms"
+              },
+              {
+                "symbol": "ALG_UCB, ALG_lazy",
+                "meaning": "IBOL reward under the two segmented learning oracles"
+              },
+              {
+                "symbol": "b_min",
+                "meaning": "Smallest product inventory"
+              },
+              {
+                "symbol": "f_Ψ",
+                "meaning": "Capacity- and ε-dependent inventory-balancing factor"
+              },
+              {
+                "symbol": "ε",
+                "meaning": "LazyUCB exploitation parameter"
+              }
+            ],
+            "conditions": [
+              "The guarantees are analogues of the matching results, not new ordinary-regret dominance claims.",
+              "Inventory and adversarial context ordering remain governed by the general IBOL model."
+            ],
+            "sources": [
+              {
+                "page": 15,
+                "section": "5.4. UCB and LazyUCB Oracles for Application 2",
+                "equation": "Corollary 3",
+                "quote": "Corollary 3. For application 2, the IBOL algorithm"
+              },
+              {
+                "page": 16,
+                "section": "5.4. UCB and LazyUCB Oracles for Application 2",
+                "equation": "Corollary 4",
+                "quote": "The proofs for these corollaries hinges on proving bounds"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "competitive-analysis",
+                "status": "modeled",
+                "representation": "The segmented policy is compared with the same LP benchmark and inventory-balancing factor as the parent framework.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "conceptId": "regret-analysis",
+                "status": "modeled",
+                "representation": "The additive learning term scales with the number of segment-product pairs.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  5
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "multiple-price-assortment",
+        "name": "Multiple-reward-rate assortment extension",
+        "kind": "extension",
+        "relation": "Appendix E replaces one reward per resource with a finite price set. The hotel study instantiates this extension with multinomial-logit choice and Thompson sampling.",
+        "relationships": [
+          {
+            "type": "extends",
+            "targetModelId": "general-ibol"
+          }
+        ],
+        "summary": "The action is a downward-closed assortment of resource-price combinations. A price-dependent virtual cost protects inventory across reward rates, while substitutable demand and a Thompson-sampling oracle support the hotel application.",
+        "objects": [
+          "Resource-price combinations (i,P)",
+          "Feasible assortments",
+          "Customers with observed context vectors"
+        ],
+        "inputs": [
+          "Finite price set P_i for each resource",
+          "Assortment-dependent choice distributions",
+          "Prior over multinomial-logit coefficients in the hotel study"
+        ],
+        "decisions": [
+          "Choose a feasible assortment excluding depleted resources",
+          "Use virtual rewards to trade price against remaining capacity",
+          "Update demand beliefs by Thompson sampling in the numerical application"
+        ],
+        "assumptions": [
+          "The assortment family is nonempty and downward closed.",
+          "Only offered resource-price combinations can be consumed.",
+          "At most one price combination for a resource can be consumed.",
+          "Choice probabilities satisfy substitutability under assortment expansion."
+        ],
+        "method": "Replace multiplicative reward discounting with a price-set-specific virtual cost, solve the auxiliary choice problem with an appropriate learning oracle, and apply the Appendix E competitive-regret bound.",
+        "sources": [
+          {
+            "page": 29,
+            "section": "Appendix E. Extension to Multiple Reward Rates per Resource",
+            "equation": "",
+            "quote": "We consider the generalization to the setting in which each resource i can be depleted"
+          },
+          {
+            "page": 30,
+            "section": "Appendix E. Multiple Reward Rates",
+            "equation": "(E.1)–(E.3)",
+            "quote": "We modify the IBOL algorithm from Section 3 for the current setting with multiple reward rates."
+          }
+        ],
+        "components": [
+          {
+            "id": "assortment-substitutability",
+            "label": "Assortment choice and substitutability",
+            "role": "constraint",
+            "concepts": [
+              "assortment-optimization",
+              "consumer-choice"
+            ],
+            "explanation": "The action is a downward-closed assortment of resource-price combinations. Adding combinations cannot raise the sale probability of a combination already offered, and at most one price combination for a resource may be consumed.",
+            "searchPhrases": [
+              "dynamic assortment with multiple prices",
+              "substitutable demand under assortment expansion",
+              "downward-closed resource-price assortment"
+            ],
+            "formal": "For a⊆a′ and (i,P)∈a: Pr[(i,P) sells | x,a] ≥ Pr[(i,P) sells | x,a′].",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "a",
+                "meaning": "Offered assortment of resource-price combinations"
+              },
+              {
+                "symbol": "P_i",
+                "meaning": "Finite set of allowed prices for resource i"
+              }
+            ],
+            "conditions": [
+              "The feasible assortment family is downward closed.",
+              "Substitutability applies to combinations already present before assortment expansion.",
+              "Only offered combinations can be consumed, and at most one price combination for a resource can be consumed."
+            ],
+            "sources": [
+              {
+                "page": 29,
+                "section": "Appendix E. Extension to Multiple Reward Rates per Resource",
+                "equation": "",
+                "quote": "We impose an additional structure on the mapping from contexts and actions to distributions over outcomes."
+              },
+              {
+                "page": 30,
+                "section": "Assumption E.1. Substitutability",
+                "equation": "Assumption E.1",
+                "quote": "can only decrease the chances"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "assortment-optimization",
+                "status": "modeled",
+                "representation": "The decision chooses a feasible downward-closed set of resource-price combinations rather than a single product.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "consumer-choice",
+                "status": "modeled",
+                "representation": "Customer context and the offered assortment jointly determine which combination, if any, is purchased under the substitutability restriction.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal"
+              }
+            ]
+          },
+          {
+            "id": "hotel-mnl-choice",
+            "label": "Contextual hotel choice model",
+            "role": "process",
+            "concepts": [
+              "multinomial-logit-choice",
+              "consumer-choice",
+              "assortment-optimization"
+            ],
+            "explanation": "The hotel application represents each of four room categories at two prices as eight products. Given a customer's nine-dimensional context and an offered assortment, a multinomial-logit model assigns each product an attraction exp(xᵀβ_j*) and retains a no-purchase attraction v_0.",
+            "searchPhrases": [
+              "contextual multinomial logit hotel assortment",
+              "room category and price choice probability",
+              "no-purchase option in hotel demand"
+            ],
+            "formal": "Pr(j|x,a)=exp(xᵀβ_j*)/[v_0+Σ_(j′∈a)exp(xᵀβ_j′*)] for j∈a.",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "j∈{1,…,8}",
+                "meaning": "Room-category and price product"
+              },
+              {
+                "symbol": "x∈R^9",
+                "meaning": "Observed customer feature vector"
+              },
+              {
+                "symbol": "β_j*",
+                "meaning": "Latent coefficient vector for product j"
+              },
+              {
+                "symbol": "v_0",
+                "meaning": "Attraction of the no-purchase option"
+              },
+              {
+                "symbol": "a",
+                "meaning": "Offered subset of the eight products"
+              }
+            ],
+            "conditions": [
+              "The hotel has four room categories and two price points per category.",
+              "Each product has a nine-dimensional latent coefficient vector.",
+              "Choice probabilities are normalized over the offered products and the no-purchase option."
+            ],
+            "sources": [
+              {
+                "page": 18,
+                "section": "6.2. Experiments on Real-World Data",
+                "equation": "",
+                "quote": "We assume that customers follow the multinomial logit (MNL) choice model."
+              },
+              {
+                "page": 19,
+                "section": "6.2. Experiments on Real-World Data",
+                "equation": "MNL purchase probability",
+                "quote": "where v0 is the attraction value for the no-purchase option."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "multinomial-logit-choice",
+                "status": "modeled",
+                "representation": "Product attractions exp(xᵀβ_j*) are normalized together with a no-purchase attraction over the offered assortment.",
+                "conditionRefs": [
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "conceptId": "consumer-choice",
+                "status": "modeled",
+                "representation": "A contextual customer selects one offered room-price product or the no-purchase option.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  },
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  3,
+                  4
+                ]
+              },
+              {
+                "conceptId": "assortment-optimization",
+                "status": "modeled",
+                "representation": "The choice denominator and available purchase outcomes depend on the offered product subset a.",
+                "conditionRefs": [
+                  0,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  4
+                ]
+              }
+            ]
+          },
+          {
+            "id": "multiple-price-virtual-cost",
+            "label": "Multiple-price virtual cost",
+            "role": "algorithm",
+            "concepts": [
+              "inventory-balancing",
+              "pricing",
+              "competitive-analysis"
+            ],
+            "explanation": "For a combination (i,P), the algorithm subtracts a depletion-dependent virtual cost Φ_(P_i) from price P. The potential rises to the largest allowed price and can make a heavily depleted combination's virtual reward negative.",
+            "searchPhrases": [
+              "virtual cost for multiple reward rates",
+              "price-dependent inventory balancing ratio",
+              "protect inventory across dynamic assortment prices"
+            ],
+            "formal": "r_(i,P)^t = P − Φ_(P_i)(N_i^(t−1)/b_i); OPT ≤ [(1+b_min)(1−e^(−1/b_min))/(1−exp(−min_i α_i^(1)))]E[ALG] + E[REG(F^T)].",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "r_(i,P)^t",
+                "meaning": "Virtual reward for selling resource i at price P at time t"
+              },
+              {
+                "symbol": "Φ_(P_i)",
+                "meaning": "Price-set-specific depletion cost"
+              },
+              {
+                "symbol": "b_min",
+                "meaning": "Smallest resource capacity"
+              },
+              {
+                "symbol": "α_i^(1)",
+                "meaning": "First positive price-set parameter for resource i in Appendix E.1"
+              },
+              {
+                "symbol": "REG(F^T)",
+                "meaning": "Auxiliary learner's cumulative regret under virtual rewards"
+              }
+            ],
+            "conditions": [
+              "The virtual reward may be negative.",
+              "Φ_(P_i) rises from zero to max P_i as resource i is depleted.",
+              "A singleton price set recovers the familiar 1−1/e large-capacity ratio."
+            ],
+            "sources": [
+              {
+                "page": 30,
+                "section": "Appendix E. Multiple Reward Rates",
+                "equation": "(E.2)–(E.3)",
+                "quote": "We modify the IBOL algorithm from Section 3 for the current setting with multiple reward rates."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "inventory-balancing",
+                "status": "modeled",
+                "representation": "The single-reward potential is generalized to a price-set-specific virtual depletion cost.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "Each inventory resource can be offered at multiple prices, and the current virtual score is price minus depletion cost.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "conceptId": "competitive-analysis",
+                "status": "modeled",
+                "representation": "Theorem E.1 converts the price-set virtual cost into an explicit capacity-and-price competitive multiplier plus regret.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  2,
+                  3,
+                  4
+                ]
+              }
+            ]
+          },
+          {
+            "id": "hotel-thompson-evidence",
+            "label": "Hotel choice learning and numerical evidence",
+            "role": "estimation",
+            "concepts": [
+              "thompson-sampling",
+              "empirical-validation",
+              "assortment-optimization"
+            ],
+            "explanation": "The hotel study estimates product coefficients, places a prior around them, and uses Thompson sampling inside IBOL. Greedy is favored by abundant inventory, conservative selling by scarce inventory, and IB-TS is strongest near the point where total inventory approaches total demand.",
+            "searchPhrases": [
+              "hotel inventory balancing with Thompson sampling",
+              "compare greedy and conservative inventory policies",
+              "multinomial-logit assortment learning experiment"
+            ],
+            "formal": "E_(β∼π_0)[REG(F^T)] = Õ(Dm√(BT)).",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "β_j",
+                "meaning": "Latent coefficient vector for hotel product j"
+              },
+              {
+                "symbol": "π_0",
+                "meaning": "Known prior distribution over the product coefficients"
+              },
+              {
+                "symbol": "D",
+                "meaning": "Length of each customer feature vector; D=9 in the study"
+              },
+              {
+                "symbol": "m",
+                "meaning": "Number of room-price products; m=8 in the study"
+              },
+              {
+                "symbol": "B",
+                "meaning": "Maximum offered assortment size in Proposition 1"
+              },
+              {
+                "symbol": "T",
+                "meaning": "Number of customers used by the theoretical regret expression"
+              }
+            ],
+            "conditions": [
+              "The study uses four room categories at two prices each.",
+              "The prior uncertainty parameter in the hotel experiment is distinct from IBOL's exploitation parameter.",
+              "Each test case reports averages over 500 replicates.",
+              "This evidence belongs to the multiple-price extension, not the single-product recommendation model."
+            ],
+            "sources": [
+              {
+                "page": 19,
+                "section": "6.2. Experiments on Real-World Data",
+                "equation": "Proposition 1",
+                "quote": "For the auxiliary problem, there is a Thompson sampling algorithm with Bayesian regret"
+              },
+              {
+                "page": 19,
+                "section": "6.2. Experiments on Real-World Data",
+                "equation": "",
+                "quote": "For each test case, we simulate 500 replicates"
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "thompson-sampling",
+                "status": "modeled",
+                "representation": "Posterior samples of hotel choice coefficients supply the learning oracle used inside IBOL.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              {
+                "conceptId": "empirical-validation",
+                "status": "modeled",
+                "representation": "The compared inventory policies are evaluated across 500 simulated replicates for every test case.",
+                "conditionRefs": [
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 1
+                  }
+                ],
+                "reviewStatus": "editorial"
+              },
+              {
+                "conceptId": "assortment-optimization",
+                "status": "modeled",
+                "representation": "Each Thompson sample feeds an auxiliary learning problem whose actions are assortments of the eight room-price products.",
+                "conditionRefs": [
+                  0,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "editorial",
+                "formalRef": "formal",
+                "symbolRefs": [
+                  3,
+                  4
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "curated-source-v1",
+      "sourceTier": "full-source-curated-note",
+      "sourcePdfSha256": "8612d3516477dc9a15db85304353e0b596c8a3a47e0af72189c6019ff4e3c83a",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "66cc5b0d8c06e8d1f75da5781544f87147375cc30f437b29fc8b14feddabba7c",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2021-4216/66cc5b0d8c06e8d1f75da5781544f87147375cc30f437b29fc8b14feddabba7c.json",
+      "extractionQaDecisionSha256": "8b2791c382eafe90d72df72cd6e291a70f3163a6ee1f581e7ef8155b3f74f61d",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  },
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "66cc5b0d8c06e8d1f75da5781544f87147375cc30f437b29fc8b14feddabba7c",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2021-4216/66cc5b0d8c06e8d1f75da5781544f87147375cc30f437b29fc8b14feddabba7c.json",
+  "extractionQaDecisionSha256": "8b2791c382eafe90d72df72cd6e291a70f3163a6ee1f581e7ef8155b3f74f61d",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null
+}

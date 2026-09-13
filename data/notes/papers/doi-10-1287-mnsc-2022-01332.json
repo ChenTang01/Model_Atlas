@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2022-01332",
+  "sourcePdfSha256": "406a7029961e5d9f018ad9c1712bc9e490568803da1c0a21bf02544a4ff9399d",
+  "extractionPagesSha256": "4ceb63c7ee7889d0b247f68bfb51936f7fc445b029d5a291c79596a893c74803",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "a4aeee24742acd96358442ed62a37c4543687effefa2090c0c7ca5a43898efef",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "9d1492cf7bcbc0f4ec8b47d264dc9a83cfe2e38a512dcd1d88193de8da30a3db",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-01332/9d1492cf7bcbc0f4ec8b47d264dc9a83cfe2e38a512dcd1d88193de8da30a3db.json",
+  "extractionQaDecisionSha256": "9224c869b16faccd2278e8b1177f9073a96be896a42613ec5d66e4feafe50773",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2022-01332",
+    "question": "How should managers of levered firms adjust voluntary disclosure after earnings news or analyst reports when extreme surprises change investors' beliefs about both expected cash flow and default risk?",
+    "overview": "An informed manager strategically chooses truthful disclosure or concealment, anticipating how competitive investors infer information from nondisclosure and set the equity price. Investors' Bayesian beliefs determine the manager's payoff, and the paper solves the unique type-contingent disclosure threshold equilibrium.",
+    "modelTypes": [
+      "Game theory",
+      "Stochastic model",
+      "Economic theory"
+    ],
+    "coverage": {
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        10
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Public Signals, Default Risk, and Voluntary Disclosure model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "An informed manager strategically chooses truthful disclosure or concealment, anticipating how competitive investors infer information from nondisclosure and set the equity price. Investors' Bayesian beliefs determine the manager's payoff, and the paper solves the unique type-contingent disclosure threshold equilibrium.",
+        "objects": [
+          "Manager of a levered firm, possibly privately informed about terminal cash flow",
+          "Risk-neutral competitive investors setting the equity price"
+        ],
+        "inputs": [
+          "The public signal is observed by the manager and investors",
+          "The manager privately observes terminal cash flow with probability q",
+          "Disclosed private information is verifiable and must be truthful",
+          "Investors cannot distinguish an uninformed manager from an informed manager",
+          "Investors update both the mean and variance of cash flows from public signals and observed silence"
+        ],
+        "decisions": [
+          "Informed manager truthfully discloses private cash-flow information or withholds it",
+          "Investors update beliefs",
+          "Competitive investors set the stock price equal to expected equity value",
+          "Disclose this private information"
+        ],
+        "assumptions": [
+          "Equity holders have limited liability and receive max{x-delta,0} after debt with face value delta",
+          "Competitive risk-neutral investors price equity at its conditional expected value",
+          "Conditional on an uncertain precision, cash flow and the public signal are jointly normal; integrating out precision yields a bivariate t distribution",
+          "The public signal has nonnegative but imperfect correlation with cash flow",
+          "The probability q that the manager is privately informed is exogenous and independent of the public signal"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Manager of a levered firm, possibly privately informed about terminal cash flow",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "manager of a levered firm, possibly privately informed about terminal cash flow"
+              }
+            },
+            {
+              "value": "Risk-neutral competitive investors setting the equity price",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "risk-neutral competitive investors setting the equity price"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The public signal is observed by the manager and investors",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The public signal is observed by the manager and investors before disclosure."
+              }
+            },
+            {
+              "value": "The manager privately observes terminal cash flow with probability q",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The manager privately observes terminal cash flow with probability q."
+              }
+            },
+            {
+              "value": "Disclosed private information is verifiable and must be truthful",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Disclosed private information is verifiable and must be truthful."
+              }
+            },
+            {
+              "value": "Investors cannot distinguish an uninformed manager from an informed manager",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Investors cannot distinguish an uninformed manager from an informed manager who withholds."
+              }
+            },
+            {
+              "value": "Investors update both the mean and variance of cash flows from public signals and observed silence",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Investors update both the mean and variance of cash flows from public signals and observed silence."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Informed manager truthfully discloses private cash-flow information or withholds it",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "informed manager truthfully discloses private cash-flow information or withholds it"
+              }
+            },
+            {
+              "value": "Investors update beliefs",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "investors update beliefs after disclosure or nondisclosure"
+              }
+            },
+            {
+              "value": "Competitive investors set the stock price equal to expected equity value",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "competitive investors set the stock price equal to expected equity value"
+              }
+            },
+            {
+              "value": "Disclose this private information",
+              "source": {
+                "type": "section",
+                "section": "Model Description",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 7,
+                "quote": "If informed, the manager can publicly disclose this private information",
+                "matchedText": "disclose this private information",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Equity holders have limited liability and receive max{x-delta,0} after debt with face value delta",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Equity holders have limited liability and receive max{x-delta,0} after debt with face value delta."
+              }
+            },
+            {
+              "value": "Competitive risk-neutral investors price equity at its conditional expected value",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Competitive risk-neutral investors price equity at its conditional expected value."
+              }
+            },
+            {
+              "value": "Conditional on an uncertain precision, cash flow and the public signal are jointly normal; integrating out precision yields a bivariate t distribution",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Conditional on an uncertain precision, cash flow and the public signal are jointly normal; integrating out precision yields a bivariate t distribution."
+              }
+            },
+            {
+              "value": "The public signal has nonnegative but imperfect correlation with cash flow",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The public signal has nonnegative but imperfect correlation with cash flow."
+              }
+            },
+            {
+              "value": "The probability q that the manager is privately informed is exogenous and independent of the public signal",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The probability q that the manager is privately informed is exogenous and independent of the public signal."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "The authors derive the conditional t distribution of cash flows after public news, solve the manager-investor disclosure game through a unique cutoff, connect disclosure likelihood to default risk, and derive comparative statics for signal realization, signal quality, analyst consensus, dispersion, precision, and coverage.",
+        "methodMaturity": "source-authored",
+        "methodEvidence": {
+          "field": "method"
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 4,
+            "section": "2. Model Description",
+            "equation": "",
+            "quote": "If informed, the manager can publicly disclose this private information.5 As in Dye (1985) and Jung and Kwon (1988), we assume that any such voluntary disclosure must be truthful."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "private-information"
+            ],
+            "explanation": "Informed manager truthfully discloses private cash-flow information or withholds it investors update beliefs after disclosure or nondisclosure competitive investors set the stock price equal to expected equity value",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in public information, default risk, and voluntary corporate disclosure",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Informed manager truthfully discloses private cash-flow information or withholds it investors update beliefs after disclosure or nondisclosure competitive investors set the stock price equal to expected equity value",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "terminal firm cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "standardized public signal correlated with cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that the manager privately learns terminal cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_hat(s)",
+                "meaning": "cash-flow cutoff above which an informed manager discloses",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "If informed, the manager can publicly disclose this private information.5 As in Dye (1985) and Jung and Kwon (1988), we assume that any such voluntary disclosure must be truthful.",
+              "The probability q that the manager is privately informed is exogenous and independent of the public signal.",
+              "Equity holders have limited liability and receive max{x-delta,0} after debt with face value delta.",
+              "Competitive risk-neutral investors price equity at its conditional expected value."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "2. Model Description",
+                "equation": "",
+                "quote": "If informed, the manager can publicly disclose this private information.5 As in Dye (1985) and Jung and Kwon (1988), we assume that any such voluntary disclosure must be truthful."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "private-information",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Private information: “Private information”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "pricing",
+              "inventory"
+            ],
+            "explanation": "The manager chooses disclosure to maximize the market price of equity, which competitive investors set equal to expected residual cash-flow value conditional on the public signal and the manager's disclosure or silence.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in public information, default risk, and voluntary corporate disclosure",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "P(I) = E[max{x-\\delta,0} | I], where I = {s,d}",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "terminal firm cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "standardized public signal correlated with cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta",
+                "meaning": "face value of outstanding debt and default threshold",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that the manager privately learns terminal cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu(s), \\sigma(s)",
+                "meaning": "interim mean and scale of cash flow conditional on the public signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_hat(s)",
+                "meaning": "cash-flow cutoff above which an informed manager discloses",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "correlation between cash flow and the public signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_tilde, d_tilde",
+                "meaning": "analyst-forecast consensus and dispersion",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Conditional on an uncertain precision, cash flow and the public signal are jointly normal; integrating out precision yields a bivariate t distribution.",
+              "Although limited liability implies a payoff for equity holders that is nonlinear in cash flows, observe that we assume that their payoff is linear in its stock price.",
+              "Equity holders have limited liability and receive max{x-delta,0} after debt with face value delta.",
+              "Competitive risk-neutral investors price equity at its conditional expected value."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "Expected-profit objective",
+                "equation": "",
+                "quote": "Although limited liability implies a payoff for equity holders that is nonlinear in cash flows, observe that we assume that their payoff is linear in its stock price."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Pricing: “Although limited liability implies a payoff for equity holders that is nonlinear in cash flows, observe that we”.",
+                "conditionRefs": [
+                  1,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              },
+              {
+                "conceptId": "inventory",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Inventory as “stock”: “their payoff is linear in its stock price.”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "unique-bayesian-cutoff-equilibrium-in-voluntary-disclosure",
+            "label": "Unique Bayesian cutoff equilibrium in voluntary disclosure",
+            "role": "interaction",
+            "concepts": [
+              "signaling",
+              "equilibrium-analysis"
+            ],
+            "explanation": "The model's equilibrium concept is Unique Bayesian cutoff equilibrium in voluntary disclosure. After every public signal s, an informed manager discloses x at or above x_hat(s) and withholds below it. Competitive investors price nondisclosure using the posterior mixture of uninformed managers and informed managers below the cutoff. The marginal type is indifferent, satisfying x_hat(s)-delta = P(s,nd), which yields existence and uniqueness.",
+            "searchPhrases": [
+              "how unique bayesian cutoff equilibrium in voluntary disclosure is represented",
+              "strategic response in public information, default risk, and voluntary corporate disclosure",
+              "unique bayesian cutoff equilibrium in voluntary disclosure strategic response specification"
+            ],
+            "formal": "Strategic response: The model's equilibrium concept is Unique Bayesian cutoff equilibrium in voluntary disclosure.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "terminal firm cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "standardized public signal correlated with cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that the manager privately learns terminal cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu(s), \\sigma(s)",
+                "meaning": "interim mean and scale of cash flow conditional on the public signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_hat(s)",
+                "meaning": "cash-flow cutoff above which an informed manager discloses",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "correlation between cash flow and the public signal",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Conditional on an uncertain precision, cash flow and the public signal are jointly normal; integrating out precision yields a bivariate t distribution.",
+              "This indifference condition implies that the disclosure threshold must satisfy ˆx(s) > δ for all realizations of the public signal.9 Existence and uniqueness of the equilibrium disclosure threshold follow from standard arguments (Jung and Kwon 1988, proof of proposition 1).",
+              "Equity holders have limited liability and receive max{x-delta,0} after debt with face value delta.",
+              "Competitive risk-neutral investors price equity at its conditional expected value."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3. Equilibrium",
+                "equation": "",
+                "quote": "This indifference condi­ tion implies that the disclosure threshold must satisfy ˆx(s) > δ for all realizations of the public signal.9 Exis­ tence and uniqueness of the equilibrium disclosure threshold follow from standard arguments (Jung and Kwon 1988, proof of proposition 1)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Signaling: “Signaling”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  3,
+                  5
+                ]
+              },
+              {
+                "conceptId": "equilibrium-analysis",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Equilibrium analysis as “equilibrium conditions”: “equilibrium conditions”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "signaling"
+            ],
+            "explanation": "The public signal is observed by the manager and investors before disclosure. The manager privately observes terminal cash flow with probability q. Disclosed private information is verifiable and must be truthful. Investors cannot distinguish an uninformed manager from an informed manager who withholds.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in public information, default risk, and voluntary corporate disclosure",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: The public signal is observed by the manager and investors before disclosure.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "terminal firm cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "standardized public signal correlated with cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that the manager privately learns terminal cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu(s), \\sigma(s)",
+                "meaning": "interim mean and scale of cash flow conditional on the public signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_hat(s)",
+                "meaning": "cash-flow cutoff above which an informed manager discloses",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "correlation between cash flow and the public signal",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Conditional on an uncertain precision, cash flow and the public signal are jointly normal; integrating out precision yields a bivariate t distribution.",
+              "The public signal has nonnegative but imperfect correlation with cash flow.",
+              "Even though public signals can affect the interim mean and variance in different ways, the interim default probability and the interim disclosure probability always respond to public signals in opposite directions.",
+              "Competitive risk-neutral investors price equity at its conditional expected value."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3. Equilibrium",
+                "equation": "",
+                "quote": "Even though public signals can affect the interim mean and variance in different ways, the interim default probability and the interim disclosure probability always respond to public signals in opposite directions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Signaling: “Even though public signals can affect the interim mean and variance in different ways, the interim default probability”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  3,
+                  5
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "estimation",
+            "concepts": [
+              "forecasting"
+            ],
+            "explanation": "The authors derive the conditional t distribution of cash flows after public news, solve the manager-investor disclosure game through a unique cutoff, connect disclosure likelihood to default risk, and derive comparative statics for signal realization, signal quality, analyst consensus, dispersion, precision, and coverage.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "estimation procedure in public information, default risk, and voluntary corporate disclosure",
+              "solution or estimation method estimation procedure specification"
+            ],
+            "formal": "Estimation relation: The authors derive the conditional t distribution of cash flows after public news, solve the manager-investor disclosure game through a unique cutoff, connect disclosure likelihood to default risk, and derive comparative statics for signal realization, signal quality, analyst consensus, dispersion, precision, and coverage.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s",
+                "meaning": "standardized public signal correlated with cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that the manager privately learns terminal cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu(s), \\sigma(s)",
+                "meaning": "interim mean and scale of cash flow conditional on the public signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_hat(s)",
+                "meaning": "cash-flow cutoff above which an informed manager discloses",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "correlation between cash flow and the public signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "c_tilde, d_tilde",
+                "meaning": "analyst-forecast consensus and dispersion",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Conditional on an uncertain precision, cash flow and the public signal are jointly normal; integrating out precision yields a bivariate t distribution.",
+              "Equity holders have limited liability and receive max{x-delta,0} after debt with face value delta.",
+              "Competitive risk-neutral investors price equity at its conditional expected value."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3. Equilibrium",
+                "equation": "",
+                "quote": "The prediction of Lemma 1 that voluntary disclosure is negatively associated with the likelihood of default provides an alternative explanation for the empirical evidence of Vashishtha (2014)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "forecasting",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Forecasting as “prediction”: “The prediction of Lemma 1 that voluntary disclosure is negatively”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  5
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "signaling"
+            ],
+            "explanation": "With exogenous probability q, the manager privately learns the terminal cash flow x. If informed, the manager chooses truthful disclosure of x or nondisclosure; an uninformed manager cannot certify being uninformed. Competitive investors update from the public signal and the disclosure decision and price equity at conditional expected residual value. Terminal cash flow is then realized.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in public information, default risk, and voluntary corporate disclosure",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Strategic response: With exogenous probability q, the manager privately learns the terminal cash flow x.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "x",
+                "meaning": "terminal firm cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s",
+                "meaning": "standardized public signal correlated with cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "q",
+                "meaning": "probability that the manager privately learns terminal cash flow",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\mu(s), \\sigma(s)",
+                "meaning": "interim mean and scale of cash flow conditional on the public signal",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "x_hat(s)",
+                "meaning": "cash-flow cutoff above which an informed manager discloses",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\rho",
+                "meaning": "correlation between cash flow and the public signal",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Conditional on an uncertain precision, cash flow and the public signal are jointly normal; integrating out precision yields a bivariate t distribution.",
+              "Equity holders have limited liability and receive max{x-delta,0} after debt with face value delta.",
+              "Competitive risk-neutral investors price equity at its conditional expected value."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "4.2. Effects of Public Signals on Voluntary Disclosure",
+                "equation": "",
+                "quote": "As the quality of the public signal increases, the market responds more strongly to it: good news becomes better news, and the disclosure probability increases; bad news becomes worse news, and the disclosure probability decreases."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "signaling",
+                "status": "modeled",
+                "representation": "In the actor interaction, the source expresses Signaling: “As the quality of the public signal increases, the market responds more strongly to it: good news becomes”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  1,
+                  3,
+                  5
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "406a7029961e5d9f018ad9c1712bc9e490568803da1c0a21bf02544a4ff9399d",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "9d1492cf7bcbc0f4ec8b47d264dc9a83cfe2e38a512dcd1d88193de8da30a3db",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2022-01332/9d1492cf7bcbc0f4ec8b47d264dc9a83cfe2e38a512dcd1d88193de8da30a3db.json",
+      "extractionQaDecisionSha256": "9224c869b16faccd2278e8b1177f9073a96be896a42613ec5d66e4feafe50773",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

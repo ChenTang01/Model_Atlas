@@ -1,0 +1,782 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2019-03211",
+  "sourcePdfSha256": "c5fa193b571d3f60f6c2ad468a946d3845ad69d422aa22fa0199abec7e1ddc55",
+  "extractionPagesSha256": "07de8c42beef98e3ca8f5a34602f1cc7ea56ba80749d6921e4e8107bba793fe1",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "37f1f33f17dc247dffaed72da0f0ddf2436c5d01c70c33cb65669830e8c52287",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "a67726234a06b410d5283b468546c03bcfe09c04feea823ed0f8807fac4b9016",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2019-03211/a67726234a06b410d5283b468546c03bcfe09c04feea823ed0f8807fac4b9016.json",
+  "extractionQaDecisionSha256": "c1c695b919bd657545fb9c2e9e4a4a8c1eab1633be811fcd3eb594cd58e8aea8",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2019-03211",
+    "question": "How do theory and application to medical decision-making interact?",
+    "overview": "Optimizing the treatment regimen is a fundamental medical decision-making problem. This can be thought of as a two-dimensional decision-making problem with a nested structure because it involves determining both the optimal medication and its optimal dose. Identifying the most effective medication for an individual often poses considerable difficulty, and even when a suitable medication is ascertained, dosing it optimally remains a significant challenge.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        7,
+        8,
+        9,
+        11,
+        14,
+        16
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Contextual Learning with Online Convex Optimization model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Optimizing the treatment regimen is a fundamental medical decision-making problem. This can be thought of as a two-dimensional decision-making problem with a nested structure because it involves determining both the optimal medication and its optimal dose. Identifying the most effective medication for an individual often poses considerable difficulty, and even when a suitable medication is ascertained, dosing it optimally remains a significant challenge.",
+        "objects": [
+          "A patient",
+          "A clinician",
+          "The decision-maker",
+          "Two elements",
+          "Physicians"
+        ],
+        "inputs": [
+          "The horizon",
+          "Gradient information for the dose penalty function at each iteration (Proposition 3)",
+          "Contextual information",
+          "The observed information",
+          "The available information"
+        ],
+        "decisions": [
+          "A medication",
+          "The appropriate dose for the selected medication",
+          "Which arm to pull (medication selection)",
+          "Target level",
+          "A patient’s dose for a selected medication"
+        ],
+        "assumptions": [
+          "The context vectors are drawn i.i.d from unknown distributions",
+          "Note that in our stochastic delay setting, we assume that the context vectors are drawn i.i.d from unknown distributions"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "A patient",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "It sequentially selects for a patient (i) the best medication based on their contextual information and (ii) the corresponding dose optimized over the prior history of those patients who received the same medication.",
+                "matchedText": "a patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "A clinician",
+              "source": {
+                "type": "section",
+                "section": "Two-Dimensional Control and Context",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "In practice, a clinician must choose a medication from a set of possible options for a patient and determine the appropriate dose for the selected medication.",
+                "matchedText": "a clinician",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The decision-maker",
+              "source": {
+                "type": "section",
+                "section": "Two-Dimensional Control and Context",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "This can be seen as an extended multi­ armed bandit model, where the decision-maker must choose which arm to pull (medication selection) as well as how far to pull the selected arm (dose selection).",
+                "matchedText": "the decision-maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Two elements",
+              "source": {
+                "type": "section",
+                "section": "Two-Dimensional Control and Context",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 11,
+                "quote": "We then model the main outcome given these two elements of our model.",
+                "matchedText": "two elements",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Physicians",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 27,
+                "quote": "It implies that physicians acquire patient outcomes (also called feedback) only for their selected decisions and are unable to observe counterfactuals that could have resulted from alternative decisions.",
+                "matchedText": "physicians",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The horizon",
+              "source": {
+                "type": "section",
+                "section": "Convex Optimization",
+                "page": 14,
+                "sectionIndex": 22,
+                "sentence": 7,
+                "quote": "the horizon",
+                "matchedText": "the horizon",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Gradient information for the dose penalty function at each iteration (Proposition 3)",
+              "source": {
+                "type": "section",
+                "section": "Convex Optimization",
+                "page": 14,
+                "sectionIndex": 22,
+                "sentence": 1,
+                "quote": "gra­ dient information for the dose penalty function at each iteration (Proposition 3)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Contextual information",
+              "source": {
+                "type": "section",
+                "section": "Two-Dimensional Control and Context",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 14,
+                "quote": "contex­ tual information",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The observed information",
+              "source": {
+                "type": "section",
+                "section": "Main Outcome (Reward)",
+                "page": 6,
+                "sectionIndex": 10,
+                "sentence": 5,
+                "quote": "the observed information",
+                "matchedText": "the observed information",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The available information",
+              "source": {
+                "type": "section",
+                "section": "High-Level Ideas of SGD-MAB Algorithm",
+                "page": 7,
+                "sectionIndex": 12,
+                "sentence": 10,
+                "quote": "These estimates rely on the iterative learning of the unknown model parameters θ and π, utilizing the available informa­ tion up to the current time.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "A medication",
+              "source": {
+                "type": "section",
+                "section": "Two-Dimensional Control and Context",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "In practice, a clinician must choose a medication",
+                "matchedText": "a medication",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The appropriate dose for the selected medication",
+              "source": {
+                "type": "section",
+                "section": "Two-Dimensional Control and Context",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 2,
+                "quote": "In practice, a clinician must choose a medication from a set of possible options for a patient and determine the appropriate dose for the selected medication",
+                "matchedText": "the appropriate dose for the selected medication",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Which arm to pull (medication selection)",
+              "source": {
+                "type": "section",
+                "section": "Two-Dimensional Control and Context",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "This can be seen as an extended multi­ armed bandit model, where the decision-maker must choose which arm to pull (medication selection) as well as how far to pull the selected arm (dose selection)",
+                "matchedText": "which arm to pull (medication selection)",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Target level",
+              "source": {
+                "type": "section",
+                "section": "Two-Dimensional Control and Context",
+                "page": 5,
+                "sectionIndex": 6,
+                "sentence": 9,
+                "quote": "In addition, the penalty function quan­ tifies the deviation of SBP from a target level",
+                "matchedText": "target level",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "A patient’s dose for a selected medication",
+              "source": {
+                "type": "section",
+                "section": "Dose Penalty Function",
+                "page": 6,
+                "sectionIndex": 9,
+                "sentence": 1,
+                "quote": "When the decision-maker decides on a patient’s dose for a selected medication",
+                "matchedText": "a patient’s dose for a selected medication",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "The context vectors are drawn i.i.d from unknown distributions",
+              "source": {
+                "type": "section",
+                "section": "Making Medication and Corresponding Dose Decisions",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 9,
+                "quote": "Note that in our stochastic delay setting, we assume that the con­ text vectors are drawn i.i.d from unknown distributions.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Note that in our stochastic delay setting, we assume that the context vectors are drawn i.i.d from unknown distributions",
+              "source": {
+                "type": "section",
+                "section": "Making Medication and Corresponding Dose Decisions",
+                "page": 7,
+                "sectionIndex": 7,
+                "sentence": 9,
+                "quote": "Note that in our stochastic delay setting, we assume that the con­ text vectors are drawn i.i.d from unknown distributions.",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [],
+        "method": "For this model, we develop a new joint contextual learning and optimization algorithm, termed the stochastic subgradient descent atop contextual multiarmed bandit (SGD-MAB) algorithm.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 6
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "Making Medication and Corresponding Dose Decisions",
+            "equation": "",
+            "quote": "Note that in our stochastic delay setting, we assume that the con­ text vectors are drawn i.i.d from unknown distributions."
+          }
+        ],
+        "components": [
+          {
+            "id": "making-medication-and-corresponding-dose-decisions",
+            "label": "Making Medication and Corresponding Dose Decisions",
+            "role": "information",
+            "concepts": [
+              "information-structure"
+            ],
+            "explanation": "Note that in our stochastic delay setting, we assume that the context vectors are drawn i.i.d from unknown distributions.",
+            "searchPhrases": [
+              "how making medication and corresponding dose decisions is represented",
+              "information available to the decision maker in auctions, matching, and market design",
+              "making medication and corresponding dose decisions information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Note that in our stochastic delay setting, we assume that the context vectors are drawn i.i.d from unknown distributions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the context vectors are drawn i.",
+              "For instance, D(t) is an exponential delay if p = 0, and D(t) is a sub-Gaussian delay if p = 1.",
+              "Note that in our stochastic delay setting, we assume that the context vectors are drawn i.i.d from unknown distributions.",
+              "In the case of constant delay, which is more suitable for our case study, the feedback outcomes are realized with a fixed delay of two months, as observed in the ACCORD-BP data."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "Making Medication and Corresponding Dose Decisions",
+                "equation": "",
+                "quote": "Note that in our stochastic delay setting, we assume that the con­ text vectors are drawn i.i.d from unknown distributions."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "information-structure",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Information structure through this information structure: “Note that in our stochastic delay setting, we assume that the context vectors are drawn i.i.d from unknown”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "sgd-mab-algorithm",
+            "label": "SGD-MAB Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "We present a joint contextual learning and optimization algorithm tailored for the model presented in Section 2 under the assumption of stochastic delays.",
+            "searchPhrases": [
+              "how sgd-mab algorithm is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "sgd-mab algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We present a joint contextual learning and optimization algorithm tailored for the model presented in Section 2 under the assumption of stochastic delays.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We present a joint contextual learning and optimization algorithm tailored for the model presented in Section 2 under the assumption of stochastic delays."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3. SGD-MAB Algorithm",
+                "equation": "",
+                "quote": "We present a joint contextual learning and optimiza­ tion algorithm tailored for the model presented in Sec­ tion 2 under the assumption of stochastic delays."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “present a joint contextual learning and Optimization algorithm tailored for the model presented in Section”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-variant-change"
+              }
+            ]
+          },
+          {
+            "id": "high-level-ideas-of-sgd-mab-algorithm",
+            "label": "High-Level Ideas of SGD-MAB Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "In our proposed algorithm, patients are characterized by a distinct set of characteristics.",
+            "searchPhrases": [
+              "how high-level ideas of sgd-mab algorithm is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "high-level ideas of sgd-mab algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: In our proposed algorithm, patients are characterized by a distinct set of characteristics.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "However, the impact of each medication-dose combination on patient outcomes is uncertain.",
+              "The distributions of the model parameters θ and π associated with the patient’s main outcome and suboutcome are unknown.",
+              "Our approach involves sequentially learning these unknown model parameters over time while iteratively making medication and dose decisions for patients."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. High-Level Ideas of SGD-MAB Algorithm",
+                "equation": "",
+                "quote": "In our proposed algorithm, patients are characterized by a distinct set of characteristics."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “In our proposed algorithm, patients are characterized by a distinct set of characteristics.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "description-of-sgd-mab-algorithm",
+            "label": "Description of SGD-MAB Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We first present the proposed SGD-MAB algorithm tailored to a setting with stochastic delays.",
+            "searchPhrases": [
+              "how description of sgd-mab algorithm is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "description of sgd-mab algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We first present the proposed SGD-MAB algorithm tailored to a setting with stochastic delays.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "By exploiting the newly realized feedback outcomes at each time period, the algorithm updates the current belief on the posterior distributions of the unknown model parameters θ and π.",
+              "Use either a warm-up period of length t0 or offline data (see remark after Lemma 2 in Online Appendix A for setting the parameter t0)."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.2. Description of SGD-MAB Algorithm",
+                "equation": "",
+                "quote": "We first present the proposed SGD-MAB algorithm tailored to a setting with stochastic delays."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We first present the proposed SGD-MAB algorithm tailored to a setting with stochastic delays.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "performance-measure",
+            "label": "Performance Measure",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We assess the performance of the SGD-MAB algorithm in terms of the expected regret, a standard metric in the literature (see, e.g., Rusmevichientong and Tsitsiklis 2010 and Russo and Van Roy 2014).",
+            "searchPhrases": [
+              "how performance measure is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "performance measure solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We assess the performance of the SGD-MAB algorithm in terms of the expected regret, a standard metric in the literature (see, e.g., Rusmevichientong and Tsitsiklis 2010 and Russo and Van Roy 2014).",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Given the unknown model parameters θ and π, the T-time period regret of the joint online learning and optimization algorithm is defined by REG(T, θ, π) = E[VOPT VALG |θ, π], where VOPT and VALG are the cumulative rewards of the optimal policy and the online algorithm, respectively.",
+              "Bayesian regret over the T-time periods is then defined by BAYESREG(T) = E[REG(T, θ, π)], where the expectation is taken over the prior distributions of θ and π.",
+              "It also represents the Bayes risk, considering the prior distributions of the unknown model parameters."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.1. Performance Measure",
+                "equation": "",
+                "quote": "We assess the performance of the SGD-MAB algo­ rithm in terms of the expected regret, a standard met­ ric in the literature (see, e.g., Rusmevichientong and Tsitsiklis 2010 and Russo and Van Roy 2014)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We assess the performance of the SGD-MAB algorithm in terms of the expected regret, a standard metric in”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "proposed-sgd-mab-algorithm",
+            "label": "Proposed SGD-MAB Algorithm",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "By applying Proposition 2, the SGD suboptimality loss of the SGD-MAB algorithm is bounded by Proposition 3.",
+            "searchPhrases": [
+              "how proposed sgd-mab algorithm is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "proposed sgd-mab algorithm solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: By applying Proposition 2, the SGD suboptimality loss of the SGD-MAB algorithm is bounded by Proposition 3.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "By applying Proposition 2, the SGD suboptimality loss of the SGD-MAB algorithm is bounded by Proposition 3."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "Proposed SGD-MAB Algorithm",
+                "equation": "",
+                "quote": "By applying Proposition 2, the SGD suboptimality loss of the SGD-MAB algorithm is bounded by Proposition 3."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “By applying Proposition 2, the SGD suboptimality loss of the SGD-MAB algorithm is bounded by Proposition 3.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "convex-optimization",
+            "label": "Convex Optimization",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "We then derive the Bayesian regret of the B-SGD-MAB algorithm (see Online Appendix E) in which the B-SGD mechanism is employed instead of the SGD mechanism for optimizing the dose of each medication adaptively.",
+            "searchPhrases": [
+              "how convex optimization is represented",
+              "solution algorithm in auctions, matching, and market design",
+              "convex optimization solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We then derive the Bayesian regret of the B-SGD-MAB algorithm (see Online Appendix E) in which the B-SGD mechanism is employed instead of the SGD mechanism for optimizing the dose of each medication adaptively.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The Bayesian regret of the B-SGD-MAB algorithm is eO(T3=4) under both stochastic and constant delays over the horizon T."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "Convex Optimization",
+                "equation": "",
+                "quote": "We then derive the Bayesian regret of the B-SGD-MAB algorithm (see Online Appendix E) in which the B-SGD mechanism is employed instead of the SGD mechanism for optimizing the dose of each medication adaptively."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “We then derive the Bayesian regret of the B-SGD-MAB algorithm (see Online Appendix E) in which the B-SGD”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "data-description-and-problem-formulation",
+            "label": "Data Description and Problem Formulation",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "A physician must select one of these medications along with its appropriate dose to achieve the SBP target.",
+            "searchPhrases": [
+              "how data description and problem formulation is represented",
+              "decision rule in auctions, matching, and market design",
+              "data description and problem formulation decision rule specification"
+            ],
+            "formal": "Decision rule: A physician must select one of these medications along with its appropriate dose to achieve the SBP target.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "A physician must select one of these medications along with its appropriate dose to achieve the SBP target."
+            ],
+            "sources": [
+              {
+                "page": 16,
+                "section": "5.2. Data Description and Problem Formulation",
+                "equation": "",
+                "quote": "A physician must select one of these medications along with its appropriate dose to achieve the SBP target."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “A physician must select one of these medications along with its appropriate dose to achieve the SBP target.”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "c5fa193b571d3f60f6c2ad468a946d3845ad69d422aa22fa0199abec7e1ddc55",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "a67726234a06b410d5283b468546c03bcfe09c04feea823ed0f8807fac4b9016",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2019-03211/a67726234a06b410d5283b468546c03bcfe09c04feea823ed0f8807fac4b9016.json",
+      "extractionQaDecisionSha256": "c1c695b919bd657545fb9c2e9e4a4a8c1eab1633be811fcd3eb594cd58e8aea8",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

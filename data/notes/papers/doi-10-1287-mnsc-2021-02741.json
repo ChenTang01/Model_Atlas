@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-mnsc-2021-02741",
+  "sourcePdfSha256": "552d99c7a87a7982192df4bef2ac0bbe3a9890538d59edcbfab53f9ddfa07685",
+  "extractionPagesSha256": "b9609a83708375b66339b5f988dfdb33696a35b9b64c0e2d30446c478f15ea78",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "257ff4080df556f16f5c4907f028f9fc29dcb541989895886c59fb62ac115a0b",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "f3daf103fde7335418de4883b8243c0e0a3fd52b51c194ba8e94c9ee104841ae",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2021-02741/f3daf103fde7335418de4883b8243c0e0a3fd52b51c194ba8e94c9ee104841ae.json",
+  "extractionQaDecisionSha256": "c9f78c16632321e5bdea93773f3964c88c4b85ad92f655c22293853b9d2a635a",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2021-02741",
+    "question": "What determines the performance of the IBR experiments on data-driven numerical examples, including examples based on Airbnb and Facebook data?",
+    "overview": "Experimentation is prevalent in online marketplaces and social networks to assess the effectiveness of new market intervention. To mitigate the interference among users in an experiment, a common practice is to use a cluster-based experiment, where the designer partitions the market into loosely connected clusters and assigns all users in the same cluster to the same variant (treatment or control). Given the experiment, we assume an unbiased Horvitz–Thompson estimator is used to estimate the total market effect of the treatment.",
+    "modelTypes": [
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        8,
+        12,
+        13
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "Correlated Cluster-Based Randomized Experiments model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Experimentation is prevalent in online marketplaces and social networks to assess the effectiveness of new market intervention. To mitigate the interference among users in an experiment, a common practice is to use a cluster-based experiment, where the designer partitions the market into loosely connected clusters and assigns all users in the same cluster to the same variant (treatment or control). Given the experiment, we assume an unbiased Horvitz–Thompson estimator is used to estimate the total market effect of the treatment.",
+        "objects": [
+          "Users"
+        ],
+        "inputs": [
+          "Probability q"
+        ],
+        "decisions": [
+          "Design the negative correlation among clusters",
+          "Maximize a quadratic convex function",
+          "Admit provable performance guarantees"
+        ],
+        "assumptions": [
+          "An unbiased Horvitz–Thompson estimator is used to estimate the total market effect of the treatment",
+          "Clusters of similar size to have similar potential outcomes (which is the usual motivation)",
+          "VOPT and VLB are the optimal objective values of the min-max optimizations (1) and (5), respectively",
+          "There is an edge between two listings if all the following six criteria are satisfied: 1",
+          "San Francisco is a disjoint submarket"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Users",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "To mitigate the interference among users in an experiment, a common practice is to use a cluster-based experiment, where the designer partitions the market into loosely connected clusters and assigns all users in the same cluster to the same variant (treatment or control).",
+                "matchedText": "users",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Probability q",
+              "source": {
+                "type": "section",
+                "section": "Hardness of Solving the Min-Max Optimization",
+                "sectionIndex": 4,
+                "page": 6,
+                "quote": "Specifically, suppose that the marginal assignment probability q is equal to 1=2.",
+                "matchedText": "probability q",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Design the negative correlation among clusters",
+              "source": {
+                "type": "section",
+                "section": "Hardness of Solving the Min-Max Optimization",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 20,
+                "quote": "To minimize the worst-case vari­ ance, we need to carefully design the negative correlation among clusters",
+                "matchedText": "design the negative correlation among clusters",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Maximize a quadratic convex function",
+              "source": {
+                "type": "section",
+                "section": "Hardness of Solving the Min-Max Optimization",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 4,
+                "quote": "The min-max prob­ lem (1) is challenging to solve exactly, because of the following: (i) First, the inner problem is to maximize a quadratic convex function.",
+                "matchedText": "maximize a quadratic convex function",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Admit provable performance guarantees",
+              "source": {
+                "type": "section",
+                "section": "Hardness of Solving the Min-Max Optimization",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 12,
+                "quote": "Motivated by these challenges, in Section 3, we con­ sider a family of practical experiments that we refer to as independent block randomization experiments, and we show that (i) they are easy to compute and interpret, and (ii) they admit provable performance guarantees",
+                "matchedText": "admit provable performance guarantees",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "An unbiased Horvitz–Thompson estimator is used to estimate the total market effect of the treatment",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "Given the experiment, we assume an unbiased Horvitz–Thompson estimator is used to estimate the total market effect of the treatment.",
+                "matchedText": "an unbiased Horvitz–Thompson estimator is used to estimate the total market effect of the treatment.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Clusters of similar size to have similar potential outcomes (which is the usual motivation)",
+              "source": {
+                "type": "section",
+                "section": "Optimal Independent Blocks and Dynamic",
+                "page": 9,
+                "sectionIndex": 6,
+                "sentence": 54,
+                "quote": "Specifically, we stratify cluster sizes not because we assume clusters of similar size to have similar potential outcomes (which is the usual motivation).",
+                "matchedText": "clusters of similar size to have similar potential outcomes (which is the usual motivation).",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "VOPT and VLB are the optimal objective values of the min-max optimizations (1) and (5), respectively",
+              "source": {
+                "type": "section",
+                "section": "Experiments",
+                "page": 9,
+                "sectionIndex": 7,
+                "sentence": 14,
+                "quote": "Suppose that VOPT and VLB are the optimal objective values of the min-max optimiza­ tions (1) and (5), respectively.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "There is an edge between two listings if all the following six criteria are satisfied: 1",
+              "source": {
+                "type": "section",
+                "section": "Airbnb Example",
+                "page": 14,
+                "sectionIndex": 11,
+                "sentence": 12,
+                "quote": "Specifically, we assume that there is an edge between two listings if all the following six criteria are satisfied: 1.",
+                "matchedText": "there is an edge between two listings if all the following six criteria are satisfied: 1.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "San Francisco is a disjoint submarket",
+              "source": {
+                "type": "section",
+                "section": "Airbnb Example",
+                "page": 14,
+                "sectionIndex": 11,
+                "sentence": 19,
+                "quote": "In other words, we assume that San Francisco is a dis­ joint submarket.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 4
+          }
+        ],
+        "method": "It may be possible to develop approximation algorithms that, for example, rely on a semidefinite programming relaxation of the inner problem, and a relaxation of the outer problem to allow for any correlation matrix—not necessarily only those achievable by a binary random assignment.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Hardness of Solving the Min-Max Optimization",
+          "page": 6,
+          "sentence": 8
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          },
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: taxonomy_not_method.",
+            "field": "method",
+            "reason": "taxonomy_not_method"
+          }
+        ],
+        "sources": [
+          {
+            "page": 5,
+            "section": "2.1.3. Worst-Case Potential Outcomes and Min-Max",
+            "equation": "",
+            "quote": "Specifically, we aim to design an experiment that minimizes the variance Var[ ˆτ] of the previous esti­ mator against an adversarial selection of the potential outcomes, which basically corresponds to the worst-case potential outcomes yi1 and yi0 for all i ∈[n] for a given experiment."
+          }
+        ],
+        "components": [
+          {
+            "id": "robust-correlation-design-for-binary-random-variables",
+            "label": "Robust Correlation Design for Binary Random Variables",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Because the Horvitz–Thompson estimator is unbiased, minimizing the variance is equivalent to minimizing the mean-squared error.",
+            "searchPhrases": [
+              "how robust correlation design for binary random variables is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "robust correlation design for binary random variables modeled objective specification"
+            ],
+            "formal": "Objective relation: Because the Horvitz–Thompson estimator is unbiased, minimizing the variance is equivalent to minimizing the mean-squared error.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "q is specified by a joint distribution P[·] of these Bernoulli random variables Zi such that P[Zi = 1] = q for all clusters.",
+              "By the linearity of expectations, E[ ˆτ] = τ; thus, the Horvitz–Thompson estimator is indeed unbiased.",
+              "The total market effect τ is qualitatively equivalent to the (perhaps more commonly used) average treatment effect (ATE), which is defined as τ divided by the total number of users."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2. Robust Correlation Design for Binary Random Variables",
+                "equation": "",
+                "quote": "Because the Horvitz–Thompson estimator is unbiased, minimizing the variance is equivalent to minimizing the mean-squared error."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Because the Horvitz–Thompson estimator is unbiased, minimizing the variance is equivalent to minimizing the mean-squared error.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "worst-case-potential-outcomes-and-min-max",
+            "label": "Worst-Case Potential Outcomes and Min-Max",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "Specifically, we aim to design an experiment that minimizes the variance Var[ ˆτ] of the previous estimator against an adversarial selection of the potential outcomes, which basically corresponds to the worst-case potential outcomes yi1 and yi0 for all i ∈[n] for a given experiment.",
+            "searchPhrases": [
+              "how worst-case potential outcomes and min-max is represented",
+              "modeled objective in pricing, consumers, and revenue management",
+              "worst-case potential outcomes and min-max modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that yi1 ∈[0,wi1] and yi0 ∈[0,wi0] for all clusters i ∈[n], where wi1 and wi0 are a priori known constants.",
+              "Specifically, we aim to design an experiment that minimizes the variance Var[ ˆτ] of the previous estimator against an adversarial selection of the potential outcomes, which basically corresponds to the worst-case potential outcomes yi1 and yi0 for all i ∈[n] for a given experiment.",
+              "The variance of the Horvitz–Thompson estimator ˆτ depends both on the assignment distribution (i.e., the experiment) and on the value of unknown potential outcomes; hence, we follow a robust design approach."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "2.1.3. Worst-Case Potential Outcomes and Min-Max",
+                "equation": "",
+                "quote": "Specifically, we aim to design an experiment that minimizes the variance Var[ ˆτ] of the previous esti­ mator against an adversarial selection of the potential outcomes, which basically corresponds to the worst-case potential outcomes yi1 and yi0 for all i ∈[n] for a given experiment."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “Specifically, we aim to design an experiment that minimizes the variance Var[ ˆτ] of the previous estimator against”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "hardness-of-solving-the-min-max-optimization",
+            "label": "Hardness of Solving the Min-Max Optimization",
+            "role": "algorithm",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "The min-max problem (1) is challenging to solve exactly, because of the following: (i) First, the inner problem is to maximize a quadratic convex function.",
+            "searchPhrases": [
+              "how hardness of solving the min-max optimization is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "hardness of solving the min-max optimization solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The min-max problem (1) is challenging to solve exactly, because of the following: (i) First, the inner problem is to maximize a quadratic convex function.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Moreover, because of convexity, the maximum is always achieved at an extreme point of the feasible region satisfying yi ∈{0,wi} for all i ∈[n].",
+              "Problem (1) Because all potential outcomes are nonnegative by Assumption 2.1, achieving a small objective value in (1) necessitates having a correlation matrix Σ(P) with large (in absolute terms) negative off-diagonal entries.",
+              "Motivated by these challenges, in Section 3, we consider a family of practical experiments that we refer to as independent block randomization experiments, and we show that (i) they are easy to compute and interpret, and (ii) they admit provable performance guarantees."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "2.2. Hardness of Solving the Min-Max Optimization",
+                "equation": "",
+                "quote": "The min-max prob­ lem (1) is challenging to solve exactly, because of the following: (i) First, the inner problem is to maximize a quadratic convex function."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Optimization: “The min-max problem (1) is challenging to solve exactly, because of the following: (i) First, the inner problem”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "price-of-independence-optimal-experiment-with-equal-sized-cluste",
+            "label": "Price of Independence: Optimal Experiment with Equal-Sized Clusters",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "When qn ∈N: An optimal experiment chooses qn clusters uniformly at random and assigns them to treatment while assigning the rest to control.",
+            "searchPhrases": [
+              "how price of independence: optimal experiment with equal-sized clusters is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "price of independence: optimal experiment with equal-sized clusters decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "When qn ∈N: An optimal experiment chooses qn clusters uniformly at random and assigns them to treatment while assigning the rest to control.",
+              "Suppose that the upper bounds of the uncertainty sets (wi)n i=1 in (1) are equal, and without loss of generality, suppose that wi=1 for all i ∈[n].",
+              "Before we introduce the family of IBR experiments, as a warmup, we study the case where cluster sizes (wi)n i=1 are equal."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "3.1. Price of Independence: Optimal Experiment with Equal-Sized Clusters",
+                "equation": "",
+                "quote": "When qn ∈N: An optimal experiment chooses qn clus­ ters uniformly at random and assigns them to treatment while assigning the rest to control."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing: “When qn ∈N: An optimal experiment chooses qn clusters uniformly at random and assigns them to treatment while”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "optimal-independent-blocks-and-dynamic-programming",
+            "label": "Optimal Independent Blocks and Dynamic Programming",
+            "role": "algorithm",
+            "concepts": [
+              "dynamic-programming"
+            ],
+            "explanation": "We next show that the optimal partition of clusters can be obtained through the solution of a simple dynamic program.",
+            "searchPhrases": [
+              "how optimal independent blocks and dynamic programming is represented",
+              "solution algorithm in pricing, consumers, and revenue management",
+              "optimal independent blocks and dynamic programming solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We next show that the optimal partition of clusters can be obtained through the solution of a simple dynamic program.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If there is only one block that contains all the clusters, then the assignments of any two clusters are negatively correlated, but the correlation is only Θ( 1=n).",
+              "If each block instead contains only two clusters, then in the associated IBR experiment, the correlation between the assignments of these two clusters has the largest absolute value possible (in particular, it is 1 when q = 1=2).",
+              "However, in this case, every cluster is only (negatively) correlated with the cluster in the same block and is independent of the remaining n 2 clusters."
+            ],
+            "sources": [
+              {
+                "page": 8,
+                "section": "3.2. Optimal Independent Blocks and Dynamic Programming",
+                "equation": "",
+                "quote": "We next show that the optimal partition of clusters can be obtained through the solution of a simple dynamic program."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "dynamic-programming",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Dynamic programming as “dynamic program”: “through the solution of a simple dynamic program .”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "asymptotic-optimality",
+            "label": "Asymptotic Optimality",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Because the optimal IBR experiment randomly assigns half of the clusters in a block to treatment, it increases the worst-case variance of each block by a constant fraction of 10.7% compared with an experiment that assigns treatment to clusters in a block in an optimal way and does so independently across blocks.",
+            "searchPhrases": [
+              "how asymptotic optimality is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "asymptotic optimality decision rule specification"
+            ],
+            "formal": "Decision rule: Because the optimal IBR experiment randomly assigns half of the clusters in a block to treatment, it increases the worst-case variance of each block by a constant fraction of 10.7% compared with an experiment that assigns treatment to clusters in a block in an optimal way and does so independently across blocks.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "In our asymptotic analysis, we consider the regime where the number of clusters n grows to infinity and there is no dominating cluster, in the sense that w2 1 = o P i∈[n]w2 i .",
+              "Because VOPT = Θ P i∈[n]w2 i by Lemma 4.2, this intuitively means that no cluster is large enough to have a substantial effect on the variance of the estimator.",
+              "The optimal IBR experiment is asymptotically optimal when the number of clusters n grows large and w2 1 = o P i∈[n]w2 i ."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.2. Asymptotic Optimality",
+                "equation": "",
+                "quote": "Because the optimal IBR experiment randomly assigns half of the clusters in a block to treatment, it increases the worst-case variance of each block by a constant fraction of 10.7% com­ pared with an experiment that assigns treatment to clusters in a block in an optimal way and does so independently across blocks."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Because the optimal IBR experiment randomly assigns half of the clusters in a block to treatment, it increases”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "asymptotic-optimality-in-the-high-multiplicity",
+            "label": "Asymptotic Optimality in the High-Multiplicity",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Specifically, in each step we focus on the clusters that are not yet assigned to a block, pick the largest one, and include all of the clusters whose sizes are at least 1=α times the size of this cluster in a block.",
+            "searchPhrases": [
+              "how asymptotic optimality in the high-multiplicity is represented",
+              "decision rule in pricing, consumers, and revenue management",
+              "asymptotic optimality in the high-multiplicity decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "If, in addition, each nk = αkn is a fixed proportion αk ∈ (0,1) of the total number of clusters n, then V VLB ≤ X k∈[K] w2 1 4αk + w2 k 1 2q(1 q) + 1 , which is a constant independent of n.",
+              "Let us start by introducing the slightly stronger version of the no dominating cluster condition needed for our analysis of the aforementioned experiment: Pn i=1 w2 i =w2 1 = Ω(nc) for some constant c>0.",
+              "Specifically, in each step we focus on the clusters that are not yet assigned to a block, pick the largest one, and include all of the clusters whose sizes are at least 1=α times the size of this cluster in a block."
+            ],
+            "sources": [
+              {
+                "page": 13,
+                "section": "4.2.1. Asymptotic Optimality in the High-Multiplicity",
+                "equation": "",
+                "quote": "Spe­ cifically, in each step we focus on the clusters that are not yet assigned to a block, pick the largest one, and include all of the clusters whose sizes are at least 1=α times the size of this cluster in a block."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Specifically, in each step we focus on the clusters that are not yet assigned to a block, pick”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 2,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 13,
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "552d99c7a87a7982192df4bef2ac0bbe3a9890538d59edcbfab53f9ddfa07685",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "f3daf103fde7335418de4883b8243c0e0a3fd52b51c194ba8e94c9ee104841ae",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2021-02741/f3daf103fde7335418de4883b8243c0e0a3fd52b51c194ba8e94c9ee104841ae.json",
+      "extractionQaDecisionSha256": "c9f78c16632321e5bdea93773f3964c88c4b85ad92f655c22293853b9d2a635a",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

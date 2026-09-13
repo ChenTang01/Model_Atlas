@@ -1,0 +1,1548 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2017-0649",
+  "sourcePdfSha256": "e45e93ed5283f6d44189e6c964f7033d53c75cad47115716a586e21148fae3d8",
+  "extractionPagesSha256": "4c41158d42513d7c9c7b96a84679615ac64186e5b9ce41b69fd38272140388e8",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "e6ce1621252785c8bcbfe8d0dda833e3d520e642cb982a4cef34d15aa393e37f",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "5662742dd87ea3905f016619e0ca1dc8a483350a9d9c4352c581ce61a9a1b2d2",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2017-0649/5662742dd87ea3905f016619e0ca1dc8a483350a9d9c4352c581ce61a9a1b2d2.json",
+  "extractionQaDecisionSha256": "510874e0a26b4c48fa2bb2420d2ef8e504df5ca6b6040c59e7bec4fc3ae96543",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2017-0649",
+    "question": "How do real-time ambulance dispatching and relocation interact?",
+    "overview": "In this study, we develop a flexible optimization framework for real-time ambulance dispatching and relocation. In addition to ambulance redeployment, we consider a general dispatching and relocation strategy by which the decision maker has the option to (i) select any available ambulance to dispatch to a call or to queue the call and (ii) send an idle ambulance to cover the location of an ambulance just dispatched to a call. The paper formulates the problem as a stochastic dynamic program, and, because the state space is unbounded, an approximate dynamic programming (ADP) framework is developed to generate high-quality solutions.",
+    "modelTypes": [
+      "Queueing",
+      "Simulation",
+      "Learning & algorithms",
+      "Stochastic model"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        7,
+        9,
+        10,
+        11
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "real-time-ambulance-dispatching-and-relocation-baseline-model",
+        "name": "Real-Time Ambulance Dispatching and Relocation baseline model",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "In this study, we develop a flexible optimization framework for real-time ambulance dispatching and relocation. In addition to ambulance redeployment, we consider a general dispatching and relocation strategy by which the decision maker has the option to (i) select any available ambulance to dispatch to a call or to queue the call and (ii) send an idle ambulance to cover the location of an ambulance just dispatched to a call. The online appendix is available at https://doi.org/10.1287/msom.2017.0649 .",
+        "objects": [
+          "The decision maker",
+          "The state space",
+          "Hospitals",
+          "The patient",
+          "Hospital"
+        ],
+        "inputs": [
+          "The state of all ambulances",
+          "The arrival time",
+          "The state of all calls",
+          "Time",
+          "The travel time between locations x and y"
+        ],
+        "decisions": [
+          "A lower bound on the expected fraction of late calls of any relocation policy",
+          "To the current location and the destination to null",
+          "The original location to the call location and destination to null",
+          "The service rate of an ambulance in region l",
+          "The model by scaling the arrival rates and find the scaling factor through experimentation"
+        ],
+        "assumptions": [
+          "A total of N ambulances are available and at most J calls are tracked",
+          "Decisions are made at transition times",
+          "Dispatching, reallocating, and redeploying the ambulances are nonpreemptive",
+          "All ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds",
+          "Travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a finite mean, independent of call location"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In addition to ambulance redeployment, we consider a general dispatching and relocation strategy by which the decision maker has the option to (i) select any available ambulance to dispatch to a call or to queue the call and (ii) send an idle ambulance to cover the location of an ambulance just dispatched to a call.",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "We formulate the problem as a stochastic dynamic program, and, because the state space is unbounded, an approximate dynamic programming (ADP) framework is developed to generate high-quality solutions.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "section",
+                "section": "Motivation",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Emergency medical services (EMS) provide out-of- hospital acute medical care and transport the sick or injured to hospitals for deﬁnitive care.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 64,
+                "quote": "If an ambulance arrives at call j scene, it completes the service at the scene with probability ρj, and it will transfer the patient to a hospital with probability 1 −ρj.",
+                "matchedText": "the patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "In our model, transition times are associated with the following events: call j arrives, ambulance i is in transit to call j, ambulance i arrives at the location of call j, ambulance i is ﬁnished serving call j at scene, ambulance i is ﬁnished serving call j at hospital, and ambulance i arrives at a base.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The state of all ambulances",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "the state of all ambulances",
+                "matchedText": "the state of all ambulances",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "The arrival time",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 7,
+                "quote": "the arrival time",
+                "matchedText": "the arrival time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state of all calls",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 13,
+                "quote": "the state of all calls",
+                "matchedText": "the state of all calls",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "Time",
+              "source": {
+                "type": "section",
+                "section": "Objective Function",
+                "sectionIndex": 7,
+                "page": 6,
+                "quote": "where △denotes the given time",
+                "matchedText": "time",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The travel time between locations x and y",
+              "source": {
+                "type": "section",
+                "section": "Basis Functions",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 11,
+                "quote": "the travel time between locations x and y",
+                "matchedText": "the travel time between locations x and y",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "A lower bound on the expected fraction of late calls of any relocation policy",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "We assess the quality of our solutions by developing a lower bound on the expected response time and computing a lower bound on the expected fraction of late calls of any relocation policy.",
+                "matchedText": "a lower bound on the expected fraction of late calls of any relocation policy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To the current location and the destination to null",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 4,
+                "quote": "471 is idle in a location, the original location is set to the current location and the destination to null",
+                "matchedText": "to the current location and the destination to null",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The original location to the call location and destination to null",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 5,
+                "quote": "Similarly, when an ambulance is serving a call on scene, we set the original location to the call location and destination to null",
+                "matchedText": "the original location to the call location and destination to null",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The service rate of an ambulance in region l",
+              "source": {
+                "type": "section",
+                "section": "Basis Functions",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 12,
+                "quote": "We estimate the service rate of an ambulance in region l",
+                "matchedText": "the service rate of an ambulance in region l",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The model by scaling the arrival rates and find the scaling factor through experimentation",
+              "source": {
+                "type": "section",
+                "section": "Basis Functions",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 18,
+                "quote": "To overcome this issue, we calibrate the model by scaling the arrival rates and ﬁnd the scaling factor through experimentation",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A total of N ambulances are available and at most J calls are tracked",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 3,
+                "quote": "We assume a total of N ambulances are available and at most J calls are tracked.",
+                "matchedText": "a total of N ambulances are available and at most J calls are tracked.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decisions are made at transition times",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 14,
+                "quote": "Without loss of generality, we assume that decisions are made at transition times.",
+                "matchedText": "decisions are made at transition times.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Dispatching, reallocating, and redeploying the ambulances are nonpreemptive",
+              "source": {
+                "type": "section",
+                "section": "Action Space",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "We assume that dispatching, reallocating, and redeploying the ambulances are nonpreemptive.",
+                "matchedText": "dispatching, reallocating, and redeploying the ambulances are nonpreemptive.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds",
+              "source": {
+                "type": "section",
+                "section": "Lower Bound",
+                "page": 10,
+                "sectionIndex": 11,
+                "sentence": 28,
+                "quote": "We assume that all ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds.",
+                "matchedText": "all ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a finite mean, independent of call location",
+              "source": {
+                "type": "section",
+                "section": "Transitions",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "We assume that travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a ﬁnite mean, independent of call location.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          }
+        ],
+        "method": "The paper estimates all of the distributions using historical data from Mecklenburg County, North Carolina.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Problem Formulation",
+          "page": 6,
+          "sentence": 67
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3.1. State Space",
+            "equation": "",
+            "quote": "Similarly, when an ambulance is serving a call on scene, we set the original location to the call location and destination to null."
+          }
+        ],
+        "components": [
+          {
+            "id": "state-space",
+            "label": "State Space",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "Similarly, when an ambulance is serving a call on scene, we set the original location to the call location and destination to null.",
+            "searchPhrases": [
+              "how state space is represented",
+              "decision rule in policy, sustainability, and public services",
+              "state space decision rule specification"
+            ],
+            "formal": "Decision rule: Similarly, when an ambulance is serving a call on scene, we set the original location to the call location and destination to null.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We let vector m (m1, m2, . . . , mN) ∈M represent the state of all ambulances.",
+              "A call j is represented by cj (gj, lj, pj, qj), where gj is the status, lj is the location, pj is the priority, and qj is the arrival time of the call.",
+              "471 is idle in a location, the original location is set to the current location and the destination to null."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3.1. State Space",
+                "equation": "",
+                "quote": "Similarly, when an ambulance is serving a call on scene, we set the original location to the call location and destination to null."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Similarly, when an ambulance is serving a call on scene, we set the original location to the call”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "problem-formulation",
+            "label": "Problem Formulation",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Without loss of generality, we assume that decisions are made at transition times.",
+            "searchPhrases": [
+              "how problem formulation is represented",
+              "system process in policy, sustainability, and public services",
+              "problem formulation system process specification"
+            ],
+            "formal": "Process relation: Without loss of generality, we assume that decisions are made at transition times.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that decisions are made at transition times.",
+              "Without loss of generality, we assume that decisions are made at transition times.",
+              "A call j is represented by cj (gj, lj, pj, qj), where gj is the status, lj is the location, pj is the priority, and qj is the arrival time of the call."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. Problem Formulation",
+                "equation": "",
+                "quote": "Without loss of generality, we assume that decisions are made at transition times."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Without loss of generality, we assume that decisions are made at transition times.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "action-space",
+            "label": "Action Space",
+            "role": "state",
+            "concepts": [
+              "queueing"
+            ],
+            "explanation": "Let J3(s) denote the set that points to the highest-priority call with the longest waiting time in the queue, and let M3(s) denote the set of available ambulances for redeployment when the state is s.",
+            "searchPhrases": [
+              "how action space is represented",
+              "decision-relevant state in policy, sustainability, and public services",
+              "action space decision-relevant state specification"
+            ],
+            "formal": "State rule: collect the decision-relevant variables defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "We assume that travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a finite mean, independent of call location."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.2. Action Space",
+                "equation": "",
+                "quote": "Let J3(s) denote the set that points to the highest-priority call with the longest waiting time in the queue, and let M3(s) denote the set of available ambulances for redeployment when the state is s."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "queueing",
+                "status": "modeled",
+                "representation": "In the state description, the source expresses Queueing: “Queueing”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a finite mean, independent of call location",
+                  "source": {
+                    "type": "section",
+                    "section": "Transitions",
+                    "page": 6,
+                    "sectionIndex": 6,
+                    "sentence": 3,
+                    "quote": "We assume that travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a ﬁnite mean, independent of call location.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "objective-function",
+            "label": "Objective Function",
+            "role": "objective",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "Let h(sκ, aκ, sκ+1) denote the cost of a transition from sκ to sκ+1, when action aκ is taken.",
+            "searchPhrases": [
+              "how objective function is represented",
+              "modeled objective in policy, sustainability, and public services",
+              "objective function modeled objective specification"
+            ],
+            "formal": "Optimization rule: choose feasible decisions to optimize the stated objective.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Without loss of generality, we assume that decisions are made at transition times."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "3.4. Objective Function",
+                "equation": "",
+                "quote": "Let h(sκ, aκ, sκ+1) denote the cost of a transition from sκ to sκ+1, when action aκ is taken."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Optimization as “objective function”: “Let h(sκ, aκ, sκ+1) denote the cost of a transition from sκ to sκ+1, when action aκ is”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Decisions are made at transition times",
+                  "source": {
+                    "type": "section",
+                    "section": "State Space",
+                    "page": 5,
+                    "sectionIndex": 4,
+                    "sentence": 14,
+                    "quote": "Without loss of generality, we assume that decisions are made at transition times.",
+                    "matchedText": "decisions are made at transition times.",
+                    "derivation": "literal-source-pattern"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "upper-bound",
+            "label": "Upper Bound",
+            "role": "estimation",
+            "concepts": [
+              "simulation"
+            ],
+            "explanation": "Projection: Use Cr(s) from the Monte Carlo simulation and solve formulation (3) to estimate αn+1 for the next iteration.",
+            "searchPhrases": [
+              "how upper bound is represented",
+              "estimation procedure in policy, sustainability, and public services",
+              "upper bound estimation procedure specification"
+            ],
+            "formal": "Estimation rule: fit the stated model to observations under its identifying conditions.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "At iteration n, it evaluates πn by calculating vn(s) for all s ∈S by solving vn(s) Lπn vn(s), where Lπn vn(s) Ɛ{h(s, a, s′) + γτ(s′)−τ(s)v(s′)}.",
+              "Next, it improves the policy by choosing a myopic policy relative to vn, i.e., πn+1(s) ∈argmind∈DMD {Ɛ(h(s, a, s′) + γτ(s′)−τ(s)vn(s′))}, where d ∈DMD denotes a decision rule in the set of stationary Markovian deterministic policies (DMD).",
+              "The next event could be a call arrival or a busy ambulance completing one stage of its transition, which is either reaching a call scene, finishing service (at scene or hospital), or arriving at a location after finishing service."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.1. Upper Bound",
+                "equation": "",
+                "quote": "Projection: Use Cr(s) from the Monte Carlo simulation and solve formulation (3) to estimate αn+1 for the next iteration."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "simulation",
+                "status": "modeled",
+                "representation": "In the estimation procedure, the source expresses Simulation: “Simulation”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "basis-functions",
+            "label": "Basis Functions",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "This novel basis function computes the aggregated delay time for calls in the queue for which an ambulance is assigned but is not going to reach to the call scene within the time threshold △, i.e., φ6(s) JX j 1 {gj 1} N X i 1 { fi “ambulance i is going to call scene j”} · {ti+t(oi, ̄l)−gj≥△}(ti + t(oi, ̄l) −gj ≥△).",
+            "searchPhrases": [
+              "how basis functions is represented",
+              "decision rule in policy, sustainability, and public services",
+              "basis functions decision rule specification"
+            ],
+            "formal": "Decision rule: select the feasible action defined in this component.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The indicator function { fi “ambulance i is going to call scene j”} · {ti+t(oi, ̄l)−gj≥△} ensures that only late calls are counted."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.2. Basis Functions",
+                "equation": "",
+                "quote": "The above expression ﬁrst checks whether the call is assigned to an ambulance and then checks whether the ambulance will fail to reach the call location within the time threshold (Maxwell et al. 2010)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "lower-bound",
+            "label": "Lower Bound",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Having ν(·) allows us to approximate the above expectation by simulating the bounding system.",
+            "searchPhrases": [
+              "how lower bound is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "lower bound solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Maxwell et al. (2014) constructed a bounding system by a coupling of the ambulance dynamics such that the number of available ambulances in the bounding system, ̃Aj, at the arrival time of the jth call satisfies ̃Aj ≥Aj for all j almost surely.",
+              "This is achieved by computing a stochastic lower bound on the service time distribution of ambulances in the original system, which is independent of the ambulance configuration in an EMS system, and thus the relocation policies (Maxwell et al. 2014)."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.3. Lower Bound",
+                "equation": "",
+                "quote": "Having ν(·) allows us to approximate the above expectation by simulating the bounding system."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Having ν(·) allows us to approximate the above expectation by simulating the bounding system.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "choice-of-static-benchmark",
+        "name": "Choice of Static Benchmark",
+        "kind": "alternative",
+        "relation": "This is an alternative to Real-Time Ambulance Dispatching and Relocation baseline model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "real-time-ambulance-dispatching-and-relocation-baseline-model"
+          }
+        ],
+        "summary": "The DSM guarantees a certain level of coverage within the target response time for at least a fraction of demand and defines a second type of coverage with higher target response time that must be maintained for all demand locations.",
+        "objects": [
+          "The decision maker",
+          "The state space",
+          "Hospitals",
+          "The patient",
+          "Hospital"
+        ],
+        "inputs": [
+          "The state of all ambulances",
+          "The arrival time",
+          "The state of all calls",
+          "Time",
+          "The travel time between locations x and y"
+        ],
+        "decisions": [
+          "A lower bound on the expected fraction of late calls of any relocation policy",
+          "To the current location and the destination to null",
+          "The original location to the call location and destination to null",
+          "The service rate of an ambulance in region l",
+          "The model by scaling the arrival rates and find the scaling factor through experimentation"
+        ],
+        "assumptions": [
+          "A total of N ambulances are available and at most J calls are tracked",
+          "Decisions are made at transition times",
+          "Dispatching, reallocating, and redeploying the ambulances are nonpreemptive",
+          "All ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds",
+          "Travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a finite mean, independent of call location"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In addition to ambulance redeployment, we consider a general dispatching and relocation strategy by which the decision maker has the option to (i) select any available ambulance to dispatch to a call or to queue the call and (ii) send an idle ambulance to cover the location of an ambulance just dispatched to a call.",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "We formulate the problem as a stochastic dynamic program, and, because the state space is unbounded, an approximate dynamic programming (ADP) framework is developed to generate high-quality solutions.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "section",
+                "section": "Motivation",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Emergency medical services (EMS) provide out-of- hospital acute medical care and transport the sick or injured to hospitals for deﬁnitive care.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 64,
+                "quote": "If an ambulance arrives at call j scene, it completes the service at the scene with probability ρj, and it will transfer the patient to a hospital with probability 1 −ρj.",
+                "matchedText": "the patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "In our model, transition times are associated with the following events: call j arrives, ambulance i is in transit to call j, ambulance i arrives at the location of call j, ambulance i is ﬁnished serving call j at scene, ambulance i is ﬁnished serving call j at hospital, and ambulance i arrives at a base.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The state of all ambulances",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 6,
+                "quote": "the state of all ambulances",
+                "matchedText": "the state of all ambulances",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "The arrival time",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 7,
+                "quote": "the arrival time",
+                "matchedText": "the arrival time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state of all calls",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 13,
+                "quote": "the state of all calls",
+                "matchedText": "the state of all calls",
+                "derivation": "literal-parameter-gloss"
+              }
+            },
+            {
+              "value": "Time",
+              "source": {
+                "type": "section",
+                "section": "Objective Function",
+                "sectionIndex": 7,
+                "page": 6,
+                "quote": "where △denotes the given time",
+                "matchedText": "time",
+                "derivation": "literal-explicit-input"
+              }
+            },
+            {
+              "value": "The travel time between locations x and y",
+              "source": {
+                "type": "section",
+                "section": "Basis Functions",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 11,
+                "quote": "the travel time between locations x and y",
+                "matchedText": "the travel time between locations x and y",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "A lower bound on the expected fraction of late calls of any relocation policy",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 4,
+                "quote": "We assess the quality of our solutions by developing a lower bound on the expected response time and computing a lower bound on the expected fraction of late calls of any relocation policy.",
+                "matchedText": "a lower bound on the expected fraction of late calls of any relocation policy",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To the current location and the destination to null",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 4,
+                "quote": "471 is idle in a location, the original location is set to the current location and the destination to null",
+                "matchedText": "to the current location and the destination to null",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The original location to the call location and destination to null",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 5,
+                "quote": "Similarly, when an ambulance is serving a call on scene, we set the original location to the call location and destination to null",
+                "matchedText": "the original location to the call location and destination to null",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The service rate of an ambulance in region l",
+              "source": {
+                "type": "section",
+                "section": "Basis Functions",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 12,
+                "quote": "We estimate the service rate of an ambulance in region l",
+                "matchedText": "the service rate of an ambulance in region l",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The model by scaling the arrival rates and find the scaling factor through experimentation",
+              "source": {
+                "type": "section",
+                "section": "Basis Functions",
+                "page": 8,
+                "sectionIndex": 6,
+                "sentence": 18,
+                "quote": "To overcome this issue, we calibrate the model by scaling the arrival rates and ﬁnd the scaling factor through experimentation",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A total of N ambulances are available and at most J calls are tracked",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 3,
+                "quote": "We assume a total of N ambulances are available and at most J calls are tracked.",
+                "matchedText": "a total of N ambulances are available and at most J calls are tracked.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decisions are made at transition times",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 14,
+                "quote": "Without loss of generality, we assume that decisions are made at transition times.",
+                "matchedText": "decisions are made at transition times.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Dispatching, reallocating, and redeploying the ambulances are nonpreemptive",
+              "source": {
+                "type": "section",
+                "section": "Action Space",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "We assume that dispatching, reallocating, and redeploying the ambulances are nonpreemptive.",
+                "matchedText": "dispatching, reallocating, and redeploying the ambulances are nonpreemptive.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds",
+              "source": {
+                "type": "section",
+                "section": "Lower Bound",
+                "page": 10,
+                "sectionIndex": 11,
+                "sentence": 28,
+                "quote": "We assume that all ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds.",
+                "matchedText": "all ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a finite mean, independent of call location",
+              "source": {
+                "type": "section",
+                "section": "Transitions",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "We assume that travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a ﬁnite mean, independent of call location.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_unresolved",
+            "message": "No supported inputs were found in cleaned record metadata or model-section prose.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_unresolved",
+            "message": "No supported decisions were found in cleaned record metadata or model-section prose.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_inputs_source_exhausted",
+            "message": "No concrete inputs phrase could be retained from substantive source or abstract sentences.",
+            "category": "inputs"
+          },
+          {
+            "code": "setup_decisions_source_exhausted",
+            "message": "No concrete decisions phrase could be retained from substantive source or abstract sentences.",
+            "category": "decisions"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "inputs",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper formulates the problem as a stochastic dynamic program, and, because the state space is unbounded, an approximate dynamic programming (ADP) framework is developed to generate high-quality solutions.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 3
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 10,
+            "section": "5.1. Choice of Static Benchmark",
+            "equation": "",
+            "quote": "The DSM guarantees a certain level of coverage within the target response time for at least a fraction of demand and deﬁnes a second type of coverage with higher target response time that must be maintained for all demand locations."
+          }
+        ],
+        "components": [
+          {
+            "id": "choice-of-static-benchmark",
+            "label": "Choice of Static Benchmark",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "The DSM guarantees a certain level of coverage within the target response time for at least a fraction of demand and defines a second type of coverage with higher target response time that must be maintained for all demand locations.",
+            "searchPhrases": [
+              "how choice of static benchmark is represented",
+              "decision rule in policy, sustainability, and public services",
+              "choice of static benchmark decision rule specification"
+            ],
+            "formal": "Decision rule: The DSM guarantees a certain level of coverage within the target response time for at least a fraction of demand and defines a second type of coverage with higher target response time that must be maintained for all demand locations.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "The DSM guarantees a certain level of coverage within the target response time for at least a fraction of demand and defines a second type of coverage with higher target response time that must be maintained for all demand locations.",
+              "A static policy sends the closest available ambulance to a call and returns an ambulance after finishing service to its predetermined base if no call is in the queue."
+            ],
+            "sources": [
+              {
+                "page": 10,
+                "section": "5.1. Choice of Static Benchmark",
+                "equation": "",
+                "quote": "The DSM guarantees a certain level of coverage within the target response time for at least a fraction of demand and deﬁnes a second type of coverage with higher target response time that must be maintained for all demand locations."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “The DSM guarantees a certain level of coverage within the target response time for at least a fraction”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dynamic-benchmark-policies",
+        "name": "Dynamic Benchmark Policies",
+        "kind": "alternative",
+        "relation": "This is an alternative to Real-Time Ambulance Dispatching and Relocation baseline model.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "real-time-ambulance-dispatching-and-relocation-baseline-model"
+          }
+        ],
+        "summary": "We use this heuristic as another benchmark.",
+        "objects": [
+          "The decision maker",
+          "The state space",
+          "Hospitals",
+          "The patient",
+          "Hospital"
+        ],
+        "inputs": [
+          "The demand"
+        ],
+        "decisions": [
+          "Three dynamic benchmarks to assess the contribution of each strategy: dispatching"
+        ],
+        "assumptions": [
+          "A total of N ambulances are available and at most J calls are tracked",
+          "Decisions are made at transition times",
+          "Dispatching, reallocating, and redeploying the ambulances are nonpreemptive",
+          "All ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds",
+          "Travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a finite mean, independent of call location"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The decision maker",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 2,
+                "quote": "In addition to ambulance redeployment, we consider a general dispatching and relocation strategy by which the decision maker has the option to (i) select any available ambulance to dispatch to a call or to queue the call and (ii) send an idle ambulance to cover the location of an ambulance just dispatched to a call.",
+                "matchedText": "the decision maker",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The state space",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 3,
+                "quote": "We formulate the problem as a stochastic dynamic program, and, because the state space is unbounded, an approximate dynamic programming (ADP) framework is developed to generate high-quality solutions.",
+                "matchedText": "the state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "section",
+                "section": "Motivation",
+                "page": 1,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "Emergency medical services (EMS) provide out-of- hospital acute medical care and transport the sick or injured to hospitals for deﬁnitive care.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 64,
+                "quote": "If an ambulance arrives at call j scene, it completes the service at the scene with probability ρj, and it will transfer the patient to a hospital with probability 1 −ρj.",
+                "matchedText": "the patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "In our model, transition times are associated with the following events: call j arrives, ambulance i is in transit to call j, ambulance i arrives at the location of call j, ambulance i is ﬁnished serving call j at scene, ambulance i is ﬁnished serving call j at hospital, and ambulance i arrives at a base.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The demand",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Benchmark Policies",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 22,
+                "quote": "the demand (call arrival) rate in region l at time τ.",
+                "matchedText": "the demand",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Three dynamic benchmarks to assess the contribution of each strategy: dispatching",
+              "source": {
+                "type": "section",
+                "section": "Dynamic Benchmark Policies",
+                "page": 11,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We design three dynamic benchmarks to assess the contribution of each strategy: dispatching",
+                "matchedText": "three dynamic benchmarks to assess the contribution of each strategy: dispatching",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "A total of N ambulances are available and at most J calls are tracked",
+              "source": {
+                "type": "section",
+                "section": "Problem Formulation",
+                "page": 4,
+                "sectionIndex": 3,
+                "sentence": 3,
+                "quote": "We assume a total of N ambulances are available and at most J calls are tracked.",
+                "matchedText": "a total of N ambulances are available and at most J calls are tracked.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Decisions are made at transition times",
+              "source": {
+                "type": "section",
+                "section": "State Space",
+                "page": 5,
+                "sectionIndex": 4,
+                "sentence": 14,
+                "quote": "Without loss of generality, we assume that decisions are made at transition times.",
+                "matchedText": "decisions are made at transition times.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Dispatching, reallocating, and redeploying the ambulances are nonpreemptive",
+              "source": {
+                "type": "section",
+                "section": "Action Space",
+                "page": 5,
+                "sectionIndex": 5,
+                "sentence": 2,
+                "quote": "We assume that dispatching, reallocating, and redeploying the ambulances are nonpreemptive.",
+                "matchedText": "dispatching, reallocating, and redeploying the ambulances are nonpreemptive.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds",
+              "source": {
+                "type": "section",
+                "section": "Lower Bound",
+                "page": 10,
+                "sectionIndex": 11,
+                "sentence": 28,
+                "quote": "We assume that all ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds.",
+                "matchedText": "all ambulances are the same and that turnout time (the activation delay needed for the ambulance crew to get ready and depart the base) is 45 seconds.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a finite mean, independent of call location",
+              "source": {
+                "type": "section",
+                "section": "Transitions",
+                "page": 6,
+                "sectionIndex": 6,
+                "sentence": 3,
+                "quote": "We assume that travel times are deterministic, and the time required to serve a call at scene or taking a patient to hospital follows an arbitrary distribution with a ﬁnite mean, independent of call location.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_unresolved",
+            "message": "No supported entities were found in cleaned record metadata or model-section prose.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_assumptions_unresolved",
+            "message": "No supported assumptions were found in cleaned record metadata or model-section prose.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inputs_completed_from_source",
+            "message": "Filled inputs from literal abstract or source-section phrases.",
+            "category": "inputs",
+            "count": 1
+          },
+          {
+            "code": "setup_entities_source_exhausted",
+            "message": "No concrete entities phrase could be retained from substantive source or abstract sentences.",
+            "category": "entities"
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "objects",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "assumptions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          }
+        ],
+        "method": "The paper formulates the problem as a stochastic dynamic program, and, because the state space is unbounded, an approximate dynamic programming (ADP) framework is developed to generate high-quality solutions.",
+        "methodMaturity": "inherited-paper-method",
+        "methodEvidence": {
+          "section": "Model contribution and method",
+          "page": 1,
+          "sentence": 3
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_inherited_from_base_model",
+            "message": "The paper-level baseline retains its already source-grounded method."
+          }
+        ],
+        "sources": [
+          {
+            "page": 11,
+            "section": "5.2. Dynamic Benchmark Policies",
+            "equation": "",
+            "quote": "We use this heuristic as another benchmark."
+          }
+        ],
+        "components": [
+          {
+            "id": "dynamic-benchmark-policies",
+            "label": "Dynamic Benchmark Policies",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "We use this heuristic as another benchmark.",
+            "searchPhrases": [
+              "how dynamic benchmark policies is represented",
+              "solution algorithm in policy, sustainability, and public services",
+              "dynamic benchmark policies solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: We use this heuristic as another benchmark.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Benchmark 2 (redeployment only) sends immediately the closest available ambulance to a call and does not consider the possibility of ambulance reallocation after dispatching an ambulance.",
+              "Benchmark 3 (reallocation only) sends the closest available ambulance to serve a call, and after an ambulance has finished serving a call, decides whether the ambulance serves a call in the queue or returns to its preassigned base."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "5.2. Dynamic Benchmark Policies",
+                "equation": "",
+                "quote": "We use this heuristic as another benchmark."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “We use this heuristic as another benchmark.”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "title",
+        "transformation": "substantive-title-clause"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "e45e93ed5283f6d44189e6c964f7033d53c75cad47115716a586e21148fae3d8",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "5662742dd87ea3905f016619e0ca1dc8a483350a9d9c4352c581ce61a9a1b2d2",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2017-0649/5662742dd87ea3905f016619e0ca1dc8a483350a9d9c4352c581ce61a9a1b2d2.json",
+      "extractionQaDecisionSha256": "510874e0a26b4c48fa2bb2420d2ef8e504df5ca6b6040c59e7bec4fc3ae96543",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

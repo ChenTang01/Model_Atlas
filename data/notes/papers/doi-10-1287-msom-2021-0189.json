@@ -1,0 +1,942 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "source-mapped",
+  "paperId": "doi-10-1287-msom-2021-0189",
+  "sourcePdfSha256": "ad8d371883464d250b8c52be98678d2ae1eebc739484e37e001b46d32b6d7a5c",
+  "extractionPagesSha256": "9fc84255416a01b23c146ad6c53644178aa24cd5db0f7c7db5bd3fabf1e265d6",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "8815f8141e03a2423ca1871e6371020b4a0b64e4afbaad667e88d0020d79c220",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "876272b3434e3b2b0e684843ec19178b47b6b4e1a8f1ec203226d980679cdf79",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0189/876272b3434e3b2b0e684843ec19178b47b6b4e1a8f1ec203226d980679cdf79.json",
+  "extractionQaDecisionSha256": "408899ce8fa64c6912ac29699e0847b3fceb72e331787cd5ad057007697cd7b6",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-msom-2021-0189",
+    "question": "How do infection and mortality risks influence optimal LOS of individual patients?",
+    "overview": "Determining the optimal length of stay (LOS) and posttreatment location is critical for hematology-oncology (blood cancer) patients, who are highly vulnerable to life-threatening infections. Early discharge to home care reduces infection risk, whereas extended hospital observation minimizes mortality risks if an infection occurs. The paper addresses this trade-off by developing LOS optimization models tailored to these patients.",
+    "modelTypes": [
+      "Queueing",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        5,
+        6,
+        9,
+        11,
+        12
+      ],
+      "note": "Model, method, and formulation sections were mapped from the page-preserving source extraction; source anchors and schema references are checked independently from substantive expert review."
+    },
+    "models": [
+      {
+        "id": "the-capacitated-model-a-hospital",
+        "name": "The Capacitated Model: A Hospital Ward Perspective",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Determining the optimal length of stay (LOS) and posttreatment location is critical for hematology-oncology (blood cancer) patients, who are highly vulnerable to life-threatening infections. Early discharge to home care reduces infection risk, whereas extended hospital observation minimizes mortality risks if an infection occurs. The paper addresses this trade-off by developing LOS optimization models tailored to these patients.",
+        "objects": [
+          "Patients",
+          "Hospitals",
+          "Physicians",
+          "Servers",
+          "Customers"
+        ],
+        "inputs": [
+          "Each type",
+          "The patient arrival rate",
+          "Patient parameters",
+          "The service time",
+          "The reward"
+        ],
+        "decisions": [
+          "When to send a patient home should be",
+          "When to transition a patient to home care",
+          "An online index-based speedup policy (ISP) to guide patient discharge decisions",
+          "Transfer to home care",
+          "Optimal stay-up-to thresholds for each type"
+        ],
+        "assumptions": [
+          "Instead, the patient LOS is an outcome of optimization and may be impacted by the system’s capacity.",
+          "Patients who cannot be hospitalized for observation in the ward because of capacity constraints are sent to home care immediately",
+          "The following properties for the system parameters",
+          "The risk functions are constant over time, enabling us to find a closed-form solution as characterized in the following proposition",
+          "The infection hazard rates are fixed at treatment completion with no real-time updates during observation (expect for the elapsed time and whether the patient got an infection)"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patients",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 1,
+                "quote": "Problem definition: Determining the optimal length of stay (LOS) and posttreatment location is critical for hematology-oncology (blood cancer) patients, who are highly vulnerable to life-threatening infections.",
+                "matchedText": "patients",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospitals",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 5,
+                "quote": "We further consider the social optimization problem in which capacity constraints limit the ability of hospitals to keep patients for the entirety of their optimal LOS.",
+                "matchedText": "hospitals",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Physicians",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 8,
+                "quote": "Managerial implications: Our model enables physicians to personalize LOS based on patients’ risk profiles and dynamically adapt to hospital capacity constraints.",
+                "matchedText": "physicians",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Servers",
+              "source": {
+                "type": "section",
+                "section": "The Capacitated Model: A Hospital",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 16,
+                "quote": "To disentangle patient LOS from system capacity, we consider an alternative definition of offered load: the expected number of busy servers in an infinite-server queue.",
+                "matchedText": "servers",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Customers",
+              "source": {
+                "type": "section",
+                "section": "The Capacitated Model: A Hospital",
+                "page": 7,
+                "sectionIndex": 0,
+                "sentence": 42,
+                "quote": "Our approach mimics the methodology of Bassamboo and Randhawa (2016), who use fluid approximations to optimize scheduling in an overloaded queueing system with impatient customers, albeit with a focus on priori­ tization rather than patient service times as we do here.",
+                "matchedText": "customers",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Each type",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 6,
+                "quote": "We find that, in the optimal solution to the fluid model used to approximate the original stochastic system, each type of patient is discharged at at most two discrete time points, one of which might be equal to zero or to the optimal uncapacitated length of stay.",
+                "matchedText": "each type",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The patient arrival rate",
+              "source": {
+                "type": "section",
+                "section": "The Capacitated Model: A Hospital",
+                "page": 6,
+                "sectionIndex": 4,
+                "sentence": 11,
+                "quote": "Let λ be the patient arrival rate into the ward and S be the random variable of patient LOS.",
+                "matchedText": "the patient arrival rate",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Patient parameters",
+              "source": {
+                "type": "section",
+                "section": "The Capacitated Model: A Hospital",
+                "page": 6,
+                "sectionIndex": 16,
+                "sentence": 9,
+                "quote": "Having established the tractability of solving for the optimal threshold (at least numerically) under any given set of system and patient parameters, we now turn to analyze the structural properties of τopt.",
+                "matchedText": "patient parameters",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The service time",
+              "source": {
+                "type": "section",
+                "section": "The Capacitated Model: A Hospital",
+                "sectionIndex": 4,
+                "page": 6,
+                "quote": "A specific challenge in this context is that the service time, S, and consequently its expected value, E[S], is not exogenous."
+              }
+            },
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "The Dynamic Index-Based Speedup Policy",
+                "page": 12,
+                "sectionIndex": 3,
+                "sentence": 23,
+                "quote": "the reward",
+                "matchedText": "the reward",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "When to send a patient home should be",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 33,
+                "quote": "when to send a patient home should be based on location-dependent infection and mortality risks",
+                "matchedText": "when to send a patient home should be based on location-dependent infection and mortality risks",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "When to transition a patient to home care",
+              "source": {
+                "type": "section",
+                "section": "Introduction",
+                "page": 2,
+                "sectionIndex": 1,
+                "sentence": 38,
+                "quote": "We formulate the decision of when to transition a patient to home care as a newsvendor-type problem, aiming to maximize the total expected sur­ vival reward minus observation costs.",
+                "matchedText": "when to transition a patient to home care as a newsvendor-type problem",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "An online index-based speedup policy (ISP) to guide patient discharge decisions",
+              "source": {
+                "type": "abstract",
+                "field": "abstract",
+                "sentence": 7,
+                "quote": "Based on this analysis, we propose an online index-based speedup policy (ISP) to guide patient discharge decisions.",
+                "matchedText": "an online index-based speedup policy (ISP) to guide patient discharge decisions",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "Transfer to home care",
+              "source": {
+                "type": "section",
+                "section": "The Capacitated Model: A Hospital",
+                "page": 6,
+                "sectionIndex": 16,
+                "sentence": 15,
+                "quote": "It is intuitive to expect τopt to be monotone decreasing in rw, implying that a higher in-hospital infection risk would prompt earlier transfer to home care",
+                "matchedText": "transfer to home care",
+                "derivation": "normalized-controlled-action"
+              }
+            },
+            {
+              "value": "Optimal stay-up-to thresholds for each type",
+              "source": {
+                "type": "section",
+                "section": "The Multipatient-Type Case",
+                "page": 11,
+                "sectionIndex": 7,
+                "sentence": 5,
+                "quote": "In this heteroge­ neous patient setting, the hospital needs to determine optimal stay-up-to thresholds for each type",
+                "matchedText": "optimal stay-up-to thresholds for each type",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Instead, the patient LOS is an outcome of optimization and may be impacted by the system’s capacity.",
+              "source": {
+                "type": "section",
+                "section": "The Capacitated Model: A Hospital",
+                "page": 6,
+                "quote": "Instead, the patient LOS is an outcome of optimization and may be impacted by the system’s capacity."
+              }
+            },
+            {
+              "value": "Patients who cannot be hospitalized for observation in the ward because of capacity constraints are sent to home care immediately",
+              "source": {
+                "type": "section",
+                "section": "The Capacitated Model: A Hospital",
+                "page": 7,
+                "sectionIndex": 4,
+                "sentence": 25,
+                "quote": "We assume that patients who cannot be hospitalized for observation in the ward because of capacity con­ straints are sent to home care immediately.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The following properties for the system parameters",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 5,
+                "sectionIndex": 3,
+                "sentence": 30,
+                "quote": "We assume the following properties for the system parameters.",
+                "matchedText": "the following properties for the system parameters.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The risk functions are constant over time, enabling us to find a closed-form solution as characterized in the following proposition",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 6,
+                "sectionIndex": 3,
+                "sentence": 52,
+                "quote": "Specifically, we assume that the risk functions are constant over time, enabling us to find a closed-form solution as characterized in the fol­ lowing proposition.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The infection hazard rates are fixed at treatment completion with no real-time updates during observation (expect for the elapsed time and whether the patient got an infection)",
+              "source": {
+                "type": "section",
+                "section": "Conclusions",
+                "page": 17,
+                "sectionIndex": 15,
+                "sentence": 15,
+                "quote": "Hence, following Carmen et al. (2019), we assume that the infection hazard rates are fixed at treatment completion with no real-time updates during observation (expect for the elapsed time and whether the patient got an infection).",
+                "matchedText": "the infection hazard rates are fixed at treatment completion with no real-time updates during observation (expect for the elapsed time and whether the patient got an infection).",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_paper_baseline_merged",
+            "message": "The first literature variant retains the complete whole-paper setup alongside its locally assigned sections."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "The paper proves that the fluid optimal solution can take only five possible strucFinally, in Section 4.3, we expand the analysis to heterogeneous patient populations, identify necessary conditions for optimality, and proposes a practical ISP, which is evaluated numerically in the next section.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "The Capacitated Model: A Hospital",
+          "page": 6,
+          "sentence": 166
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 11,
+            "section": "4.3. The Multipatient-Type Case",
+            "equation": "",
+            "quote": "It involves determining which single patient type should be assigned two thresholds and identifying the corre­ sponding I + 1 thresholds."
+          }
+        ],
+        "components": [
+          {
+            "id": "the-capacitated-model-a-hospital-ward-perspective",
+            "label": "The Capacitated Model: A Hospital Ward Perspective",
+            "role": "process",
+            "concepts": [
+              "process-dynamics"
+            ],
+            "explanation": "Let λ be the patient arrival rate into the ward and S be the random variable of patient LOS.",
+            "searchPhrases": [
+              "how the capacitated model: a hospital ward perspective is represented",
+              "system process in operations and supply chains",
+              "the capacitated model: a hospital ward perspective system process specification"
+            ],
+            "formal": "Process relation: Let \\lambda be the patient arrival rate into the ward and S be the random variable of patient LOS.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "\\lambda",
+                "meaning": "the patient arrival rate into the ward and S be the random variable of patient LOS"
+              }
+            ],
+            "conditions": [
+              "Define the offered load inflicted on the system by its patients as U = λE[S].",
+              "Let λ be the patient arrival rate into the ward and S be the random variable of patient LOS.",
+              "This section focuses on the question of how the time of sending patients to home care should be adjusted when capacity is limited."
+            ],
+            "sources": [
+              {
+                "page": 6,
+                "section": "4. The Capacitated Model: A Hospital Ward Perspective",
+                "equation": "",
+                "quote": "Let λ be the patient arrival rate into the ward and S be the random variable of patient LOS."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "process-dynamics",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Process dynamics through this process dynamics: “Let λ be the patient arrival rate into the ward and S be the random variable of patient”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "the-fluid-level-capacitated-optimization-problem",
+            "label": "The Fluid-Level Capacitated Optimization Problem",
+            "role": "constraint",
+            "concepts": [
+              "optimization"
+            ],
+            "explanation": "We next argue that, in optimality, the system is critically loaded; that is, there exists an optimal solution to (7) in which the first constraint is obtained as an equality.",
+            "searchPhrases": [
+              "how the fluid-level capacitated optimization problem is represented",
+              "feasibility condition in operations and supply chains",
+              "the fluid-level capacitated optimization problem feasibility condition specification"
+            ],
+            "formal": "Feasibility condition: We next argue that, in optimality, the system is critically loaded; that is, there exists an optimal solution to (7) in which the first constraint is obtained as an equality.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "For class k, we apply the single-threshold policy πk = τk."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.2. The Fluid-Level Capacitated Optimization Problem",
+                "equation": "",
+                "quote": "We next argue that, in optimality, the system is criti­ cally loaded; that is, there exists an optimal solution to (7) in which the first constraint is obtained as an equality."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "optimization",
+                "status": "modeled",
+                "representation": "In the feasibility conditions, the source expresses Optimization as “optimal solution”: “loaded; that is, there exists an optimal solution to (7) in which the first constraint is”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-multipatient-type-case",
+            "label": "The Multipatient-Type Case",
+            "role": "decision",
+            "concepts": [
+              "decision-making"
+            ],
+            "explanation": "It involves determining which single patient type should be assigned two thresholds and identifying the corresponding I + 1 thresholds.",
+            "searchPhrases": [
+              "how the multipatient-type case is represented",
+              "decision rule in operations and supply chains",
+              "the multipatient-type case decision rule specification"
+            ],
+            "formal": "Decision rule: It involves determining which single patient type should be assigned two thresholds and identifying the corresponding I + 1 thresholds.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "Referring back to Proposition 5, we note that, because it is unknown a priori which patient type will require two thresholds and which type one, the formulation allows up to two thresholds per patient type for all I patient types.",
+              "The arrival rate for type i patients is denoted by λi.",
+              "Unlike the homogeneous patient case, the speedup threshold here cannot be simply characterized as in (4) because the relationship between the patient types influences the optimal thresholds."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.3. The Multipatient-Type Case",
+                "equation": "",
+                "quote": "It involves determining which single patient type should be assigned two thresholds and identifying the corre­ sponding I + 1 thresholds."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "decision-making",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Decision making through this decision rule: “Decision making”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "the-dynamic-index-based-speedup-policy",
+            "label": "The Dynamic Index-Based Speedup Policy",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "The ISP algorithm is more elaborate than the heuristic proposed by Ouyang et al. (2020) though it shares a common structure: in both cases, when a patient arrives to a full unit, an index-based policy chooses whether the new patient is admitted or another patient is sped up.",
+            "searchPhrases": [
+              "how the dynamic index-based speedup policy is represented",
+              "solution algorithm in operations and supply chains",
+              "the dynamic index-based speedup policy solution algorithm specification"
+            ],
+            "formal": "\\xi(\\tau) = J",
+            "formalKind": "Source-extracted equation (not visually verified)",
+            "symbols": [
+              {
+                "symbol": "\\tau",
+                "meaning": "their current LOS"
+              }
+            ],
+            "conditions": [
+              "Under this policy, when the hospital ward is at full capacity and a new patient arrives, the system identifies and discharges the patient with the lowest index ξ(τ) := J′ τ=(1 GT(τ)), where τ is the current hospitalization time.",
+              "In contrast, the ISP algorithm uses a data-driven index of ξ(τ) = J ′ τ=(1 GT(τ)), which reflects the predicted marginal increase in mortality risk divided by the predicted expected change in patient LOS (based on the patient’s current state).",
+              "We end this section with Corollary 3, observing that, if the reward functions J are increasing up to their optimal threshold τopt, it is never optimal to keep a patient for a full stay unless the patient’s τopt = T."
+            ],
+            "sources": [
+              {
+                "page": 12,
+                "section": "4.3.1. The Dynamic Index-Based Speedup Policy",
+                "equation": "",
+                "quote": "The ISP algorithm is more elaborate than the heuristic proposed by Ouyang et al. (2020) though it shares a common structure: in both cases, when a patient arrives to a full unit, an index-based policy chooses whether the new patient is admitted or another patient is sped up."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “The ISP algorithm is more elaborate than the heuristic proposed by Ouyang et al. (2020) though it shares”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "the-uncapacitated-case-a-single-patient-perspective",
+        "name": "The Uncapacitated Case: A Single-Patient Perspective",
+        "kind": "alternative",
+        "relation": "This is an alternative to The Capacitated Model: A Hospital Ward Perspective.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "the-capacitated-model-a-hospital"
+          }
+        ],
+        "summary": "This infection treatment cost includes all hospitalization expenses incurred from the onset of infection until recovery or death and is assumed to be independent of when or where the infection started.",
+        "objects": [
+          "Patient",
+          "Hospital",
+          "Table"
+        ],
+        "inputs": [
+          "Patient parameters",
+          "The time",
+          "The reward",
+          "Time t"
+        ],
+        "decisions": [
+          "When to send a patient home",
+          "Determine the optimal hospital LOS",
+          "Transfer to home care"
+        ],
+        "assumptions": [
+          "Instead, the solution typically requires numerical methods or analytical approaches tailored to the structure of Jτ.",
+          "The following properties for the system parameters",
+          "The risk functions are constant over time, enabling us to find a closed-form solution as characterized in the following proposition",
+          "All cost parameters (cw, ch, and cI) are scaled accordingly"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Patient",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 1,
+                "quote": "We start by studying the uncapacitated case, focusing on a single patient with no capacity constraints.",
+                "matchedText": "patient",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Hospital",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "The goal is to determine the optimal hospital LOS that maxi­ mizes the patient’s expected survival reward, minimiz­ ing treatment costs associated with hospitalization and home care.",
+                "matchedText": "hospital",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Table",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 65,
+                "quote": "As illustrated in the (discrete-time) counterexample in Table EC.1 in Online Appendix A, the interplay of sys­ tem parameters may result in nonmonotonic behavior of τopt with respect to rw.",
+                "matchedText": "Table",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Patient parameters",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 57,
+                "quote": "Having established the tractability of solving for the optimal threshold (at least numerically) under any given set of system and patient parameters, we now turn to analyze the structural properties of τopt.",
+                "matchedText": "patient parameters",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The time",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 21,
+                "quote": "For simplicity, we assume that the hazard-rate func­ tions depend on the time elapsed since the completion of the treatment and the patient location at that time and not on the duration the patient has been in a partic­ ular location.",
+                "matchedText": "the time",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "The reward",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 27,
+                "quote": "For conve­ nience, we formulate cI as part of the reward received if no infection occurs by time T.",
+                "matchedText": "the reward",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Time t",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "sectionIndex": 0,
+                "page": 5,
+                "quote": "For example, rh(t) is the risk of developing an infection exactly t time units after treatment (pro­ vided no infection has occurred earlier) given that the patient is at home at time t and independently of when the patient was transitioned from the hospital to home care.",
+                "matchedText": "time t",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "When to send a patient home",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 4,
+                "quote": "We model the decision of when to send a patient home as a problem of preselecting a patient-specific stay-up-to threshold.",
+                "matchedText": "when to send a patient home as a problem of preselecting a patient-specific stay-up-to threshold",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Determine the optimal hospital LOS",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 4,
+                "sectionIndex": 0,
+                "sentence": 2,
+                "quote": "The goal is to determine the optimal hospital LOS that maxi­ mizes the patient’s expected survival reward, minimiz­ ing treatment costs associated with hospitalization and home care.",
+                "matchedText": "determine the optimal hospital LOS",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Transfer to home care",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 63,
+                "quote": "It is intuitive to expect τopt to be monotone decreasing in rw, implying that a higher in-hospital infection risk would prompt earlier transfer to home care",
+                "matchedText": "transfer to home care",
+                "derivation": "normalized-controlled-action"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Instead, the solution typically requires numerical methods or analytical approaches tailored to the structure of Jτ.",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 6,
+                "quote": "Instead, the solution typically requires numerical methods or analytical approaches tailored to the structure of Jτ."
+              }
+            },
+            {
+              "value": "The following properties for the system parameters",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 30,
+                "quote": "We assume the following properties for the system parameters.",
+                "matchedText": "the following properties for the system parameters.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "The risk functions are constant over time, enabling us to find a closed-form solution as characterized in the following proposition",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 6,
+                "sectionIndex": 0,
+                "sentence": 52,
+                "quote": "Specifically, we assume that the risk functions are constant over time, enabling us to find a closed-form solution as characterized in the fol­ lowing proposition.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "All cost parameters (cw, ch, and cI) are scaled accordingly",
+              "source": {
+                "type": "section",
+                "section": "The Uncapacitated Case: A Single-Patient Perspective",
+                "page": 5,
+                "sectionIndex": 0,
+                "sentence": 29,
+                "quote": "Without loss of generality, we normalize R = 1, and assume that all cost parameters (cw, ch, and cI) are scaled accordingly.",
+                "matchedText": "all cost parameters (cw, ch, and cI) are scaled accordingly.",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 3
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "For convenience, we formulate cI as part of the reward received if no infection occurs by time T.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "The Uncapacitated Case: A Single-Patient Perspective",
+          "page": 5,
+          "sentence": 27
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 5,
+            "section": "3. The Uncapacitated Case: A Single-Patient Perspective",
+            "equation": "",
+            "quote": "This infection treatment cost includes all hospitali­ zation expenses incurred from the onset of infection until recovery or death and is assumed to be indepen­ dent of when or where the infection started."
+          }
+        ],
+        "components": [
+          {
+            "id": "the-uncapacitated-case-a-single-patient-perspective",
+            "label": "The Uncapacitated Case: A Single-Patient Perspective",
+            "role": "objective",
+            "concepts": [
+              "model-objective"
+            ],
+            "explanation": "This infection treatment cost includes all hospitalization expenses incurred from the onset of infection until recovery or death and is assumed to be independent of when or where the infection started.",
+            "searchPhrases": [
+              "how the uncapacitated case: a single-patient perspective is represented",
+              "modeled objective in operations and supply chains",
+              "the uncapacitated case: a single-patient perspective modeled objective specification"
+            ],
+            "formal": "Objective relation: This infection treatment cost includes all hospitalization expenses incurred from the onset of infection until recovery or death and is assumed to be independent of when or where the infection started.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [],
+            "conditions": [
+              "we assume that the hazard-rate functions depend on the time elapsed since the completion of the treatment and the patient location at that time and not on the duration the patient has been in a particular location.",
+              "This infection treatment cost includes all hospitalization expenses incurred from the onset of infection until recovery or death and is assumed to be independent of when or where the infection started.",
+              "That is, rw(t) (rh(t)) is the risk of infection in the ward (at home) at time t conditional on the patient remaining infection free up to that point.",
+              "For simplicity, we assume that the hazard-rate functions depend on the time elapsed since the completion of the treatment and the patient location at that time and not on the duration the patient has been in a particular location."
+            ],
+            "sources": [
+              {
+                "page": 5,
+                "section": "3. The Uncapacitated Case: A Single-Patient Perspective",
+                "equation": "",
+                "quote": "This infection treatment cost includes all hospitali­ zation expenses incurred from the onset of infection until recovery or death and is assumed to be indepen­ dent of when or where the infection started."
+              },
+              {
+                "page": 5,
+                "section": "3. The Uncapacitated Case: A Single-Patient Perspective",
+                "equation": "",
+                "quote": "Let cw (ch) denote the per-unit-time cost of caring for a patient in the ward (or at home)."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-objective",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model objective through this modeled objective: “This infection treatment cost includes all hospitalization expenses incurred from the onset of infection until recovery or death”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "full-text-source-map",
+      "editorialStatus": "automated full-text source map",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-derived",
+      "questionSource": {
+        "field": "abstract",
+        "sentence": 4,
+        "transformation": "purpose-to-question"
+      },
+      "questionDiagnostics": [
+        {
+          "code": "business_question_not_interrogative",
+          "message": "The business-question field is not a direct research question.",
+          "field": "business_question"
+        },
+        {
+          "code": "model_topic_not_usable",
+          "message": "The model-topic field could not support a direct question.",
+          "field": "model_topic"
+        }
+      ],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "ad8d371883464d250b8c52be98678d2ae1eebc739484e37e001b46d32b6d7a5c",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "876272b3434e3b2b0e684843ec19178b47b6b4e1a8f1ec203226d980679cdf79",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-msom-2021-0189/876272b3434e3b2b0e684843ec19178b47b6b4e1a8f1ec203226d980679cdf79.json",
+      "extractionQaDecisionSha256": "408899ce8fa64c6912ac29699e0847b3fceb72e331787cd5ad057007697cd7b6",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}

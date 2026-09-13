@@ -1,0 +1,1100 @@
+{
+  "schemaVersion": 1,
+  "authoringVersion": "source-sections-v20",
+  "authoringMode": "metadata-enriched",
+  "paperId": "doi-10-1287-mnsc-2024-08557",
+  "sourcePdfSha256": "fd82aa477ebad69987444c90fbc5b0898597ade73a75ae210dfc48cd8a85c7e3",
+  "extractionPagesSha256": "8e5bcb2950a49d51db94b2742345f587631bda6ada3525b2df06df6021e362d7",
+  "conceptRegistrySha256": "b46a6ddd9890f029549922b88d11600a2204b6fab73b9d260ee512aaf6382bb5",
+  "inputDigest": "62251e3d33c3bb3fbe9223fda7783f94d277322dfefeaddc2a32adc4eac0fd6e",
+  "extractionQaStatus": "complete",
+  "extractionQaAutomatedStatus": "complete",
+  "extractionQaInputDigest": "19fbd6ba852f5ee156f0dc1f9d50bff42e34dc0bf8c7c160c85c2c0c993b29bb",
+  "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-08557/19fbd6ba852f5ee156f0dc1f9d50bff42e34dc0bf8c7c160c85c2c0c993b29bb.json",
+  "extractionQaDecisionSha256": "6032db3343b5be6463bc354672ea5ae997d0bfe2e84f07ba00c1d28496d81896",
+  "extractionQaAdjudicationStatus": "not_required",
+  "extractionQaAdjudicationPath": null,
+  "extractionQaAdjudicationSha256": null,
+  "note": {
+    "id": "doi-10-1287-mnsc-2024-08557",
+    "question": "Do autonomous Q-learning pricing algorithms actually learn tacit collusion, or can high prices arise without a collusive equilibrium or meaningful punishment strategy?",
+    "overview": "Two firms repeatedly choose prices in a differentiated Bertrand game while their Q-learning policies respond to the previous price state. The paper formally characterizes (delta, epsilon)-strategy equilibria such as All Defect, Grim Trigger, and Win-Stay-Lose-Shift, and tests whether learned supracompetitive prices actually constitute collusion or a higher-level equilibrium.",
+    "modelTypes": [
+      "Game theory",
+      "Learning & algorithms",
+      "Stochastic model",
+      "Optimization"
+    ],
+    "coverage": {
+      "pages": [
+        3,
+        4,
+        7,
+        9,
+        11,
+        14,
+        19
+      ],
+      "note": "The existing independently audited model map was decomposed into Mini-style components and linked back to the page-preserving source extraction."
+    },
+    "models": [
+      {
+        "id": "main-model",
+        "name": "A repeated differentiated Bertrand game played by epsilon-greedy Q-learning algorithms",
+        "kind": "baseline",
+        "relation": "",
+        "relationships": [],
+        "summary": "Two firms repeatedly choose prices in a differentiated Bertrand game while their Q-learning policies respond to the previous price state. The paper formally characterizes (delta, epsilon)-strategy equilibria such as All Defect, Grim Trigger, and Win-Stay-Lose-Shift, and tests whether learned supracompetitive prices actually constitute collusion or a higher-level equilibrium.",
+        "objects": [
+          "Two differentiated-product firms",
+          "One epsilon-greedy Q-learning pricing algorithm acting for each firm"
+        ],
+        "inputs": [
+          "Both firms know the market environment and observe the previous price pair used",
+          "Demand has no shocks in the baseline, so realized rewards are deterministic conditional on prices",
+          "The algorithms do not communicate and independently update their Q matrices",
+          "The principal simulations impose the same algorithm class and parameterization on both competitors"
+        ],
+        "decisions": [
+          "Each firm chooses a price from a finite grid",
+          "Each algorithm chooses whether to explore or exploit",
+          "A firm may deviate by replacing its pricing algorithm in the meta-game test",
+          "Decisions of its rivals"
+        ],
+        "assumptions": [
+          "Two symmetric differentiated-product firms face multinomial-logit demand and constant marginal cost",
+          "Prices lie on a finite grid between the one-shot Bertrand-Nash and monopoly benchmarks",
+          "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration",
+          "The baseline discount factor is 0.95 and the learning rate and initialization are exogenous",
+          "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "Two differentiated-product firms",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "two differentiated-product firms"
+              }
+            },
+            {
+              "value": "One epsilon-greedy Q-learning pricing algorithm acting for each firm",
+              "source": {
+                "type": "record",
+                "field": "players",
+                "matchedText": "one epsilon-greedy Q-learning pricing algorithm acting for each firm"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "Both firms know the market environment and observe the previous price pair used",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Both firms know the market environment and observe the previous price pair used as the common state."
+              }
+            },
+            {
+              "value": "Demand has no shocks in the baseline, so realized rewards are deterministic conditional on prices",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "Demand has no shocks in the baseline, so realized rewards are deterministic conditional on prices."
+              }
+            },
+            {
+              "value": "The algorithms do not communicate and independently update their Q matrices",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The algorithms do not communicate and independently update their Q matrices."
+              }
+            },
+            {
+              "value": "The principal simulations impose the same algorithm class and parameterization on both competitors",
+              "source": {
+                "type": "record",
+                "field": "information",
+                "matchedText": "The principal simulations impose the same algorithm class and parameterization on both competitors."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each firm chooses a price from a finite grid",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each firm chooses a price from a finite grid"
+              }
+            },
+            {
+              "value": "Each algorithm chooses whether to explore or exploit",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each algorithm chooses whether to explore or exploit"
+              }
+            },
+            {
+              "value": "A firm may deviate by replacing its pricing algorithm in the meta-game test",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "a firm may deviate by replacing its pricing algorithm in the meta-game test"
+              }
+            },
+            {
+              "value": "Decisions of its rivals",
+              "source": {
+                "type": "section",
+                "section": "Model and Algorithm",
+                "page": 3,
+                "sectionIndex": 19,
+                "sentence": 26,
+                "quote": "That is, the algorithm should have a reasonable attractiveness for a firm to continue to outsource its pricing decisions to, given the pricing decisions of its rivals",
+                "matchedText": "decisions of its rivals",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Two symmetric differentiated-product firms face multinomial-logit demand and constant marginal cost",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Two symmetric differentiated-product firms face multinomial-logit demand and constant marginal cost."
+              }
+            },
+            {
+              "value": "Prices lie on a finite grid between the one-shot Bertrand-Nash and monopoly benchmarks",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Prices lie on a finite grid between the one-shot Bertrand-Nash and monopoly benchmarks."
+              }
+            },
+            {
+              "value": "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration."
+              }
+            },
+            {
+              "value": "The baseline discount factor is 0.95 and the learning rate and initialization are exogenous",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The baseline discount factor is 0.95 and the learning rate and initialization are exogenous."
+              }
+            },
+            {
+              "value": "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-authored",
+          "inputs": "source-authored",
+          "decisions": "source-derived",
+          "assumptions": "source-authored"
+        },
+        "setupDiagnostics": [],
+        "method": "To evaluate the present discounted value for firms of using a Q-learning pricing algorithm, we first derive a natural timescale imposed by the firm’s objective,.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Performance Measure and Short-Term Gains",
+          "page": 5,
+          "sentence": 1
+        },
+        "methodDiagnostics": [
+          {
+            "code": "method_candidate_rejected",
+            "message": "Rejected method: no_procedural_method_evidence.",
+            "field": "method",
+            "reason": "no_procedural_method_evidence"
+          }
+        ],
+        "sources": [
+          {
+            "page": 7,
+            "section": "4.2.2. Collusive Equilibria Only Exist After the Effec",
+            "equation": "",
+            "quote": "The speed with which the algo­ rithms converge depends on the decreasing exploration rate in two ways: (1) there is an initial period in which the collusive strategy equilibria do not exist yet, and (2) after they exist, a specific sequence of events has to occur in order to transition to a collusive strategy equilibrium."
+          }
+        ],
+        "components": [
+          {
+            "id": "decisions-and-actions",
+            "label": "Decisions and actions",
+            "role": "decision",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Each firm chooses a price from a finite grid each algorithm chooses whether to explore or exploit a firm may deviate by replacing its pricing algorithm in the meta-game test",
+            "searchPhrases": [
+              "how decisions and actions is represented",
+              "decision rule in whether q-learning price algorithms truly collude",
+              "decisions and actions decision rule specification"
+            ],
+            "formal": "Decision rule: Each firm chooses a price from a finite grid each algorithm chooses whether to explore or exploit a firm may deviate by replacing its pricing algorithm in the meta-game test",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_i(t)",
+                "meaning": "firm i's price in period t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q^{(i)}_{s, p}(t)",
+                "meaning": "firm i's action value for choosing price p in state s",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs."
+            ],
+            "sources": [
+              {
+                "page": 3,
+                "section": "2. Algorithmic Collusion as a Practical",
+                "equation": "",
+                "quote": "That is, the algorithm should have a reasonable attractiveness for a firm to continue to outsource its pricing decisions to, given the pricing decisions of its rivals."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the decision rule, the source expresses Pricing as “pricing decision”: “firm to continue to outsource its pricing decision s to, given the pricing decisions of its”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          },
+          {
+            "id": "objective-and-constraints",
+            "label": "Objective and constraints",
+            "role": "objective",
+            "concepts": [
+              "competition"
+            ],
+            "explanation": "Each firm seeks to maximize its cumulative expected discounted stream of profits from repeated price competition.",
+            "searchPhrases": [
+              "how objective and constraints is represented",
+              "modeled objective in whether q-learning price algorithms truly collude",
+              "objective and constraints modeled objective specification"
+            ],
+            "formal": "E[sum_{t=1}^infinity \\delta^t \\pi_i(p_i(t),p_{-i}(t))]",
+            "formalKind": "Atlas normalized notation",
+            "symbols": [
+              {
+                "symbol": "p_i(t)",
+                "meaning": "firm i's price in period t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_i(t)=(p_i(t-1), p_{-i}(t-1))",
+                "meaning": "Q-learning state given by the prior price pair",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q^{(i)}_{s, p}(t)",
+                "meaning": "firm i's action value for choosing price p in state s",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\epsilon_t=exp(-\\beta t)",
+                "meaning": "time-varying exploration probability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta, \\alpha",
+                "meaning": "profit discount factor and Q-learning rate",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Note that there is positive profit in competition because of the assumption of a logit demand function. de Boer, Meylahn, and Schinkel: Artificial Collusion 4 Management Science, Articles in Advance, pp.",
+              "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs."
+            ],
+            "sources": [
+              {
+                "page": 4,
+                "section": "Expected-profit objective",
+                "equation": "(2)",
+                "quote": "Note that there is positive profit in competition because of the assumption of a logit demand function. de Boer, Meylahn, and Schinkel: Artificial Collusion 4 Management Science, Articles in Advance, pp."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "competition",
+                "status": "modeled",
+                "representation": "In the modeled objective, the source expresses Competition: “that there is positive profit in Competition because of the assumption of a logit demand”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "model-sequence-and-system-structure",
+            "label": "Model sequence and system structure",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "In every discrete period, each algorithm observes the previous price pair, explores with probability epsilon_t or selects a price maximizing its current Q value, firms earn logit-demand profits, and Q values update. This repeats over a finite training run and is evaluated against the firms' discounted infinite-horizon objective. A previous-price state allows an algorithm to condition current prices on a rival's apparent cooperation or deviation. Exploration disrupts punishment strategies and changes which strategy profiles are best responses.",
+            "searchPhrases": [
+              "how model sequence and system structure is represented",
+              "strategic response in whether q-learning price algorithms truly collude",
+              "model sequence and system structure strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "p_i(t)",
+                "meaning": "firm i's price in period t",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "s_i(t)=(p_i(t-1), p_{-i}(t-1))",
+                "meaning": "Q-learning state given by the prior price pair",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q^{(i)}_{s, p}(t)",
+                "meaning": "firm i's action value for choosing price p in state s",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\epsilon_t=exp(-\\beta t)",
+                "meaning": "time-varying exploration probability",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Two symmetric differentiated-product firms face multinomial-logit demand and constant marginal cost.",
+              "The speed with which the algorithms converge depends on the decreasing exploration rate in two ways: (1) there is an initial period in which the collusive strategy equilibria do not exist yet, and (2) after they exist, a specific sequence of events has to occur in order to transition to a collusive strategy equilibrium.",
+              "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration."
+            ],
+            "sources": [
+              {
+                "page": 7,
+                "section": "4.2.2. Collusive Equilibria Only Exist After the Effec",
+                "equation": "",
+                "quote": "The speed with which the algo­ rithms converge depends on the decreasing exploration rate in two ways: (1) there is an initial period in which the collusive strategy equilibria do not exist yet, and (2) after they exist, a specific sequence of events has to occur in order to transition to a collusive strategy equilibrium."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “The speed with which the algorithms converge depends on the decreasing exploration rate in two ways: (1) there”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "strategy-equilibrium-of-the-repeated-pricing-game",
+            "label": "-strategy equilibrium of the repeated pricing game",
+            "role": "interaction",
+            "concepts": [
+              "model-interaction"
+            ],
+            "explanation": "The model's equilibrium concept is (delta, epsilon)-strategy equilibrium of the repeated pricing game.",
+            "searchPhrases": [
+              "how -strategy equilibrium of the repeated pricing game is represented",
+              "strategic response in whether q-learning price algorithms truly collude",
+              "-strategy equilibrium of the repeated pricing game strategic response specification"
+            ],
+            "formal": "Response rule: each modeled actor responds to the actions and information specified here.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_i(t)=(p_i(t-1), p_{-i}(t-1))",
+                "meaning": "Q-learning state given by the prior price pair",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs."
+            ],
+            "sources": [
+              {
+                "page": 9,
+                "section": "4.2.2. Collusive Equilibria Only Exist After the Effec",
+                "equation": "",
+                "quote": "Second, if collusive strategy equilibria exist—that is, ɛt and δ satisfy the required conditions—it requires a certain number of random events to happen within a particular time frame to reach a collusive equilibrium, which can fail to materi­ alize or take a considerable amount of time."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "model-interaction",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Model interaction through this actor interaction: “Second, if collusive strategy equilibria exist—that is, ɛt and δ satisfy the required conditions—it requires a certain number”.",
+                "conditionRefs": [
+                  0
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 0,
+                "inheritedFromSetupField": "assumptions",
+                "setupEvidence": {
+                  "value": "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs",
+                  "source": {
+                    "type": "record",
+                    "field": "assumptions",
+                    "matchedText": "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs."
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "information-structure",
+            "label": "Information structure",
+            "role": "information",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "Both firms know the market environment and observe the previous price pair used as the common state. Demand has no shocks in the baseline, so realized rewards are deterministic conditional on prices. The algorithms do not communicate and independently update their Q matrices. The principal simulations impose the same algorithm class and parameterization on both competitors.",
+            "searchPhrases": [
+              "how information structure is represented",
+              "information available to the decision maker in whether q-learning price algorithms truly collude",
+              "information structure information available to the decision maker specification"
+            ],
+            "formal": "Information structure: Both firms know the market environment and observe the previous price pair used as the common state.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_i(t)=(p_i(t-1), p_{-i}(t-1))",
+                "meaning": "Q-learning state given by the prior price pair",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q^{(i)}_{s, p}(t)",
+                "meaning": "firm i's action value for choosing price p in state s",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Two symmetric differentiated-product firms face multinomial-logit demand and constant marginal cost.",
+              "Such price patterns are also observed in Calvano et al. (2020), as can be seen by the ranges of responses to a price deviation containing values above zero in their figure 5.",
+              "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.4. What Looks like Collusion Need Not",
+                "equation": "",
+                "quote": "Such price patterns are also observed in Calvano et al. (2020), as can be seen by the ranges of responses to a price deviation containing values above zero in their figure 5."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the information structure, the source expresses Pricing: “Such price patterns are also observed in Calvano et al. (2020), as can be seen by the ranges”.",
+                "conditionRefs": [
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "solution-or-estimation-method",
+            "label": "Solution or estimation method",
+            "role": "algorithm",
+            "concepts": [
+              "pricing"
+            ],
+            "explanation": "The authors analytically enumerate memory-one strategy equilibria in a two-price reduction, relate their existence to exploration and the effective learning horizon, reproduce standard tabular-Q experiments over richer price grids, classify learned limit strategies, and run behavioral and profitable-deviation tests for collusion.",
+            "searchPhrases": [
+              "how solution or estimation method is represented",
+              "solution algorithm in whether q-learning price algorithms truly collude",
+              "solution or estimation method solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: The authors analytically enumerate memory-one strategy equilibria in a two-price reduction, relate their existence to exploration and the effective learning horizon, reproduce standard tabular-Q experiments over richer price grids, classify learned limit strategies, and run behavioral and profitable-deviation tests for collusion.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "Q^{(i)}_{s, p}(t)",
+                "meaning": "firm i's action value for choosing price p in state s",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\epsilon_t=exp(-\\beta t)",
+                "meaning": "time-varying exploration probability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta, \\alpha",
+                "meaning": "profit discount factor and Q-learning rate",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration.",
+              "The baseline discount factor is 0.95 and the learning rate and initialization are exogenous.",
+              "Collusive interpretations are evaluated after a finite computational learning horizon even though firm objectives are infinite-horizon discounted payoffs."
+            ],
+            "sources": [
+              {
+                "page": 11,
+                "section": "4.4. What Looks like Collusion Need Not",
+                "equation": "",
+                "quote": "In this section, we argue that the equilibrium of strategies that can be learned by an ɛt-greedy Q-learning algorithm with memory one is not the appropriate equilibrium concept for algorithmic collusion: the reason is that there are alternative algorithms that easily outperform the Q-learning pricing algorithm."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "pricing",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Pricing: “algorithms that easily outperform the Q-learning Pricing algorithm.”.",
+                "conditionRefs": [
+                  0,
+                  1,
+                  2
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map",
+                "symbolRefs": [
+                  0
+                ]
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      },
+      {
+        "id": "q-learning-regime",
+        "name": "Q-Learning regime",
+        "kind": "alternative",
+        "relation": "This is an alternative to A repeated differentiated Bertrand game played by epsilon-greedy Q-learning algorithms.",
+        "relationships": [
+          {
+            "type": "alternativeTo",
+            "targetModelId": "main-model"
+          }
+        ],
+        "summary": "Whether the dynamics of algorithms can (approximately) be described, as t grows large, by a mapping conditioned on a subset of the available data (as in Q-learning) is an algorithm-specific question that does not hold in generality, and that may not even be a desirable property in terms of performance and resilience against rational opponents. The Q-values then need to increase significantly during the simulation from their initial values in order to reach their equilibrium values, which appears not to be attainable given the decreasing exploration rate.42 To remedy this shortage of exploration and give the algorithms more time to converge, a lower value of β could be chosen.",
+        "objects": [
+          "The firms",
+          "State space",
+          "Players",
+          "Agents",
+          "Table"
+        ],
+        "inputs": [
+          "The unknown payoff matrix",
+          "To price optimally eventually",
+          "To price at the optimal level"
+        ],
+        "decisions": [
+          "Each firm chooses a price from a finite grid",
+          "Each algorithm chooses whether to explore or exploit",
+          "A firm may deviate by replacing its pricing algorithm in the meta-game test",
+          "Decisions of its rivals"
+        ],
+        "assumptions": [
+          "Instead, we believe that it is more natural to compare algorithms in terms of what they contribute to the players’ actual objective— in this case, the total expected infinite-horizon discounted payoffs.",
+          "Two symmetric differentiated-product firms face multinomial-logit demand and constant marginal cost",
+          "Prices lie on a finite grid between the one-shot Bertrand-Nash and monopoly benchmarks",
+          "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration",
+          "The baseline discount factor is 0.95 and the learning rate and initialization are exogenous"
+        ],
+        "setupEvidence": {
+          "objects": [
+            {
+              "value": "The firms",
+              "source": {
+                "type": "section",
+                "section": "Against Q-Learning (Dark Gray), and Exp3 Against Exp3",
+                "page": 19,
+                "sectionIndex": 1,
+                "sentence": 38,
+                "quote": "In Calvano et al. (2020), the firms choose their prices mostly between the Nash price and the monopoly price, with just a few extreme values below and above.",
+                "matchedText": "the firms",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "State space",
+              "source": {
+                "type": "section",
+                "section": "Combinations of Exp3 and Q-Learning and Different",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "These equilibria of strategies can potentially be learned if both players use a particular variant of Q-learning with the same underlying state space.",
+                "matchedText": "state space",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Players",
+              "source": {
+                "type": "section",
+                "section": "Combinations of Exp3 and Q-Learning and Different",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 6,
+                "quote": "These equilibria of strategies can potentially be learned if both players use a particular variant of Q-learning with the same underlying state space.",
+                "matchedText": "players",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Agents",
+              "source": {
+                "type": "section",
+                "section": "Combinations of Exp3 and Q-Learning and Different",
+                "page": 14,
+                "sectionIndex": 0,
+                "sentence": 19,
+                "quote": "This is difficult to reconcile with the idea that Q-learning would be imple­ mented in practice by rational agents.",
+                "matchedText": "agents",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "Table",
+              "source": {
+                "type": "section",
+                "section": "Against Q-Learning (Dark Gray), and Exp3 Against Exp3",
+                "page": 20,
+                "sectionIndex": 1,
+                "sentence": 73,
+                "quote": "In Table F.1, we show how using ˜Ai instead of Ai leads to negative ˜∆values and negative average profit when the com­ peting player prices uniformly at random.",
+                "matchedText": "Table",
+                "derivation": "literal-source-phrase"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "value": "The unknown payoff matrix",
+              "source": {
+                "type": "section",
+                "section": "Against Q-Learning (Dark Gray), and Exp3 Against Exp3",
+                "page": 18,
+                "sectionIndex": 1,
+                "sentence": 13,
+                "quote": "It is moreover not obvious how to choose ɛ0 in prac­ tice, as it depends on the unknown payoff matrix.",
+                "matchedText": "the unknown payoff matrix",
+                "derivation": "literal-source-phrase"
+              }
+            },
+            {
+              "value": "To price optimally eventually",
+              "source": {
+                "type": "section",
+                "section": "Against Q-Learning (Dark Gray), and Exp3 Against Exp3",
+                "page": 23,
+                "sectionIndex": 1,
+                "sentence": 136,
+                "quote": "To see this, consider the regret when the algorithm does not learn to price optimally eventu­ ally.",
+                "derivation": "literal-source-pattern"
+              }
+            },
+            {
+              "value": "To price at the optimal level",
+              "source": {
+                "type": "section",
+                "section": "Against Q-Learning (Dark Gray), and Exp3 Against Exp3",
+                "page": 23,
+                "sectionIndex": 1,
+                "sentence": 135,
+                "quote": "The functional dependence of the derived bound on δ ensures that as the discount factor increases, the algorithm eventually learns to price at the optimal level."
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "value": "Each firm chooses a price from a finite grid",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each firm chooses a price from a finite grid"
+              }
+            },
+            {
+              "value": "Each algorithm chooses whether to explore or exploit",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "each algorithm chooses whether to explore or exploit"
+              }
+            },
+            {
+              "value": "A firm may deviate by replacing its pricing algorithm in the meta-game test",
+              "source": {
+                "type": "record",
+                "field": "actions",
+                "matchedText": "a firm may deviate by replacing its pricing algorithm in the meta-game test"
+              }
+            },
+            {
+              "value": "Decisions of its rivals",
+              "source": {
+                "type": "section",
+                "section": "Model and Algorithm",
+                "page": 3,
+                "sectionIndex": 19,
+                "sentence": 26,
+                "quote": "That is, the algorithm should have a reasonable attractiveness for a firm to continue to outsource its pricing decisions to, given the pricing decisions of its rivals",
+                "matchedText": "decisions of its rivals",
+                "derivation": "literal-source-pattern"
+              }
+            }
+          ],
+          "assumptions": [
+            {
+              "value": "Instead, we believe that it is more natural to compare algorithms in terms of what they contribute to the players’ actual objective— in this case, the total expected infinite-horizon discounted payoffs.",
+              "source": {
+                "type": "section",
+                "section": "Combinations of Exp3 and Q-Learning and Different",
+                "page": 14,
+                "quote": "Instead, we believe that it is more natural to compare algorithms in terms of what they contribute to the players’ actual objective— in this case, the total expected infinite-horizon dis­ counted payoffs."
+              }
+            },
+            {
+              "value": "Two symmetric differentiated-product firms face multinomial-logit demand and constant marginal cost",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Two symmetric differentiated-product firms face multinomial-logit demand and constant marginal cost."
+              }
+            },
+            {
+              "value": "Prices lie on a finite grid between the one-shot Bertrand-Nash and monopoly benchmarks",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Prices lie on a finite grid between the one-shot Bertrand-Nash and monopoly benchmarks."
+              }
+            },
+            {
+              "value": "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "Both firms use tabular Q-learning with one-period-memory states and exponentially decaying epsilon-greedy exploration."
+              }
+            },
+            {
+              "value": "The baseline discount factor is 0.95 and the learning rate and initialization are exogenous",
+              "source": {
+                "type": "record",
+                "field": "assumptions",
+                "matchedText": "The baseline discount factor is 0.95 and the learning rate and initialization are exogenous."
+              }
+            }
+          ]
+        },
+        "setupMaturity": {
+          "objects": "source-derived",
+          "inputs": "source-derived",
+          "decisions": "source-derived",
+          "assumptions": "source-derived"
+        },
+        "setupDiagnostics": [
+          {
+            "code": "setup_entities_completed_from_source",
+            "message": "Filled entities from literal abstract or source-section phrases.",
+            "category": "entities",
+            "count": 5
+          },
+          {
+            "code": "setup_assumptions_source_exhausted",
+            "message": "No concrete assumptions phrase could be retained from substantive source or abstract sentences.",
+            "category": "assumptions"
+          },
+          {
+            "code": "setup_inherited_from_base_model",
+            "category": "decisions",
+            "message": "The locally unresolved field inherits the common whole-paper model setup."
+          },
+          {
+            "code": "setup_variant_change_retained",
+            "category": "assumptions",
+            "message": "The variant's explicit formulation change is retained as local setup evidence."
+          }
+        ],
+        "method": "It has some theoretical performance guarantees, regardless of the competitor’s policy, that we derive here.",
+        "methodMaturity": "source-derived",
+        "methodEvidence": {
+          "section": "Against Q-Learning (Dark Gray), and Exp3 Against Exp3",
+          "page": 22,
+          "sentence": 119
+        },
+        "methodDiagnostics": [],
+        "sources": [
+          {
+            "page": 14,
+            "section": "Combinations of Exp3 and Q-Learning and Different",
+            "equation": "",
+            "quote": "Whether the dynamics of algorithms can (approximately) be described, as t grows large, by a mapping conditioned on a subset of the available data (as in Q-learning) is an algorithm-specific question that does not hold in general­ ity, and that may not even be a desirable property in terms of performance and resilience against rational opponents."
+          }
+        ],
+        "components": [
+          {
+            "id": "combinations-of-exp3-and-q-learning-and-different",
+            "label": "Combinations of Exp3 and Q-Learning and Different",
+            "role": "algorithm",
+            "concepts": [
+              "algorithm-design"
+            ],
+            "explanation": "Whether the dynamics of algorithms can (approximately) be described, as t grows large, by a mapping conditioned on a subset of the available data (as in Q-learning) is an algorithm-specific question that does not hold in generality, and that may not even be a desirable property in terms of performance and resilience against rational opponents.",
+            "searchPhrases": [
+              "how combinations of exp3 and q-learning and different is represented",
+              "solution algorithm in whether q-learning price algorithms truly collude",
+              "combinations of exp3 and q-learning and different solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: Whether the dynamics of algorithms can (approximately) be described, as t grows large, by a mapping conditioned on a subset of the available data (as in Q-learning) is an algorithm-specific question that does not hold in generality, and that may not even be a desirable property in terms of performance and resilience against rational opponents.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_i(t)=(p_i(t-1), p_{-i}(t-1))",
+                "meaning": "Q-learning state given by the prior price pair",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q^{(i)}_{s, p}(t)",
+                "meaning": "firm i's action value for choosing price p in state s",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta, \\alpha",
+                "meaning": "profit discount factor and Q-learning rate",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "Instead, we believe that it is more natural to compare algorithms in terms of what they contribute to the players’ actual objective— in this case, the total expected infinite-horizon discounted payoffs.",
+              "Whether the dynamics of algorithms can (approximately) be described, as t grows large, by a mapping conditioned on a subset of the available data (as in Q-learning) is an algorithm-specific question that does not hold in generality, and that may not even be a desirable property in terms of performance and resilience against rational opponents."
+            ],
+            "sources": [
+              {
+                "page": 14,
+                "section": "Combinations of Exp3 and Q-Learning and Different",
+                "equation": "",
+                "quote": "Whether the dynamics of algorithms can (approximately) be described, as t grows large, by a mapping conditioned on a subset of the available data (as in Q-learning) is an algorithm-specific question that does not hold in general­ ity, and that may not even be a desirable property in terms of performance and resilience against rational opponents."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "algorithm-design",
+                "status": "modeled",
+                "mappingBasis": "source-role-predicate",
+                "representation": "The component models Algorithm design through this algorithmic procedure: “Whether the dynamics of algorithms can (approximately) be described, as t grows large, by a mapping conditioned on”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": [
+              {
+                "conditionIndex": 1,
+                "componentSourceRef": 0,
+                "derivation": "literal-component-source-condition"
+              }
+            ]
+          },
+          {
+            "id": "against-q-learning-dark-gray-and-exp3-against-exp3",
+            "label": "Against Q-Learning (Dark Gray), and Exp3 Against Exp3",
+            "role": "algorithm",
+            "concepts": [
+              "simulation"
+            ],
+            "explanation": "The Q-values then need to increase significantly during the simulation from their initial values in order to reach their equilibrium values, which appears not to be attainable given the decreasing exploration rate.42 To remedy this shortage of exploration and give the algorithms more time to converge, a lower value of β could be chosen.",
+            "searchPhrases": [
+              "how against q-learning (dark gray), and exp3 against exp3 is represented",
+              "solution algorithm in whether q-learning price algorithms truly collude",
+              "against q-learning (dark gray), and exp3 against exp3 solution algorithm specification"
+            ],
+            "formal": "Algorithmic rule: update from observed outcomes, then select the next feasible action.",
+            "formalKind": "Atlas restatement of source rule",
+            "symbols": [
+              {
+                "symbol": "s_i(t)=(p_i(t-1), p_{-i}(t-1))",
+                "meaning": "Q-learning state given by the prior price pair",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "Q^{(i)}_{s, p}(t)",
+                "meaning": "firm i's action value for choosing price p in state s",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\epsilon_t=exp(-\\beta t)",
+                "meaning": "time-varying exploration probability",
+                "sourceKind": "reviewed-catalog"
+              },
+              {
+                "symbol": "\\delta, \\alpha",
+                "meaning": "profit discount factor and Q-learning rate",
+                "sourceKind": "reviewed-catalog"
+              }
+            ],
+            "conditions": [
+              "The right panel of Figure E.1 shows the result from repeating the simulation, but now with β = 0:00001.",
+              "The right panel shows the same simulation, but with the price interval taken symmetrically around the Nash price as defined in Appendix F with ξ = 0:0.",
+              "Finally, Figure D.3 shows that variant (iii), setting a fixed exploration rate, can lead to substantially lower levels of collusion."
+            ],
+            "sources": [
+              {
+                "page": 19,
+                "section": "Against Q-Learning (Dark Gray), and Exp3 Against Exp3",
+                "equation": "",
+                "quote": "The Q-values then need to increase significantly during the simulation from their initial values in order to reach their equilibrium values, which appears not to be attainable given the decreasing exploration rate.42 To remedy this shortage of exploration and give the algorithms more time to converge, a lower value of β could be chosen."
+              }
+            ],
+            "conceptBindings": [
+              {
+                "conceptId": "simulation",
+                "status": "modeled",
+                "representation": "In the algorithmic procedure, the source expresses Simulation: “need to increase significantly during the Simulation from their initial values in order to reach”.",
+                "conditionRefs": [
+                  0,
+                  1
+                ],
+                "sourceRefs": [
+                  {
+                    "scope": "component",
+                    "index": 0
+                  }
+                ],
+                "reviewStatus": "automated-source-map"
+              }
+            ],
+            "conditionEvidence": []
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "authoringVersion": "source-sections-v20",
+      "sourceTier": "audited-metadata-plus-source-map",
+      "editorialStatus": "PDF-audited catalog map with automated component bindings",
+      "bindingReviewStatus": "automated-source-map",
+      "questionMaturity": "source-authored",
+      "questionSource": {
+        "field": "business_question"
+      },
+      "questionDiagnostics": [],
+      "formulaPolicy": "Clean source transcriptions are retained; otherwise Atlas supplies an explicitly labeled verbal rule.",
+      "formalEvidenceAllowed": true,
+      "sourcePdfSha256": "fd82aa477ebad69987444c90fbc5b0898597ade73a75ae210dfc48cd8a85c7e3",
+      "extractionQaStatus": "complete",
+      "extractionQaAutomatedStatus": "complete",
+      "extractionQaInputDigest": "19fbd6ba852f5ee156f0dc1f9d50bff42e34dc0bf8c7c160c85c2c0c993b29bb",
+      "extractionQaDecisionPath": "research/ledger/extraction-qa/doi-10-1287-mnsc-2024-08557/19fbd6ba852f5ee156f0dc1f9d50bff42e34dc0bf8c7c160c85c2c0c993b29bb.json",
+      "extractionQaDecisionSha256": "6032db3343b5be6463bc354672ea5ae997d0bfe2e84f07ba00c1d28496d81896",
+      "extractionQaAdjudicationStatus": "not_required",
+      "extractionQaAdjudicationPath": null,
+      "extractionQaAdjudicationSha256": null
+    }
+  }
+}
